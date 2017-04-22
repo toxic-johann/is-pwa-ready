@@ -1,0 +1,642 @@
+{
+  "browsers": [
+    {
+      "id": "chrome",
+      "name": "Chrome"
+    },
+    {
+      "id": "firefox",
+      "name": "Firefox"
+    },
+    {
+      "id": "opera",
+      "name": "Opera"
+    },
+    {
+      "id": "samsung-internet",
+      "name": "Samsung Internet"
+    },
+    {
+      "id": "safari",
+      "name": "Safari"
+    },
+    {
+      "id": "edge",
+      "name": "Edge"
+    }
+  ],
+  "features": [
+    {
+      "name": "ServiceWorker enthusiasm",
+      "description": "The first thing any implementation needs.",
+      "chrome": {
+        "supported": 1,
+        "details": [
+          "Shipped."
+        ]
+      },
+      "firefox": {
+        "supported": 1,
+        "details": [
+          "Shipped."
+        ]
+      },
+      "opera": {
+        "supported": 1
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "details": [
+          "Shipped. Based on Chromium 44.2403 with some <a href=\"http://developer.samsung.com/technical-doc/view.do?v=T000000245&pi=2&ps=10&pb=Y&ct=&sc=\">additions and changes</a>. (See \"Service Worker\" section.)"
+        ]
+      },
+      "safari": {
+        "supported": 0.5,
+        "details": [
+          "<a href=\"https://webkit.org/status/#specification-service-workers\">Under consideration</a>, Brief positive signals in <a href=\"https://trac.webkit.org/wiki/FiveYearPlanFall2015\">five year plan</a>."
+        ]
+      },
+      "edge": {
+        "supported": 1,
+        "details": [
+          "<a href=\"https://developer.microsoft.com/microsoft-edge/platform/status/serviceworker\">In development</a>."
+        ]
+      },
+      "details": [
+        "Support does not include iOS versions of third-party browsers on that platform (see Safari support)."
+      ]
+    },
+    {
+      "name": "Promises",
+      "description": "Not ServiceWorker-specific, but required by ServiceWorker. <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-promise-objects\">Spec</a>.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 36
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 29
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 23
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 2.0
+      },
+      "safari": {
+        "minVersion": 9,
+        "supported": 1
+      },
+      "edge": {
+        "icon": "edge",
+        "minVersion": 13,
+        "supported": 1
+      }
+    },
+    {
+      "name": "Debugging",
+      "description": "State of debugging tools.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40,
+        "details": [
+          "You can debug service worker scripts as any other. \"Application\" panel in devtools has service worker & cache sections."
+        ]
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 47,
+        "details": [
+          "Debuggable from the <a href=\"https://developer.mozilla.org/en-US/docs/Tools/about:debugging#Workers\">\"Workers\" page</a> in <code>about:debugging</code>.",
+          "<a href=\"https://developer.mozilla.org/en-US/docs/Tools/Web_Console\">Web Console</a> can display console messages from Service Workers.",
+          "<code>about:serviceworkers</code> has some under-the-hood stuff."
+        ]
+      },
+      "opera": {
+        "supported": 1,
+        "details": [
+          "Debuggable from the resources panel in <a href=\"http://www.opera.com/developer\">Opera developer</a> if you <a href=\"https://www.reddit.com/r/webdev/comments/2wz7s4/the_secret_extra_tools_within_chromes_dev_tools/\">enable super-experimental devtools</a>.",
+          "Console messages from the service worker appear in the pages' console in Opera stable.",
+          "<code>browser://serviceworker-internals</code> in Opera developer has some under-the-hood stuff."
+        ]
+      },
+      "samsung-internet": {
+        "supported": 0
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "details": [
+        "<strong>Chrome & Opera</strong>: Debuggable from the resources panel in <a href=\"https://www.google.com/chrome/browser/canary.html\">Chrome Canary</a> and <a href=\"http://www.opera.com/developer\">Opera developer</a> if you <a href=\"https://www.reddit.com/r/webdev/comments/2wz7s4/the_secret_extra_tools_within_chromes_dev_tools/\">enable super-experimental devtools</a>.",
+        "<strong>Chrome & Opera</strong>: Console messages from the service worker appear in the pages' console.",
+        "<strong>Chrome & Opera & Samsung Internet</strong>: <code>chrome://serviceworker-internals</code> resp. <code>browser://serviceworker-internals</code> (in Opera developer) has some under-the-hood stuff."
+      ]
+    },
+    {
+      "name": "<code>navigator.serviceWorker</code>",
+      "description": "Namespace for page-side ServiceWorker API. <a href=\"https://w3c.github.io/ServiceWorker/#navigator-service-worker\">Spec</a>. <a href=\"demos/navigator.serviceWorker/\">Test</a>.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4.0
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "details": [
+      ]
+    },
+    {
+      "name": "Register / unregister",
+      "description": "Register for a SW and get a registration instance back, <code>unregister</code> undoes. <a href=\"https://w3c.github.io/ServiceWorker/#navigator-service-worker-register\">Spec</a>. <a href=\"demos/registerunregister/\">Test</a>.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4.0
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "details": [
+      ]
+    },
+    {
+      "name": "<code>postMessage</code> to &amp; from worker",
+      "description": "<a href=\"https://w3c.github.io/ServiceWorker/#service-worker-postmessage\">Spec</a>. <a href=\"demos/postMessage/\">Test</a>.",
+      "chrome": {
+        "supported": 0.5,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 0.5,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4.0
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "details": [
+        "<strong>Chrome & Opera</strong>: <code>messageEvent.source</code> is <a href=\"https://crbug.com/403693\"><code>null</code> within the worker</a>, but you can pass your own <code>MessageChannel</code> for 2-way communication",
+        "<strong>Chrome & Opera</strong>: Incorrectly delivers messages to <code>window.onmessage</code> rather than <code>navigator.serviceWorker.onmessage</code>."
+      ]
+    },
+    {
+      "name": "Fetch event",
+      "description": "Fires for pages and all sub-resources. <a href=\"https://w3c.github.io/ServiceWorker/#fetch-event-section\">Spec</a>. <a href=\"demos/fetchevent/\">Test</a>.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4.0
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      }
+    },
+    {
+      "name": "<code>fetchEvent.request</code>",
+      "description": "<a href=\"https://w3c.github.io/ServiceWorker/#fetch-event-section\">Spec</a>. <a href=\"demos/fetchevent/\">Test</a>.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4.0
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      }
+    },
+    {
+      "name": "<code>fetchEvent.respondWith()</code>",
+      "description": "<a href=\"https://w3c.github.io/ServiceWorker/#fetch-event-respondwith-method\">Spec</a>. <a href=\"demos/fetchevent/\">Test</a>.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4.0
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      }
+    },
+    {
+      "name": "Install event",
+      "description": "Install event fires in a newly discovered SW. Includes <code>InstallEvent.waitUntil()</code>. <a href=\"https://w3c.github.io/ServiceWorker/#install-event-section\">Spec</a>. <a href=\"demos/installactivate/\">Test</a>",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4.0
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      }
+    },
+    {
+      "name": "<code>self.skipWaiting()</code>",
+      "description": "Allow an installing worker to take over from the current active worker once installed. <a href=\"https://w3c.github.io/ServiceWorker/#service-worker-global-scope-skipwaiting\">Spec</a>. <a href=\"demos/installactivate/\">Test</a>.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 42
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 0
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4.0
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      }
+    },
+    {
+      "name": "Activate event",
+      "description": "Activate event fires once this worker becomes the active worker in a registration. Includes <code>event.waitUntil()</code>. <a href=\"https://w3c.github.io/ServiceWorker/#activation-algorithm\">Spec</a>. <a href=\"demos/installactivate/\">Test</a>.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4.0
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      }
+    },
+    {
+      "name": "<code>clients.claim()</code>",
+      "description": "Allow an active worker to take control of pages in its scope (eg, documents that were loaded before the SW was registered). <a href=\"https://w3c.github.io/ServiceWorker/#clients-claim\">Spec</a>. <a href=\"demos/claim/\">Test</a>.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 42
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4.0
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      }
+    },
+    {
+      "name": "Update checks",
+      "description": "Browser checks for SW updates after navigation. <a href=\"https://w3c.github.io/ServiceWorker/#update-algorithm\">Spec</a>.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4.0
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      }
+    },
+    {
+      "name": "ServiceWorker lifecycle",
+      "description": "Allow a next version to be in waiting &amp; take over when appropriate.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 0
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4.0
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      }
+    },
+    {
+      "name": "<code>Request</code>",
+      "description": "<a href=\"https://fetch.spec.whatwg.org/#request\">Spec</a>. <a href=\"demos/globalapis/\">Test</a>.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 39
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4.0
+      },
+      "safari": {
+        "supported": 0.5,
+        "icon": "webkit",
+        "details": [
+          "Partial support landing in <a href=\"https://nightly.webkit.org/\">WebKit nightly</a>"
+        ]
+      },
+      "edge": {
+        "supported": 1,
+        "minVersion": 14
+      }
+    },
+    {
+      "name": "<code>Response</code>",
+      "description": "<a href=\"https://fetch.spec.whatwg.org/#response\">Spec</a>. <a href=\"demos/globalapis/\">Test</a>.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 39
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27,
+        "details": [
+          "<code>URLSearchParams</code> as well as creating a <code>Response</code> from <code>FormData</code> are <a href=\"https://code.google.com/p/chromium/issues/detail?id=412027#c5\">not supported yet</a>"
+        ]
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4.0
+      },
+      "safari": {
+        "supported": 0.5,
+        "icon": "webkit",
+        "details": [
+          "Partial support landing in <a href=\"https://nightly.webkit.org/\">WebKit nightly</a>"
+        ]
+      },
+      "edge": {
+        "supported": 1,
+        "minVersion": 14
+      },
+      "details": [
+        "<strong>Chrome & Samsung Internet</strong>: <code>URLSearchParams</code> <a href=\"https://code.google.com/p/chromium/issues/detail?id=412027#c11\">not supported yet</a>"
+      ]
+    },
+    {
+      "name": "<code>fetch(request)</code>",
+      "description": "<a href=\"https://w3c.github.io/ServiceWorker/#fetch-event-section\">Spec</a>. <a href=\"demos/fetch/\">Test</a>.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 39
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4.0
+      },
+      "safari": {
+        "supported": 1,
+        "minVersion": 10.1,
+        "details": [
+          "Support landing in <a href=\"https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewInSafari/Articles/Safari_10_1.html\">Safari 10.1 beta</a>"
+        ]
+      },
+      "edge": {
+        "supported": 1,
+        "minVersion": 14
+      },
+      "details": [
+        "<a href=\"https://github.com/github/fetch\">Polyfill available</a>"
+      ]
+    },
+    {
+      "name": "<code>caches</code>",
+      "description": "<a href=\"https://w3c.github.io/ServiceWorker/#cache-objects\">Spec</a>. <a href=\"demos/globalapis/\">Test</a>.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 33
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4.0
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "details": [
+        "<strong>Edge</strong>: <a href=\"https://developer.microsoft.com/microsoft-edge/platform/status/cacheapi\">In development.</a>"
+      ]
+    },
+    {
+      "name": "<code>serviceWorker.ready</code>",
+      "description": "<a href=\"https://w3c.github.io/ServiceWorker/#navigator-service-worker-ready\">Spec</a>. <a href=\"demos/registerunregister/\">Test</a>.",
+      "chrome": {
+        "supported": 1
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4.0
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      }
+    },
+    {
+      "name": "Background sync",
+      "description": "Deferring tasks until the user has connectivity. <a href=\"https://github.com/WICG/BackgroundSync\">Spec</a>. <a href=\"demos/sync/\">Test</a>.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 49
+      },
+      "firefox": {
+        "supported": 0,
+        "details": [
+          "<a href=\"https://bugzilla.mozilla.org/show_bug.cgi?id=1217544\">Bug 1217544</a>"
+        ]
+      },
+      "opera": {
+        "supported": 0
+      },
+      "samsung-internet": {
+        "supported": 0
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0,
+        "details": [
+          "<a href=\"https://developer.microsoft.com/en-us/microsoft-edge/platform/status/backgroundsyncapi/\">In development</a>"
+        ]
+      }
+    }
+  ]
+}

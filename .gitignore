@@ -38,3 +38,4 @@ jspm_packages
 
 .babel_cache
 .DS_Store
+stc.js
