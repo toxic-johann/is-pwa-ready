@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PWA的进程</title>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0">
+  <link rel="stylesheet" href="static/css/index.css">
+</head>
+<body>
+  <header>
+    <h1>PWA的进程</h1>
+    <h2>——一个人的命运啊，当然要靠自我奋斗，但是也要考虑到历史的进程。</h2>
+  </header>
+  {% for feature in features %}
+    {% set featureId = feature.name|striptags|lower|replace("\s+", '-', 'g') %}
+    <article class="feature" id="{{ featureId }}">
+      <header>
+        <a href="#{{ featureId }}" class="perma">
+          <h1 class="feature-name">
+            {{ feature.name|safe }}
+          </h1>
+        </a>
+        <p>{{ feature.description|safe }}</p>
+      </header>
+      <div class="results">
+        {% for browser in browsers %}
+          <section class="result {% if feature[browser.id].supported == 0.5 %}ish{% elif feature[browser.id].supported %}yes{% else %}no{% endif %}">
+            <h1 class="icon {{ feature[browser.id].icon|default(browser.id) }}">{{browser.name}}</h1>
+            {% if feature[browser.id].supported %}
+              <p class="support">
+                {% if feature[browser.id].supported == 0.5 %}
+                  Somewhat supported
+                {% else %}
+                  Supported
+                {% endif %}
+                {% if feature[browser.id].minVersion %}
+                  since version <span class="version">{{ feature[browser.id].minVersion }}</span>
+                {% endif %}
+              </p>
+            {% else %}
+              <p class="support">No support</p>
+            {% endif %}
+          </section>
+        {% endfor %}
+    </div>
+        <ul class="details">
+          {% for browser in browsers %}
+            {% for detail in feature[browser.id].details %}
+              <li><strong>{{ browser.name }}:</strong> {{ detail|safe }}</li>
+            {% endfor %}
+          {% endfor %}
+          {% for detail in feature.details %}
+            <li>{{ detail|safe }}</li>
+          {% endfor %}
+        </ul>
+    </article>
+  {% endfor %}
+</body>
+</html>

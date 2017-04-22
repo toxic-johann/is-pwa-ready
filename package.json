@@ -1,0 +1,54 @@
+{
+  "name": "is-pwa-ready",
+  "version": "0.0.1",
+  "description": "Tracking the status of PWA in Chinese browser",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "nodemon --watch server --watch views -e js,html,json & webpack -w",
+    "stop": "pm2 stop server/index.js --watch",
+    "logs": "pm2 logs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toxic-johann/is-pwa-ready.git"
+  },
+  "keywords": [
+    "PWA",
+    "serviceworker",
+    "browser",
+    "Chinese"
+  ],
+  "author": "toxic-johann",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/toxic-johann/is-pwa-ready/issues"
+  },
+  "homepage": "https://github.com/toxic-johann/is-pwa-ready#readme",
+  "dependencies": {
+    "koa": "^2.2.0",
+    "koa-send": "^4.0.0",
+    "koa-view": "^2.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-eslint": "^7.2.2",
+    "babel-loader": "^6.4.1",
+    "babel-preset-es2015": "^6.24.1",
+    "css-loader": "^0.28.0",
+    "eslint": "^3.19.0",
+    "eslint-plugin-html": "^2.0.1",
+    "extract-loader": "^0.1.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.1",
+    "html-loader": "^0.4.5",
+    "nodemon": "^1.11.0",
+    "postcss-cssnext": "^2.10.0",
+    "postcss-loader": "^1.3.3",
+    "precss": "^1.4.0",
+    "style-loader": "^0.16.1",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.4.1",
+    "webpack-visualizer-plugin": "^0.1.11"
+  }
+}
