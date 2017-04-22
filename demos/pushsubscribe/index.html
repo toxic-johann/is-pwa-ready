@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      white-space: pre;
+      font-family: monospace;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body><script>
+    function log() {
+      document.body.appendChild(document.createTextNode(Array.prototype.join.call(arguments, ", ") + '\n'));
+      console.log.apply(console, arguments);
+    }
+
+    window.onerror = function(err) {
+      log("Error", err);
+    };
+
+    navigator.serviceWorker.register('sw.js', {
+      scope: './'
+    }).then(function(sw) {
+      log("Registered!", sw);
+      var pushManager = sw.pushManager
+      pushManager.getSubscription()
+      .then(function (subscription) {
+        if(subscription) {
+          log("subscribed", subscription)
+          return
+        }
+        pushManager.subscribe({
+          userVisibleOnly: true
+        })
+        .then(subscription => {
+          log("subscribe finished", subscription)
+        })
+        .catch(error => {
+          log('Error!!', error)
+        })
+      })
+    }).catch(function(err) {
+      log("Reg failed", err);
+    });
+
+    log("ready", navigator.serviceWorker.ready);
+
+    if (navigator.serviceWorker.ready) {
+      navigator.serviceWorker.ready.then(function() {
+        log("ready resolved");
+      });
+    }
+  </script></body>
+</html>

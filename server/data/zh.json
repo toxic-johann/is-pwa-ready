@@ -23,6 +23,14 @@
     {
       "id": "edge",
       "name": "Edge"
+    },
+    {
+      "id": "uc",
+      "name": "UC"
+    },
+    {
+      "id": "xiaomi",
+      "name": "小米原生浏览器"
     }
   ],
   "features": [
@@ -65,13 +73,25 @@
           "<a href=\"https://developer.microsoft.com/microsoft-edge/platform/status/serviceworker\">开发中</a>。edge 15可手动打开。"
         ]
       },
+      "uc": {
+        "supported": 0.5,
+        "details": [
+          "开发中"
+        ]
+      },
+      "xiaomi": {
+        "supported": 1,
+        "details": [
+          "基于安卓原生浏览器，只要版本升级得当，则支持。"
+        ]
+      },
       "details": [
         "以上支持均不含 iOS 版本（参照Safari的支持度）。"
       ]
     },
     {
       "name": "Promises",
-      "description": "并不在ServiceWorker规范内，但是是ServiceWorker实现的必要条件。<a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-promise-objects\">规范</a>。",
+      "description": "并不在ServiceWorker规范内，但是是ServiceWorker实现的必要条件。<a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-promise-objects\">规范</a>。<a href=\"demos/globalapis/\">测试</a>。",
       "chrome": {
         "supported": 1,
         "minVersion": 36
@@ -95,6 +115,12 @@
       "edge": {
         "icon": "edge",
         "minVersion": 13,
+        "supported": 1
+      },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
         "supported": 1
       }
     },
@@ -135,6 +161,12 @@
       "edge": {
         "supported": 0
       },
+      "uc": {
+        "supported": 0,
+        "details": [
+          "笔者并没有调试工具，因此并不清晰。"
+        ]
+      },
       "details": [
         "<strong>Chrome 和 Opera</strong>: 都可以在<a href=\"https://www.google.com/chrome/browser/canary.html\">Chrome Canary</a>和<a href=\"http://www.opera.com/developer\">Opera 开发者版本中</a>的资源面板中调试，前提是<a href=\"https://www.reddit.com/r/webdev/comments/2wz7s4/the_secret_extra_tools_within_chromes_dev_tools/\">启用了实验性超级开发者工具</a>。",
         "<strong>Chrome 和 Opera</strong>: ServiceWorker的控制台消息都会在 console 面板中输出。",
@@ -166,6 +198,12 @@
       "edge": {
         "supported": 0
       },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
+        "supported": 1
+      },
       "details": [
       ]
     },
@@ -194,6 +232,12 @@
       "edge": {
         "supported": 0
       },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
+        "supported": 1
+      },
       "details": [
       ]
     },
@@ -201,7 +245,7 @@
       "name": "<code>postMessage</code> to &amp; from worker",
       "description": "<a href=\"https://w3c.github.io/ServiceWorker/#service-worker-postmessage\">规范</a>。 <a href=\"demos/postMessage/\">测试</a>。",
       "chrome": {
-        "supported": 0.5,
+        "supported": 1,
         "minVersion": 40
       },
       "firefox": {
@@ -209,7 +253,7 @@
         "minVersion": 44
       },
       "opera": {
-        "supported": 0.5,
+        "supported": 1,
         "minVersion": 27
       },
       "samsung-internet": {
@@ -221,6 +265,15 @@
       },
       "edge": {
         "supported": 0
+      },
+      "uc": {
+        "supported": 0.5,
+        "details": [
+          "127.0.0.1域下存在安全问题"
+        ]
+      },
+      "xiaomi": {
+        "supported": 1
       },
       "details": [
         "<strong>Chrome & Opera</strong>: <code>messageEvent.source</code><a href=\"https://crbug.com/403693\">在worker中为<code>null</code></a>，但你可以传入你自己的<code>MessageChannel</code>来进行双向通信。【43后版本已修复】",
@@ -251,6 +304,12 @@
       },
       "edge": {
         "supported": 0
+      },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
+        "supported": 1
       }
     },
     {
@@ -277,6 +336,12 @@
       },
       "edge": {
         "supported": 0
+      },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
+        "supported": 1
       }
     },
     {
@@ -303,6 +368,12 @@
       },
       "edge": {
         "supported": 0
+      },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
+        "supported": 1
       }
     },
     {
@@ -329,6 +400,12 @@
       },
       "edge": {
         "supported": 0
+      },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
+        "supported": 1
       }
     },
     {
@@ -355,6 +432,12 @@
       },
       "edge": {
         "supported": 0
+      },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
+        "supported": 1
       }
     },
     {
@@ -381,6 +464,12 @@
       },
       "edge": {
         "supported": 0
+      },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
+        "supported": 1
       }
     },
     {
@@ -406,6 +495,15 @@
       },
       "edge": {
         "supported": 0
+      },
+      "uc": {
+        "supported": 0,
+        "details": [
+          "有bug，联系中"
+        ]
+      },
+      "xiaomi": {
+        "supported": 1
       }
     },
     {
@@ -432,6 +530,12 @@
       },
       "edge": {
         "supported": 0
+      },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
+        "supported": 1
       }
     },
     {
@@ -457,6 +561,12 @@
       },
       "edge": {
         "supported": 0
+      },
+      "uc": {
+        "supported": 0.5
+      },
+      "xiaomi": {
+        "supported": 1
       }
     },
     {
@@ -487,6 +597,12 @@
       "edge": {
         "supported": 1,
         "minVersion": 14
+      },
+      "uc": {
+        "supported": 0
+      },
+      "xiaomi": {
+        "supported": 1
       }
     },
     {
@@ -513,7 +629,6 @@
       },
       "safari": {
         "supported": 1,
-        "icon": "webkit",
         "details": [
           "新版本已支持"
         ]
@@ -521,6 +636,12 @@
       "edge": {
         "supported": 1,
         "minVersion": 14
+      },
+      "uc": {
+        "supported": 0
+      },
+      "xiaomi": {
+        "supported": 1
       },
       "details": [
         "【该问题已在M-54解决】<strong>Chrome & Samsung Internet</strong>: <code>URLSearchParams</code> <a href=\"https://code.google.com/p/chromium/issues/detail?id=412027#c11\">not supported yet</a>"
@@ -553,6 +674,12 @@
         "supported": 1,
         "minVersion": 14
       },
+      "uc": {
+        "supported": 0
+      },
+      "xiaomi": {
+        "supported": 1
+      },
       "details": [
         "<a href=\"https://github.com/github/fetch\">可以进行Polyfill</a>"
       ]
@@ -582,6 +709,37 @@
       "edge": {
         "supported": 0
       },
+      "xiaomi": {
+        "supported": 1
+      },
+      "details": [
+        "<strong>Edge</strong>: <a href=\"https://developer.microsoft.com/microsoft-edge/platform/status/cacheapi\">开发中</a>"
+      ]
+    },
+    {
+      "name": "<code>Notification</code>",
+      "description": "给用户发送通知<a href=\"https://notifications.spec.whatwg.org\">规范</a>。 <a href=\"demos/globalapis/\">测试</a>。",
+      "chrome": {
+        "supported": 1
+      },
+      "firefox": {
+        "supported": 1
+      },
+      "opera": {
+        "supported": 1
+      },
+      "samsung-internet": {
+        "supported": 1
+      },
+      "safari": {
+        "supported": 1
+      },
+      "edge": {
+        "supported": 0
+      },
+      "xiaomi": {
+        "supported": 0
+      },
       "details": [
         "<strong>Edge</strong>: <a href=\"https://developer.microsoft.com/microsoft-edge/platform/status/cacheapi\">开发中</a>"
       ]
@@ -608,6 +766,33 @@
       },
       "edge": {
         "supported": 0
+      },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
+        "supported": 1
+      }
+    },
+    {
+      "name": "PushManager.subscribe()",
+      "description": "订阅后的结果才能推送。但是国内，由于gcm/fcm访问问题。绝大部分浏览器推送订阅失效。<a href=\"https://w3c.github.io/push-api/#widl-PushManager-subscribe-Promise-PushSubscription--PushSubscriptionOptions-options\">规范</a>。<a href=\"demos/pushsubscribe/\">测试</a>。",
+      "chrome": {
+        "supported": 0.5,
+        "minVersion": 42,
+        "details": [
+          "国内因不可描述的原因不可用"
+        ]
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 0.5,
+        "details": [
+          "国内因不可描述的原因不可用"
+        ]
       }
     },
     {
@@ -637,6 +822,12 @@
         "details": [
           "<a href=\"https://developer.microsoft.com/en-us/microsoft-edge/platform/status/backgroundsyncapi/\">In development</a>"
         ]
+      },
+      "uc": {
+        "supported": 0
+      },
+      "xiaomi": {
+        "supported": 0
       }
     }
   ]

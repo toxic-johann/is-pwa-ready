@@ -1,3 +1,4 @@
+console.log('what')
 self.onactivate = function() {
   clients.claim();
 };

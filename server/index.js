@@ -10,7 +10,7 @@ app.use(async ctx => {
   const url = ctx.req.url
   const accepts = ctx.accepts()
   const isDemo = url.match(/^\/demos/)
-  const needHtml = accepts.indexOf('text/html') > -1
+  const needHtml = accepts.indexOf('text/html') > -1 && !url.match(/(js|css|json)$/)
   console.log(url, ctx.accepts(), needHtml)
   if(url.match(/^\/static/)) {
     await send(ctx, ctx.path)

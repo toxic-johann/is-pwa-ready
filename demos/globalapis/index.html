@@ -19,6 +19,14 @@
       log("Error", err);
     };
 
+    log("SW startup");
+    log("Request", this.Request);
+    log("Response", this.Response);
+    log("fetch", this.fetch);
+    log("Cache", this.Cache);
+    log("caches", this.caches);
+    log("getAll", this.getAll);
+    log("Notification", Notification);
     navigator.serviceWorker.register('sw.js', {
       scope: './'
     }).then(function(sw) {
