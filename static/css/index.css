@@ -2,14 +2,18 @@ html {
   font-size: 15px;
   line-height: 1.4;
   min-height: 100%;
+  width: 100%;
   background: #102a48; 
   background: #102a48 radial-gradient(circle closest-corner at 50% 39px, #166ab9, #013668, #102a48) no-repeat;
   overflow-y: scroll;
   -webkit-text-size-adjust: 100%;
 }
 body {
-  margin: 15px;
-  margin: 1rem
+  padding: 15px;
+  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden
 }
 body > header {
   }
@@ -23,11 +27,9 @@ body > header h4 {
   /* padding-left: 60%; */
 }
 body > header ul {
-  color: white;
+  color: white !important;
   width: 100%;
   display: inline;
-  margin: 12px 0 48px;
-  margin: 0.8rem 0 3.2rem;
 }
 body > header ul li {
   font-size: 21px;
@@ -265,6 +267,8 @@ article.feature .details li {
   margin: 0;
   padding: 6px 15px;
   padding: 0.4rem 1rem;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 article.feature .details > li:nth-child(even) {
   background: #F1F1F1;

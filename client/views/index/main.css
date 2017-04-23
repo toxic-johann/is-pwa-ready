@@ -2,13 +2,17 @@ html {
   font-size: 15px;
   line-height: 1.4;
   min-height: 100%;
+  width: 100%;
   background: #102a48; 
   background: #102a48 radial-gradient(circle closest-corner at 50% 39px, #166ab9, #013668, #102a48) no-repeat;
   overflow-y: scroll;
   -webkit-text-size-adjust: 100%;
 }
 body {
-  margin: 1rem;
+  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
   & > header {
     & h1 {
       text-align: center;
@@ -20,10 +24,9 @@ body {
       /* padding-left: 60%; */
     }
     & ul {
-      color: white;
+      color: white !important;
       width: 100%;
       display: inline;
-      margin: 0.8rem 0 3.2rem;
       & li {
         font-size: 1.4rem;
         display: inline;
@@ -149,6 +152,8 @@ article.feature {
       background: #E4E4E4;
       margin: 0;
       padding: 0.4rem 1rem;
+      white-space: pre-wrap;
+      word-break: break-word;
     }
     & > li:nth-child(even) {
       background: #F1F1F1;
