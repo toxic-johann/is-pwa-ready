@@ -5,8 +5,7 @@
   "main": "server/index.js",
   "scripts": {
     "start": "nodemon --watch server --watch views -e js,html,json & webpack -w",
-    "stop": "pm2 stop server/index.js --watch",
-    "logs": "pm2 logs",
+    "build": "webpack --env.mode='production'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -46,12 +45,7 @@
     "postcss-cssnext": "^2.10.0",
     "postcss-loader": "^1.3.3",
     "precss": "^1.4.0",
-    "stc": "^2.0.11",
-    "stc-cdn": "^1.0.8",
-    "stc-cdn-qiniu": "^1.0.0",
-    "stc-css-compress": "^1.0.1",
-    "stc-inline": "^1.1.0",
-    "stc-uglify": "^1.0.8",
+    "qiniu-webpack-plugin": "^0.4.2",
     "style-loader": "^0.16.1",
     "url-loader": "^0.5.8",
     "webpack": "^2.4.1",

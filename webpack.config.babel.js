@@ -3,7 +3,7 @@ import path from 'path'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import Visualizer from 'webpack-visualizer-plugin'
 import webpack from 'webpack'
-
+import qiniuPlugin from './qiniu.js'
 export default function ({mode = 'development', port, nodePort} = {}) {
   const viewRoot = './client/views/'
   const staticRoot = './static'
@@ -24,7 +24,7 @@ export default function ({mode = 'development', port, nodePort} = {}) {
     output: {
       filename: 'js/[name].js',
       path: path.resolve(staticRoot),
-      publicPath: '/static/',
+      publicPath: mode === 'development' ? '/static/' : 'http://cdn.toxicjohann.com/ispwaready/',
       chunkFilename: '[name]-[hash].js'
     },
     module: {
@@ -114,19 +114,17 @@ export default function ({mode = 'development', port, nodePort} = {}) {
           comments: false,
           sourceMap: true,
           compress: {
-                  // remove warnings
+            // remove warnings
             warnings: false,
-
-                  // Drop console statements
+            // Drop console statements
             drop_console: true
           }
-              // to minimize dead code
-              // beautify: true
-        })
+        }),
+        qiniuPlugin
       ]
       : [
       ]
     )
   }
-};
+}
 
