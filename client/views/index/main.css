@@ -14,11 +14,26 @@ body {
       text-align: center;
       color: #fff;
     }
-    & h2 {
+    & h4 {
       text-align: right;
       color: #eee;
-      padding-left: 60%;
-      display: none;    
+      /* padding-left: 60%; */
+    }
+    & ul {
+      color: white;
+      width: 100%;
+      display: inline;
+      margin: 0.8rem 0 3.2rem;
+      & li {
+        font-size: 1.4rem;
+        display: inline;
+        text-decoration: none;
+        list-style: none;
+        &:not(:last-of-type):after {
+          content: '*';
+          margin: 0 1rem;
+        }
+      }
     }
   }
 }
@@ -70,6 +85,16 @@ article.feature {
         filter: grayscale(100%);
         opacity: 0.4;
       }
+      & .isMobile {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: white;
+        display: block;
+        text-align: center;
+        width: 1.5rem;
+        background-color: rgba(0, 0, 0, .6);
+      }
       & .icon {
         position: absolute;
         top: 0;
@@ -79,7 +104,7 @@ article.feature {
         margin: auto;
         font-size: 16px;
         text-indent: -5000px;
-        @each $icon in (chrome, chrome-canary, firefox, firefox-nightly, edge, opera, opera-developer, samsung-internet, safari, webkit, uc, xiaomi, qq, qqm, m360, baidum) {
+        @each $icon in (chrome, chrome-canary, firefox, firefox-nightly, edge, opera, opera-developer, samsung-internet, safari, webkit, uc, xiaomi, qq, qqm, m360, baidum, sogoum) {
           &.$(icon) {
             background-image: url(../../img/$(icon).png);
             background-size: 78%;
@@ -132,6 +157,13 @@ article.feature {
 }
 @media (min-width: 500px) {
   font-size: 17px;
+  body {
+    & > header {
+      & h4 {
+        padding-left: 60%;
+      }
+    }
+  }
 }
 @media (min-width: 800px) {
   article.feature {

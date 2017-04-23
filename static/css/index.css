@@ -11,16 +11,35 @@ body {
   margin: 15px;
   margin: 1rem
 }
-body > header {}
+body > header {
+  }
 body > header h1 {
   text-align: center;
   color: #fff;
 }
-body > header h2 {
+body > header h4 {
   text-align: right;
   color: #eee;
-  padding-left: 60%;
-  display: none;
+  /* padding-left: 60%; */
+}
+body > header ul {
+  color: white;
+  width: 100%;
+  display: inline;
+  margin: 12px 0 48px;
+  margin: 0.8rem 0 3.2rem;
+}
+body > header ul li {
+  font-size: 21px;
+  font-size: 1.4rem;
+  display: inline;
+  text-decoration: none;
+  list-style: none;
+}
+body > header ul li:not(:last-of-type):after {
+  content: '*';
+  margin: 0 15px;
+  margin: 0 1rem;
 }
 article.feature {
   max-width: 510px;
@@ -85,6 +104,17 @@ article.feature .results .result.no {
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
   opacity: 0.4;
+}
+article.feature .results .result .isMobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+  display: block;
+  text-align: center;
+  width: 22.5px;
+  width: 1.5rem;
+  background-color: rgba(0, 0, 0, .6);
 }
 article.feature .results .result .icon {
   position: absolute;
@@ -192,6 +222,12 @@ article.feature .results .result .icon.baidum {
   background-repeat: no-repeat;
   background-position: center;
 }
+article.feature .results .result .icon.sogoum {
+  background-image: url(/static/img/sogoum-3d27ba41c36c13b2deca7d31f42321d4.png);
+  background-size: 78%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 article.feature .results .result .support {
   margin: 0;
   text-indent: -5000px;
@@ -235,6 +271,13 @@ article.feature .details > li:nth-child(even) {
 }
 @media (min-width: 500px) {
   font-size: 17px;
+  body {
+  }
+  body > header {
+  }
+  body > header h4 {
+    padding-left: 60%;
+  }
 }
 @media (min-width: 800px) {
   article.feature {

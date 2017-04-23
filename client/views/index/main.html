@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PWA的进程</title>
+  <title>PWA，准备好了吗？</title>
   <meta name="viewport" content="width=device-width, minimum-scale=1.0">
   <link rel="stylesheet" href="static/css/index.css" inline>
 </head>
 <body>
   <header>
-    <h1>PWA的进程</h1>
-    <h2>——一个人的命运啊，当然要靠自我奋斗，但是也要考虑到历史的进程。</h2>
+    <h1>PWA，准备好了吗？</h1>
+    <!-- <h4>一个人的命运啊，当然要靠自我奋斗，但是也要考虑到历史的进程。</h4> -->
+    <ul>
+      <li><a href="https://w3c.github.io/ServiceWorker/">规范</a></li>
+      <li><a href="https://github.com/toxic-johann/is-pwa-ready">Github</a></li>
+    </ul>
   </header>
   {% for feature in features %}
     {% set featureId = feature.name|striptags|lower|replace("\s+", '-', 'g') %}
@@ -25,6 +29,9 @@
         {% for browser in browsers %}
           <section class="result {% if feature[browser.id].supported == 0.5 %}ish{% elif feature[browser.id].supported %}yes{% else %}no{% endif %}">
             <h1 class="icon {{ feature[browser.id].icon|default(browser.id) }}">{{browser.name}}</h1>
+            {% if browser.mobile %}
+              <span class="isMobile">m</span>
+            {% endif %}
             {% if feature[browser.id].supported %}
               <p class="support">
                 {% if feature[browser.id].supported == 0.5 %}

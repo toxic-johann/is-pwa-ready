@@ -2,11 +2,13 @@
   "browsers": [
     {
       "id": "chrome",
-      "name": "Chrome"
+      "name": "Chrome",
+      "both": true
     },
     {
       "id": "firefox",
-      "name": "Firefox"
+      "name": "Firefox",
+      "both": true
     },
     {
       "id": "opera",
@@ -14,19 +16,7 @@
     },
     {
       "id": "samsung-internet",
-      "name": "Samsung Internet"
-    },
-    {
-      "id": "safari",
-      "name": "Safari"
-    },
-    {
-      "id": "edge",
-      "name": "Edge"
-    },
-    {
-      "id": "uc",
-      "name": "UC手机浏览器",
+      "name": "Samsung Internet",
       "mobile": true
     },
     {
@@ -35,8 +25,8 @@
       "mobile": true
     },
     {
-      "id": "qqm",
-      "name": "qq手机浏览器",
+      "id": "baidum",
+      "name": "百度手机浏览器",
       "mobile": true
     },
     {
@@ -45,9 +35,27 @@
       "mobile": true
     },
     {
-      "id": "baidum",
-      "name": "百度手机浏览器",
+      "id": "sogoum",
+      "name": "搜狗手机浏览器",
       "mobile": true
+    },
+    {
+      "id": "uc",
+      "name": "UC手机浏览器",
+      "mobile": true
+    },
+    {
+      "id": "qqm",
+      "name": "qq手机浏览器",
+      "mobile": true
+    },
+    {
+      "id": "edge",
+      "name": "Edge"
+    },
+    {
+      "id": "safari",
+      "name": "Safari"
     }
   ],
   "features": [
@@ -120,6 +128,12 @@
           "已上船，离线功能、加速功能能正常能用！！"
         ]
       },
+      "sogoum": {
+        "supported": 1,
+        "details": [
+          "已上船，离线功能、加速功能能正常能用！！"
+        ]
+      },
       "details": [
         "以上支持均不含 iOS 版本（参照Safari的支持度）。"
       ]
@@ -170,6 +184,12 @@
       "m360": {
         "supported": 1
       },
+      "sogoum": {
+        "supported": 0,
+        "details": [
+          "不能顺利进行"
+        ]
+      },
       "details": [
         "<strong>Chrome & Opera</strong>: <code>messageEvent.source</code><a href=\"https://crbug.com/403693\">在worker中为<code>null</code></a>，但你可以传入你自己的<code>MessageChannel</code>来进行双向通信。【43后版本已修复】",
         "<strong>Chrome & Opera</strong>: 较旧版本会将错误的将信息发送给了<code>window.onmessage</code>而不是<code>navigator.serviceWorker.onmessage</code>。【新版本正常】"
@@ -216,6 +236,9 @@
         "supported": 1
       },
       "baidum": {
+        "supported": 1
+      },
+      "sogoum": {
         "supported": 1
       },
       "details": []
@@ -281,6 +304,12 @@
           "笔者并没有调试工具，因此并不确定。"
         ]
       },
+      "sogoum": {
+        "supported": 0,
+        "details": [
+          "笔者并没有调试工具，因此并不确定。"
+        ]
+      },
       "details": [
         "<strong>Chrome 和 Opera</strong>: 都可以在<a href=\"https://www.google.com/chrome/browser/canary.html\">Chrome Canary</a>和<a href=\"http://www.opera.com/developer\">Opera 开发者版本中</a>的资源面板中调试，前提是<a href=\"https://www.reddit.com/r/webdev/comments/2wz7s4/the_secret_extra_tools_within_chromes_dev_tools/\">启用了实验性超级开发者工具</a>。",
         "<strong>Chrome 和 Opera</strong>: ServiceWorker的控制台消息都会在 console 面板中输出。",
@@ -327,6 +356,9 @@
       "baidum": {
         "supported": 1
       },
+      "sogoum": {
+        "supported": 1
+      },
       "details": [
       ]
     },
@@ -370,10 +402,15 @@
       "baidum": {
         "supported": 1
       },
+      "sogoum": {
+        "supported": 0.5,
+        "details": [
+          "注册成功，但是并没有看到正常解注的显示。"
+        ]
+      },
       "details": [
       ]
     },
-    
     {
       "name": "Fetch事件",
       "description": "在获取页面和所有子资源的时候触发。 <a href=\"https://w3c.github.io/ServiceWorker/#fetch-event-section\">规范</a>。 <a href=\"demos/fetchevent/\">测试</a>。",
@@ -456,6 +493,9 @@
       "baidum": {
         "supported": 1
       },
+      "sogoum": {
+        "supported": 1
+      },
       "details": []
     },
     {
@@ -498,6 +538,9 @@
       "baidum": {
         "supported": 1
       },
+      "sogoum": {
+        "supported": 1
+      },
       "details": []
     },
     {
@@ -538,6 +581,9 @@
         "supported": 1
       },
       "baidum": {
+        "supported": 1
+      },
+      "sogoum": {
         "supported": 1
       },
       "details": []
@@ -588,6 +634,12 @@
       "baidum": {
         "supported": 1
       },
+      "sogoum": {
+        "supported": 0.3,
+        "details": [
+          "因postMessage缺失及client.claim不可用，暂无法确定，日后补充"
+        ]
+      },
       "details": []
     },
     {
@@ -628,6 +680,9 @@
         "supported": 1
       },
       "baidum": {
+        "supported": 1
+      },
+      "sogoum": {
         "supported": 1
       },
       "details": []
@@ -677,6 +732,12 @@
       "baidum": {
         "supported": 1
       },
+      "sogoum": {
+        "supported": 0,
+        "details": [
+          "不可用"
+        ]
+      },
       "details": []
     },
     {
@@ -717,6 +778,9 @@
         "supported": 1
       },
       "baidum": {
+        "supported": 1
+      },
+      "sogoum": {
         "supported": 1
       },
       "details": []
@@ -766,6 +830,12 @@
       "baidum": {
         "supported": 1
       },
+      "sogoum": {
+        "supported": 1,
+        "details": [
+          "client.claim不可用，导致只能关闭客户端才能更新。"
+        ]
+      },
       "details": []
     },
     {
@@ -810,6 +880,9 @@
         "supported": 1
       },
       "baidum": {
+        "supported": 1
+      },
+      "sogoum": {
         "supported": 1
       },
       "details": []
@@ -861,6 +934,9 @@
       "baidum": {
         "supported": 1
       },
+      "sogoum": {
+        "supported": 1
+      },
       "details": [
         "【该问题已在M-54解决】<strong>Chrome & Samsung Internet</strong>: <code>URLSearchParams</code> <a href=\"https://code.google.com/p/chromium/issues/detail?id=412027#c11\">not supported yet</a>"
       ]
@@ -907,6 +983,9 @@
       "baidum": {
         "supported": 1
       },
+      "sogoum": {
+        "supported": 1
+      },
       "details": [
         "<a href=\"https://github.com/github/fetch\">可以进行Polyfill</a>"
       ]
@@ -949,6 +1028,9 @@
         "supported": 1
       },
       "baidum": {
+        "supported": 1
+      },
+      "sogoum": {
         "supported": 1
       },
       "details": [
@@ -1006,8 +1088,15 @@
           "存在Notification对象，但不可用"
         ]
       },
+      "sogoum": {
+        "supported": 1,
+        "details": [
+          "存在Notification对象，但不可用"
+        ]
+      },
       "details": [
-        "<strong>Edge</strong>: <a href=\"https://developer.microsoft.com/microsoft-edge/platform/status/cacheapi\">开发中</a>"
+        "<strong>Edge</strong>: <a href=\"https://developer.microsoft.com/microsoft-edge/platform/status/cacheapi\">开发中</a>",
+        "该属性要看手机系统的开放程度，并不一定能用。"
       ]
     },
     {
@@ -1046,6 +1135,9 @@
         "supported": 1
       },
       "baidum": {
+        "supported": 1
+      },
+      "sogoum": {
         "supported": 1
       },
       "details": []
@@ -1087,6 +1179,9 @@
         "details": [
           "提示不可用"
         ]
+      },
+      "sogoum": {
+        "supported": 0
       },
       "details": []
     },
@@ -1131,6 +1226,9 @@
         "supported": 0
       },
       "baidum": {
+        "supported": 0
+      },
+      "sogoum": {
         "supported": 0
       },
       "details": []
