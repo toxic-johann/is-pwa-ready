@@ -9,6 +9,7 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 body {
+  margin: 0;
   padding: 1rem;
   width: 100%;
   box-sizing: border-box;
