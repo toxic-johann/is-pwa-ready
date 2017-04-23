@@ -180,6 +180,12 @@ article.feature .results .result .icon.qqm {
   background-repeat: no-repeat;
   background-position: center;
 }
+article.feature .results .result .icon.360m {
+  background-image: url(/static/img/360m-8e122a9f1487dc9a86c2002fff0a997f.png);
+  background-size: 78%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 article.feature .results .result .support {
   margin: 0;
   text-indent: -5000px;

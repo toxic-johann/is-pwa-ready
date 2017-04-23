@@ -830,13 +830,22 @@
         "supported": 0
       },
       "uc": {
-        "supported": 1
+        "supported": 0.5,
+        "details": [
+          "存在Notification对象，但不可用"
+        ]
       },
       "xiaomi": {
-        "supported": 0
+        "supported": 0.5,
+        "details": [
+          "存在Notification对象，但不可用"
+        ]
       },
       "qqm": {
-        "supported": 1
+        "supported": 0.5,
+        "details": [
+          "存在Notification对象，但不可用"
+        ]
       },
       "details": [
         "<strong>Edge</strong>: <a href=\"https://developer.microsoft.com/microsoft-edge/platform/status/cacheapi\">开发中</a>"
