@@ -1,6 +1,6 @@
 this.onmessage = function(event) {
   function log () {
-    msg = Array.prototype.slice.call(arguments).join();
+    var msg = Array.prototype.slice.call(arguments).join();
     if (event && event.source) {
       console.log("event.source present");
       event.source.postMessage(msg);
