@@ -26,11 +26,18 @@
     },
     {
       "id": "uc",
-      "name": "UC"
+      "name": "UC",
+      "mobile": true
     },
     {
       "id": "xiaomi",
-      "name": "小米原生浏览器"
+      "name": "小米原生浏览器",
+      "mobile": true
+    },
+    {
+      "id": "qqm",
+      "name": "qq手机浏览器",
+      "mobile": true
     }
   ],
   "features": [
@@ -85,6 +92,12 @@
           "基于安卓原生浏览器，只要版本升级得当，则支持。"
         ]
       },
+      "qqm": {
+        "supported": 0.8,
+        "details": [
+          "已上船。内部已经使用，但仍有缺陷。"
+        ]
+      },
       "details": [
         "以上支持均不含 iOS 版本（参照Safari的支持度）。"
       ]
@@ -115,13 +128,19 @@
         "supported": 0
       },
       "uc": {
-        "supported": 0.5,
+        "supported": 0,
         "details": [
-          "127.0.0.1域下存在安全问题"
+          "报错说存在安全问题"
         ]
       },
       "xiaomi": {
         "supported": 1
+      },
+      "qqm": {
+        "supported": 0.3,
+        "details": [
+          "不能顺利进行，检测使用window.onmessage进行接收。"
+        ]
       },
       "details": [
         "<strong>Chrome & Opera</strong>: <code>messageEvent.source</code><a href=\"https://crbug.com/403693\">在worker中为<code>null</code></a>，但你可以传入你自己的<code>MessageChannel</code>来进行双向通信。【43后版本已修复】",
@@ -160,6 +179,9 @@
         "supported": 1
       },
       "xiaomi": {
+        "supported": 1
+      },
+      "qqm": {
         "supported": 1
       }
     },
@@ -206,6 +228,12 @@
           "笔者并没有调试工具，因此并不清晰。"
         ]
       },
+      "qqm": {
+        "supported": 0,
+        "details": [
+          "笔者并没有调试工具，因此并不清晰。"
+        ]
+      },
       "details": [
         "<strong>Chrome 和 Opera</strong>: 都可以在<a href=\"https://www.google.com/chrome/browser/canary.html\">Chrome Canary</a>和<a href=\"http://www.opera.com/developer\">Opera 开发者版本中</a>的资源面板中调试，前提是<a href=\"https://www.reddit.com/r/webdev/comments/2wz7s4/the_secret_extra_tools_within_chromes_dev_tools/\">启用了实验性超级开发者工具</a>。",
         "<strong>Chrome 和 Opera</strong>: ServiceWorker的控制台消息都会在 console 面板中输出。",
@@ -243,6 +271,9 @@
       "xiaomi": {
         "supported": 1
       },
+      "qqm": {
+        "supported": 1
+      },
       "details": [
       ]
     },
@@ -275,6 +306,9 @@
         "supported": 1
       },
       "xiaomi": {
+        "supported": 1
+      },
+      "qqm": {
         "supported": 1
       },
       "details": [
@@ -311,6 +345,9 @@
       },
       "xiaomi": {
         "supported": 1
+      },
+      "qqm": {
+        "supported": 1
       }
     },
     {
@@ -342,6 +379,9 @@
         "supported": 1
       },
       "xiaomi": {
+        "supported": 1
+      },
+      "qqm": {
         "supported": 1
       }
     },
@@ -375,6 +415,9 @@
       },
       "xiaomi": {
         "supported": 1
+      },
+      "qqm": {
+        "supported": 1
       }
     },
     {
@@ -407,6 +450,9 @@
       },
       "xiaomi": {
         "supported": 1
+      },
+      "qqm": {
+        "supported": 1
       }
     },
     {
@@ -435,10 +481,19 @@
         "supported": 0
       },
       "uc": {
-        "supported": 1
+        "supported": 0.3,
+        "details": [
+          "因postMessage缺失及client.claim不可用，暂无法确定，日后补充"
+        ]
       },
       "xiaomi": {
         "supported": 1
+      },
+      "qqm": {
+        "supported": 0.3,
+        "details": [
+          "因postMessage缺失及client.claim不可用，暂无法确定，日后补充"
+        ]
       }
     },
     {
@@ -471,6 +526,9 @@
       },
       "xiaomi": {
         "supported": 1
+      },
+      "qqm": {
+        "supported": 1
       }
     },
     {
@@ -500,11 +558,17 @@
       "uc": {
         "supported": 0,
         "details": [
-          "下一个版本实现"
+          "准备实现"
         ]
       },
       "xiaomi": {
         "supported": 1
+      },
+      "qqm": {
+        "supported": 0,
+        "details": [
+          "不可用"
+        ]
       }
     },
     {
@@ -537,6 +601,9 @@
       },
       "xiaomi": {
         "supported": 1
+      },
+      "qqm": {
+        "supported": 1
       }
     },
     {
@@ -564,10 +631,19 @@
         "supported": 0
       },
       "uc": {
-        "supported": 0.5
+        "supported": 0.5,
+        "details": [
+          "client.claim不可用，导致只能关闭客户端才能更新。"
+        ]
       },
       "xiaomi": {
         "supported": 1
+      },
+      "qqm": {
+        "supported": 0.5,
+        "details": [
+          "client.claim不可用，导致只能关闭客户端才能更新。"
+        ]
       }
     },
     {
@@ -603,6 +679,9 @@
         "supported": 0
       },
       "xiaomi": {
+        "supported": 1
+      },
+      "qqm": {
         "supported": 1
       }
     },
@@ -644,6 +723,9 @@
       "xiaomi": {
         "supported": 1
       },
+      "qqm": {
+        "supported": 1
+      },
       "details": [
         "【该问题已在M-54解决】<strong>Chrome & Samsung Internet</strong>: <code>URLSearchParams</code> <a href=\"https://code.google.com/p/chromium/issues/detail?id=412027#c11\">not supported yet</a>"
       ]
@@ -681,6 +763,9 @@
       "xiaomi": {
         "supported": 1
       },
+      "qqm": {
+        "supported": 1
+      },
       "details": [
         "<a href=\"https://github.com/github/fetch\">可以进行Polyfill</a>"
       ]
@@ -710,8 +795,14 @@
       "edge": {
         "supported": 0
       },
+      "uc": {
+        "supported": 0
+      },
       "xiaomi": {
         "supported": 1
+      },
+      "qqm": {
+        "supported": 0
       },
       "details": [
         "<strong>Edge</strong>: <a href=\"https://developer.microsoft.com/microsoft-edge/platform/status/cacheapi\">开发中</a>"
@@ -738,8 +829,14 @@
       "edge": {
         "supported": 0
       },
+      "uc": {
+        "supported": 1
+      },
       "xiaomi": {
         "supported": 0
+      },
+      "qqm": {
+        "supported": 1
       },
       "details": [
         "<strong>Edge</strong>: <a href=\"https://developer.microsoft.com/microsoft-edge/platform/status/cacheapi\">开发中</a>"
@@ -773,6 +870,9 @@
       },
       "xiaomi": {
         "supported": 1
+      },
+      "qqm": {
+        "supported": 1
       }
     },
     {
@@ -794,6 +894,12 @@
         "details": [
           "国内因不可描述的原因不可用"
         ]
+      },
+      "uc": {
+        "supported": 0
+      },
+      "qqm": {
+        "supported": 0
       }
     },
     {
@@ -828,6 +934,9 @@
         "supported": 0
       },
       "xiaomi": {
+        "supported": 0
+      },
+      "qqm": {
         "supported": 0
       }
     }

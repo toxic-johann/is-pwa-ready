@@ -30,6 +30,14 @@
       log("getAll", this.getAll);
       log('promise', Promise);
       log("Notification", Notification);
+      if(Notification) {
+        Notification.requestPermission(function (permission) {
+          // If the user accepts, let's create a notification
+          if (permission === "granted") {
+            var notification = new Notification("Hi there!");
+          }
+        });
+      }
     } catch (err) {
       log(err)
     }
