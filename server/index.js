@@ -38,7 +38,7 @@ app.use(async ctx => {
     }), options)
     return
   }
-  if(!url.match(/^\/$|^\/static\/(js|css|img|font)\/[\w-\.\?#=]+$|^\/demos\/[\w-\.]+\/?(\/[\w-\.\?#=]+)?$|^\/favicon\.ico$/)) {
+  if(!url.match(/^\/(\/[\w-\.\?#=]+)?$|^\/static\/(js|css|img|font)\/[\w-\.\?#=]+$|^\/demos\/[\w-\.]+\/?(\/[\w-\.\?#=]+)?$|^\/favicon\.ico$/)) {
     return ctx.throw(403)
   }
   const accepts = ctx.accepts()
