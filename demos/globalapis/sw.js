@@ -28,5 +28,6 @@ this.onmessage = function(event) {
   log("Cache", this.Cache);
   log("caches", this.caches);
   log("getAll", this.getAll);
+  log('promise', Promise);
 }
   
