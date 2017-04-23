@@ -109,13 +109,13 @@ article.feature .results .result .icon.chrome-canary {
   background-position: center;
 }
 article.feature .results .result .icon.firefox {
-  background-image: url(http://cdn.toxicjohann.com/ispwaready/img/firefox-1ed2b9def49be80558429e66ba4e68d7.png);
+  background-image: url(/static/img/firefox-1ed2b9def49be80558429e66ba4e68d7.png);
   background-size: 78%;
   background-repeat: no-repeat;
   background-position: center;
 }
 article.feature .results .result .icon.firefox-nightly {
-  background-image: url(http://cdn.toxicjohann.com/ispwaready/img/firefox-nightly-727ab31ef51e0bf0fa53f9d7248b6059.png);
+  background-image: url(/static/img/firefox-nightly-727ab31ef51e0bf0fa53f9d7248b6059.png);
   background-size: 78%;
   background-repeat: no-repeat;
   background-position: center;
@@ -139,25 +139,25 @@ article.feature .results .result .icon.opera-developer {
   background-position: center;
 }
 article.feature .results .result .icon.samsung-internet {
-  background-image: url(http://cdn.toxicjohann.com/ispwaready/img/samsung-internet-80e31ba006d9b9067ccc5d1536d89341.png);
+  background-image: url(/static/img/samsung-internet-80e31ba006d9b9067ccc5d1536d89341.png);
   background-size: 78%;
   background-repeat: no-repeat;
   background-position: center;
 }
 article.feature .results .result .icon.safari {
-  background-image: url(http://cdn.toxicjohann.com/ispwaready/img/safari-4b805a21b9bb41599362b130bbf462cd.png);
+  background-image: url(/static/img/safari-4b805a21b9bb41599362b130bbf462cd.png);
   background-size: 78%;
   background-repeat: no-repeat;
   background-position: center;
 }
 article.feature .results .result .icon.webkit {
-  background-image: url(http://cdn.toxicjohann.com/ispwaready/img/webkit-853b1e117618f934e4e846dda786a854.png);
+  background-image: url(/static/img/webkit-853b1e117618f934e4e846dda786a854.png);
   background-size: 78%;
   background-repeat: no-repeat;
   background-position: center;
 }
 article.feature .results .result .icon.uc {
-  background-image: url(http://cdn.toxicjohann.com/ispwaready/img/uc-0400fa202e33cca255420e54887ef9ce.png);
+  background-image: url(/static/img/uc-0400fa202e33cca255420e54887ef9ce.png);
   background-size: 78%;
   background-repeat: no-repeat;
   background-position: center;

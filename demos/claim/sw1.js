@@ -17,7 +17,7 @@ self.onfetch = function(event) {
   var url = new URL(event.request.url);
   if (url.pathname.endsWith('/404.json')) {
     event.respondWith(
-      new Response('{"This came from": "The ServiceWorker 1"}', {
+      new Response('{"This came from": "The ServiceWorker 2"}', {
         headers: {
           "Content-Type": "application/json"
         }

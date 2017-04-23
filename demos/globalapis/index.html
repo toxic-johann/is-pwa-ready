@@ -19,14 +19,55 @@
       log("Error", err);
     };
 
-    log("SW startup");
-    log("Request", this.Request);
-    log("Response", this.Response);
-    log("fetch", this.fetch);
-    log("Cache", this.Cache);
-    log("caches", this.caches);
-    log("getAll", this.getAll);
-    log("Notification", Notification);
+    try {
+      log("in window scope!!")
+      log("SW startup");
+      log("Request", this.Request);
+      log("Response", this.Response);
+      log("fetch", this.fetch);
+      log("Cache", this.Cache);
+      log("caches", this.caches);
+      log("getAll", this.getAll);
+      log("Notification", Notification);
+    } catch (err) {
+      log(err)
+    }
+
+    
+
+    window.onmessage = function(event) {
+      log("Got reply from serviceworker via window", event.data);
+    };
+
+    navigator.serviceWorker.onmessage = function(event) {
+      log("Got reply from serviceworker via navigator.serviceWorker", event.data);
+    };
+
+    if (window.MessageChannel) {
+      var messageChannel = new MessageChannel();
+
+      messageChannel.port1.onmessage = function(event) {
+        log("Got reply from serviceworker via channel", event.data);
+      };
+    }
+    
+    navigator.serviceWorker.ready.then(function(reg) {
+      log('ready', reg)
+      try {
+        reg.active.postMessage({
+          text: "Hi!",
+          port: messageChannel && messageChannel.port2
+        }, [messageChannel && messageChannel.port2]);
+      }
+      catch (e) {
+        log(e)
+        // getting a cloning error in Firefox
+        reg.active.postMessage({
+          text: "Hi!"
+        });
+      }
+    });
+
     navigator.serviceWorker.register('sw.js', {
       scope: './'
     }).then(function(sw) {

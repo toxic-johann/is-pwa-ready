@@ -27,8 +27,10 @@
   "homepage": "https://github.com/toxic-johann/is-pwa-ready#readme",
   "dependencies": {
     "koa": "^2.2.0",
+    "koa-bodyparser": "^4.2.0",
     "koa-send": "^4.0.0",
-    "koa-view": "^2.0.0"
+    "koa-view": "^2.0.0",
+    "web-push": "^3.2.2"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",

@@ -74,9 +74,9 @@
         ]
       },
       "uc": {
-        "supported": 0.5,
+        "supported": 0.8,
         "details": [
-          "开发中"
+          "已上船。已经实现了部分API，但仍有缺陷。"
         ]
       },
       "xiaomi": {
@@ -87,6 +87,45 @@
       },
       "details": [
         "以上支持均不含 iOS 版本（参照Safari的支持度）。"
+      ]
+    },
+    {
+      "name": "<code>postMessage</code> to &amp; from worker",
+      "description": "与worker沟通的通道。在移动端为了方便测试，利用此通道做了增强。因此大家可以先用此测试是否有效。<a href=\"https://w3c.github.io/ServiceWorker/#service-worker-postmessage\">规范</a>。 <a href=\"demos/postMessage/\">测试</a>。",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4.0
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 0.5,
+        "details": [
+          "127.0.0.1域下存在安全问题"
+        ]
+      },
+      "xiaomi": {
+        "supported": 1
+      },
+      "details": [
+        "<strong>Chrome & Opera</strong>: <code>messageEvent.source</code><a href=\"https://crbug.com/403693\">在worker中为<code>null</code></a>，但你可以传入你自己的<code>MessageChannel</code>来进行双向通信。【43后版本已修复】",
+        "<strong>Chrome & Opera</strong>: 较旧版本会将错误的将信息发送给了<code>window.onmessage</code>而不是<code>navigator.serviceWorker.onmessage</code>。【新版本正常】"
       ]
     },
     {
@@ -241,48 +280,10 @@
       "details": [
       ]
     },
-    {
-      "name": "<code>postMessage</code> to &amp; from worker",
-      "description": "<a href=\"https://w3c.github.io/ServiceWorker/#service-worker-postmessage\">规范</a>。 <a href=\"demos/postMessage/\">测试</a>。",
-      "chrome": {
-        "supported": 1,
-        "minVersion": 40
-      },
-      "firefox": {
-        "supported": 1,
-        "minVersion": 44
-      },
-      "opera": {
-        "supported": 1,
-        "minVersion": 27
-      },
-      "samsung-internet": {
-        "supported": 1,
-        "minVersion": 4.0
-      },
-      "safari": {
-        "supported": 0
-      },
-      "edge": {
-        "supported": 0
-      },
-      "uc": {
-        "supported": 0.5,
-        "details": [
-          "127.0.0.1域下存在安全问题"
-        ]
-      },
-      "xiaomi": {
-        "supported": 1
-      },
-      "details": [
-        "<strong>Chrome & Opera</strong>: <code>messageEvent.source</code><a href=\"https://crbug.com/403693\">在worker中为<code>null</code></a>，但你可以传入你自己的<code>MessageChannel</code>来进行双向通信。【43后版本已修复】",
-        "<strong>Chrome & Opera</strong>: 较旧版本会将错误的将信息发送给了<code>window.onmessage</code>而不是<code>navigator.serviceWorker.onmessage</code>。【新版本正常】"
-      ]
-    },
+    
     {
       "name": "Fetch事件",
-      "description": "在获取页面和所有子资源的时候出发。 <a href=\"https://w3c.github.io/ServiceWorker/#fetch-event-section\">规范</a>。 <a href=\"demos/fetchevent/\">测试</a>。",
+      "description": "在获取页面和所有子资源的时候触发。 <a href=\"https://w3c.github.io/ServiceWorker/#fetch-event-section\">规范</a>。 <a href=\"demos/fetchevent/\">测试</a>。",
       "chrome": {
         "supported": 1,
         "minVersion": 40
@@ -499,7 +500,7 @@
       "uc": {
         "supported": 0,
         "details": [
-          "有bug，联系中"
+          "下一个版本实现"
         ]
       },
       "xiaomi": {
@@ -540,7 +541,7 @@
     },
     {
       "name": "ServiceWorker生命周期",
-      "description": "容许下一个版本等待并在合适的时候掌控页面。",
+      "description": "容许下一个版本等待并在合适的时候掌控页面。<a href=\"demos/claim/?again=true\">测试（此测试前请先确保进行了claim的测试）</a>。",
       "chrome": {
         "supported": 1,
         "minVersion": 40
@@ -571,7 +572,7 @@
     },
     {
       "name": "<code>Request</code>",
-      "description": "<a href=\"https://fetch.spec.whatwg.org/#request\">规范</a>。 <a href=\"demos/globalapis/\">测试</a>。",
+      "description": "Fetch Api 中的请求对象。<a href=\"https://fetch.spec.whatwg.org/#request\">规范</a>。 <a href=\"demos/globalapis/\">测试</a>。",
       "chrome": {
         "supported": 1,
         "minVersion": 40
@@ -607,7 +608,7 @@
     },
     {
       "name": "<code>Response</code>",
-      "description": "<a href=\"https://fetch.spec.whatwg.org/#response\">规范</a>。 <a href=\"demos/globalapis/\">测试</a>。",
+      "description": "Fetch Api 中的响应对象。<a href=\"https://fetch.spec.whatwg.org/#response\">规范</a>。 <a href=\"demos/globalapis/\">测试</a>。",
       "chrome": {
         "supported": 1,
         "minVersion": 40
@@ -686,7 +687,7 @@
     },
     {
       "name": "<code>caches</code>",
-      "description": "<a href=\"https://w3c.github.io/ServiceWorker/#cache-objects\">规范</a>。 <a href=\"demos/globalapis/\">测试</a>。",
+      "description": "cachesStorage命名空间，一般在主线程和serviceWorker中都可找到， 但规范中只有serviceWorker可用。<a href=\"https://w3c.github.io/ServiceWorker/#cache-objects\">规范</a>。 <a href=\"demos/globalapis/\">测试</a>。",
       "chrome": {
         "supported": 1,
         "minVersion": 46
@@ -718,7 +719,7 @@
     },
     {
       "name": "<code>Notification</code>",
-      "description": "给用户发送通知<a href=\"https://notifications.spec.whatwg.org\">规范</a>。 <a href=\"demos/globalapis/\">测试</a>。",
+      "description": "给用户发送通知的对象。<a href=\"https://notifications.spec.whatwg.org\">规范</a>。 <a href=\"demos/globalapis/\">测试</a>。",
       "chrome": {
         "supported": 1
       },

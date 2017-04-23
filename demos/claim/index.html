@@ -20,29 +20,29 @@
       log("Error", err);
     };
 
+    var swName = location.search ? 'sw1.js' : 'sw.js';
     navigator.serviceWorker.oncontrollerchange = function() {
-      log("Page now controlled by ServiceWorker");
+      log("Page now controlled by ServiceWorker --" + swName);
       log("Even if you shift+reload, the ServiceWorker will take control of this page (using postMessage)");
     };
 
     if (navigator.serviceWorker.controller) {
       log("Page already claimed");
     }
-    else {
-      navigator.serviceWorker.register('sw.js', {
-        scope: './'
-      }).then(function(sw) {
-        log("Registered… attempting to claim the page");
-      }).catch(function(err) {
-        log("Error", err);
-      });
+    
+    navigator.serviceWorker.register(location.search ? 'sw1.js' : 'sw.js', {
+      scope: './'
+    }).then(function(sw) {
+      log("Registered… attempting to claim the page");
+    }).catch(function(err) {
+      log("Error", err);
+    });
 
-      navigator.serviceWorker.getRegistration().then(function(reg) {
-        if (reg.active) {
-          reg.active.postMessage("claim");
-        }
-      });      
-    }
+    navigator.serviceWorker.getRegistration().then(function(reg) {
+      if (reg && reg.active) {
+        reg.active.postMessage("claim");
+      }
+    });      
 
 
     document.querySelector('button').onclick = function(event) {

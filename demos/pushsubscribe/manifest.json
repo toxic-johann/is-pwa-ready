@@ -1,0 +1,20 @@
+{
+  "name": "PWA的进程",
+  "short_name": "PWA",
+  "lang": "zh-CN",
+  "theme_color": "#102a48",
+  "background_color": "#102a48",
+  "icons": [{  
+    "src": "https://p5.ssl.qhimg.com/t01245986c32f09718d.png",  
+    "sizes": "200x200",
+    "type": "image/png" 
+  }], 
+  // "start_url": "https://ispwaready.toxicjohann.com",
+  "start_url": "http://127.0.0.1",
+  "display": "fullscreen",  
+  "gcm_user_visible_only": true,
+  "permissions": [
+    "gcm"
+  ],
+  "gcm_sender_id": "820649352728"
+}
