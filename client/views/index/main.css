@@ -51,13 +51,14 @@ article.feature {
   & .results {
     display: flex;
     background-color: #fff;
-    padding-left: 0.4rem;
+    padding-left: 0.5%;
     flex-wrap: wrap;
     & .result {
-      margin: 0.4rem 0.4rem 0.4rem 0;
-      flex: 1;
+      margin: 0.5% 0.5% 0.5% 0;
+      flex-grow: 0;
+      flex-shrink: 0;
       position: relative;
-      width: 15%;
+      width: 12%;
       &.yes {
         background-color: #376D37;
       }
@@ -78,7 +79,7 @@ article.feature {
         margin: auto;
         font-size: 16px;
         text-indent: -5000px;
-        @each $icon in (chrome, chrome-canary, firefox, firefox-nightly, edge, opera, opera-developer, samsung-internet, safari, webkit, uc, xiaomi, qq, qqm, 360m) {
+        @each $icon in (chrome, chrome-canary, firefox, firefox-nightly, edge, opera, opera-developer, samsung-internet, safari, webkit, uc, xiaomi, qq, qqm, m360) {
           &.$(icon) {
             background-image: url(../../img/$(icon).png);
             background-size: 78%;

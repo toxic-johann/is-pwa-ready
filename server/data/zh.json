@@ -38,6 +38,11 @@
       "id": "qqm",
       "name": "qq手机浏览器",
       "mobile": true
+    },
+    {
+      "id": "m360",
+      "name": "360手机浏览器",
+      "mobile": true
     }
   ],
   "features": [
@@ -98,6 +103,12 @@
           "已上船。内部已经使用，但仍有缺陷。"
         ]
       },
+      "m360": {
+        "supported": 0.8,
+        "details": [
+          "已上船，部分API已实现，但仍有缺陷。"
+        ]
+      },
       "details": [
         "以上支持均不含 iOS 版本（参照Safari的支持度）。"
       ]
@@ -142,6 +153,9 @@
           "不能顺利进行，检测使用window.onmessage进行接收。"
         ]
       },
+      "m360": {
+        "supported": 1
+      },
       "details": [
         "<strong>Chrome & Opera</strong>: <code>messageEvent.source</code><a href=\"https://crbug.com/403693\">在worker中为<code>null</code></a>，但你可以传入你自己的<code>MessageChannel</code>来进行双向通信。【43后版本已修复】",
         "<strong>Chrome & Opera</strong>: 较旧版本会将错误的将信息发送给了<code>window.onmessage</code>而不是<code>navigator.serviceWorker.onmessage</code>。【新版本正常】"
@@ -182,6 +196,9 @@
         "supported": 1
       },
       "qqm": {
+        "supported": 1
+      },
+      "m360": {
         "supported": 1
       }
     },
@@ -225,13 +242,19 @@
       "uc": {
         "supported": 0,
         "details": [
-          "笔者并没有调试工具，因此并不清晰。"
+          "笔者并没有调试工具，因此并不确定。"
         ]
       },
       "qqm": {
         "supported": 0,
         "details": [
-          "笔者并没有调试工具，因此并不清晰。"
+          "笔者并没有调试工具，因此并不确定。"
+        ]
+      },
+      "m360": {
+        "supported": 0,
+        "details": [
+          "笔者并没有调试工具，因此并不确定。"
         ]
       },
       "details": [
@@ -274,6 +297,9 @@
       "qqm": {
         "supported": 1
       },
+      "m360": {
+        "supported": 1
+      },
       "details": [
       ]
     },
@@ -309,6 +335,9 @@
         "supported": 1
       },
       "qqm": {
+        "supported": 1
+      },
+      "m360": {
         "supported": 1
       },
       "details": [
@@ -348,7 +377,11 @@
       },
       "qqm": {
         "supported": 1
-      }
+      },
+      "m360": {
+        "supported": 1
+      },
+      "details": []
     },
     {
       "name": "<code>fetchEvent.request</code>",
@@ -383,7 +416,11 @@
       },
       "qqm": {
         "supported": 1
-      }
+      },
+      "m360": {
+        "supported": 1
+      },
+      "details": []
     },
     {
       "name": "<code>fetchEvent.respondWith()</code>",
@@ -418,7 +455,11 @@
       },
       "qqm": {
         "supported": 1
-      }
+      },
+      "m360": {
+        "supported": 1
+      },
+      "details": []
     },
     {
       "name": "Install事件",
@@ -453,7 +494,11 @@
       },
       "qqm": {
         "supported": 1
-      }
+      },
+      "m360": {
+        "supported": 1
+      },
+      "details": []
     },
     {
       "name": "<code>self.skipWaiting()</code>",
@@ -494,7 +539,11 @@
         "details": [
           "因postMessage缺失及client.claim不可用，暂无法确定，日后补充"
         ]
-      }
+      },
+      "m360": {
+        "supported": 1
+      },
+      "details": []
     },
     {
       "name": "Activate事件",
@@ -529,7 +578,11 @@
       },
       "qqm": {
         "supported": 1
-      }
+      },
+      "m360": {
+        "supported": 1
+      },
+      "details": []
     },
     {
       "name": "<code>clients.claim()</code>",
@@ -569,7 +622,11 @@
         "details": [
           "不可用"
         ]
-      }
+      },
+      "m360": {
+        "supported": 1
+      },
+      "details": []
     },
     {
       "name": "更新检测",
@@ -604,7 +661,11 @@
       },
       "qqm": {
         "supported": 1
-      }
+      },
+      "m360": {
+        "supported": 1
+      },
+      "details": []
     },
     {
       "name": "ServiceWorker生命周期",
@@ -644,7 +705,11 @@
         "details": [
           "client.claim不可用，导致只能关闭客户端才能更新。"
         ]
-      }
+      },
+      "m360": {
+        "supported": 1
+      },
+      "details": []
     },
     {
       "name": "<code>Request</code>",
@@ -683,7 +748,11 @@
       },
       "qqm": {
         "supported": 1
-      }
+      },
+      "m360": {
+        "supported": 1
+      },
+      "details": []
     },
     {
       "name": "<code>Response</code>",
@@ -726,6 +795,9 @@
       "qqm": {
         "supported": 1
       },
+      "m360": {
+        "supported": 1
+      },
       "details": [
         "【该问题已在M-54解决】<strong>Chrome & Samsung Internet</strong>: <code>URLSearchParams</code> <a href=\"https://code.google.com/p/chromium/issues/detail?id=412027#c11\">not supported yet</a>"
       ]
@@ -766,6 +838,9 @@
       "qqm": {
         "supported": 1
       },
+      "m360": {
+        "supported": 1
+      },
       "details": [
         "<a href=\"https://github.com/github/fetch\">可以进行Polyfill</a>"
       ]
@@ -803,6 +878,9 @@
       },
       "qqm": {
         "supported": 0
+      },
+      "m360": {
+        "supported": 1
       },
       "details": [
         "<strong>Edge</strong>: <a href=\"https://developer.microsoft.com/microsoft-edge/platform/status/cacheapi\">开发中</a>"
@@ -847,6 +925,12 @@
           "存在Notification对象，但不可用"
         ]
       },
+      "m360": {
+        "supported": 0.5,
+        "details": [
+          "存在Notification对象，但不可用"
+        ]
+      },
       "details": [
         "<strong>Edge</strong>: <a href=\"https://developer.microsoft.com/microsoft-edge/platform/status/cacheapi\">开发中</a>"
       ]
@@ -882,7 +966,11 @@
       },
       "qqm": {
         "supported": 1
-      }
+      },
+      "m360": {
+        "supported": 1
+      },
+      "details": []
     },
     {
       "name": "PushManager.subscribe()",
@@ -909,7 +997,14 @@
       },
       "qqm": {
         "supported": 0
-      }
+      },
+      "m360": {
+        "supported": 0,
+        "details": [
+          "提示不可用"
+        ]
+      },
+      "details": []
     },
     {
       "name": "Background sync",
@@ -947,7 +1042,11 @@
       },
       "qqm": {
         "supported": 0
-      }
+      },
+      "m360": {
+        "supported": 0
+      },
+      "details": []
     }
   ]
 }
