@@ -26,7 +26,7 @@
     },
     {
       "id": "uc",
-      "name": "UC",
+      "name": "UC手机浏览器",
       "mobile": true
     },
     {
@@ -42,6 +42,11 @@
     {
       "id": "m360",
       "name": "360手机浏览器",
+      "mobile": true
+    },
+    {
+      "id": "baidum",
+      "name": "百度手机浏览器",
       "mobile": true
     }
   ],
@@ -109,6 +114,12 @@
           "已上船，部分API已实现，但仍有缺陷。"
         ]
       },
+      "baidum": {
+        "supported": 1,
+        "details": [
+          "已上船，离线功能、加速功能能正常能用！！"
+        ]
+      },
       "details": [
         "以上支持均不含 iOS 版本（参照Safari的支持度）。"
       ]
@@ -152,6 +163,9 @@
         "details": [
           "不能顺利进行，检测使用window.onmessage进行接收。"
         ]
+      },
+      "baidum": {
+        "supported": 1
       },
       "m360": {
         "supported": 1
@@ -200,7 +214,11 @@
       },
       "m360": {
         "supported": 1
-      }
+      },
+      "baidum": {
+        "supported": 1
+      },
+      "details": []
     },
     {
       "name": "Debugging",
@@ -257,6 +275,12 @@
           "笔者并没有调试工具，因此并不确定。"
         ]
       },
+      "baidum": {
+        "supported": 0,
+        "details": [
+          "笔者并没有调试工具，因此并不确定。"
+        ]
+      },
       "details": [
         "<strong>Chrome 和 Opera</strong>: 都可以在<a href=\"https://www.google.com/chrome/browser/canary.html\">Chrome Canary</a>和<a href=\"http://www.opera.com/developer\">Opera 开发者版本中</a>的资源面板中调试，前提是<a href=\"https://www.reddit.com/r/webdev/comments/2wz7s4/the_secret_extra_tools_within_chromes_dev_tools/\">启用了实验性超级开发者工具</a>。",
         "<strong>Chrome 和 Opera</strong>: ServiceWorker的控制台消息都会在 console 面板中输出。",
@@ -300,6 +324,9 @@
       "m360": {
         "supported": 1
       },
+      "baidum": {
+        "supported": 1
+      },
       "details": [
       ]
     },
@@ -338,6 +365,9 @@
         "supported": 1
       },
       "m360": {
+        "supported": 1
+      },
+      "baidum": {
         "supported": 1
       },
       "details": [
@@ -381,6 +411,9 @@
       "m360": {
         "supported": 1
       },
+      "baidum": {
+        "supported": 1
+      },
       "details": []
     },
     {
@@ -418,6 +451,9 @@
         "supported": 1
       },
       "m360": {
+        "supported": 1
+      },
+      "baidum": {
         "supported": 1
       },
       "details": []
@@ -459,6 +495,9 @@
       "m360": {
         "supported": 1
       },
+      "baidum": {
+        "supported": 1
+      },
       "details": []
     },
     {
@@ -496,6 +535,9 @@
         "supported": 1
       },
       "m360": {
+        "supported": 1
+      },
+      "baidum": {
         "supported": 1
       },
       "details": []
@@ -543,6 +585,9 @@
       "m360": {
         "supported": 1
       },
+      "baidum": {
+        "supported": 1
+      },
       "details": []
     },
     {
@@ -580,6 +625,9 @@
         "supported": 1
       },
       "m360": {
+        "supported": 1
+      },
+      "baidum": {
         "supported": 1
       },
       "details": []
@@ -626,6 +674,9 @@
       "m360": {
         "supported": 1
       },
+      "baidum": {
+        "supported": 1
+      },
       "details": []
     },
     {
@@ -663,6 +714,9 @@
         "supported": 1
       },
       "m360": {
+        "supported": 1
+      },
+      "baidum": {
         "supported": 1
       },
       "details": []
@@ -709,6 +763,9 @@
       "m360": {
         "supported": 1
       },
+      "baidum": {
+        "supported": 1
+      },
       "details": []
     },
     {
@@ -750,6 +807,9 @@
         "supported": 1
       },
       "m360": {
+        "supported": 1
+      },
+      "baidum": {
         "supported": 1
       },
       "details": []
@@ -798,6 +858,9 @@
       "m360": {
         "supported": 1
       },
+      "baidum": {
+        "supported": 1
+      },
       "details": [
         "【该问题已在M-54解决】<strong>Chrome & Samsung Internet</strong>: <code>URLSearchParams</code> <a href=\"https://code.google.com/p/chromium/issues/detail?id=412027#c11\">not supported yet</a>"
       ]
@@ -841,6 +904,9 @@
       "m360": {
         "supported": 1
       },
+      "baidum": {
+        "supported": 1
+      },
       "details": [
         "<a href=\"https://github.com/github/fetch\">可以进行Polyfill</a>"
       ]
@@ -880,6 +946,9 @@
         "supported": 0
       },
       "m360": {
+        "supported": 1
+      },
+      "baidum": {
         "supported": 1
       },
       "details": [
@@ -931,6 +1000,12 @@
           "存在Notification对象，但不可用"
         ]
       },
+      "baidum": {
+        "supported": 1,
+        "details": [
+          "存在Notification对象，但不可用"
+        ]
+      },
       "details": [
         "<strong>Edge</strong>: <a href=\"https://developer.microsoft.com/microsoft-edge/platform/status/cacheapi\">开发中</a>"
       ]
@@ -970,6 +1045,9 @@
       "m360": {
         "supported": 1
       },
+      "baidum": {
+        "supported": 1
+      },
       "details": []
     },
     {
@@ -999,6 +1077,12 @@
         "supported": 0
       },
       "m360": {
+        "supported": 0,
+        "details": [
+          "提示不可用"
+        ]
+      },
+      "baidum": {
         "supported": 0,
         "details": [
           "提示不可用"
@@ -1044,6 +1128,9 @@
         "supported": 0
       },
       "m360": {
+        "supported": 0
+      },
+      "baidum": {
         "supported": 0
       },
       "details": []

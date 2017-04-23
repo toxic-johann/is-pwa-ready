@@ -186,6 +186,12 @@ article.feature .results .result .icon.m360 {
   background-repeat: no-repeat;
   background-position: center;
 }
+article.feature .results .result .icon.baidum {
+  background-image: url(/static/img/baidum-5aa226d827aaa41407c4860fed2d7ee3.png);
+  background-size: 78%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 article.feature .results .result .support {
   margin: 0;
   text-indent: -5000px;
