@@ -89,7 +89,7 @@ __webpack_require__(1);
 
 __webpack_require__(0);
 
-if ('serviceWorker' in navigator && "development" !== 'development') {
+if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js');
 }
 
