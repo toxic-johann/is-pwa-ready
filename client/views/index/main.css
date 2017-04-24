@@ -26,17 +26,18 @@ body {
       /* padding-left: 60%; */
     }
     & ul {
-      color: white !important;
+      color: white;
       width: 100%;
-      display: inline;
+      text-align: center;
+      padding: 0;
       & li {
         font-size: 1.4rem;
         display: inline;
         text-decoration: none;
         list-style: none;
-        &:not(:last-of-type):after {
-          content: '*';
-          margin: 0 1rem;
+        margin-right: 2rem;
+        & a {
+          color: inherit;
         }
       }
     }

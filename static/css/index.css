@@ -29,9 +29,10 @@ body > header h4 {
   /* padding-left: 60%; */
 }
 body > header ul {
-  color: white !important;
+  color: white;
   width: 100%;
-  display: inline;
+  text-align: center;
+  padding: 0;
 }
 body > header ul li {
   font-size: 21px;
@@ -39,11 +40,11 @@ body > header ul li {
   display: inline;
   text-decoration: none;
   list-style: none;
+  margin-right: 30px;
+  margin-right: 2rem;
 }
-body > header ul li:not(:last-of-type):after {
-  content: '*';
-  margin: 0 15px;
-  margin: 0 1rem;
+body > header ul li a {
+  color: inherit;
 }
 article.feature {
   max-width: 510px;
