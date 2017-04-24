@@ -51,6 +51,8 @@ app.use(async ctx => {
     await send(ctx, path + 'index.html')
   } else if (isDemo) {
     await send(ctx, url)
+  } else if(url === '/sw.js') {
+    await send(ctx, './static/js/sw.js')
   } else {
     ctx.state = state
     await ctx.render('index')

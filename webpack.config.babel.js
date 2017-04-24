@@ -31,7 +31,7 @@ export default function ({mode = 'development', port, nodePort} = {}) {
       rules: [
         {
           test: /\.js$/,
-          exclude: /node_modules/,
+          exclude: /node_modules|sw\.js$/,
           use: [{
             loader: 'babel-loader',
             options: {

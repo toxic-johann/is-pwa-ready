@@ -1,3 +1,5 @@
 import './main.html'
 import './main.css'
-console.log('what')
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js')
+}

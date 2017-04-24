@@ -9,8 +9,7 @@
     "sizes": "200x200",
     "type": "image/png" 
   }], 
-  // "start_url": "https://ispwaready.toxicjohann.com",
-  "start_url": "http://127.0.0.1",
+  "start_url": "https://ispwaready.toxicjohann.com",
   "display": "fullscreen",  
   "gcm_user_visible_only": true,
   "permissions": [
