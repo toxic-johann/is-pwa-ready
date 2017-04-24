@@ -269,7 +269,7 @@ article.feature .details li {
   padding: 6px 15px;
   padding: 0.4rem 1rem;
   white-space: pre-wrap;
-  word-break: break-word;
+  word-break: break-all;
 }
 article.feature .details > li:nth-child(even) {
   background: #F1F1F1;
