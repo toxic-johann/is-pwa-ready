@@ -29,7 +29,7 @@
       </header>
       <div class="results">
         {% for browser in browsers %}
-          <section class="result {% if feature[browser.id].supported == 0.5 %}ish{% elif feature[browser.id].supported %}yes{% else %}no{% endif %}">
+          <section class="result {% if feature[browser.id].supported == 0.5 %}ish{% elif feature[browser.id].supported == 0.8 %} soso {% elif feature[browser.id].supported %} yes{% else %}no{% endif %}">
             <h2 class="icon {{ feature[browser.id].icon|default(browser.id) }}">{{browser.name}}</h2>
             {% if browser.mobile %}
               <span class="isMobile">m</span>

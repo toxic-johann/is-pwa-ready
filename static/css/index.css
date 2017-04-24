@@ -3,8 +3,9 @@ html {
   line-height: 1.4;
   min-height: 100%;
   width: 100%;
+  /* background: #376d37;  */
   background: #102a48; 
-  background: #102a48 radial-gradient(circle closest-corner at 50% 39px, #166ab9, #013668, #102a48) no-repeat;
+  /* background: #102a48 radial-gradient(circle closest-corner at 50% 39px, #166ab9, #013668, #102a48) no-repeat; */
   overflow-y: scroll;
   -webkit-text-size-adjust: 100%;
 }
@@ -97,6 +98,9 @@ article.feature .results .result {
 }
 article.feature .results .result.yes {
   background-color: #376D37;
+}
+article.feature .results .result.soso {
+  background-color: #A8BD04;
 }
 article.feature .results .result.ish {
   background-color: #D5BB00;
