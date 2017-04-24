@@ -93,7 +93,7 @@ article.feature .results .result {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   position: relative;
-  width: 12%;
+  width: 16%;
 }
 article.feature .results .result.yes {
   background-color: #376D37;
@@ -303,6 +303,9 @@ article.feature .details > li:nth-child(even) {
   article.feature .results, article.feature .details {
     box-sizing: border-box;
     width: 65%;
+  }
+  article.feature .results .result {
+    width: 12%;
   }
     
 }

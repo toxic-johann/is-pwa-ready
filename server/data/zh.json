@@ -451,6 +451,9 @@
       "baidum": {
         "supported": 1
       },
+      "sogoum": {
+        "supported": 1
+      },
       "details": []
     },
     {
@@ -831,7 +834,7 @@
         "supported": 1
       },
       "sogoum": {
-        "supported": 1,
+        "supported": 0.5,
         "details": [
           "client.claim不可用，导致只能关闭客户端才能更新。"
         ]
@@ -1089,7 +1092,7 @@
         ]
       },
       "sogoum": {
-        "supported": 1,
+        "supported": 0.5,
         "details": [
           "存在Notification对象，但不可用"
         ]

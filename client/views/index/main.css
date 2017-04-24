@@ -77,7 +77,7 @@ article.feature {
       flex-grow: 0;
       flex-shrink: 0;
       position: relative;
-      width: 12%;
+      width: 16%;
       &.yes {
         background-color: #376D37;
       }
@@ -185,6 +185,9 @@ article.feature {
     & .details {
       box-sizing: border-box;
       width: 65%;
+    }
+    & .results .result {
+      width: 12%;
     }
   }
     
