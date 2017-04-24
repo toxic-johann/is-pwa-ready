@@ -93,7 +93,7 @@
         ]
       },
       "edge": {
-        "supported": 1,
+        "supported": 0.8,
         "details": [
           "<a href=\"https://developer.microsoft.com/microsoft-edge/platform/status/serviceworker\">开发中</a>。edge 15可手动打开。"
         ]
