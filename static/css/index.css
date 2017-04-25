@@ -1,7 +1,6 @@
 html {
   font-size: 15px;
   line-height: 1.4;
-  min-height: 100%;
   width: 100%;
   /* background: #376d37;  */
   background: #102a48; 
@@ -20,8 +19,8 @@ body {
   padding: 15px;
   padding: 1rem;
   width: 100%;
-  box-sizing: border-box;
-  overflow-x: hidden
+  box-sizing: border-box
+  /* overflow-x: hidden; */
 }
 body > header {
   }
