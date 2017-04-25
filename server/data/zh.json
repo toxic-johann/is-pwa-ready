@@ -1146,6 +1146,68 @@
       "details": []
     },
     {
+      "name": "Web App Manifest",
+      "description": "添加到主屏幕功能。<a href=\"https://w3c.github.io/manifest/\">规范</a>。直接在浏览器中选择添加到桌面／主屏幕即可。但注意要在手机上授权。",
+      "chrome": {
+        "supported": 1
+      },
+      "firefox": {
+        "supported": 1
+      },
+      "opera": {
+        "supported": 0.5,
+        "details": [
+          "可以添加到主屏幕，但是并不符合规范，自定义图标无效"
+        ]
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "details": [
+          "手上缺乏工具，待验证"
+        ]
+      },
+      "safari": {
+        "supported": 0,
+        "details": [
+          "具有自己完整独立的逻辑，可定制桌面图标，但并不遵循规范。"
+        ]
+      },
+      "edge": {
+        "supported": 0,
+        "details": [
+          "手上缺乏工具，待验证"
+        ]
+      },
+      "uc": {
+        "supported": 0.5,
+        "details": [
+          "可以添加到主屏幕，但是并不符合规范，自定义图标无效"
+        ]
+      },
+      "qqm": {
+        "supported": 0
+      },
+      "m360": {
+        "supported": 0.5,
+        "details": [
+          "可以添加到主屏幕，但是并不符合规范，自定义图标无效"
+        ]
+      },
+      "baidum": {
+        "supported": 0.5,
+        "details": [
+          "可以添加到主屏幕，但是并不符合规范，自定义图标无效"
+        ]
+      },
+      "sogoum": {
+        "supported": 0.5,
+        "details": [
+          "可以添加到主屏幕，但是并不符合规范，自定义图标无效"
+        ]
+      },
+      "details": []
+    },
+    {
       "name": "PushManager.subscribe()",
       "description": "订阅后的结果才能推送。但是国内，由于gcm/fcm访问问题。绝大部分浏览器推送订阅失效。<a href=\"https://w3c.github.io/push-api/#widl-PushManager-subscribe-Promise-PushSubscription--PushSubscriptionOptions-options\">规范</a>。<a href=\"demos/pushsubscribe/\">测试</a>。",
       "chrome": {
