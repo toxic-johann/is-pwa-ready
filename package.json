@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon --watch server --watch views -e js,html,json & webpack -w",
     "build": "webpack --env.mode='production'",
-    "mos": "git pull origin master && pm2 restart server/index.js",
+    "mos": "git pull origin master && pm2 restart pm2.json",
     "test": "webpack && jsonlint server/data/*.json"
   },
   "repository": {
@@ -46,6 +46,7 @@
     "html-loader": "^0.4.5",
     "jsonlint": "^1.6.2",
     "nodemon": "^1.11.0",
+    "pm2": "^2.4.5",
     "postcss-cssnext": "^2.10.0",
     "postcss-loader": "^1.3.3",
     "precss": "^1.4.0",
