@@ -38,6 +38,10 @@ app.use(async ctx => {
     }), options)
     return
   }
+  if(url.match(/^\/googleb2d01223dfd5850d(\.html)?$/)) {
+    await ctx.render('googleb2d01223dfd5850d')
+    return
+  }
   if(!url.match(/^\/([\w-\.\?&#=]*)?$|^\/static\/(js|css|img|font)\/[\w-\.\?&#=]*$|^\/demos\/[\w-\.]+\/?(\/[\w-\.\?&#=]*)?$|^\/favicon\.ico$/)) {
     return ctx.throw(403)
   }
