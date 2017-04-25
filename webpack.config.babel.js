@@ -3,8 +3,8 @@ import path from 'path'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import Visualizer from 'webpack-visualizer-plugin'
 import webpack from 'webpack'
-import qiniuPlugin from './qiniu.js'
 export default function ({mode = 'development', port, nodePort} = {}) {
+  const qiniuPlugin = mode === 'development' ? {} : require('./qiniu.js')
   const viewRoot = './client/views/'
   const staticRoot = './static'
   const files = glob.sync(viewRoot + '*/main.js')
