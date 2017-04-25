@@ -7,7 +7,7 @@
     "start": "nodemon --watch server --watch views -e js,html,json & webpack -w",
     "build": "webpack --env.mode='production'",
     "mos": "git pull origin master && pm2 restart server/index.js",
-    "test": "webpack"
+    "test": "webpack && node server/index.js"
   },
   "repository": {
     "type": "git",
