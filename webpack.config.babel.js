@@ -3,6 +3,7 @@ import path from 'path'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import Visualizer from 'webpack-visualizer-plugin'
 import webpack from 'webpack'
+import WebpackMd5Hash from 'webpack-md5-hash'
 export default function ({mode = 'development', port, nodePort} = {}) {
   const qiniuPlugin = mode === 'development' ? {} : require('./qiniu.js')
   const viewRoot = './client/views/'
@@ -17,15 +18,15 @@ export default function ({mode = 'development', port, nodePort} = {}) {
   console.log('\x1b[35m%s\x1b[0m', '[' + new Date().toLocaleString() + ']', '--webpack start')
   const cssLoader = ExtractTextPlugin.extract({
     fallback: 'style-loader',
-    use: ['css-loader', 'postcss-loader']
+    use: ['css-loader?minimize', 'postcss-loader']
   })
   return {
     entry,
     output: {
-      filename: 'js/[name].js',
+      filename: mode === 'development' ? 'js/[name].js' : 'js/[name]-[chunkhash].js',
+      // chunkFilename: mode === 'development' ? 'js/[name].js' : 'js/[name]-[chuckhash].js',
       path: path.resolve(staticRoot),
-      publicPath: mode === 'development' ? '/static/' : 'http://cdn.toxicjohann.com/ispwaready/',
-      chunkFilename: '[name]-[hash].js'
+      publicPath: mode === 'development' ? '/static/' : 'https://resource.toxicjohann.com/ispwaready/'
     },
     module: {
       rules: [
@@ -104,10 +105,11 @@ export default function ({mode = 'development', port, nodePort} = {}) {
           NODE_ENV: '"' + mode + '"'
         }
       }),
-      new ExtractTextPlugin({filename: './css/[name].css'}),
+      new ExtractTextPlugin({filename: mode === 'development' ? './css/[name].css' : './css/[name]-[contenthash].css'}),
       new Visualizer()
     ].concat(mode !== 'development'
       ? [
+        new WebpackMd5Hash(),
           // css minify will finished by stc
         new webpack.optimize.UglifyJsPlugin({
           test: /\.js$/,

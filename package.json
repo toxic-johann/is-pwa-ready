@@ -5,7 +5,7 @@
   "main": "server/index.js",
   "scripts": {
     "start": "nodemon --watch server --watch views -e js,html,json & webpack -w",
-    "build": "webpack --env.mode='production'",
+    "build": "rm -f ./static/css/*-*.css && rm -f ./static/js/*-*.js && webpack --env.mode='production'",
     "mos": "git pull origin master && pm2 restart pm2.json",
     "test": "webpack && jsonlint server/data/*.json"
   },
@@ -54,6 +54,7 @@
     "style-loader": "^0.16.1",
     "url-loader": "^0.5.8",
     "webpack": "^2.4.1",
+    "webpack-md5-hash": "0.0.5",
     "webpack-visualizer-plugin": "^0.1.11"
   }
 }
