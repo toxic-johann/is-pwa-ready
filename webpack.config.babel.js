@@ -4,15 +4,29 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import Visualizer from 'webpack-visualizer-plugin'
 import webpack from 'webpack'
 import WebpackMd5Hash from 'webpack-md5-hash'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
 export default function ({mode = 'development', port, nodePort} = {}) {
   const qiniuPlugin = mode === 'development' ? {} : require('./qiniu.js')
   const viewRoot = './client/views/'
   const staticRoot = './static'
-  const files = glob.sync(viewRoot + '*/main.js')
-  const entry = {}
-  files.forEach(filename => {
+  const jsFiles = glob.sync(viewRoot + '*/main.js')
+  const entry = jsFiles.reduce((entry, filename) => {
     const name = path.posix.relative(viewRoot, filename).replace(/\/main\.js/, '')
     entry[name] = filename
+    return entry
+  }, {})
+  const htmlFiles = glob.sync(viewRoot + '*/main.html')
+  const htmlWebpackPlugins = htmlFiles.map(template => {
+    const [, path] = template.match(/\.\/client\/views\/([^\/]+)\/main\.html/)
+    return new HtmlWebpackPlugin({
+      chunks: [path],
+      filename: '../views/' + path + '.html',
+      template,
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true
+      }
+    })
   })
   console.log(entry)
   console.log('\x1b[35m%s\x1b[0m', '[' + new Date().toLocaleString() + ']', '--webpack start')
@@ -24,7 +38,7 @@ export default function ({mode = 'development', port, nodePort} = {}) {
     entry,
     output: {
       filename: mode === 'development' ? 'js/[name].js' : 'js/[name]-[chunkhash].js',
-      // chunkFilename: mode === 'development' ? 'js/[name].js' : 'js/[name]-[chuckhash].js',
+      // chunkFilename: mode === 'development' ? 'js/[name].js' : 'js/[name]-[chunkhash].js',
       path: path.resolve(staticRoot),
       publicPath: mode === 'development' ? '/static/' : 'https://resource.toxicjohann.com/ispwaready/'
     },
@@ -45,29 +59,29 @@ export default function ({mode = 'development', port, nodePort} = {}) {
           test: /\.css$/,
           use: cssLoader
         },
-        {
-          test: /\.html$/,
-          use: [
-            {
-              loader: 'file-loader',
-              options: {
-                name: '[path][name].[ext]',
-                outputPath: url => {
-                  const filename = url.match(/\/main.html$/)
-                    ? url.replace(/\/main/, '')
-                    : url
-                  return '../' + path.relative('./client', filename)
-                }
-              }
-            },
-            'extract-loader',
-            'html-loader?' + JSON.stringify({
-              ignoreCustomFragments: [/\{\{.*?}}|\{%.*?%}|\{=.*?=}/],
-              root: path.resolve('./client'),
-              attrs: ['img:src'],
-            })
-          ]
-        },
+        // {
+        //   test: /\.html$/,
+        //   use: [
+        //     {
+        //       loader: 'file-loader',
+        //       options: {
+        //         name: '[path][name].[ext]',
+        //         outputPath: url => {
+        //           const filename = url.match(/\/main.html$/)
+        //             ? url.replace(/\/main/, '')
+        //             : url
+        //           return '../' + path.relative('./client', filename)
+        //         }
+        //       }
+        //     },
+        //     'extract-loader',
+        //     'html-loader?' + JSON.stringify({
+        //       ignoreCustomFragments: [/\{\{.*?}}|\{%.*?%}|\{=.*?=}/],
+        //       root: path.resolve('./client'),
+        //       attrs: ['img:src'],
+        //     })
+        //   ]
+        // },
         {
           test: /\.(png|jpg|jpeg|gif)$/,
           use: 'url-loader?limit=10000&name=img/[name]-[hash].[ext]'
@@ -105,7 +119,8 @@ export default function ({mode = 'development', port, nodePort} = {}) {
           NODE_ENV: '"' + mode + '"'
         }
       }),
-      new ExtractTextPlugin({filename: mode === 'development' ? './css/[name].css' : './css/[name]-[contenthash].css'}),
+      new ExtractTextPlugin({filename: mode === 'development' ? './css/[name].css' : 'css/[name]-[contenthash].css'}),
+      ...htmlWebpackPlugins,
       new Visualizer()
     ].concat(mode !== 'development'
       ? [
