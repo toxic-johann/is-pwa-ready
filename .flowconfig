@@ -1,0 +1,9 @@
+[ignore]
+.*/node_modules/.*
+.*/demos/.*
+.*/static/.*
+.*/views/.*
+[include]
+[libs]
+flow
+[options]

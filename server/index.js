@@ -42,7 +42,7 @@ app.use(async ctx => {
     await ctx.render('googleb2d01223dfd5850d')
     return
   }
-  if(!url.match(/^\/([\w-\.\?&#=]*)?$|^\/static\/(js|css|img|font)\/[\w-\.\?&#=]*$|^\/demos\/[\w-\.]+\/?(\/[\w-\.\?&#=]*)?$|^\/favicon\.ico$/)) {
+  if(!url.match(/^\/(auto\/)?([\w-\.\?&#=]*)?$|^\/static\/(js|css|img|font)\/[\w-\.\?&#=]*$|^\/demos\/[\w-\.]+\/?(\/[\w-\.\?&#=]*)?$|^\/favicon\.ico$/)) {
     return ctx.throw(403)
   }
   const accepts = ctx.accepts()
@@ -57,9 +57,12 @@ app.use(async ctx => {
     await send(ctx, url)
   } else if(url === '/sw.js') {
     await send(ctx, './static/js/sw.js')
+  } else if(url.match(/sw\.js/)) {
+    await send(ctx, './static/js' + url)
   } else {
+    const [, path] = url.split('/')
     ctx.state = state
-    await ctx.render('index')
+    await ctx.render(path || 'index')
   }
 })
 app.listen(3000)

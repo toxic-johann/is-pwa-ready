@@ -1,7 +1,5 @@
 module.exports = {
   'globals': {
-    '$': true,
-    'think': true,
   },
   'env': {
     'browser': true,

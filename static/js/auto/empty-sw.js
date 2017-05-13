@@ -63,67 +63,16 @@
 /******/ 	__webpack_require__.p = "/static/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 27);
+/******/ 	return __webpack_require__(__webpack_require__.s = 20);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 27:
+/***/ 20:
 /***/ (function(module, exports) {
 
-var cacheKey = 'v1';
-self.addEventListener('install', function (event) {
-  event.waitUntil(fetch('/').then(function (response) {
-    caches.open(cacheKey).then(function (cache) {
-      cache.put('/', response);
-      self.skipWaiting();
-    });
-  }));
-});
+console.log('i am empty')
 
-self.addEventListener('active', function (event) {
-  return clients.claim();
-});
-
-function remote(request) {
-  var noCors = !request.url.match(location.origin);
-  return (noCors ? fetch(request.url, { 'no-cors': true }) : fetch(request)).then(function (response) {
-    var copy = response.clone();
-    if (response.ok) {
-      caches.open(cacheKey).then(function (cache) {
-        return cache.put(request, response);
-      });
-    }
-    return copy;
-  }).catch(function (err) {
-    throw err;
-  });
-}
-
-function local(request) {
-  return caches.match(request);
-}
-
-// 监听fetch
-self.addEventListener('fetch', function (event) {
-  var request = event.request;
-  var method = request.method,
-      url = request.url,
-      headers = request.headers;
-
-  if (method === 'GET') {
-    if (headers.get('Accept').indexOf('text/html') !== -1 || url.match(/(css|js)$/)) {
-      var remoteAsk = remote(request);
-      event.respondWith(local(request).then(function (cacheResponse) {
-        return cacheResponse || remoteAsk;
-      }));
-    } else if (url.match(/(png|jpg|jpeg)$/)) {
-      event.respondWith(local(request).then(function (cacheResponse) {
-        return cacheResponse || remote(request);
-      }));
-    }
-  }
-});
 
 /***/ })
 

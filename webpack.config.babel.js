@@ -15,6 +15,11 @@ export default function ({mode = 'development', port, nodePort} = {}) {
     entry[name] = filename
     return entry
   }, {})
+  const autoSWFiles = glob.sync(viewRoot + '*/*/sw.js')
+  autoSWFiles.map(filename => {
+    const name = path.posix.relative(viewRoot, filename).replace(/\/sw\.js/, '-sw')
+    entry[name] = filename
+  })
   const htmlFiles = glob.sync(viewRoot + '*/main.html')
   const htmlWebpackPlugins = htmlFiles.map(template => {
     const [, path] = template.match(/\.\/client\/views\/([^\/]+)\/main\.html/)
@@ -46,12 +51,17 @@ export default function ({mode = 'development', port, nodePort} = {}) {
       rules: [
         {
           test: /\.js$/,
-          exclude: /node_modules|sw\.js$/,
+          exclude: /node_modules$/,
           use: [{
             loader: 'babel-loader',
             options: {
+              babelrc: false,
               cacheDirectory: './.babel_cache/',
-              presets: [['es2015', {'modules': false}]]
+              presets: [
+                ['es2015', {'loose': true, 'modules': false}]
+              ],
+              plugins: ['async-to-promises']
+              // presets: ['babili']
             }
           }]
         },
@@ -59,29 +69,6 @@ export default function ({mode = 'development', port, nodePort} = {}) {
           test: /\.css$/,
           use: cssLoader
         },
-        // {
-        //   test: /\.html$/,
-        //   use: [
-        //     {
-        //       loader: 'file-loader',
-        //       options: {
-        //         name: '[path][name].[ext]',
-        //         outputPath: url => {
-        //           const filename = url.match(/\/main.html$/)
-        //             ? url.replace(/\/main/, '')
-        //             : url
-        //           return '../' + path.relative('./client', filename)
-        //         }
-        //       }
-        //     },
-        //     'extract-loader',
-        //     'html-loader?' + JSON.stringify({
-        //       ignoreCustomFragments: [/\{\{.*?}}|\{%.*?%}|\{=.*?=}/],
-        //       root: path.resolve('./client'),
-        //       attrs: ['img:src'],
-        //     })
-        //   ]
-        // },
         {
           test: /\.(png|jpg|jpeg|gif)$/,
           use: 'url-loader?limit=10000&name=img/[name]-[hash].[ext]'
@@ -93,8 +80,10 @@ export default function ({mode = 'development', port, nodePort} = {}) {
       ]
     },
     resolve: {
-            // 模块别名定义，方便后续直接引用别名，无须多写长长的地址
+      // 模块别名定义，方便后续直接引用别名，无须多写长长的地址
       alias: {
+        'utils': path.resolve('./client/views/common/utils.js'),
+        'store': path.resolve('./client/views/common/store.js')
       },
       enforceExtension: false,
       modules: [
