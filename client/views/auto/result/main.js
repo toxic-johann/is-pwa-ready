@@ -4,8 +4,8 @@ import {testCaseKeys} from '../helper'
 import {info} from '../helper'
 function genRGB (score) {
   return [
-    141 - 141 * score,
-    49 + 101 * score,
+    ~~(141 - 141 * score),
+    ~~(49 + 101 * score),
     24
   ]
 }
