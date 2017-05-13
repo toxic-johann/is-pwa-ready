@@ -73,7 +73,7 @@
 "use strict";
 /* unused harmony export inWindowScope */
 /* harmony export (immutable) */ __webpack_exports__["c"] = isObject;
-/* harmony export (immutable) */ __webpack_exports__["f"] = isNumeric;
+/* harmony export (immutable) */ __webpack_exports__["h"] = isNumeric;
 /* unused harmony export isEmpty */
 /* unused harmony export isEvent */
 /* unused harmony export isBlob */
@@ -83,8 +83,8 @@
 /* harmony export (immutable) */ __webpack_exports__["a"] = isPromise;
 /* harmony export (immutable) */ __webpack_exports__["d"] = sleep;
 /* harmony export (immutable) */ __webpack_exports__["e"] = search2obj;
-/* harmony export (immutable) */ __webpack_exports__["h"] = obj2search;
-/* harmony export (immutable) */ __webpack_exports__["g"] = promisifyOneTimeEventListener;
+/* harmony export (immutable) */ __webpack_exports__["g"] = obj2search;
+/* harmony export (immutable) */ __webpack_exports__["f"] = promisifyOneTimeEventListener;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_assert__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_assert___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_assert__);
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -1781,7 +1781,7 @@ var list = ['Request', 'Response', 'fetch', 'Cache', 'caches', 'Promise', 'Notif
     step++;
     return navigator.serviceWorker.register('/auto/empty-sw.js');
   }).then(function () {
-    location.search = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_utils__["h" /* obj2search */])(Object.assign(search, { step: step }));
+    location.search = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_utils__["g" /* obj2search */])(Object.assign(search, { step: step }));
   });
 });
 
@@ -1851,7 +1851,7 @@ function controllerchangeCauseByNormalInstall(evt) {
   }).then(function () {});
 }
 function genWaiter(fn) {
-  return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_utils__["g" /* promisifyOneTimeEventListener */])(fn, navigator.serviceWorker, 'controllerchange');
+  return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_utils__["f" /* promisifyOneTimeEventListener */])(fn, navigator.serviceWorker, 'controllerchange');
 }
 
 /* harmony default export */ __webpack_exports__["a"] = (function () {
@@ -1939,7 +1939,7 @@ function genWaiter() {
   if (window.MessageChannel) {
     messageChannel = new MessageChannel();
     console.log(messageChannel.port1.addEventListener);
-    tasks.push(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_utils__["g" /* promisifyOneTimeEventListener */])(function (event) {
+    tasks.push(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_utils__["f" /* promisifyOneTimeEventListener */])(function (event) {
       return Promise.resolve().then(function () {
         console.log('Got reply from serviceWorker via channel', event.data);
         return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 0.8, 'main-msg-got');
@@ -1948,19 +1948,19 @@ function genWaiter() {
       }).then(function () {});
     }, messageChannel.port1, 'message'));
   }
-  return Promise.race(tasks.concat([__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_utils__["g" /* promisifyOneTimeEventListener */])(function (error) {
+  return Promise.race(tasks.concat([__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_utils__["f" /* promisifyOneTimeEventListener */])(function (error) {
     return Promise.resolve().then(function () {
       console.error(error);
       return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 0, 'main-msg-got');
     }).then(function () {});
-  }, window, 'error'), __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_utils__["g" /* promisifyOneTimeEventListener */])(function (event) {
+  }, window, 'error'), __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_utils__["f" /* promisifyOneTimeEventListener */])(function (event) {
     return Promise.resolve().then(function () {
       console.warn('Got reply from serviceWorker via window', event.data);
       return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 0.5, 'main-msg-got');
     }).then(function () {
       return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 'window', 'main-msg-got-by');
     }).then(function () {});
-  }, window, 'message'), __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_utils__["g" /* promisifyOneTimeEventListener */])(function (event) {
+  }, window, 'message'), __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_utils__["f" /* promisifyOneTimeEventListener */])(function (event) {
     return Promise.resolve().then(function () {
       console.log('Got reply from serviceWorker via navigator.serviceWorker', event.data);
       return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'main-msg-got');
@@ -1989,7 +1989,7 @@ function genWaiter() {
     messageWaiter = genWaiter();
 
     console.log(navigator.serviceWorker);
-    activedWaiter = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_utils__["g" /* promisifyOneTimeEventListener */])(function (evt) {
+    activedWaiter = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_utils__["f" /* promisifyOneTimeEventListener */])(function (evt) {
       return console.log('controllerchange');
     }, navigator.serviceWorker, 'controllerchange');
     return navigator.serviceWorker.register('/auto/postmessage-sw.js', { scope: '/auto/' });
@@ -2039,6 +2039,9 @@ function genWaiter() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_utils__ = __webpack_require__(0);
 
 
+function genRGB(score) {
+  return [141 - 141 * score, 49 + 101 * score, 24];
+}
 /* harmony default export */ __webpack_exports__["a"] = (function () {
   function _recursive() {
     if (i < keys.length) {
@@ -2047,10 +2050,13 @@ function genWaiter() {
         return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].get('feature', key);
       }).then(function (_resp) {
         scoreStr = _resp;
-        isNote = scoreStr && !__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_utils__["f" /* isNumeric */])(scoreStr);
+        isNote = scoreStr && !__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_utils__["h" /* isNumeric */])(scoreStr);
         score = isNote ? scoreStr : parseFloat(scoreStr || 0);
-        rgb = isNote ? [0, 0, 0] : [255 - 255 * score, 150 * score, 0];
-        li = '\n    <tr style="color: rgb(' + rgb.toString() + ')">\n      <td class="key">' + key + '</td>\n      <td class="' + (isNote ? 'note' : 'score') + '">' + score + '</td>\n    </tr>\n    ';
+        _rgb = isNote ? [0, 0, 0] : genRGB(score);
+
+        fullScore = isNote ? fullScore : fullScore + 1;
+        totalScore = isNote ? totalScore : totalScore + score;
+        li = '\n    <tr style="color: rgb(' + _rgb.toString() + ')">\n      <td class="key">' + key + '</td>\n      <td class="' + (isNote ? 'note' : 'score') + '">' + (isNote ? score : score * 100) + '</td>\n    </tr>\n    ';
 
         resultHTML += li;
         i++;
@@ -2059,15 +2065,23 @@ function genWaiter() {
     }
   }
 
-  var keys, resultHTML, i, key, scoreStr, isNote, score, rgb, li;
+  var keys, resultHTML, fullScore, totalScore, i, key, scoreStr, isNote, score, _rgb, li, rank, rgb;
+
   return Promise.resolve().then(function () {
     document.querySelector('tbody').innerHTML = '';
     keys = ['Cache', 'Notification', 'Promise', 'Registered', 'Request', 'Response', 'Unregistered', 'active.waitUntil', 'activeEvent', 'caches', 'clients.claim', 'fetch', 'fetchEvent', 'fetchEvent.request', 'fetchEvent.respondWith', 'getAll', 'indexedDB', 'install.waitUntil', 'installEvent', 'main-msg-got', 'main-msg-got-by', 'main-msg-send', 'navigator.serviceWorker', 'oncontrollerchange', 'postMessage', 'self.skipWaiting', 'sw-msg-got', 'sw-msg-send', 'sw-msg-send-by', 'syncEvent'];
     resultHTML = '';
+    fullScore = 0;
+    totalScore = 0;
     i = 0;
     return _recursive();
   }).then(function () {
     document.querySelector('tbody').innerHTML = resultHTML;
+    rank = totalScore / fullScore;
+    rgb = genRGB(rank);
+
+    document.querySelector('.result').style.backgroundColor = 'rgb(' + rgb.toString() + ')';
+    document.querySelector('.total-score').innerHTML = ~~(rank * 100);
   });
 });
 
@@ -3051,9 +3065,15 @@ var _search2obj = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_utils__["e" 
 
     if (!_brokenOut && (_match || '0' === _discriminant)) {
       return Promise.resolve().then(function () {
+        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__result_main__["a" /* default */])();
+      }).then(function () {
         return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__global_main__["a" /* default */])();
       }).then(function () {
+        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__result_main__["a" /* default */])();
+      }).then(function () {
         return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__empty_main__["a" /* default */])();
+      }).then(function () {
+        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__result_main__["a" /* default */])();
       }).then(function () {
         return;
       });
@@ -3061,9 +3081,15 @@ var _search2obj = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_utils__["e" 
   }).then(function () {
     if (!_brokenOut && (_match || '1' === _discriminant)) {
       return Promise.resolve().then(function () {
+        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__result_main__["a" /* default */])();
+      }).then(function () {
         return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__lifecycle_main__["a" /* default */])();
       }).then(function () {
+        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__result_main__["a" /* default */])();
+      }).then(function () {
         return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__postmessage_main__["a" /* default */])();
+      }).then(function () {
+        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__result_main__["a" /* default */])();
       }).then(function () {
         return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__sync_main__["a" /* default */])();
       }).then(function () {

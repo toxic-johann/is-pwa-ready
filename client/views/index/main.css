@@ -1,32 +1,13 @@
-html {
-  font-size: 15px;
-  line-height: 1.4;
-  width: 100%;
-  /* background: #376d37;  */
-  background: #102a48; 
-  background: #102a48 radial-gradient(circle closest-corner at 50% 39px, #166ab9, #013668, #102a48) no-repeat;
-  -webkit-text-size-adjust: 100%;
-}
-#wechat-img {
-  width: 300px;
-  height: 300px;
-  opacity: 0;
-  position: absolute;
-}
+@import '/css/base.css';
 body {
-  margin: 0;
-  padding: 1rem;
-  width: 100%;
-  box-sizing: border-box;
-  /* overflow-x: hidden; */
   & > header {
     & h1 {
       text-align: center;
-      color: #fff;
+      color: #333;
     }
     & h4 {
       text-align: right;
-      color: #eee;
+      color: #333;
       /* padding-left: 60%; */
     }
     & ul {
@@ -48,16 +29,16 @@ body {
   }
 }
 article.feature {
-  max-width: 510px;
-  margin: 0 auto 1rem auto;
+  padding: 0 1rem 1rem 1rem;
+  margin: 0 auto;
   & header {
-    background-color: #fff;
+    background-color: #f1f1f1;
     overflow: hidden;
     padding: 0 1rem;
     & a {
       text-decoration: none;
       & .feature-name {
-        background: #2A609B;
+        background: #272B1A;
         line-height: 1;
         padding: 0.4rem 1rem;
         font-weight: normal;
@@ -75,7 +56,7 @@ article.feature {
   }
   & .results {
     display: flex;
-    background-color: #fff;
+    background-color: #f1f1f1;
     padding-left: 0.5%;
     flex-wrap: wrap;
     & .result {
@@ -185,7 +166,6 @@ article.feature {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
-    max-width: 947px;
     & header {
       width: 35%;
       box-sizing: border-box;

@@ -24,14 +24,13 @@
   <link rel="apple-touch-startup-image" href="https://p5.ssl.qhimg.com/t01245986c32f09718d.png">
 </head>
 <body>
+  <nav>
+    <a href="https://w3c.github.io/ServiceWorker/">规范</a>
+    <a href="https://github.com/toxic-johann/is-pwa-ready">Github</a>
+    <a href="/auto/">自动测试</a>
+  </nav>
   <header>
     <h1>PWA，准备好了吗？</h1>
-    <!-- <h4>一个人的命运啊，当然要靠自我奋斗，但是也要考虑到历史的进程。</h4> -->
-    <ul>
-      <li><a href="https://w3c.github.io/ServiceWorker/">规范</a></li>
-      <li><a href="https://github.com/toxic-johann/is-pwa-ready">Github</a></li>
-      <li><a href="/auto/">自动测试</a></li>
-    </ul>
   </header>
   {% for feature in features %}
     {% set featureId = feature.name|striptags|lower|replace("\s+", '-', 'g') %}

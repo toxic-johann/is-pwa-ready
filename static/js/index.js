@@ -84,7 +84,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__main_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__main_css__);
 // import './main.html'
 
-if ('serviceWorker' in navigator) {
+if ('serviceWorker' in navigator && "development" !== 'development') {
   navigator.serviceWorker.register('/sw.js');
 }
 

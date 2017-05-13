@@ -1,20 +1,26 @@
-html {
-  font-size: 15px;
-  line-height: 1.4;
-  width: 100%;
-  background: #f6f6f6; 
-  -webkit-text-size-adjust: 100%;
-  background-color: #f2e8d5;
-  /* background: linear-gradient(-45deg, rgba(0,0,0,0) 50%,rgba(255,255,255,0.02) 50%,rgba(255,255,255,0.01)),linear-gradient(to right, rgba(0,0,0,0) 90%,rgba(255,255,255,0.03) 90%),#3D3527; */
-}
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
+@import '/css/base.css';
 article {
   width: 95%;
+  padding-left: 60px;
+  box-sizing: border-box;
   margin: 0 auto;
+}
+aside {
+  width: 40px;
+  background-color: #8D3118;
+  position: absolute;
+  transform: translate(-60px, 0);
+  color: #fff;
+  padding: 5px;
+  .total-score {
+    font-size: 1.5rem;
+    border-bottom: 1px solid #fff;
+  }
+  span {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
 }
 table {
   width: 100%;
@@ -38,25 +44,4 @@ table {
     height: 50px;
     display: block;
   }
-}
-nav {
-  position: sticky;
-  top: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  width: 100%;
-  a {
-    display: inline-block;
-    color: #fff;
-    padding: .5em .7em .6em;
-    margin: 0 3px 0 0;
-    text-decoration: none;
-    background: rgba(255,255,255,0.1);
-  }
-  a.reboot {
-    top: 10px;
-  }
-  a.home {
-    top: 41px;
-  }
-}
-  
+} 

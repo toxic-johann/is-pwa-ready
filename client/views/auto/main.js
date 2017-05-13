@@ -14,12 +14,18 @@ const {step = '0'} = search2obj();
 (async function main () {
   switch (step) {
     case '0':
+      await result()
       await globalTest()
+      await result()
       await empty()
+      await result()
       return
     case '1':
+      await result()
       await lifecycleTest()
+      await result()
       await postmessageTest()
+      await result()
       await syncTest()
       await result()
       break
