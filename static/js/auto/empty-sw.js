@@ -71,8 +71,7 @@
 /***/ 20:
 /***/ (function(module, exports) {
 
-console.log('i am empty')
-
+console.log('i am empty');
 
 /***/ })
 

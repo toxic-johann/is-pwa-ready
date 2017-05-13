@@ -35,11 +35,11 @@ body {
       text-align: center;
       padding: 0;
       & li {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         display: inline;
         text-decoration: none;
         list-style: none;
-        margin-right: 2rem;
+        margin-right: 1.5rem;
         & a {
           color: inherit;
         }

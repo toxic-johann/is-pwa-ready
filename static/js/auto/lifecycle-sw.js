@@ -276,6 +276,9 @@ function promisifyOneTimeEventListener(fn, target, event) {
  * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
  * @license  MIT
  */
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
 function compare(a, b) {
   if (a === b) {
     return 0;
@@ -336,10 +339,8 @@ function isBuffer(b) {
 var util = __webpack_require__(8);
 var hasOwn = Object.prototype.hasOwnProperty;
 var pSlice = Array.prototype.slice;
-var functionsHaveNames = (function () {
-  return function foo() {}.name === 'foo';
-}());
-function pToString (obj) {
+var functionsHaveNames = function foo() {}.name === 'foo';
+function pToString(obj) {
   return Object.prototype.toString.call(obj);
 }
 function isView(arrbuf) {
@@ -439,12 +440,10 @@ function inspect(something) {
   }
   var rawname = getName(something);
   var name = rawname ? ': ' + rawname : '';
-  return '[Function' +  name + ']';
+  return '[Function' + name + ']';
 }
 function getMessage(self) {
-  return truncate(inspect(self.actual), 128) + ' ' +
-         self.operator + ' ' +
-         truncate(inspect(self.expected), 128);
+  return truncate(inspect(self.actual), 128) + ' ' + self.operator + ' ' + truncate(inspect(self.expected), 128);
 }
 
 // At present only the three keys mentioned above are used and
@@ -522,50 +521,41 @@ function _deepEqual(actual, expected, strict, memos) {
   } else if (isBuffer(actual) && isBuffer(expected)) {
     return compare(actual, expected) === 0;
 
-  // 7.2. If the expected value is a Date object, the actual value is
-  // equivalent if it is also a Date object that refers to the same time.
+    // 7.2. If the expected value is a Date object, the actual value is
+    // equivalent if it is also a Date object that refers to the same time.
   } else if (util.isDate(actual) && util.isDate(expected)) {
     return actual.getTime() === expected.getTime();
 
-  // 7.3 If the expected value is a RegExp object, the actual value is
-  // equivalent if it is also a RegExp object with the same source and
-  // properties (`global`, `multiline`, `lastIndex`, `ignoreCase`).
+    // 7.3 If the expected value is a RegExp object, the actual value is
+    // equivalent if it is also a RegExp object with the same source and
+    // properties (`global`, `multiline`, `lastIndex`, `ignoreCase`).
   } else if (util.isRegExp(actual) && util.isRegExp(expected)) {
-    return actual.source === expected.source &&
-           actual.global === expected.global &&
-           actual.multiline === expected.multiline &&
-           actual.lastIndex === expected.lastIndex &&
-           actual.ignoreCase === expected.ignoreCase;
+    return actual.source === expected.source && actual.global === expected.global && actual.multiline === expected.multiline && actual.lastIndex === expected.lastIndex && actual.ignoreCase === expected.ignoreCase;
 
-  // 7.4. Other pairs that do not both pass typeof value == 'object',
-  // equivalence is determined by ==.
-  } else if ((actual === null || typeof actual !== 'object') &&
-             (expected === null || typeof expected !== 'object')) {
+    // 7.4. Other pairs that do not both pass typeof value == 'object',
+    // equivalence is determined by ==.
+  } else if ((actual === null || (typeof actual === 'undefined' ? 'undefined' : _typeof(actual)) !== 'object') && (expected === null || (typeof expected === 'undefined' ? 'undefined' : _typeof(expected)) !== 'object')) {
     return strict ? actual === expected : actual == expected;
 
-  // If both values are instances of typed arrays, wrap their underlying
-  // ArrayBuffers in a Buffer each to increase performance
-  // This optimization requires the arrays to have the same type as checked by
-  // Object.prototype.toString (aka pToString). Never perform binary
-  // comparisons for Float*Arrays, though, since e.g. +0 === -0 but their
-  // bit patterns are not identical.
-  } else if (isView(actual) && isView(expected) &&
-             pToString(actual) === pToString(expected) &&
-             !(actual instanceof Float32Array ||
-               actual instanceof Float64Array)) {
-    return compare(new Uint8Array(actual.buffer),
-                   new Uint8Array(expected.buffer)) === 0;
+    // If both values are instances of typed arrays, wrap their underlying
+    // ArrayBuffers in a Buffer each to increase performance
+    // This optimization requires the arrays to have the same type as checked by
+    // Object.prototype.toString (aka pToString). Never perform binary
+    // comparisons for Float*Arrays, though, since e.g. +0 === -0 but their
+    // bit patterns are not identical.
+  } else if (isView(actual) && isView(expected) && pToString(actual) === pToString(expected) && !(actual instanceof Float32Array || actual instanceof Float64Array)) {
+    return compare(new Uint8Array(actual.buffer), new Uint8Array(expected.buffer)) === 0;
 
-  // 7.5 For all other Object pairs, including Array objects, equivalence is
-  // determined by having the same number of owned properties (as verified
-  // with Object.prototype.hasOwnProperty.call), the same set of keys
-  // (although not necessarily the same order), equivalent values for every
-  // corresponding key, and an identical 'prototype' property. Note: this
-  // accounts for both named and indexed properties on Arrays.
+    // 7.5 For all other Object pairs, including Array objects, equivalence is
+    // determined by having the same number of owned properties (as verified
+    // with Object.prototype.hasOwnProperty.call), the same set of keys
+    // (although not necessarily the same order), equivalent values for every
+    // corresponding key, and an identical 'prototype' property. Note: this
+    // accounts for both named and indexed properties on Arrays.
   } else if (isBuffer(actual) !== isBuffer(expected)) {
     return false;
   } else {
-    memos = memos || {actual: [], expected: []};
+    memos = memos || { actual: [], expected: [] };
 
     var actualIndex = memos.actual.indexOf(actual);
     if (actualIndex !== -1) {
@@ -586,17 +576,13 @@ function isArguments(object) {
 }
 
 function objEquiv(a, b, strict, actualVisitedObjects) {
-  if (a === null || a === undefined || b === null || b === undefined)
-    return false;
+  if (a === null || a === undefined || b === null || b === undefined) return false;
   // if one is a primitive, the other must be same
-  if (util.isPrimitive(a) || util.isPrimitive(b))
-    return a === b;
-  if (strict && Object.getPrototypeOf(a) !== Object.getPrototypeOf(b))
-    return false;
+  if (util.isPrimitive(a) || util.isPrimitive(b)) return a === b;
+  if (strict && Object.getPrototypeOf(a) !== Object.getPrototypeOf(b)) return false;
   var aIsArgs = isArguments(a);
   var bIsArgs = isArguments(b);
-  if ((aIsArgs && !bIsArgs) || (!aIsArgs && bIsArgs))
-    return false;
+  if (aIsArgs && !bIsArgs || !aIsArgs && bIsArgs) return false;
   if (aIsArgs) {
     a = pSlice.call(a);
     b = pSlice.call(b);
@@ -607,22 +593,19 @@ function objEquiv(a, b, strict, actualVisitedObjects) {
   var key, i;
   // having the same number of owned properties (keys incorporates
   // hasOwnProperty)
-  if (ka.length !== kb.length)
-    return false;
+  if (ka.length !== kb.length) return false;
   //the same set of keys (although not necessarily the same order),
   ka.sort();
   kb.sort();
   //~~~cheap key test
   for (i = ka.length - 1; i >= 0; i--) {
-    if (ka[i] !== kb[i])
-      return false;
+    if (ka[i] !== kb[i]) return false;
   }
   //equivalent values for every corresponding key, and
   //~~~possibly expensive deep test
   for (i = ka.length - 1; i >= 0; i--) {
     key = ka[i];
-    if (!_deepEqual(a[key], b[key], strict, actualVisitedObjects))
-      return false;
+    if (!_deepEqual(a[key], b[key], strict, actualVisitedObjects)) return false;
   }
   return true;
 }
@@ -642,7 +625,6 @@ function notDeepStrictEqual(actual, expected, message) {
     fail(actual, expected, message, 'notDeepStrictEqual', notDeepStrictEqual);
   }
 }
-
 
 // 9. The strict equality assertion tests strict equality, as determined by ===.
 // assert.strictEqual(actual, expected, message_opt);
@@ -710,8 +692,7 @@ function _throws(shouldThrow, block, expected, message) {
 
   actual = _tryBlock(block);
 
-  message = (expected && expected.name ? ' (' + expected.name + ').' : '.') +
-            (message ? ' ' + message : '.');
+  message = (expected && expected.name ? ' (' + expected.name + ').' : '.') + (message ? ' ' + message : '.');
 
   if (shouldThrow && !actual) {
     fail(actual, expected, 'Missing expected exception' + message);
@@ -721,15 +702,11 @@ function _throws(shouldThrow, block, expected, message) {
   var isUnwantedException = !shouldThrow && util.isError(actual);
   var isUnexpectedException = !shouldThrow && actual && !expected;
 
-  if ((isUnwantedException &&
-      userProvidedMessage &&
-      expectedException(actual, expected)) ||
-      isUnexpectedException) {
+  if (isUnwantedException && userProvidedMessage && expectedException(actual, expected) || isUnexpectedException) {
     fail(actual, expected, 'Got unwanted exception' + message);
   }
 
-  if ((shouldThrow && actual && expected &&
-      !expectedException(actual, expected)) || (!shouldThrow && actual)) {
+  if (shouldThrow && actual && expected && !expectedException(actual, expected) || !shouldThrow && actual) {
     throw actual;
   }
 }
@@ -737,16 +714,18 @@ function _throws(shouldThrow, block, expected, message) {
 // 11. Expected to throw an error:
 // assert.throws(block, Error_opt, message_opt);
 
-assert.throws = function(block, /*optional*/error, /*optional*/message) {
+assert.throws = function (block, /*optional*/error, /*optional*/message) {
   _throws(true, block, error, message);
 };
 
 // EXTENSION! This is annoying to write outside this module.
-assert.doesNotThrow = function(block, /*optional*/error, /*optional*/message) {
+assert.doesNotThrow = function (block, /*optional*/error, /*optional*/message) {
   _throws(false, block, error, message);
 };
 
-assert.ifError = function(err) { if (err) throw err; };
+assert.ifError = function (err) {
+  if (err) throw err;
+};
 
 var objectKeys = Object.keys || function (obj) {
   var keys = [];
@@ -755,27 +734,25 @@ var objectKeys = Object.keys || function (obj) {
   }
   return keys;
 };
-
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
 /* 3 */
 /***/ (function(module, exports) {
 
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
 var g;
 
 // This works in non-strict mode
-g = (function() {
-	return this;
-})();
+g = this;
 
 try {
 	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
+	g = g || Function("return this")() || (1, eval)("this");
+} catch (e) {
 	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
+	if ((typeof window === "undefined" ? "undefined" : _typeof(window)) === "object") g = window;
 }
 
 // g can still be undefined, but nothing to do about it...
@@ -783,7 +760,6 @@ try {
 // easier to handle this case. if(!global) { ...}
 
 module.exports = g;
-
 
 /***/ }),
 /* 4 */
@@ -964,7 +940,7 @@ var Store = function () {
 if (typeof Object.create === 'function') {
   // implementation from standard node.js 'util' module
   module.exports = function inherits(ctor, superCtor) {
-    ctor.super_ = superCtor
+    ctor.super_ = superCtor;
     ctor.prototype = Object.create(superCtor.prototype, {
       constructor: {
         value: ctor,
@@ -977,14 +953,13 @@ if (typeof Object.create === 'function') {
 } else {
   // old school shim for old browsers
   module.exports = function inherits(ctor, superCtor) {
-    ctor.super_ = superCtor
-    var TempCtor = function () {}
-    TempCtor.prototype = superCtor.prototype
-    ctor.prototype = new TempCtor()
-    ctor.prototype.constructor = ctor
-  }
+    ctor.super_ = superCtor;
+    var TempCtor = function TempCtor() {};
+    TempCtor.prototype = superCtor.prototype;
+    ctor.prototype = new TempCtor();
+    ctor.prototype.constructor = ctor;
+  };
 }
-
 
 /***/ }),
 /* 6 */
@@ -1004,7 +979,7 @@ var cachedClearTimeout;
 function defaultSetTimout() {
     throw new Error('setTimeout has not been defined');
 }
-function defaultClearTimeout () {
+function defaultClearTimeout() {
     throw new Error('clearTimeout has not been defined');
 }
 (function () {
@@ -1026,7 +1001,7 @@ function defaultClearTimeout () {
     } catch (e) {
         cachedClearTimeout = defaultClearTimeout;
     }
-} ())
+})();
 function runTimeout(fun) {
     if (cachedSetTimeout === setTimeout) {
         //normal enviroments in sane situations
@@ -1040,17 +1015,15 @@ function runTimeout(fun) {
     try {
         // when when somebody has screwed with setTimeout but no I.E. maddness
         return cachedSetTimeout(fun, 0);
-    } catch(e){
+    } catch (e) {
         try {
             // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
             return cachedSetTimeout.call(null, fun, 0);
-        } catch(e){
+        } catch (e) {
             // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
             return cachedSetTimeout.call(this, fun, 0);
         }
     }
-
-
 }
 function runClearTimeout(marker) {
     if (cachedClearTimeout === clearTimeout) {
@@ -1065,19 +1038,16 @@ function runClearTimeout(marker) {
     try {
         // when when somebody has screwed with setTimeout but no I.E. maddness
         return cachedClearTimeout(marker);
-    } catch (e){
+    } catch (e) {
         try {
             // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
             return cachedClearTimeout.call(null, marker);
-        } catch (e){
+        } catch (e) {
             // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
             // Some versions of I.E. have different rules for clearTimeout vs setTimeout
             return cachedClearTimeout.call(this, marker);
         }
     }
-
-
-
 }
 var queue = [];
 var draining = false;
@@ -1107,7 +1077,7 @@ function drainQueue() {
     draining = true;
 
     var len = queue.length;
-    while(len) {
+    while (len) {
         currentQueue = queue;
         queue = [];
         while (++queueIndex < len) {
@@ -1163,35 +1133,41 @@ process.emit = noop;
 process.prependListener = noop;
 process.prependOnceListener = noop;
 
-process.listeners = function (name) { return [] }
+process.listeners = function (name) {
+    return [];
+};
 
 process.binding = function (name) {
     throw new Error('process.binding is not supported');
 };
 
-process.cwd = function () { return '/' };
+process.cwd = function () {
+    return '/';
+};
 process.chdir = function (dir) {
     throw new Error('process.chdir is not supported');
 };
-process.umask = function() { return 0; };
-
+process.umask = function () {
+    return 0;
+};
 
 /***/ }),
 /* 7 */
 /***/ (function(module, exports) {
 
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
 module.exports = function isBuffer(arg) {
-  return arg && typeof arg === 'object'
-    && typeof arg.copy === 'function'
-    && typeof arg.fill === 'function'
-    && typeof arg.readUInt8 === 'function';
-}
+  return arg && (typeof arg === 'undefined' ? 'undefined' : _typeof(arg)) === 'object' && typeof arg.copy === 'function' && typeof arg.fill === 'function' && typeof arg.readUInt8 === 'function';
+};
 
 /***/ }),
 /* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global, process) {// Copyright Joyent, Inc. and other Node contributors.
+/* WEBPACK VAR INJECTION */(function(global, process) {var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+// Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the
@@ -1213,7 +1189,7 @@ module.exports = function isBuffer(arg) {
 // USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 var formatRegExp = /%[sdj%]/g;
-exports.format = function(f) {
+exports.format = function (f) {
   if (!isString(f)) {
     var objects = [];
     for (var i = 0; i < arguments.length; i++) {
@@ -1225,12 +1201,14 @@ exports.format = function(f) {
   var i = 1;
   var args = arguments;
   var len = args.length;
-  var str = String(f).replace(formatRegExp, function(x) {
+  var str = String(f).replace(formatRegExp, function (x) {
     if (x === '%%') return '%';
     if (i >= len) return x;
     switch (x) {
-      case '%s': return String(args[i++]);
-      case '%d': return Number(args[i++]);
+      case '%s':
+        return String(args[i++]);
+      case '%d':
+        return Number(args[i++]);
       case '%j':
         try {
           return JSON.stringify(args[i++]);
@@ -1251,14 +1229,13 @@ exports.format = function(f) {
   return str;
 };
 
-
 // Mark that a method should not be used.
 // Returns a modified function which warns once by default.
 // If --no-deprecation is set, then it is a no-op.
-exports.deprecate = function(fn, msg) {
+exports.deprecate = function (fn, msg) {
   // Allow for deprecating things in the process of starting up.
   if (isUndefined(global.process)) {
-    return function() {
+    return function () {
       return exports.deprecate(fn, msg).apply(this, arguments);
     };
   }
@@ -1285,27 +1262,24 @@ exports.deprecate = function(fn, msg) {
   return deprecated;
 };
 
-
 var debugs = {};
 var debugEnviron;
-exports.debuglog = function(set) {
-  if (isUndefined(debugEnviron))
-    debugEnviron = __webpack_require__.i({"NODE_ENV":"development"}).NODE_DEBUG || '';
+exports.debuglog = function (set) {
+  if (isUndefined(debugEnviron)) debugEnviron = __webpack_require__.i({"NODE_ENV":"development"}).NODE_DEBUG || '';
   set = set.toUpperCase();
   if (!debugs[set]) {
     if (new RegExp('\\b' + set + '\\b', 'i').test(debugEnviron)) {
       var pid = process.pid;
-      debugs[set] = function() {
+      debugs[set] = function () {
         var msg = exports.format.apply(exports, arguments);
         console.error('%s %d: %s', set, pid, msg);
       };
     } else {
-      debugs[set] = function() {};
+      debugs[set] = function () {};
     }
   }
   return debugs[set];
 };
-
 
 /**
  * Echos the value of a value. Trys to print the value out
@@ -1341,22 +1315,21 @@ function inspect(obj, opts) {
 }
 exports.inspect = inspect;
 
-
 // http://en.wikipedia.org/wiki/ANSI_escape_code#graphics
 inspect.colors = {
-  'bold' : [1, 22],
-  'italic' : [3, 23],
-  'underline' : [4, 24],
-  'inverse' : [7, 27],
-  'white' : [37, 39],
-  'grey' : [90, 39],
-  'black' : [30, 39],
-  'blue' : [34, 39],
-  'cyan' : [36, 39],
-  'green' : [32, 39],
-  'magenta' : [35, 39],
-  'red' : [31, 39],
-  'yellow' : [33, 39]
+  'bold': [1, 22],
+  'italic': [3, 23],
+  'underline': [4, 24],
+  'inverse': [7, 27],
+  'white': [37, 39],
+  'grey': [90, 39],
+  'black': [30, 39],
+  'blue': [34, 39],
+  'cyan': [36, 39],
+  'green': [32, 39],
+  'magenta': [35, 39],
+  'red': [31, 39],
+  'yellow': [33, 39]
 };
 
 // Don't use 'blue' not visible on cmd.exe
@@ -1372,45 +1345,38 @@ inspect.styles = {
   'regexp': 'red'
 };
 
-
 function stylizeWithColor(str, styleType) {
   var style = inspect.styles[styleType];
 
   if (style) {
-    return '\u001b[' + inspect.colors[style][0] + 'm' + str +
-           '\u001b[' + inspect.colors[style][1] + 'm';
+    return '\x1B[' + inspect.colors[style][0] + 'm' + str + '\x1B[' + inspect.colors[style][1] + 'm';
   } else {
     return str;
   }
 }
 
-
 function stylizeNoColor(str, styleType) {
   return str;
 }
 
-
 function arrayToHash(array) {
   var hash = {};
 
-  array.forEach(function(val, idx) {
+  array.forEach(function (val, idx) {
     hash[val] = true;
   });
 
   return hash;
 }
 
-
 function formatValue(ctx, value, recurseTimes) {
   // Provide a hook for user-specified inspect functions.
   // Check that value is an object with an inspect function on it
-  if (ctx.customInspect &&
-      value &&
-      isFunction(value.inspect) &&
-      // Filter out the util module, it's inspect function is special
-      value.inspect !== exports.inspect &&
-      // Also filter out any prototype objects using the circular check.
-      !(value.constructor && value.constructor.prototype === value)) {
+  if (ctx.customInspect && value && isFunction(value.inspect) &&
+  // Filter out the util module, it's inspect function is special
+  value.inspect !== exports.inspect &&
+  // Also filter out any prototype objects using the circular check.
+  !(value.constructor && value.constructor.prototype === value)) {
     var ret = value.inspect(recurseTimes, ctx);
     if (!isString(ret)) {
       ret = formatValue(ctx, ret, recurseTimes);
@@ -1434,8 +1400,7 @@ function formatValue(ctx, value, recurseTimes) {
 
   // IE doesn't make error fields non-enumerable
   // http://msdn.microsoft.com/en-us/library/ie/dww52sbt(v=vs.94).aspx
-  if (isError(value)
-      && (keys.indexOf('message') >= 0 || keys.indexOf('description') >= 0)) {
+  if (isError(value) && (keys.indexOf('message') >= 0 || keys.indexOf('description') >= 0)) {
     return formatError(value);
   }
 
@@ -1456,7 +1421,9 @@ function formatValue(ctx, value, recurseTimes) {
     }
   }
 
-  var base = '', array = false, braces = ['{', '}'];
+  var base = '',
+      array = false,
+      braces = ['{', '}'];
 
   // Make Array say that they are Array
   if (isArray(value)) {
@@ -1503,7 +1470,7 @@ function formatValue(ctx, value, recurseTimes) {
   if (array) {
     output = formatArray(ctx, value, recurseTimes, visibleKeys, keys);
   } else {
-    output = keys.map(function(key) {
+    output = keys.map(function (key) {
       return formatProperty(ctx, value, recurseTimes, visibleKeys, key, array);
     });
   }
@@ -1513,50 +1480,38 @@ function formatValue(ctx, value, recurseTimes) {
   return reduceToSingleString(output, base, braces);
 }
 
-
 function formatPrimitive(ctx, value) {
-  if (isUndefined(value))
-    return ctx.stylize('undefined', 'undefined');
+  if (isUndefined(value)) return ctx.stylize('undefined', 'undefined');
   if (isString(value)) {
-    var simple = '\'' + JSON.stringify(value).replace(/^"|"$/g, '')
-                                             .replace(/'/g, "\\'")
-                                             .replace(/\\"/g, '"') + '\'';
+    var simple = '\'' + JSON.stringify(value).replace(/^"|"$/g, '').replace(/'/g, "\\'").replace(/\\"/g, '"') + '\'';
     return ctx.stylize(simple, 'string');
   }
-  if (isNumber(value))
-    return ctx.stylize('' + value, 'number');
-  if (isBoolean(value))
-    return ctx.stylize('' + value, 'boolean');
+  if (isNumber(value)) return ctx.stylize('' + value, 'number');
+  if (isBoolean(value)) return ctx.stylize('' + value, 'boolean');
   // For some reason typeof null is "object", so special case here.
-  if (isNull(value))
-    return ctx.stylize('null', 'null');
+  if (isNull(value)) return ctx.stylize('null', 'null');
 }
-
 
 function formatError(value) {
   return '[' + Error.prototype.toString.call(value) + ']';
 }
 
-
 function formatArray(ctx, value, recurseTimes, visibleKeys, keys) {
   var output = [];
   for (var i = 0, l = value.length; i < l; ++i) {
     if (hasOwnProperty(value, String(i))) {
-      output.push(formatProperty(ctx, value, recurseTimes, visibleKeys,
-          String(i), true));
+      output.push(formatProperty(ctx, value, recurseTimes, visibleKeys, String(i), true));
     } else {
       output.push('');
     }
   }
-  keys.forEach(function(key) {
+  keys.forEach(function (key) {
     if (!key.match(/^\d+$/)) {
-      output.push(formatProperty(ctx, value, recurseTimes, visibleKeys,
-          key, true));
+      output.push(formatProperty(ctx, value, recurseTimes, visibleKeys, key, true));
     }
   });
   return output;
 }
-
 
 function formatProperty(ctx, value, recurseTimes, visibleKeys, key, array) {
   var name, str, desc;
@@ -1584,11 +1539,11 @@ function formatProperty(ctx, value, recurseTimes, visibleKeys, key, array) {
       }
       if (str.indexOf('\n') > -1) {
         if (array) {
-          str = str.split('\n').map(function(line) {
+          str = str.split('\n').map(function (line) {
             return '  ' + line;
           }).join('\n').substr(2);
         } else {
-          str = '\n' + str.split('\n').map(function(line) {
+          str = '\n' + str.split('\n').map(function (line) {
             return '   ' + line;
           }).join('\n');
         }
@@ -1606,9 +1561,7 @@ function formatProperty(ctx, value, recurseTimes, visibleKeys, key, array) {
       name = name.substr(1, name.length - 2);
       name = ctx.stylize(name, 'name');
     } else {
-      name = name.replace(/'/g, "\\'")
-                 .replace(/\\"/g, '"')
-                 .replace(/(^"|"$)/g, "'");
+      name = name.replace(/'/g, "\\'").replace(/\\"/g, '"').replace(/(^"|"$)/g, "'");
       name = ctx.stylize(name, 'string');
     }
   }
@@ -1616,27 +1569,20 @@ function formatProperty(ctx, value, recurseTimes, visibleKeys, key, array) {
   return name + ': ' + str;
 }
 
-
 function reduceToSingleString(output, base, braces) {
   var numLinesEst = 0;
-  var length = output.reduce(function(prev, cur) {
+  var length = output.reduce(function (prev, cur) {
     numLinesEst++;
     if (cur.indexOf('\n') >= 0) numLinesEst++;
     return prev + cur.replace(/\u001b\[\d\d?m/g, '').length + 1;
   }, 0);
 
   if (length > 60) {
-    return braces[0] +
-           (base === '' ? '' : base + '\n ') +
-           ' ' +
-           output.join(',\n  ') +
-           ' ' +
-           braces[1];
+    return braces[0] + (base === '' ? '' : base + '\n ') + ' ' + output.join(',\n  ') + ' ' + braces[1];
   }
 
   return braces[0] + base + ' ' + output.join(', ') + ' ' + braces[1];
 }
-
 
 // NOTE: These type checking functions intentionally don't use `instanceof`
 // because it is fragile and can be easily faked with `Object.create()`.
@@ -1671,7 +1617,7 @@ function isString(arg) {
 exports.isString = isString;
 
 function isSymbol(arg) {
-  return typeof arg === 'symbol';
+  return (typeof arg === 'undefined' ? 'undefined' : _typeof(arg)) === 'symbol';
 }
 exports.isSymbol = isSymbol;
 
@@ -1686,7 +1632,7 @@ function isRegExp(re) {
 exports.isRegExp = isRegExp;
 
 function isObject(arg) {
-  return typeof arg === 'object' && arg !== null;
+  return (typeof arg === 'undefined' ? 'undefined' : _typeof(arg)) === 'object' && arg !== null;
 }
 exports.isObject = isObject;
 
@@ -1696,8 +1642,7 @@ function isDate(d) {
 exports.isDate = isDate;
 
 function isError(e) {
-  return isObject(e) &&
-      (objectToString(e) === '[object Error]' || e instanceof Error);
+  return isObject(e) && (objectToString(e) === '[object Error]' || e instanceof Error);
 }
 exports.isError = isError;
 
@@ -1707,12 +1652,8 @@ function isFunction(arg) {
 exports.isFunction = isFunction;
 
 function isPrimitive(arg) {
-  return arg === null ||
-         typeof arg === 'boolean' ||
-         typeof arg === 'number' ||
-         typeof arg === 'string' ||
-         typeof arg === 'symbol' ||  // ES6 symbol
-         typeof arg === 'undefined';
+  return arg === null || typeof arg === 'boolean' || typeof arg === 'number' || typeof arg === 'string' || (typeof arg === 'undefined' ? 'undefined' : _typeof(arg)) === 'symbol' || // ES6 symbol
+  typeof arg === 'undefined';
 }
 exports.isPrimitive = isPrimitive;
 
@@ -1722,30 +1663,23 @@ function objectToString(o) {
   return Object.prototype.toString.call(o);
 }
 
-
 function pad(n) {
   return n < 10 ? '0' + n.toString(10) : n.toString(10);
 }
 
-
-var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
-              'Oct', 'Nov', 'Dec'];
+var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 // 26 Feb 16:19:34
 function timestamp() {
   var d = new Date();
-  var time = [pad(d.getHours()),
-              pad(d.getMinutes()),
-              pad(d.getSeconds())].join(':');
+  var time = [pad(d.getHours()), pad(d.getMinutes()), pad(d.getSeconds())].join(':');
   return [d.getDate(), months[d.getMonth()], time].join(' ');
 }
 
-
 // log is just a thin wrapper to console.log that prepends a timestamp
-exports.log = function() {
+exports.log = function () {
   console.log('%s - %s', timestamp(), exports.format.apply(exports, arguments));
 };
-
 
 /**
  * Inherit the prototype methods from one constructor into another.
@@ -1762,7 +1696,7 @@ exports.log = function() {
  */
 exports.inherits = __webpack_require__(5);
 
-exports._extend = function(origin, add) {
+exports._extend = function (origin, add) {
   // Don't do anything if add isn't an object
   if (!add || !isObject(add)) return origin;
 
@@ -1777,7 +1711,6 @@ exports._extend = function(origin, add) {
 function hasOwnProperty(obj, prop) {
   return Object.prototype.hasOwnProperty.call(obj, prop);
 }
-
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3), __webpack_require__(6)))
 
 /***/ }),
@@ -1804,72 +1737,72 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-let installWaitUntilFlag = false
-let skipWaitingFlag = false
+var installWaitUntilFlag = false;
+var skipWaitingFlag = false;
 self.oninstall = function (event) {
-  __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'installEvent')
-  console.log('Install event', event)
-  console.log('.replace', event.replace)
-  console.log('self.skipWaiting', self.skipWaiting)
+  __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'installEvent');
+  console.log('Install event', event);
+  console.log('.replace', event.replace);
+  console.log('self.skipWaiting', self.skipWaiting);
 
   if (event.waitUntil) {
-    console.log('Testing waitUntil:')
-    event.waitUntil((async function (resolve) {
-      await __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_utils__["d" /* sleep */])(1000)
-      console.log('This should appear before activate')
-      installWaitUntilFlag = true
-    })())
+    console.log('Testing waitUntil:');
+    event.waitUntil(function (resolve) {
+      return Promise.resolve().then(function () {
+        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_utils__["d" /* sleep */])(1000);
+      }).then(function () {
+        console.log('This should appear before activate');
+        installWaitUntilFlag = true;
+      });
+    }());
   }
-  skipWaitingFlag = true
+  skipWaitingFlag = true;
   // omit waiting period so that we can active
   // skipWaiting will kick out the current activeone so that we can active this sw
-  self.skipWaiting()
-}
+  self.skipWaiting();
+};
 
 self.onactivate = function (event) {
-  console.log('Activate event', event)
-  console.log('.waitUntil', event.waitUntil)
-  __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'activeEvent')
-  __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', Number(installWaitUntilFlag), 'install.waitUntil')
-  __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', Number(skipWaitingFlag), 'self.skipWaiting')
-  console.log('try to waitUntil')
-  event.waitUntil((async function () {
-    console.log('waitUntil')
-    await __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_utils__["d" /* sleep */])(1000)
-    console.log('This should appear before total controll')
-    await __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 0.5, 'active.waitUntil')
+  console.log('Activate event', event);
+  console.log('.waitUntil', event.waitUntil);
+  __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'activeEvent');
+  __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', Number(installWaitUntilFlag), 'install.waitUntil');
+  __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', Number(skipWaitingFlag), 'self.skipWaiting');
+  console.log('try to waitUntil');
+  event.waitUntil(Promise.resolve().then(function () {
+    console.log('waitUntil');
+    return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_utils__["d" /* sleep */])(1000);
+  }).then(function () {
+    console.log('This should appear before total controll');
     // clients.claim can let out page can actually controll the page
     // without this our page will be controller until total reload
-    if(self.clients.claim) {
-      await __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 0.5, 'clients.claim')
-      // self.clients.claim()
+    return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 0.5, 'active.waitUntil');
+  }).then(function () {
+    if (self.clients.claim) {
+      return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 0.5, 'clients.claim');
     }
-  })())
-}
+  }).then(function () {}));
+};
 
 // use fetch event to test is it realy to be control
 self.onfetch = function (event) {
-  console.log('Fetch event', event)
-  __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', Number(!!event), 'fetchEvent')
-  const list = ['request', 'respondWith']
-  for(let i = list.length - 1; i > -1; i--) {
-    const key = list[i]
-    console.log('.' + key, event[key])
-    __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', Number(!!event[key]), 'fetchEvent.' + key)
+  console.log('Fetch event', event);
+  __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', Number(!!event), 'fetchEvent');
+  var list = ['request', 'respondWith'];
+  for (var i = list.length - 1; i > -1; i--) {
+    var key = list[i];
+    console.log('.' + key, event[key]);
+    __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', Number(!!event[key]), 'fetchEvent.' + key);
   }
-  const url = new URL(event.request.url)
+  var url = new URL(event.request.url);
   if (url.pathname.endsWith('/whoareyou.json')) {
-    event.respondWith(
-      new Response('{"i am": "lifecycle-sw"}', {
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-    )
+    event.respondWith(new Response('{"i am": "lifecycle-sw"}', {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }));
   }
-}
-
-
+};
 
 /***/ })
 /******/ ]);
