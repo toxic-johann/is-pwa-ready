@@ -6,6 +6,12 @@ html {
   width: 100%;
   -webkit-text-size-adjust: 100%;
   background-color: #f2e8d5;
+  &:before {
+    display: block;
+    width: 100%;
+    height: 40px;
+    content: '';
+  }
 }
 html, body {
   margin: 0;
@@ -15,7 +21,6 @@ html, body {
 nav {
   z-index: 10;
   position: fixed;
-  position: sticky;
   top: 0;
   background-color: rgba(0, 0, 0, 0.7);
   width: 100%;

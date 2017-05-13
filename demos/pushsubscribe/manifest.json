@@ -2,8 +2,8 @@
   "name": "PWA的进程",
   "short_name": "PWA",
   "lang": "zh-CN",
-  "theme_color": "#102a48",
-  "background_color": "#102a48",
+  "theme_color": "#f2e8d5",
+  "background_color": "#f2e8d5",
   "icons": [{  
     "src": "https://p5.ssl.qhimg.com/t01245986c32f09718d.png",  
     "sizes": "200x200",
