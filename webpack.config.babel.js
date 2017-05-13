@@ -23,15 +23,18 @@ export default function ({mode = 'development', port, nodePort} = {}) {
   const htmlFiles = glob.sync(viewRoot + '*/main.html')
   const htmlWebpackPlugins = htmlFiles.map(template => {
     const [, path] = template.match(/\.\/client\/views\/([^\/]+)\/main\.html/)
-    return new HtmlWebpackPlugin({
+    const options = {
       chunks: [path],
       filename: '../views/' + path + '.html',
       template,
-      minify: {
+    }
+    if(mode !== 'development') {
+      options.minify = {
         removeComments: true,
         collapseWhitespace: true
       }
-    })
+    }
+    return new HtmlWebpackPlugin(options)
   })
   console.log(entry)
   console.log('\x1b[35m%s\x1b[0m', '[' + new Date().toLocaleString() + ']', '--webpack start')
@@ -61,7 +64,6 @@ export default function ({mode = 'development', port, nodePort} = {}) {
                 ['es2015', {'loose': true, 'modules': false}]
               ],
               plugins: ['async-to-promises']
-              // presets: ['babili']
             }
           }]
         },
@@ -116,7 +118,7 @@ export default function ({mode = 'development', port, nodePort} = {}) {
           NODE_ENV: '"' + mode + '"'
         }
       }),
-      new ExtractTextPlugin({filename: mode === 'development' ? './css/[name].css' : 'css/[name]-[contenthash].css'}),
+      new ExtractTextPlugin({filename: mode === 'development' ? 'css/[name].css' : 'css/[name]-[contenthash].css'}),
       ...htmlWebpackPlugins,
       new Visualizer()
     ].concat(mode !== 'development'

@@ -1,3 +1,5 @@
+import 'core-js/fn/object/values'
+import 'core-js/fn/object/entries'
 import assert from 'assert'
 import {isString, isObject, isPromise} from 'utils'
 const methods = {
@@ -14,7 +16,7 @@ function behaveAll (fn) {
     })
   }
 }
-const behaviors = ['add', 'put', 'get', 'getAll', 'getAllKeys'].reduce((behaviors, key) => {
+const behaviors = ['add', 'put', 'get', 'getAll', 'getAllKeys', 'clear'].reduce((behaviors, key) => {
   behaviors[key] = function (objectStore, ...args) {
     const request = objectStore[key](...args)
     if(isPromise(request)) {

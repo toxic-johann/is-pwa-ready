@@ -1,9 +1,9 @@
 import test from './test'
 import store from 'store'
-export default async function main () {
+export default async function () {
   await test(window, 0)
   const hasSW = !!navigator.serviceWorker
-  // test if we suggest navigator.serviceworker
+  // test if we suggest navigator.serviceWorker
   await store.put('feature', Number(hasSW), 'navigator.serviceWorker')
   if(!hasSW) return
   const sw = await navigator.serviceWorker.register('/auto/global-sw.js')

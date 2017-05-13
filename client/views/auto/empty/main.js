@@ -1,5 +1,5 @@
 import {search2obj, obj2search} from 'utils'
-export default async function main () {
+export default async function () {
   const search = search2obj()
   let {step = 0} = search
   step = parseInt(step)

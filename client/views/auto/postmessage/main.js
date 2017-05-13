@@ -1,5 +1,5 @@
 import store from 'store'
-import {promisifyOneTimeEventListener} from 'utils'
+import {promisifyOneTimeEventListener, sleep} from 'utils'
 let messageChannel
 function genWaiter () {
   const tasks = []
@@ -29,10 +29,13 @@ function genWaiter () {
     }, navigator.serviceWorker, 'message')
   ]))
 }
-export default async function main () {
+export default async function () {
   const messageWaiter = genWaiter()
   console.log(navigator.serviceWorker)
-  const activedWaiter = promisifyOneTimeEventListener(evt => console.log('controllerchange'), navigator.serviceWorker, 'controllerchange')
+  const activedWaiter = Promise.race([
+    promisifyOneTimeEventListener(evt => console.log('controllerchange'), navigator.serviceWorker, 'controllerchange'),
+    sleep(3000)
+  ])
   const reg = await navigator.serviceWorker.register('/auto/postmessage-sw.js', {scope: '/auto/'})
   console.log('Registered!', reg)
   await activedWaiter

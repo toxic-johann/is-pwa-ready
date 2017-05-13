@@ -1,5 +1,7 @@
 import store from 'store'
 import {isNumeric} from 'utils'
+import {testCaseKeys} from '../helper'
+import {info} from '../helper'
 function genRGB (score) {
   return [
     141 - 141 * score,
@@ -8,44 +10,13 @@ function genRGB (score) {
   ]
 }
 export default async function () {
+  info.timeoutTimer && clearTimeout(info.timeoutTimer)
   document.querySelector('tbody').innerHTML = ''
-  const keys = [
-    'Cache',
-    'Notification',
-    'Promise',
-    'Registered',
-    'Request',
-    'Response',
-    'Unregistered',
-    'active.waitUntil',
-    'activeEvent',
-    'caches',
-    'clients.claim',
-    'fetch',
-    'fetchEvent',
-    'fetchEvent.request',
-    'fetchEvent.respondWith',
-    'getAll',
-    'indexedDB',
-    'install.waitUntil',
-    'installEvent',
-    'main-msg-got',
-    'main-msg-got-by',
-    'main-msg-send',
-    'navigator.serviceWorker',
-    'oncontrollerchange',
-    'postMessage',
-    'self.skipWaiting',
-    'sw-msg-got',
-    'sw-msg-send',
-    'sw-msg-send-by',
-    'syncEvent'
-  ]
   let resultHTML = ''
   let fullScore = 0
   let totalScore = 0
-  for(let i = 0; i < keys.length; i++) {
-    const key = keys[i]
+  for(let i = 0; i < testCaseKeys.length; i++) {
+    const key = testCaseKeys[i]
     const scoreStr = await store.get('feature', key)
     const isNote = scoreStr && !isNumeric(scoreStr)
     const score = isNote ? scoreStr : parseFloat(scoreStr || 0)
@@ -67,4 +38,14 @@ export default async function () {
   const rgb = genRGB(rank)
   document.querySelector('.result').style.backgroundColor = `rgb(${rgb.toString()})`
   document.querySelector('.total-score').innerHTML = ~~(rank * 100)
+  let schedule = await store.get('info', 'schedule')
+  schedule = parseFloat(schedule || 0)
+  schedule = ++schedule
+  document.querySelector('.schedule span').innerHTML = ~~(schedule / info.totalSchedule * 100) + '%'
+  await store.put('info', schedule, 'schedule')
+  if(schedule !== info.totalSchedule) {
+    info.timeoutTimer = setTimeout(() => {
+      document.querySelector('.schedule').innerHTML = 'Sorry, this browser can not finish our test case'
+    }, 15000)
+  }
 }

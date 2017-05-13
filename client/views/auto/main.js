@@ -1,25 +1,29 @@
+window.addEventListener('error', error => alert(error.message))
 import globalTest from './global/main'
 import empty from './empty/main'
 import postmessageTest from './postmessage/main'
 import lifecycleTest from './lifecycle/main'
 import syncTest from './sync/main'
 import result from './result/main'
+import init from './init/main'
 import './env/main'
 import {search2obj} from 'utils'
 import './main.css'
 import 'vconsole'
+import {info} from './helper'
 window.addEventListener('unhandledrejection', function (event) {
   console.warn('WARNING: Unhandled promise rejection. Shame on you! Reason: ' + event.reason)
 })
+info.totalSchedule = 6
 const {step = '0'} = search2obj();
 (async function main () {
   switch (step) {
     case '0':
+      await init()
       await result()
       await globalTest()
       await result()
       await empty()
-      await result()
       return
     case '1':
       await result()

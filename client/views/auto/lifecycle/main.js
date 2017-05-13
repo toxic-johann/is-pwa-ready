@@ -14,16 +14,25 @@ const list = [
 async function controllerchangeCauseByNormalInstall (evt) {
   console.log('serviceWorker now has a new actived one')
   console.log('this event will trigger after install.waitUntil and before active.waitUntil')
-  await store.put('feature', 1, 'oncontrollerchange')
+  if(!evt) {
+    const score = await store.get('feature', 'oncontrollerchange')
+    if(parseFloat(score) === 1) return
+    await store.put('feature', 0, 'oncontrollerchange')
+  } else {
+    await store.put('feature', 1, 'oncontrollerchange')
+  }
   console.log('if has not active controller, this should be trigger earlier that actived event')
   const activeWaitUntilScore = await store.get('feature', 'active.waitUntil')
   if(activeWaitUntilScore && parseFloat(activeWaitUntilScore) > 0) {
     console.error('the active.waitUntil trigger before oncontrollerchange')
-    await store.put('feature', 0, activeWaitUntilScore)
+    await store.put('feature', activeWaitUntilScore, 'active.waitUntil')
   }
 }
 function genWaiter (fn) {
-  return promisifyOneTimeEventListener(fn, navigator.serviceWorker, 'controllerchange')
+  return Promise.race([
+    promisifyOneTimeEventListener(fn, navigator.serviceWorker, 'controllerchange'),
+    sleep(3000).then(fn)
+  ])
 }
 
 export default async function () {
@@ -35,6 +44,7 @@ export default async function () {
   const hasSW = !!navigator.serviceWorker
   if(!hasSW) return
   await store.put('feature', 1, 'navigator.serviceWorker')
+  navigator.serviceWorker.ready.then(() => store.put('feature', 1, 'navigator.serviceWorker.ready'))
   const waiter = genWaiter(controllerchangeCauseByNormalInstall)
   // register test, including install event, controllerchange, active event
   const reg = await navigator.serviceWorker.register('/auto/lifecycle-sw.js')
