@@ -2384,6 +2384,8 @@ document.querySelector('.device span').innerHTML = device.type + ' ' + device.mo
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__test__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_store__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_utils__ = __webpack_require__(2);
+
 
 
 /* harmony default export */ __webpack_exports__["a"] = (function () {
@@ -2404,6 +2406,8 @@ document.querySelector('.device span').innerHTML = device.type + ' ' + device.mo
 
         console.log('Registered!', sw);
         return __WEBPACK_IMPORTED_MODULE_1_store__["a" /* default */].put('feature', 1, 'Registered');
+      }).then(function () {
+        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2_utils__["d" /* sleep */])(3000);
       }).then(function () {
         return sw.unregister();
       }).then(function () {
