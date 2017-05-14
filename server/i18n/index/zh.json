@@ -321,15 +321,19 @@
       "details": [],
       "chrome": {
         "supported": 1,
-        "minVersion": 60
+        "minVersion": 24
       },
       "firefox": {
         "supported": 1,
-        "minVersion": 53
+        "minVersion": 16
+      },
+      "safari": {
+        "supported": 1,
+        "minVersion": 10
       },
       "opera": {
         "supported": 1,
-        "minVersion": 44
+        "minVersion": 15
       },
       "xiaomi": {
         "supported": 0.5,
