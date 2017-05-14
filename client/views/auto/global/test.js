@@ -8,19 +8,19 @@ const list = [
   'Promise',
   'Notification',
   'indexedDB',
-  'getAll'
+  'indexedDB.getAll'
 ]
 export default async function (context = window, base) {
   const result = list.reduce(async (result, feature) => {
-    if(feature !== 'getAll') {
+    if(feature !== 'indexedDB.getAll') {
       result[feature] = Number(!!context[feature])
     } else {
       try {
         const allTest = await store.getAll('feature')
-        result['getAll'] = Number(!!allTest)
+        result['indexedDB.getAll'] = Number(!!allTest)
       } catch (err) {
         console.error(err)
-        result['getAll'] = 0
+        result['indexedDB.getAll'] = 0
       }
     }
     const data = await store.get('feature', feature)

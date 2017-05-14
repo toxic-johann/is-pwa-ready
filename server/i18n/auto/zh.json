@@ -1,0 +1,20 @@
+{
+  "title": "PWA自动测试(Alpha)",
+  "appname": "PWA的进程",
+  "description": "测试一下您的浏览器是否支持PWA",
+  "keywords": "pwa, progress web app, ready, caniuse, test, check, robot",
+  "nav": {
+    "首页": "/",
+    "重新测试": "/auto/",
+    "反馈": "https://github.com/toxic-johann/is-pwa-ready/issues",
+    "Github": "https://github.com/toxic-johann/is-pwa-ready"
+  },
+  "note": "该测试基于 indexedDB ，所以由于兼容性问题可能在部分浏览器上会有bug。 另外， 由于仍是 alpha 版本，故不能确保在每个浏览器上都能顺利跑通。您可以利用右下方的 v-console 进行调试。欢迎反馈相关信息～",
+  "browser": "您的浏览器是",
+  "os": "您的系统是",
+  "device": "您的设备是",
+  "schedule": "您已完成",
+  "thead": ["测试用例", "得分/备注"],
+  "summary": "如果您测试的浏览器我并未有展示在首页上。欢迎您将该测试得到的JSON结果复制发送到反馈页上。",
+  "copy": "复制"
+}

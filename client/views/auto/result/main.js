@@ -1,8 +1,9 @@
 import store from 'store'
 import {isNumeric} from 'utils'
-import {testCaseKeys} from '../helper'
+import {featureKeys} from '../helper'
 import {info} from '../helper'
 function genRGB (score) {
+  score = isNumeric(score) ? score : 0
   return [
     ~~(141 - 141 * score),
     ~~(49 + 101 * score),
@@ -15,8 +16,8 @@ export default async function () {
   let resultHTML = ''
   let fullScore = 0
   let totalScore = 0
-  for(let i = 0; i < testCaseKeys.length; i++) {
-    const key = testCaseKeys[i]
+  for(let i = 0; i < featureKeys.length; i++) {
+    const key = featureKeys[i]
     const scoreStr = await store.get('feature', key)
     const isNote = scoreStr && !isNumeric(scoreStr)
     const score = isNote ? scoreStr : parseFloat(scoreStr || 0)
@@ -33,7 +34,7 @@ export default async function () {
     `
     resultHTML += li
   }
-  document.querySelector('tbody').innerHTML = resultHTML
+  document.querySelector('.features tbody').innerHTML = resultHTML
   const rank = totalScore / fullScore
   const rgb = genRGB(rank)
   document.querySelector('.result').style.backgroundColor = `rgb(${rgb.toString()})`

@@ -32,13 +32,13 @@ function genWaiter () {
 export default async function () {
   const messageWaiter = genWaiter()
   console.log(navigator.serviceWorker)
-  const activedWaiter = Promise.race([
+  const activatedWaiter = Promise.race([
     promisifyOneTimeEventListener(evt => console.log('controllerchange'), navigator.serviceWorker, 'controllerchange'),
     sleep(3000)
   ])
   const reg = await navigator.serviceWorker.register('/auto/postmessage-sw.js', {scope: '/auto/'})
   console.log('Registered!', reg)
-  await activedWaiter
+  await activatedWaiter
   try {
     console.log(reg.active.postMessage, 'ready')
     reg.active.postMessage({

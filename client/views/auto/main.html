@@ -1,58 +1,49 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-  <meta name="description" content="auto test page for PWA"/>
-  <meta name="keywords" content="pwa, progress web app, ready, caniuse, test, check, rebot"/>
-  <title>PWA auto test(alpha)</title>
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0">
-  <link rel="manifest" href="/demos/pushsubscribe/manifest.json" />
-  <link rel="icon" href="https://s0.ssl.qhres.com/static/2ec2a560a50f94ec.ico">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="application-name" content="PWA的进程">
-  <meta name="msapplication-starturl" content="https://ispwaready.toxicjohann.com">
-  <!-- Chrome, Firefox OS and Opera -->
-  <meta name="theme-color" content="#f2e8d5">
-  <!-- Windows Phone -->
-  <meta name="msapplication-navbutton-color" content="#f2e8d5">
-  <!-- iOS Safari -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="PWA的进程">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <link rel="apple-touch-icon" href="https://p5.ssl.qhimg.com/t01245986c32f09718d.png">
-  <link rel="apple-touch-startup-image" href="https://p5.ssl.qhimg.com/t01245986c32f09718d.png">
-</head>
-<body>
-  <nav>
-    <a class="home" href="/">home</a>
-    <a class="reboot" href="/auto/">reboot</a>
-    <a href="https://github.com/toxic-johann/is-pwa-ready/issues">issue</a>
-  </nav>
+{% extends "./base.html" %}
+
+{% block page_css %}
+  <% for(var i = 0; i< htmlWebpackPlugin.files.css.length; i++) {%>
+    <link href="<%= htmlWebpackPlugin.files.css[i] %>" rel="stylesheet">
+  <% } %>
+{% endblock %}
+
+{% block body %}
   <article>
      <header>
-      <h1>PWA auto test page (Alpha)</h1>
-      <p>This test is based on indexedDB, so it may be buggy because of compatibility issues. What's more. As it's alpha version, it can't ensure to run well on all browsers. You can use v-console to check. If you find some bugs. Welcome issue or pr.</p>
+      <h1>{{title}}</h1>
+      <p>{{note}}</p>
     </header>
     <aside class="result">
       <span class="total-score">0</span>
       <span>100</span>
     </aside>
     <section class="env">
-      <p class="browser">Your browser is <span></span>.</p>
-      <p class="os">Your OS is <span></span>.</p>
-      <p class="device">Your device is <span></span>.</p>
-      <p class="schedule">You have run <span>0%</span>.</p>
+      <p class="browser">{{browser}}<span></span>.</p>
+      <p class="os">{{os}}<span></span>.</p>
+      <p class="device">{{device}}<span></span>.</p>
+      <p class="schedule">{{schedule}}<span>0%</span></p>
     </section>
-    <table class="features">
+    <section class="features">
+      <table>
       <thead>
         <tr>
-          <th>testcase</th>
-          <th>score / note</th>
+          {% for key in thead %}
+            <th>{{key}}</th>
+          {% endfor %}
         </tr>
       </thead>
       <tbody></tbody>
     </table>
+    </section>
+    <section class="summary">
+      <p>{{summary}}</p>
+      <code></code>
+      <button class="success">{{copy}}</button>
+    </section>
   </article>
-</body>
-</html>
+{% endblock %}
+
+{% block page_js %}
+  <% for(var i = 0; i< htmlWebpackPlugin.files.js.length; i++) {%>
+    <script type="text/javascript" src="<%= htmlWebpackPlugin.files.js[i] %>"></script>
+  <% } %>
+{% endblock %}

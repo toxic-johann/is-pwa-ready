@@ -5,6 +5,14 @@ article {
   box-sizing: border-box;
   margin: 0 auto;
 }
+body {
+  &:after {
+    content: '';
+    width: 100%;
+    height: 50px;
+    display: block;
+  }
+}
 aside {
   width: 40px;
   background-color: #8D3118;
@@ -38,10 +46,28 @@ table {
   .score {
     text-align: center;
   }
-  &:after {
-    content: '';
-    width: 100%;
-    height: 50px;
+} 
+.summary {
+  &.show {
     display: block;
   }
-} 
+  display: none;
+  code {
+    white-space: pre-wrap;
+    background-color: rgba(0,0,0,0.03);
+    display: block;
+    padding: 0.5rem;
+    color: #888;
+  }
+  button {
+    color: #fff;
+    background-color: #04be02;
+    padding: 6px 12px;
+    text-decoration: none;
+    user-select: none;
+    border-radius: 4px;
+    text-transform: none;
+    outline: none;
+    border: none;
+  }
+}

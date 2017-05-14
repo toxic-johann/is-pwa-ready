@@ -1,8 +1,8 @@
 import store from 'store'
 import {sleep, promisifyOneTimeEventListener} from 'utils'
 const list = [
-  'activeEvent',
-  'active.waitUntil',
+  'activateEvent',
+  'activateEvent.waitUntil',
   'clients.claim',
   'fetchEvent',
   'installEvent',
@@ -12,8 +12,8 @@ const list = [
   'self.skipWaiting',
 ]
 async function controllerchangeCauseByNormalInstall (evt) {
-  console.log('serviceWorker now has a new actived one')
-  console.log('this event will trigger after install.waitUntil and before active.waitUntil')
+  console.log('serviceWorker now has a new activated one')
+  console.log('this event will trigger after install.waitUntil and before activateEvent.waitUntil')
   if(!evt) {
     const score = await store.get('feature', 'oncontrollerchange')
     if(parseFloat(score) === 1) return
@@ -21,11 +21,11 @@ async function controllerchangeCauseByNormalInstall (evt) {
   } else {
     await store.put('feature', 1, 'oncontrollerchange')
   }
-  console.log('if has not active controller, this should be trigger earlier that actived event')
-  const activeWaitUntilScore = await store.get('feature', 'active.waitUntil')
-  if(activeWaitUntilScore && parseFloat(activeWaitUntilScore) > 0) {
-    console.error('the active.waitUntil trigger before oncontrollerchange')
-    await store.put('feature', activeWaitUntilScore, 'active.waitUntil')
+  console.log('if has not activate controller, this should be trigger earlier that activated event')
+  const activateWaitUntilScore = await store.get('feature', 'activateEvent.waitUntil')
+  if(activateWaitUntilScore && parseFloat(activateWaitUntilScore) > 0) {
+    console.error('the activateEvent.waitUntil trigger before oncontrollerchange')
+    await store.put('feature', activateWaitUntilScore, 'activateEvent.waitUntil')
   }
 }
 function genWaiter (fn) {
@@ -46,13 +46,13 @@ export default async function () {
   await store.put('feature', 1, 'navigator.serviceWorker')
   navigator.serviceWorker.ready.then(() => store.put('feature', 1, 'navigator.serviceWorker.ready'))
   const waiter = genWaiter(controllerchangeCauseByNormalInstall)
-  // register test, including install event, controllerchange, active event
+  // register test, including install event, controllerchange, activate event
   const reg = await navigator.serviceWorker.register('/auto/lifecycle-sw.js')
   console.log('Registered!', reg)
   await waiter
   await sleep(3000)
-  const activeWaitUntilScore = await store.get('feature', 'active.waitUntil')
-  await store.put('feature', (parseFloat(activeWaitUntilScore) || 0) + 0.5, 'active.waitUntil')
+  const activateWaitUntilScore = await store.get('feature', 'activateEvent.waitUntil')
+  await store.put('feature', (parseFloat(activateWaitUntilScore) || 0) + 0.5, 'activateEvent.waitUntil')
   // use fetch event to test client.claims effect
   const response = await fetch('/whoareyou.json')
   const clarify = await response.json()

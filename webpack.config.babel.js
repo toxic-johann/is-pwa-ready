@@ -24,6 +24,7 @@ export default function ({mode = 'development', port, nodePort} = {}) {
   const htmlWebpackPlugins = htmlFiles.map(template => {
     const [, path] = template.match(/\.\/client\/views\/([^\/]+)\/main\.html/)
     const options = {
+      inject: false,
       chunks: [path],
       filename: '../views/' + path + '.html',
       template,

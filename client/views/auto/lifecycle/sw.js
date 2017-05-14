@@ -18,15 +18,15 @@ self.oninstall = function (event) {
     })())
   }
   skipWaitingFlag = true
-  // omit waiting period so that we can active
-  // skipWaiting will kick out the current activeone so that we can active this sw
+  // omit waiting period so that we can activate
+  // skipWaiting will kick out the current activateone so that we can activate this sw
   self.skipWaiting()
 }
 
 self.onactivate = function (event) {
   console.log('Activate event', event)
   console.log('.waitUntil', event.waitUntil)
-  store.put('feature', 1, 'activeEvent')
+  store.put('feature', 1, 'activateEvent')
   store.put('feature', Number(installWaitUntilFlag), 'install.waitUntil')
   store.put('feature', Number(skipWaitingFlag), 'self.skipWaiting')
   console.log('try to waitUntil')
@@ -34,7 +34,7 @@ self.onactivate = function (event) {
     console.log('waitUntil')
     await sleep(1000)
     console.log('This should appear before total controll')
-    await store.put('feature', 0.5, 'active.waitUntil')
+    await store.put('feature', 0.5, 'activateEvent.waitUntil')
     // clients.claim can let out page can actually controll the page
     // without this our page will be controller until total reload
     if(self.clients.claim) {

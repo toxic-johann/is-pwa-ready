@@ -1,36 +1,14 @@
-<!DOCTYPE html>
-<html lang=zh-cmn-Hans>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-  <meta name="description" content="PWA在中国区的可用性调查, is pwa ready in China"/>
-  <meta name="keywords" content="pwa, progress web app, 中国, China, ServiceWorker, Web app manifest, push api, cacheStorage, backgroundSync, Chrome, qq, 360, Safari, UC, Firefox"/>
-  <title>PWA，准备好了吗？</title>
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0">
-  <link rel="manifest" href="/demos/pushsubscribe/manifest.json" />
-  <link rel="icon" href="https://s0.ssl.qhres.com/static/2ec2a560a50f94ec.ico">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="application-name" content="PWA的进程">
-  <meta name="msapplication-starturl" content="https://ispwaready.toxicjohann.com">
-  <!-- Chrome, Firefox OS and Opera -->
-  <meta name="theme-color" content="#f2e8d5">
-  <!-- Windows Phone -->
-  <meta name="msapplication-navbutton-color" content="#f2e8d5">
-  <!-- iOS Safari -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="PWA的进程">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <link rel="apple-touch-icon" href="https://p5.ssl.qhimg.com/t01245986c32f09718d.png">
-  <link rel="apple-touch-startup-image" href="https://p5.ssl.qhimg.com/t01245986c32f09718d.png">
-</head>
-<body>
-  <nav>
-    <a href="https://w3c.github.io/ServiceWorker/">规范</a>
-    <a href="https://github.com/toxic-johann/is-pwa-ready">Github</a>
-    <a href="/auto/">自动测试</a>
-  </nav>
+{% extends "./base.html" %}
+
+{% block page_css %}
+  <% for(var i = 0; i< htmlWebpackPlugin.files.css.length; i++) {%>
+    <link href="<%= htmlWebpackPlugin.files.css[i] %>" rel="stylesheet">
+  <% } %>
+{% endblock %}
+
+{% block body %}
   <header>
-    <h1>PWA，准备好了吗？</h1>
+    <h1>{{title}}</h1>
   </header>
   {% for feature in features %}
     {% set featureId = feature.name|striptags|lower|replace("\s+", '-', 'g') %}
@@ -45,7 +23,7 @@
       </header>
       <div class="results">
         {% for browser in browsers %}
-          <section class="result {% if feature[browser.id].supported == 0.5 %}ish{% elif feature[browser.id].supported == 0.8 %} soso {% elif feature[browser.id].supported %} yes{% else %}no{% endif %}">
+          <section class="result {% if feature[browser.id].supported > 0.8%}yes{% elif feature[browser.id].supported > 0.5 %}soso{% elif feature[browser.id].supported > 0 %} ish {% else %} no{% endif %}">
             <h2 class="icon {{ feature[browser.id].icon|default(browser.id) }}">{{browser.name}}</h2>
             {% if browser.mobile %}
               <span class="isMobile">m</span>
@@ -79,5 +57,10 @@
         </ul>
     </article>
   {% endfor %}
-</body>
-</html>
+{% endblock %}
+
+{% block page_js %}
+  <% for(var i = 0; i< htmlWebpackPlugin.files.js.length; i++) {%>
+    <script type="text/javascript" src="<%= htmlWebpackPlugin.files.js[i] %>"></script>
+  <% } %>
+{% endblock %}

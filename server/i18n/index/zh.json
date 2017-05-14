@@ -1,0 +1,1637 @@
+{
+  "title": "PWA，准备好了吗？",
+  "appname": "PWA的进程",
+  "description": "PWA在中国区的可用性调查调查结果",
+  "keywords": "pwa, progress web app, 中国, China, ServiceWorker, Web app manifest, push api, cacheStorage, backgroundSync, Chrome, qq, 360, Safari, UC, Firefox",
+  "nav": {
+    "规范": "https://w3c.github.io/ServiceWorker/",
+    "Github": "https://github.com/toxic-johann/is-pwa-ready",
+    "测试": "/auto/"
+  },
+  "browsers": [
+    {
+      "id": "chrome",
+      "name": "Chrome",
+      "both": true
+    },
+    {
+      "id": "firefox",
+      "name": "Firefox",
+      "both": true
+    },
+    {
+      "id": "opera",
+      "name": "Opera"
+    },
+    {
+      "id": "samsung-internet",
+      "name": "Samsung Internet",
+      "mobile": true
+    },
+    {
+      "id": "xiaomi",
+      "name": "小米原生浏览器",
+      "mobile": true
+    },
+    {
+      "id": "baidum",
+      "name": "百度手机浏览器",
+      "mobile": true
+    },
+    {
+      "id": "m360",
+      "name": "360手机浏览器",
+      "mobile": true
+    },
+    {
+      "id": "sogoum",
+      "name": "搜狗手机浏览器",
+      "mobile": true
+    },
+    {
+      "id": "uc",
+      "name": "UC手机浏览器",
+      "mobile": true
+    },
+    {
+      "id": "qqm",
+      "name": "qq手机浏览器",
+      "mobile": true
+    },
+    {
+      "id": "edge",
+      "name": "Edge"
+    },
+    {
+      "id": "safari",
+      "name": "Safari"
+    }
+  ],
+  "features": [
+    {
+      "id": "atitude",
+      "name": "对ServiceWorker的态度",
+      "description": "态度决定一切。",
+      "chrome": {
+        "supported": 1,
+        "details": [
+          "已上船。"
+        ]
+      },
+      "firefox": {
+        "supported": 1,
+        "details": [
+          "已上船。"
+        ]
+      },
+      "opera": {
+        "supported": 1,
+        "details": [
+          "已上船。"
+        ]
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "details": [
+          "已上船。 基于 Chromium 44.2403 并<a href=\"http://developer.samsung.com/technical-doc/view.do?v=T000000245&pi=2&ps=10&pb=Y&ct=&sc=\">并做了一些修改</a>. (观看\"Service Worker\"章节。)"
+        ]
+      },
+      "safari": {
+        "supported": 0.5,
+        "details": [
+          "<a href=\"https://webkit.org/status/#specification-service-workers\">考虑中</a>，在<a href=\"https://trac.webkit.org/wiki/FiveYearPlanFall2015\">五年计划中</a>有积极的信号。"
+        ]
+      },
+      "edge": {
+        "supported": 0.8,
+        "details": [
+          "<a href=\"https://developer.microsoft.com/microsoft-edge/platform/status/serviceworker\">开发中</a>。edge 15可手动打开。"
+        ]
+      },
+      "uc": {
+        "supported": 0.8,
+        "details": [
+          "已上船。已经实现了部分API，但仍有缺陷。"
+        ]
+      },
+      "xiaomi": {
+        "supported": 1,
+        "details": [
+          "基于安卓原生浏览器，只要版本升级得当，则支持。"
+        ]
+      },
+      "qqm": {
+        "supported": 0.8,
+        "details": [
+          "已上船。内部已经使用，但仍有缺陷。"
+        ]
+      },
+      "m360": {
+        "supported": 1,
+        "details": [
+          "已上船。基于 chromium 45 更改。"
+        ]
+      },
+      "baidum": {
+        "supported": 1,
+        "details": [
+          "已上船。且百度争取实现iOS可用。"
+        ]
+      },
+      "sogoum": {
+        "supported": 0.8,
+        "details": [
+          "已上船。基于 chromium 46 更改"
+        ]
+      },
+      "details": [
+        "以上支持均不含 iOS 版本（参照Safari的支持度）。"
+      ]
+    },
+    {
+      "id": "Promise",
+      "name": "Promises",
+      "description": "并不在ServiceWorker规范内，但是是ServiceWorker实现的必要条件。<a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-promise-objects\">规范</a>。<a href=\"demos/globalapis/\">测试</a>。",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 36
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 29
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 23
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "safari": {
+        "minVersion": 9,
+        "supported": 1
+      },
+      "edge": {
+        "icon": "edge",
+        "minVersion": 13,
+        "supported": 1
+      },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 1
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "details": []
+    },
+    {
+      "id": "Request",
+      "name": "<code>Request</code>",
+      "description": "Fetch Api 中的请求对象。<a href=\"https://fetch.spec.whatwg.org/#request\">规范</a>。 <a href=\"demos/globalapis/\">测试</a>。",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 39
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 1,
+        "details": [
+          "新版本已支持"
+        ]
+      },
+      "edge": {
+        "supported": 1,
+        "minVersion": 14
+      },
+      "uc": {
+        "supported": 0
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 1
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "details": []
+    },
+    {
+      "id": "Response",
+      "name": "<code>Response</code>",
+      "description": "Fetch Api 中的响应对象。<a href=\"https://fetch.spec.whatwg.org/#response\">规范</a>。 <a href=\"demos/globalapis/\">测试</a>。",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 39
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27,
+        "details": [
+          "【该问题已在M-54解决】<code>URLSearchParams</code> as well as creating a <code>Response</code> from <code>FormData</code> are <a href=\"https://code.google.com/p/chromium/issues/detail?id=412027#c5\">not supported yet</a>"
+        ]
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 1,
+        "details": [
+          "新版本已支持"
+        ]
+      },
+      "edge": {
+        "supported": 1,
+        "minVersion": 14
+      },
+      "uc": {
+        "supported": 0
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 1
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "details": [
+        "【该问题已在M-54解决】<strong>Chrome & Samsung Internet</strong>: <code>URLSearchParams</code> <a href=\"https://code.google.com/p/chromium/issues/detail?id=412027#c11\">not supported yet</a>"
+      ]
+    },
+    {
+      "id": "indexedDB",
+      "name": "<code>indexedDB</code>",
+      "description": "indexedDB 可以在主线程与 serviceWorker 线程访问",
+      "details": [],
+      "chrome": {
+        "supported": 1,
+        "minVersion": 60
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 53
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "xiaomi": {
+        "supported": 0.5,
+        "minVersion": 2
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 0.5,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      }
+    },
+    {
+      "id": "indexedDB.getAll",
+      "name": "indexedDB 2.0",
+      "description": "使用 indexedDB.getAll 检测是否支持 indexedDB 2.0",
+      "details": [],
+      "chrome": {
+        "supported": 1,
+        "minVersion": 48
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "xiaomi": {
+        "supported": 0.5,
+        "minVersion": 2
+      },
+      "m360": {
+        "supported": 0,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 0.5,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 0,
+        "minVersion": 46
+      }
+    },
+    {
+      "id": "navigator.serviceWorker",
+      "name": "<code>navigator.serviceWorker</code>",
+      "description": "主线程中 ServiceWorker API 的命名空间 <a href=\"https://w3c.github.io/ServiceWorker/#navigator-service-worker\">规范</a>。 <a href=\"demos/navigator.serviceWorker/\">测试</a>。",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 1
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "details": []
+    },
+    {
+      "id": "Registered",
+      "name": "Register",
+      "description": "注册一个ServiceWorker并且返回一个 registration 实例。<a href=\"https://w3c.github.io/ServiceWorker/#navigator-service-worker-register\">规范</a>。 <a href=\"demos/registerunregister/\">测试</a>。",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 1
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "details": []
+    },
+    {
+      "id": "installEvent",
+      "name": "Install事件",
+      "description": "Install 事件会在有新的serviceWorker的时候触发。<a href=\"https://w3c.github.io/ServiceWorker/#install-event-section\">规范</a>。 <a href=\"demos/installactivate/\">测试</a>。",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 1
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "details": []
+    },
+    {
+      "id": "installEvent.waitUntil",
+      "name": "Install事件的waitUntil方法",
+      "description": "<code>InstallEvent.waitUntil()</code>。通过该事件可以延迟active事件的发生。 <a href=\"https://w3c.github.io/ServiceWorker/#install-event-section\">规范</a>。 <a href=\"demos/installactivate/\">测试</a>。",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
+        "supported": 1
+      },
+      "qqm": {
+        "supported": 1
+      },
+      "m360": {
+        "supported": 1
+      },
+      "baidum": {
+        "supported": 1
+      },
+      "sogoum": {
+        "supported": 1
+      },
+      "details": []
+    },
+    {
+      "id": "self.skipWaiting",
+      "name": "<code>self.skipWaiting()</code>",
+      "description": "容许正在安装中的worker在安装成功后马上取代现在被激活的页面。<a href=\"https://w3c.github.io/ServiceWorker/#service-worker-global-scope-skipwaiting\">规范</a>。 <a href=\"demos/installactivate/\">测试</a>。",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 42
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 42
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 0.3,
+        "details": [
+          "因postMessage缺失及client.claim不可用，暂无法确定，日后补充"
+        ]
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 0.3,
+        "details": [
+          "因postMessage缺失及client.claim不可用，暂无法确定，日后补充"
+        ]
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "details": []
+    },
+    {
+      "id": "oncontrollerchange",
+      "name": "controllerchange事件",
+      "description": "在 serviceWorker 被激活后会触发的事件",
+      "details": [],
+      "chrome": {
+        "supported": 1,
+        "minVersion": 60
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 53
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      }
+    },
+    {
+      "id": "navigator.serviceWorker.ready",
+      "name": "<code>serviceWorker.ready</code>",
+      "description": "<a href=\"https://w3c.github.io/ServiceWorker/#navigator-service-worker-ready\">规范</a>。 <a href=\"demos/registerunregister/\">测试</a>。",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 60
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 1
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "details": []
+    },
+    {
+      "id": "activateEvent",
+      "name": "Activate事件",
+      "description": "Activate 事件会在worker被激活时触发。 <a href=\"https://w3c.github.io/ServiceWorker/#activation-algorithm\">规范</a>。 <a href=\"demos/installactivate/\">测试</a>。",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 1
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "details": []
+    },
+    {
+      "id": "activateEvent.waitUntil",
+      "name": "Activate事件",
+      "description": "<code>event.waitUntil()</code>. <a href=\"https://w3c.github.io/ServiceWorker/#activation-algorithm\">规范</a>。 <a href=\"demos/installactivate/\">测试</a>。",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 1
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "details": []
+    },
+    {
+      "id": "clients.claim",
+      "name": "<code>clients.claim()</code>",
+      "description": "允许一个激活了的worker掌控同域的页面（例如，在serviceWorker安装前加载的页面）。 <a href=\"https://w3c.github.io/ServiceWorker/#clients-claim\">规范</a>。 <a href=\"demos/claim/\">测试</a>。",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 42
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 0,
+        "details": [
+          "准备实现"
+        ]
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 0,
+        "details": [
+          "不可用"
+        ]
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "details": [
+          "不可用"
+        ],
+        "minVersion": 46
+      },
+      "details": []
+    },
+    {
+      "id": "Unregistered",
+      "name": "Unregister",
+      "description": "<code>unregister</code> 则相反。. <a href=\"https://w3c.github.io/ServiceWorker/#navigator-service-worker-register\">规范</a>。 <a href=\"demos/registerunregister/\">测试</a>。",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 1
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "details": []
+    },
+    {
+      "id": "lifecycle",
+      "name": "ServiceWorker生命周期",
+      "description": "容许下一个版本等待并在合适的时候掌控页面。<a href=\"demos/claim/?again=true\">测试（此测试前请先确保进行了claim的测试）</a>。",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 0.5,
+        "details": [
+          "client.claim不可用，导致只能关闭客户端才能更新。"
+        ]
+      },
+      "xiaomi": {
+        "supported": 1
+      },
+      "qqm": {
+        "supported": 0.5,
+        "details": [
+          "client.claim不可用，导致只能关闭客户端才能更新。"
+        ]
+      },
+      "m360": {
+        "supported": 1
+      },
+      "baidum": {
+        "supported": 1
+      },
+      "sogoum": {
+        "supported": 1
+      },
+      "details": []
+    },
+    {
+      "id": "update",
+      "name": "更新检测",
+      "description": "浏览器会在页面导航改变后检测 ServiceWorker 更新。<a href=\"https://w3c.github.io/ServiceWorker/#update-algorithm\">规范</a>。",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
+        "supported": 1
+      },
+      "qqm": {
+        "supported": 1
+      },
+      "m360": {
+        "supported": 1
+      },
+      "baidum": {
+        "supported": 1
+      },
+      "sogoum": {
+        "supported": 1
+      },
+      "details": []
+    },
+    {
+      "id": "fetch",
+      "name": "<code>fetch(request)</code>",
+      "description": "<a href=\"https://w3c.github.io/ServiceWorker/#fetch-event-section\">规范</a>。 <a href=\"demos/fetch/\">测试</a>。",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 39
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 1,
+        "minVersion": 10.1
+      },
+      "edge": {
+        "supported": 1,
+        "minVersion": 14
+      },
+      "uc": {
+        "supported": 0
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 1
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "details": [
+        "<a href=\"https://github.com/github/fetch\">可以进行Polyfill</a>"
+      ]
+    },
+    {
+      "id": "fetchEvent",
+      "name": "Fetch事件",
+      "description": "在获取页面和所有子资源的时候触发。 <a href=\"https://w3c.github.io/ServiceWorker/#fetch-event-section\">规范</a>。 <a href=\"demos/fetchevent/\">测试</a>。",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 1
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "details": []
+    },
+    {
+      "id": "fetchEvent.request",
+      "name": "<code>fetchEvent.request</code>",
+      "description": "<a href=\"https://w3c.github.io/ServiceWorker/#fetch-event-section\">规范</a>。 <a href=\"demos/fetchevent/\">测试</a>。",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 1
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "details": []
+    },
+    {
+      "id": "fetchEvent.respondWith",
+      "name": "<code>fetchEvent.respondWith()</code>",
+      "description": "<a href=\"https://w3c.github.io/ServiceWorker/#fetch-event-respondwith-method\">规范</a>。 <a href=\"demos/fetchevent/\">测试</a>。",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 1
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "details": []
+    },
+    {
+      "id": "caches",
+      "name": "<code>caches</code>",
+      "description": "cachesStorage命名空间，一般在主线程和serviceWorker中都可找到， 但规范中只有serviceWorker可用。<a href=\"https://w3c.github.io/ServiceWorker/#cache-objects\">规范</a>。 <a href=\"demos/globalapis/\">测试</a>。",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 33
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 0
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 0
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "details": [
+        "<strong>Edge</strong>: <a href=\"https://developer.microsoft.com/microsoft-edge/platform/status/cacheapi\">开发中</a>"
+      ]
+    },
+    {
+      "id": "postMessage",
+      "name": "<code>postMessage</code> to &amp; from worker",
+      "description": "与worker沟通的通道。在移动端为了方便测试，利用此通道做了增强。因此大家可以先用此测试是否有效。<a href=\"https://w3c.github.io/ServiceWorker/#service-worker-postmessage\">规范</a>。 <a href=\"demos/postMessage/\">测试</a>。",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 0,
+        "details": [
+          "报错说存在安全问题"
+        ]
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 0.3,
+        "details": [
+          "不能顺利进行，检测使用window.onmessage进行接收。"
+        ]
+      },
+      "baidum": {
+        "supported": 0.95,
+        "minVersion": 7
+      },
+      "m360": {
+        "supported": 0.95,
+        "minVersion": 45
+      },
+      "sogoum": {
+        "supported": 0.95,
+        "details": [
+          "不能顺利进行"
+        ],
+        "minVersion": 46
+      },
+      "details": [
+        "<strong>Chrome & Opera</strong>: <code>messageEvent.source</code><a href=\"https://crbug.com/403693\">在worker中为<code>null</code></a>，但你可以传入你自己的<code>MessageChannel</code>来进行双向通信。【43后版本已修复】",
+        "<strong>Chrome & Opera</strong>: 较旧版本会将错误的将信息发送给了<code>window.onmessage</code>而不是<code>navigator.serviceWorker.onmessage</code>。【新版本正常】"
+      ]
+    },
+    {
+      "id": "Notification",
+      "name": "<code>Notification</code>",
+      "description": "给用户发送通知的对象。<a href=\"https://notifications.spec.whatwg.org\">规范</a>。 <a href=\"demos/globalapis/\">测试</a>。",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 60
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 53
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "samsung-internet": {
+        "supported": 1
+      },
+      "safari": {
+        "supported": 1
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 0.5,
+        "details": [
+          "存在Notification对象，但不可用"
+        ]
+      },
+      "xiaomi": {
+        "supported": 0,
+        "details": [
+          "存在Notification对象，但不可用"
+        ],
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 0.5,
+        "details": [
+          "存在Notification对象，但不可用"
+        ]
+      },
+      "m360": {
+        "supported": 1,
+        "details": [
+          "存在Notification对象，但不可用"
+        ],
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 0,
+        "details": [
+          "存在Notification对象，但不可用"
+        ],
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "details": [
+          "存在Notification对象，但不可用"
+        ],
+        "minVersion": 46
+      },
+      "details": [
+        "<strong>Edge</strong>: <a href=\"https://developer.microsoft.com/microsoft-edge/platform/status/cacheapi\">开发中</a>",
+        "该属性要看手机系统的开放程度，并不一定能用。"
+      ]
+    },
+    {
+      "id": "web-app-mainfest",
+      "name": "Web App Manifest",
+      "description": "添加到主屏幕功能。<a href=\"https://w3c.github.io/manifest/\">规范</a>。直接在浏览器中选择添加到桌面／主屏幕即可。但注意要在手机上授权。",
+      "chrome": {
+        "supported": 1
+      },
+      "firefox": {
+        "supported": 1
+      },
+      "opera": {
+        "supported": 0.5,
+        "details": [
+          "可以添加到主屏幕，但是并不符合规范，自定义图标无效"
+        ]
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "details": [
+          "手上缺乏工具，待验证"
+        ]
+      },
+      "safari": {
+        "supported": 0,
+        "details": [
+          "具有自己完整独立的逻辑，可定制桌面图标，但并不遵循规范。"
+        ]
+      },
+      "edge": {
+        "supported": 0,
+        "details": [
+          "手上缺乏工具，待验证"
+        ]
+      },
+      "xiaomi": {
+        "supported": 0.5,
+        "details": [
+          "可以添加到主屏幕，但是并不符合规范，自定义图标无效"
+        ]
+      },
+      "uc": {
+        "supported": 0.5,
+        "details": [
+          "可以添加到主屏幕，但是并不符合规范，自定义图标无效"
+        ]
+      },
+      "qqm": {
+        "supported": 0
+      },
+      "m360": {
+        "supported": 0.5,
+        "details": [
+          "可以添加到主屏幕，但是并不符合规范，自定义图标无效"
+        ]
+      },
+      "baidum": {
+        "supported": 0.5,
+        "details": [
+          "可以添加到主屏幕，但是并不符合规范，自定义图标无效"
+        ]
+      },
+      "sogoum": {
+        "supported": 0.5,
+        "details": [
+          "可以添加到主屏幕，但是并不符合规范，自定义图标无效"
+        ]
+      },
+      "details": []
+    },
+    {
+      "id": "PushManager.subscribe",
+      "name": "PushManager.subscribe()",
+      "description": "订阅后的结果才能推送。但是国内，由于gcm/fcm访问问题。绝大部分浏览器推送订阅失效。<a href=\"https://w3c.github.io/push-api/#widl-PushManager-subscribe-Promise-PushSubscription--PushSubscriptionOptions-options\">规范</a>。<a href=\"demos/pushsubscribe/\">测试</a>。",
+      "chrome": {
+        "supported": 0.5,
+        "minVersion": 42,
+        "details": [
+          "国内因不可描述的原因不可用"
+        ]
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 0.5,
+        "details": [
+          "国内因不可描述的原因不可用"
+        ]
+      },
+      "uc": {
+        "supported": 0
+      },
+      "qqm": {
+        "supported": 0
+      },
+      "m360": {
+        "supported": 0,
+        "details": [
+          "提示不可用"
+        ]
+      },
+      "baidum": {
+        "supported": 0,
+        "details": [
+          "提示不可用"
+        ]
+      },
+      "sogoum": {
+        "supported": 0
+      },
+      "details": []
+    },
+    {
+      "id": "sync",
+      "name": "Background sync",
+      "description": "延迟任务直到用户的网络可用。 <a href=\"https://github.com/WICG/BackgroundSync\">规范</a>。 <a href=\"demos/sync/\">测试</a>。",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 49
+      },
+      "firefox": {
+        "supported": 0,
+        "details": [
+          "<a href=\"https://bugzilla.mozilla.org/show_bug.cgi?id=1217544\">Bug 1217544</a>"
+        ]
+      },
+      "opera": {
+        "supported": 0
+      },
+      "samsung-internet": {
+        "supported": 0
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0,
+        "details": [
+          "<a href=\"https://developer.microsoft.com/en-us/microsoft-edge/platform/status/backgroundsyncapi/\">In development</a>"
+        ]
+      },
+      "uc": {
+        "supported": 0
+      },
+      "xiaomi": {
+        "supported": 0
+      },
+      "qqm": {
+        "supported": 0
+      },
+      "m360": {
+        "supported": 0
+      },
+      "baidum": {
+        "supported": 0
+      },
+      "sogoum": {
+        "supported": 0
+      },
+      "details": []
+    },
+    {
+      "id": "debug",
+      "name": "Debugging",
+      "description": "调试工具",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40,
+        "details": [
+          "你可以轻松的调试Service Worker脚本。在开发者工具中的 \"Application\" 面板中有 service worker & cache 部分。"
+        ]
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 47,
+        "details": [
+          "可以在<a href=\"https://developer.mozilla.org/en-US/docs/Tools/about:debugging#Workers\">\"Workers\" 页面</a><code>about:debugging</code>中进行调试。",
+          "<a href=\"https://developer.mozilla.org/en-US/docs/Tools/Web_Console\">Web Console</a> 可以输出来自于Service Workers的控制台消息。",
+          "<code>about:serviceworkers</code>中有一些底层信息。"
+        ]
+      },
+      "opera": {
+        "supported": 1,
+        "details": [
+          "版本42，你也可以轻松的调试Service Worker脚本。在开发者工具中的 \"Application\" 面板中有 service worker & cache 部分。",
+          "可以在<a href=\"http://www.opera.com/developer\">Opera 开发者版本</a>的资源面板中调试， 前提是你<a href=\"https://www.reddit.com/r/webdev/comments/2wz7s4/the_secret_extra_tools_within_chromes_dev_tools/\">启用了实验性超级开发者工具</a>。",
+          "可以在控制台输出相关的控制记录。",
+          "<code>browser://serviceworker-internals</code>中有一些底层信息。"
+        ]
+      },
+      "samsung-internet": {
+        "supported": 0
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 0
+      },
+      "qqm": {
+        "supported": 0
+      },
+      "m360": {
+        "supported": 0
+      },
+      "baidum": {
+        "supported": 0
+      },
+      "sogoum": {
+        "supported": 0
+      },
+      "details": [
+        "<strong>Chrome 和 Opera</strong>: 都可以在<a href=\"https://www.google.com/chrome/browser/canary.html\">Chrome Canary</a>和<a href=\"http://www.opera.com/developer\">Opera 开发者版本中</a>的资源面板中调试，前提是<a href=\"https://www.reddit.com/r/webdev/comments/2wz7s4/the_secret_extra_tools_within_chromes_dev_tools/\">启用了实验性超级开发者工具</a>。",
+        "<strong>Chrome 和 Opera</strong>: ServiceWorker的控制台消息都会在 console 面板中输出。",
+        "<strong>Chrome 、 Opera 和 Samsung Internet</strong>: <code>chrome://serviceworker-internals</code> 和 <code>browser://serviceworker-internals</code> (在 Opera 开发者版本中) 都能查看一些底层消息。"
+      ]
+    }
+  ]
+}

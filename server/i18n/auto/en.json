@@ -1,0 +1,20 @@
+{
+  "title": "PWA Auto Test(Alpha)",
+  "appname": "is-pwa-ready",
+  "description": "auto test page for PWA",
+  "keywords": "pwa, progress web app, ready, caniuse, test, check, robot",
+  "nav": {
+    "Home": "/",
+    "Reboot": "/auto/",
+    "Issue": "https://github.com/toxic-johann/is-pwa-ready/issues",
+    "Github": "https://github.com/toxic-johann/is-pwa-ready"
+  },
+  "note": "This test is based on indexedDB, so it may be buggy because of compatibility issues. What's more. As it's alpha version, it can't ensure to run well on all browsers. You can use v-console to debug. Welcome issue or pull.",
+  "browser": "Your browser is ",
+  "os": "Your OS is ",
+  "device": "Your device is ",
+  "schedule": "You have run ",
+  "thead": ["Testcase", "Score / Note"],
+  "summary": "If you are testing a browser which i have not shown. Welcome to send this JSON to the github issue.",
+  "copy": "Copy"
+}

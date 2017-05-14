@@ -6,7 +6,8 @@ import lifecycleTest from './lifecycle/main'
 import syncTest from './sync/main'
 import result from './result/main'
 import init from './init/main'
-import './env/main'
+import env from './env/main'
+import summary from './summary/main'
 import {search2obj} from 'utils'
 import './main.css'
 import 'vconsole'
@@ -20,6 +21,7 @@ const {step = '0'} = search2obj();
   switch (step) {
     case '0':
       await init()
+      await env()
       await result()
       await globalTest()
       await result()
@@ -33,6 +35,7 @@ const {step = '0'} = search2obj();
       await result()
       await syncTest()
       await result()
+      await summary()
       break
   }
 })()
