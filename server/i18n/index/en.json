@@ -1,0 +1,1602 @@
+{
+  "title": "Is PWA ready?",
+  "appname": "is-pwa-ready",
+  "description": "is PWA ready in China?",
+  "keywords": "pwa, progress web app, 中国, China, ServiceWorker, Web app manifest, push api, cacheStorage, backgroundSync, Chrome, qq, 360, Safari, UC, Firefox",
+  "nav": {
+    "Spec": "https://w3c.github.io/ServiceWorker/",
+    "Github": "https://github.com/toxic-johann/is-pwa-ready",
+    "Test": "/auto/"
+  },
+  "browsers": [
+    {
+      "id": "chrome",
+      "name": "Chrome",
+      "both": true
+    },
+    {
+      "id": "firefox",
+      "name": "Firefox",
+      "both": true
+    },
+    {
+      "id": "opera",
+      "name": "Opera"
+    },
+    {
+      "id": "samsung-internet",
+      "name": "Samsung Internet",
+      "mobile": true
+    },
+    {
+      "id": "xiaomi",
+      "name": "Xiaomi mobile browser",
+      "mobile": true
+    },
+    {
+      "id": "baidum",
+      "name": "Baidu mobile browser",
+      "mobile": true
+    },
+    {
+      "id": "m360",
+      "name": "360 mobile browser",
+      "mobile": true
+    },
+    {
+      "id": "sogoum",
+      "name": "sogou mobile browser",
+      "mobile": true
+    },
+    {
+      "id": "uc",
+      "name": "UC mobile browser",
+      "mobile": true
+    },
+    {
+      "id": "qqm",
+      "name": "qq mobile browser",
+      "mobile": true
+    },
+    {
+      "id": "edge",
+      "name": "Edge"
+    },
+    {
+      "id": "safari",
+      "name": "Safari"
+    }
+  ],
+  "features": [
+    {
+      "id": "atitude",
+      "name": "ServiceWorker enthusiasm",
+      "description": "The first thing any implementation needs.",
+      "chrome": {
+        "supported": 1,
+        "details": [
+          "Shipped."
+        ]
+      },
+      "firefox": {
+        "supported": 1,
+        "details": [
+          "Shipped."
+        ]
+      },
+      "opera": {
+        "supported": 1,
+        "details": [
+          "Shipped."
+        ]
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "details": [
+          "Shipped. Based on Chromium 44.2403 with some <a href=\"http://developer.samsung.com/technical-doc/view.do?v=T000000245&pi=2&ps=10&pb=Y&ct=&sc=\">additions and changes</a>. (See \"Service Worker\" section.)"
+        ]
+      },
+      "safari": {
+        "supported": 0.5,
+        "details": [
+          "<a href=\"https://webkit.org/status/#specification-service-workers\">Under consideration</a>, Brief positive signals in <a href=\"https://trac.webkit.org/wiki/FiveYearPlanFall2015\">five year plan</a>."
+        ]
+      },
+      "edge": {
+        "supported": 0.8,
+        "details": [
+          "<a href=\"https://developer.microsoft.com/microsoft-edge/platform/status/serviceworker\">In development</a>. You can turn it on by flag on Edge 15."
+        ]
+      },
+      "uc": {
+        "supported": 0.8,
+        "details": [
+          "Shipped. It has implemented some function. But it's hard to run well."
+        ]
+      },
+      "xiaomi": {
+        "supported": 1,
+        "details": [
+          "Shipped. Based on Android webview."
+        ]
+      },
+      "qqm": {
+        "supported": 0.8,
+        "details": [
+          "Shipped. I am told that they have used it on Tecent product. But i could not run on my phone"
+        ]
+      },
+      "m360": {
+        "supported": 1,
+        "details": [
+          "Shipped. Based on chromium 45."
+        ]
+      },
+      "baidum": {
+        "supported": 1,
+        "details": [
+          "Shipped."
+        ]
+      },
+      "sogoum": {
+        "supported": 0.8,
+        "details": [
+          "Shipped. Based on chromium 46."
+        ]
+      },
+      "details": [
+        "Support does not include iOS versions of third-party browsers on that platform (see Safari support)."
+      ]
+    },
+    {
+      "id": "Promise",
+      "name": "Promises",
+      "description": "Not ServiceWorker-specific, but required by ServiceWorker. <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-promise-objects\">Spec</a>.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 36
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 29
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 23
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "safari": {
+        "minVersion": 9,
+        "supported": 1
+      },
+      "edge": {
+        "icon": "edge",
+        "minVersion": 13,
+        "supported": 1
+      },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 1
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "details": []
+    },
+    {
+      "id": "Request",
+      "name": "<code>Request</code>",
+      "description": "<a href=\"https://fetch.spec.whatwg.org/#request\">Spec</a>. <a href=\"demos/globalapis/\">Test</a>.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 39
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 1
+      },
+      "edge": {
+        "supported": 1,
+        "minVersion": 14
+      },
+      "uc": {
+        "supported": 0
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 1
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "details": []
+    },
+    {
+      "id": "Response",
+      "name": "<code>Response</code>",
+      "description": "<a href=\"https://fetch.spec.whatwg.org/#response\">Spec</a>. <a href=\"demos/globalapis/\">Test</a>.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 39
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27,
+        "details": [
+          "[fixed in M-54]<code>URLSearchParams</code> as well as creating a <code>Response</code> from <code>FormData</code> are <a href=\"https://code.google.com/p/chromium/issues/detail?id=412027#c5\">not supported yet</a>"
+        ]
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 1
+      },
+      "edge": {
+        "supported": 1,
+        "minVersion": 14
+      },
+      "uc": {
+        "supported": 0
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 1
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "details": [
+        "[fixed in M-54]<strong>Chrome & Samsung Internet</strong>: <code>URLSearchParams</code> <a href=\"https://code.google.com/p/chromium/issues/detail?id=412027#c11\">not supported yet</a>"
+      ]
+    },
+    {
+      "id": "indexedDB",
+      "name": "<code>indexedDB</code>",
+      "description": "Both main thread and serviceWorker thread can get acess to indexedDB.",
+      "details": [],
+      "chrome": {
+        "supported": 1,
+        "minVersion": 24
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 16
+      },
+      "safari": {
+        "supported": 1,
+        "minVersion": 10
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 15
+      },
+      "xiaomi": {
+        "supported": 0.5,
+        "minVersion": 2
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 0.5,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      }
+    },
+    {
+      "id": "indexedDB.getAll",
+      "name": "indexedDB 2.0",
+      "description": "I use indexedDB.getAll to detect indexedDB 2.0",
+      "details": [],
+      "chrome": {
+        "supported": 1,
+        "minVersion": 48
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "xiaomi": {
+        "supported": 0.5,
+        "minVersion": 2
+      },
+      "m360": {
+        "supported": 0,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 0.5,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 0,
+        "minVersion": 46
+      }
+    },
+    {
+      "id": "navigator.serviceWorker",
+      "name": "Namespace for page-side ServiceWorker API. <a href=\"https://w3c.github.io/ServiceWorker/#navigator-service-worker\">Spec</a>. <a href=\"demos/navigator.serviceWorker/\">Test</a>.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 1
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "details": []
+    },
+    {
+      "id": "Registered",
+      "name": "Register",
+      "description": "Register for a SW and get a registration instance back. <a href=\"https://w3c.github.io/ServiceWorker/#navigator-service-worker-register\">Spec</a>. <a href=\"demos/registerunregister/\">Test</a>.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 1
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "details": []
+    },
+    {
+      "id": "installEvent",
+      "name": "Install event",
+      "description": "Install event fires in a newly discovered SW. <a href=\"https://w3c.github.io/ServiceWorker/#install-event-section\">Spec</a>. <a href=\"demos/installactivate/\">Test</a>",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 1
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "details": []
+    },
+    {
+      "id": "installEvent.waitUntil",
+      "name": "Install event waitUntil",
+      "description": "Install event fires in a newly discovered SW. Includes <code>InstallEvent.waitUntil()</code>. <a href=\"https://w3c.github.io/ServiceWorker/#install-event-section\">Spec</a>. <a href=\"demos/installactivate/\">Test</a>",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
+        "supported": 1
+      },
+      "qqm": {
+        "supported": 1
+      },
+      "m360": {
+        "supported": 1
+      },
+      "baidum": {
+        "supported": 1
+      },
+      "sogoum": {
+        "supported": 1
+      },
+      "details": []
+    },
+    {
+      "id": "self.skipWaiting",
+      "name": "<code>self.skipWaiting()</code>",
+      "description": "Allow an installing worker to take over from the current active worker once installed. <a href=\"https://w3c.github.io/ServiceWorker/#service-worker-global-scope-skipwaiting\">Spec</a>. <a href=\"demos/installactivate/\">Test</a>.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 42
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 42
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 0.3,
+        "details": [
+          "TODO, I can't test this feature because my test case not run well on it."
+        ]
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 0.3,
+        "details": [
+          "TODO, I can't test this feature because my test case not run well on it."
+        ]
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "details": []
+    },
+    {
+      "id": "oncontrollerchange",
+      "name": "controllerchange event",
+      "description": "this event will be trigger when actived",
+      "details": [],
+      "chrome": {
+        "supported": 1,
+        "minVersion": 60
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 53
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      }
+    },
+    {
+      "id": "navigator.serviceWorker.ready",
+      "name": "<code>serviceWorker.ready</code>",
+      "description": "<a href=\"https://w3c.github.io/ServiceWorker/#navigator-service-worker-ready\">Spec</a>. <a href=\"demos/registerunregister/\">Test</a>.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 38
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 1
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "details": []
+    },
+    {
+      "id": "activateEvent",
+      "name": "Activate event",
+      "description": "Activate event fires once this worker becomes the active worker in a registration. <a href=\"https://w3c.github.io/ServiceWorker/#activation-algorithm\">Spec</a>. <a href=\"demos/installactivate/\">Test</a>.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 1
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "details": []
+    },
+    {
+      "id": "activateEvent.waitUntil",
+      "name": "Activate event waitUntil",
+      "description": "Activate event fires once this worker becomes the active worker in a registration. Includes <code>event.waitUntil()</code>. <a href=\"https://w3c.github.io/ServiceWorker/#activation-algorithm\">Spec</a>. <a href=\"demos/installactivate/\">Test</a>.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 1
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "details": []
+    },
+    {
+      "id": "clients.claim",
+      "name": "<code>clients.claim()</code>",
+      "description": "Allow an active worker to take control of pages in its scope (eg, documents that were loaded before the SW was registered). <a href=\"https://w3c.github.io/ServiceWorker/#clients-claim\">Spec</a>. <a href=\"demos/claim/\">Test</a>.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 42
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 0,
+        "details": [
+          "In development"
+        ]
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 0,
+        "details": [
+          "TODO, I can't test this feature because my test case not run well on it."
+        ]
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "details": []
+    },
+    {
+      "id": "Unregistered",
+      "name": "Unregister",
+      "description": "Register for a SW and get a registration instance back, <code>unregister</code> undoes. <a href=\"https://w3c.github.io/ServiceWorker/#navigator-service-worker-register\">Spec</a>. <a href=\"demos/registerunregister/\">Test</a>.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 1
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "details": []
+    },
+    {
+      "id": "lifecycle",
+      "name": "ServiceWorker lifecycle",
+      "description": "Allow a next version to be in waiting &amp; take over when appropriate.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 0.5,
+        "details": [
+          "Lack of client.claim make us could not update immediately"
+        ]
+      },
+      "xiaomi": {
+        "supported": 1
+      },
+      "qqm": {
+        "supported": 0.5,
+        "details": [
+          "TODO."
+        ]
+      },
+      "m360": {
+        "supported": 1
+      },
+      "baidum": {
+        "supported": 1
+      },
+      "sogoum": {
+        "supported": 1
+      },
+      "details": []
+    },
+    {
+      "id": "update",
+      "name": "Update checks",
+      "description": "Browser checks for SW updates after navigation. <a href=\"https://w3c.github.io/ServiceWorker/#update-algorithm\">Spec</a>.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
+        "supported": 1
+      },
+      "qqm": {
+        "supported": 1
+      },
+      "m360": {
+        "supported": 1
+      },
+      "baidum": {
+        "supported": 1
+      },
+      "sogoum": {
+        "supported": 1
+      },
+      "details": []
+    },
+    {
+      "id": "fetch",
+      "name": "<code>fetch(request)</code>",
+      "description": "<a href=\"https://w3c.github.io/ServiceWorker/#fetch-event-section\">Spec</a>. <a href=\"demos/fetch/\">Test</a>.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 39
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 1,
+        "minVersion": 10.1
+      },
+      "edge": {
+        "supported": 1,
+        "minVersion": 14
+      },
+      "uc": {
+        "supported": 0
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 1
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "details": [
+        "<a href=\"https://github.com/github/fetch\">Polyfill available</a>"
+      ]
+    },
+    {
+      "id": "fetchEvent",
+      "name": "Fetch event",
+      "description": "Fires for pages and all sub-resources. <a href=\"https://w3c.github.io/ServiceWorker/#fetch-event-section\">Spec</a>. <a href=\"demos/fetchevent/\">Test</a>.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 1
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "details": []
+    },
+    {
+      "id": "fetchEvent.request",
+      "name": "<code>fetchEvent.request</code>",
+      "description": "<a href=\"https://w3c.github.io/ServiceWorker/#fetch-event-section\">Spec</a>. <a href=\"demos/fetchevent/\">Test</a>.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 1
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "details": []
+    },
+    {
+      "id": "fetchEvent.respondWith",
+      "name": "<code>fetchEvent.respondWith()</code>",
+      "description": "<a href=\"https://w3c.github.io/ServiceWorker/#fetch-event-respondwith-method\">Spec</a>. <a href=\"demos/fetchevent/\">Test</a>.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 1
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 1
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "details": []
+    },
+    {
+      "id": "caches",
+      "name": "<code>caches</code>",
+      "description": "<a href=\"https://w3c.github.io/ServiceWorker/#cache-objects\">Spec</a>. <a href=\"demos/globalapis/\">Test</a>.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 33
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 0
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 0
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "details": [
+        "<strong>Edge</strong>: <a href=\"https://developer.microsoft.com/microsoft-edge/platform/status/cacheapi\"In development</a>"
+      ]
+    },
+    {
+      "id": "postMessage",
+      "name": "<code>postMessage</code> to &amp; from worker",
+      "description": "<a href=\"https://w3c.github.io/ServiceWorker/#service-worker-postmessage\">Spec</a>. <a href=\"demos/postMessage/\">Test</a>.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 27
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 0,
+        "details": [
+          "throw safety error"
+        ]
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 0.3,
+        "details": [
+          "Failed. And i got the message on window."
+        ]
+      },
+      "baidum": {
+        "supported": 0.95,
+        "minVersion": 7
+      },
+      "m360": {
+        "supported": 0.95,
+        "minVersion": 45
+      },
+      "sogoum": {
+        "supported": 0.95,
+        "details": [
+          "Lack of event.source in serviceWorker thread"
+        ],
+        "minVersion": 46
+      },
+      "details": [
+        "<strong>Chrome & Opera</strong>: <code>messageEvent.source</code> is <a href=\"https://crbug.com/403693\"><code>null</code> within the worker</a>, but you can pass your own <code>MessageChannel</code> for 2-way communication. [fixed in 43]",
+        "<strong>Chrome & Opera</strong>: Incorrectly delivers messages to <code>window.onmessage</code> rather than <code>navigator.serviceWorker.onmessage</code>.[fixed]"
+      ]
+    },
+    {
+      "id": "Notification",
+      "name": "<code>Notification</code>",
+      "description": "<a href=\"https://notifications.spec.whatwg.org\">Spec</a>. <a href=\"demos/globalapis/\">Test</a>.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 60
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 53
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "samsung-internet": {
+        "supported": 1
+      },
+      "safari": {
+        "supported": 1
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 0.5
+      },
+      "xiaomi": {
+        "supported": 0,
+        "minVersion": 2
+      },
+      "qqm": {
+        "supported": 0.5
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 45
+      },
+      "baidum": {
+        "supported": 0,
+        "minVersion": 7
+      },
+      "sogoum": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "details": [
+        "<strong>Edge</strong>: <a href=\"https://developer.microsoft.com/microsoft-edge/platform/status/cacheapi\">In development</a>",
+        "This function depends on OS. Maybe in Web it run well, but it failed to send a notification on Mobile."
+      ]
+    },
+    {
+      "id": "web-app-mainfest",
+      "name": "Web App Manifest",
+      "description": "Add to home screen<a href=\"https://w3c.github.io/manifest/\">Spec</a>. You can test this by more - add to home screen.",
+      "chrome": {
+        "supported": 1
+      },
+      "firefox": {
+        "supported": 1
+      },
+      "opera": {
+        "supported": 0.5,
+        "details": [
+          "Works. But do not follow spec. No custom icon."
+        ]
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "details": [
+          "TODO. I have no samsung."
+        ]
+      },
+      "safari": {
+        "supported": 0,
+        "details": [
+          "It do not follow spec, it has its own rule."
+        ]
+      },
+      "edge": {
+        "supported": 0,
+        "details": [
+          "TODO. I have no Edge."
+        ]
+      },
+      "xiaomi": {
+        "supported": 0.5,
+        "details": [
+          "Works. But do not follow spec. No custom icon."
+        ]
+      },
+      "uc": {
+        "supported": 0.5,
+        "details": [
+          "Works. But do not follow spec. No custom icon."
+        ]
+      },
+      "qqm": {
+        "supported": 0
+      },
+      "m360": {
+        "supported": 0.5,
+        "details": [
+          "Works. But do not follow spec. No custom icon."
+        ]
+      },
+      "baidum": {
+        "supported": 0.5,
+        "details": [
+          "Works. But do not follow spec. No custom icon."
+        ]
+      },
+      "sogoum": {
+        "supported": 0.5,
+        "details": [
+          "Works. But do not follow spec. No custom icon."
+        ]
+      },
+      "details": []
+    },
+    {
+      "id": "PushManager.subscribe",
+      "name": "PushManager.subscribe()",
+      "description": "<a href=\"https://w3c.github.io/push-api/#widl-PushManager-subscribe-Promise-PushSubscription--PushSubscriptionOptions-options\">spec</a>。<a href=\"demos/pushsubscribe/\">Test</a>。",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 42
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1
+      },
+      "uc": {
+        "supported": 0
+      },
+      "qqm": {
+        "supported": 1
+      },
+      "m360": {
+        "supported": 1
+      },
+      "baidum": {
+        "supported": 1
+      },
+      "sogoum": {
+        "supported": 1
+      },
+      "details": [
+        "It all runs well unless it was not blocked by GFW in China. But firefox work."
+      ]
+    },
+    {
+      "id": "sync",
+      "name": "Background sync",
+      "description": "Debounce user's request until coonnected <a href=\"https://github.com/WICG/BackgroundSync\">Spec</a>。 <a href=\"demos/sync/\">Test</a>。",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 49
+      },
+      "firefox": {
+        "supported": 0,
+        "details": [
+          "<a href=\"https://bugzilla.mozilla.org/show_bug.cgi?id=1217544\">Bug 1217544</a>"
+        ]
+      },
+      "opera": {
+        "supported": 0
+      },
+      "samsung-internet": {
+        "supported": 0
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0,
+        "details": [
+          "<a href=\"https://developer.microsoft.com/en-us/microsoft-edge/platform/status/backgroundsyncapi/\">In development</a>"
+        ]
+      },
+      "uc": {
+        "supported": 0
+      },
+      "xiaomi": {
+        "supported": 0
+      },
+      "qqm": {
+        "supported": 0
+      },
+      "m360": {
+        "supported": 0
+      },
+      "baidum": {
+        "supported": 0
+      },
+      "sogoum": {
+        "supported": 0
+      },
+      "details": []
+    },
+    {
+      "id": "debug",
+      "name": "Debugging",
+      "description": "State of debugging tools.",
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40,
+        "details": [
+          "You can debug service worker scripts as any other. \"Application\" panel in devtools has service worker & cache sections."
+        ]
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 47,
+        "details": [
+          "Debuggable from the <a href=\"https://developer.mozilla.org/en-US/docs/Tools/about:debugging#Workers\">\"Workers\" page</a> in <code>about:debugging</code>.",
+          "<a href=\"https://developer.mozilla.org/en-US/docs/Tools/Web_Console\">Web Console</a> can display console messages from Service Workers.",
+          "<code>about:serviceworkers</code> has some under-the-hood stuff."
+        ]
+      },
+      "opera": {
+        "supported": 1,
+        "details": [
+          "Debuggable from the resources panel in <a href=\"http://www.opera.com/developer\">Opera developer</a> if you <a href=\"https://www.reddit.com/r/webdev/comments/2wz7s4/the_secret_extra_tools_within_chromes_dev_tools/\">enable super-experimental devtools</a>.",
+          "Console messages from the service worker appear in the pages' console in Opera stable.",
+          "<code>browser://serviceworker-internals</code> in Opera developer has some under-the-hood stuff."
+        ]
+      },
+      "samsung-internet": {
+        "supported": 0
+      },
+      "safari": {
+        "supported": 0
+      },
+      "edge": {
+        "supported": 0
+      },
+      "uc": {
+        "supported": 0
+      },
+      "qqm": {
+        "supported": 0
+      },
+      "m360": {
+        "supported": 0
+      },
+      "baidum": {
+        "supported": 0
+      },
+      "sogoum": {
+        "supported": 0
+      },
+      "details": [
+        "<strong>Chrome & Opera</strong>: Debuggable from the resources panel in <a href=\"https://www.google.com/chrome/browser/canary.html\">Chrome Canary</a> and <a href=\"http://www.opera.com/developer\">Opera developer</a> if you <a href=\"https://www.reddit.com/r/webdev/comments/2wz7s4/the_secret_extra_tools_within_chromes_dev_tools/\">enable super-experimental devtools</a>.",
+        "<strong>Chrome & Opera</strong>: Console messages from the service worker appear in the pages' console.",
+        "<strong>Chrome & Opera & Samsung Internet</strong>: <code>chrome://serviceworker-internals</code> resp. <code>browser://serviceworker-internals</code> (in Opera developer) has some under-the-hood stuff."
+      ]
+    }
+  ]
+}
