@@ -678,7 +678,7 @@
       "description": "<a href=\"https://w3c.github.io/ServiceWorker/#navigator-service-worker-ready\">规范</a>。 <a href=\"demos/registerunregister/\">测试</a>。",
       "chrome": {
         "supported": 1,
-        "minVersion": 60
+        "minVersion": 38
       },
       "firefox": {
         "supported": 1,
