@@ -27,7 +27,7 @@ self.onactivate = function (event) {
   console.log('Activate event', event)
   console.log('.waitUntil', event.waitUntil)
   store.put('feature', 1, 'activateEvent')
-  store.put('feature', Number(installWaitUntilFlag), 'install.waitUntil')
+  store.put('feature', Number(installWaitUntilFlag), 'installEvent.waitUntil')
   store.put('feature', Number(skipWaitingFlag), 'self.skipWaiting')
   console.log('try to waitUntil')
   event.waitUntil((async function () {

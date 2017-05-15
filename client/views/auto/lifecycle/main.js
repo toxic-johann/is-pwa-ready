@@ -6,14 +6,14 @@ const list = [
   'clients.claim',
   'fetchEvent',
   'installEvent',
-  'install.waitUntil',
+  'installEvent.waitUntil',
   'navigator.serviceWorker',
   'oncontrollerchange',
   'self.skipWaiting',
 ]
 async function controllerchangeCauseByNormalInstall (evt) {
   console.log('serviceWorker now has a new activated one')
-  console.log('this event will trigger after install.waitUntil and before activateEvent.waitUntil')
+  console.log('this event will trigger after installEvent.waitUntil and before activateEvent.waitUntil')
   if(!evt) {
     const score = await store.get('feature', 'oncontrollerchange')
     if(parseFloat(score) === 1) return

@@ -2451,7 +2451,7 @@ exports.stopEventPropagation = stopEventPropagation;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return infoKeys; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return info; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return copyTips; });
-var featureKeys = ['Promise', 'Request', 'Response', 'indexedDB', 'indexedDB.getAll', 'navigator.serviceWorker', 'Registered', 'installEvent', 'install.waitUntil', 'self.skipWaiting', 'oncontrollerchange', 'navigator.serviceWorker.ready', 'activateEvent', 'activateEvent.waitUntil', 'clients.claim', 'Unregistered', 'fetch', 'fetchEvent', 'fetchEvent.request', 'fetchEvent.respondWith', 'Cache', 'caches', 'postMessage', 'main-msg-got', 'main-msg-got-by', 'main-msg-send', 'sw-msg-got', 'sw-msg-send', 'sw-msg-send-by', 'syncEvent', 'Notification'];
+var featureKeys = ['Promise', 'Request', 'Response', 'indexedDB', 'indexedDB.getAll', 'navigator.serviceWorker', 'Registered', 'installEvent', 'installEvent.waitUntil', 'self.skipWaiting', 'oncontrollerchange', 'navigator.serviceWorker.ready', 'activateEvent', 'activateEvent.waitUntil', 'clients.claim', 'Unregistered', 'fetch', 'fetchEvent', 'fetchEvent.request', 'fetchEvent.respondWith', 'Cache', 'caches', 'postMessage', 'main-msg-got', 'main-msg-got-by', 'main-msg-send', 'sw-msg-got', 'sw-msg-send', 'sw-msg-send-by', 'syncEvent', 'Notification'];
 var infoKeys = ['browser', 'os', 'device'];
 
 var info = {
@@ -2949,13 +2949,13 @@ document.querySelector('.device span').innerHTML = device.type + ' ' + device.mo
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_utils__ = __webpack_require__(2);
 
 
-var list = ['activateEvent', 'activateEvent.waitUntil', 'clients.claim', 'fetchEvent', 'installEvent', 'install.waitUntil', 'navigator.serviceWorker', 'oncontrollerchange', 'self.skipWaiting'];
+var list = ['activateEvent', 'activateEvent.waitUntil', 'clients.claim', 'fetchEvent', 'installEvent', 'installEvent.waitUntil', 'navigator.serviceWorker', 'oncontrollerchange', 'self.skipWaiting'];
 function controllerchangeCauseByNormalInstall(evt) {
   var score, activateWaitUntilScore, _test;
 
   return Promise.resolve().then(function () {
     console.log('serviceWorker now has a new activated one');
-    console.log('this event will trigger after install.waitUntil and before activateEvent.waitUntil');
+    console.log('this event will trigger after installEvent.waitUntil and before activateEvent.waitUntil');
     _test = !evt;
 
     if (_test) {

@@ -8,7 +8,7 @@
     "node-debug": "webpack -w & nodemon --debug --watch server --watch views -e js,html,json",
     "build": "rm -f ./static/css/*-*.css && rm -f ./static/js/*-*.js && rm -f ./static/js/auto/*-*-*.js && webpack --env.mode='production'",
     "mos": "git pull origin master && pm2 restart pm2.json",
-    "test": "webpack && jsonlint server/i18n/*/*.json && jsonlint server/i18n/*/*/*.json",
+    "test": "webpack && jsonlint server/i18n/index/zh.json && jsonlint server/i18n/index/en.json",
     "flow": "flow"
   },
   "repository": {

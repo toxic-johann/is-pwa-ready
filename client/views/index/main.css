@@ -28,6 +28,36 @@ body {
     }
   }
 }
+article.grading {
+  padding: 0 1rem 1rem 1rem;
+  margin: 0 auto;
+  h3 {
+    margin: 0;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  li span {
+    display: inline-block;
+    width: 4rem;
+  }
+  .yes span {
+    color: #376D37;
+  }
+  .soso span {
+    color: #A8BD04;
+  }
+  .ish span {
+    color: #D5BB00;
+  }
+  .no span {
+    color: #CCC;
+    filter: grayscale(100%);
+    opacity: 0.4;
+  }
+}
 article.feature {
   padding: 0 1rem 1rem 1rem;
   margin: 0 auto;
@@ -60,7 +90,7 @@ article.feature {
     padding-left: 0.5%;
     flex-wrap: wrap;
     & .result {
-      margin: 0.5% 0.5% 0.5% 0;
+      margin: 1.2rem 0.5% 0.5% 0;
       flex-grow: 0;
       flex-shrink: 0;
       position: relative;
@@ -98,7 +128,7 @@ article.feature {
         margin: auto;
         font-size: 16px;
         text-indent: -5000px;
-        @each $icon in (chrome, chrome-canary, firefox, firefox-nightly, edge, opera, opera-developer, samsung-internet, safari, webkit, uc, xiaomi, qq, qqm, m360, baidum, sogoum) {
+        @each $icon in (chrome, chrome-canary, firefox, firefox-nightly, edge, opera, opera-developer, samsung-internet, safari, webkit, uc, xiaomi, qq, qqm, m360, baidum, sogoum, wechat) {
           &.$(icon) {
             background-image: url(../../img/$(icon).png);
             background-size: 78%;
@@ -132,6 +162,24 @@ article.feature {
         display: block;
         content: '';
         padding-top: 100%;
+      }
+      .aka {
+        display: block;
+        height: 1.2rem;
+        line-height: 1.2rem;
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        top: 0;
+        left: 0;
+        margin: 0;
+        background-color: #272b1a;
+        color: #fff;
+        transform: translate(0, -100%);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 0.8rem;
       }
     }
   }

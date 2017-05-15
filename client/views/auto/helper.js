@@ -7,7 +7,7 @@ export const featureKeys = [
   'navigator.serviceWorker',
   'Registered',
   'installEvent',
-  'install.waitUntil',
+  'installEvent.waitUntil',
   'self.skipWaiting',
   'oncontrollerchange',
   'navigator.serviceWorker.ready',

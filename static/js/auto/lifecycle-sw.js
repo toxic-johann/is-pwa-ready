@@ -2307,7 +2307,7 @@ self.onactivate = function (event) {
   console.log('Activate event', event);
   console.log('.waitUntil', event.waitUntil);
   __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'activateEvent');
-  __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', Number(installWaitUntilFlag), 'install.waitUntil');
+  __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', Number(installWaitUntilFlag), 'installEvent.waitUntil');
   __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', Number(skipWaitingFlag), 'self.skipWaiting');
   console.log('try to waitUntil');
   event.waitUntil(Promise.resolve().then(function () {

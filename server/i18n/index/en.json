@@ -4,9 +4,36 @@
   "description": "is PWA ready in China?",
   "keywords": "pwa, progress web app, 中国, China, ServiceWorker, Web app manifest, push api, cacheStorage, backgroundSync, Chrome, qq, 360, Safari, UC, Firefox",
   "nav": {
-    "Spec": "https://w3c.github.io/ServiceWorker/",
-    "Github": "https://github.com/toxic-johann/is-pwa-ready",
-    "Test": "/auto/"
+    "Spec": {
+      "href": "https://w3c.github.io/ServiceWorker/"
+    },
+    "Github": {
+      "href": "https://github.com/toxic-johann/is-pwa-ready"
+    },
+    "Test": {
+      "href": "/auto/"
+    }
+  },
+  "grading": {
+    "name": "Grading",
+    "data": {
+      "yes": {
+        "range": "100 - 81",
+        "note": "Supported"
+      },
+      "soso": {
+        "range": "80 - 51",
+        "note": "Partial support"
+      },
+      "ish": {
+        "range": "50 - 1",
+        "note": "Support but buggy"
+      },
+      "no": {
+        "range": "0",
+        "note": "Not support"
+      }
+    }
   },
   "browsers": [
     {
@@ -26,36 +53,48 @@
     {
       "id": "samsung-internet",
       "name": "Samsung Internet",
+      "aka": "Samsung",
       "mobile": true
     },
     {
       "id": "xiaomi",
       "name": "Xiaomi mobile browser",
+      "aka": "Xiaomi",
       "mobile": true
     },
     {
-      "id": "baidum",
-      "name": "Baidu mobile browser",
+      "id": "sogoum",
+      "aka": "Sogou",
+      "name": "Sogou mobile browser",
       "mobile": true
     },
     {
       "id": "m360",
       "name": "360 mobile browser",
+      "aka": "360",
       "mobile": true
     },
     {
-      "id": "sogoum",
-      "name": "sogou mobile browser",
+      "id": "baidum",
+      "name": "Baidu mobile browser",
+      "aka": "Baidu",
+      "mobile": true
+    },
+    {
+      "id": "wechat",
+      "name": "Wechat",
       "mobile": true
     },
     {
       "id": "uc",
       "name": "UC mobile browser",
+      "aka": "UC",
       "mobile": true
     },
     {
       "id": "qqm",
       "name": "qq mobile browser",
+      "aka": "QQ browser",
       "mobile": true
     },
     {
@@ -144,6 +183,12 @@
           "Shipped. Based on chromium 46."
         ]
       },
+      "wechat": {
+        "supported": 1,
+        "details": [
+          "Shipped. Whold lifecycle is implemented. But have bug in postMessage. It can achieve fast and reliable easily. But it may be impossilbe for it to let us achieve engaging."
+        ]
+      },
       "details": [
         "Support does not include iOS versions of third-party browsers on that platform (see Safari support)."
       ]
@@ -199,7 +244,11 @@
         "supported": 1,
         "minVersion": 46
       },
-      "details": []
+      "details": [],
+      "wechat": {
+        "supported": 1,
+        "minVersion": 6.5
+      }
     },
     {
       "id": "Request",
@@ -250,7 +299,11 @@
         "supported": 1,
         "minVersion": 46
       },
-      "details": []
+      "details": [],
+      "wechat": {
+        "supported": 1,
+        "minVersion": 6.5
+      }
     },
     {
       "id": "Response",
@@ -306,7 +359,11 @@
       },
       "details": [
         "[fixed in M-54]<strong>Chrome & Samsung Internet</strong>: <code>URLSearchParams</code> <a href=\"https://code.google.com/p/chromium/issues/detail?id=412027#c11\">not supported yet</a>"
-      ]
+      ],
+      "wechat": {
+        "supported": 1,
+        "minVersion": 6.5
+      }
     },
     {
       "id": "indexedDB",
@@ -344,6 +401,10 @@
       "sogoum": {
         "supported": 1,
         "minVersion": 46
+      },
+      "wechat": {
+        "supported": 0.5,
+        "minVersion": 6.5
       }
     },
     {
@@ -378,6 +439,10 @@
       "sogoum": {
         "supported": 0,
         "minVersion": 46
+      },
+      "wechat": {
+        "supported": 0.5,
+        "minVersion": 6.5
       }
     },
     {
@@ -428,7 +493,11 @@
         "supported": 1,
         "minVersion": 46
       },
-      "details": []
+      "details": [],
+      "wechat": {
+        "supported": 1,
+        "minVersion": 6.5
+      }
     },
     {
       "id": "Registered",
@@ -478,7 +547,11 @@
         "supported": 1,
         "minVersion": 46
       },
-      "details": []
+      "details": [],
+      "wechat": {
+        "supported": 1,
+        "minVersion": 6.5
+      }
     },
     {
       "id": "installEvent",
@@ -528,7 +601,11 @@
         "supported": 1,
         "minVersion": 46
       },
-      "details": []
+      "details": [],
+      "wechat": {
+        "supported": 1,
+        "minVersion": 6.5
+      }
     },
     {
       "id": "installEvent.waitUntil",
@@ -560,21 +637,29 @@
         "supported": 1
       },
       "xiaomi": {
-        "supported": 1
+        "supported": 1,
+        "minVersion": 2
       },
       "qqm": {
         "supported": 1
       },
       "m360": {
-        "supported": 1
+        "supported": 1,
+        "minVersion": 45
       },
       "baidum": {
-        "supported": 1
+        "supported": 1,
+        "minVersion": 7
       },
       "sogoum": {
-        "supported": 1
+        "supported": 1,
+        "minVersion": 46
       },
-      "details": []
+      "details": [],
+      "wechat": {
+        "supported": 1,
+        "minVersion": 6.5
+      }
     },
     {
       "id": "self.skipWaiting",
@@ -630,7 +715,11 @@
         "supported": 1,
         "minVersion": 46
       },
-      "details": []
+      "details": [],
+      "wechat": {
+        "supported": 1,
+        "minVersion": 6.5
+      }
     },
     {
       "id": "oncontrollerchange",
@@ -664,6 +753,10 @@
       "sogoum": {
         "supported": 1,
         "minVersion": 46
+      },
+      "wechat": {
+        "supported": 1,
+        "minVersion": 6.5
       }
     },
     {
@@ -714,7 +807,11 @@
         "supported": 1,
         "minVersion": 46
       },
-      "details": []
+      "details": [],
+      "wechat": {
+        "supported": 1,
+        "minVersion": 6.5
+      }
     },
     {
       "id": "activateEvent",
@@ -764,7 +861,11 @@
         "supported": 1,
         "minVersion": 46
       },
-      "details": []
+      "details": [],
+      "wechat": {
+        "supported": 1,
+        "minVersion": 6.5
+      }
     },
     {
       "id": "activateEvent.waitUntil",
@@ -814,7 +915,11 @@
         "supported": 1,
         "minVersion": 46
       },
-      "details": []
+      "details": [],
+      "wechat": {
+        "supported": 1,
+        "minVersion": 6.5
+      }
     },
     {
       "id": "clients.claim",
@@ -870,7 +975,11 @@
         "supported": 1,
         "minVersion": 46
       },
-      "details": []
+      "details": [],
+      "wechat": {
+        "supported": 1,
+        "minVersion": 6.5
+      }
     },
     {
       "id": "Unregistered",
@@ -920,7 +1029,11 @@
         "supported": 1,
         "minVersion": 46
       },
-      "details": []
+      "details": [],
+      "wechat": {
+        "supported": 1,
+        "minVersion": 6.5
+      }
     },
     {
       "id": "lifecycle",
@@ -971,6 +1084,10 @@
       "sogoum": {
         "supported": 1
       },
+      "wechat": {
+        "supported": 1,
+        "minVersion": 6.5
+      },
       "details": []
     },
     {
@@ -1016,6 +1133,10 @@
       },
       "sogoum": {
         "supported": 1
+      },
+      "wechat": {
+        "supported": 1,
+        "minVersion": 6.5
       },
       "details": []
     },
@@ -1071,7 +1192,11 @@
       },
       "details": [
         "<a href=\"https://github.com/github/fetch\">Polyfill available</a>"
-      ]
+      ],
+      "wechat": {
+        "supported": 1,
+        "minVersion": 6.5
+      }
     },
     {
       "id": "fetchEvent",
@@ -1121,7 +1246,11 @@
         "supported": 1,
         "minVersion": 46
       },
-      "details": []
+      "details": [],
+      "wechat": {
+        "supported": 1,
+        "minVersion": 6.5
+      }
     },
     {
       "id": "fetchEvent.request",
@@ -1171,7 +1300,11 @@
         "supported": 1,
         "minVersion": 46
       },
-      "details": []
+      "details": [],
+      "wechat": {
+        "supported": 1,
+        "minVersion": 6.5
+      }
     },
     {
       "id": "fetchEvent.respondWith",
@@ -1221,7 +1354,11 @@
         "supported": 1,
         "minVersion": 46
       },
-      "details": []
+      "details": [],
+      "wechat": {
+        "supported": 1,
+        "minVersion": 6.5
+      }
     },
     {
       "id": "caches",
@@ -1273,7 +1410,11 @@
       },
       "details": [
         "<strong>Edge</strong>: <a href=\"https://developer.microsoft.com/microsoft-edge/platform/status/cacheapi\"In development</a>"
-      ]
+      ],
+      "wechat": {
+        "supported": 1,
+        "minVersion": 6.5
+      }
     },
     {
       "id": "postMessage",
@@ -1335,7 +1476,11 @@
       "details": [
         "<strong>Chrome & Opera</strong>: <code>messageEvent.source</code> is <a href=\"https://crbug.com/403693\"><code>null</code> within the worker</a>, but you can pass your own <code>MessageChannel</code> for 2-way communication. [fixed in 43]",
         "<strong>Chrome & Opera</strong>: Incorrectly delivers messages to <code>window.onmessage</code> rather than <code>navigator.serviceWorker.onmessage</code>.[fixed]"
-      ]
+      ],
+      "wechat": {
+        "supported": null,
+        "minVersion": 6.5
+      }
     },
     {
       "id": "Notification",
@@ -1387,7 +1532,11 @@
       "details": [
         "<strong>Edge</strong>: <a href=\"https://developer.microsoft.com/microsoft-edge/platform/status/cacheapi\">In development</a>",
         "This function depends on OS. Maybe in Web it run well, but it failed to send a notification on Mobile."
-      ]
+      ],
+      "wechat": {
+        "supported": 0,
+        "minVersion": 6.5
+      }
     },
     {
       "id": "web-app-mainfest",

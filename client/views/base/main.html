@@ -27,8 +27,8 @@
 </head>
 <body>
   <nav>
-    {% for key, link in nav%}
-      <a href="{{link}}">{{key}}</a>
+    {% for key, info in nav%}
+      <a href="{{info.href}}">{{key}}</a>
     {% endfor %}
   </nav>
   {% block body %}
