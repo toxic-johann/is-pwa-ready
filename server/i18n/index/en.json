@@ -382,7 +382,8 @@
     },
     {
       "id": "navigator.serviceWorker",
-      "name": "Namespace for page-side ServiceWorker API. <a href=\"https://w3c.github.io/ServiceWorker/#navigator-service-worker\">Spec</a>. <a href=\"demos/navigator.serviceWorker/\">Test</a>.",
+      "name": "navigator.serviceWorker",
+      "description": "Namespace for page-side ServiceWorker API. <a href=\"https://w3c.github.io/ServiceWorker/#navigator-service-worker\">Spec</a>. <a href=\"demos/navigator.serviceWorker/\">Test</a>.",
       "chrome": {
         "supported": 1,
         "minVersion": 40

@@ -93,7 +93,7 @@
       "samsung-internet": {
         "supported": 1,
         "details": [
-          "已上船。 基于 Chromium 44.2403 并<a href=\"http://developer.samsung.com/technical-doc/view.do?v=T000000245&pi=2&ps=10&pb=Y&ct=&sc=\">并做了一些修改</a>. (观看\"Service Worker\"章节。)"
+          "已上船。 基于 Chromium 44.2403 <a href=\"http://developer.samsung.com/technical-doc/view.do?v=T000000245&pi=2&ps=10&pb=Y&ct=&sc=\">并做了一些修改</a>. (观看\"Service Worker\"章节。)"
         ]
       },
       "safari": {
