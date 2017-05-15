@@ -40,7 +40,7 @@ open server/i18n/index/en.json, update the data, and take a pull request.
 
 The data format it's like this.
 
-```json
+```js
   //...
 
   "features": [
