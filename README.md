@@ -3,37 +3,44 @@
 [![Build Status](https://api.travis-ci.org/toxic-johann/is-pwa-ready.svg)](https://travis-ci.org/toxic-johann/is-pwa-ready)
 [![devDependency Status](https://david-dm.org/toxic-johann/is-pwa-ready.svg)](https://david-dm.org/toxic-johann/is-pwa-ready)
 
-Tracks the features of PWA supported in browsers.
+Tracks the features of PWA supported in browsers (especially Chinese browser).
+
+Provide auto test page for developer.
+
 [View the site](https://ispwaready.toxicjohann.com).
 
-## Run locally
+[Auto Test demo](https://ispwaready.toxicjohann.com/auto/)
 
-To install, run the following in the root of your cloned copy of the repo:
-
-```sh
-npm install
-```
-
-To serve the site on `localhost:3000`:
-
-```sh
-npm start
-```
-
-To build the site:
-
-```sh
-npm run build
-```
 
 ## Contribute
 
-To update data, edit [`zh.json`](server/data/zh.json) for Chinese version
+Found your browser has not been tested?
 
-To update data, edit [`en.json`](server/data/zh.json) for English version
+My data is out of date?
 
-```js
+Open [Auto Test demo](https://ispwaready.toxicjohann.com/auto/) and run the test.
 
+**If test finished**
+
+Press the `Copy` button to copy the result which in JSON format.
+
+Paste it on the issue.
+
+If convenient, offer more information.
+
+**else if test failed**
+
+Back to [Home Page](https://ispwaready.toxicjohann.com), use the test demo beside each feature to test manually.
+
+Or use v-console on the auto page to find the bug.
+
+**If you have your own data**
+
+open server/i18n/index/en.json, update the data, and take a pull request.
+
+The data format it's like this.
+
+```json
   //...
 
   "features": [
@@ -74,4 +81,25 @@ To update data, edit [`en.json`](server/data/zh.json) for English version
       // ...
 
   ]
+```
+
+
+## Run locally
+
+To install, run the following in the root of your cloned copy of the repo:
+
+```sh
+npm install
+```
+
+To serve the site on `localhost:3000`:
+
+```sh
+npm start
+```
+
+To build the site:
+
+```sh
+npm run build
 ```
