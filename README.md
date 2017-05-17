@@ -3,13 +3,11 @@
 [![Build Status](https://api.travis-ci.org/toxic-johann/is-pwa-ready.svg)](https://travis-ci.org/toxic-johann/is-pwa-ready)
 [![devDependency Status](https://david-dm.org/toxic-johann/is-pwa-ready.svg)](https://david-dm.org/toxic-johann/is-pwa-ready)
 
-Tracks the features of PWA supported in browsers (especially Chinese browser).
+Tracks the features of PWA supported in browsers (especially Chinese browser).[View the site](https://ispwaready.toxicjohann.com).
 
-Provide auto test page for developer.
+Provide auto test page for developer.[Auto Test demo](https://ispwaready.toxicjohann.com/auto/)
 
-[View the site](https://ispwaready.toxicjohann.com).
-
-[Auto Test demo](https://ispwaready.toxicjohann.com/auto/)
+> Inspired by Jake's [isserviceworkerready](https://github.com/jakearchibald/isserviceworkerready).  Mainly focus on Chinese browser and environment.  Offer english version for foreigner because some Chinese browser is used not only in China. 
 
 
 ## Contribute
