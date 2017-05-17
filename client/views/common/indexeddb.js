@@ -1,5 +1,6 @@
 import 'core-js/fn/object/values'
 import 'core-js/fn/object/entries'
+import 'core-js/fn/object/assign'
 import assert from 'assert'
 import {isString, isObject, isPromise} from 'utils'
 const methods = {

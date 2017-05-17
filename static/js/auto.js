@@ -946,10 +946,13 @@ module.exports = g;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_core_js_fn_object_values___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_core_js_fn_object_values__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_js_fn_object_entries__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_js_fn_object_entries___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_core_js_fn_object_entries__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_assert__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_assert___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_assert__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_utils__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_core_js_fn_object_assign__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_core_js_fn_object_assign___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_core_js_fn_object_assign__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_assert__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_assert___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_assert__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_utils__ = __webpack_require__(2);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 
 
 
@@ -976,7 +979,7 @@ var behaviors = ['add', 'put', 'get', 'getAll', 'getAllKeys', 'clear'].reduce(fu
     }
 
     var request = objectStore[key].apply(objectStore, args);
-    if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_utils__["a" /* isPromise */])(request)) {
+    if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_utils__["a" /* isPromise */])(request)) {
       return request;
     } else {
       return new Promise(function (resolve, reject) {
@@ -1012,8 +1015,8 @@ var Store = function () {
 
     _classCallCheck(this, Store);
 
-    __WEBPACK_IMPORTED_MODULE_2_assert___default()(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_utils__["b" /* isString */])(name), 'name must to be String');
-    __WEBPACK_IMPORTED_MODULE_2_assert___default()(Array.isArray(objectStores), 'objectStores must to be Array');
+    __WEBPACK_IMPORTED_MODULE_3_assert___default()(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_utils__["b" /* isString */])(name), 'name must to be String');
+    __WEBPACK_IMPORTED_MODULE_3_assert___default()(Array.isArray(objectStores), 'objectStores must to be Array');
     this.isReady = false;
     this.init();
     this._ready = new Promise(function (resolve, reject) {
@@ -1031,15 +1034,15 @@ var Store = function () {
         var db = event.target.result;
         _this.db = db;
         Object.values(objectStores).forEach(function (setting) {
-          __WEBPACK_IMPORTED_MODULE_2_assert___default()(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_utils__["b" /* isString */])(setting) || __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_utils__["c" /* isObject */])(setting), 'value in objectStores Array must be String or Object');
+          __WEBPACK_IMPORTED_MODULE_3_assert___default()(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_utils__["b" /* isString */])(setting) || __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_utils__["c" /* isObject */])(setting), 'value in objectStores Array must be String or Object');
 
-          var _ref3 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_utils__["b" /* isString */])(setting) ? { name: setting } : setting,
+          var _ref3 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_utils__["b" /* isString */])(setting) ? { name: setting } : setting,
               name = _ref3.name,
               _ref3$indexs = _ref3.indexs,
               indexs = _ref3$indexs === undefined ? [] : _ref3$indexs,
               option = _ref3.option;
 
-          __WEBPACK_IMPORTED_MODULE_2_assert___default()(Array.isArray(indexs), 'indexs attr of objectStores can only be Array');
+          __WEBPACK_IMPORTED_MODULE_3_assert___default()(Array.isArray(indexs), 'indexs attr of objectStores can only be Array');
           var objectStore = db.createObjectStore(name, option);
           indexs.forEach(function () {
             var _ref4 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
@@ -6734,6 +6737,107 @@ module.exports = function() {
 module.exports = __webpack_amd_options__;
 
 /* WEBPACK VAR INJECTION */}.call(exports, {}))
+
+/***/ }),
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */,
+/* 107 */,
+/* 108 */,
+/* 109 */,
+/* 110 */,
+/* 111 */,
+/* 112 */,
+/* 113 */,
+/* 114 */,
+/* 115 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(119);
+module.exports = __webpack_require__(0).Object.assign;
+
+/***/ }),
+/* 116 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+// 19.1.2.1 Object.assign(target, source, ...)
+
+var getKeys = __webpack_require__(31),
+    gOPS = __webpack_require__(117),
+    pIE = __webpack_require__(32),
+    toObject = __webpack_require__(118),
+    IObject = __webpack_require__(28),
+    $assign = Object.assign;
+
+// should work with symbols and should have deterministic property order (V8 bug)
+module.exports = !$assign || __webpack_require__(9)(function () {
+  var A = {},
+      B = {},
+      S = Symbol(),
+      K = 'abcdefghijklmnopqrst';
+  A[S] = 7;
+  K.split('').forEach(function (k) {
+    B[k] = k;
+  });
+  return $assign({}, A)[S] != 7 || Object.keys($assign({}, B)).join('') != K;
+}) ? function assign(target, source) {
+  // eslint-disable-line no-unused-vars
+  var T = toObject(target),
+      aLen = arguments.length,
+      index = 1,
+      getSymbols = gOPS.f,
+      isEnum = pIE.f;
+  while (aLen > index) {
+    var S = IObject(arguments[index++]),
+        keys = getSymbols ? getKeys(S).concat(getSymbols(S)) : getKeys(S),
+        length = keys.length,
+        j = 0,
+        key;
+    while (length > j) {
+      if (isEnum.call(S, key = keys[j++])) T[key] = S[key];
+    }
+  }return T;
+} : $assign;
+
+/***/ }),
+/* 117 */
+/***/ (function(module, exports) {
+
+exports.f = Object.getOwnPropertySymbols;
+
+/***/ }),
+/* 118 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 7.1.13 ToObject(argument)
+var defined = __webpack_require__(24);
+module.exports = function (it) {
+  return Object(defined(it));
+};
+
+/***/ }),
+/* 119 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 19.1.3.1 Object.assign(target, source)
+var $export = __webpack_require__(8);
+
+$export($export.S + $export.F, 'Object', { assign: __webpack_require__(116) });
 
 /***/ })
 /******/ ]);
