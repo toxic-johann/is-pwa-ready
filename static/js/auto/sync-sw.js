@@ -2278,9 +2278,13 @@ function hasOwnProperty(obj, prop) {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_store__ = __webpack_require__(3);
 
-self.addEventListener('install', function (event) {
+self.oninstall = function () {
   self.skipWaiting();
-});
+};
+
+self.onactivate = function () {
+  self.clients.claim();
+};
 
 self.addEventListener('sync', function (event) {
   __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'syncEvent');

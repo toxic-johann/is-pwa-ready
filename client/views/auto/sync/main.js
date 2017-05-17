@@ -1,8 +1,13 @@
 import store from 'store'
-import {sleep} from 'utils'
+import {sleep, promisifyOneTimeEventListener} from 'utils'
 export default async function () {
   store.put('feature', 0, 'syncEvent')
+  const activatedWaiter = Promise.race([
+    promisifyOneTimeEventListener(evt => console.log('controllerchange'), navigator.serviceWorker, 'controllerchange'),
+    sleep(3000)
+  ])
   const reg = await navigator.serviceWorker.register('/auto/sync-sw.js')
+  await activatedWaiter
   try {
     const tags = await reg.sync.getTags()
     if (tags.includes('syncTest')) console.log("There's already a background sync pending")

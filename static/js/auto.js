@@ -3358,12 +3358,17 @@ function genRGB(score) {
 
 
 /* harmony default export */ __webpack_exports__["a"] = (function () {
-  var reg, tags;
+  var activatedWaiter, reg, tags;
   return Promise.resolve().then(function () {
     __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 0, 'syncEvent');
+    activatedWaiter = Promise.race([__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_utils__["g" /* promisifyOneTimeEventListener */])(function (evt) {
+      return console.log('controllerchange');
+    }, navigator.serviceWorker, 'controllerchange'), __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_utils__["d" /* sleep */])(3000)]);
     return navigator.serviceWorker.register('/auto/sync-sw.js');
   }).then(function (_resp) {
     reg = _resp;
+    return activatedWaiter;
+  }).then(function () {
     return Promise.resolve().then(function () {
       return reg.sync.getTags();
     }).then(function (_resp) {
