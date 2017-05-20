@@ -6,7 +6,7 @@ export default async function () {
     promisifyOneTimeEventListener(evt => console.log('controllerchange'), navigator.serviceWorker, 'controllerchange'),
     sleep(3000)
   ])
-  const reg = await navigator.serviceWorker.register('/auto/sync-sw.js')
+  const reg = await navigator.serviceWorker.register('/auto/sync-sw.js', {scope: '/auto/'})
   await activatedWaiter
   try {
     const tags = await reg.sync.getTags()

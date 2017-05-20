@@ -36,6 +36,7 @@ function genWaiter (fn) {
 }
 
 export default async function () {
+  require('whatwg-fetch')
   // init all the feature as zero
   for(let i = list.length - 1; i > -1; i--) {
     await store.put('feature', 0, list[i])
@@ -47,19 +48,21 @@ export default async function () {
   navigator.serviceWorker.ready.then(() => store.put('feature', 1, 'navigator.serviceWorker.ready'))
   const waiter = genWaiter(controllerchangeCauseByNormalInstall)
   // register test, including install event, controllerchange, activate event
-  const reg = await navigator.serviceWorker.register('/auto/lifecycle-sw.js')
+  const reg = await navigator.serviceWorker.register('/auto/lifecycle-sw.js', {scope: '/auto/'})
   console.log('Registered!', reg)
   await waiter
+  // wait for actived event fininshed
   await sleep(3000)
   const activateWaitUntilScore = await store.get('feature', 'activateEvent.waitUntil')
   await store.put('feature', (parseFloat(activateWaitUntilScore) || 0) + 0.5, 'activateEvent.waitUntil')
-  // use fetch event to test client.claims effect
   const response = await fetch('/whoareyou.json')
-  const clarify = await response.json()
-  console.log('clarify who controll the page', clarify)
-  if(clarify['i am'] === 'lifecycle-sw') {
-    const clientsclaimScore = await store.get('feature', 'clients.claim')
-    await store.put('feature', (parseFloat(clientsclaimScore) || 0) + 0.5, 'clients.claim')
+  if(response.ok) {
+    const clarify = await response.json()
+    console.log('clarify who controll the page', clarify)
+    if(clarify['i am'] === 'lifecycle-sw') {
+      const clientsclaimScore = await store.get('feature', 'clients.claim')
+      await store.put('feature', (parseFloat(clientsclaimScore) || 0) + 0.5, 'clients.claim')
+    }
   }
   // unregister test
   await reg.unregister()

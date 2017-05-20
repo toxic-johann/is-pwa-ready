@@ -67,6 +67,7 @@
     "vconsole": "^2.5.2",
     "webpack": "^2.5.1",
     "webpack-md5-hash": "0.0.5",
-    "webpack-visualizer-plugin": "^0.1.11"
+    "webpack-visualizer-plugin": "^0.1.11",
+    "whatwg-fetch": "^2.0.3"
   }
 }

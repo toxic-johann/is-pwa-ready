@@ -8,5 +8,8 @@
       "title": "Copy failed...",
       "text": "So sorry that we can not copy on this browser. You can copy by yourself~~"
     }
+  },
+  "testTips": {
+    "fail": "Sorry, this browser can not finish our test case"
   }
 }

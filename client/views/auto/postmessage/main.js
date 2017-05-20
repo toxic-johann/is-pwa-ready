@@ -6,11 +6,22 @@ function genWaiter () {
   if (window.MessageChannel) {
     messageChannel = new MessageChannel()
     console.log(messageChannel.port1.addEventListener)
-    tasks.push(promisifyOneTimeEventListener(async event => {
+    // tasks.push(promisifyOneTimeEventListener(async event => {
+    //   console.log('Got reply from serviceWorker via channel', event.data)
+    //   await store.put('feature', 0.8, 'main-msg-got')
+    //   await store.put('feature', 'messageChannel.port1', 'main-msg-got-by')
+    // }, messageChannel.port1, 'message'))
+    // it's better to use onmessage as some version may be addEventListener bug
+    messageChannel.port1.onmessage = async event => {
       console.log('Got reply from serviceWorker via channel', event.data)
       await store.put('feature', 0.8, 'main-msg-got')
       await store.put('feature', 'messageChannel.port1', 'main-msg-got-by')
-    }, messageChannel.port1, 'message'))
+    }
+    // messageChannel.port1.addEventListener('message', async event => {
+    //   console.log('Got reply from serviceWorker via channel', event.data)
+    //   await store.put('feature', 0.8, 'main-msg-got')
+    //   await store.put('feature', 'messageChannel.port1', 'main-msg-got-by')
+    // })
   }
   return Promise.race(tasks.concat([
     promisifyOneTimeEventListener(async error => {
@@ -54,7 +65,10 @@ export default async function () {
     })
     await store.put('feature', 0.5, 'main-msg-send')
   }
-  await messageWaiter
+  await Promise.race([
+    messageWaiter,
+    sleep(3000)
+  ])
   const list = [
     'sw-msg-send',
     'sw-msg-got',

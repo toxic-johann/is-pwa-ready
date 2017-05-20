@@ -2363,7 +2363,9 @@ self.onmessage = function (event) {
   return Promise.resolve().then(function () {
     return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'sw-msg-got');
   }).then(function () {
-    console.log('Got message in SW', event.data.text);
+    return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', Number(!!self.clients.matchAll), 'clients.matchAll');
+  }).then(function () {
+    console.log('Got message in SW', event.data && event.data.text);
     if (event.source) {
       return Promise.resolve().then(function () {
         console.log('event.source present');
@@ -2373,7 +2375,7 @@ self.onmessage = function (event) {
         return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 'event.source', 'sw-msg-send-by');
       });
     } else {
-      if (self.clients) {
+      if (self.clients && self.clients.matchAll) {
         return Promise.resolve().then(function () {
           console.log('Attempting postMessage via clients API');
           self.clients.matchAll().then(function (clients) {
@@ -2412,6 +2414,8 @@ self.onmessage = function (event) {
             return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 0, 'sw-msg-send');
           }).then(function () {
             return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 'nothing', 'sw-msg-send-by');
+          }).then(function () {
+            return;
           });
         }
       }

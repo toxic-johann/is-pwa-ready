@@ -1,4 +1,3 @@
-window.addEventListener('error', error => alert(error.message))
 import globalTest from './global/main'
 import empty from './empty/main'
 import postmessageTest from './postmessage/main'

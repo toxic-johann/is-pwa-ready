@@ -7,7 +7,7 @@ export default async function () {
   // test if we suggest navigator.serviceWorker
   await store.put('feature', Number(hasSW), 'navigator.serviceWorker')
   if(!hasSW) return
-  const sw = await navigator.serviceWorker.register('/auto/global-sw.js')
+  const sw = await navigator.serviceWorker.register('/auto/global-sw.js', {scope: '/auto/'})
   console.log('Registered!', sw)
   await store.put('feature', 1, 'Registered')
   await sleep(3000)

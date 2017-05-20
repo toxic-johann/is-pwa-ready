@@ -12,6 +12,9 @@
     },
     "测试": {
       "href": "/auto/"
+    },
+    "日志": {
+      "href": "https://github.com/toxic-johann/is-pwa-ready/releases"
     }
   },
   "grading": {
@@ -153,7 +156,7 @@
       "uc": {
         "supported": 0.8,
         "details": [
-          "已上船。已经实现了部分API，但仍有缺陷。"
+          "已上船。基于安卓原生浏览器实现。已经实现了部分API，但仍有较大缺陷，不建议在生产环境上使用。"
         ]
       },
       "xiaomi": {
@@ -226,7 +229,11 @@
         "supported": 1
       },
       "uc": {
-        "supported": 1
+        "supported": 0.5,
+        "minVersion": 11.5,
+        "details": [
+          "Window域中暂未实现。"
+        ]
       },
       "xiaomi": {
         "supported": 1,
@@ -237,7 +244,7 @@
       },
       "m360": {
         "supported": 1,
-        "minVersion": 45
+        "minVersion": 8.1
       },
       "baidum": {
         "supported": 1,
@@ -245,7 +252,7 @@
       },
       "sogoum": {
         "supported": 1,
-        "minVersion": 46
+        "minVersion": 5.6
       },
       "details": [],
       "wechat": {
@@ -284,7 +291,11 @@
         "minVersion": 14
       },
       "uc": {
-        "supported": 0
+        "supported": 0.5,
+        "minVersion": 11.5,
+        "details": [
+          "Window域中暂未实现。"
+        ]
       },
       "xiaomi": {
         "supported": 1,
@@ -295,7 +306,7 @@
       },
       "m360": {
         "supported": 1,
-        "minVersion": 45
+        "minVersion": 8.1
       },
       "baidum": {
         "supported": 1,
@@ -303,7 +314,7 @@
       },
       "sogoum": {
         "supported": 1,
-        "minVersion": 46
+        "minVersion": 5.6
       },
       "details": [],
       "wechat": {
@@ -345,7 +356,11 @@
         "minVersion": 14
       },
       "uc": {
-        "supported": 0
+        "supported": 0.5,
+        "minVersion": 11.5,
+        "details": [
+          "Window域中暂未实现。"
+        ]
       },
       "xiaomi": {
         "supported": 1,
@@ -356,7 +371,7 @@
       },
       "m360": {
         "supported": 1,
-        "minVersion": 45
+        "minVersion": 8.1
       },
       "baidum": {
         "supported": 1,
@@ -364,7 +379,7 @@
       },
       "sogoum": {
         "supported": 1,
-        "minVersion": 46
+        "minVersion": 5.6
       },
       "details": [
         "【该问题已在M-54解决】<strong>Chrome & Samsung Internet</strong>: <code>URLSearchParams</code> <a href=\"https://code.google.com/p/chromium/issues/detail?id=412027#c11\">not supported yet</a>"
@@ -401,7 +416,7 @@
       },
       "m360": {
         "supported": 1,
-        "minVersion": 45
+        "minVersion": 8.1
       },
       "baidum": {
         "supported": 0.5,
@@ -409,11 +424,15 @@
       },
       "sogoum": {
         "supported": 1,
-        "minVersion": 46
+        "minVersion": 5.6
       },
       "wechat": {
         "supported": 0.5,
         "minVersion": 6.5
+      },
+      "uc": {
+        "supported": 0.5,
+        "minVersion": 11.5
       }
     },
     {
@@ -439,7 +458,7 @@
       },
       "m360": {
         "supported": 0,
-        "minVersion": 45
+        "minVersion": 8.1
       },
       "baidum": {
         "supported": 0.5,
@@ -447,11 +466,15 @@
       },
       "sogoum": {
         "supported": 0,
-        "minVersion": 46
+        "minVersion": 5.6
       },
       "wechat": {
         "supported": 0.5,
         "minVersion": 6.5
+      },
+      "uc": {
+        "supported": 0,
+        "minVersion": 11.5
       }
     },
     {
@@ -481,7 +504,8 @@
         "supported": 0
       },
       "uc": {
-        "supported": 1
+        "supported": 1,
+        "minVersion": 11.5
       },
       "xiaomi": {
         "supported": 1,
@@ -492,7 +516,7 @@
       },
       "m360": {
         "supported": 1,
-        "minVersion": 45
+        "minVersion": 8.1
       },
       "baidum": {
         "supported": 1,
@@ -500,7 +524,7 @@
       },
       "sogoum": {
         "supported": 1,
-        "minVersion": 46
+        "minVersion": 5.6
       },
       "details": [],
       "wechat": {
@@ -535,7 +559,11 @@
         "supported": 0
       },
       "uc": {
-        "supported": 1
+        "supported": 1,
+        "minVersion": 11.5,
+        "details": [
+          "UC 将 scope 默认设为 '/'， 所以最好手动设置该选项以防带来域名匹配的安全问题。"
+        ]
       },
       "xiaomi": {
         "supported": 1,
@@ -546,7 +574,7 @@
       },
       "m360": {
         "supported": 1,
-        "minVersion": 45
+        "minVersion": 8.1
       },
       "baidum": {
         "supported": 1,
@@ -554,7 +582,7 @@
       },
       "sogoum": {
         "supported": 1,
-        "minVersion": 46
+        "minVersion": 5.6
       },
       "details": [],
       "wechat": {
@@ -589,7 +617,8 @@
         "supported": 0
       },
       "uc": {
-        "supported": 1
+        "supported": 1,
+        "minVersion": 11.5
       },
       "xiaomi": {
         "supported": 1,
@@ -600,7 +629,7 @@
       },
       "m360": {
         "supported": 1,
-        "minVersion": 45
+        "minVersion": 8.1
       },
       "baidum": {
         "supported": 1,
@@ -608,7 +637,7 @@
       },
       "sogoum": {
         "supported": 1,
-        "minVersion": 46
+        "minVersion": 5.6
       },
       "details": [],
       "wechat": {
@@ -643,7 +672,8 @@
         "supported": 0
       },
       "uc": {
-        "supported": 1
+        "supported": 1,
+        "minVersion": 11.5
       },
       "xiaomi": {
         "supported": 1,
@@ -654,7 +684,7 @@
       },
       "m360": {
         "supported": 1,
-        "minVersion": 45
+        "minVersion": 8.1
       },
       "baidum": {
         "supported": 1,
@@ -662,7 +692,7 @@
       },
       "sogoum": {
         "supported": 1,
-        "minVersion": 46
+        "minVersion": 5.6
       },
       "details": [],
       "wechat": {
@@ -697,10 +727,8 @@
         "supported": 0
       },
       "uc": {
-        "supported": 0.3,
-        "details": [
-          "因postMessage缺失及client.claim不可用，暂无法确定，日后补充"
-        ]
+        "supported": 1,
+        "minVersion": 11.5
       },
       "xiaomi": {
         "supported": 1,
@@ -714,7 +742,7 @@
       },
       "m360": {
         "supported": 1,
-        "minVersion": 45
+        "minVersion": 8.1
       },
       "baidum": {
         "supported": 1,
@@ -722,7 +750,7 @@
       },
       "sogoum": {
         "supported": 1,
-        "minVersion": 46
+        "minVersion": 5.6
       },
       "details": [],
       "wechat": {
@@ -753,7 +781,7 @@
       },
       "m360": {
         "supported": 1,
-        "minVersion": 45
+        "minVersion": 8.1
       },
       "baidum": {
         "supported": 1,
@@ -761,11 +789,15 @@
       },
       "sogoum": {
         "supported": 1,
-        "minVersion": 46
+        "minVersion": 5.6
       },
       "wechat": {
         "supported": 1,
         "minVersion": 6.5
+      },
+      "uc": {
+        "supported": 1,
+        "minVersion": 11.5
       }
     },
     {
@@ -795,7 +827,8 @@
         "supported": 0
       },
       "uc": {
-        "supported": 1
+        "supported": 1,
+        "minVersion": 11.5
       },
       "xiaomi": {
         "supported": 1,
@@ -806,7 +839,7 @@
       },
       "m360": {
         "supported": 1,
-        "minVersion": 45
+        "minVersion": 8.1
       },
       "baidum": {
         "supported": 1,
@@ -814,7 +847,7 @@
       },
       "sogoum": {
         "supported": 1,
-        "minVersion": 46
+        "minVersion": 5.6
       },
       "details": [],
       "wechat": {
@@ -849,7 +882,8 @@
         "supported": 0
       },
       "uc": {
-        "supported": 1
+        "supported": 1,
+        "minVersion": 11.5
       },
       "xiaomi": {
         "supported": 1,
@@ -860,7 +894,7 @@
       },
       "m360": {
         "supported": 1,
-        "minVersion": 45
+        "minVersion": 8.1
       },
       "baidum": {
         "supported": 1,
@@ -868,7 +902,7 @@
       },
       "sogoum": {
         "supported": 1,
-        "minVersion": 46
+        "minVersion": 5.6
       },
       "details": [],
       "wechat": {
@@ -903,7 +937,8 @@
         "supported": 0
       },
       "uc": {
-        "supported": 1
+        "supported": 1,
+        "minVersion": 11.5
       },
       "xiaomi": {
         "supported": 1,
@@ -914,7 +949,7 @@
       },
       "m360": {
         "supported": 1,
-        "minVersion": 45
+        "minVersion": 8.1
       },
       "baidum": {
         "supported": 1,
@@ -922,7 +957,7 @@
       },
       "sogoum": {
         "supported": 1,
-        "minVersion": 46
+        "minVersion": 5.6
       },
       "details": [],
       "wechat": {
@@ -957,10 +992,11 @@
         "supported": 0
       },
       "uc": {
-        "supported": 0,
+        "supported": 0.5,
         "details": [
           "准备实现"
-        ]
+        ],
+        "minVersion": 11.5
       },
       "xiaomi": {
         "supported": 1,
@@ -974,7 +1010,7 @@
       },
       "m360": {
         "supported": 1,
-        "minVersion": 45
+        "minVersion": 8.1
       },
       "baidum": {
         "supported": 1,
@@ -985,7 +1021,7 @@
         "details": [
           "不可用"
         ],
-        "minVersion": 46
+        "minVersion": 5.6
       },
       "details": [],
       "wechat": {
@@ -1020,7 +1056,8 @@
         "supported": 0
       },
       "uc": {
-        "supported": 1
+        "supported": 1,
+        "minVersion": 11.5
       },
       "xiaomi": {
         "supported": 1,
@@ -1031,7 +1068,7 @@
       },
       "m360": {
         "supported": 1,
-        "minVersion": 45
+        "minVersion": 8.1
       },
       "baidum": {
         "supported": 1,
@@ -1039,7 +1076,7 @@
       },
       "sogoum": {
         "supported": 1,
-        "minVersion": 46
+        "minVersion": 5.6
       },
       "details": [],
       "wechat": {
@@ -1181,7 +1218,11 @@
         "minVersion": 14
       },
       "uc": {
-        "supported": 0
+        "supported": 0.5,
+        "minVersion": 11.5,
+        "details": [
+          "Window域中暂未实现。"
+        ]
       },
       "xiaomi": {
         "supported": 1,
@@ -1192,7 +1233,7 @@
       },
       "m360": {
         "supported": 1,
-        "minVersion": 45
+        "minVersion": 8.1
       },
       "baidum": {
         "supported": 1,
@@ -1200,7 +1241,7 @@
       },
       "sogoum": {
         "supported": 1,
-        "minVersion": 46
+        "minVersion": 5.6
       },
       "details": [
         "<a href=\"https://github.com/github/fetch\">可以进行Polyfill</a>"
@@ -1237,7 +1278,8 @@
         "supported": 0
       },
       "uc": {
-        "supported": 1
+        "supported": 1,
+        "minVersion": 11.5
       },
       "xiaomi": {
         "supported": 1,
@@ -1248,7 +1290,7 @@
       },
       "m360": {
         "supported": 1,
-        "minVersion": 45
+        "minVersion": 8.1
       },
       "baidum": {
         "supported": 1,
@@ -1256,7 +1298,7 @@
       },
       "sogoum": {
         "supported": 1,
-        "minVersion": 46
+        "minVersion": 5.6
       },
       "details": [],
       "wechat": {
@@ -1291,7 +1333,8 @@
         "supported": 0
       },
       "uc": {
-        "supported": 1
+        "supported": 1,
+        "minVersion": 11.5
       },
       "xiaomi": {
         "supported": 1,
@@ -1302,7 +1345,7 @@
       },
       "m360": {
         "supported": 1,
-        "minVersion": 45
+        "minVersion": 8.1
       },
       "baidum": {
         "supported": 1,
@@ -1310,7 +1353,7 @@
       },
       "sogoum": {
         "supported": 1,
-        "minVersion": 46
+        "minVersion": 5.6
       },
       "details": [],
       "wechat": {
@@ -1345,7 +1388,8 @@
         "supported": 0
       },
       "uc": {
-        "supported": 1
+        "supported": 1,
+        "minVersion": 11.5
       },
       "xiaomi": {
         "supported": 1,
@@ -1356,7 +1400,7 @@
       },
       "m360": {
         "supported": 1,
-        "minVersion": 45
+        "minVersion": 8.1
       },
       "baidum": {
         "supported": 1,
@@ -1364,7 +1408,7 @@
       },
       "sogoum": {
         "supported": 1,
-        "minVersion": 46
+        "minVersion": 5.6
       },
       "details": [],
       "wechat": {
@@ -1399,7 +1443,8 @@
         "supported": 0
       },
       "uc": {
-        "supported": 0
+        "supported": 0.5,
+        "minVersion": 11.5
       },
       "xiaomi": {
         "supported": 1,
@@ -1410,7 +1455,7 @@
       },
       "m360": {
         "supported": 1,
-        "minVersion": 45
+        "minVersion": 8.1
       },
       "baidum": {
         "supported": 1,
@@ -1418,7 +1463,7 @@
       },
       "sogoum": {
         "supported": 1,
-        "minVersion": 46
+        "minVersion": 5.6
       },
       "details": [
         "<strong>Edge</strong>: <a href=\"https://developer.microsoft.com/microsoft-edge/platform/status/cacheapi\">开发中</a>"
@@ -1455,10 +1500,11 @@
         "supported": 0
       },
       "uc": {
-        "supported": 0,
+        "supported": 0.825,
         "details": [
-          "报错说存在安全问题"
-        ]
+          "可用，但Api实现不是最优选择。缺乏event.source，clients.matchAll，且messageChannel不能正常使用addEventListener."
+        ],
+        "minVersion": 11.5
       },
       "xiaomi": {
         "supported": 1,
@@ -1476,14 +1522,14 @@
       },
       "m360": {
         "supported": 0.95,
-        "minVersion": 45
+        "minVersion": 8.1
       },
       "sogoum": {
         "supported": 0.95,
         "details": [
           "不能顺利进行"
         ],
-        "minVersion": 46
+        "minVersion": 5.6
       },
       "details": [
         "<strong>Chrome & Opera</strong>: <code>messageEvent.source</code><a href=\"https://crbug.com/403693\">在worker中为<code>null</code></a>，但你可以传入你自己的<code>MessageChannel</code>来进行双向通信。【43后版本已修复】",
@@ -1520,10 +1566,11 @@
         "supported": 0
       },
       "uc": {
-        "supported": 0.5,
+        "supported": 0,
         "details": [
           "存在Notification对象，但不可用"
-        ]
+        ],
+        "minVersion": 11.5
       },
       "xiaomi": {
         "supported": 0,
@@ -1543,7 +1590,7 @@
         "details": [
           "存在Notification对象，但不可用"
         ],
-        "minVersion": 45
+        "minVersion": 8.1
       },
       "baidum": {
         "supported": 0,
@@ -1557,7 +1604,7 @@
         "details": [
           "存在Notification对象，但不可用"
         ],
-        "minVersion": 46
+        "minVersion": 5.6
       },
       "details": [
         "<strong>Edge</strong>: <a href=\"https://developer.microsoft.com/microsoft-edge/platform/status/cacheapi\">开发中</a>",

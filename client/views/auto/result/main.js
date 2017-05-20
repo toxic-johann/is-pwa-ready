@@ -1,7 +1,7 @@
 import store from 'store'
 import {isNumeric} from 'utils'
 import {featureKeys} from '../helper'
-import {info} from '../helper'
+import {info, testTips} from '../helper'
 function genRGB (score) {
   score = isNumeric(score) ? score : 0
   return [
@@ -46,7 +46,7 @@ export default async function () {
   await store.put('info', schedule, 'schedule')
   if(schedule !== info.totalSchedule) {
     info.timeoutTimer = setTimeout(() => {
-      document.querySelector('.schedule').innerHTML = 'Sorry, this browser can not finish our test case'
+      document.querySelector('.schedule').innerHTML = testTips.fail
     }, 15000)
   }
 }

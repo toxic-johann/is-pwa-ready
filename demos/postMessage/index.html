@@ -35,7 +35,7 @@
       };
     }
 
-    navigator.serviceWorker.register('sw.js').then(function(sw) {
+    navigator.serviceWorker.register('sw.js', {scope: '/demos/postMessage/'}).then(function(sw) {
       log("Registered!", sw);
     }).catch(function(err) {
       log("Error", err);

@@ -14,6 +14,7 @@ export const featureKeys = [
   'activateEvent',
   'activateEvent.waitUntil',
   'clients.claim',
+  'clients.matchAll',
   'Unregistered',
   'fetch',
   'fetchEvent',
@@ -43,3 +44,4 @@ export const info = {
 }
 
 export const copyTips = window.SD.copyTips
+export const testTips = window.SD.testTips
