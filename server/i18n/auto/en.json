@@ -15,9 +15,6 @@
     },
     "Github": {
       "href": "https://github.com/toxic-johann/is-pwa-ready"
-    },
-    "ChangeLog": {
-      "href": "https://github.com/toxic-johann/is-pwa-ready/releases"
     }
   },
   "note": "This test is based on indexedDB, so it may be buggy because of compatibility issues. What's more. As it's alpha version, it can't ensure to run well on all browsers. You can use v-console to debug. Welcome issue or pull.",
