@@ -153,7 +153,7 @@
       "uc": {
         "supported": 0.8,
         "details": [
-          "Shipped. Based on Android browserg. They have implemented some API, but still not advice to use it in production environment. "
+          "Shipped. Based on Android browser. They have implemented some API, but still not advice to use it in production environment. "
         ]
       },
       "xiaomi": {
@@ -189,7 +189,7 @@
       "wechat": {
         "supported": 1,
         "details": [
-          "Shipped. Whold lifecycle is implemented. But have bug in postMessage. It can achieve fast and reliable easily. But it may be impossilbe for it to let us achieve engaging."
+          "Shipped. Whole lifecycle is implemented. But have bug in postMessage. It can achieve fast and reliable easily. But it may be impossilbe for it to let us achieve engaging."
         ]
       },
       "details": [
@@ -229,7 +229,7 @@
         "supported": 0.5,
         "minVersion": 11.5,
         "details": [
-          "Have not complete implementation on window scope."
+          "Have not completed implementation on window scope."
         ]
       },
       "xiaomi": {
@@ -288,7 +288,7 @@
         "supported": 0.5,
         "minVersion": 11.5,
         "details": [
-          "Have not complete implementation on window scope."
+          "Have not completed implementation on window scope."
         ]
       },
       "xiaomi": {
@@ -350,7 +350,7 @@
         "supported": 0.5,
         "minVersion": 11.5,
         "details": [
-          "Have not complete implementation on window scope."
+          "Have not completed implementation on window scope."
         ]
       },
       "xiaomi": {
@@ -1101,7 +1101,8 @@
         "supported": 0.5,
         "details": [
           "Lack of client.claim make us could not update immediately"
-        ]
+        ],
+        "minVersion": 11.5
       },
       "xiaomi": {
         "supported": 1
