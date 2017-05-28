@@ -40,3 +40,4 @@ jspm_packages
 .DS_Store
 stc.js
 qiniu.js
+.raven.js
