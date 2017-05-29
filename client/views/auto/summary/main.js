@@ -1,9 +1,10 @@
 import {featureKeys, infoKeys, copyTips} from '../helper'
-import {isNumeric} from 'utils'
+import {isNumeric, uuid} from 'utils'
 import store from 'store'
 import Clipboard from 'clipboard'
 import sweetAlert from 'sweetalert'
 import 'sweetalert/dist/sweetalert.css'
+import Raven from 'raven'
 export default async function () {
   const summary = {
     info: {},
@@ -47,5 +48,9 @@ export default async function () {
     type: 'error'
   }))
   document.querySelector('.summary').classList.add('show')
+  Raven.setUserContext(summary)
+  Raven.captureMessage('test-result-' + uuid(), {
+    level: 'info'
+  })
   return summary
 }

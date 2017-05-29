@@ -63,12 +63,12 @@
 /******/ 	__webpack_require__.p = "/static/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 71);
+/******/ 	return __webpack_require__(__webpack_require__.s = 72);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 71:
+/***/ 72:
 /***/ (function(module, exports) {
 
 console.log('i am empty');

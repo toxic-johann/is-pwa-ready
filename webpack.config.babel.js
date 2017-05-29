@@ -86,7 +86,8 @@ export default function ({mode = 'development', port, nodePort} = {}) {
       // 模块别名定义，方便后续直接引用别名，无须多写长长的地址
       alias: {
         'utils': path.resolve('./client/views/common/utils.js'),
-        'store': path.resolve('./client/views/common/store.js')
+        'store': path.resolve('./client/views/common/store.js'),
+        'raven': path.resolve('./client/views/common/raven.js')
       },
       enforceExtension: false,
       modules: [

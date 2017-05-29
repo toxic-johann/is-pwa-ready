@@ -63,12 +63,12 @@
 /******/ 	__webpack_require__.p = "/static/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 78);
+/******/ 	return __webpack_require__(__webpack_require__.s = 79);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 78:
+/***/ 79:
 /***/ (function(module, exports) {
 
 var cacheKey = 'v1';
@@ -82,7 +82,7 @@ self.addEventListener('install', function (event) {
 });
 
 self.addEventListener('active', function (event) {
-  return clients.claim();
+  return self.clients.claim();
 });
 
 function remote(request) {

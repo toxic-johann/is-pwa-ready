@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "/static/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 73);
+/******/ 	return __webpack_require__(__webpack_require__.s = 74);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -98,8 +98,10 @@ if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
 /* harmony export (immutable) */ __webpack_exports__["a"] = isPromise;
 /* harmony export (immutable) */ __webpack_exports__["d"] = sleep;
 /* harmony export (immutable) */ __webpack_exports__["e"] = search2obj;
-/* harmony export (immutable) */ __webpack_exports__["h"] = obj2search;
-/* harmony export (immutable) */ __webpack_exports__["g"] = promisifyOneTimeEventListener;
+/* harmony export (immutable) */ __webpack_exports__["i"] = obj2search;
+/* harmony export (immutable) */ __webpack_exports__["h"] = promisifyOneTimeEventListener;
+/* harmony export (immutable) */ __webpack_exports__["g"] = uuid;
+/* unused harmony export S4 */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_assert__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_assert___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_assert__);
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -260,6 +262,15 @@ function promisifyOneTimeEventListener(fn, target, event) {
     }
     target.addEventListener(event, handler);
   });
+}
+
+// 生成uuid
+function uuid() {
+  return S4() + S4() + '-' + S4() + '-' + S4() + '-' + S4() + '-' + S4() + S4() + S4();
+}
+// 生成四个随机数
+function S4() {
+  return ((1 + Math.random()) * 0x10000 | 0).toString(16).substring(1);
 }
 
 /***/ }),
@@ -2348,7 +2359,8 @@ function hasOwnProperty(obj, prop) {
 /* 70 */,
 /* 71 */,
 /* 72 */,
-/* 73 */
+/* 73 */,
+/* 74 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

@@ -1,5 +1,5 @@
 import store from 'store'
-import {isNumeric} from 'utils'
+import {isNumeric, uuid} from 'utils'
 import {featureKeys} from '../helper'
 import {info, testTips} from '../helper'
 function genRGB (score) {
@@ -10,12 +10,14 @@ function genRGB (score) {
     24
   ]
 }
+import Raven from 'raven'
 export default async function () {
   info.timeoutTimer && clearTimeout(info.timeoutTimer)
   document.querySelector('tbody').innerHTML = ''
   let resultHTML = ''
   let fullScore = 0
   let totalScore = 0
+  const result = {}
   for(let i = 0; i < featureKeys.length; i++) {
     const key = featureKeys[i]
     const scoreStr = await store.get('feature', key)
@@ -32,6 +34,7 @@ export default async function () {
       <td class="${isNote ? 'note' : 'score'}">${isNote ? score : score * 100}</td>
     </tr>
     `
+    result[key] = score
     resultHTML += li
   }
   document.querySelector('.features tbody').innerHTML = resultHTML
@@ -45,7 +48,11 @@ export default async function () {
   document.querySelector('.schedule span').innerHTML = ~~(schedule / info.totalSchedule * 100) + '%'
   await store.put('info', schedule, 'schedule')
   if(schedule !== info.totalSchedule) {
-    info.timeoutTimer = setTimeout(() => {
+    info.timeoutTimer = setTimeout(async () => {
+      Raven.setUserContext({result})
+      Raven.captureMessage('test-failed-' + uuid(), {
+        level: 'warning'
+      })
       document.querySelector('.schedule').innerHTML = testTips.fail
     }, 15000)
   }

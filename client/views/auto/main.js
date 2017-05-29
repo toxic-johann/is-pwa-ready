@@ -11,6 +11,7 @@ import {search2obj} from 'utils'
 import './main.css'
 import 'vconsole'
 import {info} from './helper'
+import 'views/common/raven'
 window.addEventListener('unhandledrejection', function (event) {
   console.warn('WARNING: Unhandled promise rejection. Shame on you! Reason: ' + event.reason)
 })
