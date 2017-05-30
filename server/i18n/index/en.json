@@ -50,19 +50,27 @@
       "both": true
     },
     {
+      "id": "m360",
+      "name": "360 mobile browser",
+      "aka": "360",
+      "mobile": true
+    },
+    {
+      "id": "firefoxm",
+      "name": "Firefox mobile browser",
+      "aka": "Firefox",
+      "icon": "firefox",
+      "mobile": true
+    },
+    {
       "id": "opera",
       "name": "Opera"
     },
     {
-      "id": "samsung-internet",
-      "name": "Samsung Internet",
-      "aka": "Samsung",
-      "mobile": true
-    },
-    {
-      "id": "xiaomi",
-      "name": "Xiaomi mobile browser",
-      "aka": "Xiaomi",
+      "id": "chromem",
+      "name": "Chrome Mobile browser",
+      "aka": "Chrome",
+      "icon": "chrome",
       "mobile": true
     },
     {
@@ -72,9 +80,15 @@
       "mobile": true
     },
     {
-      "id": "m360",
-      "name": "360 mobile browser",
-      "aka": "360",
+      "id": "xiaomi",
+      "name": "Xiaomi mobile browser",
+      "aka": "Xiaomi",
+      "mobile": true
+    },
+    {
+      "id": "samsung-internet",
+      "name": "Samsung Internet",
+      "aka": "Samsung",
       "mobile": true
     },
     {
@@ -101,6 +115,18 @@
       "mobile": true
     },
     {
+      "id": "cheetah",
+      "name": "cheetah mobile browser",
+      "aka": "Cheetah",
+      "mobile": true
+    },
+    {
+      "id": "quark",
+      "name": "quark browser",
+      "aka": "Quark",
+      "mobile": true
+    },
+    {
       "id": "edge",
       "name": "Edge"
     },
@@ -115,10 +141,10 @@
       "name": "Are you ready?",
       "description": "Suggest only support the browser got 80 or more.",
       "chrome": {
-        "supported": 1.01
+        "supported": 1
       },
       "firefox": {
-        "supported": 1.01
+        "supported": 1
       },
       "opera": {
         "supported": 0.91
@@ -145,13 +171,25 @@
         "supported": 0.71
       },
       "qqm": {
-        "supported": 0.61
+        "supported": 0.71
       },
       "edge": {
         "supported": 0.21000000000000002
       },
       "safari": {
         "supported": 0.21000000000000002
+      },
+      "chromem": {
+        "supported": 0.91
+      },
+      "firefoxm": {
+        "supported": 0.91
+      },
+      "quark": {
+        "supported": 0.21000000000000002
+      },
+      "cheetah": {
+        "supported": 0.61
       }
     },
     {
@@ -159,22 +197,19 @@
       "name": "ServiceWorker enthusiasm",
       "description": "The first thing any implementation needs.",
       "chrome": {
-        "supported": 1,
-        "details": [
-          "Shipped."
-        ]
+        "supported": 1
+      },
+      "chromem": {
+        "supported": 1
       },
       "firefox": {
-        "supported": 1,
-        "details": [
-          "Shipped."
-        ]
+        "supported": 1
+      },
+      "firefoxm": {
+        "supported": 1
       },
       "opera": {
-        "supported": 1,
-        "details": [
-          "Shipped."
-        ]
+        "supported": 1
       },
       "samsung-internet": {
         "supported": 1,
@@ -198,6 +233,18 @@
         "supported": 0.8,
         "details": [
           "Shipped. Based on Android browser. They have implemented some API, but still not advice to use it in production environment. "
+        ]
+      },
+      "quark": {
+        "supported": 0.8,
+        "details": [
+          "Shipped. Based on Android browser. They have implemented some API, but still not advice to use it in production environment. "
+        ]
+      },
+      "cheetah": {
+        "supported": 0.8,
+        "details": [
+          "Shipped. Based on Chrome Mobile 33. Still buggy. Not adivce to use it in production environment."
         ]
       },
       "xiaomi": {
@@ -281,7 +328,8 @@
         "minVersion": 2
       },
       "qqm": {
-        "supported": 1
+        "supported": 0.5,
+        "minVersion": 7.5
       },
       "m360": {
         "supported": 1,
@@ -299,6 +347,22 @@
       "wechat": {
         "supported": 1,
         "minVersion": 6.5
+      },
+      "quark": {
+        "supported": 0.5,
+        "minVersion": 1.7
+      },
+      "cheetah": {
+        "supported": 0.5,
+        "minVersion": 4.43
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
       }
     },
     {
@@ -340,7 +404,8 @@
         "minVersion": 2
       },
       "qqm": {
-        "supported": 1
+        "supported": 1,
+        "minVersion": 7.5
       },
       "m360": {
         "supported": 1,
@@ -358,6 +423,22 @@
       "wechat": {
         "supported": 1,
         "minVersion": 6.5
+      },
+      "quark": {
+        "supported": 0.5,
+        "minVersion": 1.7
+      },
+      "cheetah": {
+        "supported": 0.5,
+        "minVersion": 4.43
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
       }
     },
     {
@@ -402,7 +483,8 @@
         "minVersion": 2
       },
       "qqm": {
-        "supported": 1
+        "supported": 1,
+        "minVersion": 7.5
       },
       "m360": {
         "supported": 1,
@@ -422,6 +504,22 @@
       "wechat": {
         "supported": 1,
         "minVersion": 6.5
+      },
+      "quark": {
+        "supported": 0.5,
+        "minVersion": 1.7
+      },
+      "cheetah": {
+        "supported": 0.5,
+        "minVersion": 4.43
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
       }
     },
     {
@@ -468,6 +566,26 @@
       "uc": {
         "supported": 0.5,
         "minVersion": 11.5
+      },
+      "qqm": {
+        "supported": 0.5,
+        "minVersion": 7.5
+      },
+      "quark": {
+        "supported": 0.5,
+        "minVersion": 1.7
+      },
+      "cheetah": {
+        "supported": 0.5,
+        "minVersion": 4.43
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
       }
     },
     {
@@ -510,6 +628,26 @@
       "uc": {
         "supported": 0,
         "minVersion": 11.5
+      },
+      "qqm": {
+        "supported": 0,
+        "minVersion": 7.5
+      },
+      "quark": {
+        "supported": 0,
+        "minVersion": 1.7
+      },
+      "cheetah": {
+        "supported": 0,
+        "minVersion": 4.43
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
       }
     },
     {
@@ -547,7 +685,8 @@
         "minVersion": 2
       },
       "qqm": {
-        "supported": 1
+        "supported": 1,
+        "minVersion": 7.5
       },
       "m360": {
         "supported": 1,
@@ -565,6 +704,22 @@
       "wechat": {
         "supported": 1,
         "minVersion": 6.5
+      },
+      "quark": {
+        "supported": 1,
+        "minVersion": 1.7
+      },
+      "cheetah": {
+        "supported": 1,
+        "minVersion": 4.43
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
       }
     },
     {
@@ -605,7 +760,8 @@
         "minVersion": 2
       },
       "qqm": {
-        "supported": 1
+        "supported": 1,
+        "minVersion": 7.5
       },
       "m360": {
         "supported": 1,
@@ -623,6 +779,22 @@
       "wechat": {
         "supported": 1,
         "minVersion": 6.5
+      },
+      "quark": {
+        "supported": 1,
+        "minVersion": 1.7
+      },
+      "cheetah": {
+        "supported": 1,
+        "minVersion": 4.43
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
       }
     },
     {
@@ -660,7 +832,8 @@
         "minVersion": 2
       },
       "qqm": {
-        "supported": 1
+        "supported": 1,
+        "minVersion": 7.5
       },
       "m360": {
         "supported": 1,
@@ -678,6 +851,22 @@
       "wechat": {
         "supported": 1,
         "minVersion": 6.5
+      },
+      "quark": {
+        "supported": 0,
+        "minVersion": 1.7
+      },
+      "cheetah": {
+        "supported": 1,
+        "minVersion": 4.43
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
       }
     },
     {
@@ -715,7 +904,8 @@
         "minVersion": 2
       },
       "qqm": {
-        "supported": 1
+        "supported": 1,
+        "minVersion": 7.5
       },
       "m360": {
         "supported": 1,
@@ -733,6 +923,22 @@
       "wechat": {
         "supported": 1,
         "minVersion": 6.5
+      },
+      "quark": {
+        "supported": 0,
+        "minVersion": 1.7
+      },
+      "cheetah": {
+        "supported": 1,
+        "minVersion": 4.43
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
       }
     },
     {
@@ -770,10 +976,11 @@
         "minVersion": 2
       },
       "qqm": {
-        "supported": 0.3,
+        "supported": 1,
         "details": [
           "TODO, I can't test this feature because my test case not run well on it."
-        ]
+        ],
+        "minVersion": 7.5
       },
       "m360": {
         "supported": 1,
@@ -791,6 +998,22 @@
       "wechat": {
         "supported": 1,
         "minVersion": 6.5
+      },
+      "quark": {
+        "supported": 0,
+        "minVersion": 1.7
+      },
+      "cheetah": {
+        "supported": 1,
+        "minVersion": 4.43
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
       }
     },
     {
@@ -833,6 +1056,26 @@
       "uc": {
         "supported": 1,
         "minVersion": 11.5
+      },
+      "qqm": {
+        "supported": 1,
+        "minVersion": 7.5
+      },
+      "quark": {
+        "supported": 0,
+        "minVersion": 1.7
+      },
+      "cheetah": {
+        "supported": 1,
+        "minVersion": 4.43
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
       }
     },
     {
@@ -870,7 +1113,8 @@
         "minVersion": 2
       },
       "qqm": {
-        "supported": 1
+        "supported": 1,
+        "minVersion": 7.5
       },
       "m360": {
         "supported": 1,
@@ -888,6 +1132,22 @@
       "wechat": {
         "supported": 1,
         "minVersion": 6.5
+      },
+      "quark": {
+        "supported": 0,
+        "minVersion": 1.7
+      },
+      "cheetah": {
+        "supported": 1,
+        "minVersion": 4.43
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
       }
     },
     {
@@ -925,7 +1185,8 @@
         "minVersion": 2
       },
       "qqm": {
-        "supported": 1
+        "supported": 1,
+        "minVersion": 7.5
       },
       "m360": {
         "supported": 1,
@@ -943,6 +1204,22 @@
       "wechat": {
         "supported": 1,
         "minVersion": 6.5
+      },
+      "quark": {
+        "supported": 0,
+        "minVersion": 1.7
+      },
+      "cheetah": {
+        "supported": 1,
+        "minVersion": 4.43
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
       }
     },
     {
@@ -980,7 +1257,8 @@
         "minVersion": 2
       },
       "qqm": {
-        "supported": 1
+        "supported": 1,
+        "minVersion": 7.5
       },
       "m360": {
         "supported": 1,
@@ -998,6 +1276,22 @@
       "wechat": {
         "supported": 1,
         "minVersion": 6.5
+      },
+      "quark": {
+        "supported": 0,
+        "minVersion": 1.7
+      },
+      "cheetah": {
+        "supported": 1,
+        "minVersion": 4.43
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
       }
     },
     {
@@ -1038,10 +1332,11 @@
         "minVersion": 2
       },
       "qqm": {
-        "supported": 0,
+        "supported": 0.5,
         "details": [
           "TODO, I can't test this feature because my test case not run well on it."
-        ]
+        ],
+        "minVersion": 7.5
       },
       "m360": {
         "supported": 1,
@@ -1059,6 +1354,22 @@
       "wechat": {
         "supported": 1,
         "minVersion": 6.5
+      },
+      "quark": {
+        "supported": 0,
+        "minVersion": 1.7
+      },
+      "cheetah": {
+        "supported": 0.5,
+        "minVersion": 4.43
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
       }
     },
     {
@@ -1096,7 +1407,8 @@
         "minVersion": 2
       },
       "qqm": {
-        "supported": 1
+        "supported": 1,
+        "minVersion": 7.5
       },
       "m360": {
         "supported": 1,
@@ -1114,6 +1426,22 @@
       "wechat": {
         "supported": 1,
         "minVersion": 6.5
+      },
+      "quark": {
+        "supported": 1,
+        "minVersion": 1.7
+      },
+      "cheetah": {
+        "supported": 1,
+        "minVersion": 4.43
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
       }
     },
     {
@@ -1180,9 +1508,16 @@
         "supported": 1,
         "minVersion": 40
       },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
       "firefox": {
         "supported": 1,
         "minVersion": 44
+      },
+      "firefoxm": {
+        "supported": 1
       },
       "opera": {
         "supported": 1,
@@ -1259,7 +1594,8 @@
         "minVersion": 2
       },
       "qqm": {
-        "supported": 1
+        "supported": 1,
+        "minVersion": 7.5
       },
       "m360": {
         "supported": 1,
@@ -1279,6 +1615,22 @@
       "wechat": {
         "supported": 1,
         "minVersion": 6.5
+      },
+      "quark": {
+        "supported": 0.5,
+        "minVersion": 1.7
+      },
+      "cheetah": {
+        "supported": 0.5,
+        "minVersion": 4.43
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
       }
     },
     {
@@ -1316,7 +1668,8 @@
         "minVersion": 2
       },
       "qqm": {
-        "supported": 1
+        "supported": 1,
+        "minVersion": 7.5
       },
       "m360": {
         "supported": 1,
@@ -1334,6 +1687,22 @@
       "wechat": {
         "supported": 1,
         "minVersion": 6.5
+      },
+      "quark": {
+        "supported": 0,
+        "minVersion": 1.7
+      },
+      "cheetah": {
+        "supported": 1,
+        "minVersion": 4.43
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
       }
     },
     {
@@ -1371,7 +1740,8 @@
         "minVersion": 2
       },
       "qqm": {
-        "supported": 1
+        "supported": 1,
+        "minVersion": 7.5
       },
       "m360": {
         "supported": 1,
@@ -1389,6 +1759,22 @@
       "wechat": {
         "supported": 1,
         "minVersion": 6.5
+      },
+      "quark": {
+        "supported": 0,
+        "minVersion": 1.7
+      },
+      "cheetah": {
+        "supported": 1,
+        "minVersion": 4.43
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
       }
     },
     {
@@ -1426,7 +1812,8 @@
         "minVersion": 2
       },
       "qqm": {
-        "supported": 1
+        "supported": 1,
+        "minVersion": 7.5
       },
       "m360": {
         "supported": 1,
@@ -1444,6 +1831,22 @@
       "wechat": {
         "supported": 1,
         "minVersion": 6.5
+      },
+      "quark": {
+        "supported": 0,
+        "minVersion": 1.7
+      },
+      "cheetah": {
+        "supported": 1,
+        "minVersion": 4.43
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
       }
     },
     {
@@ -1481,7 +1884,8 @@
         "minVersion": 2
       },
       "qqm": {
-        "supported": 0
+        "supported": 0.5,
+        "minVersion": 7.5
       },
       "m360": {
         "supported": 1,
@@ -1501,6 +1905,22 @@
       "wechat": {
         "supported": 1,
         "minVersion": 6.5
+      },
+      "quark": {
+        "supported": 0.5,
+        "minVersion": 1.7
+      },
+      "cheetah": {
+        "supported": 0.5,
+        "minVersion": 4.43
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
       }
     },
     {
@@ -1541,10 +1961,11 @@
         "minVersion": 2
       },
       "qqm": {
-        "supported": 0.3,
+        "supported": 0,
         "details": [
           "Failed. And i got the message on window."
-        ]
+        ],
+        "minVersion": 7.5
       },
       "baidum": {
         "supported": 0.95,
@@ -1568,6 +1989,22 @@
       "wechat": {
         "supported": null,
         "minVersion": 6.5
+      },
+      "quark": {
+        "supported": 0,
+        "minVersion": 1.7
+      },
+      "cheetah": {
+        "supported": 0,
+        "minVersion": 4.43
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
       }
     },
     {
@@ -1604,7 +2041,8 @@
         "minVersion": 2
       },
       "qqm": {
-        "supported": 0.5
+        "supported": 0,
+        "minVersion": 7.5
       },
       "m360": {
         "supported": 1,
@@ -1625,6 +2063,22 @@
       "wechat": {
         "supported": 0,
         "minVersion": 6.5
+      },
+      "quark": {
+        "supported": 0,
+        "minVersion": 1.7
+      },
+      "cheetah": {
+        "supported": 0,
+        "minVersion": 4.43
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
       }
     },
     {
@@ -1634,7 +2088,13 @@
       "chrome": {
         "supported": 1
       },
+      "chromem": {
+        "supported": 1
+      },
       "firefox": {
+        "supported": 1
+      },
+      "firefoxm": {
         "supported": 1
       },
       "opera": {
@@ -1704,9 +2164,15 @@
         "supported": 1,
         "minVersion": 42
       },
+      "chromem": {
+        "supported": 1
+      },
       "firefox": {
         "supported": 1,
         "minVersion": 44
+      },
+      "firefoxm": {
+        "supported": 1
       },
       "opera": {
         "supported": 1

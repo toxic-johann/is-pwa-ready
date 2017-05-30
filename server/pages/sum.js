@@ -19,6 +19,9 @@ module.exports = async function () {
       json.features[0][id] = json.features[0][id] || {}
       json.features[0][id].supported = Math.min(1, +(sum / (json.features.length - 1)).toFixed(1) + 0.01)
     })
+    json.browsers.sort((a, b) => {
+      return json.features[0][b.id].supported - json.features[0][a.id].supported
+    })
     fs.writeFileSync('./server/i18n/index/' + key + '.json', JSON.stringify(i18n[key], null, 2))
   })
   this.body = 'work'
