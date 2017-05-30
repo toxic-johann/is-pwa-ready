@@ -111,6 +111,50 @@
   ],
   "features": [
     {
+      "id": "ready",
+      "name": "Are you ready?",
+      "description": "Suggest only support the browser got 80 or more.",
+      "chrome": {
+        "supported": 1.01
+      },
+      "firefox": {
+        "supported": 1.01
+      },
+      "opera": {
+        "supported": 0.91
+      },
+      "samsung-internet": {
+        "supported": 0.81
+      },
+      "xiaomi": {
+        "supported": 0.81
+      },
+      "sogoum": {
+        "supported": 0.91
+      },
+      "m360": {
+        "supported": 0.91
+      },
+      "baidum": {
+        "supported": 0.81
+      },
+      "wechat": {
+        "supported": 0.81
+      },
+      "uc": {
+        "supported": 0.71
+      },
+      "qqm": {
+        "supported": 0.61
+      },
+      "edge": {
+        "supported": 0.21000000000000002
+      },
+      "safari": {
+        "supported": 0.21000000000000002
+      }
+    },
+    {
       "id": "atitude",
       "name": "ServiceWorker enthusiasm",
       "description": "The first thing any implementation needs.",

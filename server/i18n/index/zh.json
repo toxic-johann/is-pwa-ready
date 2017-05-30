@@ -114,6 +114,50 @@
   ],
   "features": [
     {
+      "id": "ready",
+      "name": "是否真的准备好了？",
+      "description": "建议80分以上的浏览器方考虑支持。",
+      "chrome": {
+        "supported": 1.01
+      },
+      "firefox": {
+        "supported": 1.01
+      },
+      "opera": {
+        "supported": 0.91
+      },
+      "samsung-internet": {
+        "supported": 0.81
+      },
+      "xiaomi": {
+        "supported": 0.81
+      },
+      "sogoum": {
+        "supported": 0.81
+      },
+      "m360": {
+        "supported": 0.81
+      },
+      "baidum": {
+        "supported": 0.81
+      },
+      "wechat": {
+        "supported": 0.81
+      },
+      "uc": {
+        "supported": 0.71
+      },
+      "qqm": {
+        "supported": 0.61
+      },
+      "edge": {
+        "supported": 0.21000000000000002
+      },
+      "safari": {
+        "supported": 0.21000000000000002
+      }
+    },
+    {
       "id": "atitude",
       "name": "对ServiceWorker的态度",
       "description": "态度决定一切。",
