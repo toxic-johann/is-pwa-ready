@@ -1456,6 +1456,18 @@
         "supported": 1,
         "minVersion": 44
       },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
+      },
+      "cheetah": {
+        "supported": 0.5,
+        "minVersion": 4.43
+      },
       "opera": {
         "supported": 1
       },
