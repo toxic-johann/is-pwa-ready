@@ -586,6 +586,10 @@
       "firefoxm": {
         "supported": 1,
         "minVersion": 52
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
       }
     },
     {
@@ -648,6 +652,10 @@
       "firefoxm": {
         "supported": 1,
         "minVersion": 52
+      },
+      "samsung-internet": {
+        "supported": 1,
+        "minVersion": 4
       }
     },
     {
@@ -1023,7 +1031,7 @@
       "details": [],
       "chrome": {
         "supported": 1,
-        "minVersion": 60
+        "minVersion": 58
       },
       "firefox": {
         "supported": 1,
@@ -1936,6 +1944,177 @@
       }
     },
     {
+      "id": "caches.open",
+      "name": "<code>caches.open</code>",
+      "description": "The open() method of the CacheStorage interface returns a Promise that resolves to the Cache object matching the cacheName.",
+      "details": [],
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 53
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 45
+      }
+    },
+    {
+      "id": "caches.delete",
+      "name": "<code>caches.delete</code>",
+      "description": "The delete() method of the CacheStorage interface finds the Cache object matching the cacheName, and if found, deletes the Cache object and returns a Promise that resolves to true. If no Cache object is found, it returns false.",
+      "details": [],
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 53
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 45
+      }
+    },
+    {
+      "id": "caches.has",
+      "name": "<code>caches.has</code>",
+      "description": "The has() method of the CacheStorage interface returns a Promise that resolves to true if a Cache object matches the cacheName.",
+      "details": [],
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 53
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 45
+      }
+    },
+    {
+      "id": "cache.add",
+      "name": "<code>caches.add</code>",
+      "description": "The add() method of the Cache interface takes a URL, retrieves it and adds the resulting response object to the given cache.",
+      "details": [],
+      "chrome": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 53
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 45
+      }
+    },
+    {
+      "id": "cache.addAll",
+      "name": "<code>caches.addAll</code>",
+      "description": "The addAll() method of the Cache interface takes an array of URLS, retrieves them, and adds the resulting response objects to the given cache. The request objects created during retrieval become keys to the stored response operations. ",
+      "details": [],
+      "chrome": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 53
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 45
+      }
+    },
+    {
+      "id": "cache.delete",
+      "name": "<code>caches.delete</code>",
+      "description": "The delete() method of the Cache interface finds the Cache entry whose key is the request, and if found, deletes the Cache entry and returns a Promise that resolves to true. If no Cache entry is found, it returns false.",
+      "details": [],
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40,
+        "details": [
+          "Not all options supported until Chrome 54"
+        ]
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 53
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 45
+      }
+    },
+    {
+      "id": "cache.keys",
+      "name": "<code>caches.keys</code>",
+      "description": "The keys() method of the Cache interface returns a Promise that resolves to an array of Cache keys.",
+      "details": [],
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40,
+        "details": [
+          "Not all options supported until Chrome 54"
+        ]
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 53
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 45
+      }
+    },
+    {
+      "id": "cache.match",
+      "name": "<code>caches.match</code>",
+      "description": "The match() method of the Cache interface returns a Promise that resolves to the Response associated with the first matching request in the Cache object. If no match is found, the Promise resolves to undefined.",
+      "details": [],
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40,
+        "details": [
+          "Not all options supported until Chrome 54"
+        ]
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 53
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 45
+      }
+    },
+    {
+      "id": "cache.put",
+      "name": "<code>caches.put</code>",
+      "description": "The put() method of the Cache interface allows key/value pairs to be added to the current Cache object.",
+      "details": [],
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 53
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 45
+      }
+    },
+    {
       "id": "postMessage",
       "name": "<code>postMessage</code> to &amp; from worker",
       "description": "<a href=\"https://w3c.github.io/ServiceWorker/#service-worker-postmessage\">Spec</a>. <a href=\"demos/postMessage/\">Test</a>.",
@@ -2025,7 +2204,7 @@
       "description": "<a href=\"https://notifications.spec.whatwg.org\">Spec</a>. <a href=\"demos/globalapis/\">Test</a>.",
       "chrome": {
         "supported": 1,
-        "minVersion": 60
+        "minVersion": 58
       },
       "firefox": {
         "supported": 1,
@@ -2169,12 +2348,15 @@
       "details": []
     },
     {
-      "id": "PushManager.subscribe",
+      "id": "pushManager.subscribe",
       "name": "PushManager.subscribe()",
       "description": "<a href=\"https://w3c.github.io/push-api/#widl-PushManager-subscribe-Promise-PushSubscription--PushSubscriptionOptions-options\">spec</a>。<a href=\"demos/pushsubscribe/\">Test</a>。",
       "chrome": {
         "supported": 1,
-        "minVersion": 42
+        "minVersion": 42,
+        "details": [
+          "add applicatonServerKey in Chrome 52"
+        ]
       },
       "chromem": {
         "supported": 1
@@ -2187,7 +2369,8 @@
         "supported": 1
       },
       "opera": {
-        "supported": 1
+        "supported": 1,
+        "minVersion": 45
       },
       "uc": {
         "supported": 0
@@ -2207,6 +2390,60 @@
       "details": [
         "It all runs well unless it was not blocked by GFW in China. But firefox work."
       ]
+    },
+    {
+      "id": "pushManager.permissionState",
+      "name": "PushManager.permissionState()",
+      "description": "The permissionState() method of the PushManager interface returns a Promise that resolves to a DOMString indicating the permission state of the push manager. Possible values are  'prompt', 'denied', or 'granted'.",
+      "details": [],
+      "chrome": {
+        "supported": 1,
+        "minVersion": 42
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 45
+      }
+    },
+    {
+      "id": "pushManager.getSubscription",
+      "name": "PushManager.getSubscription()",
+      "description": "The PushManager.getSubscription() method of the PushManager interface retrieves an existing push subscription.It returns a Promise that resolves to a PushSubscription object containing details of an existing subscription. If no existing subscription exists, this resolves to a null value.",
+      "details": [],
+      "chrome": {
+        "supported": 1,
+        "minVersion": 42
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 45
+      }
+    },
+    {
+      "id": "pushSubscription.unsubscribe",
+      "name": "subscription.unsubscribe()",
+      "description": "The unsubscribe() method of the PushSubscription interface returns a Promise that resolves to a Boolean when the current subscription is successfully unsubscribed.",
+      "details": [],
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "chrome": {
+        "supported": 1,
+        "minVersion": 42
+      },
+      "opera": {
+        "supported": 0,
+        "minVersion": 45
+      }
     },
     {
       "id": "sync",

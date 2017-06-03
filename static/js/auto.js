@@ -2543,7 +2543,7 @@ exports.stopEventPropagation = stopEventPropagation;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return info; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return copyTips; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return testTips; });
-var featureKeys = ['Promise', 'Request', 'Response', 'indexedDB', 'indexedDB.getAll', 'navigator.serviceWorker', 'Registered', 'installEvent', 'installEvent.waitUntil', 'self.skipWaiting', 'oncontrollerchange', 'navigator.serviceWorker.ready', 'activateEvent', 'activateEvent.waitUntil', 'clients.claim', 'clients.matchAll', 'Unregistered', 'fetch', 'fetchEvent', 'fetchEvent.request', 'fetchEvent.respondWith', 'Cache', 'caches', 'cache.add', 'cache.addAll', 'cache.delete', 'cache.match', 'cache.put', 'cache.keys', 'caches.delete', 'caches.has', 'caches.open', 'postMessage', 'main-msg-got', 'main-msg-got-by', 'main-msg-send', 'sw-msg-got', 'sw-msg-send', 'sw-msg-send-by', 'syncEvent', 'Notification', 'pushManager.subscribe', 'pushManager.getSubscription', 'subscription.unsubscribe'];
+var featureKeys = ['Promise', 'Request', 'Response', 'indexedDB', 'indexedDB.getAll', 'navigator.serviceWorker', 'Registered', 'installEvent', 'installEvent.waitUntil', 'self.skipWaiting', 'oncontrollerchange', 'navigator.serviceWorker.ready', 'activateEvent', 'activateEvent.waitUntil', 'clients.claim', 'clients.matchAll', 'Unregistered', 'fetch', 'fetchEvent', 'fetchEvent.request', 'fetchEvent.respondWith', 'Cache', 'caches', 'cache.add', 'cache.addAll', 'cache.delete', 'cache.match', 'cache.put', 'cache.keys', 'caches.delete', 'caches.has', 'caches.open', 'postMessage', 'main-msg-got', 'main-msg-got-by', 'main-msg-send', 'sw-msg-got', 'sw-msg-send', 'sw-msg-send-by', 'syncEvent', 'Notification', 'pushManager.subscribe', 'pushManager.getSubscription', 'pushManager.permissionState', 'pushSubscription.unsubscribe'];
 var infoKeys = ['browser', 'os', 'device'];
 
 var info = {
@@ -3882,7 +3882,7 @@ function genWaiter() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_utils__ = __webpack_require__(2);
 
 
-var list = ['pushManager.subscribe', 'pushManager.getSubscription', 'subscription.unsubscribe'];
+var list = ['pushManager.subscribe', 'pushManager.getSubscription', 'pushSubscription.unsubscribe', 'pushManager.permissionState', 'pushManager.denied'];
 function genWaiter() {
   return Promise.race([__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_utils__["h" /* promisifyOneTimeEventListener */])(function () {}, navigator.serviceWorker, 'controllerchange'), __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_utils__["d" /* sleep */])(3000)]);
 }
@@ -3912,7 +3912,7 @@ function urlB64ToUint8Array(base64String) {
     }
   }
 
-  var i, hasSW, waiter, reg, pushManager, subscription, sub, p256dh, auth;
+  var i, hasSW, waiter, reg, pushManager, permissionState, subscription, sub, p256dh, auth;
   return Promise.resolve().then(function () {
     __webpack_require__(59);
     i = list.length - 1;
@@ -3936,91 +3936,99 @@ function urlB64ToUint8Array(base64String) {
         } else {
           return Promise.resolve().then(function () {
             console.log('pushManager found');
-            return pushManager.getSubscription();
+            return pushManager.permissionState({
+              userVisibleOnly: true,
+              applicationServerKey: urlB64ToUint8Array('BDm6z7ImnFDW6GJ3bwtFdR4ifKGE0CVGXNRfGJhWGm8gwX1sXHH9uq3zo6mYd7fkjVrzfiDHhS5gYfCbxj2g-Bo')
+            });
           }).then(function (_resp) {
-            subscription = _resp;
-            return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'pushManager.getSubscription');
+            permissionState = _resp;
+            return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'pushManager.permissionState');
           }).then(function () {
-            console.log('pushManager.getSubscription work', subscription);
-            if (subscription) {
+            if (permissionState === 'denied') {
               return Promise.resolve().then(function () {
-                return subscription.unsubscribe();
-              }).then(function () {
-                return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'subscription.unsubscribe');
-              }).then(function () {
-                console.log('older subscription remove');
-              });
-            }
-          }).then(function () {
-            console.log('ready to subscribe');
-            sub = void 0;
-
-            try {
-              pushManager.subscribe({
-                userVisibleOnly: true,
-                applicationServerKey: urlB64ToUint8Array('BDm6z7ImnFDW6GJ3bwtFdR4ifKGE0CVGXNRfGJhWGm8gwX1sXHH9uq3zo6mYd7fkjVrzfiDHhS5gYfCbxj2g-Bo')
-              }).then(function (sth) {
-                sub = sth;
-              });
-            } catch (err) {
-              console.error(err);
-            }
-            // when i use Promise.race on firefox
-            // it do not work as i want
-            // so i give up and use sleep
-            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_utils__["d" /* sleep */])(5000);
-          }).then(function () {
-            if (sub) {
-              return Promise.resolve().then(function () {
-                console.log('pushManager.subscribe work', sub);
-                p256dh = btoa(String.fromCharCode.apply(null, new Uint8Array(sub.getKey('p256dh'))));
-                auth = btoa(String.fromCharCode.apply(null, new Uint8Array(sub.getKey('auth'))));
-                return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'pushManager.subscribe');
-              }).then(function () {
-                return Promise.resolve().then(function () {
-                  return fetch('https://push.toxicjohann.com/askforpush', {
-                    method: 'POST',
-                    headers: {
-                      'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                      endpoint: sub.endpoint,
-                      p256dh: p256dh,
-                      auth: auth
-                    })
-                  });
-                }).catch(function (err) {
-                  console.error(err);
-                  return fetch('/askforpush', {
-                    method: 'POST',
-                    headers: {
-                      'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                      endpoint: sub.endpoint,
-                      p256dh: p256dh,
-                      auth: auth
-                    })
-                  });
-                });
-              }).then(function () {
-                return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_utils__["d" /* sleep */])(5000);
-              }).then(function () {
-                return sub.unsubscribe();
-              }).then(function () {
-                console.log('subscription.unsubscribe work');
-                return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'subscription.unsubscribe');
-              }).then(function () {
+                console.log('permission denied');
                 return reg.unregister();
               }).then(function () {
-                console.log('unregister');
+                return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'pushManager.denied');
               });
             } else {
               return Promise.resolve().then(function () {
-                return reg.unregister();
+                return pushManager.getSubscription();
+              }).then(function (_resp) {
+                subscription = _resp;
+                return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'pushManager.getSubscription');
               }).then(function () {
-                console.log('unregister');
-                return;
+                console.log('pushManager.getSubscription work', subscription);
+                if (subscription) {
+                  return Promise.resolve().then(function () {
+                    return subscription.unsubscribe();
+                  }).then(function () {
+                    return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'pushSubscription.unsubscribe');
+                  }).then(function () {
+                    console.log('older subscription remove');
+                  });
+                }
+              }).then(function () {
+                console.log('ready to subscribe');
+                sub = void 0;
+
+                try {
+                  pushManager.subscribe({
+                    userVisibleOnly: true,
+                    applicationServerKey: urlB64ToUint8Array('BDm6z7ImnFDW6GJ3bwtFdR4ifKGE0CVGXNRfGJhWGm8gwX1sXHH9uq3zo6mYd7fkjVrzfiDHhS5gYfCbxj2g-Bo')
+                  }).then(function (sth) {
+                    sub = sth;
+                  });
+                } catch (err) {
+                  console.error(err);
+                }
+                // when i use Promise.race on firefox
+                // it do not work as i want
+                // so i give up and use sleep
+                return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_utils__["d" /* sleep */])(5000);
+              }).then(function () {
+                if (sub) {
+                  return Promise.resolve().then(function () {
+                    console.log('pushManager.subscribe work', sub);
+                    p256dh = btoa(String.fromCharCode.apply(null, new Uint8Array(sub.getKey('p256dh'))));
+                    auth = btoa(String.fromCharCode.apply(null, new Uint8Array(sub.getKey('auth'))));
+                    return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'pushManager.subscribe');
+                  }).then(function () {
+                    return Promise.resolve().then(function () {
+                      return fetch('/askforpush', {
+                        method: 'POST',
+                        headers: {
+                          'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                          endpoint: sub.endpoint,
+                          p256dh: p256dh,
+                          auth: auth
+                        })
+                      });
+                    }).catch(function (err) {
+                      console.error(err);
+                    });
+                  }).then(function () {
+                    return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_utils__["d" /* sleep */])(5000);
+                  }).then(function () {
+                    return sub.unsubscribe();
+                  }).then(function () {
+                    console.log('subscription.unsubscribe work');
+                    return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'pushSubscription.unsubscribe');
+                  }).then(function () {
+                    return reg.unregister();
+                  }).then(function () {
+                    console.log('unregister');
+                  });
+                } else {
+                  return Promise.resolve().then(function () {
+                    return reg.unregister();
+                  }).then(function () {
+                    console.log('unregister');
+                    return;
+                  });
+                }
               });
             }
           });

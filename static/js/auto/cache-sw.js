@@ -2372,10 +2372,10 @@ self.oninstall = function (event) {
   event.waitUntil(function () {
     var cache, hasCache, urlPut, resPut, matchPut, checkPut, urlAdd, matchAdd, checkAdd, keys, nullPutCache, urlAddAllArr, keys2, matchAddAll, checkAddAll, matchAll, hasCache2;
     return Promise.resolve().then(function () {
-      return caches.open('v1');
+      return caches.open('cache-test-v1');
     }).then(function (_resp) {
       cache = _resp;
-      return caches.has('v1');
+      return caches.has('cache-test-v1');
     }).then(function (_resp) {
       hasCache = _resp;
       return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', Number(hasCache), 'caches.open');
@@ -2478,9 +2478,9 @@ self.oninstall = function (event) {
         return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'cache.matchAll');
       }
     }).then(function () {
-      return caches.delete('v1');
+      return caches.delete('cache-test-v1');
     }).then(function () {
-      return caches.has('v1');
+      return caches.has('cache-test-v1');
     }).then(function (_resp) {
       hasCache2 = _resp;
       return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', Number(!hasCache2), 'caches.delete');

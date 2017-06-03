@@ -14,7 +14,7 @@ self.addEventListener('notificationclick', function (event) {
   event.notification.close()
 
   event.waitUntil(
-    self.clients.openWindow('https://ispwaready.toxic.johann.com')
+    self.clients.openWindow('https://ispwaready.toxicjohann.com')
   )
 })
 

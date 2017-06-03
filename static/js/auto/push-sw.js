@@ -2387,7 +2387,7 @@ self.addEventListener('notificationclick', function (event) {
 
   event.notification.close();
 
-  event.waitUntil(self.clients.openWindow('https://ispwaready.toxic.johann.com'));
+  event.waitUntil(self.clients.openWindow('https://ispwaready.toxicjohann.com'));
 });
 
 self.oninstall = function (event) {

@@ -42,7 +42,8 @@ export const featureKeys = [
   'Notification',
   'pushManager.subscribe',
   'pushManager.getSubscription',
-  'subscription.unsubscribe',
+  'pushManager.permissionState',
+  'pushSubscription.unsubscribe',
 ]
 export const infoKeys = [
   'browser',

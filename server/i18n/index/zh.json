@@ -1032,7 +1032,7 @@
       "details": [],
       "chrome": {
         "supported": 1,
-        "minVersion": 60
+        "minVersion": 58
       },
       "firefox": {
         "supported": 1,
@@ -1950,6 +1950,177 @@
       }
     },
     {
+      "id": "caches.open",
+      "name": "<code>caches.open</code>",
+      "description": "通过 open() 方法我们可以从 CacheStorage 中获得一个 Cache 对象，该方法会返回一个 Promise。",
+      "details": [],
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 45
+      }
+    },
+    {
+      "id": "caches.delete",
+      "name": "<code>caches.delete</code>",
+      "description": "通过 delete() 方法我们可以从 CacheStorage 中删除一个特定 Cache 对象。如果该对象存在，该方法会返回一个 Promise。否则返回 false 。",
+      "details": [],
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 45
+      }
+    },
+    {
+      "id": "caches.has",
+      "name": "<code>caches.has</code>",
+      "description": "通过 has() 方法我们可以得知 CacheStorage 是否存在相应命名的 Cache 对象。",
+      "details": [],
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 45
+      }
+    },
+    {
+      "id": "cache.add",
+      "name": "<code>caches.add</code>",
+      "description": "Cache 的 add() 方法接受一个 URL，它会获取相应的响应并添加到 cache 中。",
+      "details": [],
+      "chrome": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 45
+      }
+    },
+    {
+      "id": "cache.addAll",
+      "name": "<code>caches.addAll</code>",
+      "description": "Cache 对象的 addAll() 方法接受一个内容为 URL 的数组。它会批量获取他们并存储到 cache 中。",
+      "details": [],
+      "chrome": {
+        "supported": 1,
+        "minVersion": 46
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 47
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 45
+      }
+    },
+    {
+      "id": "cache.delete",
+      "name": "<code>caches.delete</code>",
+      "description": "delete() 方法用删除 cache 中的某一特定资源。如果存在则返回 Promise，否则返回 false。",
+      "details": [],
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40,
+        "details": [
+          "直到 Chrome 54 才支持所有选项。"
+        ]
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 39
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 45
+      }
+    },
+    {
+      "id": "cache.keys",
+      "name": "<code>caches.keys</code>",
+      "description": "The keys() method of the Cache interface returns a Promise that resolves to an array of Cache keys.",
+      "details": [],
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40,
+        "details": [
+          "直到 Chrome 54 才支持所有选项。"
+        ]
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 39
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 45
+      }
+    },
+    {
+      "id": "cache.match",
+      "name": "<code>caches.match</code>",
+      "description": "match() 方法会通过 Promise 返回 cache 对象中第一个匹配请求的响应。若无，则 Promise 最终解析为 undefined。",
+      "details": [],
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40,
+        "details": [
+          "直到 Chrome 54 才支持所有选项。"
+        ]
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 39
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 45
+      }
+    },
+    {
+      "id": "cache.put",
+      "name": "<code>caches.put</code>",
+      "description": "put() 方法容许我们通过键值对的方式添加内容到 cache 对象中。",
+      "details": [],
+      "chrome": {
+        "supported": 1,
+        "minVersion": 40
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 39
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 45
+      }
+    },
+    {
       "id": "postMessage",
       "name": "<code>postMessage</code> to &amp; from worker",
       "description": "与worker沟通的通道。在移动端为了方便测试，利用此通道做了增强。因此大家可以先用此测试是否有效。<a href=\"https://w3c.github.io/ServiceWorker/#service-worker-postmessage\">规范</a>。 <a href=\"demos/postMessage/\">测试</a>。",
@@ -2039,7 +2210,7 @@
       "description": "给用户发送通知的对象。<a href=\"https://notifications.spec.whatwg.org\">规范</a>。 <a href=\"demos/globalapis/\">测试</a>。",
       "chrome": {
         "supported": 1,
-        "minVersion": 60
+        "minVersion": 58
       },
       "firefox": {
         "supported": 1,
@@ -2201,7 +2372,7 @@
       "details": []
     },
     {
-      "id": "PushManager.subscribe",
+      "id": "pushManager.subscribe",
       "name": "PushManager.subscribe()",
       "description": "订阅后的结果才能推送。但是国内，由于gcm/fcm访问问题。绝大部分浏览器推送订阅失效。<a href=\"https://w3c.github.io/push-api/#widl-PushManager-subscribe-Promise-PushSubscription--PushSubscriptionOptions-options\">规范</a>。<a href=\"demos/pushsubscribe/\">测试</a>。",
       "chrome": {
@@ -2253,6 +2424,60 @@
         "supported": 0
       },
       "details": []
+    },
+    {
+      "id": "pushManager.permissionState",
+      "name": "PushManager.permissionState()",
+      "description": "permissionState() 会返回一个 Promise。其中所返回的值表示推送消息权限的状态。分别为'prompt'、 'denied' 和 'granted'。",
+      "details": [],
+      "chrome": {
+        "supported": 1,
+        "minVersion": 42
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 45
+      }
+    },
+    {
+      "id": "pushManager.getSubscription",
+      "name": "PushManager.getSubscription()",
+      "description": "PushManager.getSubscription() method 用于获取当前的订阅对象。",
+      "details": [],
+      "chrome": {
+        "supported": 1,
+        "minVersion": 42
+      },
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "opera": {
+        "supported": 1,
+        "minVersion": 45
+      }
+    },
+    {
+      "id": "pushSubscription.unsubscribe",
+      "name": "subscription.unsubscribe()",
+      "description": "unsubscribe() 方法用于注销当前的订阅。",
+      "details": [],
+      "firefox": {
+        "supported": 1,
+        "minVersion": 44
+      },
+      "chrome": {
+        "supported": 1,
+        "minVersion": 42
+      },
+      "opera": {
+        "supported": 0,
+        "minVersion": 45
+      }
     },
     {
       "id": "sync",

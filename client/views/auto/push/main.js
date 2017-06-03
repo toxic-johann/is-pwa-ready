@@ -3,7 +3,9 @@ import {sleep, promisifyOneTimeEventListener} from 'utils'
 const list = [
   'pushManager.subscribe',
   'pushManager.getSubscription',
-  'subscription.unsubscribe',
+  'pushSubscription.unsubscribe',
+  'pushManager.permissionState',
+  'pushManager.denied'
 ]
 function genWaiter () {
   return Promise.race([
@@ -44,12 +46,23 @@ export default async function () {
     return
   }
   console.log('pushManager found')
+  const permissionState = await pushManager.permissionState({
+    userVisibleOnly: true,
+    applicationServerKey: urlB64ToUint8Array('BDm6z7ImnFDW6GJ3bwtFdR4ifKGE0CVGXNRfGJhWGm8gwX1sXHH9uq3zo6mYd7fkjVrzfiDHhS5gYfCbxj2g-Bo')
+  })
+  await store.put('feature', 1, 'pushManager.permissionState')
+  if(permissionState === 'denied') {
+    console.log('permission denied')
+    await reg.unregister()
+    await store.put('feature', 1, 'pushManager.denied')
+    return
+  }
   const subscription = await pushManager.getSubscription()
   await store.put('feature', 1, 'pushManager.getSubscription')
   console.log('pushManager.getSubscription work', subscription)
   if(subscription) {
     await subscription.unsubscribe()
-    await store.put('feature', 1, 'subscription.unsubscribe')
+    await store.put('feature', 1, 'pushSubscription.unsubscribe')
     console.log('older subscription remove')
   }
   console.log('ready to subscribe')
@@ -72,7 +85,7 @@ export default async function () {
     const auth = btoa(String.fromCharCode.apply(null, new Uint8Array(sub.getKey('auth'))))
     await store.put('feature', 1, 'pushManager.subscribe')
     try {
-      await fetch('https://push.toxicjohann.com/askforpush', {
+      await fetch('/askforpush', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -85,22 +98,11 @@ export default async function () {
       })
     } catch (err) {
       console.error(err)
-      await fetch('/askforpush', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          endpoint: sub.endpoint,
-          p256dh,
-          auth
-        })
-      })
     }
     await sleep(5000)
     await sub.unsubscribe()
     console.log('subscription.unsubscribe work')
-    await store.put('feature', 1, 'subscription.unsubscribe')
+    await store.put('feature', 1, 'pushSubscription.unsubscribe')
     await reg.unregister()
     console.log('unregister')
   } else {
