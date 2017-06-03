@@ -2431,7 +2431,7 @@ self.oninstall = function (event) {
       keys = _resp;
 
       console.log(keys, 'check cache.keys');
-      if (keys.length === 2) {
+      if (keys.length >= 2) {
         console.log('cache.keys passed');
         return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'cache.keys');
       }
@@ -2466,7 +2466,7 @@ self.oninstall = function (event) {
       checkAddAll = _resp;
 
       console.log(keys2, checkAddAll.data, 'checkAddAll');
-      if (keys2.length === 5 && checkAddAll.data === urlAddAllArr[3]) {
+      if (keys2.length >= 5 && checkAddAll.data === urlAddAllArr[3]) {
         return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'cache.addAll');
       }
     }).then(function () {
@@ -2474,7 +2474,7 @@ self.oninstall = function (event) {
     }).then(function (_resp) {
       matchAll = _resp;
 
-      if (matchAll.length === 5) {
+      if (matchAll.length >= 5) {
         return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'cache.matchAll');
       }
     }).then(function () {

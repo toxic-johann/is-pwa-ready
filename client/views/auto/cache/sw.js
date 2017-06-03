@@ -30,7 +30,7 @@ self.oninstall = function (event) {
     }
     const keys = await cache.keys()
     console.log(keys, 'check cache.keys')
-    if(keys.length === 2) {
+    if(keys.length >= 2) {
       console.log('cache.keys passed')
       await store.put('feature', 1, 'cache.keys')
     }
@@ -54,11 +54,11 @@ self.oninstall = function (event) {
     const matchAddAll = await cache.match(urlAddAllArr[3])
     const checkAddAll = await matchAddAll.json()
     console.log(keys2, checkAddAll.data, 'checkAddAll')
-    if(keys2.length === 5 && checkAddAll.data === urlAddAllArr[3]) {
+    if(keys2.length >= 5 && checkAddAll.data === urlAddAllArr[3]) {
       await store.put('feature', 1, 'cache.addAll')
     }
     const matchAll = await cache.matchAll(baseUrl)
-    if(matchAll.length === 5) {
+    if(matchAll.length >= 5) {
       await store.put('feature', 1, 'cache.matchAll')
     }
     await caches.delete('cache-test-v1')

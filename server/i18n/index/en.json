@@ -1959,6 +1959,22 @@
       "opera": {
         "supported": 1,
         "minVersion": 45
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7.14
       }
     },
     {
@@ -1977,6 +1993,22 @@
       "opera": {
         "supported": 1,
         "minVersion": 45
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
+      },
+      "m360": {
+        "supported": 0,
+        "minVersion": 8.1
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7.14
       }
     },
     {
@@ -1995,6 +2027,22 @@
       "opera": {
         "supported": 1,
         "minVersion": 45
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7.14
       }
     },
     {
@@ -2013,6 +2061,22 @@
       "opera": {
         "supported": 1,
         "minVersion": 45
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7.14
       }
     },
     {
@@ -2031,6 +2095,22 @@
       "opera": {
         "supported": 1,
         "minVersion": 45
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 0.5,
+        "minVersion": 52
+      },
+      "m360": {
+        "supported": 0,
+        "minVersion": 8.1
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7.14
       }
     },
     {
@@ -2052,6 +2132,22 @@
       "opera": {
         "supported": 1,
         "minVersion": 45
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7.14
       }
     },
     {
@@ -2073,6 +2169,22 @@
       "opera": {
         "supported": 1,
         "minVersion": 45
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 0,
+        "minVersion": 52
+      },
+      "m360": {
+        "supported": 0,
+        "minVersion": 8.1
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7.14
       }
     },
     {
@@ -2094,6 +2206,22 @@
       "opera": {
         "supported": 1,
         "minVersion": 45
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7.14
       }
     },
     {
@@ -2112,6 +2240,22 @@
       "opera": {
         "supported": 1,
         "minVersion": 45
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7.14
       }
     },
     {
@@ -2359,14 +2503,16 @@
         ]
       },
       "chromem": {
-        "supported": 1
+        "supported": 0,
+        "minVersion": 55
       },
       "firefox": {
         "supported": 1,
         "minVersion": 44
       },
       "firefoxm": {
-        "supported": 1
+        "supported": 0,
+        "minVersion": 52
       },
       "opera": {
         "supported": 1,
@@ -2379,10 +2525,12 @@
         "supported": 1
       },
       "m360": {
-        "supported": 1
+        "supported": 0,
+        "minVersion": 8.1
       },
       "baidum": {
-        "supported": 1
+        "supported": 0,
+        "minVersion": 7.14
       },
       "sogoum": {
         "supported": 1
@@ -2425,6 +2573,22 @@
       "opera": {
         "supported": 1,
         "minVersion": 45
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "baidum": {
+        "supported": 0,
+        "minVersion": 7.14
       }
     },
     {

@@ -1965,6 +1965,22 @@
       "opera": {
         "supported": 1,
         "minVersion": 45
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7.14
       }
     },
     {
@@ -1983,6 +1999,22 @@
       "opera": {
         "supported": 1,
         "minVersion": 45
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
+      },
+      "m360": {
+        "supported": 0,
+        "minVersion": 8.1
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7.14
       }
     },
     {
@@ -2001,6 +2033,22 @@
       "opera": {
         "supported": 1,
         "minVersion": 45
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7.14
       }
     },
     {
@@ -2019,6 +2067,22 @@
       "opera": {
         "supported": 1,
         "minVersion": 45
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7.14
       }
     },
     {
@@ -2037,6 +2101,22 @@
       "opera": {
         "supported": 1,
         "minVersion": 45
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 0.5,
+        "minVersion": 52
+      },
+      "m360": {
+        "supported": 0,
+        "minVersion": 8.1
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7.14
       }
     },
     {
@@ -2058,12 +2138,28 @@
       "opera": {
         "supported": 1,
         "minVersion": 45
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7.14
       }
     },
     {
       "id": "cache.keys",
       "name": "<code>caches.keys</code>",
-      "description": "The keys() method of the Cache interface returns a Promise that resolves to an array of Cache keys.",
+      "description": "keys() 用于列举 Cache 对象中的键值数组。",
       "details": [],
       "chrome": {
         "supported": 1,
@@ -2079,6 +2175,22 @@
       "opera": {
         "supported": 1,
         "minVersion": 45
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 0,
+        "minVersion": 52
+      },
+      "m360": {
+        "supported": 0,
+        "minVersion": 8.1
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7.14
       }
     },
     {
@@ -2100,6 +2212,22 @@
       "opera": {
         "supported": 1,
         "minVersion": 45
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7.14
       }
     },
     {
@@ -2118,6 +2246,22 @@
       "opera": {
         "supported": 1,
         "minVersion": 45
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "baidum": {
+        "supported": 1,
+        "minVersion": 7.14
       }
     },
     {
@@ -2383,7 +2527,7 @@
         ]
       },
       "chromem": {
-        "supported": 0.5,
+        "supported": 0,
         "minVersion": 55,
         "details": [
           "国内因不可描述的原因不可用"
@@ -2394,7 +2538,8 @@
         "minVersion": 44
       },
       "firefoxm": {
-        "supported": 1
+        "supported": 0,
+        "minVersion": 52
       },
       "opera": {
         "supported": 0.5,
@@ -2412,13 +2557,15 @@
         "supported": 0,
         "details": [
           "提示不可用"
-        ]
+        ],
+        "minVersion": 8.1
       },
       "baidum": {
         "supported": 0,
         "details": [
           "提示不可用"
-        ]
+        ],
+        "minVersion": 7.14
       },
       "sogoum": {
         "supported": 0
@@ -2459,6 +2606,22 @@
       "opera": {
         "supported": 1,
         "minVersion": 45
+      },
+      "chromem": {
+        "supported": 1,
+        "minVersion": 55
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
+      },
+      "m360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "baidum": {
+        "supported": 0,
+        "minVersion": 7.14
       }
     },
     {
