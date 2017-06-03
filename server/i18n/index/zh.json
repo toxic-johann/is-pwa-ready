@@ -1985,6 +1985,18 @@
       "sogoum": {
         "supported": 1,
         "minVersion": 5.6
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "wechat": {
+        "supported": 1,
+        "minVersion": 6.5
+      },
+      "uc": {
+        "supported": 1,
+        "minVersion": 11.5
       }
     },
     {
@@ -2023,6 +2035,18 @@
       "sogoum": {
         "supported": 0,
         "minVersion": 5.6
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "wechat": {
+        "supported": 1,
+        "minVersion": 6.5
+      },
+      "uc": {
+        "supported": 0,
+        "minVersion": 11.5
       }
     },
     {
@@ -2061,6 +2085,18 @@
       "sogoum": {
         "supported": 1,
         "minVersion": 5.6
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "wechat": {
+        "supported": 1,
+        "minVersion": 6.5
+      },
+      "uc": {
+        "supported": 1,
+        "minVersion": 11.5
       }
     },
     {
@@ -2099,6 +2135,18 @@
       "sogoum": {
         "supported": 1,
         "minVersion": 5.6
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "wechat": {
+        "supported": 1,
+        "minVersion": 6.5
+      },
+      "uc": {
+        "supported": 0,
+        "minVersion": 11.5
       }
     },
     {
@@ -2123,7 +2171,7 @@
         "minVersion": 55
       },
       "firefoxm": {
-        "supported": 0.5,
+        "supported": 1,
         "minVersion": 52
       },
       "m360": {
@@ -2137,6 +2185,18 @@
       "sogoum": {
         "supported": 1,
         "minVersion": 5.6
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "wechat": {
+        "supported": 1,
+        "minVersion": 6.5
+      },
+      "uc": {
+        "supported": 0,
+        "minVersion": 11.5
       }
     },
     {
@@ -2178,6 +2238,18 @@
       "sogoum": {
         "supported": 1,
         "minVersion": 5.6
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "wechat": {
+        "supported": 1,
+        "minVersion": 6.5
+      },
+      "uc": {
+        "supported": 0,
+        "minVersion": 11.5
       }
     },
     {
@@ -2205,7 +2277,7 @@
         "minVersion": 55
       },
       "firefoxm": {
-        "supported": 0,
+        "supported": 1,
         "minVersion": 52
       },
       "m360": {
@@ -2219,6 +2291,18 @@
       "sogoum": {
         "supported": 1,
         "minVersion": 5.6
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "wechat": {
+        "supported": 1,
+        "minVersion": 6.5
+      },
+      "uc": {
+        "supported": 0,
+        "minVersion": 11.5
       }
     },
     {
@@ -2260,6 +2344,18 @@
       "sogoum": {
         "supported": 1,
         "minVersion": 5.6
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "wechat": {
+        "supported": 1,
+        "minVersion": 6.5
+      },
+      "uc": {
+        "supported": 1,
+        "minVersion": 11.5
       }
     },
     {
@@ -2298,6 +2394,18 @@
       "sogoum": {
         "supported": 1,
         "minVersion": 5.6
+      },
+      "xiaomi": {
+        "supported": 1,
+        "minVersion": 2
+      },
+      "wechat": {
+        "supported": 1,
+        "minVersion": 6.5
+      },
+      "uc": {
+        "supported": 1,
+        "minVersion": 11.5
       }
     },
     {
@@ -2584,7 +2692,8 @@
         ]
       },
       "uc": {
-        "supported": 0
+        "supported": 0,
+        "minVersion": 11.5
       },
       "qqm": {
         "supported": 0
@@ -2607,7 +2716,15 @@
         "supported": 0,
         "minVersion": 5.6
       },
-      "details": []
+      "details": [],
+      "xiaomi": {
+        "supported": 0,
+        "minVersion": 2
+      },
+      "wechat": {
+        "supported": 0,
+        "minVersion": 6.5
+      }
     },
     {
       "id": "pushManager.permissionState",
@@ -2629,6 +2746,22 @@
       "sogoum": {
         "supported": 0,
         "minVersion": 5.6
+      },
+      "xiaomi": {
+        "supported": 0,
+        "minVersion": 2
+      },
+      "wechat": {
+        "supported": 0,
+        "minVersion": 6.5
+      },
+      "firefoxm": {
+        "supported": 1,
+        "minVersion": 52
+      },
+      "uc": {
+        "supported": 0,
+        "minVersion": 11.5
       }
     },
     {
@@ -2667,6 +2800,18 @@
       "sogoum": {
         "supported": 1,
         "minVersion": 5.6
+      },
+      "xiaomi": {
+        "supported": 0,
+        "minVersion": 2
+      },
+      "wechat": {
+        "supported": 0,
+        "minVersion": 6.5
+      },
+      "uc": {
+        "supported": 1,
+        "minVersion": 11.5
       }
     },
     {
@@ -2689,6 +2834,22 @@
       "sogoum": {
         "supported": 0,
         "minVersion": 5.6
+      },
+      "xiaomi": {
+        "supported": 0,
+        "minVersion": 2
+      },
+      "wechat": {
+        "supported": 0,
+        "minVersion": 6.5
+      },
+      "firefoxm": {
+        "supported": 0,
+        "minVersion": 52
+      },
+      "uc": {
+        "supported": 0,
+        "minVersion": 11.5
       }
     },
     {
