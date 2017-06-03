@@ -275,6 +275,9 @@
       "qqm": {
         "supported": 1
       },
+      "qqb": {
+        "supported": 1
+      },
       "m360": {
         "supported": 1,
         "details": [
