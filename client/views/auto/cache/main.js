@@ -6,9 +6,9 @@ const list = [
   'cache.delete',
   'cache.match',
   'cache.put',
+  'cache.keys',
   'caches.delete',
   'caches.has',
-  'caches.keys',
   'caches.open'
 ]
 function genWaiter () {
