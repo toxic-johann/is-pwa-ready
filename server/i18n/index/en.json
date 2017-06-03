@@ -50,12 +50,6 @@
       "both": true
     },
     {
-      "id": "m360",
-      "name": "360 mobile browser",
-      "aka": "360",
-      "mobile": true
-    },
-    {
       "id": "firefoxm",
       "name": "Firefox mobile browser",
       "aka": "Firefox",
@@ -74,9 +68,15 @@
       "mobile": true
     },
     {
-      "id": "sogoum",
-      "aka": "Sogou",
-      "name": "Sogou mobile browser",
+      "id": "qqb",
+      "name": "qq browser",
+      "aka": "QQ Browser",
+      "icon": "qqm"
+    },
+    {
+      "id": "m360",
+      "name": "360 mobile browser",
+      "aka": "360",
       "mobile": true
     },
     {
@@ -86,10 +86,10 @@
       "mobile": true
     },
     {
-      "id": "samsung-internet",
-      "name": "Samsung Internet",
-      "aka": "Samsung",
-      "mobile": true
+      "id": "s360",
+      "name": "360 Safety Browser",
+      "aka": "360",
+      "icon": "m360"
     },
     {
       "id": "baidum",
@@ -103,9 +103,21 @@
       "mobile": true
     },
     {
+      "id": "sogoum",
+      "aka": "Sogou",
+      "name": "Sogou mobile browser",
+      "mobile": true
+    },
+    {
       "id": "uc",
       "name": "UC mobile browser",
       "aka": "UC",
+      "mobile": true
+    },
+    {
+      "id": "samsung-internet",
+      "name": "Samsung Internet",
+      "aka": "Samsung",
       "mobile": true
     },
     {
@@ -127,12 +139,12 @@
       "mobile": true
     },
     {
-      "id": "edge",
-      "name": "Edge"
-    },
-    {
       "id": "safari",
       "name": "Safari"
+    },
+    {
+      "id": "edge",
+      "name": "Edge"
     }
   ],
   "features": [
@@ -150,16 +162,16 @@
         "supported": 0.91
       },
       "samsung-internet": {
-        "supported": 0.81
+        "supported": 0.61
       },
       "xiaomi": {
         "supported": 0.81
       },
       "sogoum": {
-        "supported": 0.91
+        "supported": 0.81
       },
       "m360": {
-        "supported": 0.91
+        "supported": 0.81
       },
       "baidum": {
         "supported": 0.81
@@ -168,13 +180,13 @@
         "supported": 0.81
       },
       "uc": {
-        "supported": 0.71
+        "supported": 0.61
       },
       "qqm": {
-        "supported": 0.71
+        "supported": 0.51
       },
       "edge": {
-        "supported": 0.21000000000000002
+        "supported": 0.11
       },
       "safari": {
         "supported": 0.21000000000000002
@@ -189,11 +201,17 @@
         "supported": 0.21000000000000002
       },
       "cheetah": {
-        "supported": 0.61
+        "supported": 0.41000000000000003
+      },
+      "s360": {
+        "supported": 0.81
+      },
+      "qqb": {
+        "supported": 0.81
       }
     },
     {
-      "id": "atitude",
+      "id": "attitude",
       "name": "ServiceWorker enthusiasm",
       "description": "The first thing any implementation needs.",
       "chrome": {
@@ -254,12 +272,15 @@
         ]
       },
       "qqm": {
-        "supported": 0.8,
-        "details": [
-          "Shipped. I am told that they have used it on Tecent product. But i could not run on my phone"
-        ]
+        "supported": 1
       },
       "m360": {
+        "supported": 1,
+        "details": [
+          "Shipped. Based on chromium 45."
+        ]
+      },
+      "s360": {
         "supported": 1,
         "details": [
           "Shipped. Based on chromium 45."
@@ -363,6 +384,14 @@
       "firefoxm": {
         "supported": 1,
         "minVersion": 52
+      },
+      "s360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "qqb": {
+        "supported": 1,
+        "minVersion": 50
       }
     },
     {
@@ -439,6 +468,14 @@
       "firefoxm": {
         "supported": 1,
         "minVersion": 52
+      },
+      "s360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "qqb": {
+        "supported": 1,
+        "minVersion": 50
       }
     },
     {
@@ -520,6 +557,14 @@
       "firefoxm": {
         "supported": 1,
         "minVersion": 52
+      },
+      "s360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "qqb": {
+        "supported": 1,
+        "minVersion": 50
       }
     },
     {
@@ -590,6 +635,14 @@
       "samsung-internet": {
         "supported": 1,
         "minVersion": 4
+      },
+      "s360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "qqb": {
+        "supported": 1,
+        "minVersion": 50
       }
     },
     {
@@ -656,6 +709,14 @@
       "samsung-internet": {
         "supported": 1,
         "minVersion": 4
+      },
+      "s360": {
+        "supported": 0,
+        "minVersion": 8.1
+      },
+      "qqb": {
+        "supported": 1,
+        "minVersion": 50
       }
     },
     {
@@ -728,6 +789,14 @@
       "firefoxm": {
         "supported": 1,
         "minVersion": 52
+      },
+      "s360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "qqb": {
+        "supported": 1,
+        "minVersion": 50
       }
     },
     {
@@ -803,6 +872,14 @@
       "firefoxm": {
         "supported": 1,
         "minVersion": 52
+      },
+      "s360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "qqb": {
+        "supported": 1,
+        "minVersion": 50
       }
     },
     {
@@ -875,6 +952,14 @@
       "firefoxm": {
         "supported": 1,
         "minVersion": 52
+      },
+      "s360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "qqb": {
+        "supported": 1,
+        "minVersion": 50
       }
     },
     {
@@ -947,6 +1032,14 @@
       "firefoxm": {
         "supported": 1,
         "minVersion": 52
+      },
+      "s360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "qqb": {
+        "supported": 1,
+        "minVersion": 50
       }
     },
     {
@@ -1022,6 +1115,14 @@
       "firefoxm": {
         "supported": 1,
         "minVersion": 52
+      },
+      "s360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "qqb": {
+        "supported": 1,
+        "minVersion": 50
       }
     },
     {
@@ -1084,6 +1185,14 @@
       "firefoxm": {
         "supported": 1,
         "minVersion": 52
+      },
+      "s360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "qqb": {
+        "supported": 1,
+        "minVersion": 50
       }
     },
     {
@@ -1156,6 +1265,14 @@
       "firefoxm": {
         "supported": 1,
         "minVersion": 52
+      },
+      "s360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "qqb": {
+        "supported": 1,
+        "minVersion": 50
       }
     },
     {
@@ -1228,6 +1345,14 @@
       "firefoxm": {
         "supported": 1,
         "minVersion": 52
+      },
+      "s360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "qqb": {
+        "supported": 1,
+        "minVersion": 50
       }
     },
     {
@@ -1300,6 +1425,14 @@
       "firefoxm": {
         "supported": 1,
         "minVersion": 52
+      },
+      "s360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "qqb": {
+        "supported": 1,
+        "minVersion": 50
       }
     },
     {
@@ -1378,6 +1511,14 @@
       "firefoxm": {
         "supported": 1,
         "minVersion": 52
+      },
+      "s360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "qqb": {
+        "supported": 1,
+        "minVersion": 50
       }
     },
     {
@@ -1450,6 +1591,14 @@
       "firefoxm": {
         "supported": 1,
         "minVersion": 52
+      },
+      "s360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "qqb": {
+        "supported": 1,
+        "minVersion": 50
       }
     },
     {
@@ -1508,6 +1657,9 @@
       "m360": {
         "supported": 1
       },
+      "s360": {
+        "supported": 1
+      },
       "baidum": {
         "supported": 1
       },
@@ -1518,7 +1670,11 @@
         "supported": 1,
         "minVersion": 6.5
       },
-      "details": []
+      "details": [],
+      "qqb": {
+        "supported": 1,
+        "minVersion": 50
+      }
     },
     {
       "id": "update",
@@ -1563,6 +1719,9 @@
         "supported": 1
       },
       "m360": {
+        "supported": 1
+      },
+      "s360": {
         "supported": 1
       },
       "baidum": {
@@ -1651,6 +1810,14 @@
       "firefoxm": {
         "supported": 1,
         "minVersion": 52
+      },
+      "s360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "qqb": {
+        "supported": 1,
+        "minVersion": 50
       }
     },
     {
@@ -1723,6 +1890,14 @@
       "firefoxm": {
         "supported": 1,
         "minVersion": 52
+      },
+      "s360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "qqb": {
+        "supported": 1,
+        "minVersion": 50
       }
     },
     {
@@ -1795,6 +1970,14 @@
       "firefoxm": {
         "supported": 1,
         "minVersion": 52
+      },
+      "s360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "qqb": {
+        "supported": 1,
+        "minVersion": 50
       }
     },
     {
@@ -1867,6 +2050,14 @@
       "firefoxm": {
         "supported": 1,
         "minVersion": 52
+      },
+      "s360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "qqb": {
+        "supported": 1,
+        "minVersion": 50
       }
     },
     {
@@ -1941,6 +2132,14 @@
       "firefoxm": {
         "supported": 1,
         "minVersion": 52
+      },
+      "s360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "qqb": {
+        "supported": 1,
+        "minVersion": 50
       }
     },
     {
@@ -1991,6 +2190,14 @@
       "uc": {
         "supported": 1,
         "minVersion": 11.5
+      },
+      "s360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "qqb": {
+        "supported": 1,
+        "minVersion": 50
       }
     },
     {
@@ -2041,6 +2248,14 @@
       "uc": {
         "supported": 0,
         "minVersion": 11.5
+      },
+      "s360": {
+        "supported": 0,
+        "minVersion": 8.1
+      },
+      "qqb": {
+        "supported": 1,
+        "minVersion": 50
       }
     },
     {
@@ -2091,6 +2306,14 @@
       "uc": {
         "supported": 1,
         "minVersion": 11.5
+      },
+      "s360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "qqb": {
+        "supported": 1,
+        "minVersion": 50
       }
     },
     {
@@ -2141,6 +2364,14 @@
       "uc": {
         "supported": 0,
         "minVersion": 11.5
+      },
+      "s360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "qqb": {
+        "supported": 1,
+        "minVersion": 50
       }
     },
     {
@@ -2191,6 +2422,14 @@
       "uc": {
         "supported": 0,
         "minVersion": 11.5
+      },
+      "s360": {
+        "supported": 0,
+        "minVersion": 8.1
+      },
+      "qqb": {
+        "supported": 1,
+        "minVersion": 50
       }
     },
     {
@@ -2244,6 +2483,14 @@
       "uc": {
         "supported": 0,
         "minVersion": 11.5
+      },
+      "s360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "qqb": {
+        "supported": 1,
+        "minVersion": 50
       }
     },
     {
@@ -2297,6 +2544,14 @@
       "uc": {
         "supported": 0,
         "minVersion": 11.5
+      },
+      "s360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "qqb": {
+        "supported": 1,
+        "minVersion": 50
       }
     },
     {
@@ -2350,6 +2605,14 @@
       "uc": {
         "supported": 1,
         "minVersion": 11.5
+      },
+      "s360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "qqb": {
+        "supported": 1,
+        "minVersion": 50
       }
     },
     {
@@ -2400,6 +2663,14 @@
       "uc": {
         "supported": 1,
         "minVersion": 11.5
+      },
+      "s360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "qqb": {
+        "supported": 1,
+        "minVersion": 50
       }
     },
     {
@@ -2484,6 +2755,14 @@
       "firefoxm": {
         "supported": 1,
         "minVersion": 52
+      },
+      "s360": {
+        "supported": 0.95,
+        "minVersion": 8.1
+      },
+      "qqb": {
+        "supported": 0.95,
+        "minVersion": 50
       }
     },
     {
@@ -2558,6 +2837,14 @@
       "firefoxm": {
         "supported": 1,
         "minVersion": 52
+      },
+      "s360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "qqb": {
+        "supported": 1,
+        "minVersion": 50
       }
     },
     {
@@ -2691,6 +2978,14 @@
       "wechat": {
         "supported": 0,
         "minVersion": 6.5
+      },
+      "s360": {
+        "supported": 0,
+        "minVersion": 8.1
+      },
+      "qqb": {
+        "supported": 0,
+        "minVersion": 50
       }
     },
     {
@@ -2729,6 +3024,14 @@
       "uc": {
         "supported": 0,
         "minVersion": 11.5
+      },
+      "s360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "qqb": {
+        "supported": 1,
+        "minVersion": 50
       }
     },
     {
@@ -2779,6 +3082,14 @@
       "uc": {
         "supported": 1,
         "minVersion": 11.5
+      },
+      "s360": {
+        "supported": 1,
+        "minVersion": 8.1
+      },
+      "qqb": {
+        "supported": 1,
+        "minVersion": 50
       }
     },
     {
@@ -2817,6 +3128,14 @@
       "uc": {
         "supported": 0,
         "minVersion": 11.5
+      },
+      "s360": {
+        "supported": 0,
+        "minVersion": 8.1
+      },
+      "qqb": {
+        "supported": 0,
+        "minVersion": 50
       }
     },
     {
@@ -2859,6 +3178,9 @@
       },
       "m360": {
         "supported": 0
+      },
+      "s360": {
+        "supported": 1
       },
       "baidum": {
         "supported": 0
@@ -2909,7 +3231,7 @@
         "supported": 0
       },
       "qqm": {
-        "supported": 0
+        "supported": 1
       },
       "m360": {
         "supported": 0

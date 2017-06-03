@@ -14,6 +14,7 @@ export const featureKeys = [
   'activateEvent',
   'activateEvent.waitUntil',
   'clients.claim',
+  'lifecycle',
   'clients.matchAll',
   'Unregistered',
   'fetch',
