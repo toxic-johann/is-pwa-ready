@@ -16,6 +16,10 @@ module.exports = async function () {
     await send(this, '/static/js' + this.path)
     return
   }
+  if(url.match(/\/auto\/cache\//)) {
+    this.body = JSON.stringify({data: url})
+    return
+  }
   this.state = i18n[this.locale]
   this.setServerData(serverData[this.locale])
   await this.render('auto')

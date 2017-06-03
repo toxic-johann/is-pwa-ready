@@ -42,5 +42,7 @@ self.oninstall = function (event) {
 }
 
 self.onactivate = function () {
-  self.clients.claim()
+  if(self.clients.claim) {
+    self.clients.claim()
+  }
 }

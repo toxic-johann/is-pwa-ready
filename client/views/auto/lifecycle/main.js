@@ -67,4 +67,12 @@ export default async function () {
   // unregister test
   await reg.unregister()
   console.log('Unregistered')
+  let sum = 0
+  for(let i = 0; i < list.length; i++) {
+    const key = list[i]
+    const score = await store.get('feature', key)
+    sum += parseFloat(score)
+  }
+  sum /= list.length
+  await store.put('feature', sum, 'lifecycle')
 }

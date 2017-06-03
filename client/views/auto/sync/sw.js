@@ -4,7 +4,9 @@ self.oninstall = function () {
 }
 
 self.onactivate = function () {
-  self.clients.claim()
+  if(self.clients.claim) {
+    self.clients.claim()
+  }
 }
 
 self.addEventListener('sync', function (event) {

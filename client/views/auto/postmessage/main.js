@@ -41,6 +41,8 @@ function genWaiter () {
   ]))
 }
 export default async function () {
+  const hasSW = !!navigator.serviceWorker
+  if(!hasSW) return
   const messageWaiter = genWaiter()
   console.log(navigator.serviceWorker)
   const activatedWaiter = Promise.race([

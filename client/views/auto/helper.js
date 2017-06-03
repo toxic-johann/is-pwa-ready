@@ -22,6 +22,15 @@ export const featureKeys = [
   'fetchEvent.respondWith',
   'Cache',
   'caches',
+  'cache.add',
+  'cache.addAll',
+  'cache.delete',
+  'cache.match',
+  'cache.put',
+  'caches.delete',
+  'caches.has',
+  'caches.keys',
+  'caches.open',
   'postMessage',
   'main-msg-got',
   'main-msg-got-by',
@@ -30,7 +39,10 @@ export const featureKeys = [
   'sw-msg-send',
   'sw-msg-send-by',
   'syncEvent',
-  'Notification'
+  'Notification',
+  'pushManager.subscribe',
+  'pushManager.getSubscription',
+  'subscription.unsubscribe',
 ]
 export const infoKeys = [
   'browser',

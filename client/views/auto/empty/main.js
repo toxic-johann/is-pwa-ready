@@ -4,6 +4,7 @@ export default async function () {
   let {step = 0} = search
   step = parseInt(step)
   step++
-  await navigator.serviceWorker.register('/auto/empty-sw.js', {scope: '/auto/'})
+  const hasSW = !!navigator.serviceWorker
+  if(hasSW) await navigator.serviceWorker.register('/auto/empty-sw.js', {scope: '/auto/'})
   location.search = obj2search(Object.assign(search, {step}))
 }

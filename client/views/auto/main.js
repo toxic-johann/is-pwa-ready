@@ -7,6 +7,8 @@ import result from './result/main'
 import init from './init/main'
 import env from './env/main'
 import summary from './summary/main'
+import cache from './cache/main'
+import push from './push/main'
 import {search2obj} from 'utils'
 import './main.css'
 import 'vconsole'
@@ -15,7 +17,7 @@ import 'views/common/raven'
 window.addEventListener('unhandledrejection', function (event) {
   console.warn('WARNING: Unhandled promise rejection. Shame on you! Reason: ' + event.reason)
 })
-info.totalSchedule = 6
+info.totalSchedule = 8
 const {step = '0'} = search2obj();
 (async function main () {
   switch (step) {
@@ -34,6 +36,10 @@ const {step = '0'} = search2obj();
       await postmessageTest()
       await result()
       await syncTest()
+      await result()
+      await cache()
+      await result()
+      await push()
       await result()
       await summary()
       break

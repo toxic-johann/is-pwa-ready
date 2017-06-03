@@ -1,6 +1,8 @@
 import store from 'store'
 import {sleep, promisifyOneTimeEventListener} from 'utils'
 export default async function () {
+  const hasSW = !!navigator.serviceWorker
+  if(!hasSW) return
   store.put('feature', 0, 'syncEvent')
   const activatedWaiter = Promise.race([
     promisifyOneTimeEventListener(evt => console.log('controllerchange'), navigator.serviceWorker, 'controllerchange'),
