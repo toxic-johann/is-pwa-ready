@@ -212,7 +212,7 @@
       }
     },
     {
-      "id": "atitude",
+      "id": "attitude",
       "name": "对ServiceWorker的态度",
       "description": "态度决定一切。",
       "chrome": {
@@ -273,6 +273,9 @@
         ]
       },
       "qqm": {
+        "supported": 1
+      },
+      "qqb": {
         "supported": 1
       },
       "m360": {
