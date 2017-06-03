@@ -46,16 +46,20 @@ export default async function () {
     return
   }
   console.log('pushManager found')
-  const permissionState = await pushManager.permissionState({
-    userVisibleOnly: true,
-    applicationServerKey: urlB64ToUint8Array('BDm6z7ImnFDW6GJ3bwtFdR4ifKGE0CVGXNRfGJhWGm8gwX1sXHH9uq3zo6mYd7fkjVrzfiDHhS5gYfCbxj2g-Bo')
-  })
-  await store.put('feature', 1, 'pushManager.permissionState')
-  if(permissionState === 'denied') {
-    console.log('permission denied')
-    await reg.unregister()
-    await store.put('feature', 1, 'pushManager.denied')
-    return
+  try {
+    const permissionState = await pushManager.permissionState({
+      userVisibleOnly: true,
+      applicationServerKey: urlB64ToUint8Array('BDm6z7ImnFDW6GJ3bwtFdR4ifKGE0CVGXNRfGJhWGm8gwX1sXHH9uq3zo6mYd7fkjVrzfiDHhS5gYfCbxj2g-Bo')
+    })
+    await store.put('feature', 1, 'pushManager.permissionState')
+    if(permissionState === 'denied') {
+      console.log('permission denied')
+      await reg.unregister()
+      await store.put('feature', 1, 'pushManager.denied')
+      return
+    }
+  } catch (err) {
+    console.error(err)
   }
   const subscription = await pushManager.getSubscription()
   await store.put('feature', 1, 'pushManager.getSubscription')
