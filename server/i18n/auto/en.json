@@ -10,11 +10,8 @@
     "Reboot": {
       "href": "/auto/"
     },
-    "Issue": {
-      "href": "https://github.com/toxic-johann/is-pwa-ready/issues"
-    },
-    "Github": {
-      "href": "https://github.com/toxic-johann/is-pwa-ready"
+    "中文": {
+      "class": "lang-switch zh"
     }
   },
   "note": "You can use v-console to debug. Welcome issue or pull request.",

@@ -1,3 +1,4 @@
+import '../common/index'
 import globalTest from './global/main'
 import empty from './empty/main'
 import postmessageTest from './postmessage/main'

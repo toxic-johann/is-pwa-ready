@@ -7,14 +7,12 @@
     "规范": {
       "href": "https://w3c.github.io/ServiceWorker/"
     },
-    "Github": {
-      "href": "https://github.com/toxic-johann/is-pwa-ready"
-    },
     "测试": {
-      "href": "/auto/"
+      "href": "/auto/",
+      "class": "important"
     },
-    "日志": {
-      "href": "https://github.com/toxic-johann/is-pwa-ready/releases"
+    "English": {
+      "class": "lang-switch en"
     }
   },
   "grading": {

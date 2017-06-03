@@ -7,14 +7,11 @@
     "首页": {
       "href": "/"
     },
-    "重新测试": {
+    "重测": {
       "href": "/auto/"
     },
-    "反馈": {
-      "href": "https://github.com/toxic-johann/is-pwa-ready/issues"
-    },
-    "Github": {
-      "href": "https://github.com/toxic-johann/is-pwa-ready"
+    "English": {
+      "class": "lang-switch en"
     }
   },
   "note": "您可以利用右下方的 v-console 进行调试。欢迎反馈相关信息～",

@@ -5186,24 +5186,27 @@ function genRGB(score) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__global_main__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__empty_main__ = __webpack_require__(61);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__postmessage_main__ = __webpack_require__(66);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__lifecycle_main__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__sync_main__ = __webpack_require__(70);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__result_main__ = __webpack_require__(68);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__init_main__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__env_main__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__summary_main__ = __webpack_require__(69);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__cache_main__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__push_main__ = __webpack_require__(67);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_utils__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__main_css__ = __webpack_require__(72);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__main_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__main_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_vconsole__ = __webpack_require__(71);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_vconsole___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_vconsole__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__helper__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_views_common_raven__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_index__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_index___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__common_index__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__global_main__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__empty_main__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__postmessage_main__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__lifecycle_main__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__sync_main__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__result_main__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__init_main__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__env_main__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__summary_main__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__cache_main__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__push_main__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_utils__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__main_css__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__main_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13__main_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_vconsole__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_vconsole___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14_vconsole__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__helper__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_views_common_raven__ = __webpack_require__(56);
+
 
 
 
@@ -5223,9 +5226,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 window.addEventListener('unhandledrejection', function (event) {
   console.warn('WARNING: Unhandled promise rejection. Shame on you! Reason: ' + event.reason);
 });
-__WEBPACK_IMPORTED_MODULE_14__helper__["a" /* info */].totalSchedule = 8;
+__WEBPACK_IMPORTED_MODULE_15__helper__["a" /* info */].totalSchedule = 8;
 
-var _search2obj = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_11_utils__["e" /* search2obj */])(),
+var _search2obj = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_12_utils__["e" /* search2obj */])(),
     _search2obj$step = _search2obj.step,
     step = _search2obj$step === undefined ? '0' : _search2obj$step;
 
@@ -5239,17 +5242,17 @@ var _search2obj = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_11_utils__["e"
 
     if (!_brokenOut && (_match || '0' === _discriminant)) {
       return Promise.resolve().then(function () {
-        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__init_main__["a" /* default */])();
+        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__init_main__["a" /* default */])();
       }).then(function () {
-        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__env_main__["a" /* default */])();
+        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__env_main__["a" /* default */])();
       }).then(function () {
-        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__result_main__["a" /* default */])();
+        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__result_main__["a" /* default */])();
       }).then(function () {
-        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__global_main__["a" /* default */])();
+        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__global_main__["a" /* default */])();
       }).then(function () {
-        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__result_main__["a" /* default */])();
+        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__result_main__["a" /* default */])();
       }).then(function () {
-        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__empty_main__["a" /* default */])();
+        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__empty_main__["a" /* default */])();
       }).then(function () {
         return;
       });
@@ -5257,29 +5260,29 @@ var _search2obj = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_11_utils__["e"
   }).then(function () {
     if (!_brokenOut && (_match || '1' === _discriminant)) {
       return Promise.resolve().then(function () {
-        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__result_main__["a" /* default */])();
+        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__result_main__["a" /* default */])();
       }).then(function () {
-        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__lifecycle_main__["a" /* default */])();
+        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__lifecycle_main__["a" /* default */])();
       }).then(function () {
-        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__result_main__["a" /* default */])();
+        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__result_main__["a" /* default */])();
       }).then(function () {
-        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__postmessage_main__["a" /* default */])();
+        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__postmessage_main__["a" /* default */])();
       }).then(function () {
-        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__result_main__["a" /* default */])();
+        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__result_main__["a" /* default */])();
       }).then(function () {
-        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__sync_main__["a" /* default */])();
+        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__sync_main__["a" /* default */])();
       }).then(function () {
-        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__result_main__["a" /* default */])();
+        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__result_main__["a" /* default */])();
       }).then(function () {
-        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9__cache_main__["a" /* default */])();
+        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10__cache_main__["a" /* default */])();
       }).then(function () {
-        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__result_main__["a" /* default */])();
+        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__result_main__["a" /* default */])();
       }).then(function () {
-        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10__push_main__["a" /* default */])();
+        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_11__push_main__["a" /* default */])();
       }).then(function () {
-        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__result_main__["a" /* default */])();
+        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__result_main__["a" /* default */])();
       }).then(function () {
-        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__summary_main__["a" /* default */])();
+        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9__summary_main__["a" /* default */])();
       }).then(function () {
         _brokenOut = true;
         _match = true;
@@ -7646,6 +7649,127 @@ module.exports = function() {
 module.exports = __webpack_amd_options__;
 
 /* WEBPACK VAR INJECTION */}.call(exports, {}))
+
+/***/ }),
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */,
+/* 107 */,
+/* 108 */,
+/* 109 */,
+/* 110 */,
+/* 111 */,
+/* 112 */,
+/* 113 */,
+/* 114 */,
+/* 115 */,
+/* 116 */,
+/* 117 */,
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */
+/***/ (function(module, exports) {
+
+if (!Array.from) {
+  Array.from = function () {
+    var toStr = Object.prototype.toString;
+    var isCallable = function isCallable(fn) {
+      return typeof fn === 'function' || toStr.call(fn) === '[object Function]';
+    };
+    var toInteger = function toInteger(value) {
+      var number = Number(value);
+      if (isNaN(number)) {
+        return 0;
+      }
+      if (number === 0 || !isFinite(number)) {
+        return number;
+      }
+      return (number > 0 ? 1 : -1) * Math.floor(Math.abs(number));
+    };
+    var maxSafeInteger = Math.pow(2, 53) - 1;
+    var toLength = function toLength(value) {
+      var len = toInteger(value);
+      return Math.min(Math.max(len, 0), maxSafeInteger);
+    };
+
+    // The length property of the from method is 1.
+    return function from(arrayLike /* , mapFn, thisArg */) {
+      // 1. Let C be the this value.
+      var C = this;
+
+      // 2. Let items be ToObject(arrayLike).
+      var items = Object(arrayLike);
+
+      // 3. ReturnIfAbrupt(items).
+      if (arrayLike === null) {
+        throw new TypeError('Array.from requires an array-like object - not null or undefined');
+      }
+
+      // 4. If mapfn is undefined, then let mapping be false.
+      var mapFn = arguments.length > 1 ? arguments[1] : void undefined;
+      var T = void 0;
+      if (typeof mapFn !== 'undefined') {
+        // 5. else
+        // 5. a If IsCallable(mapfn) is false, throw a TypeError exception.
+        if (!isCallable(mapFn)) {
+          throw new TypeError('Array.from: when provided, the second argument must be a function');
+        }
+
+        // 5. b. If thisArg was supplied, let T be thisArg; else let T be undefined.
+        if (arguments.length > 2) {
+          T = arguments[2];
+        }
+      }
+
+      // 10. Let lenValue be Get(items, "length").
+      // 11. Let len be ToLength(lenValue).
+      var len = toLength(items.length);
+
+      // 13. If IsConstructor(C) is true, then
+      // 13. a. Let A be the result of calling the [[Construct]] internal method
+      // of C with an argument list containing the single item len.
+      // 14. a. Else, Let A be ArrayCreate(len).
+      var A = isCallable(C) ? Object(new C(len)) : new Array(len);
+
+      // 16. Let k be 0.
+      var k = 0;
+      // 17. Repeat, while k < len… (also steps a - h)
+      var kValue = void 0;
+      while (k < len) {
+        kValue = items[k];
+        if (mapFn) {
+          A[k] = typeof T === 'undefined' ? mapFn(kValue, k) : mapFn.call(T, kValue, k);
+        } else {
+          A[k] = kValue;
+        }
+        k += 1;
+      }
+      // 18. Let putStatus be Put(A, "length", len, true).
+      A.length = len;
+      // 20. Return A.
+      return A;
+    };
+  }();
+}
+document.querySelector('.lang-switch').addEventListener('click', function (evt) {
+  evt.preventDefault();
+  var lang = Array.from(evt.target.classList).indexOf('zh') > -1 ? 'zh' : 'en';
+  var date = new Date();
+  date.setTime(date.getTime() + 365 * 24 * 60 * 60 * 1000);
+  document.cookie = 'lang=' + lang + '; expires=' + date.toUTCString + '; path=/';
+  console.log('lang=' + lang + '; expires=' + date.toUTCString() + '; path=/');
+  location.search = '';
+});
 
 /***/ })
 /******/ ]);

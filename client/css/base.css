@@ -23,6 +23,7 @@ nav {
   position: fixed;
   top: 0;
   background-color: rgba(0, 0, 0, 0.7);
+  background-color: #48453F;
   width: 100%;
   a {
     display: inline-block;
@@ -31,6 +32,9 @@ nav {
     margin: 0 3px 0 0;
     text-decoration: none;
     background: rgba(255,255,255,0.1);
+  }
+  a.important {
+    background-color: #FF7D40;
   }
 }
 
