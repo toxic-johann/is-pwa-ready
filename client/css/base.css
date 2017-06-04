@@ -23,8 +23,7 @@ nav {
   position: fixed;
   top: 0;
   background-color: rgba(0, 0, 0, 0.7);
-  background-color: #48453F;
-  width: 100%;
+  width: calc(100% - 76px);
   a {
     display: inline-block;
     color: #fff;
@@ -35,6 +34,20 @@ nav {
   }
   a.important {
     background-color: #FF7D40;
+  }
+  &::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-bottom-width: 38px;
+    border-left-width: 0px;
+    border-right-width: 38px;
+    border-top-width: 0px;
+    position: absolute;
+    right: -38px;
+    border-style: solid;
+    border-color: transparent;
+    border-bottom-color: rgba(0, 0, 0, 0.7);
   }
 }
 
