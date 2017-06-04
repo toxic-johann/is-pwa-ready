@@ -83,6 +83,5 @@ document.querySelector('.lang-switch').addEventListener('click', function (evt) 
   const date = new Date()
   date.setTime(date.getTime() + (365 * 24 * 60 * 60 * 1000))
   document.cookie = 'lang=' + lang + '; expires=' + date.toUTCString + '; path=/'
-  console.log('lang=' + lang + '; expires=' + date.toUTCString() + '; path=/')
   location.search = ''
 })

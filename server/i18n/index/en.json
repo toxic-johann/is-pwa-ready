@@ -1719,6 +1719,12 @@
       "qqm": {
         "supported": 1
       },
+      "qqb": {
+        "supported": 1
+      },
+      "cheetah": {
+        "supported": 1
+      },
       "m360": {
         "supported": 1
       },
@@ -3181,7 +3187,7 @@
         "supported": 0
       },
       "s360": {
-        "supported": 1
+        "supported": 0
       },
       "baidum": {
         "supported": 0
@@ -3231,7 +3237,10 @@
       "uc": {
         "supported": 0
       },
-      "qqm": {
+      "qqb": {
+        "supported": 1
+      },
+      "s360": {
         "supported": 1
       },
       "m360": {

@@ -1491,9 +1491,6 @@
       },
       "sogoum": {
         "supported": 1,
-        "details": [
-          "不可用"
-        ],
         "minVersion": 5.6
       },
       "details": [],
@@ -1720,6 +1717,12 @@
         "supported": 1
       },
       "qqm": {
+        "supported": 1
+      },
+      "qqb": {
+        "supported": 1
+      },
+      "cheetah": {
         "supported": 1
       },
       "m360": {
@@ -2734,9 +2737,6 @@
       },
       "sogoum": {
         "supported": 0.95,
-        "details": [
-          "不能顺利进行"
-        ],
         "minVersion": 5.6
       },
       "details": [
@@ -2813,30 +2813,18 @@
       },
       "qqm": {
         "supported": 0,
-        "details": [
-          "存在Notification对象，但不可用"
-        ],
         "minVersion": 7.5
       },
       "m360": {
         "supported": 1,
-        "details": [
-          "存在Notification对象，但不可用"
-        ],
         "minVersion": 8.1
       },
       "baidum": {
         "supported": 0,
-        "details": [
-          "存在Notification对象，但不可用"
-        ],
         "minVersion": 7
       },
       "sogoum": {
         "supported": 1,
-        "details": [
-          "存在Notification对象，但不可用"
-        ],
         "minVersion": 5.6
       },
       "details": [
@@ -3214,7 +3202,7 @@
         "supported": 0
       },
       "s360": {
-        "supported": 1
+        "supported": 0
       },
       "baidum": {
         "supported": 0
@@ -3266,10 +3254,16 @@
         "supported": 0
       },
       "qqm": {
+        "supported": 0
+      },
+      "qqb": {
         "supported": 1
       },
       "m360": {
         "supported": 0
+      },
+      "s360": {
+        "supported": 1
       },
       "baidum": {
         "supported": 0
