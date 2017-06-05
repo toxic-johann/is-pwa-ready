@@ -40,14 +40,12 @@
     {
       "id": "chrome",
       "name": "Chrome",
-      "aka": "Chrome",
-      "both": true
+      "aka": "Chrome"
     },
     {
       "id": "firefox",
       "name": "Firefox",
-      "aka": "火狐",
-      "both": true
+      "aka": "火狐"
     },
     {
       "id": "firefoxm",
@@ -75,15 +73,13 @@
       "icon": "qqm"
     },
     {
+      "id": "brave",
+      "name": "Brave"
+    },
+    {
       "id": "xiaomi",
       "name": "小米原生浏览器",
       "aka": "小米",
-      "mobile": true
-    },
-    {
-      "id": "sogoum",
-      "name": "搜狗手机浏览器",
-      "aka": "搜狗",
       "mobile": true
     },
     {
@@ -107,6 +103,12 @@
     {
       "id": "wechat",
       "name": "微信",
+      "mobile": true
+    },
+    {
+      "id": "sogoum",
+      "name": "搜狗手机浏览器",
+      "aka": "搜狗",
       "mobile": true
     },
     {
@@ -208,7 +210,10 @@
         "supported": 0.81
       },
       "qqb": {
-        "supported": 0.81
+        "supported": 0.91
+      },
+      "brave": {
+        "supported": 0.91
       }
     },
     {
@@ -228,6 +233,9 @@
         "supported": 1
       },
       "opera": {
+        "supported": 1
+      },
+      "brave": {
         "supported": 1
       },
       "samsung-internet": {
@@ -396,6 +404,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -483,6 +495,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -575,6 +591,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -649,6 +669,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -719,6 +743,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -799,6 +827,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -882,6 +914,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -962,6 +998,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -1042,6 +1082,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -1125,6 +1169,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -1195,6 +1243,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -1275,6 +1327,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -1355,6 +1411,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -1435,6 +1495,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -1521,6 +1585,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -1601,6 +1669,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -1675,6 +1747,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -1688,6 +1764,10 @@
       "chromem": {
         "supported": 1,
         "minVersion": 55
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       },
       "firefox": {
         "supported": 1,
@@ -1828,6 +1908,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -1908,6 +1992,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -1988,6 +2076,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -2068,6 +2160,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -2150,6 +2246,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -2208,6 +2308,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -2266,6 +2370,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -2324,6 +2432,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -2382,6 +2494,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -2440,6 +2556,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -2501,6 +2621,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -2562,6 +2686,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -2623,6 +2751,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -2681,6 +2813,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -2770,6 +2906,10 @@
       "qqb": {
         "supported": 0.95,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -2858,6 +2998,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -3008,6 +3152,10 @@
       "qqb": {
         "supported": 0,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 0,
+        "minVersion": 0.15
       }
     },
     {
@@ -3054,6 +3202,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 0,
+        "minVersion": 0.15
       }
     },
     {
@@ -3112,6 +3264,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -3158,6 +3314,10 @@
       "qqb": {
         "supported": 0,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 0,
+        "minVersion": 0.15
       }
     },
     {
@@ -3240,6 +3400,10 @@
           "可以在控制台输出相关的控制记录。",
           "<code>browser://serviceworker-internals</code>中有一些底层信息。"
         ]
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       },
       "samsung-internet": {
         "supported": 0

@@ -205,7 +205,7 @@
         "supported": 0.81
       },
       "qqb": {
-        "supported": 0.81
+        "supported": 0.91
       }
     },
     {
@@ -225,6 +225,9 @@
         "supported": 1
       },
       "opera": {
+        "supported": 1
+      },
+      "brave": {
         "supported": 1
       },
       "samsung-internet": {
@@ -393,6 +396,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -477,6 +484,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -566,6 +577,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -644,6 +659,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -718,6 +737,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -798,6 +821,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -881,6 +908,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -961,6 +992,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -1041,6 +1076,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -1124,6 +1163,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -1194,6 +1237,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -1274,6 +1321,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -1354,6 +1405,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -1434,6 +1489,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -1520,6 +1579,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -1600,6 +1663,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -1675,6 +1742,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -1688,6 +1759,10 @@
       "chromem": {
         "supported": 1,
         "minVersion": 55
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       },
       "firefox": {
         "supported": 1,
@@ -1825,6 +1900,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -1905,6 +1984,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -1985,6 +2068,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -2065,6 +2152,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -2147,6 +2238,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -2205,6 +2300,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -2263,6 +2362,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -2321,6 +2424,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -2379,6 +2486,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -2437,6 +2548,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -2498,6 +2613,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -2559,6 +2678,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -2620,6 +2743,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -2678,6 +2805,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -2770,6 +2901,10 @@
       "qqb": {
         "supported": 0.95,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -2852,6 +2987,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -2993,6 +3132,10 @@
       "qqb": {
         "supported": 0,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 0,
+        "minVersion": 0.15
       }
     },
     {
@@ -3039,6 +3182,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 0,
+        "minVersion": 0.15
       }
     },
     {
@@ -3097,6 +3244,10 @@
       "qqb": {
         "supported": 1,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       }
     },
     {
@@ -3143,6 +3294,10 @@
       "qqb": {
         "supported": 0,
         "minVersion": 50
+      },
+      "brave": {
+        "supported": 0,
+        "minVersion": 0.15
       }
     },
     {
@@ -3227,6 +3382,10 @@
       },
       "samsung-internet": {
         "supported": 0
+      },
+      "brave": {
+        "supported": 1,
+        "minVersion": 0.15
       },
       "safari": {
         "supported": 0
