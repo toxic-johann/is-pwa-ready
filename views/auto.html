@@ -1,1 +1,49 @@
-{% extends "./base.html" %} {% block page_css %}<link href="https://resource.toxicjohann.com/ispwaready/css/auto-90e2807836f9e76a8018f61ad6cf6499.css" rel="stylesheet">{% endblock %} {% block body %}<article><header><h1>{{title}}</h1><p>{{note}}</p></header><aside class="result"><span class="total-score">0</span> <span>100</span></aside><section class="env"><p class="browser">{{browser}}<span></span>.</p><p class="os">{{os}}<span></span>.</p><p class="device">{{device}}<span></span>.</p><p class="schedule">{{schedule}}<span>0%</span></p></section><section class="features"><table><thead><tr>{% for key in thead %}<th>{{key}}</th>{% endfor %}</tr></thead><tbody></tbody></table></section><section class="summary"><p>{{summary}}</p><code></code> <button class="success">{{copy}}</button></section></article>{% endblock %} {% block page_js %}<script type="text/javascript" src="https://resource.toxicjohann.com/ispwaready/js/auto-08a21f038e460e20e7d9.js"></script>{% endblock %}
+{% extends "./base.html" %}
+
+{% block page_css %}
+  
+    <link href="/static/css/auto.css" rel="stylesheet">
+  
+{% endblock %}
+
+{% block body %}
+  <article>
+     <header>
+      <h1>{{title}}</h1>
+      <p>{{note}}</p>
+    </header>
+    <aside class="result">
+      <span class="total-score">0</span>
+      <span>100</span>
+    </aside>
+    <section class="env">
+      <p class="browser">{{browser}}<span></span>.</p>
+      <p class="os">{{os}}<span></span>.</p>
+      <p class="device">{{device}}<span></span>.</p>
+      <p class="schedule">{{schedule}}<span>0%</span></p>
+    </section>
+    <section class="features">
+      <table>
+      <thead>
+        <tr>
+          {% for key in thead %}
+            <th>{{key}}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    </section>
+    <section class="summary">
+      <p>{{summary}}</p>
+      <code></code>
+      <button class="success">{{copy}}</button>
+    </section>
+  </article>
+{% endblock %}
+
+{% block page_js %}
+  
+    <script type="text/javascript" src="/static/js/auto.js"></script>
+  
+{% endblock %}

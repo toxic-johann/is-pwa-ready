@@ -124,6 +124,12 @@
       "mobile": true
     },
     {
+      "id": "quark",
+      "name": "夸克浏览器",
+      "aka": "夸克",
+      "mobile": true
+    },
+    {
       "id": "qqm",
       "name": "qq手机浏览器",
       "aka": "QQ浏览器",
@@ -133,12 +139,6 @@
       "id": "cheetah",
       "name": "猎豹手机浏览器",
       "aka": "猎豹",
-      "mobile": true
-    },
-    {
-      "id": "quark",
-      "name": "夸克浏览器",
-      "aka": "夸克",
       "mobile": true
     },
     {
@@ -201,7 +201,7 @@
         "supported": 0.91
       },
       "quark": {
-        "supported": 0.21000000000000002
+        "supported": 0.61
       },
       "cheetah": {
         "supported": 0.41000000000000003
@@ -976,7 +976,7 @@
         "minVersion": 6.5
       },
       "quark": {
-        "supported": 0,
+        "supported": 1,
         "minVersion": 1.7
       },
       "cheetah": {
@@ -1060,7 +1060,7 @@
         "minVersion": 6.5
       },
       "quark": {
-        "supported": 0,
+        "supported": 1,
         "minVersion": 1.7
       },
       "cheetah": {
@@ -1147,7 +1147,7 @@
         "minVersion": 6.5
       },
       "quark": {
-        "supported": 0,
+        "supported": 1,
         "minVersion": 1.7
       },
       "cheetah": {
@@ -1221,7 +1221,7 @@
         "minVersion": 7.5
       },
       "quark": {
-        "supported": 0,
+        "supported": 1,
         "minVersion": 1.7
       },
       "cheetah": {
@@ -1305,7 +1305,7 @@
         "minVersion": 6.5
       },
       "quark": {
-        "supported": 0,
+        "supported": 1,
         "minVersion": 1.7
       },
       "cheetah": {
@@ -1389,7 +1389,7 @@
         "minVersion": 6.5
       },
       "quark": {
-        "supported": 0,
+        "supported": 1,
         "minVersion": 1.7
       },
       "cheetah": {
@@ -1473,7 +1473,7 @@
         "minVersion": 6.5
       },
       "quark": {
-        "supported": 0,
+        "supported": 1,
         "minVersion": 1.7
       },
       "cheetah": {
@@ -1563,7 +1563,7 @@
         "minVersion": 6.5
       },
       "quark": {
-        "supported": 0,
+        "supported": 0.5,
         "minVersion": 1.7
       },
       "cheetah": {
@@ -1751,6 +1751,10 @@
       "brave": {
         "supported": 1,
         "minVersion": 0.15
+      },
+      "quark": {
+        "supported": 0.9444444444444444,
+        "minVersion": 2
       }
     },
     {
@@ -1970,7 +1974,7 @@
         "minVersion": 6.5
       },
       "quark": {
-        "supported": 0,
+        "supported": 1,
         "minVersion": 1.7
       },
       "cheetah": {
@@ -2054,7 +2058,7 @@
         "minVersion": 6.5
       },
       "quark": {
-        "supported": 0,
+        "supported": 1,
         "minVersion": 1.7
       },
       "cheetah": {
@@ -2138,7 +2142,7 @@
         "minVersion": 6.5
       },
       "quark": {
-        "supported": 0,
+        "supported": 1,
         "minVersion": 1.7
       },
       "cheetah": {
@@ -2312,6 +2316,10 @@
       "brave": {
         "supported": 1,
         "minVersion": 0.15
+      },
+      "quark": {
+        "supported": 1,
+        "minVersion": 2
       }
     },
     {
@@ -2374,6 +2382,10 @@
       "brave": {
         "supported": 1,
         "minVersion": 0.15
+      },
+      "quark": {
+        "supported": 0,
+        "minVersion": 2
       }
     },
     {
@@ -2436,6 +2448,10 @@
       "brave": {
         "supported": 1,
         "minVersion": 0.15
+      },
+      "quark": {
+        "supported": 1,
+        "minVersion": 2
       }
     },
     {
@@ -2498,6 +2514,10 @@
       "brave": {
         "supported": 1,
         "minVersion": 0.15
+      },
+      "quark": {
+        "supported": 0,
+        "minVersion": 2
       }
     },
     {
@@ -2560,6 +2580,10 @@
       "brave": {
         "supported": 1,
         "minVersion": 0.15
+      },
+      "quark": {
+        "supported": 0,
+        "minVersion": 2
       }
     },
     {
@@ -2625,6 +2649,10 @@
       "brave": {
         "supported": 1,
         "minVersion": 0.15
+      },
+      "quark": {
+        "supported": 0,
+        "minVersion": 2
       }
     },
     {
@@ -2690,6 +2718,10 @@
       "brave": {
         "supported": 1,
         "minVersion": 0.15
+      },
+      "quark": {
+        "supported": 0,
+        "minVersion": 2
       }
     },
     {
@@ -2755,6 +2787,10 @@
       "brave": {
         "supported": 1,
         "minVersion": 0.15
+      },
+      "quark": {
+        "supported": 1,
+        "minVersion": 2
       }
     },
     {
@@ -2817,6 +2853,10 @@
       "brave": {
         "supported": 1,
         "minVersion": 0.15
+      },
+      "quark": {
+        "supported": 1,
+        "minVersion": 2
       }
     },
     {
@@ -2884,7 +2924,7 @@
         "minVersion": 6.5
       },
       "quark": {
-        "supported": 0,
+        "supported": 0.825,
         "minVersion": 1.7
       },
       "cheetah": {
@@ -3156,6 +3196,10 @@
       "brave": {
         "supported": 0,
         "minVersion": 0.15
+      },
+      "quark": {
+        "supported": 0,
+        "minVersion": 2
       }
     },
     {
@@ -3206,6 +3250,10 @@
       "brave": {
         "supported": 0,
         "minVersion": 0.15
+      },
+      "quark": {
+        "supported": 0,
+        "minVersion": 2
       }
     },
     {
@@ -3268,6 +3316,10 @@
       "brave": {
         "supported": 1,
         "minVersion": 0.15
+      },
+      "quark": {
+        "supported": 1,
+        "minVersion": 2
       }
     },
     {
@@ -3318,6 +3370,10 @@
       "brave": {
         "supported": 0,
         "minVersion": 0.15
+      },
+      "quark": {
+        "supported": 0,
+        "minVersion": 2
       }
     },
     {

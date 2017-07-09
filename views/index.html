@@ -1,1 +1,75 @@
-{% extends "./base.html" %} {% block page_css %}<link href="https://resource.toxicjohann.com/ispwaready/css/index-84ee312ccfce981fb9da74c35ec04875.css" rel="stylesheet">{% endblock %} {% block body %}<header><h1>{{title}}</h1></header><article class="grading"><h3>{{grading.name}}</h3><ul>{% for key, info in grading.data %}<li class="{{key}}"><span>{{info.range}}</span>{{info.note}}</li>{% endfor %}</ul></article>{% for feature in features %} {% set featureId = feature.name|striptags|lower|replace("\s+", '-', 'g') %}<article class="feature" id="{{ featureId }}"><header><a href="#{{ featureId }}" class="perma"><h2 class="feature-name">{{ feature.name|safe }}</h2></a><p>{{ feature.description|safe }}</p></header><div class="results">{% for browser in browsers %}<section class="result {% if feature[browser.id].supported > 0.8%}yes{% elif feature[browser.id].supported > 0.5 %}soso{% elif feature[browser.id].supported > 0 %} ish {% else %} no{% endif %}"><p class="aka">{{browser.aka or browser.name}}</p><h2 class="icon {{ feature[browser.id].icon or browser.icon |default(browser.id) }}">{{browser.name}}</h2>{% if browser.mobile %} <span class="isMobile">m</span> {% endif %} {% if feature[browser.id].supported %}<p class="support">{% if feature[browser.id].supported == 0.5 %} Somewhat supported {% else %} Supported {% endif %} {% if feature[browser.id].minVersion %} since version <span class="version">{{ feature[browser.id].minVersion }}</span> {% endif %}</p>{% else %}<p class="support">No support</p>{% endif %}</section>{% endfor %}</div><ul class="details">{% for browser in browsers %} {% for detail in feature[browser.id].details %}<li><strong>{{ browser.name }}:</strong> {{ detail|safe }}</li>{% endfor %} {% endfor %} {% for detail in feature.details %}<li>{{ detail|safe }}</li>{% endfor %}</ul></article>{% endfor %} {% endblock %} {% block page_js %}<script type="text/javascript" src="https://resource.toxicjohann.com/ispwaready/js/index-42d964fbc3678096fabb.js"></script>{% endblock %}
+{% extends "./base.html" %}
+
+{% block page_css %}
+  
+    <link href="/static/css/index.css" rel="stylesheet">
+  
+{% endblock %}
+
+{% block body %}
+  <header>
+    <h1>{{title}}</h1>
+  </header>
+  <article class="grading">
+    <h3>{{grading.name}}</h3>
+    <ul >
+      {% for key, info in grading.data %}
+        <li class="{{key}}"><span>{{info.range}}</span>{{info.note}}</li>
+      {% endfor %}
+    </ul>
+  </article>
+  {% for feature in features %}
+    {% set featureId = feature.name|striptags|lower|replace("\s+", '-', 'g') %}
+    <article class="feature" id="{{ featureId }}">
+      <header>
+        <a href="#{{ featureId }}" class="perma">
+          <h2 class="feature-name">
+            {{ feature.name|safe }}
+          </h2>
+        </a>
+        <p>{{ feature.description|safe }}</p>
+      </header>
+      <div class="results">
+        {% for browser in browsers %}
+          <section class="result {% if feature[browser.id].supported > 0.8%}yes{% elif feature[browser.id].supported > 0.5 %}soso{% elif feature[browser.id].supported > 0 %} ish {% else %} no{% endif %}">
+            <p class="aka">{{browser.aka or browser.name}}</p>
+            <h2 class="icon {{ feature[browser.id].icon or browser.icon |default(browser.id) }}">{{browser.name}}</h2>
+            {% if browser.mobile %}
+              <span class="isMobile">m</span>
+            {% endif %}
+            {% if feature[browser.id].supported %}
+              <p class="support">
+                {% if feature[browser.id].supported == 0.5 %}
+                  Somewhat supported
+                {% else %}
+                  Supported
+                {% endif %}
+                {% if feature[browser.id].minVersion %}
+                  since version <span class="version">{{ feature[browser.id].minVersion }}</span>
+                {% endif %}
+              </p>
+            {% else %}
+              <p class="support">No support</p>
+            {% endif %}
+          </section>
+        {% endfor %}
+    </div>
+        <ul class="details">
+          {% for browser in browsers %}
+            {% for detail in feature[browser.id].details %}
+              <li><strong>{{ browser.name }}:</strong> {{ detail|safe }}</li>
+            {% endfor %}
+          {% endfor %}
+          {% for detail in feature.details %}
+            <li>{{ detail|safe }}</li>
+          {% endfor %}
+        </ul>
+    </article>
+  {% endfor %}
+{% endblock %}
+
+{% block page_js %}
+  
+    <script type="text/javascript" src="/static/js/index.js"></script>
+  
+{% endblock %}
