@@ -237,7 +237,7 @@
         ]
       },
       "safari": {
-        "supported": 0.5,
+        "supported": 0.8,
         "details": [
           "<a href=\"https://webkit.org/status/#specification-service-workers\">in development</a>."
         ]
