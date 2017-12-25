@@ -128,7 +128,7 @@ article.feature {
         margin: auto;
         font-size: 16px;
         text-indent: -5000px;
-        @each $icon in (chrome, chrome-canary, firefox, firefox-nightly, edge, opera, opera-developer, samsung-internet, safari, webkit, uc, xiaomi, qq, qqm, m360, baidum, sogoum, wechat, quark, cheetah, brave) {
+        @each $icon in (chrome, chrome-canary, firefox, firefox-nightly, edge, opera, opera-developer, samsung-internet, safari, safari-preview, webkit, uc, xiaomi, qq, qqm, m360, baidum, sogoum, wechat, quark, cheetah, brave) {
           &.$(icon) {
             background-image: url(../../img/$(icon).png);
             background-size: 78%;

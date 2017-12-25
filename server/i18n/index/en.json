@@ -137,6 +137,10 @@
       "mobile": true
     },
     {
+      "id": "safari-preview",
+      "name": "Safari Preview"
+    },
+    {
       "id": "safari",
       "name": "Safari"
     },
@@ -187,7 +191,7 @@
         "supported": 0.11
       },
       "safari": {
-        "supported": 0.21000000000000002
+        "supported": 0.11
       },
       "chromem": {
         "supported": 0.91
@@ -206,6 +210,9 @@
       },
       "qqb": {
         "supported": 0.91
+      },
+      "safari-preview": {
+        "supported": 0.21000000000000002
       }
     },
     {
@@ -334,7 +341,7 @@
       },
       "safari": {
         "minVersion": 9,
-        "supported": 1
+        "supported": 0.5
       },
       "edge": {
         "icon": "edge",
@@ -400,6 +407,10 @@
       "brave": {
         "supported": 1,
         "minVersion": 0.15
+      },
+      "safari-preview": {
+        "supported": 0.5,
+        "minVersion": 11
       }
     },
     {
@@ -423,7 +434,8 @@
         "minVersion": 4
       },
       "safari": {
-        "supported": 1
+        "supported": 0.5,
+        "minVersion": 11
       },
       "edge": {
         "supported": 1,
@@ -488,6 +500,10 @@
       "brave": {
         "supported": 1,
         "minVersion": 0.15
+      },
+      "safari-preview": {
+        "supported": 0.5,
+        "minVersion": 11
       }
     },
     {
@@ -514,7 +530,8 @@
         "minVersion": 4
       },
       "safari": {
-        "supported": 1
+        "supported": 0.5,
+        "minVersion": 11
       },
       "edge": {
         "supported": 1,
@@ -581,6 +598,10 @@
       "brave": {
         "supported": 1,
         "minVersion": 0.15
+      },
+      "safari-preview": {
+        "supported": 0.5,
+        "minVersion": 11
       }
     },
     {
@@ -597,7 +618,7 @@
         "minVersion": 16
       },
       "safari": {
-        "supported": 1,
+        "supported": 0.5,
         "minVersion": 10
       },
       "opera": {
@@ -663,6 +684,10 @@
       "brave": {
         "supported": 1,
         "minVersion": 0.15
+      },
+      "safari-preview": {
+        "supported": 0.5,
+        "minVersion": 11
       }
     },
     {
@@ -741,6 +766,14 @@
       "brave": {
         "supported": 1,
         "minVersion": 0.15
+      },
+      "safari-preview": {
+        "supported": 0.5,
+        "minVersion": 11
+      },
+      "safari": {
+        "supported": 0.5,
+        "minVersion": 11
       }
     },
     {
@@ -764,7 +797,8 @@
         "minVersion": 4
       },
       "safari": {
-        "supported": 0
+        "supported": 0,
+        "minVersion": 11
       },
       "edge": {
         "supported": 0
@@ -825,6 +859,10 @@
       "brave": {
         "supported": 1,
         "minVersion": 0.15
+      },
+      "safari-preview": {
+        "supported": 1,
+        "minVersion": 11
       }
     },
     {
@@ -912,6 +950,10 @@
       "brave": {
         "supported": 1,
         "minVersion": 0.15
+      },
+      "safari-preview": {
+        "supported": 1,
+        "minVersion": 11
       }
     },
     {
@@ -935,7 +977,8 @@
         "minVersion": 4
       },
       "safari": {
-        "supported": 0
+        "supported": 0,
+        "minVersion": 11
       },
       "edge": {
         "supported": 0
@@ -996,6 +1039,10 @@
       "brave": {
         "supported": 1,
         "minVersion": 0.15
+      },
+      "safari-preview": {
+        "supported": 0,
+        "minVersion": 11
       }
     },
     {
@@ -1019,7 +1066,8 @@
         "minVersion": 4
       },
       "safari": {
-        "supported": 0
+        "supported": 0,
+        "minVersion": 11
       },
       "edge": {
         "supported": 0
@@ -1080,6 +1128,10 @@
       "brave": {
         "supported": 1,
         "minVersion": 0.15
+      },
+      "safari-preview": {
+        "supported": 0,
+        "minVersion": 11
       }
     },
     {
@@ -1103,7 +1155,8 @@
         "minVersion": 4
       },
       "safari": {
-        "supported": 0
+        "supported": 0,
+        "minVersion": 11
       },
       "edge": {
         "supported": 0
@@ -1167,6 +1220,10 @@
       "brave": {
         "supported": 1,
         "minVersion": 0.15
+      },
+      "safari-preview": {
+        "supported": 0,
+        "minVersion": 11
       }
     },
     {
@@ -1241,6 +1298,14 @@
       "brave": {
         "supported": 1,
         "minVersion": 0.15
+      },
+      "safari-preview": {
+        "supported": 1,
+        "minVersion": 11
+      },
+      "safari": {
+        "supported": 0,
+        "minVersion": 11
       }
     },
     {
@@ -1325,6 +1390,10 @@
       "brave": {
         "supported": 1,
         "minVersion": 0.15
+      },
+      "safari-preview": {
+        "supported": 1,
+        "minVersion": 11
       }
     },
     {
@@ -1348,7 +1417,8 @@
         "minVersion": 4
       },
       "safari": {
-        "supported": 0
+        "supported": 0,
+        "minVersion": 11
       },
       "edge": {
         "supported": 0
@@ -1409,6 +1479,10 @@
       "brave": {
         "supported": 1,
         "minVersion": 0.15
+      },
+      "safari-preview": {
+        "supported": 0,
+        "minVersion": 11
       }
     },
     {
@@ -1432,7 +1506,8 @@
         "minVersion": 4
       },
       "safari": {
-        "supported": 0
+        "supported": 0,
+        "minVersion": 11
       },
       "edge": {
         "supported": 0
@@ -1493,6 +1568,10 @@
       "brave": {
         "supported": 1,
         "minVersion": 0.15
+      },
+      "safari-preview": {
+        "supported": 0.5,
+        "minVersion": 11
       }
     },
     {
@@ -1516,7 +1595,8 @@
         "minVersion": 4
       },
       "safari": {
-        "supported": 0
+        "supported": 0,
+        "minVersion": 11
       },
       "edge": {
         "supported": 0
@@ -1583,6 +1663,10 @@
       "brave": {
         "supported": 1,
         "minVersion": 0.15
+      },
+      "safari-preview": {
+        "supported": 0.5,
+        "minVersion": 11
       }
     },
     {
@@ -1667,6 +1751,10 @@
       "brave": {
         "supported": 1,
         "minVersion": 0.15
+      },
+      "safari-preview": {
+        "supported": 1,
+        "minVersion": 11
       }
     },
     {
@@ -1750,6 +1838,10 @@
       "quark": {
         "supported": 0.9444444444444444,
         "minVersion": 2
+      },
+      "safari-preview": {
+        "supported": 0.3333333333333333,
+        "minVersion": 11
       }
     },
     {
@@ -1843,7 +1935,7 @@
         "minVersion": 4
       },
       "safari": {
-        "supported": 1,
+        "supported": 0.5,
         "minVersion": 10.1
       },
       "edge": {
@@ -1908,6 +2000,10 @@
       "brave": {
         "supported": 1,
         "minVersion": 0.15
+      },
+      "safari-preview": {
+        "supported": 0.5,
+        "minVersion": 11
       }
     },
     {
@@ -1931,7 +2027,8 @@
         "minVersion": 4
       },
       "safari": {
-        "supported": 0
+        "supported": 0,
+        "minVersion": 11
       },
       "edge": {
         "supported": 0
@@ -1992,6 +2089,10 @@
       "brave": {
         "supported": 1,
         "minVersion": 0.15
+      },
+      "safari-preview": {
+        "supported": 0,
+        "minVersion": 11
       }
     },
     {
@@ -2183,7 +2284,8 @@
         "minVersion": 4
       },
       "safari": {
-        "supported": 0
+        "supported": 0,
+        "minVersion": 11
       },
       "edge": {
         "supported": 0
@@ -2246,6 +2348,10 @@
       "brave": {
         "supported": 1,
         "minVersion": 0.15
+      },
+      "safari-preview": {
+        "supported": 0.5,
+        "minVersion": 11
       }
     },
     {
@@ -2312,6 +2418,14 @@
       "quark": {
         "supported": 1,
         "minVersion": 2
+      },
+      "safari-preview": {
+        "supported": 0,
+        "minVersion": 11
+      },
+      "safari": {
+        "supported": 0,
+        "minVersion": 11
       }
     },
     {
@@ -2378,6 +2492,14 @@
       "quark": {
         "supported": 0,
         "minVersion": 2
+      },
+      "safari-preview": {
+        "supported": 0,
+        "minVersion": 11
+      },
+      "safari": {
+        "supported": 0,
+        "minVersion": 11
       }
     },
     {
@@ -2444,6 +2566,14 @@
       "quark": {
         "supported": 1,
         "minVersion": 2
+      },
+      "safari-preview": {
+        "supported": 0,
+        "minVersion": 11
+      },
+      "safari": {
+        "supported": 0,
+        "minVersion": 11
       }
     },
     {
@@ -2510,6 +2640,14 @@
       "quark": {
         "supported": 0,
         "minVersion": 2
+      },
+      "safari-preview": {
+        "supported": 0,
+        "minVersion": 11
+      },
+      "safari": {
+        "supported": 0,
+        "minVersion": 11
       }
     },
     {
@@ -2576,6 +2714,14 @@
       "quark": {
         "supported": 0,
         "minVersion": 2
+      },
+      "safari-preview": {
+        "supported": 0,
+        "minVersion": 11
+      },
+      "safari": {
+        "supported": 0,
+        "minVersion": 11
       }
     },
     {
@@ -2645,6 +2791,14 @@
       "quark": {
         "supported": 0,
         "minVersion": 2
+      },
+      "safari-preview": {
+        "supported": 0,
+        "minVersion": 11
+      },
+      "safari": {
+        "supported": 0,
+        "minVersion": 11
       }
     },
     {
@@ -2714,6 +2868,14 @@
       "quark": {
         "supported": 0,
         "minVersion": 2
+      },
+      "safari-preview": {
+        "supported": 0,
+        "minVersion": 11
+      },
+      "safari": {
+        "supported": 0,
+        "minVersion": 11
       }
     },
     {
@@ -2783,6 +2945,14 @@
       "quark": {
         "supported": 1,
         "minVersion": 2
+      },
+      "safari-preview": {
+        "supported": 0,
+        "minVersion": 11
+      },
+      "safari": {
+        "supported": 0,
+        "minVersion": 11
       }
     },
     {
@@ -2849,6 +3019,14 @@
       "quark": {
         "supported": 1,
         "minVersion": 2
+      },
+      "safari-preview": {
+        "supported": 0,
+        "minVersion": 11
+      },
+      "safari": {
+        "supported": 0,
+        "minVersion": 11
       }
     },
     {
@@ -2945,6 +3123,10 @@
       "brave": {
         "supported": 1,
         "minVersion": 0.15
+      },
+      "safari-preview": {
+        "supported": null,
+        "minVersion": 11
       }
     },
     {
@@ -2967,7 +3149,8 @@
         "supported": 1
       },
       "safari": {
-        "supported": 1
+        "supported": 0.5,
+        "minVersion": 11
       },
       "edge": {
         "supported": 0
@@ -3031,6 +3214,10 @@
       "brave": {
         "supported": 1,
         "minVersion": 0.15
+      },
+      "safari-preview": {
+        "supported": 0.5,
+        "minVersion": 11
       }
     },
     {
@@ -3180,6 +3367,14 @@
       "quark": {
         "supported": 0,
         "minVersion": 2
+      },
+      "safari-preview": {
+        "supported": 0,
+        "minVersion": 11
+      },
+      "safari": {
+        "supported": 0,
+        "minVersion": 11
       }
     },
     {
@@ -3234,6 +3429,14 @@
       "quark": {
         "supported": 0,
         "minVersion": 2
+      },
+      "safari-preview": {
+        "supported": 0,
+        "minVersion": 11
+      },
+      "safari": {
+        "supported": 0,
+        "minVersion": 11
       }
     },
     {
@@ -3300,6 +3503,14 @@
       "quark": {
         "supported": 1,
         "minVersion": 2
+      },
+      "safari-preview": {
+        "supported": 0,
+        "minVersion": 11
+      },
+      "safari": {
+        "supported": 0,
+        "minVersion": 11
       }
     },
     {
@@ -3354,6 +3565,14 @@
       "quark": {
         "supported": 0,
         "minVersion": 2
+      },
+      "safari-preview": {
+        "supported": 0,
+        "minVersion": 11
+      },
+      "safari": {
+        "supported": 0,
+        "minVersion": 11
       }
     },
     {
