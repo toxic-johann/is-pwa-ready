@@ -12,7 +12,7 @@ import cache from './cache/main'
 import push from './push/main'
 import {search2obj} from 'utils'
 import './main.css'
-import 'vconsole'
+// import 'vconsole'
 import {info} from './helper'
 import 'views/common/raven'
 window.addEventListener('unhandledrejection', function (event) {
@@ -21,6 +21,7 @@ window.addEventListener('unhandledrejection', function (event) {
 info.totalSchedule = 8
 const {step = '0'} = search2obj();
 (async function main () {
+  // await push()
   switch (step) {
     case '0':
       await init()

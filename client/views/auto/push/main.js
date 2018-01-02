@@ -75,14 +75,19 @@ export default async function () {
     pushManager.subscribe({
       userVisibleOnly: true,
       applicationServerKey: urlB64ToUint8Array('BDm6z7ImnFDW6GJ3bwtFdR4ifKGE0CVGXNRfGJhWGm8gwX1sXHH9uq3zo6mYd7fkjVrzfiDHhS5gYfCbxj2g-Bo')
-    }).then(sth => {sub = sth})
+    }).then(sth => {
+      console.warn('sth is sth', sth)
+      sub = sth
+    }).catch(error => {
+      console.error(error)
+    })
   } catch (err) {
     console.error(err)
   }
   // when i use Promise.race on firefox
   // it do not work as i want
   // so i give up and use sleep
-  await sleep(5000)
+  await sleep(10000)
   if(sub) {
     console.log('pushManager.subscribe work', sub)
     const p256dh = btoa(String.fromCharCode.apply(null, new Uint8Array(sub.getKey('p256dh'))))

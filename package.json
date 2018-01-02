@@ -5,7 +5,7 @@
   "main": "server/index.js",
   "scripts": {
     "start": "webpack -w & nodemon --watch server --watch views -e js,html,json",
-    "node-debug": "webpack -w & nodemon --debug --watch server --watch views -e js,html,json",
+    "node-debug": "webpack -w & nodemon --inspect --watch server --watch views -e js,html,json",
     "build": "rm -f ./static/css/*-*.css && rm -f ./static/js/*-*.js && rm -f ./static/js/auto/*-*-*.js && webpack --env.mode='production'",
     "mos": "git pull origin master && pm2 restart pm2.json",
     "lint": "eslint ./client/ ./server/",

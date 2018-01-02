@@ -1,6 +1,7 @@
 module.exports = {
   'globals': {
-    'process': true
+    'process': true,
+    '__dirname': true
   },
   'env': {
     'browser': true,
