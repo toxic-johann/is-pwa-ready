@@ -40,19 +40,6 @@ export default async function () {
   const reg = await navigator.serviceWorker.register('/auto/push-sw.js', {
     scope: '/auto/'
   })
-  // .then(function (reg) {
-  //   const pushManager = reg.pushManager
-  //   return pushManager.subscribe({
-  //     userVisibleOnly: true,
-  //     applicationServerKey: urlB64ToUint8Array('BDm6z7ImnFDW6GJ3bwtFdR4ifKGE0CVGXNRfGJhWGm8gwX1sXHH9uq3zo6mYd7fkjVrzfiDHhS5gYfCbxj2g-Bo')
-  //   })
-  //   .then(subscription => {
-  //     console.warn(subscription, 1)
-  //   })
-  //   .catch(error => {
-  //     throw error
-  //   })
-  // })
   await waiter
   const pushManager = reg.pushManager
   if(!pushManager) {
@@ -71,6 +58,9 @@ export default async function () {
     if(permissionState === 'denied') {
       console.log('permission denied')
       alert('You should grant our permission of push and notification')
+      // webpack has some problem facing this two line
+      // maybe I can update webpack and then fix this
+      // I will do this later
       // await reg.unregister()
       // await store.put('feature', 1, 'pushManager.denied')
       return
