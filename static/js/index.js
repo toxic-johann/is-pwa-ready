@@ -33,6 +33,9 @@
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
 /******/
+/******/ 	// identity function for calling harmony imports with the correct context
+/******/ 	__webpack_require__.i = function(value) { return value; };
+/******/
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
@@ -60,12 +63,12 @@
 /******/ 	__webpack_require__.p = "/static/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 84);
+/******/ 	return __webpack_require__(__webpack_require__.s = 82);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 52:
+/***/ 53:
 /***/ (function(module, exports) {
 
 if (!Array.from) {
@@ -160,27 +163,27 @@ document.querySelector('.lang-switch').addEventListener('click', function (evt) 
 
 /***/ }),
 
-/***/ 84:
+/***/ 72:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 82:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__main_css__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__main_css__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__main_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__main_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__common_index__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__common_index__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__common_index___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__common_index__);
 
 
 if ('serviceWorker' in navigator && "development" !== 'development') {
   navigator.serviceWorker.register('/sw.js');
 }
-
-/***/ }),
-
-/***/ 85:
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed: ModuleBuildError: Module build failed: Error: No PostCSS Config found in: /Users/uc/workspace/toxic-johann/is-pwa-ready/client/views/index\n    at /Users/uc/workspace/toxic-johann/is-pwa-ready/node_modules/postcss-load-config/index.js:51:26\n    at <anonymous>\n    at runLoaders (/Users/uc/workspace/toxic-johann/is-pwa-ready/node_modules/webpack/lib/NormalModule.js:195:19)\n    at /Users/uc/workspace/toxic-johann/is-pwa-ready/node_modules/loader-runner/lib/LoaderRunner.js:364:11\n    at /Users/uc/workspace/toxic-johann/is-pwa-ready/node_modules/loader-runner/lib/LoaderRunner.js:230:18\n    at context.callback (/Users/uc/workspace/toxic-johann/is-pwa-ready/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at Promise.resolve.then.then.catch (/Users/uc/workspace/toxic-johann/is-pwa-ready/node_modules/postcss-loader/lib/index.js:189:71)\n    at <anonymous>");
 
 /***/ })
 
