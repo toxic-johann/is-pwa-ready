@@ -1,0 +1,16 @@
+{
+  "name": "PWA的进程",
+  "short_name": "PWA",
+  "lang": "zh-CN",
+  "theme_color": "#f2e8d5",
+  "background_color": "#f2e8d5",
+  "icons": [{  
+    "src": "https://p5.ssl.qhimg.com/t01245986c32f09718d.png",  
+    "sizes": "200x200",
+    "type": "image/png" 
+  }], 
+  "start_url": "/",
+  "display": "fullscreen",  
+  "gcm_user_visible_only": true,
+  "gcm_sender_id": "820649352728"
+}

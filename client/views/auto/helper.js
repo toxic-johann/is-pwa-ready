@@ -45,17 +45,17 @@ export const featureKeys = [
   'pushManager.getSubscription',
   'pushManager.permissionState',
   'pushSubscription.unsubscribe',
-]
+];
 export const infoKeys = [
   'browser',
   'os',
-  'device'
-]
+  'device',
+];
 
 export const info = {
   totalSchedule: 0,
-  timeoutTimer: null
-}
+  timeoutTimer: null,
+};
 
-export const copyTips = window.SD.copyTips
-export const testTips = window.SD.testTips
+export const copyTips = window.SD.copyTips;
+export const testTips = window.SD.testTips;

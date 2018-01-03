@@ -1,14 +1,14 @@
-import store from 'store'
-self.oninstall = function () {
-  self.skipWaiting()
-}
+import store from 'store';
+self.oninstall = function() {
+  self.skipWaiting();
+};
 
-self.onactivate = function () {
-  if(self.clients.claim) {
-    self.clients.claim()
+self.onactivate = function() {
+  if (self.clients.claim) {
+    self.clients.claim();
   }
-}
+};
 
-self.addEventListener('sync', function (event) {
-  store.put('feature', 1, 'syncEvent')
-})
+self.addEventListener('sync', function() {
+  store.put('feature', 1, 'syncEvent');
+});

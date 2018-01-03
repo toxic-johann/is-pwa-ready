@@ -1,2 +1,2 @@
-import test from './test'
-test(self)
+import test from './test';
+test(self);

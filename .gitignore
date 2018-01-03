@@ -41,3 +41,4 @@ jspm_packages
 stc.js
 qiniu.js
 .raven.js
+package-lock.json

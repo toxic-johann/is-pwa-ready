@@ -1,0 +1,23 @@
+{
+  "globals": {
+    "process": true
+  },
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true
+  },
+  "extends": [
+    "eslint-config-egg"
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "rules": {
+    "valid-jsdoc": "off",
+    "no-bitwise": "off",
+    "no-alert": "warn",
+    "no-proto": "warn"
+  }
+}

@@ -1,0 +1,10 @@
+node_modules
+lib
+flow
+coverage
+bundle-size
+demo
+./views/
+static
+demos
+.babel_cache

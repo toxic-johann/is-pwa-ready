@@ -1,105 +1,105 @@
-import store from 'store'
-import {sleep, promisifyOneTimeEventListener} from 'utils'
+import store from 'store';
+import { sleep, promisifyOneTimeEventListener } from 'utils';
 const list = [
   'pushManager.subscribe',
   'pushManager.getSubscription',
   'pushSubscription.unsubscribe',
   'pushManager.permissionState',
-  'pushManager.denied'
-]
-function genWaiter () {
+  'pushManager.denied',
+];
+function genWaiter() {
   return Promise.race([
     promisifyOneTimeEventListener(() => {}, navigator.serviceWorker, 'controllerchange'),
-    sleep(3000)
-  ])
+    sleep(3000),
+  ]);
 }
 
-function urlB64ToUint8Array (base64String) {
-  const padding = '='.repeat((4 - base64String.length % 4) % 4)
+function urlB64ToUint8Array(base64String) {
+  const padding = '='.repeat((4 - base64String.length % 4) % 4);
   const base64 = (base64String + padding)
     .replace(/\-/g, '+')
-    .replace(/_/g, '/')
+    .replace(/_/g, '/');
 
-  const rawData = window.atob(base64)
-  const outputArray = new Uint8Array(rawData.length)
+  const rawData = window.atob(base64);
+  const outputArray = new Uint8Array(rawData.length);
 
   for (let i = 0; i < rawData.length; ++i) {
-    outputArray[i] = rawData.charCodeAt(i)
+    outputArray[i] = rawData.charCodeAt(i);
   }
-  return outputArray
+  return outputArray;
 }
 
-export default async function () {
-  require('whatwg-fetch')
-  for(let i = list.length - 1; i > -1; i--) {
-    await store.put('feature', 0, list[i])
+export default async function() {
+  require('whatwg-fetch');
+  for (let i = list.length - 1; i > -1; i--) {
+    await store.put('feature', 0, list[i]);
   }
-  const hasSW = !!navigator.serviceWorker
-  if(!hasSW) return
-  const waiter = genWaiter()
+  const hasSW = !!navigator.serviceWorker;
+  if (!hasSW) return;
+  const waiter = genWaiter();
   const reg = await navigator.serviceWorker.register('/auto/push-sw.js', {
-    scope: '/auto/'
-  })
-  await waiter
-  const pushManager = reg.pushManager
-  if(!pushManager) {
-    console.log('no pushManager')
-    await reg.unregister()
-    return
+    scope: '/auto/',
+  });
+  await waiter;
+  const pushManager = reg.pushManager;
+  if (!pushManager) {
+    console.log('no pushManager');
+    await reg.unregister();
+    return;
   }
-  console.log('pushManager found')
+  console.log('pushManager found');
   try {
     const permissionState = await pushManager.permissionState({
       userVisibleOnly: true,
-      applicationServerKey: urlB64ToUint8Array('BDm6z7ImnFDW6GJ3bwtFdR4ifKGE0CVGXNRfGJhWGm8gwX1sXHH9uq3zo6mYd7fkjVrzfiDHhS5gYfCbxj2g-Bo')
-    })
-    console.log('permission state get', permissionState)
-    await store.put('feature', 1, 'pushManager.permissionState')
-    if(permissionState === 'denied') {
-      console.log('permission denied')
-      alert('You should grant our permission of push and notification')
+      applicationServerKey: urlB64ToUint8Array('BDm6z7ImnFDW6GJ3bwtFdR4ifKGE0CVGXNRfGJhWGm8gwX1sXHH9uq3zo6mYd7fkjVrzfiDHhS5gYfCbxj2g-Bo'),
+    });
+    console.log('permission state get', permissionState);
+    await store.put('feature', 1, 'pushManager.permissionState');
+    if (permissionState === 'denied') {
+      console.log('permission denied');
+      alert('You should grant our permission of push and notification');
       // webpack has some problem facing this two line
       // maybe I can update webpack and then fix this
       // I will do this later
       // await reg.unregister()
       // await store.put('feature', 1, 'pushManager.denied')
-      return
+      return;
     }
   } catch (err) {
-    console.error(err)
+    console.error(err);
   }
-  const subscription = await pushManager.getSubscription()
-  await store.put('feature', 1, 'pushManager.getSubscription')
-  console.log('pushManager.getSubscription work', subscription)
-  if(subscription) {
-    await subscription.unsubscribe()
-    await store.put('feature', 1, 'pushSubscription.unsubscribe')
-    console.log('older subscription remove')
+  const subscription = await pushManager.getSubscription();
+  await store.put('feature', 1, 'pushManager.getSubscription');
+  console.log('pushManager.getSubscription work', subscription);
+  if (subscription) {
+    await subscription.unsubscribe();
+    await store.put('feature', 1, 'pushSubscription.unsubscribe');
+    console.log('older subscription remove');
   }
-  console.log('ready to subscribe')
-  await sleep(1000)
-  let sub
+  console.log('ready to subscribe');
+  await sleep(1000);
+  let sub;
   try {
     pushManager.subscribe({
       userVisibleOnly: true,
-      applicationServerKey: urlB64ToUint8Array('BDm6z7ImnFDW6GJ3bwtFdR4ifKGE0CVGXNRfGJhWGm8gwX1sXHH9uq3zo6mYd7fkjVrzfiDHhS5gYfCbxj2g-Bo')
+      applicationServerKey: urlB64ToUint8Array('BDm6z7ImnFDW6GJ3bwtFdR4ifKGE0CVGXNRfGJhWGm8gwX1sXHH9uq3zo6mYd7fkjVrzfiDHhS5gYfCbxj2g-Bo'),
     }).then(sth => {
-      sub = sth
+      sub = sth;
     }).catch(error => {
-      console.error(error)
-    })
+      console.error(error);
+    });
   } catch (err) {
-    console.error(err)
+    console.error(err);
   }
   // when i use Promise.race on firefox
   // it do not work as i want
   // so i give up and use sleep
-  await sleep(10000)
-  if(sub) {
-    console.log('pushManager.subscribe work', sub)
-    const p256dh = btoa(String.fromCharCode.apply(null, new Uint8Array(sub.getKey('p256dh'))))
-    const auth = btoa(String.fromCharCode.apply(null, new Uint8Array(sub.getKey('auth'))))
-    await store.put('feature', 1, 'pushManager.subscribe')
+  await sleep(10000);
+  if (sub) {
+    console.log('pushManager.subscribe work', sub);
+    const p256dh = btoa(String.fromCharCode.apply(null, new Uint8Array(sub.getKey('p256dh'))));
+    const auth = btoa(String.fromCharCode.apply(null, new Uint8Array(sub.getKey('auth'))));
+    await store.put('feature', 1, 'pushManager.subscribe');
     try {
       await fetch('/askforpush', {
         method: 'POST',
@@ -109,21 +109,21 @@ export default async function () {
         body: JSON.stringify({
           endpoint: sub.endpoint,
           p256dh,
-          auth
-        })
-      })
+          auth,
+        }),
+      });
     } catch (err) {
-      console.error(err)
+      console.error(err);
     }
-    await sleep(5000)
-    await sub.unsubscribe()
-    console.log('subscription.unsubscribe work')
-    await store.put('feature', 1, 'pushSubscription.unsubscribe')
-    await reg.unregister()
-    console.log('unregister')
+    await sleep(5000);
+    await sub.unsubscribe();
+    console.log('subscription.unsubscribe work');
+    await store.put('feature', 1, 'pushSubscription.unsubscribe');
+    await reg.unregister();
+    console.log('unregister');
   } else {
-    await reg.unregister()
-    console.log('unregister')
-    return
+    await reg.unregister();
+    console.log('unregister');
+    return;
   }
 }
