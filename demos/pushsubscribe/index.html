@@ -53,7 +53,7 @@
       return outputArray
     }
 
-    navigator.serviceWorker.register('sw.js', {
+    navigator.serviceWorker.register('/sw.js', {
       scope: './'
     }).then(function(sw) {
       log("Registered!", sw);

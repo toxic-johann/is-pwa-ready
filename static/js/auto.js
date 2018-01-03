@@ -3992,9 +3992,25 @@ function urlB64ToUint8Array(base64String) {
     if (!!hasSW) {
       return Promise.resolve().then(function () {
         waiter = genWaiter();
-        return navigator.serviceWorker.register('/auto/push-sw.js', { scope: '/auto/' });
+        return navigator.serviceWorker.register('/auto/push-sw.js', {
+          scope: '/auto/'
+        });
       }).then(function (_resp) {
         reg = _resp;
+        // .then(function (reg) {
+        //   const pushManager = reg.pushManager
+        //   return pushManager.subscribe({
+        //     userVisibleOnly: true,
+        //     applicationServerKey: urlB64ToUint8Array('BDm6z7ImnFDW6GJ3bwtFdR4ifKGE0CVGXNRfGJhWGm8gwX1sXHH9uq3zo6mYd7fkjVrzfiDHhS5gYfCbxj2g-Bo')
+        //   })
+        //   .then(subscription => {
+        //     console.warn(subscription, 1)
+        //   })
+        //   .catch(error => {
+        //     throw error
+        //   })
+        // })
+
         return waiter;
       }).then(function () {
         pushManager = reg.pushManager;
@@ -4012,15 +4028,15 @@ function urlB64ToUint8Array(base64String) {
               });
             }).then(function (_resp) {
               permissionState = _resp;
+
+              console.log('permission state get', permissionState);
               return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'pushManager.permissionState');
-            }).then(function () {
-              return reg.unregister();
-            }).then(function () {
-              return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'pushManager.denied');
             }).then(function () {
               if (permissionState === 'denied') {
                 console.log('permission denied');
-
+                alert('You should grant our permission of push and notification');
+                // await reg.unregister()
+                // await store.put('feature', 1, 'pushManager.denied')
                 return;
               }
             }).catch(function (err) {
@@ -4044,6 +4060,8 @@ function urlB64ToUint8Array(base64String) {
             }
           }).then(function () {
             console.log('ready to subscribe');
+            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_utils__["d" /* sleep */])(1000);
+          }).then(function () {
             sub = void 0;
 
             try {
@@ -4051,7 +4069,6 @@ function urlB64ToUint8Array(base64String) {
                 userVisibleOnly: true,
                 applicationServerKey: urlB64ToUint8Array('BDm6z7ImnFDW6GJ3bwtFdR4ifKGE0CVGXNRfGJhWGm8gwX1sXHH9uq3zo6mYd7fkjVrzfiDHhS5gYfCbxj2g-Bo')
               }).then(function (sth) {
-                console.warn('sth is sth', sth);
                 sub = sth;
               }).catch(function (error) {
                 console.error(error);

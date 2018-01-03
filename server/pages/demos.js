@@ -3,7 +3,6 @@ const fs = require('fs')
 const path = require('path')
 module.exports = async function () {
   const url = this.req.url
-  console.log(url)
   const needHtml = (this.accepts().indexOf('text/html') > -1 ||
     this.is('text/html')) &&
     !url.match(/(js|css|json)$/)

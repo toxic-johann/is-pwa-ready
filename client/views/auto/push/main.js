@@ -37,7 +37,22 @@ export default async function () {
   const hasSW = !!navigator.serviceWorker
   if(!hasSW) return
   const waiter = genWaiter()
-  const reg = await navigator.serviceWorker.register('/auto/push-sw.js', {scope: '/auto/'})
+  const reg = await navigator.serviceWorker.register('/auto/push-sw.js', {
+    scope: '/auto/'
+  })
+  // .then(function (reg) {
+  //   const pushManager = reg.pushManager
+  //   return pushManager.subscribe({
+  //     userVisibleOnly: true,
+  //     applicationServerKey: urlB64ToUint8Array('BDm6z7ImnFDW6GJ3bwtFdR4ifKGE0CVGXNRfGJhWGm8gwX1sXHH9uq3zo6mYd7fkjVrzfiDHhS5gYfCbxj2g-Bo')
+  //   })
+  //   .then(subscription => {
+  //     console.warn(subscription, 1)
+  //   })
+  //   .catch(error => {
+  //     throw error
+  //   })
+  // })
   await waiter
   const pushManager = reg.pushManager
   if(!pushManager) {
@@ -51,11 +66,13 @@ export default async function () {
       userVisibleOnly: true,
       applicationServerKey: urlB64ToUint8Array('BDm6z7ImnFDW6GJ3bwtFdR4ifKGE0CVGXNRfGJhWGm8gwX1sXHH9uq3zo6mYd7fkjVrzfiDHhS5gYfCbxj2g-Bo')
     })
+    console.log('permission state get', permissionState)
     await store.put('feature', 1, 'pushManager.permissionState')
     if(permissionState === 'denied') {
       console.log('permission denied')
-      await reg.unregister()
-      await store.put('feature', 1, 'pushManager.denied')
+      alert('You should grant our permission of push and notification')
+      // await reg.unregister()
+      // await store.put('feature', 1, 'pushManager.denied')
       return
     }
   } catch (err) {
@@ -70,13 +87,13 @@ export default async function () {
     console.log('older subscription remove')
   }
   console.log('ready to subscribe')
+  await sleep(1000)
   let sub
   try {
     pushManager.subscribe({
       userVisibleOnly: true,
       applicationServerKey: urlB64ToUint8Array('BDm6z7ImnFDW6GJ3bwtFdR4ifKGE0CVGXNRfGJhWGm8gwX1sXHH9uq3zo6mYd7fkjVrzfiDHhS5gYfCbxj2g-Bo')
     }).then(sth => {
-      console.warn('sth is sth', sth)
       sub = sth
     }).catch(error => {
       console.error(error)

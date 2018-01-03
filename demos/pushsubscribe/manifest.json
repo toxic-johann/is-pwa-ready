@@ -12,8 +12,5 @@
   "start_url": "/",
   "display": "fullscreen",  
   "gcm_user_visible_only": true,
-  "permissions": [
-    "gcm"
-  ],
   "gcm_sender_id": "820649352728"
 }
