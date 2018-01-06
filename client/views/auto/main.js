@@ -12,7 +12,7 @@ import cache from './cache/main';
 import push from './push/main';
 import { search2obj } from 'utils';
 import './main.css';
-// import 'vconsole'
+import 'vconsole';
 import { info } from './helper';
 import 'views/common/raven';
 window.addEventListener('unhandledrejection', function(event) {

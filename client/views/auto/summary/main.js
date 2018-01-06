@@ -3,7 +3,6 @@ import { isNumeric, uuid } from 'utils';
 import store from 'store';
 import Clipboard from 'clipboard';
 import sweetAlert from 'sweetalert';
-import 'sweetalert/dist/sweetalert.css';
 import Raven from 'raven';
 export default async function() {
   const summary = {

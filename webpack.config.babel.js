@@ -101,18 +101,6 @@ export default function({ mode = 'development' } = {}) {
           output: {
             publicPath: '/static/',
           },
-          postcss: [
-            require('postcss-import')({
-              path: [ path.resolve('./fesrc') ],
-              resolve: id => {
-                return id.match(/^\//)
-                  ? path.resolve('./client') + id
-                  : id;
-              },
-            }),
-            require('precss'),
-            require('postcss-cssnext')(),
-          ],
         },
       }),
       new webpack.DefinePlugin({
