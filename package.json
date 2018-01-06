@@ -69,7 +69,7 @@
     "sweetalert": "^2.1.0",
     "ua-parser-js": "^0.7.12",
     "url-loader": "^0.6.2",
-    "vconsole": "^2.5.2",
+    "vconsole": "^3.1.0",
     "webpack": "^3.10.0",
     "webpack-md5-hash": "0.0.6",
     "webpack-visualizer-plugin": "^0.1.11",

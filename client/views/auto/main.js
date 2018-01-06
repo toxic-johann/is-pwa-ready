@@ -1,3 +1,5 @@
+import VConsole from 'vconsole';
+new VConsole();
 import '../common/index';
 import globalTest from './global/main';
 import empty from './empty/main';
@@ -12,7 +14,6 @@ import cache from './cache/main';
 import push from './push/main';
 import { search2obj } from 'utils';
 import './main.css';
-import 'vconsole';
 import { info } from './helper';
 import 'views/common/raven';
 window.addEventListener('unhandledrejection', function(event) {
