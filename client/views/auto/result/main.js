@@ -54,6 +54,6 @@ export default async function() {
         level: 'warning',
       });
       document.querySelector('.schedule').innerHTML = testTips.fail;
-    }, 15000);
+    }, 20000);
   }
 }

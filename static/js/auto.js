@@ -2356,6 +2356,33 @@ var testTips = window.SD.testTips;
 /* 52 */
 /***/ (function(module, exports) {
 
+module.exports = function (module) {
+	if (!module.webpackPolyfill) {
+		module.deprecate = function () {};
+		module.paths = [];
+		// module.parent = undefined by default
+		if (!module.children) module.children = [];
+		Object.defineProperty(module, "loaded", {
+			enumerable: true,
+			get: function get() {
+				return module.l;
+			}
+		});
+		Object.defineProperty(module, "id", {
+			enumerable: true,
+			get: function get() {
+				return module.i;
+			}
+		});
+		module.webpackPolyfill = 1;
+	}
+	return module;
+};
+
+/***/ }),
+/* 53 */
+/***/ (function(module, exports) {
+
 if (!Array.from) {
   Array.from = function () {
     var toStr = Object.prototype.toString;
@@ -2447,7 +2474,7 @@ document.querySelector('.lang-switch').addEventListener('click', function (evt) 
 });
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2496,7 +2523,7 @@ var list = ['Request', 'Response', 'fetch', 'Cache', 'caches', 'Promise', 'Notif
 });
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2525,33 +2552,6 @@ if (false) {
 }
 
 /* harmony default export */ __webpack_exports__["a"] = (Raven);
-
-/***/ }),
-/* 55 */
-/***/ (function(module, exports) {
-
-module.exports = function (module) {
-	if (!module.webpackPolyfill) {
-		module.deprecate = function () {};
-		module.paths = [];
-		// module.parent = undefined by default
-		if (!module.children) module.children = [];
-		Object.defineProperty(module, "loaded", {
-			enumerable: true,
-			get: function get() {
-				return module.l;
-			}
-		});
-		Object.defineProperty(module, "id", {
-			enumerable: true,
-			get: function get() {
-				return module.i;
-			}
-		});
-		module.webpackPolyfill = 1;
-	}
-	return module;
-};
 
 /***/ }),
 /* 56 */
@@ -3067,7 +3067,7 @@ exports._unrefActive = exports.active = function (item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(80);
+__webpack_require__(81);
 exports.setImmediate = setImmediate;
 exports.clearImmediate = clearImmediate;
 
@@ -3077,26 +3077,26 @@ exports.clearImmediate = clearImmediate;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vconsole__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vconsole__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vconsole___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vconsole__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__common_index__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__common_index__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__common_index___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__common_index__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__global_main__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__empty_main__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__postmessage_main__ = __webpack_require__(61);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__lifecycle_main__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__sync_main__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__result_main__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__init_main__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__env_main__ = __webpack_require__(66);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__summary_main__ = __webpack_require__(70);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__cache_main__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__push_main__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__global_main__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__empty_main__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__postmessage_main__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__lifecycle_main__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__sync_main__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__result_main__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__init_main__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__env_main__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__summary_main__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__cache_main__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__push_main__ = __webpack_require__(83);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_utils__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__main_css__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__main_css__ = __webpack_require__(84);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__main_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14__main_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__helper__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_views_common_raven__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_views_common_raven__ = __webpack_require__(55);
 
 new __WEBPACK_IMPORTED_MODULE_0_vconsole___default.a();
 
@@ -3190,3628 +3190,6 @@ var _search2obj = Object(__WEBPACK_IMPORTED_MODULE_13_utils__["g" /* search2obj 
 
 /***/ }),
 /* 59 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__test__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_store__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_utils__ = __webpack_require__(7);
-
-
-
-/* harmony default export */ __webpack_exports__["a"] = (function () {
-  var hasSW, sw;
-  return Promise.resolve().then(function () {
-    return Object(__WEBPACK_IMPORTED_MODULE_0__test__["a" /* default */])(window, 0);
-  }).then(function () {
-    hasSW = !!navigator.serviceWorker;
-    // test if we suggest navigator.serviceWorker
-
-    return __WEBPACK_IMPORTED_MODULE_1_store__["a" /* default */].put('feature', Number(hasSW), 'navigator.serviceWorker');
-  }).then(function () {
-    if (!!hasSW) {
-      return Promise.resolve().then(function () {
-        return navigator.serviceWorker.register('/auto/global-sw.js', { scope: '/auto/' });
-      }).then(function (_resp) {
-        sw = _resp;
-
-        console.log('Registered!', sw);
-        return __WEBPACK_IMPORTED_MODULE_1_store__["a" /* default */].put('feature', 1, 'Registered');
-      }).then(function () {
-        return Object(__WEBPACK_IMPORTED_MODULE_2_utils__["h" /* sleep */])(3000);
-      }).then(function () {
-        return sw.unregister();
-      }).then(function () {
-        console.log('Unregistered');
-        return __WEBPACK_IMPORTED_MODULE_1_store__["a" /* default */].put('feature', 1, 'Unregistered');
-      });
-    }
-  }).then(function () {});
-});
-
-/***/ }),
-/* 60 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_utils__ = __webpack_require__(7);
-
-/* harmony default export */ __webpack_exports__["a"] = (function () {
-  var search, _search$step, step, hasSW;
-
-  return Promise.resolve().then(function () {
-    search = Object(__WEBPACK_IMPORTED_MODULE_0_utils__["g" /* search2obj */])();
-    _search$step = search.step;
-    step = _search$step === undefined ? 0 : _search$step;
-
-    step = parseInt(step);
-    step++;
-    hasSW = !!navigator.serviceWorker;
-
-    if (hasSW) {
-      return navigator.serviceWorker.register('/auto/empty-sw.js', { scope: '/auto/' });
-    }
-  }).then(function () {
-    location.search = Object(__WEBPACK_IMPORTED_MODULE_0_utils__["e" /* obj2search */])(Object.assign(search, { step: step }));
-  });
-});
-
-/***/ }),
-/* 61 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_store__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_utils__ = __webpack_require__(7);
-
-
-var messageChannel = void 0;
-function genWaiter() {
-  var tasks = [];
-  if (window.MessageChannel) {
-    messageChannel = new MessageChannel();
-    console.log(messageChannel.port1.addEventListener);
-    // tasks.push(promisifyOneTimeEventListener(async event => {
-    //   console.log('Got reply from serviceWorker via channel', event.data)
-    //   await store.put('feature', 0.8, 'main-msg-got')
-    //   await store.put('feature', 'messageChannel.port1', 'main-msg-got-by')
-    // }, messageChannel.port1, 'message'))
-    // it's better to use onmessage as some version may be addEventListener bug
-    messageChannel.port1.onmessage = function (event) {
-      return Promise.resolve().then(function () {
-        console.log('Got reply from serviceWorker via channel', event.data);
-        return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 0.8, 'main-msg-got');
-      }).then(function () {
-        return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 'messageChannel.port1', 'main-msg-got-by');
-      }).then(function () {});
-    };
-    // messageChannel.port1.addEventListener('message', async event => {
-    //   console.log('Got reply from serviceWorker via channel', event.data)
-    //   await store.put('feature', 0.8, 'main-msg-got')
-    //   await store.put('feature', 'messageChannel.port1', 'main-msg-got-by')
-    // })
-  }
-  return Promise.race(tasks.concat([Object(__WEBPACK_IMPORTED_MODULE_1_utils__["f" /* promisifyOneTimeEventListener */])(function (error) {
-    return Promise.resolve().then(function () {
-      console.error(error);
-      return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 0, 'main-msg-got');
-    }).then(function () {});
-  }, window, 'error'), Object(__WEBPACK_IMPORTED_MODULE_1_utils__["f" /* promisifyOneTimeEventListener */])(function (event) {
-    return Promise.resolve().then(function () {
-      console.warn('Got reply from serviceWorker via window', event.data);
-      return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 0.5, 'main-msg-got');
-    }).then(function () {
-      return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 'window', 'main-msg-got-by');
-    }).then(function () {});
-  }, window, 'message'), Object(__WEBPACK_IMPORTED_MODULE_1_utils__["f" /* promisifyOneTimeEventListener */])(function (event) {
-    return Promise.resolve().then(function () {
-      console.log('Got reply from serviceWorker via navigator.serviceWorker', event.data);
-      return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'main-msg-got');
-    }).then(function () {
-      return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 'navigator.serviceWorker', 'main-msg-got-by');
-    }).then(function () {});
-  }, navigator.serviceWorker, 'message')]));
-}
-/* harmony default export */ __webpack_exports__["a"] = (function () {
-  function _recursive() {
-    if (i > -1) {
-      return Promise.resolve().then(function () {
-        return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].get('feature', list[i]);
-      }).then(function (_resp) {
-        bias = _resp;
-
-        point += parseFloat(bias);
-        i--;
-        return _recursive();
-      });
-    }
-  }
-
-  var hasSW, messageWaiter, activatedWaiter, reg, list, point, i, bias;
-  return Promise.resolve().then(function () {
-    hasSW = !!navigator.serviceWorker;
-
-    if (!!hasSW) {
-      return Promise.resolve().then(function () {
-        messageWaiter = genWaiter();
-
-        console.log(navigator.serviceWorker);
-        activatedWaiter = Promise.race([Object(__WEBPACK_IMPORTED_MODULE_1_utils__["f" /* promisifyOneTimeEventListener */])(function () {
-          return console.log('controllerchange');
-        }, navigator.serviceWorker, 'controllerchange'), Object(__WEBPACK_IMPORTED_MODULE_1_utils__["h" /* sleep */])(3000)]);
-        return navigator.serviceWorker.register('/auto/postmessage-sw.js', { scope: '/auto/' });
-      }).then(function (_resp) {
-        reg = _resp;
-
-        console.log('Registered!', reg);
-        return activatedWaiter;
-      }).then(function () {
-        return Promise.resolve().then(function () {
-          console.log(reg.active.postMessage, 'ready');
-          reg.active.postMessage({
-            text: 'Hi!',
-            port: messageChannel && messageChannel.port2
-          }, [messageChannel && messageChannel.port2]);
-          return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'main-msg-send');
-        }).catch(function (err) {
-          console.error(err);
-          // getting a cloning error in Firefox
-          reg.active.postMessage({
-            text: 'Hi!'
-          });
-          return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 0.5, 'main-msg-send');
-        });
-      }).then(function () {
-        return Promise.race([messageWaiter, Object(__WEBPACK_IMPORTED_MODULE_1_utils__["h" /* sleep */])(3000)]);
-      }).then(function () {
-        list = ['sw-msg-send', 'sw-msg-got', 'main-msg-send', 'main-msg-got'];
-        point = 0;
-        i = list.length - 1;
-        return _recursive();
-      }).then(function () {
-        return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', point / list.length, 'postMessage');
-      }).then(function () {
-        return reg.unregister();
-      }).then(function () {
-        console.log('Unregistered');
-      });
-    }
-  }).then(function () {});
-});
-
-/***/ }),
-/* 62 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_store__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_utils__ = __webpack_require__(7);
-
-
-var list = ['activateEvent', 'activateEvent.waitUntil', 'clients.claim', 'fetchEvent', 'installEvent', 'installEvent.waitUntil', 'navigator.serviceWorker', 'oncontrollerchange', 'self.skipWaiting'];
-function controllerchangeCauseByNormalInstall(evt) {
-  var score, activateWaitUntilScore, _test;
-
-  return Promise.resolve().then(function () {
-    console.log('serviceWorker now has a new activated one');
-    console.log('this event will trigger after installEvent.waitUntil and before activateEvent.waitUntil');
-    _test = !evt;
-
-    if (_test) {
-      return Promise.resolve().then(function () {
-        return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].get('feature', 'oncontrollerchange');
-      }).then(function (_resp) {
-        score = _resp;
-      });
-    }
-  }).then(function () {
-    if (!(_test && parseFloat(score) === 1)) {
-      return Promise.resolve().then(function () {
-        if (_test) {
-          return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 0, 'oncontrollerchange');
-        } else {
-          return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'oncontrollerchange');
-        }
-      }).then(function () {
-        console.log('if has not activate controller, this should be trigger earlier that activated event');
-        return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].get('feature', 'activateEvent.waitUntil');
-      }).then(function (_resp) {
-        activateWaitUntilScore = _resp;
-
-        if (activateWaitUntilScore && parseFloat(activateWaitUntilScore) > 0) {
-          console.error('the activateEvent.waitUntil trigger before oncontrollerchange');
-          return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', activateWaitUntilScore, 'activateEvent.waitUntil');
-        }
-      });
-    }
-  }).then(function () {});
-}
-function genWaiter(fn) {
-  return Promise.race([Object(__WEBPACK_IMPORTED_MODULE_1_utils__["f" /* promisifyOneTimeEventListener */])(fn, navigator.serviceWorker, 'controllerchange'), Object(__WEBPACK_IMPORTED_MODULE_1_utils__["h" /* sleep */])(3000).then(fn)]);
-}
-
-/* harmony default export */ __webpack_exports__["a"] = (function () {
-  function _recursive() {
-    if (i > -1) {
-      return Promise.resolve().then(function () {
-        return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 0, list[i]);
-      }).then(function () {
-        i--;
-        return _recursive();
-      });
-    }
-  }
-
-  function _recursive2() {
-    if (_i < list.length) {
-      return Promise.resolve().then(function () {
-        key = list[_i];
-        return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].get('feature', key);
-      }).then(function (_resp) {
-        score = _resp;
-
-        sum += parseFloat(score);
-        _i++;
-        return _recursive2();
-      });
-    }
-  }
-
-  var i, hasSW, waiter, reg, activateWaitUntilScore, response, clarify, clientsclaimScore, sum, _i, key, score, _test2;
-
-  return Promise.resolve().then(function () {
-    __webpack_require__(56);
-    // init all the feature as zero
-    i = list.length - 1;
-    return _recursive();
-  }).then(function () {
-    // generate waiter for controller change
-    hasSW = !!navigator.serviceWorker;
-
-    if (!!hasSW) {
-      return Promise.resolve().then(function () {
-        return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'navigator.serviceWorker');
-      }).then(function () {
-        navigator.serviceWorker.ready.then(function () {
-          return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'navigator.serviceWorker.ready');
-        });
-        waiter = genWaiter(controllerchangeCauseByNormalInstall);
-        // register test, including install event, controllerchange, activate event
-
-        return navigator.serviceWorker.register('/auto/lifecycle-sw.js', { scope: '/auto/' });
-      }).then(function (_resp) {
-        reg = _resp;
-
-        console.log('Registered!', reg);
-        // wait for actived event fininshed
-        return waiter;
-      }).then(function () {
-        return Object(__WEBPACK_IMPORTED_MODULE_1_utils__["h" /* sleep */])(3000);
-      }).then(function () {
-        return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].get('feature', 'activateEvent.waitUntil');
-      }).then(function (_resp) {
-        activateWaitUntilScore = _resp;
-        return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', (parseFloat(activateWaitUntilScore) || 0) + 0.5, 'activateEvent.waitUntil');
-      }).then(function () {
-        return fetch('/whoareyou.json');
-      }).then(function (_resp) {
-        response = _resp;
-        _test2 = response.ok;
-        // unregister test
-
-        if (_test2) {
-          return Promise.resolve().then(function () {
-            return response.json();
-          }).then(function (_resp) {
-            clarify = _resp;
-
-            console.log('clarify who controll the page', clarify);
-          });
-        }
-      }).then(function () {
-        if (_test2 && clarify['i am'] === 'lifecycle-sw') {
-          return Promise.resolve().then(function () {
-            return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].get('feature', 'clients.claim');
-          }).then(function (_resp) {
-            clientsclaimScore = _resp;
-            return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', (parseFloat(clientsclaimScore) || 0) + 0.5, 'clients.claim');
-          });
-        }
-      }).then(function () {
-        return reg.unregister();
-      }).then(function () {
-        console.log('Unregistered');
-        sum = 0;
-        _i = 0;
-        return _recursive2();
-      }).then(function () {
-        sum /= list.length;
-        return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', sum, 'lifecycle');
-      });
-    }
-  }).then(function () {});
-});
-
-/***/ }),
-/* 63 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_store__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_utils__ = __webpack_require__(7);
-
-
-/* harmony default export */ __webpack_exports__["a"] = (function () {
-  var hasSW, activatedWaiter, reg, tags;
-  return Promise.resolve().then(function () {
-    hasSW = !!navigator.serviceWorker;
-
-    if (!!hasSW) {
-      return Promise.resolve().then(function () {
-        __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 0, 'syncEvent');
-        activatedWaiter = Promise.race([Object(__WEBPACK_IMPORTED_MODULE_1_utils__["f" /* promisifyOneTimeEventListener */])(function () {
-          return console.log('controllerchange');
-        }, navigator.serviceWorker, 'controllerchange'), Object(__WEBPACK_IMPORTED_MODULE_1_utils__["h" /* sleep */])(3000)]);
-        return navigator.serviceWorker.register('/auto/sync-sw.js', { scope: '/auto/' });
-      }).then(function (_resp) {
-        reg = _resp;
-        return activatedWaiter;
-      }).then(function () {
-        return Promise.resolve().then(function () {
-          return reg.sync.getTags();
-        }).then(function (_resp) {
-          tags = _resp;
-
-          if (tags.includes('syncTest')) {
-            console.log("There's already a background sync pending");
-          }
-        }).catch(function (error) {
-          console.error('It broke (probably sync not supported or flag not enabled)');
-          console.error(error.message);
-          return;
-        });
-      }).then(function () {
-        try {
-          reg.sync.register('syncTest');
-          console.log('Sync registered');
-        } catch (error) {
-          console.error('It broke');
-          console.error(error.message);
-        }
-        return Object(__WEBPACK_IMPORTED_MODULE_1_utils__["h" /* sleep */])(1000);
-      }).then(function () {
-        return reg.unregister();
-      });
-    }
-  }).then(function () {});
-});
-
-/***/ }),
-/* 64 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_store__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_utils__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helper__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_raven__ = __webpack_require__(54);
-
-
-
-
-function genRGB(score) {
-  score = Object(__WEBPACK_IMPORTED_MODULE_1_utils__["a" /* isNumeric */])(score) ? score : 0;
-  return [~~(141 - 141 * score), ~~(49 + 101 * score), 24];
-}
-
-/* harmony default export */ __webpack_exports__["a"] = (function () {
-  function _recursive() {
-    if (i < __WEBPACK_IMPORTED_MODULE_2__helper__["b" /* featureKeys */].length) {
-      return Promise.resolve().then(function () {
-        key = __WEBPACK_IMPORTED_MODULE_2__helper__["b" /* featureKeys */][i];
-        return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].get('feature', key);
-      }).then(function (_resp) {
-        scoreStr = _resp;
-        isNote = scoreStr && !Object(__WEBPACK_IMPORTED_MODULE_1_utils__["a" /* isNumeric */])(scoreStr);
-        score = isNote ? scoreStr : parseFloat(scoreStr || 0);
-        _rgb = isNote ? [0, 0, 0] : genRGB(score);
-
-        fullScore = isNote ? fullScore : fullScore + 1;
-        totalScore = isNote ? totalScore : totalScore + score;
-        li = '\n    <tr style="color: rgb(' + _rgb.toString() + ')">\n      <td class="key">' + key + '</td>\n      <td class="' + (isNote ? 'note' : 'score') + '">' + (isNote ? score : score * 100) + '</td>\n    </tr>\n    ';
-
-        result[key] = score;
-        resultHTML += li;
-        i++;
-        return _recursive();
-      });
-    }
-  }
-
-  var resultHTML, fullScore, totalScore, result, i, key, scoreStr, isNote, score, _rgb, li, rank, rgb, schedule;
-
-  return Promise.resolve().then(function () {
-    __WEBPACK_IMPORTED_MODULE_2__helper__["c" /* info */].timeoutTimer && clearTimeout(__WEBPACK_IMPORTED_MODULE_2__helper__["c" /* info */].timeoutTimer);
-    document.querySelector('tbody').innerHTML = '';
-    resultHTML = '';
-    fullScore = 0;
-    totalScore = 0;
-    result = {};
-    i = 0;
-    return _recursive();
-  }).then(function () {
-    document.querySelector('.features tbody').innerHTML = resultHTML;
-    rank = totalScore / fullScore;
-    rgb = genRGB(rank);
-
-    document.querySelector('.result').style.backgroundColor = 'rgb(' + rgb.toString() + ')';
-    document.querySelector('.total-score').innerHTML = ~~(rank * 100);
-    return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].get('info', 'schedule');
-  }).then(function (_resp) {
-    schedule = _resp;
-
-    schedule = parseFloat(schedule || 0);
-    schedule = ++schedule;
-    document.querySelector('.schedule span').innerHTML = ~~(schedule / __WEBPACK_IMPORTED_MODULE_2__helper__["c" /* info */].totalSchedule * 100) + '%';
-    return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('info', schedule, 'schedule');
-  }).then(function () {
-    if (schedule !== __WEBPACK_IMPORTED_MODULE_2__helper__["c" /* info */].totalSchedule) {
-      __WEBPACK_IMPORTED_MODULE_2__helper__["c" /* info */].timeoutTimer = setTimeout(function () {
-        __WEBPACK_IMPORTED_MODULE_3_raven__["a" /* default */].setUserContext({ result: result });
-        __WEBPACK_IMPORTED_MODULE_3_raven__["a" /* default */].captureMessage('test-failed-' + Object(__WEBPACK_IMPORTED_MODULE_1_utils__["i" /* uuid */])(), {
-          level: 'warning'
-        });
-        document.querySelector('.schedule').innerHTML = __WEBPACK_IMPORTED_MODULE_2__helper__["e" /* testTips */].fail;
-      }, 15000);
-    }
-  });
-});
-
-/***/ }),
-/* 65 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_store__ = __webpack_require__(8);
-
-/* harmony default export */ __webpack_exports__["a"] = (function () {
-  var hasSW, reg;
-  return Promise.resolve().then(function () {
-    return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].clear('feature');
-  }).then(function () {
-    return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].clear('info');
-  }).then(function () {
-    return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('info', 0, 'schedule');
-  }).then(function () {
-    hasSW = !!navigator.serviceWorker;
-
-    if (!!hasSW) {
-      return Promise.resolve().then(function () {
-        return navigator.serviceWorker.getRegistration();
-      }).then(function (_resp) {
-        reg = _resp;
-
-        if (reg) {
-          return Promise.resolve().then(function () {
-            return reg.unregitster;
-          }).then(function (_resp) {
-            _resp && reg.unregitster();
-          });
-        }
-      });
-    }
-  }).then(function () {});
-});
-
-/***/ }),
-/* 66 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ua_parser_js__ = __webpack_require__(67);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ua_parser_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_ua_parser_js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_store__ = __webpack_require__(8);
-
-
-var parser = new __WEBPACK_IMPORTED_MODULE_0_ua_parser_js___default.a();
-
-var _parser$getResult = parser.getResult(),
-    browser = _parser$getResult.browser,
-    os = _parser$getResult.os,
-    device = _parser$getResult.device;
-
-document.querySelector('.browser span').innerHTML = browser.name + ' ' + browser.version;
-document.querySelector('.os span').innerHTML = os.name + ' ' + os.version;
-document.querySelector('.device span').innerHTML = device.type + ' ' + device.model + ' ' + device.vendor;
-/* harmony default export */ __webpack_exports__["a"] = (function () {
-  return Promise.resolve().then(function () {
-    return __WEBPACK_IMPORTED_MODULE_1_store__["a" /* default */].put('info', JSON.stringify(browser), 'browser');
-  }).then(function () {
-    return __WEBPACK_IMPORTED_MODULE_1_store__["a" /* default */].put('info', JSON.stringify(os), 'os');
-  }).then(function () {
-    return __WEBPACK_IMPORTED_MODULE_1_store__["a" /* default */].put('info', JSON.stringify(device), 'device');
-  }).then(function () {});
-});
-
-/***/ }),
-/* 67 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(module) {var __WEBPACK_AMD_DEFINE_RESULT__;var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-/**
- * UAParser.js v0.7.17
- * Lightweight JavaScript-based User-Agent string parser
- * https://github.com/faisalman/ua-parser-js
- *
- * Copyright © 2012-2016 Faisal Salman <fyzlman@gmail.com>
- * Dual licensed under GPLv2 & MIT
- */
-
-(function (window, undefined) {
-
-    'use strict';
-
-    //////////////
-    // Constants
-    /////////////
-
-
-    var LIBVERSION = '0.7.17',
-        EMPTY = '',
-        UNKNOWN = '?',
-        FUNC_TYPE = 'function',
-        UNDEF_TYPE = 'undefined',
-        OBJ_TYPE = 'object',
-        STR_TYPE = 'string',
-        MAJOR = 'major',
-        // deprecated
-    MODEL = 'model',
-        NAME = 'name',
-        TYPE = 'type',
-        VENDOR = 'vendor',
-        VERSION = 'version',
-        ARCHITECTURE = 'architecture',
-        CONSOLE = 'console',
-        MOBILE = 'mobile',
-        TABLET = 'tablet',
-        SMARTTV = 'smarttv',
-        WEARABLE = 'wearable',
-        EMBEDDED = 'embedded';
-
-    ///////////
-    // Helper
-    //////////
-
-
-    var util = {
-        extend: function extend(regexes, extensions) {
-            var margedRegexes = {};
-            for (var i in regexes) {
-                if (extensions[i] && extensions[i].length % 2 === 0) {
-                    margedRegexes[i] = extensions[i].concat(regexes[i]);
-                } else {
-                    margedRegexes[i] = regexes[i];
-                }
-            }
-            return margedRegexes;
-        },
-        has: function has(str1, str2) {
-            if (typeof str1 === "string") {
-                return str2.toLowerCase().indexOf(str1.toLowerCase()) !== -1;
-            } else {
-                return false;
-            }
-        },
-        lowerize: function lowerize(str) {
-            return str.toLowerCase();
-        },
-        major: function major(version) {
-            return (typeof version === 'undefined' ? 'undefined' : _typeof(version)) === STR_TYPE ? version.replace(/[^\d\.]/g, '').split(".")[0] : undefined;
-        },
-        trim: function trim(str) {
-            return str.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
-        }
-    };
-
-    ///////////////
-    // Map helper
-    //////////////
-
-
-    var mapper = {
-
-        rgx: function rgx(ua, arrays) {
-
-            //var result = {},
-            var i = 0,
-                j,
-                k,
-                p,
-                q,
-                matches,
-                match; //, args = arguments;
-
-            /*// construct object barebones
-            for (p = 0; p < args[1].length; p++) {
-                q = args[1][p];
-                result[typeof q === OBJ_TYPE ? q[0] : q] = undefined;
-            }*/
-
-            // loop through all regexes maps
-            while (i < arrays.length && !matches) {
-
-                var regex = arrays[i],
-                    // even sequence (0,2,4,..)
-                props = arrays[i + 1]; // odd sequence (1,3,5,..)
-                j = k = 0;
-
-                // try matching uastring with regexes
-                while (j < regex.length && !matches) {
-
-                    matches = regex[j++].exec(ua);
-
-                    if (!!matches) {
-                        for (p = 0; p < props.length; p++) {
-                            match = matches[++k];
-                            q = props[p];
-                            // check if given property is actually array
-                            if ((typeof q === 'undefined' ? 'undefined' : _typeof(q)) === OBJ_TYPE && q.length > 0) {
-                                if (q.length == 2) {
-                                    if (_typeof(q[1]) == FUNC_TYPE) {
-                                        // assign modified match
-                                        this[q[0]] = q[1].call(this, match);
-                                    } else {
-                                        // assign given value, ignore regex match
-                                        this[q[0]] = q[1];
-                                    }
-                                } else if (q.length == 3) {
-                                    // check whether function or regex
-                                    if (_typeof(q[1]) === FUNC_TYPE && !(q[1].exec && q[1].test)) {
-                                        // call function (usually string mapper)
-                                        this[q[0]] = match ? q[1].call(this, match, q[2]) : undefined;
-                                    } else {
-                                        // sanitize match using given regex
-                                        this[q[0]] = match ? match.replace(q[1], q[2]) : undefined;
-                                    }
-                                } else if (q.length == 4) {
-                                    this[q[0]] = match ? q[3].call(this, match.replace(q[1], q[2])) : undefined;
-                                }
-                            } else {
-                                this[q] = match ? match : undefined;
-                            }
-                        }
-                    }
-                }
-                i += 2;
-            }
-            // console.log(this);
-            //return this;
-        },
-
-        str: function str(_str, map) {
-
-            for (var i in map) {
-                // check if array
-                if (_typeof(map[i]) === OBJ_TYPE && map[i].length > 0) {
-                    for (var j = 0; j < map[i].length; j++) {
-                        if (util.has(map[i][j], _str)) {
-                            return i === UNKNOWN ? undefined : i;
-                        }
-                    }
-                } else if (util.has(map[i], _str)) {
-                    return i === UNKNOWN ? undefined : i;
-                }
-            }
-            return _str;
-        }
-    };
-
-    ///////////////
-    // String map
-    //////////////
-
-
-    var maps = {
-
-        browser: {
-            oldsafari: {
-                version: {
-                    '1.0': '/8',
-                    '1.2': '/1',
-                    '1.3': '/3',
-                    '2.0': '/412',
-                    '2.0.2': '/416',
-                    '2.0.3': '/417',
-                    '2.0.4': '/419',
-                    '?': '/'
-                }
-            }
-        },
-
-        device: {
-            amazon: {
-                model: {
-                    'Fire Phone': ['SD', 'KF']
-                }
-            },
-            sprint: {
-                model: {
-                    'Evo Shift 4G': '7373KT'
-                },
-                vendor: {
-                    'HTC': 'APA',
-                    'Sprint': 'Sprint'
-                }
-            }
-        },
-
-        os: {
-            windows: {
-                version: {
-                    'ME': '4.90',
-                    'NT 3.11': 'NT3.51',
-                    'NT 4.0': 'NT4.0',
-                    '2000': 'NT 5.0',
-                    'XP': ['NT 5.1', 'NT 5.2'],
-                    'Vista': 'NT 6.0',
-                    '7': 'NT 6.1',
-                    '8': 'NT 6.2',
-                    '8.1': 'NT 6.3',
-                    '10': ['NT 6.4', 'NT 10.0'],
-                    'RT': 'ARM'
-                }
-            }
-        }
-    };
-
-    //////////////
-    // Regex map
-    /////////////
-
-
-    var regexes = {
-
-        browser: [[
-
-        // Presto based
-        /(opera\smini)\/([\w\.-]+)/i, // Opera Mini
-        /(opera\s[mobiletab]+).+version\/([\w\.-]+)/i, // Opera Mobi/Tablet
-        /(opera).+version\/([\w\.]+)/i, // Opera > 9.80
-        /(opera)[\/\s]+([\w\.]+)/i // Opera < 9.80
-        ], [NAME, VERSION], [/(opios)[\/\s]+([\w\.]+)/i // Opera mini on iphone >= 8.0
-        ], [[NAME, 'Opera Mini'], VERSION], [/\s(opr)\/([\w\.]+)/i // Opera Webkit
-        ], [[NAME, 'Opera'], VERSION], [
-
-        // Mixed
-        /(kindle)\/([\w\.]+)/i, // Kindle
-        /(lunascape|maxthon|netfront|jasmine|blazer)[\/\s]?([\w\.]+)*/i,
-        // Lunascape/Maxthon/Netfront/Jasmine/Blazer
-
-        // Trident based
-        /(avant\s|iemobile|slim|baidu)(?:browser)?[\/\s]?([\w\.]*)/i,
-        // Avant/IEMobile/SlimBrowser/Baidu
-        /(?:ms|\()(ie)\s([\w\.]+)/i, // Internet Explorer
-
-        // Webkit/KHTML based
-        /(rekonq)\/([\w\.]+)*/i, // Rekonq
-        /(chromium|flock|rockmelt|midori|epiphany|silk|skyfire|ovibrowser|bolt|iron|vivaldi|iridium|phantomjs|bowser)\/([\w\.-]+)/i
-        // Chromium/Flock/RockMelt/Midori/Epiphany/Silk/Skyfire/Bolt/Iron/Iridium/PhantomJS/Bowser
-        ], [NAME, VERSION], [/(trident).+rv[:\s]([\w\.]+).+like\sgecko/i // IE11
-        ], [[NAME, 'IE'], VERSION], [/(edge)\/((\d+)?[\w\.]+)/i // Microsoft Edge
-        ], [NAME, VERSION], [/(yabrowser)\/([\w\.]+)/i // Yandex
-        ], [[NAME, 'Yandex'], VERSION], [/(puffin)\/([\w\.]+)/i // Puffin
-        ], [[NAME, 'Puffin'], VERSION], [/((?:[\s\/])uc?\s?browser|(?:juc.+)ucweb)[\/\s]?([\w\.]+)/i
-        // UCBrowser
-        ], [[NAME, 'UCBrowser'], VERSION], [/(comodo_dragon)\/([\w\.]+)/i // Comodo Dragon
-        ], [[NAME, /_/g, ' '], VERSION], [/(micromessenger)\/([\w\.]+)/i // WeChat
-        ], [[NAME, 'WeChat'], VERSION], [/(QQ)\/([\d\.]+)/i // QQ, aka ShouQ
-        ], [NAME, VERSION], [/m?(qqbrowser)[\/\s]?([\w\.]+)/i // QQBrowser
-        ], [NAME, VERSION], [/xiaomi\/miuibrowser\/([\w\.]+)/i // MIUI Browser
-        ], [VERSION, [NAME, 'MIUI Browser']], [/;fbav\/([\w\.]+);/i // Facebook App for iOS & Android
-        ], [VERSION, [NAME, 'Facebook']], [/headlesschrome(?:\/([\w\.]+)|\s)/i // Chrome Headless
-        ], [VERSION, [NAME, 'Chrome Headless']], [/\swv\).+(chrome)\/([\w\.]+)/i // Chrome WebView
-        ], [[NAME, /(.+)/, '$1 WebView'], VERSION], [/((?:oculus|samsung)browser)\/([\w\.]+)/i], [[NAME, /(.+(?:g|us))(.+)/, '$1 $2'], VERSION], [// Oculus / Samsung Browser
-
-        /android.+version\/([\w\.]+)\s+(?:mobile\s?safari|safari)*/i // Android Browser
-        ], [VERSION, [NAME, 'Android Browser']], [/(chrome|omniweb|arora|[tizenoka]{5}\s?browser)\/v?([\w\.]+)/i
-        // Chrome/OmniWeb/Arora/Tizen/Nokia
-        ], [NAME, VERSION], [/(dolfin)\/([\w\.]+)/i // Dolphin
-        ], [[NAME, 'Dolphin'], VERSION], [/((?:android.+)crmo|crios)\/([\w\.]+)/i // Chrome for Android/iOS
-        ], [[NAME, 'Chrome'], VERSION], [/(coast)\/([\w\.]+)/i // Opera Coast
-        ], [[NAME, 'Opera Coast'], VERSION], [/fxios\/([\w\.-]+)/i // Firefox for iOS
-        ], [VERSION, [NAME, 'Firefox']], [/version\/([\w\.]+).+?mobile\/\w+\s(safari)/i // Mobile Safari
-        ], [VERSION, [NAME, 'Mobile Safari']], [/version\/([\w\.]+).+?(mobile\s?safari|safari)/i // Safari & Safari Mobile
-        ], [VERSION, NAME], [/webkit.+?(gsa)\/([\w\.]+).+?(mobile\s?safari|safari)(\/[\w\.]+)/i // Google Search Appliance on iOS
-        ], [[NAME, 'GSA'], VERSION], [/webkit.+?(mobile\s?safari|safari)(\/[\w\.]+)/i // Safari < 3.0
-        ], [NAME, [VERSION, mapper.str, maps.browser.oldsafari.version]], [/(konqueror)\/([\w\.]+)/i, // Konqueror
-        /(webkit|khtml)\/([\w\.]+)/i], [NAME, VERSION], [
-
-        // Gecko based
-        /(navigator|netscape)\/([\w\.-]+)/i // Netscape
-        ], [[NAME, 'Netscape'], VERSION], [/(swiftfox)/i, // Swiftfox
-        /(icedragon|iceweasel|camino|chimera|fennec|maemo\sbrowser|minimo|conkeror)[\/\s]?([\w\.\+]+)/i,
-        // IceDragon/Iceweasel/Camino/Chimera/Fennec/Maemo/Minimo/Conkeror
-        /(firefox|seamonkey|k-meleon|icecat|iceape|firebird|phoenix)\/([\w\.-]+)/i,
-        // Firefox/SeaMonkey/K-Meleon/IceCat/IceApe/Firebird/Phoenix
-        /(mozilla)\/([\w\.]+).+rv\:.+gecko\/\d+/i, // Mozilla
-
-        // Other
-        /(polaris|lynx|dillo|icab|doris|amaya|w3m|netsurf|sleipnir)[\/\s]?([\w\.]+)/i,
-        // Polaris/Lynx/Dillo/iCab/Doris/Amaya/w3m/NetSurf/Sleipnir
-        /(links)\s\(([\w\.]+)/i, // Links
-        /(gobrowser)\/?([\w\.]+)*/i, // GoBrowser
-        /(ice\s?browser)\/v?([\w\._]+)/i, // ICE Browser
-        /(mosaic)[\/\s]([\w\.]+)/i // Mosaic
-        ], [NAME, VERSION]
-
-        /* /////////////////////
-        // Media players BEGIN
-        ////////////////////////
-         , [
-         /(apple(?:coremedia|))\/((\d+)[\w\._]+)/i,                          // Generic Apple CoreMedia
-        /(coremedia) v((\d+)[\w\._]+)/i
-        ], [NAME, VERSION], [
-         /(aqualung|lyssna|bsplayer)\/((\d+)?[\w\.-]+)/i                     // Aqualung/Lyssna/BSPlayer
-        ], [NAME, VERSION], [
-         /(ares|ossproxy)\s((\d+)[\w\.-]+)/i                                 // Ares/OSSProxy
-        ], [NAME, VERSION], [
-         /(audacious|audimusicstream|amarok|bass|core|dalvik|gnomemplayer|music on console|nsplayer|psp-internetradioplayer|videos)\/((\d+)[\w\.-]+)/i,
-                                                                            // Audacious/AudiMusicStream/Amarok/BASS/OpenCORE/Dalvik/GnomeMplayer/MoC
-                                                                            // NSPlayer/PSP-InternetRadioPlayer/Videos
-        /(clementine|music player daemon)\s((\d+)[\w\.-]+)/i,               // Clementine/MPD
-        /(lg player|nexplayer)\s((\d+)[\d\.]+)/i,
-        /player\/(nexplayer|lg player)\s((\d+)[\w\.-]+)/i                   // NexPlayer/LG Player
-        ], [NAME, VERSION], [
-        /(nexplayer)\s((\d+)[\w\.-]+)/i                                     // Nexplayer
-        ], [NAME, VERSION], [
-         /(flrp)\/((\d+)[\w\.-]+)/i                                          // Flip Player
-        ], [[NAME, 'Flip Player'], VERSION], [
-         /(fstream|nativehost|queryseekspider|ia-archiver|facebookexternalhit)/i
-                                                                            // FStream/NativeHost/QuerySeekSpider/IA Archiver/facebookexternalhit
-        ], [NAME], [
-         /(gstreamer) souphttpsrc (?:\([^\)]+\)){0,1} libsoup\/((\d+)[\w\.-]+)/i
-                                                                            // Gstreamer
-        ], [NAME, VERSION], [
-         /(htc streaming player)\s[\w_]+\s\/\s((\d+)[\d\.]+)/i,              // HTC Streaming Player
-        /(java|python-urllib|python-requests|wget|libcurl)\/((\d+)[\w\.-_]+)/i,
-                                                                            // Java/urllib/requests/wget/cURL
-        /(lavf)((\d+)[\d\.]+)/i                                             // Lavf (FFMPEG)
-        ], [NAME, VERSION], [
-         /(htc_one_s)\/((\d+)[\d\.]+)/i                                      // HTC One S
-        ], [[NAME, /_/g, ' '], VERSION], [
-         /(mplayer)(?:\s|\/)(?:(?:sherpya-){0,1}svn)(?:-|\s)(r\d+(?:-\d+[\w\.-]+){0,1})/i
-                                                                            // MPlayer SVN
-        ], [NAME, VERSION], [
-         /(mplayer)(?:\s|\/|[unkow-]+)((\d+)[\w\.-]+)/i                      // MPlayer
-        ], [NAME, VERSION], [
-         /(mplayer)/i,                                                       // MPlayer (no other info)
-        /(yourmuze)/i,                                                      // YourMuze
-        /(media player classic|nero showtime)/i                             // Media Player Classic/Nero ShowTime
-        ], [NAME], [
-         /(nero (?:home|scout))\/((\d+)[\w\.-]+)/i                           // Nero Home/Nero Scout
-        ], [NAME, VERSION], [
-         /(nokia\d+)\/((\d+)[\w\.-]+)/i                                      // Nokia
-        ], [NAME, VERSION], [
-         /\s(songbird)\/((\d+)[\w\.-]+)/i                                    // Songbird/Philips-Songbird
-        ], [NAME, VERSION], [
-         /(winamp)3 version ((\d+)[\w\.-]+)/i,                               // Winamp
-        /(winamp)\s((\d+)[\w\.-]+)/i,
-        /(winamp)mpeg\/((\d+)[\w\.-]+)/i
-        ], [NAME, VERSION], [
-         /(ocms-bot|tapinradio|tunein radio|unknown|winamp|inlight radio)/i  // OCMS-bot/tap in radio/tunein/unknown/winamp (no other info)
-                                                                            // inlight radio
-        ], [NAME], [
-         /(quicktime|rma|radioapp|radioclientapplication|soundtap|totem|stagefright|streamium)\/((\d+)[\w\.-]+)/i
-                                                                            // QuickTime/RealMedia/RadioApp/RadioClientApplication/
-                                                                            // SoundTap/Totem/Stagefright/Streamium
-        ], [NAME, VERSION], [
-         /(smp)((\d+)[\d\.]+)/i                                              // SMP
-        ], [NAME, VERSION], [
-         /(vlc) media player - version ((\d+)[\w\.]+)/i,                     // VLC Videolan
-        /(vlc)\/((\d+)[\w\.-]+)/i,
-        /(xbmc|gvfs|xine|xmms|irapp)\/((\d+)[\w\.-]+)/i,                    // XBMC/gvfs/Xine/XMMS/irapp
-        /(foobar2000)\/((\d+)[\d\.]+)/i,                                    // Foobar2000
-        /(itunes)\/((\d+)[\d\.]+)/i                                         // iTunes
-        ], [NAME, VERSION], [
-         /(wmplayer)\/((\d+)[\w\.-]+)/i,                                     // Windows Media Player
-        /(windows-media-player)\/((\d+)[\w\.-]+)/i
-        ], [[NAME, /-/g, ' '], VERSION], [
-         /windows\/((\d+)[\w\.-]+) upnp\/[\d\.]+ dlnadoc\/[\d\.]+ (home media server)/i
-                                                                            // Windows Media Server
-        ], [VERSION, [NAME, 'Windows']], [
-         /(com\.riseupradioalarm)\/((\d+)[\d\.]*)/i                          // RiseUP Radio Alarm
-        ], [NAME, VERSION], [
-         /(rad.io)\s((\d+)[\d\.]+)/i,                                        // Rad.io
-        /(radio.(?:de|at|fr))\s((\d+)[\d\.]+)/i
-        ], [[NAME, 'rad.io'], VERSION]
-         //////////////////////
-        // Media players END
-        ////////////////////*/
-
-        ],
-
-        cpu: [[/(?:(amd|x(?:(?:86|64)[_-])?|wow|win)64)[;\)]/i // AMD64
-        ], [[ARCHITECTURE, 'amd64']], [/(ia32(?=;))/i // IA32 (quicktime)
-        ], [[ARCHITECTURE, util.lowerize]], [/((?:i[346]|x)86)[;\)]/i // IA32
-        ], [[ARCHITECTURE, 'ia32']], [
-
-        // PocketPC mistakenly identified as PowerPC
-        /windows\s(ce|mobile);\sppc;/i], [[ARCHITECTURE, 'arm']], [/((?:ppc|powerpc)(?:64)?)(?:\smac|;|\))/i // PowerPC
-        ], [[ARCHITECTURE, /ower/, '', util.lowerize]], [/(sun4\w)[;\)]/i // SPARC
-        ], [[ARCHITECTURE, 'sparc']], [/((?:avr32|ia64(?=;))|68k(?=\))|arm(?:64|(?=v\d+;))|(?=atmel\s)avr|(?:irix|mips|sparc)(?:64)?(?=;)|pa-risc)/i
-        // IA64, 68K, ARM/64, AVR/32, IRIX/64, MIPS/64, SPARC/64, PA-RISC
-        ], [[ARCHITECTURE, util.lowerize]]],
-
-        device: [[/\((ipad|playbook);[\w\s\);-]+(rim|apple)/i // iPad/PlayBook
-        ], [MODEL, VENDOR, [TYPE, TABLET]], [/applecoremedia\/[\w\.]+ \((ipad)/ // iPad
-        ], [MODEL, [VENDOR, 'Apple'], [TYPE, TABLET]], [/(apple\s{0,1}tv)/i // Apple TV
-        ], [[MODEL, 'Apple TV'], [VENDOR, 'Apple']], [/(archos)\s(gamepad2?)/i, // Archos
-        /(hp).+(touchpad)/i, // HP TouchPad
-        /(hp).+(tablet)/i, // HP Tablet
-        /(kindle)\/([\w\.]+)/i, // Kindle
-        /\s(nook)[\w\s]+build\/(\w+)/i, // Nook
-        /(dell)\s(strea[kpr\s\d]*[\dko])/i // Dell Streak
-        ], [VENDOR, MODEL, [TYPE, TABLET]], [/(kf[A-z]+)\sbuild\/[\w\.]+.*silk\//i // Kindle Fire HD
-        ], [MODEL, [VENDOR, 'Amazon'], [TYPE, TABLET]], [/(sd|kf)[0349hijorstuw]+\sbuild\/[\w\.]+.*silk\//i // Fire Phone
-        ], [[MODEL, mapper.str, maps.device.amazon.model], [VENDOR, 'Amazon'], [TYPE, MOBILE]], [/\((ip[honed|\s\w*]+);.+(apple)/i // iPod/iPhone
-        ], [MODEL, VENDOR, [TYPE, MOBILE]], [/\((ip[honed|\s\w*]+);/i // iPod/iPhone
-        ], [MODEL, [VENDOR, 'Apple'], [TYPE, MOBILE]], [/(blackberry)[\s-]?(\w+)/i, // BlackBerry
-        /(blackberry|benq|palm(?=\-)|sonyericsson|acer|asus|dell|meizu|motorola|polytron)[\s_-]?([\w-]+)*/i,
-        // BenQ/Palm/Sony-Ericsson/Acer/Asus/Dell/Meizu/Motorola/Polytron
-        /(hp)\s([\w\s]+\w)/i, // HP iPAQ
-        /(asus)-?(\w+)/i // Asus
-        ], [VENDOR, MODEL, [TYPE, MOBILE]], [/\(bb10;\s(\w+)/i // BlackBerry 10
-        ], [MODEL, [VENDOR, 'BlackBerry'], [TYPE, MOBILE]], [
-        // Asus Tablets
-        /android.+(transfo[prime\s]{4,10}\s\w+|eeepc|slider\s\w+|nexus 7|padfone)/i], [MODEL, [VENDOR, 'Asus'], [TYPE, TABLET]], [/(sony)\s(tablet\s[ps])\sbuild\//i, // Sony
-        /(sony)?(?:sgp.+)\sbuild\//i], [[VENDOR, 'Sony'], [MODEL, 'Xperia Tablet'], [TYPE, TABLET]], [/android.+\s([c-g]\d{4}|so[-l]\w+)\sbuild\//i], [MODEL, [VENDOR, 'Sony'], [TYPE, MOBILE]], [/\s(ouya)\s/i, // Ouya
-        /(nintendo)\s([wids3u]+)/i // Nintendo
-        ], [VENDOR, MODEL, [TYPE, CONSOLE]], [/android.+;\s(shield)\sbuild/i // Nvidia
-        ], [MODEL, [VENDOR, 'Nvidia'], [TYPE, CONSOLE]], [/(playstation\s[34portablevi]+)/i // Playstation
-        ], [MODEL, [VENDOR, 'Sony'], [TYPE, CONSOLE]], [/(sprint\s(\w+))/i // Sprint Phones
-        ], [[VENDOR, mapper.str, maps.device.sprint.vendor], [MODEL, mapper.str, maps.device.sprint.model], [TYPE, MOBILE]], [/(lenovo)\s?(S(?:5000|6000)+(?:[-][\w+]))/i // Lenovo tablets
-        ], [VENDOR, MODEL, [TYPE, TABLET]], [/(htc)[;_\s-]+([\w\s]+(?=\))|\w+)*/i, // HTC
-        /(zte)-(\w+)*/i, // ZTE
-        /(alcatel|geeksphone|lenovo|nexian|panasonic|(?=;\s)sony)[_\s-]?([\w-]+)*/i
-        // Alcatel/GeeksPhone/Lenovo/Nexian/Panasonic/Sony
-        ], [VENDOR, [MODEL, /_/g, ' '], [TYPE, MOBILE]], [/(nexus\s9)/i // HTC Nexus 9
-        ], [MODEL, [VENDOR, 'HTC'], [TYPE, TABLET]], [/d\/huawei([\w\s-]+)[;\)]/i, /(nexus\s6p)/i // Huawei
-        ], [MODEL, [VENDOR, 'Huawei'], [TYPE, MOBILE]], [/(microsoft);\s(lumia[\s\w]+)/i // Microsoft Lumia
-        ], [VENDOR, MODEL, [TYPE, MOBILE]], [/[\s\(;](xbox(?:\sone)?)[\s\);]/i // Microsoft Xbox
-        ], [MODEL, [VENDOR, 'Microsoft'], [TYPE, CONSOLE]], [/(kin\.[onetw]{3})/i // Microsoft Kin
-        ], [[MODEL, /\./g, ' '], [VENDOR, 'Microsoft'], [TYPE, MOBILE]], [
-
-        // Motorola
-        /\s(milestone|droid(?:[2-4x]|\s(?:bionic|x2|pro|razr))?(:?\s4g)?)[\w\s]+build\//i, /mot[\s-]?(\w+)*/i, /(XT\d{3,4}) build\//i, /(nexus\s6)/i], [MODEL, [VENDOR, 'Motorola'], [TYPE, MOBILE]], [/android.+\s(mz60\d|xoom[\s2]{0,2})\sbuild\//i], [MODEL, [VENDOR, 'Motorola'], [TYPE, TABLET]], [/hbbtv\/\d+\.\d+\.\d+\s+\([\w\s]*;\s*(\w[^;]*);([^;]*)/i // HbbTV devices
-        ], [[VENDOR, util.trim], [MODEL, util.trim], [TYPE, SMARTTV]], [/hbbtv.+maple;(\d+)/i], [[MODEL, /^/, 'SmartTV'], [VENDOR, 'Samsung'], [TYPE, SMARTTV]], [/\(dtv[\);].+(aquos)/i // Sharp
-        ], [MODEL, [VENDOR, 'Sharp'], [TYPE, SMARTTV]], [/android.+((sch-i[89]0\d|shw-m380s|gt-p\d{4}|gt-n\d+|sgh-t8[56]9|nexus 10))/i, /((SM-T\w+))/i], [[VENDOR, 'Samsung'], MODEL, [TYPE, TABLET]], [// Samsung
-        /smart-tv.+(samsung)/i], [VENDOR, [TYPE, SMARTTV], MODEL], [/((s[cgp]h-\w+|gt-\w+|galaxy\snexus|sm-\w[\w\d]+))/i, /(sam[sung]*)[\s-]*(\w+-?[\w-]*)*/i, /sec-((sgh\w+))/i], [[VENDOR, 'Samsung'], MODEL, [TYPE, MOBILE]], [/sie-(\w+)*/i // Siemens
-        ], [MODEL, [VENDOR, 'Siemens'], [TYPE, MOBILE]], [/(maemo|nokia).*(n900|lumia\s\d+)/i, // Nokia
-        /(nokia)[\s_-]?([\w-]+)*/i], [[VENDOR, 'Nokia'], MODEL, [TYPE, MOBILE]], [/android\s3\.[\s\w;-]{10}(a\d{3})/i // Acer
-        ], [MODEL, [VENDOR, 'Acer'], [TYPE, TABLET]], [/android.+([vl]k\-?\d{3})\s+build/i // LG Tablet
-        ], [MODEL, [VENDOR, 'LG'], [TYPE, TABLET]], [/android\s3\.[\s\w;-]{10}(lg?)-([06cv9]{3,4})/i // LG Tablet
-        ], [[VENDOR, 'LG'], MODEL, [TYPE, TABLET]], [/(lg) netcast\.tv/i // LG SmartTV
-        ], [VENDOR, MODEL, [TYPE, SMARTTV]], [/(nexus\s[45])/i, // LG
-        /lg[e;\s\/-]+(\w+)*/i, /android.+lg(\-?[\d\w]+)\s+build/i], [MODEL, [VENDOR, 'LG'], [TYPE, MOBILE]], [/android.+(ideatab[a-z0-9\-\s]+)/i // Lenovo
-        ], [MODEL, [VENDOR, 'Lenovo'], [TYPE, TABLET]], [/linux;.+((jolla));/i // Jolla
-        ], [VENDOR, MODEL, [TYPE, MOBILE]], [/((pebble))app\/[\d\.]+\s/i // Pebble
-        ], [VENDOR, MODEL, [TYPE, WEARABLE]], [/android.+;\s(oppo)\s?([\w\s]+)\sbuild/i // OPPO
-        ], [VENDOR, MODEL, [TYPE, MOBILE]], [/crkey/i // Google Chromecast
-        ], [[MODEL, 'Chromecast'], [VENDOR, 'Google']], [/android.+;\s(glass)\s\d/i // Google Glass
-        ], [MODEL, [VENDOR, 'Google'], [TYPE, WEARABLE]], [/android.+;\s(pixel c)\s/i // Google Pixel C
-        ], [MODEL, [VENDOR, 'Google'], [TYPE, TABLET]], [/android.+;\s(pixel xl|pixel)\s/i // Google Pixel
-        ], [MODEL, [VENDOR, 'Google'], [TYPE, MOBILE]], [/android.+(\w+)\s+build\/hm\1/i, // Xiaomi Hongmi 'numeric' models
-        /android.+(hm[\s\-_]*note?[\s_]*(?:\d\w)?)\s+build/i, // Xiaomi Hongmi
-        /android.+(mi[\s\-_]*(?:one|one[\s_]plus|note lte)?[\s_]*(?:\d\w)?)\s+build/i, // Xiaomi Mi
-        /android.+(redmi[\s\-_]*(?:note)?(?:[\s_]*[\w\s]+)?)\s+build/i // Redmi Phones
-        ], [[MODEL, /_/g, ' '], [VENDOR, 'Xiaomi'], [TYPE, MOBILE]], [/android.+(mi[\s\-_]*(?:pad)?(?:[\s_]*[\w\s]+)?)\s+build/i // Mi Pad tablets
-        ], [[MODEL, /_/g, ' '], [VENDOR, 'Xiaomi'], [TYPE, TABLET]], [/android.+;\s(m[1-5]\snote)\sbuild/i // Meizu Tablet
-        ], [MODEL, [VENDOR, 'Meizu'], [TYPE, TABLET]], [/android.+a000(1)\s+build/i // OnePlus
-        ], [MODEL, [VENDOR, 'OnePlus'], [TYPE, MOBILE]], [/android.+[;\/]\s*(RCT[\d\w]+)\s+build/i // RCA Tablets
-        ], [MODEL, [VENDOR, 'RCA'], [TYPE, TABLET]], [/android.+[;\/]\s*(Venue[\d\s]*)\s+build/i // Dell Venue Tablets
-        ], [MODEL, [VENDOR, 'Dell'], [TYPE, TABLET]], [/android.+[;\/]\s*(Q[T|M][\d\w]+)\s+build/i // Verizon Tablet
-        ], [MODEL, [VENDOR, 'Verizon'], [TYPE, TABLET]], [/android.+[;\/]\s+(Barnes[&\s]+Noble\s+|BN[RT])(V?.*)\s+build/i // Barnes & Noble Tablet
-        ], [[VENDOR, 'Barnes & Noble'], MODEL, [TYPE, TABLET]], [/android.+[;\/]\s+(TM\d{3}.*\b)\s+build/i // Barnes & Noble Tablet
-        ], [MODEL, [VENDOR, 'NuVision'], [TYPE, TABLET]], [/android.+[;\/]\s*(zte)?.+(k\d{2})\s+build/i // ZTE K Series Tablet
-        ], [[VENDOR, 'ZTE'], MODEL, [TYPE, TABLET]], [/android.+[;\/]\s*(gen\d{3})\s+build.*49h/i // Swiss GEN Mobile
-        ], [MODEL, [VENDOR, 'Swiss'], [TYPE, MOBILE]], [/android.+[;\/]\s*(zur\d{3})\s+build/i // Swiss ZUR Tablet
-        ], [MODEL, [VENDOR, 'Swiss'], [TYPE, TABLET]], [/android.+[;\/]\s*((Zeki)?TB.*\b)\s+build/i // Zeki Tablets
-        ], [MODEL, [VENDOR, 'Zeki'], [TYPE, TABLET]], [/(android).+[;\/]\s+([YR]\d{2}x?.*)\s+build/i, /android.+[;\/]\s+(Dragon[\-\s]+Touch\s+|DT)(.+)\s+build/i // Dragon Touch Tablet
-        ], [[VENDOR, 'Dragon Touch'], MODEL, [TYPE, TABLET]], [/android.+[;\/]\s*(NS-?.+)\s+build/i // Insignia Tablets
-        ], [MODEL, [VENDOR, 'Insignia'], [TYPE, TABLET]], [/android.+[;\/]\s*((NX|Next)-?.+)\s+build/i // NextBook Tablets
-        ], [MODEL, [VENDOR, 'NextBook'], [TYPE, TABLET]], [/android.+[;\/]\s*(Xtreme\_?)?(V(1[045]|2[015]|30|40|60|7[05]|90))\s+build/i], [[VENDOR, 'Voice'], MODEL, [TYPE, MOBILE]], [// Voice Xtreme Phones
-
-        /android.+[;\/]\s*(LVTEL\-?)?(V1[12])\s+build/i // LvTel Phones
-        ], [[VENDOR, 'LvTel'], MODEL, [TYPE, MOBILE]], [/android.+[;\/]\s*(V(100MD|700NA|7011|917G).*\b)\s+build/i // Envizen Tablets
-        ], [MODEL, [VENDOR, 'Envizen'], [TYPE, TABLET]], [/android.+[;\/]\s*(Le[\s\-]+Pan)[\s\-]+(.*\b)\s+build/i // Le Pan Tablets
-        ], [VENDOR, MODEL, [TYPE, TABLET]], [/android.+[;\/]\s*(Trio[\s\-]*.*)\s+build/i // MachSpeed Tablets
-        ], [MODEL, [VENDOR, 'MachSpeed'], [TYPE, TABLET]], [/android.+[;\/]\s*(Trinity)[\-\s]*(T\d{3})\s+build/i // Trinity Tablets
-        ], [VENDOR, MODEL, [TYPE, TABLET]], [/android.+[;\/]\s*TU_(1491)\s+build/i // Rotor Tablets
-        ], [MODEL, [VENDOR, 'Rotor'], [TYPE, TABLET]], [/android.+(KS(.+))\s+build/i // Amazon Kindle Tablets
-        ], [MODEL, [VENDOR, 'Amazon'], [TYPE, TABLET]], [/android.+(Gigaset)[\s\-]+(Q.+)\s+build/i // Gigaset Tablets
-        ], [VENDOR, MODEL, [TYPE, TABLET]], [/\s(tablet|tab)[;\/]/i, // Unidentifiable Tablet
-        /\s(mobile)(?:[;\/]|\ssafari)/i // Unidentifiable Mobile
-        ], [[TYPE, util.lowerize], VENDOR, MODEL], [/(android.+)[;\/].+build/i // Generic Android Device
-        ], [MODEL, [VENDOR, 'Generic']]
-
-        /*//////////////////////////
-            // TODO: move to string map
-            ////////////////////////////
-             /(C6603)/i                                                          // Sony Xperia Z C6603
-            ], [[MODEL, 'Xperia Z C6603'], [VENDOR, 'Sony'], [TYPE, MOBILE]], [
-            /(C6903)/i                                                          // Sony Xperia Z 1
-            ], [[MODEL, 'Xperia Z 1'], [VENDOR, 'Sony'], [TYPE, MOBILE]], [
-             /(SM-G900[F|H])/i                                                   // Samsung Galaxy S5
-            ], [[MODEL, 'Galaxy S5'], [VENDOR, 'Samsung'], [TYPE, MOBILE]], [
-            /(SM-G7102)/i                                                       // Samsung Galaxy Grand 2
-            ], [[MODEL, 'Galaxy Grand 2'], [VENDOR, 'Samsung'], [TYPE, MOBILE]], [
-            /(SM-G530H)/i                                                       // Samsung Galaxy Grand Prime
-            ], [[MODEL, 'Galaxy Grand Prime'], [VENDOR, 'Samsung'], [TYPE, MOBILE]], [
-            /(SM-G313HZ)/i                                                      // Samsung Galaxy V
-            ], [[MODEL, 'Galaxy V'], [VENDOR, 'Samsung'], [TYPE, MOBILE]], [
-            /(SM-T805)/i                                                        // Samsung Galaxy Tab S 10.5
-            ], [[MODEL, 'Galaxy Tab S 10.5'], [VENDOR, 'Samsung'], [TYPE, TABLET]], [
-            /(SM-G800F)/i                                                       // Samsung Galaxy S5 Mini
-            ], [[MODEL, 'Galaxy S5 Mini'], [VENDOR, 'Samsung'], [TYPE, MOBILE]], [
-            /(SM-T311)/i                                                        // Samsung Galaxy Tab 3 8.0
-            ], [[MODEL, 'Galaxy Tab 3 8.0'], [VENDOR, 'Samsung'], [TYPE, TABLET]], [
-             /(T3C)/i                                                            // Advan Vandroid T3C
-            ], [MODEL, [VENDOR, 'Advan'], [TYPE, TABLET]], [
-            /(ADVAN T1J\+)/i                                                    // Advan Vandroid T1J+
-            ], [[MODEL, 'Vandroid T1J+'], [VENDOR, 'Advan'], [TYPE, TABLET]], [
-            /(ADVAN S4A)/i                                                      // Advan Vandroid S4A
-            ], [[MODEL, 'Vandroid S4A'], [VENDOR, 'Advan'], [TYPE, MOBILE]], [
-             /(V972M)/i                                                          // ZTE V972M
-            ], [MODEL, [VENDOR, 'ZTE'], [TYPE, MOBILE]], [
-             /(i-mobile)\s(IQ\s[\d\.]+)/i                                        // i-mobile IQ
-            ], [VENDOR, MODEL, [TYPE, MOBILE]], [
-            /(IQ6.3)/i                                                          // i-mobile IQ IQ 6.3
-            ], [[MODEL, 'IQ 6.3'], [VENDOR, 'i-mobile'], [TYPE, MOBILE]], [
-            /(i-mobile)\s(i-style\s[\d\.]+)/i                                   // i-mobile i-STYLE
-            ], [VENDOR, MODEL, [TYPE, MOBILE]], [
-            /(i-STYLE2.1)/i                                                     // i-mobile i-STYLE 2.1
-            ], [[MODEL, 'i-STYLE 2.1'], [VENDOR, 'i-mobile'], [TYPE, MOBILE]], [
-             /(mobiistar touch LAI 512)/i                                        // mobiistar touch LAI 512
-            ], [[MODEL, 'Touch LAI 512'], [VENDOR, 'mobiistar'], [TYPE, MOBILE]], [
-             /////////////
-            // END TODO
-            ///////////*/
-
-        ],
-
-        engine: [[/windows.+\sedge\/([\w\.]+)/i // EdgeHTML
-        ], [VERSION, [NAME, 'EdgeHTML']], [/(presto)\/([\w\.]+)/i, // Presto
-        /(webkit|trident|netfront|netsurf|amaya|lynx|w3m)\/([\w\.]+)/i, // WebKit/Trident/NetFront/NetSurf/Amaya/Lynx/w3m
-        /(khtml|tasman|links)[\/\s]\(?([\w\.]+)/i, // KHTML/Tasman/Links
-        /(icab)[\/\s]([23]\.[\d\.]+)/i // iCab
-        ], [NAME, VERSION], [/rv\:([\w\.]+).*(gecko)/i // Gecko
-        ], [VERSION, NAME]],
-
-        os: [[
-
-        // Windows based
-        /microsoft\s(windows)\s(vista|xp)/i // Windows (iTunes)
-        ], [NAME, VERSION], [/(windows)\snt\s6\.2;\s(arm)/i, // Windows RT
-        /(windows\sphone(?:\sos)*)[\s\/]?([\d\.\s]+\w)*/i, // Windows Phone
-        /(windows\smobile|windows)[\s\/]?([ntce\d\.\s]+\w)/i], [NAME, [VERSION, mapper.str, maps.os.windows.version]], [/(win(?=3|9|n)|win\s9x\s)([nt\d\.]+)/i], [[NAME, 'Windows'], [VERSION, mapper.str, maps.os.windows.version]], [
-
-        // Mobile/Embedded OS
-        /\((bb)(10);/i // BlackBerry 10
-        ], [[NAME, 'BlackBerry'], VERSION], [/(blackberry)\w*\/?([\w\.]+)*/i, // Blackberry
-        /(tizen)[\/\s]([\w\.]+)/i, // Tizen
-        /(android|webos|palm\sos|qnx|bada|rim\stablet\sos|meego|contiki)[\/\s-]?([\w\.]+)*/i,
-        // Android/WebOS/Palm/QNX/Bada/RIM/MeeGo/Contiki
-        /linux;.+(sailfish);/i // Sailfish OS
-        ], [NAME, VERSION], [/(symbian\s?os|symbos|s60(?=;))[\/\s-]?([\w\.]+)*/i // Symbian
-        ], [[NAME, 'Symbian'], VERSION], [/\((series40);/i // Series 40
-        ], [NAME], [/mozilla.+\(mobile;.+gecko.+firefox/i // Firefox OS
-        ], [[NAME, 'Firefox OS'], VERSION], [
-
-        // Console
-        /(nintendo|playstation)\s([wids34portablevu]+)/i, // Nintendo/Playstation
-
-        // GNU/Linux based
-        /(mint)[\/\s\(]?(\w+)*/i, // Mint
-        /(mageia|vectorlinux)[;\s]/i, // Mageia/VectorLinux
-        /(joli|[kxln]?ubuntu|debian|[open]*suse|gentoo|(?=\s)arch|slackware|fedora|mandriva|centos|pclinuxos|redhat|zenwalk|linpus)[\/\s-]?(?!chrom)([\w\.-]+)*/i,
-        // Joli/Ubuntu/Debian/SUSE/Gentoo/Arch/Slackware
-        // Fedora/Mandriva/CentOS/PCLinuxOS/RedHat/Zenwalk/Linpus
-        /(hurd|linux)\s?([\w\.]+)*/i, // Hurd/Linux
-        /(gnu)\s?([\w\.]+)*/i // GNU
-        ], [NAME, VERSION], [/(cros)\s[\w]+\s([\w\.]+\w)/i // Chromium OS
-        ], [[NAME, 'Chromium OS'], VERSION], [
-
-        // Solaris
-        /(sunos)\s?([\w\.]+\d)*/i // Solaris
-        ], [[NAME, 'Solaris'], VERSION], [
-
-        // BSD based
-        /\s([frentopc-]{0,4}bsd|dragonfly)\s?([\w\.]+)*/i // FreeBSD/NetBSD/OpenBSD/PC-BSD/DragonFly
-        ], [NAME, VERSION], [/(haiku)\s(\w+)/i // Haiku
-        ], [NAME, VERSION], [/cfnetwork\/.+darwin/i, /ip[honead]+(?:.*os\s([\w]+)\slike\smac|;\sopera)/i // iOS
-        ], [[VERSION, /_/g, '.'], [NAME, 'iOS']], [/(mac\sos\sx)\s?([\w\s\.]+\w)*/i, /(macintosh|mac(?=_powerpc)\s)/i // Mac OS
-        ], [[NAME, 'Mac OS'], [VERSION, /_/g, '.']], [
-
-        // Other
-        /((?:open)?solaris)[\/\s-]?([\w\.]+)*/i, // Solaris
-        /(aix)\s((\d)(?=\.|\)|\s)[\w\.]*)*/i, // AIX
-        /(plan\s9|minix|beos|os\/2|amigaos|morphos|risc\sos|openvms)/i,
-        // Plan9/Minix/BeOS/OS2/AmigaOS/MorphOS/RISCOS/OpenVMS
-        /(unix)\s?([\w\.]+)*/i // UNIX
-        ], [NAME, VERSION]]
-    };
-
-    /////////////////
-    // Constructor
-    ////////////////
-    /*
-    var Browser = function (name, version) {
-        this[NAME] = name;
-        this[VERSION] = version;
-    };
-    var CPU = function (arch) {
-        this[ARCHITECTURE] = arch;
-    };
-    var Device = function (vendor, model, type) {
-        this[VENDOR] = vendor;
-        this[MODEL] = model;
-        this[TYPE] = type;
-    };
-    var Engine = Browser;
-    var OS = Browser;
-    */
-    var UAParser = function UAParser(uastring, extensions) {
-
-        if ((typeof uastring === 'undefined' ? 'undefined' : _typeof(uastring)) === 'object') {
-            extensions = uastring;
-            uastring = undefined;
-        }
-
-        if (!(this instanceof UAParser)) {
-            return new UAParser(uastring, extensions).getResult();
-        }
-
-        var ua = uastring || (window && window.navigator && window.navigator.userAgent ? window.navigator.userAgent : EMPTY);
-        var rgxmap = extensions ? util.extend(regexes, extensions) : regexes;
-        //var browser = new Browser();
-        //var cpu = new CPU();
-        //var device = new Device();
-        //var engine = new Engine();
-        //var os = new OS();
-
-        this.getBrowser = function () {
-            var browser = { name: undefined, version: undefined };
-            mapper.rgx.call(browser, ua, rgxmap.browser);
-            browser.major = util.major(browser.version); // deprecated
-            return browser;
-        };
-        this.getCPU = function () {
-            var cpu = { architecture: undefined };
-            mapper.rgx.call(cpu, ua, rgxmap.cpu);
-            return cpu;
-        };
-        this.getDevice = function () {
-            var device = { vendor: undefined, model: undefined, type: undefined };
-            mapper.rgx.call(device, ua, rgxmap.device);
-            return device;
-        };
-        this.getEngine = function () {
-            var engine = { name: undefined, version: undefined };
-            mapper.rgx.call(engine, ua, rgxmap.engine);
-            return engine;
-        };
-        this.getOS = function () {
-            var os = { name: undefined, version: undefined };
-            mapper.rgx.call(os, ua, rgxmap.os);
-            return os;
-        };
-        this.getResult = function () {
-            return {
-                ua: this.getUA(),
-                browser: this.getBrowser(),
-                engine: this.getEngine(),
-                os: this.getOS(),
-                device: this.getDevice(),
-                cpu: this.getCPU()
-            };
-        };
-        this.getUA = function () {
-            return ua;
-        };
-        this.setUA = function (uastring) {
-            ua = uastring;
-            //browser = new Browser();
-            //cpu = new CPU();
-            //device = new Device();
-            //engine = new Engine();
-            //os = new OS();
-            return this;
-        };
-        return this;
-    };
-
-    UAParser.VERSION = LIBVERSION;
-    UAParser.BROWSER = {
-        NAME: NAME,
-        MAJOR: MAJOR, // deprecated
-        VERSION: VERSION
-    };
-    UAParser.CPU = {
-        ARCHITECTURE: ARCHITECTURE
-    };
-    UAParser.DEVICE = {
-        MODEL: MODEL,
-        VENDOR: VENDOR,
-        TYPE: TYPE,
-        CONSOLE: CONSOLE,
-        MOBILE: MOBILE,
-        SMARTTV: SMARTTV,
-        TABLET: TABLET,
-        WEARABLE: WEARABLE,
-        EMBEDDED: EMBEDDED
-    };
-    UAParser.ENGINE = {
-        NAME: NAME,
-        VERSION: VERSION
-    };
-    UAParser.OS = {
-        NAME: NAME,
-        VERSION: VERSION
-    };
-    //UAParser.Utils = util;
-
-    ///////////
-    // Export
-    //////////
-
-
-    // check js environment
-    if (( false ? 'undefined' : _typeof(exports)) !== UNDEF_TYPE) {
-        // nodejs env
-        if (( false ? 'undefined' : _typeof(module)) !== UNDEF_TYPE && module.exports) {
-            exports = module.exports = UAParser;
-        }
-        // TODO: test!!!!!!!!
-        /*
-        if (require && require.main === module && process) {
-            // cli
-            var jsonize = function (arr) {
-                var res = [];
-                for (var i in arr) {
-                    res.push(new UAParser(arr[i]).getResult());
-                }
-                process.stdout.write(JSON.stringify(res, null, 2) + '\n');
-            };
-            if (process.stdin.isTTY) {
-                // via args
-                jsonize(process.argv.slice(2));
-            } else {
-                // via pipe
-                var str = '';
-                process.stdin.on('readable', function() {
-                    var read = process.stdin.read();
-                    if (read !== null) {
-                        str += read;
-                    }
-                });
-                process.stdin.on('end', function () {
-                    jsonize(str.replace(/\n$/, '').split('\n'));
-                });
-            }
-        }
-        */
-        exports.UAParser = UAParser;
-    } else {
-        // requirejs env (optional)
-        if (( false ? 'undefined' : _typeof(__webpack_require__(68))) === FUNC_TYPE && __webpack_require__(69)) {
-            !(__WEBPACK_AMD_DEFINE_RESULT__ = (function () {
-                return UAParser;
-            }).call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-        } else if (window) {
-            // browser env
-            window.UAParser = UAParser;
-        }
-    }
-
-    // jQuery/Zepto specific (optional)
-    // Note:
-    //   In AMD env the global scope should be kept clean, but jQuery is an exception.
-    //   jQuery always exports to global scope, unless jQuery.noConflict(true) is used,
-    //   and we should catch that.
-    var $ = window && (window.jQuery || window.Zepto);
-    if ((typeof $ === 'undefined' ? 'undefined' : _typeof($)) !== UNDEF_TYPE) {
-        var parser = new UAParser();
-        $.ua = parser.getResult();
-        $.ua.get = function () {
-            return parser.getUA();
-        };
-        $.ua.set = function (uastring) {
-            parser.setUA(uastring);
-            var result = parser.getResult();
-            for (var prop in result) {
-                $.ua[prop] = result[prop];
-            }
-        };
-    }
-})((typeof window === 'undefined' ? 'undefined' : _typeof(window)) === 'object' ? window : this);
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(55)(module)))
-
-/***/ }),
-/* 68 */
-/***/ (function(module, exports) {
-
-module.exports = function() {
-	throw new Error("define cannot be used indirect");
-};
-
-
-/***/ }),
-/* 69 */
-/***/ (function(module, exports) {
-
-/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {/* globals __webpack_amd_options__ */
-module.exports = __webpack_amd_options__;
-
-/* WEBPACK VAR INJECTION */}.call(exports, {}))
-
-/***/ }),
-/* 70 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helper__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_utils__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_store__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_clipboard__ = __webpack_require__(71);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_clipboard___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_clipboard__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_sweetalert__ = __webpack_require__(79);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_sweetalert___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_sweetalert__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_raven__ = __webpack_require__(54);
-
-
-
-
-
-
-/* harmony default export */ __webpack_exports__["a"] = (function () {
-  function setSummary(kind, keys) {
-    function _recursive() {
-      var _test;
-
-      return Promise.resolve().then(function () {
-        _test = i < keys.length;
-
-        if (_test) {
-          return Promise.resolve().then(function () {
-            key = keys[i];
-            return __WEBPACK_IMPORTED_MODULE_2_store__["a" /* default */].get(kind, key);
-          }).then(function (_resp) {
-            score = _resp;
-          });
-        }
-      }).then(function () {
-        if (_test && Object(__WEBPACK_IMPORTED_MODULE_1_utils__["a" /* isNumeric */])(score)) {
-          summary[kind][key] = parseFloat(score);
-        } else {
-          if (_test) {
-            try {
-              summary[kind][key] = JSON.parse(score);
-            } catch (error) {
-              summary[kind][key] = score;
-            }
-          }
-        }
-
-        if (_test) {
-          i++;
-          return _recursive();
-        }
-      });
-    }
-
-    var i, key, score;
-    return Promise.resolve().then(function () {
-      i = 0;
-      return _recursive();
-    }).then(function () {});
-  }
-  var summary, json, clipboard;
-  return Promise.resolve().then(function () {
-    summary = {
-      info: {},
-      feature: {}
-    };
-    return setSummary('info', __WEBPACK_IMPORTED_MODULE_0__helper__["d" /* infoKeys */]);
-  }).then(function () {
-    return setSummary('feature', __WEBPACK_IMPORTED_MODULE_0__helper__["b" /* featureKeys */]);
-  }).then(function () {
-    json = JSON.stringify(summary, null, 2);
-
-    document.querySelector('.summary code').innerHTML = json;
-    clipboard = new __WEBPACK_IMPORTED_MODULE_3_clipboard___default.a(document.querySelector('.summary button'), {
-      text: function text() {
-        return json;
-      }
-    });
-
-    clipboard.on('success', function () {
-      return __WEBPACK_IMPORTED_MODULE_4_sweetalert___default()({
-        title: __WEBPACK_IMPORTED_MODULE_0__helper__["a" /* copyTips */].success.title,
-        type: 'success',
-        showCancelButton: true,
-        confirmButtonText: __WEBPACK_IMPORTED_MODULE_0__helper__["a" /* copyTips */].success.confirmButtonText
-      }, function (isConfirm) {
-        if (isConfirm) {
-          location.href = 'https://github.com/toxic-johann/is-pwa-ready/issues';
-        }
-      });
-    });
-    clipboard.on('error', function () {
-      return __WEBPACK_IMPORTED_MODULE_4_sweetalert___default()({
-        title: __WEBPACK_IMPORTED_MODULE_0__helper__["a" /* copyTips */].error.title,
-        text: __WEBPACK_IMPORTED_MODULE_0__helper__["a" /* copyTips */].error.text,
-        type: 'error'
-      });
-    });
-    document.querySelector('.summary').classList.add('show');
-    __WEBPACK_IMPORTED_MODULE_5_raven__["a" /* default */].setUserContext(summary);
-    __WEBPACK_IMPORTED_MODULE_5_raven__["a" /* default */].captureMessage('test-result-' + Object(__WEBPACK_IMPORTED_MODULE_1_utils__["i" /* uuid */])(), {
-      level: 'info'
-    });
-    return summary;
-  });
-});
-
-/***/ }),
-/* 71 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var _typeof2 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-(function (global, factory) {
-    if (true) {
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [module, __webpack_require__(72), __webpack_require__(74), __webpack_require__(75)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
-				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-    } else if (typeof exports !== "undefined") {
-        factory(module, require('./clipboard-action'), require('tiny-emitter'), require('good-listener'));
-    } else {
-        var mod = {
-            exports: {}
-        };
-        factory(mod, global.clipboardAction, global.tinyEmitter, global.goodListener);
-        global.clipboard = mod.exports;
-    }
-})(this, function (module, _clipboardAction, _tinyEmitter, _goodListener) {
-    'use strict';
-
-    var _clipboardAction2 = _interopRequireDefault(_clipboardAction);
-
-    var _tinyEmitter2 = _interopRequireDefault(_tinyEmitter);
-
-    var _goodListener2 = _interopRequireDefault(_goodListener);
-
-    function _interopRequireDefault(obj) {
-        return obj && obj.__esModule ? obj : {
-            default: obj
-        };
-    }
-
-    var _typeof = typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol" ? function (obj) {
-        return typeof obj === 'undefined' ? 'undefined' : _typeof2(obj);
-    } : function (obj) {
-        return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof2(obj);
-    };
-
-    function _classCallCheck(instance, Constructor) {
-        if (!(instance instanceof Constructor)) {
-            throw new TypeError("Cannot call a class as a function");
-        }
-    }
-
-    var _createClass = function () {
-        function defineProperties(target, props) {
-            for (var i = 0; i < props.length; i++) {
-                var descriptor = props[i];
-                descriptor.enumerable = descriptor.enumerable || false;
-                descriptor.configurable = true;
-                if ("value" in descriptor) descriptor.writable = true;
-                Object.defineProperty(target, descriptor.key, descriptor);
-            }
-        }
-
-        return function (Constructor, protoProps, staticProps) {
-            if (protoProps) defineProperties(Constructor.prototype, protoProps);
-            if (staticProps) defineProperties(Constructor, staticProps);
-            return Constructor;
-        };
-    }();
-
-    function _possibleConstructorReturn(self, call) {
-        if (!self) {
-            throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-        }
-
-        return call && ((typeof call === 'undefined' ? 'undefined' : _typeof2(call)) === "object" || typeof call === "function") ? call : self;
-    }
-
-    function _inherits(subClass, superClass) {
-        if (typeof superClass !== "function" && superClass !== null) {
-            throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === 'undefined' ? 'undefined' : _typeof2(superClass)));
-        }
-
-        subClass.prototype = Object.create(superClass && superClass.prototype, {
-            constructor: {
-                value: subClass,
-                enumerable: false,
-                writable: true,
-                configurable: true
-            }
-        });
-        if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-    }
-
-    var Clipboard = function (_Emitter) {
-        _inherits(Clipboard, _Emitter);
-
-        /**
-         * @param {String|HTMLElement|HTMLCollection|NodeList} trigger
-         * @param {Object} options
-         */
-        function Clipboard(trigger, options) {
-            _classCallCheck(this, Clipboard);
-
-            var _this = _possibleConstructorReturn(this, (Clipboard.__proto__ || Object.getPrototypeOf(Clipboard)).call(this));
-
-            _this.resolveOptions(options);
-            _this.listenClick(trigger);
-            return _this;
-        }
-
-        /**
-         * Defines if attributes would be resolved using internal setter functions
-         * or custom functions that were passed in the constructor.
-         * @param {Object} options
-         */
-
-        _createClass(Clipboard, [{
-            key: 'resolveOptions',
-            value: function resolveOptions() {
-                var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-
-                this.action = typeof options.action === 'function' ? options.action : this.defaultAction;
-                this.target = typeof options.target === 'function' ? options.target : this.defaultTarget;
-                this.text = typeof options.text === 'function' ? options.text : this.defaultText;
-                this.container = _typeof(options.container) === 'object' ? options.container : document.body;
-            }
-        }, {
-            key: 'listenClick',
-            value: function listenClick(trigger) {
-                var _this2 = this;
-
-                this.listener = (0, _goodListener2.default)(trigger, 'click', function (e) {
-                    return _this2.onClick(e);
-                });
-            }
-        }, {
-            key: 'onClick',
-            value: function onClick(e) {
-                var trigger = e.delegateTarget || e.currentTarget;
-
-                if (this.clipboardAction) {
-                    this.clipboardAction = null;
-                }
-
-                this.clipboardAction = new _clipboardAction2.default({
-                    action: this.action(trigger),
-                    target: this.target(trigger),
-                    text: this.text(trigger),
-                    container: this.container,
-                    trigger: trigger,
-                    emitter: this
-                });
-            }
-        }, {
-            key: 'defaultAction',
-            value: function defaultAction(trigger) {
-                return getAttributeValue('action', trigger);
-            }
-        }, {
-            key: 'defaultTarget',
-            value: function defaultTarget(trigger) {
-                var selector = getAttributeValue('target', trigger);
-
-                if (selector) {
-                    return document.querySelector(selector);
-                }
-            }
-        }, {
-            key: 'defaultText',
-            value: function defaultText(trigger) {
-                return getAttributeValue('text', trigger);
-            }
-        }, {
-            key: 'destroy',
-            value: function destroy() {
-                this.listener.destroy();
-
-                if (this.clipboardAction) {
-                    this.clipboardAction.destroy();
-                    this.clipboardAction = null;
-                }
-            }
-        }], [{
-            key: 'isSupported',
-            value: function isSupported() {
-                var action = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : ['copy', 'cut'];
-
-                var actions = typeof action === 'string' ? [action] : action;
-                var support = !!document.queryCommandSupported;
-
-                actions.forEach(function (action) {
-                    support = support && !!document.queryCommandSupported(action);
-                });
-
-                return support;
-            }
-        }]);
-
-        return Clipboard;
-    }(_tinyEmitter2.default);
-
-    /**
-     * Helper function to retrieve attribute value.
-     * @param {String} suffix
-     * @param {Element} element
-     */
-    function getAttributeValue(suffix, element) {
-        var attribute = 'data-clipboard-' + suffix;
-
-        if (!element.hasAttribute(attribute)) {
-            return;
-        }
-
-        return element.getAttribute(attribute);
-    }
-
-    module.exports = Clipboard;
-});
-
-/***/ }),
-/* 72 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var _typeof2 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-(function (global, factory) {
-    if (true) {
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [module, __webpack_require__(73)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
-				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-    } else if (typeof exports !== "undefined") {
-        factory(module, require('select'));
-    } else {
-        var mod = {
-            exports: {}
-        };
-        factory(mod, global.select);
-        global.clipboardAction = mod.exports;
-    }
-})(this, function (module, _select) {
-    'use strict';
-
-    var _select2 = _interopRequireDefault(_select);
-
-    function _interopRequireDefault(obj) {
-        return obj && obj.__esModule ? obj : {
-            default: obj
-        };
-    }
-
-    var _typeof = typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol" ? function (obj) {
-        return typeof obj === 'undefined' ? 'undefined' : _typeof2(obj);
-    } : function (obj) {
-        return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof2(obj);
-    };
-
-    function _classCallCheck(instance, Constructor) {
-        if (!(instance instanceof Constructor)) {
-            throw new TypeError("Cannot call a class as a function");
-        }
-    }
-
-    var _createClass = function () {
-        function defineProperties(target, props) {
-            for (var i = 0; i < props.length; i++) {
-                var descriptor = props[i];
-                descriptor.enumerable = descriptor.enumerable || false;
-                descriptor.configurable = true;
-                if ("value" in descriptor) descriptor.writable = true;
-                Object.defineProperty(target, descriptor.key, descriptor);
-            }
-        }
-
-        return function (Constructor, protoProps, staticProps) {
-            if (protoProps) defineProperties(Constructor.prototype, protoProps);
-            if (staticProps) defineProperties(Constructor, staticProps);
-            return Constructor;
-        };
-    }();
-
-    var ClipboardAction = function () {
-        /**
-         * @param {Object} options
-         */
-        function ClipboardAction(options) {
-            _classCallCheck(this, ClipboardAction);
-
-            this.resolveOptions(options);
-            this.initSelection();
-        }
-
-        /**
-         * Defines base properties passed from constructor.
-         * @param {Object} options
-         */
-
-        _createClass(ClipboardAction, [{
-            key: 'resolveOptions',
-            value: function resolveOptions() {
-                var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-
-                this.action = options.action;
-                this.container = options.container;
-                this.emitter = options.emitter;
-                this.target = options.target;
-                this.text = options.text;
-                this.trigger = options.trigger;
-
-                this.selectedText = '';
-            }
-        }, {
-            key: 'initSelection',
-            value: function initSelection() {
-                if (this.text) {
-                    this.selectFake();
-                } else if (this.target) {
-                    this.selectTarget();
-                }
-            }
-        }, {
-            key: 'selectFake',
-            value: function selectFake() {
-                var _this = this;
-
-                var isRTL = document.documentElement.getAttribute('dir') == 'rtl';
-
-                this.removeFake();
-
-                this.fakeHandlerCallback = function () {
-                    return _this.removeFake();
-                };
-                this.fakeHandler = this.container.addEventListener('click', this.fakeHandlerCallback) || true;
-
-                this.fakeElem = document.createElement('textarea');
-                // Prevent zooming on iOS
-                this.fakeElem.style.fontSize = '12pt';
-                // Reset box model
-                this.fakeElem.style.border = '0';
-                this.fakeElem.style.padding = '0';
-                this.fakeElem.style.margin = '0';
-                // Move element out of screen horizontally
-                this.fakeElem.style.position = 'absolute';
-                this.fakeElem.style[isRTL ? 'right' : 'left'] = '-9999px';
-                // Move element to the same position vertically
-                var yPosition = window.pageYOffset || document.documentElement.scrollTop;
-                this.fakeElem.style.top = yPosition + 'px';
-
-                this.fakeElem.setAttribute('readonly', '');
-                this.fakeElem.value = this.text;
-
-                this.container.appendChild(this.fakeElem);
-
-                this.selectedText = (0, _select2.default)(this.fakeElem);
-                this.copyText();
-            }
-        }, {
-            key: 'removeFake',
-            value: function removeFake() {
-                if (this.fakeHandler) {
-                    this.container.removeEventListener('click', this.fakeHandlerCallback);
-                    this.fakeHandler = null;
-                    this.fakeHandlerCallback = null;
-                }
-
-                if (this.fakeElem) {
-                    this.container.removeChild(this.fakeElem);
-                    this.fakeElem = null;
-                }
-            }
-        }, {
-            key: 'selectTarget',
-            value: function selectTarget() {
-                this.selectedText = (0, _select2.default)(this.target);
-                this.copyText();
-            }
-        }, {
-            key: 'copyText',
-            value: function copyText() {
-                var succeeded = void 0;
-
-                try {
-                    succeeded = document.execCommand(this.action);
-                } catch (err) {
-                    succeeded = false;
-                }
-
-                this.handleResult(succeeded);
-            }
-        }, {
-            key: 'handleResult',
-            value: function handleResult(succeeded) {
-                this.emitter.emit(succeeded ? 'success' : 'error', {
-                    action: this.action,
-                    text: this.selectedText,
-                    trigger: this.trigger,
-                    clearSelection: this.clearSelection.bind(this)
-                });
-            }
-        }, {
-            key: 'clearSelection',
-            value: function clearSelection() {
-                if (this.trigger) {
-                    this.trigger.focus();
-                }
-
-                window.getSelection().removeAllRanges();
-            }
-        }, {
-            key: 'destroy',
-            value: function destroy() {
-                this.removeFake();
-            }
-        }, {
-            key: 'action',
-            set: function set() {
-                var action = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'copy';
-
-                this._action = action;
-
-                if (this._action !== 'copy' && this._action !== 'cut') {
-                    throw new Error('Invalid "action" value, use either "copy" or "cut"');
-                }
-            },
-            get: function get() {
-                return this._action;
-            }
-        }, {
-            key: 'target',
-            set: function set(target) {
-                if (target !== undefined) {
-                    if (target && (typeof target === 'undefined' ? 'undefined' : _typeof(target)) === 'object' && target.nodeType === 1) {
-                        if (this.action === 'copy' && target.hasAttribute('disabled')) {
-                            throw new Error('Invalid "target" attribute. Please use "readonly" instead of "disabled" attribute');
-                        }
-
-                        if (this.action === 'cut' && (target.hasAttribute('readonly') || target.hasAttribute('disabled'))) {
-                            throw new Error('Invalid "target" attribute. You can\'t cut text from elements with "readonly" or "disabled" attributes');
-                        }
-
-                        this._target = target;
-                    } else {
-                        throw new Error('Invalid "target" value, use a valid Element');
-                    }
-                }
-            },
-            get: function get() {
-                return this._target;
-            }
-        }]);
-
-        return ClipboardAction;
-    }();
-
-    module.exports = ClipboardAction;
-});
-
-/***/ }),
-/* 73 */
-/***/ (function(module, exports) {
-
-function select(element) {
-    var selectedText;
-
-    if (element.nodeName === 'SELECT') {
-        element.focus();
-
-        selectedText = element.value;
-    } else if (element.nodeName === 'INPUT' || element.nodeName === 'TEXTAREA') {
-        var isReadOnly = element.hasAttribute('readonly');
-
-        if (!isReadOnly) {
-            element.setAttribute('readonly', '');
-        }
-
-        element.select();
-        element.setSelectionRange(0, element.value.length);
-
-        if (!isReadOnly) {
-            element.removeAttribute('readonly');
-        }
-
-        selectedText = element.value;
-    } else {
-        if (element.hasAttribute('contenteditable')) {
-            element.focus();
-        }
-
-        var selection = window.getSelection();
-        var range = document.createRange();
-
-        range.selectNodeContents(element);
-        selection.removeAllRanges();
-        selection.addRange(range);
-
-        selectedText = selection.toString();
-    }
-
-    return selectedText;
-}
-
-module.exports = select;
-
-/***/ }),
-/* 74 */
-/***/ (function(module, exports) {
-
-function E() {
-  // Keep this empty so it's easier to inherit from
-  // (via https://github.com/lipsmack from https://github.com/scottcorgan/tiny-emitter/issues/3)
-}
-
-E.prototype = {
-  on: function on(name, callback, ctx) {
-    var e = this.e || (this.e = {});
-
-    (e[name] || (e[name] = [])).push({
-      fn: callback,
-      ctx: ctx
-    });
-
-    return this;
-  },
-
-  once: function once(name, callback, ctx) {
-    var self = this;
-    function listener() {
-      self.off(name, listener);
-      callback.apply(ctx, arguments);
-    };
-
-    listener._ = callback;
-    return this.on(name, listener, ctx);
-  },
-
-  emit: function emit(name) {
-    var data = [].slice.call(arguments, 1);
-    var evtArr = ((this.e || (this.e = {}))[name] || []).slice();
-    var i = 0;
-    var len = evtArr.length;
-
-    for (i; i < len; i++) {
-      evtArr[i].fn.apply(evtArr[i].ctx, data);
-    }
-
-    return this;
-  },
-
-  off: function off(name, callback) {
-    var e = this.e || (this.e = {});
-    var evts = e[name];
-    var liveEvents = [];
-
-    if (evts && callback) {
-      for (var i = 0, len = evts.length; i < len; i++) {
-        if (evts[i].fn !== callback && evts[i].fn._ !== callback) liveEvents.push(evts[i]);
-      }
-    }
-
-    // Remove event from queue to prevent memory leak
-    // Suggested by https://github.com/lazd
-    // Ref: https://github.com/scottcorgan/tiny-emitter/commit/c6ebfaa9bc973b33d110a84a307742b7cf94c953#commitcomment-5024910
-
-    liveEvents.length ? e[name] = liveEvents : delete e[name];
-
-    return this;
-  }
-};
-
-module.exports = E;
-
-/***/ }),
-/* 75 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var is = __webpack_require__(76);
-var delegate = __webpack_require__(77);
-
-/**
- * Validates all params and calls the right
- * listener function based on its target type.
- *
- * @param {String|HTMLElement|HTMLCollection|NodeList} target
- * @param {String} type
- * @param {Function} callback
- * @return {Object}
- */
-function listen(target, type, callback) {
-    if (!target && !type && !callback) {
-        throw new Error('Missing required arguments');
-    }
-
-    if (!is.string(type)) {
-        throw new TypeError('Second argument must be a String');
-    }
-
-    if (!is.fn(callback)) {
-        throw new TypeError('Third argument must be a Function');
-    }
-
-    if (is.node(target)) {
-        return listenNode(target, type, callback);
-    } else if (is.nodeList(target)) {
-        return listenNodeList(target, type, callback);
-    } else if (is.string(target)) {
-        return listenSelector(target, type, callback);
-    } else {
-        throw new TypeError('First argument must be a String, HTMLElement, HTMLCollection, or NodeList');
-    }
-}
-
-/**
- * Adds an event listener to a HTML element
- * and returns a remove listener function.
- *
- * @param {HTMLElement} node
- * @param {String} type
- * @param {Function} callback
- * @return {Object}
- */
-function listenNode(node, type, callback) {
-    node.addEventListener(type, callback);
-
-    return {
-        destroy: function destroy() {
-            node.removeEventListener(type, callback);
-        }
-    };
-}
-
-/**
- * Add an event listener to a list of HTML elements
- * and returns a remove listener function.
- *
- * @param {NodeList|HTMLCollection} nodeList
- * @param {String} type
- * @param {Function} callback
- * @return {Object}
- */
-function listenNodeList(nodeList, type, callback) {
-    Array.prototype.forEach.call(nodeList, function (node) {
-        node.addEventListener(type, callback);
-    });
-
-    return {
-        destroy: function destroy() {
-            Array.prototype.forEach.call(nodeList, function (node) {
-                node.removeEventListener(type, callback);
-            });
-        }
-    };
-}
-
-/**
- * Add an event listener to a selector
- * and returns a remove listener function.
- *
- * @param {String} selector
- * @param {String} type
- * @param {Function} callback
- * @return {Object}
- */
-function listenSelector(selector, type, callback) {
-    return delegate(document.body, selector, type, callback);
-}
-
-module.exports = listen;
-
-/***/ }),
-/* 76 */
-/***/ (function(module, exports) {
-
-/**
- * Check if argument is a HTML element.
- *
- * @param {Object} value
- * @return {Boolean}
- */
-exports.node = function (value) {
-  return value !== undefined && value instanceof HTMLElement && value.nodeType === 1;
-};
-
-/**
- * Check if argument is a list of HTML elements.
- *
- * @param {Object} value
- * @return {Boolean}
- */
-exports.nodeList = function (value) {
-  var type = Object.prototype.toString.call(value);
-
-  return value !== undefined && (type === '[object NodeList]' || type === '[object HTMLCollection]') && 'length' in value && (value.length === 0 || exports.node(value[0]));
-};
-
-/**
- * Check if argument is a string.
- *
- * @param {Object} value
- * @return {Boolean}
- */
-exports.string = function (value) {
-  return typeof value === 'string' || value instanceof String;
-};
-
-/**
- * Check if argument is a function.
- *
- * @param {Object} value
- * @return {Boolean}
- */
-exports.fn = function (value) {
-  var type = Object.prototype.toString.call(value);
-
-  return type === '[object Function]';
-};
-
-/***/ }),
-/* 77 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var closest = __webpack_require__(78);
-
-/**
- * Delegates event to a selector.
- *
- * @param {Element} element
- * @param {String} selector
- * @param {String} type
- * @param {Function} callback
- * @param {Boolean} useCapture
- * @return {Object}
- */
-function _delegate(element, selector, type, callback, useCapture) {
-    var listenerFn = listener.apply(this, arguments);
-
-    element.addEventListener(type, listenerFn, useCapture);
-
-    return {
-        destroy: function destroy() {
-            element.removeEventListener(type, listenerFn, useCapture);
-        }
-    };
-}
-
-/**
- * Delegates event to a selector.
- *
- * @param {Element|String|Array} [elements]
- * @param {String} selector
- * @param {String} type
- * @param {Function} callback
- * @param {Boolean} useCapture
- * @return {Object}
- */
-function delegate(elements, selector, type, callback, useCapture) {
-    // Handle the regular Element usage
-    if (typeof elements.addEventListener === 'function') {
-        return _delegate.apply(null, arguments);
-    }
-
-    // Handle Element-less usage, it defaults to global delegation
-    if (typeof type === 'function') {
-        // Use `document` as the first parameter, then apply arguments
-        // This is a short way to .unshift `arguments` without running into deoptimizations
-        return _delegate.bind(null, document).apply(null, arguments);
-    }
-
-    // Handle Selector-based usage
-    if (typeof elements === 'string') {
-        elements = document.querySelectorAll(elements);
-    }
-
-    // Handle Array-like based usage
-    return Array.prototype.map.call(elements, function (element) {
-        return _delegate(element, selector, type, callback, useCapture);
-    });
-}
-
-/**
- * Finds closest match and invokes callback.
- *
- * @param {Element} element
- * @param {String} selector
- * @param {String} type
- * @param {Function} callback
- * @return {Function}
- */
-function listener(element, selector, type, callback) {
-    return function (e) {
-        e.delegateTarget = closest(e.target, selector);
-
-        if (e.delegateTarget) {
-            callback.call(element, e);
-        }
-    };
-}
-
-module.exports = delegate;
-
-/***/ }),
-/* 78 */
-/***/ (function(module, exports) {
-
-var DOCUMENT_NODE_TYPE = 9;
-
-/**
- * A polyfill for Element.matches()
- */
-if (typeof Element !== 'undefined' && !Element.prototype.matches) {
-    var proto = Element.prototype;
-
-    proto.matches = proto.matchesSelector || proto.mozMatchesSelector || proto.msMatchesSelector || proto.oMatchesSelector || proto.webkitMatchesSelector;
-}
-
-/**
- * Finds the closest parent that matches a selector.
- *
- * @param {Element} element
- * @param {String} selector
- * @return {Function}
- */
-function closest(element, selector) {
-    while (element && element.nodeType !== DOCUMENT_NODE_TYPE) {
-        if (typeof element.matches === 'function' && element.matches(selector)) {
-            return element;
-        }
-        element = element.parentNode;
-    }
-}
-
-module.exports = closest;
-
-/***/ }),
-/* 79 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(setImmediate, clearImmediate, module) {var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-!function (t, e) {
-  "object" == ( false ? "undefined" : _typeof(exports)) && "object" == ( false ? "undefined" : _typeof(module)) ? module.exports = e() :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_FACTORY__ = (e),
-				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : "object" == (typeof exports === "undefined" ? "undefined" : _typeof(exports)) ? exports.swal = e() : t.swal = e();
-}(this, function () {
-  return function (t) {
-    function e(o) {
-      if (n[o]) return n[o].exports;var r = n[o] = { i: o, l: !1, exports: {} };return t[o].call(r.exports, r, r.exports, e), r.l = !0, r.exports;
-    }var n = {};return e.m = t, e.c = n, e.d = function (t, n, o) {
-      e.o(t, n) || Object.defineProperty(t, n, { configurable: !1, enumerable: !0, get: o });
-    }, e.n = function (t) {
-      var n = t && t.__esModule ? function () {
-        return t.default;
-      } : function () {
-        return t;
-      };return e.d(n, "a", n), n;
-    }, e.o = function (t, e) {
-      return Object.prototype.hasOwnProperty.call(t, e);
-    }, e.p = "", e(e.s = 8);
-  }([function (t, e, n) {
-    "use strict";
-    Object.defineProperty(e, "__esModule", { value: !0 });var o = "swal-button";e.CLASS_NAMES = { MODAL: "swal-modal", OVERLAY: "swal-overlay", SHOW_MODAL: "swal-overlay--show-modal", MODAL_TITLE: "swal-title", MODAL_TEXT: "swal-text", ICON: "swal-icon", ICON_CUSTOM: "swal-icon--custom", CONTENT: "swal-content", FOOTER: "swal-footer", BUTTON_CONTAINER: "swal-button-container", BUTTON: o, CONFIRM_BUTTON: o + "--confirm", CANCEL_BUTTON: o + "--cancel", DANGER_BUTTON: o + "--danger", BUTTON_LOADING: o + "--loading", BUTTON_LOADER: o + "__loader" }, e.default = e.CLASS_NAMES;
-  }, function (t, e, n) {
-    "use strict";
-    Object.defineProperty(e, "__esModule", { value: !0 }), e.getNode = function (t) {
-      var e = "." + t;return document.querySelector(e);
-    }, e.stringToNode = function (t) {
-      var e = document.createElement("div");return e.innerHTML = t.trim(), e.firstChild;
-    }, e.insertAfter = function (t, e) {
-      var n = e.nextSibling;e.parentNode.insertBefore(t, n);
-    }, e.removeNode = function (t) {
-      t.parentElement.removeChild(t);
-    }, e.throwErr = function (t) {
-      throw t = t.replace(/ +(?= )/g, ""), "SweetAlert: " + (t = t.trim());
-    }, e.isPlainObject = function (t) {
-      if ("[object Object]" !== Object.prototype.toString.call(t)) return !1;var e = Object.getPrototypeOf(t);return null === e || e === Object.prototype;
-    }, e.ordinalSuffixOf = function (t) {
-      var e = t % 10,
-          n = t % 100;return 1 === e && 11 !== n ? t + "st" : 2 === e && 12 !== n ? t + "nd" : 3 === e && 13 !== n ? t + "rd" : t + "th";
-    };
-  }, function (t, e, n) {
-    "use strict";
-    function o(t) {
-      for (var n in t) {
-        e.hasOwnProperty(n) || (e[n] = t[n]);
-      }
-    }Object.defineProperty(e, "__esModule", { value: !0 }), o(n(25));var r = n(26);e.overlayMarkup = r.default, o(n(27)), o(n(28)), o(n(29));var i = n(0),
-        a = i.default.MODAL_TITLE,
-        s = i.default.MODAL_TEXT,
-        c = i.default.ICON,
-        l = i.default.FOOTER;e.iconMarkup = '\n  <div class="' + c + '"></div>', e.titleMarkup = '\n  <div class="' + a + '"></div>\n', e.textMarkup = '\n  <div class="' + s + '"></div>', e.footerMarkup = '\n  <div class="' + l + '"></div>\n';
-  }, function (t, e, n) {
-    "use strict";
-    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(1);e.CONFIRM_KEY = "confirm", e.CANCEL_KEY = "cancel";var r = { visible: !0, text: null, value: null, className: "", closeModal: !0 },
-        i = Object.assign({}, r, { visible: !1, text: "Cancel", value: null }),
-        a = Object.assign({}, r, { text: "OK", value: !0 });e.defaultButtonList = { cancel: i, confirm: a };var s = function s(t) {
-      switch (t) {case e.CONFIRM_KEY:
-          return a;case e.CANCEL_KEY:
-          return i;default:
-          var n = t.charAt(0).toUpperCase() + t.slice(1);return Object.assign({}, r, { text: n, value: t });}
-    },
-        c = function c(t, e) {
-      var n = s(t);return !0 === e ? Object.assign({}, n, { visible: !0 }) : "string" == typeof e ? Object.assign({}, n, { visible: !0, text: e }) : o.isPlainObject(e) ? Object.assign({ visible: !0 }, n, e) : Object.assign({}, n, { visible: !1 });
-    },
-        l = function l(t) {
-      for (var e = {}, n = 0, o = Object.keys(t); n < o.length; n++) {
-        var r = o[n],
-            a = t[r],
-            s = c(r, a);e[r] = s;
-      }return e.cancel || (e.cancel = i), e;
-    },
-        u = function u(t) {
-      var n = {};switch (t.length) {case 1:
-          n[e.CANCEL_KEY] = Object.assign({}, i, { visible: !1 });break;case 2:
-          n[e.CANCEL_KEY] = c(e.CANCEL_KEY, t[0]), n[e.CONFIRM_KEY] = c(e.CONFIRM_KEY, t[1]);break;default:
-          o.throwErr("Invalid number of 'buttons' in array (" + t.length + ").\n      If you want more than 2 buttons, you need to use an object!");}return n;
-    };e.getButtonListOpts = function (t) {
-      var n = e.defaultButtonList;return "string" == typeof t ? n[e.CONFIRM_KEY] = c(e.CONFIRM_KEY, t) : Array.isArray(t) ? n = u(t) : o.isPlainObject(t) ? n = l(t) : !0 === t ? n = u([!0, !0]) : !1 === t ? n = u([!1, !1]) : void 0 === t && (n = e.defaultButtonList), n;
-    };
-  }, function (t, e, n) {
-    "use strict";
-    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(1),
-        r = n(2),
-        i = n(0),
-        a = i.default.MODAL,
-        s = i.default.OVERLAY,
-        c = n(30),
-        l = n(31),
-        u = n(32),
-        f = n(33);e.injectElIntoModal = function (t) {
-      var e = o.getNode(a),
-          n = o.stringToNode(t);return e.appendChild(n), n;
-    };var d = function d(t) {
-      t.className = a, t.textContent = "";
-    },
-        p = function p(t, e) {
-      d(t);var n = e.className;n && t.classList.add(n);
-    };e.initModalContent = function (t) {
-      var e = o.getNode(a);p(e, t), c.default(t.icon), l.initTitle(t.title), l.initText(t.text), f.default(t.content), u.default(t.buttons, t.dangerMode);
-    };var m = function m() {
-      var t = o.getNode(s),
-          e = o.stringToNode(r.modalMarkup);t.appendChild(e);
-    };e.default = m;
-  }, function (t, e, n) {
-    "use strict";
-    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(3),
-        r = { isOpen: !1, promise: null, actions: {}, timer: null },
-        i = Object.assign({}, r);e.resetState = function () {
-      i = Object.assign({}, r);
-    }, e.setActionValue = function (t) {
-      if ("string" == typeof t) return a(o.CONFIRM_KEY, t);for (var e in t) {
-        a(e, t[e]);
-      }
-    };var a = function a(t, e) {
-      i.actions[t] || (i.actions[t] = {}), Object.assign(i.actions[t], { value: e });
-    };e.setActionOptionsFor = function (t, e) {
-      var n = (void 0 === e ? {} : e).closeModal,
-          o = void 0 === n || n;Object.assign(i.actions[t], { closeModal: o });
-    }, e.default = i;
-  }, function (t, e, n) {
-    "use strict";
-    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(1),
-        r = n(3),
-        i = n(0),
-        a = i.default.OVERLAY,
-        s = i.default.SHOW_MODAL,
-        c = i.default.BUTTON,
-        l = i.default.BUTTON_LOADING,
-        u = n(5);e.openModal = function () {
-      o.getNode(a).classList.add(s), u.default.isOpen = !0;
-    };var f = function f() {
-      o.getNode(a).classList.remove(s), u.default.isOpen = !1;
-    };e.onAction = function (t) {
-      void 0 === t && (t = r.CANCEL_KEY);var e = u.default.actions[t],
-          n = e.value;if (!1 === e.closeModal) {
-        var i = c + "--" + t;o.getNode(i).classList.add(l);
-      } else f();u.default.promise.resolve(n);
-    }, e.getState = function () {
-      var t = Object.assign({}, u.default);return delete t.promise, delete t.timer, t;
-    }, e.stopLoading = function () {
-      for (var t = document.querySelectorAll("." + c), e = 0; e < t.length; e++) {
-        t[e].classList.remove(l);
-      }
-    };
-  }, function (t, e) {
-    var n;n = this;try {
-      n = n || Function("return this")() || (0, eval)("this");
-    } catch (t) {
-      "object" == (typeof window === "undefined" ? "undefined" : _typeof(window)) && (n = window);
-    }t.exports = n;
-  }, function (t, e, n) {
-    (function (e) {
-      t.exports = e.sweetAlert = n(9);
-    }).call(e, n(7));
-  }, function (t, e, n) {
-    (function (e) {
-      t.exports = e.swal = n(10);
-    }).call(e, n(7));
-  }, function (t, e, n) {
-    "undefined" != typeof window && n(11), n(16);var o = n(23).default;t.exports = o;
-  }, function (t, e, n) {
-    var o = n(12);"string" == typeof o && (o = [[t.i, o, ""]]);var r = { insertAt: "top" };r.transform = void 0;n(14)(o, r);o.locals && (t.exports = o.locals);
-  }, function (t, e, n) {
-    e = t.exports = n(13)(void 0), e.push([t.i, '.swal-icon--error{border-color:#f27474;-webkit-animation:animateErrorIcon .5s;animation:animateErrorIcon .5s}.swal-icon--error__x-mark{position:relative;display:block;-webkit-animation:animateXMark .5s;animation:animateXMark .5s}.swal-icon--error__line{position:absolute;height:5px;width:47px;background-color:#f27474;display:block;top:37px;border-radius:2px}.swal-icon--error__line--left{-webkit-transform:rotate(45deg);transform:rotate(45deg);left:17px}.swal-icon--error__line--right{-webkit-transform:rotate(-45deg);transform:rotate(-45deg);right:16px}@-webkit-keyframes animateErrorIcon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}to{-webkit-transform:rotateX(0deg);transform:rotateX(0deg);opacity:1}}@keyframes animateErrorIcon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}to{-webkit-transform:rotateX(0deg);transform:rotateX(0deg);opacity:1}}@-webkit-keyframes animateXMark{0%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}50%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}80%{-webkit-transform:scale(1.15);transform:scale(1.15);margin-top:-6px}to{-webkit-transform:scale(1);transform:scale(1);margin-top:0;opacity:1}}@keyframes animateXMark{0%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}50%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}80%{-webkit-transform:scale(1.15);transform:scale(1.15);margin-top:-6px}to{-webkit-transform:scale(1);transform:scale(1);margin-top:0;opacity:1}}.swal-icon--warning{border-color:#f8bb86;-webkit-animation:pulseWarning .75s infinite alternate;animation:pulseWarning .75s infinite alternate}.swal-icon--warning__body{width:5px;height:47px;top:10px;border-radius:2px;margin-left:-2px}.swal-icon--warning__body,.swal-icon--warning__dot{position:absolute;left:50%;background-color:#f8bb86}.swal-icon--warning__dot{width:7px;height:7px;border-radius:50%;margin-left:-4px;bottom:-11px}@-webkit-keyframes pulseWarning{0%{border-color:#f8d486}to{border-color:#f8bb86}}@keyframes pulseWarning{0%{border-color:#f8d486}to{border-color:#f8bb86}}.swal-icon--success{border-color:#a5dc86}.swal-icon--success:after,.swal-icon--success:before{content:"";border-radius:50%;position:absolute;width:60px;height:120px;background:#fff;-webkit-transform:rotate(45deg);transform:rotate(45deg)}.swal-icon--success:before{border-radius:120px 0 0 120px;top:-7px;left:-33px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:60px 60px;transform-origin:60px 60px}.swal-icon--success:after{border-radius:0 120px 120px 0;top:-11px;left:30px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:0 60px;transform-origin:0 60px;-webkit-animation:rotatePlaceholder 4.25s ease-in;animation:rotatePlaceholder 4.25s ease-in}.swal-icon--success__ring{width:80px;height:80px;border:4px solid hsla(98,55%,69%,.2);border-radius:50%;box-sizing:content-box;position:absolute;left:-4px;top:-4px;z-index:2}.swal-icon--success__hide-corners{width:5px;height:90px;background-color:#fff;padding:1px;position:absolute;left:28px;top:8px;z-index:1;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}.swal-icon--success__line{height:5px;background-color:#a5dc86;display:block;border-radius:2px;position:absolute;z-index:2}.swal-icon--success__line--tip{width:25px;left:14px;top:46px;-webkit-transform:rotate(45deg);transform:rotate(45deg);-webkit-animation:animateSuccessTip .75s;animation:animateSuccessTip .75s}.swal-icon--success__line--long{width:47px;right:8px;top:38px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-animation:animateSuccessLong .75s;animation:animateSuccessLong .75s}@-webkit-keyframes rotatePlaceholder{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}to{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@keyframes rotatePlaceholder{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}to{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@-webkit-keyframes animateSuccessTip{0%{width:0;left:1px;top:19px}54%{width:0;left:1px;top:19px}70%{width:50px;left:-8px;top:37px}84%{width:17px;left:21px;top:48px}to{width:25px;left:14px;top:45px}}@keyframes animateSuccessTip{0%{width:0;left:1px;top:19px}54%{width:0;left:1px;top:19px}70%{width:50px;left:-8px;top:37px}84%{width:17px;left:21px;top:48px}to{width:25px;left:14px;top:45px}}@-webkit-keyframes animateSuccessLong{0%{width:0;right:46px;top:54px}65%{width:0;right:46px;top:54px}84%{width:55px;right:0;top:35px}to{width:47px;right:8px;top:38px}}@keyframes animateSuccessLong{0%{width:0;right:46px;top:54px}65%{width:0;right:46px;top:54px}84%{width:55px;right:0;top:35px}to{width:47px;right:8px;top:38px}}.swal-icon--info{border-color:#c9dae1}.swal-icon--info:before{width:5px;height:29px;bottom:17px;border-radius:2px;margin-left:-2px}.swal-icon--info:after,.swal-icon--info:before{content:"";position:absolute;left:50%;background-color:#c9dae1}.swal-icon--info:after{width:7px;height:7px;border-radius:50%;margin-left:-3px;top:19px}.swal-icon{width:80px;height:80px;border-width:4px;border-style:solid;border-radius:50%;padding:0;position:relative;box-sizing:content-box;margin:20px auto}.swal-icon:first-child{margin-top:32px}.swal-icon--custom{width:auto;height:auto;max-width:100%;border:none;border-radius:0}.swal-icon img{max-width:100%;max-height:100%}.swal-title{color:rgba(0,0,0,.65);font-weight:600;text-transform:none;position:relative;display:block;padding:13px 16px;font-size:27px;line-height:normal;text-align:center;margin-bottom:0}.swal-title:first-child{margin-top:26px}.swal-title:not(:first-child){padding-bottom:0}.swal-title:not(:last-child){margin-bottom:13px}.swal-text{font-size:16px;position:relative;float:none;line-height:normal;vertical-align:top;text-align:left;display:inline-block;margin:0;padding:0 10px;font-weight:400;color:rgba(0,0,0,.64);max-width:calc(100% - 20px);overflow-wrap:break-word;box-sizing:border-box}.swal-text:first-child{margin-top:45px}.swal-text:last-child{margin-bottom:45px}.swal-footer{text-align:right;padding-top:13px;margin-top:13px;padding:13px 16px;border-radius:inherit;border-top-left-radius:0;border-top-right-radius:0}.swal-button-container{margin:5px;display:inline-block;position:relative}.swal-button{background-color:#7cd1f9;color:#fff;border:none;box-shadow:none;border-radius:5px;font-weight:600;font-size:14px;padding:10px 24px;margin:0;cursor:pointer}.swal-button[not:disabled]:hover{background-color:#78cbf2}.swal-button:active{background-color:#70bce0}.swal-button:focus{outline:none;box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(43,114,165,.29)}.swal-button[disabled]{opacity:.5;cursor:default}.swal-button::-moz-focus-inner{border:0}.swal-button--cancel{color:#555;background-color:#efefef}.swal-button--cancel[not:disabled]:hover{background-color:#e8e8e8}.swal-button--cancel:active{background-color:#d7d7d7}.swal-button--cancel:focus{box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(116,136,150,.29)}.swal-button--danger{background-color:#e64942}.swal-button--danger[not:disabled]:hover{background-color:#df4740}.swal-button--danger:active{background-color:#cf423b}.swal-button--danger:focus{box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(165,43,43,.29)}.swal-content{padding:0 20px;margin-top:20px;font-size:medium}.swal-content:last-child{margin-bottom:20px}.swal-content__input,.swal-content__textarea{-webkit-appearance:none;background-color:#fff;border:none;font-size:14px;display:block;box-sizing:border-box;width:100%;border:1px solid rgba(0,0,0,.14);padding:10px 13px;border-radius:2px;transition:border-color .2s}.swal-content__input:focus,.swal-content__textarea:focus{outline:none;border-color:#6db8ff}.swal-content__textarea{resize:vertical}.swal-button--loading{color:transparent}.swal-button--loading~.swal-button__loader{opacity:1}.swal-button__loader{position:absolute;height:auto;width:43px;z-index:2;left:50%;top:50%;-webkit-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%);text-align:center;pointer-events:none;opacity:0}.swal-button__loader div{display:inline-block;float:none;vertical-align:baseline;width:9px;height:9px;padding:0;border:none;margin:2px;opacity:.4;border-radius:7px;background-color:hsla(0,0%,100%,.9);transition:background .2s;-webkit-animation:swal-loading-anim 1s infinite;animation:swal-loading-anim 1s infinite}.swal-button__loader div:nth-child(3n+2){-webkit-animation-delay:.15s;animation-delay:.15s}.swal-button__loader div:nth-child(3n+3){-webkit-animation-delay:.3s;animation-delay:.3s}@-webkit-keyframes swal-loading-anim{0%{opacity:.4}20%{opacity:.4}50%{opacity:1}to{opacity:.4}}@keyframes swal-loading-anim{0%{opacity:.4}20%{opacity:.4}50%{opacity:1}to{opacity:.4}}.swal-overlay{position:fixed;top:0;bottom:0;left:0;right:0;text-align:center;font-size:0;overflow-y:auto;background-color:rgba(0,0,0,.4);z-index:10000;pointer-events:none;opacity:0;transition:opacity .3s}.swal-overlay:before{content:" ";display:inline-block;vertical-align:middle;height:100%}.swal-overlay--show-modal{opacity:1;pointer-events:auto}.swal-overlay--show-modal .swal-modal{opacity:1;pointer-events:auto;box-sizing:border-box;-webkit-animation:showSweetAlert .3s;animation:showSweetAlert .3s;will-change:transform}.swal-modal{width:478px;opacity:0;pointer-events:none;background-color:#fff;text-align:center;border-radius:5px;position:static;margin:20px auto;display:inline-block;vertical-align:middle;-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:50% 50%;transform-origin:50% 50%;z-index:10001;transition:opacity .2s,-webkit-transform .3s;transition:transform .3s,opacity .2s;transition:transform .3s,opacity .2s,-webkit-transform .3s}@media (max-width:500px){.swal-modal{width:calc(100% - 20px)}}@-webkit-keyframes showSweetAlert{0%{-webkit-transform:scale(1);transform:scale(1)}1%{-webkit-transform:scale(.5);transform:scale(.5)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}to{-webkit-transform:scale(1);transform:scale(1)}}@keyframes showSweetAlert{0%{-webkit-transform:scale(1);transform:scale(1)}1%{-webkit-transform:scale(.5);transform:scale(.5)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}to{-webkit-transform:scale(1);transform:scale(1)}}', ""]);
-  }, function (t, e) {
-    function n(t, e) {
-      var n = t[1] || "",
-          r = t[3];if (!r) return n;if (e && "function" == typeof btoa) {
-        var i = o(r);return [n].concat(r.sources.map(function (t) {
-          return "/*# sourceURL=" + r.sourceRoot + t + " */";
-        })).concat([i]).join("\n");
-      }return [n].join("\n");
-    }function o(t) {
-      return "/*# sourceMappingURL=data:application/json;charset=utf-8;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(t)))) + " */";
-    }t.exports = function (t) {
-      var e = [];return e.toString = function () {
-        return this.map(function (e) {
-          var o = n(e, t);return e[2] ? "@media " + e[2] + "{" + o + "}" : o;
-        }).join("");
-      }, e.i = function (t, n) {
-        "string" == typeof t && (t = [[null, t, ""]]);for (var o = {}, r = 0; r < this.length; r++) {
-          var i = this[r][0];"number" == typeof i && (o[i] = !0);
-        }for (r = 0; r < t.length; r++) {
-          var a = t[r];"number" == typeof a[0] && o[a[0]] || (n && !a[2] ? a[2] = n : n && (a[2] = "(" + a[2] + ") and (" + n + ")"), e.push(a));
-        }
-      }, e;
-    };
-  }, function (t, e, n) {
-    function o(t, e) {
-      for (var n = 0; n < t.length; n++) {
-        var o = t[n],
-            r = m[o.id];if (r) {
-          r.refs++;for (var i = 0; i < r.parts.length; i++) {
-            r.parts[i](o.parts[i]);
-          }for (; i < o.parts.length; i++) {
-            r.parts.push(u(o.parts[i], e));
-          }
-        } else {
-          for (var a = [], i = 0; i < o.parts.length; i++) {
-            a.push(u(o.parts[i], e));
-          }m[o.id] = { id: o.id, refs: 1, parts: a };
-        }
-      }
-    }function r(t, e) {
-      for (var n = [], o = {}, r = 0; r < t.length; r++) {
-        var i = t[r],
-            a = e.base ? i[0] + e.base : i[0],
-            s = i[1],
-            c = i[2],
-            l = i[3],
-            u = { css: s, media: c, sourceMap: l };o[a] ? o[a].parts.push(u) : n.push(o[a] = { id: a, parts: [u] });
-      }return n;
-    }function i(t, e) {
-      var n = v(t.insertInto);if (!n) throw new Error("Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.");var o = w[w.length - 1];if ("top" === t.insertAt) o ? o.nextSibling ? n.insertBefore(e, o.nextSibling) : n.appendChild(e) : n.insertBefore(e, n.firstChild), w.push(e);else {
-        if ("bottom" !== t.insertAt) throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");n.appendChild(e);
-      }
-    }function a(t) {
-      if (null === t.parentNode) return !1;t.parentNode.removeChild(t);var e = w.indexOf(t);e >= 0 && w.splice(e, 1);
-    }function s(t) {
-      var e = document.createElement("style");return t.attrs.type = "text/css", l(e, t.attrs), i(t, e), e;
-    }function c(t) {
-      var e = document.createElement("link");return t.attrs.type = "text/css", t.attrs.rel = "stylesheet", l(e, t.attrs), i(t, e), e;
-    }function l(t, e) {
-      Object.keys(e).forEach(function (n) {
-        t.setAttribute(n, e[n]);
-      });
-    }function u(t, e) {
-      var n, o, r, i;if (e.transform && t.css) {
-        if (!(i = e.transform(t.css))) return function () {};t.css = i;
-      }if (e.singleton) {
-        var l = h++;n = g || (g = s(e)), o = f.bind(null, n, l, !1), r = f.bind(null, n, l, !0);
-      } else t.sourceMap && "function" == typeof URL && "function" == typeof URL.createObjectURL && "function" == typeof URL.revokeObjectURL && "function" == typeof Blob && "function" == typeof btoa ? (n = c(e), o = p.bind(null, n, e), r = function r() {
-        a(n), n.href && URL.revokeObjectURL(n.href);
-      }) : (n = s(e), o = d.bind(null, n), r = function r() {
-        a(n);
-      });return o(t), function (e) {
-        if (e) {
-          if (e.css === t.css && e.media === t.media && e.sourceMap === t.sourceMap) return;o(t = e);
-        } else r();
-      };
-    }function f(t, e, n, o) {
-      var r = n ? "" : o.css;if (t.styleSheet) t.styleSheet.cssText = x(e, r);else {
-        var i = document.createTextNode(r),
-            a = t.childNodes;a[e] && t.removeChild(a[e]), a.length ? t.insertBefore(i, a[e]) : t.appendChild(i);
-      }
-    }function d(t, e) {
-      var n = e.css,
-          o = e.media;if (o && t.setAttribute("media", o), t.styleSheet) t.styleSheet.cssText = n;else {
-        for (; t.firstChild;) {
-          t.removeChild(t.firstChild);
-        }t.appendChild(document.createTextNode(n));
-      }
-    }function p(t, e, n) {
-      var o = n.css,
-          r = n.sourceMap,
-          i = void 0 === e.convertToAbsoluteUrls && r;(e.convertToAbsoluteUrls || i) && (o = y(o)), r && (o += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(r)))) + " */");var a = new Blob([o], { type: "text/css" }),
-          s = t.href;t.href = URL.createObjectURL(a), s && URL.revokeObjectURL(s);
-    }var m = {},
-        b = function (t) {
-      var e;return function () {
-        return void 0 === e && (e = t.apply(this, arguments)), e;
-      };
-    }(function () {
-      return window && document && document.all && !window.atob;
-    }),
-        v = function (t) {
-      var e = {};return function (n) {
-        return void 0 === e[n] && (e[n] = t.call(this, n)), e[n];
-      };
-    }(function (t) {
-      return document.querySelector(t);
-    }),
-        g = null,
-        h = 0,
-        w = [],
-        y = n(15);t.exports = function (t, e) {
-      if ("undefined" != typeof DEBUG && DEBUG && "object" != (typeof document === "undefined" ? "undefined" : _typeof(document))) throw new Error("The style-loader cannot be used in a non-browser environment");e = e || {}, e.attrs = "object" == _typeof(e.attrs) ? e.attrs : {}, e.singleton || (e.singleton = b()), e.insertInto || (e.insertInto = "head"), e.insertAt || (e.insertAt = "bottom");var n = r(t, e);return o(n, e), function (t) {
-        for (var i = [], a = 0; a < n.length; a++) {
-          var s = n[a],
-              c = m[s.id];c.refs--, i.push(c);
-        }if (t) {
-          o(r(t, e), e);
-        }for (var a = 0; a < i.length; a++) {
-          var c = i[a];if (0 === c.refs) {
-            for (var l = 0; l < c.parts.length; l++) {
-              c.parts[l]();
-            }delete m[c.id];
-          }
-        }
-      };
-    };var x = function () {
-      var t = [];return function (e, n) {
-        return t[e] = n, t.filter(Boolean).join("\n");
-      };
-    }();
-  }, function (t, e) {
-    t.exports = function (t) {
-      var e = "undefined" != typeof window && window.location;if (!e) throw new Error("fixUrls requires window.location");if (!t || "string" != typeof t) return t;var n = e.protocol + "//" + e.host,
-          o = n + e.pathname.replace(/\/[^\/]*$/, "/");return t.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi, function (t, e) {
-        var r = e.trim().replace(/^"(.*)"$/, function (t, e) {
-          return e;
-        }).replace(/^'(.*)'$/, function (t, e) {
-          return e;
-        });if (/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/)/i.test(r)) return t;var i;return i = 0 === r.indexOf("//") ? r : 0 === r.indexOf("/") ? n + r : o + r.replace(/^\.\//, ""), "url(" + JSON.stringify(i) + ")";
-      });
-    };
-  }, function (t, e, n) {
-    var o = n(17);"undefined" == typeof window || window.Promise || (window.Promise = o), n(21), String.prototype.includes || (String.prototype.includes = function (t, e) {
-      "use strict";
-      return "number" != typeof e && (e = 0), !(e + t.length > this.length) && -1 !== this.indexOf(t, e);
-    }), Array.prototype.includes || Object.defineProperty(Array.prototype, "includes", { value: function value(t, e) {
-        if (null == this) throw new TypeError('"this" is null or not defined');var n = Object(this),
-            o = n.length >>> 0;if (0 === o) return !1;for (var r = 0 | e, i = Math.max(r >= 0 ? r : o - Math.abs(r), 0); i < o;) {
-          if (function (t, e) {
-            return t === e || "number" == typeof t && "number" == typeof e && isNaN(t) && isNaN(e);
-          }(n[i], t)) return !0;i++;
-        }return !1;
-      } }), "undefined" != typeof window && function (t) {
-      t.forEach(function (t) {
-        t.hasOwnProperty("remove") || Object.defineProperty(t, "remove", { configurable: !0, enumerable: !0, writable: !0, value: function value() {
-            this.parentNode.removeChild(this);
-          } });
-      });
-    }([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
-  }, function (t, e, n) {
-    (function (e) {
-      !function (n) {
-        function o() {}function r(t, e) {
-          return function () {
-            t.apply(e, arguments);
-          };
-        }function i(t) {
-          if ("object" != _typeof(this)) throw new TypeError("Promises must be constructed via new");if ("function" != typeof t) throw new TypeError("not a function");this._state = 0, this._handled = !1, this._value = void 0, this._deferreds = [], f(t, this);
-        }function a(t, e) {
-          for (; 3 === t._state;) {
-            t = t._value;
-          }if (0 === t._state) return void t._deferreds.push(e);t._handled = !0, i._immediateFn(function () {
-            var n = 1 === t._state ? e.onFulfilled : e.onRejected;if (null === n) return void (1 === t._state ? s : c)(e.promise, t._value);var o;try {
-              o = n(t._value);
-            } catch (t) {
-              return void c(e.promise, t);
-            }s(e.promise, o);
-          });
-        }function s(t, e) {
-          try {
-            if (e === t) throw new TypeError("A promise cannot be resolved with itself.");if (e && ("object" == (typeof e === "undefined" ? "undefined" : _typeof(e)) || "function" == typeof e)) {
-              var n = e.then;if (e instanceof i) return t._state = 3, t._value = e, void l(t);if ("function" == typeof n) return void f(r(n, e), t);
-            }t._state = 1, t._value = e, l(t);
-          } catch (e) {
-            c(t, e);
-          }
-        }function c(t, e) {
-          t._state = 2, t._value = e, l(t);
-        }function l(t) {
-          2 === t._state && 0 === t._deferreds.length && i._immediateFn(function () {
-            t._handled || i._unhandledRejectionFn(t._value);
-          });for (var e = 0, n = t._deferreds.length; e < n; e++) {
-            a(t, t._deferreds[e]);
-          }t._deferreds = null;
-        }function u(t, e, n) {
-          this.onFulfilled = "function" == typeof t ? t : null, this.onRejected = "function" == typeof e ? e : null, this.promise = n;
-        }function f(t, e) {
-          var n = !1;try {
-            t(function (t) {
-              n || (n = !0, s(e, t));
-            }, function (t) {
-              n || (n = !0, c(e, t));
-            });
-          } catch (t) {
-            if (n) return;n = !0, c(e, t);
-          }
-        }var d = setTimeout;i.prototype.catch = function (t) {
-          return this.then(null, t);
-        }, i.prototype.then = function (t, e) {
-          var n = new this.constructor(o);return a(this, new u(t, e, n)), n;
-        }, i.all = function (t) {
-          var e = Array.prototype.slice.call(t);return new i(function (t, n) {
-            function o(i, a) {
-              try {
-                if (a && ("object" == (typeof a === "undefined" ? "undefined" : _typeof(a)) || "function" == typeof a)) {
-                  var s = a.then;if ("function" == typeof s) return void s.call(a, function (t) {
-                    o(i, t);
-                  }, n);
-                }e[i] = a, 0 == --r && t(e);
-              } catch (t) {
-                n(t);
-              }
-            }if (0 === e.length) return t([]);for (var r = e.length, i = 0; i < e.length; i++) {
-              o(i, e[i]);
-            }
-          });
-        }, i.resolve = function (t) {
-          return t && "object" == (typeof t === "undefined" ? "undefined" : _typeof(t)) && t.constructor === i ? t : new i(function (e) {
-            e(t);
-          });
-        }, i.reject = function (t) {
-          return new i(function (e, n) {
-            n(t);
-          });
-        }, i.race = function (t) {
-          return new i(function (e, n) {
-            for (var o = 0, r = t.length; o < r; o++) {
-              t[o].then(e, n);
-            }
-          });
-        }, i._immediateFn = "function" == typeof e && function (t) {
-          e(t);
-        } || function (t) {
-          d(t, 0);
-        }, i._unhandledRejectionFn = function (t) {
-          "undefined" != typeof console && console && console.warn("Possible Unhandled Promise Rejection:", t);
-        }, i._setImmediateFn = function (t) {
-          i._immediateFn = t;
-        }, i._setUnhandledRejectionFn = function (t) {
-          i._unhandledRejectionFn = t;
-        }, void 0 !== t && t.exports ? t.exports = i : n.Promise || (n.Promise = i);
-      }(this);
-    }).call(e, n(18).setImmediate);
-  }, function (t, e, n) {
-    function o(t, e) {
-      this._id = t, this._clearFn = e;
-    }var r = Function.prototype.apply;e.setTimeout = function () {
-      return new o(r.call(setTimeout, window, arguments), clearTimeout);
-    }, e.setInterval = function () {
-      return new o(r.call(setInterval, window, arguments), clearInterval);
-    }, e.clearTimeout = e.clearInterval = function (t) {
-      t && t.close();
-    }, o.prototype.unref = o.prototype.ref = function () {}, o.prototype.close = function () {
-      this._clearFn.call(window, this._id);
-    }, e.enroll = function (t, e) {
-      clearTimeout(t._idleTimeoutId), t._idleTimeout = e;
-    }, e.unenroll = function (t) {
-      clearTimeout(t._idleTimeoutId), t._idleTimeout = -1;
-    }, e._unrefActive = e.active = function (t) {
-      clearTimeout(t._idleTimeoutId);var e = t._idleTimeout;e >= 0 && (t._idleTimeoutId = setTimeout(function () {
-        t._onTimeout && t._onTimeout();
-      }, e));
-    }, n(19), e.setImmediate = setImmediate, e.clearImmediate = clearImmediate;
-  }, function (t, e, n) {
-    (function (t, e) {
-      !function (t, n) {
-        "use strict";
-        function o(t) {
-          "function" != typeof t && (t = new Function("" + t));for (var e = new Array(arguments.length - 1), n = 0; n < e.length; n++) {
-            e[n] = arguments[n + 1];
-          }var o = { callback: t, args: e };return l[c] = o, s(c), c++;
-        }function r(t) {
-          delete l[t];
-        }function i(t) {
-          var e = t.callback,
-              o = t.args;switch (o.length) {case 0:
-              e();break;case 1:
-              e(o[0]);break;case 2:
-              e(o[0], o[1]);break;case 3:
-              e(o[0], o[1], o[2]);break;default:
-              e.apply(n, o);}
-        }function a(t) {
-          if (u) setTimeout(a, 0, t);else {
-            var e = l[t];if (e) {
-              u = !0;try {
-                i(e);
-              } finally {
-                r(t), u = !1;
-              }
-            }
-          }
-        }if (!t.setImmediate) {
-          var s,
-              c = 1,
-              l = {},
-              u = !1,
-              f = t.document,
-              d = Object.getPrototypeOf && Object.getPrototypeOf(t);d = d && d.setTimeout ? d : t, "[object process]" === {}.toString.call(t.process) ? function () {
-            s = function s(t) {
-              e.nextTick(function () {
-                a(t);
-              });
-            };
-          }() : function () {
-            if (t.postMessage && !t.importScripts) {
-              var e = !0,
-                  n = t.onmessage;return t.onmessage = function () {
-                e = !1;
-              }, t.postMessage("", "*"), t.onmessage = n, e;
-            }
-          }() ? function () {
-            var e = "setImmediate$" + Math.random() + "$",
-                n = function n(_n) {
-              _n.source === t && "string" == typeof _n.data && 0 === _n.data.indexOf(e) && a(+_n.data.slice(e.length));
-            };t.addEventListener ? t.addEventListener("message", n, !1) : t.attachEvent("onmessage", n), s = function s(n) {
-              t.postMessage(e + n, "*");
-            };
-          }() : t.MessageChannel ? function () {
-            var t = new MessageChannel();t.port1.onmessage = function (t) {
-              a(t.data);
-            }, s = function s(e) {
-              t.port2.postMessage(e);
-            };
-          }() : f && "onreadystatechange" in f.createElement("script") ? function () {
-            var t = f.documentElement;s = function s(e) {
-              var n = f.createElement("script");n.onreadystatechange = function () {
-                a(e), n.onreadystatechange = null, t.removeChild(n), n = null;
-              }, t.appendChild(n);
-            };
-          }() : function () {
-            s = function s(t) {
-              setTimeout(a, 0, t);
-            };
-          }(), d.setImmediate = o, d.clearImmediate = r;
-        }
-      }("undefined" == typeof self ? void 0 === t ? this : t : self);
-    }).call(e, n(7), n(20));
-  }, function (t, e) {
-    function n() {
-      throw new Error("setTimeout has not been defined");
-    }function o() {
-      throw new Error("clearTimeout has not been defined");
-    }function r(t) {
-      if (u === setTimeout) return setTimeout(t, 0);if ((u === n || !u) && setTimeout) return u = setTimeout, setTimeout(t, 0);try {
-        return u(t, 0);
-      } catch (e) {
-        try {
-          return u.call(null, t, 0);
-        } catch (e) {
-          return u.call(this, t, 0);
-        }
-      }
-    }function i(t) {
-      if (f === clearTimeout) return clearTimeout(t);if ((f === o || !f) && clearTimeout) return f = clearTimeout, clearTimeout(t);try {
-        return f(t);
-      } catch (e) {
-        try {
-          return f.call(null, t);
-        } catch (e) {
-          return f.call(this, t);
-        }
-      }
-    }function a() {
-      b && p && (b = !1, p.length ? m = p.concat(m) : v = -1, m.length && s());
-    }function s() {
-      if (!b) {
-        var t = r(a);b = !0;for (var e = m.length; e;) {
-          for (p = m, m = []; ++v < e;) {
-            p && p[v].run();
-          }v = -1, e = m.length;
-        }p = null, b = !1, i(t);
-      }
-    }function c(t, e) {
-      this.fun = t, this.array = e;
-    }function l() {}var u,
-        f,
-        d = t.exports = {};!function () {
-      try {
-        u = "function" == typeof setTimeout ? setTimeout : n;
-      } catch (t) {
-        u = n;
-      }try {
-        f = "function" == typeof clearTimeout ? clearTimeout : o;
-      } catch (t) {
-        f = o;
-      }
-    }();var p,
-        m = [],
-        b = !1,
-        v = -1;d.nextTick = function (t) {
-      var e = new Array(arguments.length - 1);if (arguments.length > 1) for (var n = 1; n < arguments.length; n++) {
-        e[n - 1] = arguments[n];
-      }m.push(new c(t, e)), 1 !== m.length || b || r(s);
-    }, c.prototype.run = function () {
-      this.fun.apply(null, this.array);
-    }, d.title = "browser", d.browser = !0, d.env = {}, d.argv = [], d.version = "", d.versions = {}, d.on = l, d.addListener = l, d.once = l, d.off = l, d.removeListener = l, d.removeAllListeners = l, d.emit = l, d.prependListener = l, d.prependOnceListener = l, d.listeners = function (t) {
-      return [];
-    }, d.binding = function (t) {
-      throw new Error("process.binding is not supported");
-    }, d.cwd = function () {
-      return "/";
-    }, d.chdir = function (t) {
-      throw new Error("process.chdir is not supported");
-    }, d.umask = function () {
-      return 0;
-    };
-  }, function (t, e, n) {
-    "use strict";
-    n(22).polyfill();
-  }, function (t, e, n) {
-    "use strict";
-    function o(t, e) {
-      if (void 0 === t || null === t) throw new TypeError("Cannot convert first argument to object");for (var n = Object(t), o = 1; o < arguments.length; o++) {
-        var r = arguments[o];if (void 0 !== r && null !== r) for (var i = Object.keys(Object(r)), a = 0, s = i.length; a < s; a++) {
-          var c = i[a],
-              l = Object.getOwnPropertyDescriptor(r, c);void 0 !== l && l.enumerable && (n[c] = r[c]);
-        }
-      }return n;
-    }function r() {
-      Object.assign || Object.defineProperty(Object, "assign", { enumerable: !1, configurable: !0, writable: !0, value: o });
-    }t.exports = { assign: o, polyfill: r };
-  }, function (t, e, n) {
-    "use strict";
-    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(24),
-        r = n(6),
-        i = n(5),
-        a = n(36),
-        s = function s() {
-      for (var t = [], e = 0; e < arguments.length; e++) {
-        t[e] = arguments[e];
-      }if ("undefined" != typeof window) {
-        var n = a.getOpts.apply(void 0, t);return new Promise(function (t, e) {
-          i.default.promise = { resolve: t, reject: e }, o.default(n), setTimeout(function () {
-            r.openModal();
-          });
-        });
-      }
-    };s.close = r.onAction, s.getState = r.getState, s.setActionValue = i.setActionValue, s.stopLoading = r.stopLoading, s.setDefaults = a.setDefaults, e.default = s;
-  }, function (t, e, n) {
-    "use strict";
-    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(1),
-        r = n(0),
-        i = r.default.MODAL,
-        a = n(4),
-        s = n(34),
-        c = n(35),
-        l = n(1);e.init = function (t) {
-      o.getNode(i) || (document.body || l.throwErr("You can only use SweetAlert AFTER the DOM has loaded!"), s.default(), a.default()), a.initModalContent(t), c.default(t);
-    }, e.default = e.init;
-  }, function (t, e, n) {
-    "use strict";
-    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(0),
-        r = o.default.MODAL;e.modalMarkup = '\n  <div class="' + r + '" role="dialog" aria-modal="true"></div>', e.default = e.modalMarkup;
-  }, function (t, e, n) {
-    "use strict";
-    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(0),
-        r = o.default.OVERLAY,
-        i = '<div \n    class="' + r + '"\n    tabIndex="-1">\n  </div>';e.default = i;
-  }, function (t, e, n) {
-    "use strict";
-    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(0),
-        r = o.default.ICON;e.errorIconMarkup = function () {
-      var t = r + "--error",
-          e = t + "__line";return '\n    <div class="' + t + '__x-mark">\n      <span class="' + e + " " + e + '--left"></span>\n      <span class="' + e + " " + e + '--right"></span>\n    </div>\n  ';
-    }, e.warningIconMarkup = function () {
-      var t = r + "--warning";return '\n    <span class="' + t + '__body">\n      <span class="' + t + '__dot"></span>\n    </span>\n  ';
-    }, e.successIconMarkup = function () {
-      var t = r + "--success";return '\n    <span class="' + t + "__line " + t + '__line--long"></span>\n    <span class="' + t + "__line " + t + '__line--tip"></span>\n\n    <div class="' + t + '__ring"></div>\n    <div class="' + t + '__hide-corners"></div>\n  ';
-    };
-  }, function (t, e, n) {
-    "use strict";
-    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(0),
-        r = o.default.CONTENT;e.contentMarkup = '\n  <div class="' + r + '">\n\n  </div>\n';
-  }, function (t, e, n) {
-    "use strict";
-    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(0),
-        r = o.default.BUTTON_CONTAINER,
-        i = o.default.BUTTON,
-        a = o.default.BUTTON_LOADER;e.buttonMarkup = '\n  <div class="' + r + '">\n\n    <button\n      class="' + i + '"\n    ></button>\n\n    <div class="' + a + '">\n      <div></div>\n      <div></div>\n      <div></div>\n    </div>\n\n  </div>\n';
-  }, function (t, e, n) {
-    "use strict";
-    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(4),
-        r = n(2),
-        i = n(0),
-        a = i.default.ICON,
-        s = i.default.ICON_CUSTOM,
-        c = ["error", "warning", "success", "info"],
-        l = { error: r.errorIconMarkup(), warning: r.warningIconMarkup(), success: r.successIconMarkup() },
-        u = function u(t, e) {
-      var n = a + "--" + t;e.classList.add(n);var o = l[t];o && (e.innerHTML = o);
-    },
-        f = function f(t, e) {
-      e.classList.add(s);var n = document.createElement("img");n.src = t, e.appendChild(n);
-    },
-        d = function d(t) {
-      if (t) {
-        var e = o.injectElIntoModal(r.iconMarkup);c.includes(t) ? u(t, e) : f(t, e);
-      }
-    };e.default = d;
-  }, function (t, e, n) {
-    "use strict";
-    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(2),
-        r = n(4),
-        i = function i(t) {
-      navigator.userAgent.includes("AppleWebKit") && (t.style.display = "none", t.offsetHeight, t.style.display = "");
-    };e.initTitle = function (t) {
-      if (t) {
-        var e = r.injectElIntoModal(o.titleMarkup);e.textContent = t, i(e);
-      }
-    }, e.initText = function (t) {
-      if (t) {
-        var e = document.createDocumentFragment();t.split("\n").forEach(function (t, n, o) {
-          e.appendChild(document.createTextNode(t)), n < o.length - 1 && e.appendChild(document.createElement("br"));
-        });var n = r.injectElIntoModal(o.textMarkup);n.appendChild(e), i(n);
-      }
-    };
-  }, function (t, e, n) {
-    "use strict";
-    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(1),
-        r = n(4),
-        i = n(0),
-        a = i.default.BUTTON,
-        s = i.default.DANGER_BUTTON,
-        c = n(3),
-        l = n(2),
-        u = n(6),
-        f = n(5),
-        d = function d(t, e, n) {
-      var r = e.text,
-          i = e.value,
-          d = e.className,
-          p = e.closeModal,
-          m = o.stringToNode(l.buttonMarkup),
-          b = m.querySelector("." + a),
-          v = a + "--" + t;if (b.classList.add(v), d) {
-        (Array.isArray(d) ? d : d.split(" ")).filter(function (t) {
-          return t.length > 0;
-        }).forEach(function (t) {
-          b.classList.add(t);
-        });
-      }n && t === c.CONFIRM_KEY && b.classList.add(s), b.textContent = r;var g = {};return g[t] = i, f.setActionValue(g), f.setActionOptionsFor(t, { closeModal: p }), b.addEventListener("click", function () {
-        return u.onAction(t);
-      }), m;
-    },
-        p = function p(t, e) {
-      var n = r.injectElIntoModal(l.footerMarkup);for (var o in t) {
-        var i = t[o],
-            a = d(o, i, e);i.visible && n.appendChild(a);
-      }0 === n.children.length && n.remove();
-    };e.default = p;
-  }, function (t, e, n) {
-    "use strict";
-    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(3),
-        r = n(4),
-        i = n(2),
-        a = n(5),
-        s = n(6),
-        c = n(0),
-        l = c.default.CONTENT,
-        u = function u(t) {
-      t.addEventListener("input", function (t) {
-        var e = t.target,
-            n = e.value;a.setActionValue(n);
-      }), t.addEventListener("keyup", function (t) {
-        if ("Enter" === t.key) return s.onAction(o.CONFIRM_KEY);
-      }), setTimeout(function () {
-        t.focus(), a.setActionValue("");
-      }, 0);
-    },
-        f = function f(t, e, n) {
-      var o = document.createElement(e),
-          r = l + "__" + e;o.classList.add(r);for (var i in n) {
-        var a = n[i];o[i] = a;
-      }"input" === e && u(o), t.appendChild(o);
-    },
-        d = function d(t) {
-      if (t) {
-        var e = r.injectElIntoModal(i.contentMarkup),
-            n = t.element,
-            o = t.attributes;"string" == typeof n ? f(e, n, o) : e.appendChild(n);
-      }
-    };e.default = d;
-  }, function (t, e, n) {
-    "use strict";
-    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(1),
-        r = n(2),
-        i = function i() {
-      var t = o.stringToNode(r.overlayMarkup);document.body.appendChild(t);
-    };e.default = i;
-  }, function (t, e, n) {
-    "use strict";
-    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(5),
-        r = n(6),
-        i = n(1),
-        a = n(3),
-        s = n(0),
-        c = s.default.MODAL,
-        l = s.default.BUTTON,
-        u = s.default.OVERLAY,
-        f = function f(t) {
-      t.preventDefault(), v();
-    },
-        d = function d(t) {
-      t.preventDefault(), g();
-    },
-        p = function p(t) {
-      if (o.default.isOpen) switch (t.key) {case "Escape":
-          return r.onAction(a.CANCEL_KEY);}
-    },
-        m = function m(t) {
-      if (o.default.isOpen) switch (t.key) {case "Tab":
-          return f(t);}
-    },
-        b = function b(t) {
-      if (o.default.isOpen) return "Tab" === t.key && t.shiftKey ? d(t) : void 0;
-    },
-        v = function v() {
-      var t = i.getNode(l);t && (t.tabIndex = 0, t.focus());
-    },
-        g = function g() {
-      var t = i.getNode(c),
-          e = t.querySelectorAll("." + l),
-          n = e.length - 1,
-          o = e[n];o && o.focus();
-    },
-        h = function h(t) {
-      t[t.length - 1].addEventListener("keydown", m);
-    },
-        w = function w(t) {
-      t[0].addEventListener("keydown", b);
-    },
-        y = function y() {
-      var t = i.getNode(c),
-          e = t.querySelectorAll("." + l);e.length && (h(e), w(e));
-    },
-        x = function x(t) {
-      if (i.getNode(u) === t.target) return r.onAction(a.CANCEL_KEY);
-    },
-        _ = function _(t) {
-      var e = i.getNode(u);e.removeEventListener("click", x), t && e.addEventListener("click", x);
-    },
-        k = function k(t) {
-      o.default.timer && clearTimeout(o.default.timer), t && (o.default.timer = window.setTimeout(function () {
-        return r.onAction(a.CANCEL_KEY);
-      }, t));
-    },
-        O = function O(t) {
-      t.closeOnEsc ? document.addEventListener("keyup", p) : document.removeEventListener("keyup", p), t.dangerMode ? v() : g(), y(), _(t.closeOnClickOutside), k(t.timer);
-    };e.default = O;
-  }, function (t, e, n) {
-    "use strict";
-    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(1),
-        r = n(3),
-        i = n(37),
-        a = n(38),
-        s = { title: null, text: null, icon: null, buttons: r.defaultButtonList, content: null, className: null, closeOnClickOutside: !0, closeOnEsc: !0, dangerMode: !1, timer: null },
-        c = Object.assign({}, s);e.setDefaults = function (t) {
-      c = Object.assign({}, s, t);
-    };var l = function l(t) {
-      var e = t && t.button,
-          n = t && t.buttons;return void 0 !== e && void 0 !== n && o.throwErr("Cannot set both 'button' and 'buttons' options!"), void 0 !== e ? { confirm: e } : n;
-    },
-        u = function u(t) {
-      return o.ordinalSuffixOf(t + 1);
-    },
-        f = function f(t, e) {
-      o.throwErr(u(e) + " argument ('" + t + "') is invalid");
-    },
-        d = function d(t, e) {
-      var n = t + 1,
-          r = e[n];o.isPlainObject(r) || void 0 === r || o.throwErr("Expected " + u(n) + " argument ('" + r + "') to be a plain object");
-    },
-        p = function p(t, e) {
-      var n = t + 1,
-          r = e[n];void 0 !== r && o.throwErr("Unexpected " + u(n) + " argument (" + r + ")");
-    },
-        m = function m(t, e, n, r) {
-      var i = typeof e === "undefined" ? "undefined" : _typeof(e),
-          a = "string" === i,
-          s = e instanceof Element;if (a) {
-        if (0 === n) return { text: e };if (1 === n) return { text: e, title: r[0] };if (2 === n) return d(n, r), { icon: e };f(e, n);
-      } else {
-        if (s && 0 === n) return d(n, r), { content: e };if (o.isPlainObject(e)) return p(n, r), e;f(e, n);
-      }
-    };e.getOpts = function () {
-      for (var t = [], e = 0; e < arguments.length; e++) {
-        t[e] = arguments[e];
-      }var n = {};t.forEach(function (e, o) {
-        var r = m(0, e, o, t);Object.assign(n, r);
-      });var o = l(n);n.buttons = r.getButtonListOpts(o), delete n.button, n.content = i.getContentOpts(n.content);var u = Object.assign({}, s, c, n);return Object.keys(u).forEach(function (t) {
-        a.DEPRECATED_OPTS[t] && a.logDeprecation(t);
-      }), u;
-    };
-  }, function (t, e, n) {
-    "use strict";
-    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(1),
-        r = { element: "input", attributes: { placeholder: "" } };e.getContentOpts = function (t) {
-      var e = {};return o.isPlainObject(t) ? Object.assign(e, t) : t instanceof Element ? { element: t } : "input" === t ? r : null;
-    };
-  }, function (t, e, n) {
-    "use strict";
-    Object.defineProperty(e, "__esModule", { value: !0 }), e.logDeprecation = function (t) {
-      var n = e.DEPRECATED_OPTS[t],
-          o = n.onlyRename,
-          r = n.replacement,
-          i = n.subOption,
-          a = n.link,
-          s = o ? "renamed" : "deprecated",
-          c = 'SweetAlert warning: "' + t + '" option has been ' + s + ".";if (r) {
-        c += " Please use" + (i ? ' "' + i + '" in ' : " ") + '"' + r + '" instead.';
-      }var l = "https://sweetalert.js.org";c += a ? " More details: " + l + a : " More details: " + l + "/guides/#upgrading-from-1x", console.warn(c);
-    }, e.DEPRECATED_OPTS = { type: { replacement: "icon", link: "/docs/#icon" }, imageUrl: { replacement: "icon", link: "/docs/#icon" }, customClass: { replacement: "className", onlyRename: !0, link: "/docs/#classname" }, imageSize: {}, showCancelButton: { replacement: "buttons", link: "/docs/#buttons" }, showConfirmButton: { replacement: "button", link: "/docs/#button" }, confirmButtonText: { replacement: "button", link: "/docs/#button" }, confirmButtonColor: {}, cancelButtonText: { replacement: "buttons", link: "/docs/#buttons" }, closeOnConfirm: { replacement: "button", subOption: "closeModal", link: "/docs/#button" }, closeOnCancel: { replacement: "buttons", subOption: "closeModal", link: "/docs/#buttons" }, showLoaderOnConfirm: { replacement: "buttons" }, animation: {}, inputType: { replacement: "content", link: "/docs/#content" }, inputValue: { replacement: "content", link: "/docs/#content" }, inputPlaceholder: { replacement: "content", link: "/docs/#content" }, html: { replacement: "content", link: "/docs/#content" }, allowEscapeKey: { replacement: "closeOnEsc", onlyRename: !0, link: "/docs/#closeonesc" }, allowClickOutside: { replacement: "closeOnClickOutside", onlyRename: !0, link: "/docs/#closeonclickoutside" } };
-  }]);
-});
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(57).setImmediate, __webpack_require__(57).clearImmediate, __webpack_require__(55)(module)))
-
-/***/ }),
-/* 80 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
-    "use strict";
-
-    if (global.setImmediate) {
-        return;
-    }
-
-    var nextHandle = 1; // Spec says greater than zero
-    var tasksByHandle = {};
-    var currentlyRunningATask = false;
-    var doc = global.document;
-    var registerImmediate;
-
-    function setImmediate(callback) {
-        // Callback can either be a function or a string
-        if (typeof callback !== "function") {
-            callback = new Function("" + callback);
-        }
-        // Copy function arguments
-        var args = new Array(arguments.length - 1);
-        for (var i = 0; i < args.length; i++) {
-            args[i] = arguments[i + 1];
-        }
-        // Store and register the task
-        var task = { callback: callback, args: args };
-        tasksByHandle[nextHandle] = task;
-        registerImmediate(nextHandle);
-        return nextHandle++;
-    }
-
-    function clearImmediate(handle) {
-        delete tasksByHandle[handle];
-    }
-
-    function run(task) {
-        var callback = task.callback;
-        var args = task.args;
-        switch (args.length) {
-            case 0:
-                callback();
-                break;
-            case 1:
-                callback(args[0]);
-                break;
-            case 2:
-                callback(args[0], args[1]);
-                break;
-            case 3:
-                callback(args[0], args[1], args[2]);
-                break;
-            default:
-                callback.apply(undefined, args);
-                break;
-        }
-    }
-
-    function runIfPresent(handle) {
-        // From the spec: "Wait until any invocations of this algorithm started before this one have completed."
-        // So if we're currently running a task, we'll need to delay this invocation.
-        if (currentlyRunningATask) {
-            // Delay by doing a setTimeout. setImmediate was tried instead, but in Firefox 7 it generated a
-            // "too much recursion" error.
-            setTimeout(runIfPresent, 0, handle);
-        } else {
-            var task = tasksByHandle[handle];
-            if (task) {
-                currentlyRunningATask = true;
-                try {
-                    run(task);
-                } finally {
-                    clearImmediate(handle);
-                    currentlyRunningATask = false;
-                }
-            }
-        }
-    }
-
-    function installNextTickImplementation() {
-        registerImmediate = function registerImmediate(handle) {
-            process.nextTick(function () {
-                runIfPresent(handle);
-            });
-        };
-    }
-
-    function canUsePostMessage() {
-        // The test against `importScripts` prevents this implementation from being installed inside a web worker,
-        // where `global.postMessage` means something completely different and can't be used for this purpose.
-        if (global.postMessage && !global.importScripts) {
-            var postMessageIsAsynchronous = true;
-            var oldOnMessage = global.onmessage;
-            global.onmessage = function () {
-                postMessageIsAsynchronous = false;
-            };
-            global.postMessage("", "*");
-            global.onmessage = oldOnMessage;
-            return postMessageIsAsynchronous;
-        }
-    }
-
-    function installPostMessageImplementation() {
-        // Installs an event handler on `global` for the `message` event: see
-        // * https://developer.mozilla.org/en/DOM/window.postMessage
-        // * http://www.whatwg.org/specs/web-apps/current-work/multipage/comms.html#crossDocumentMessages
-
-        var messagePrefix = "setImmediate$" + Math.random() + "$";
-        var onGlobalMessage = function onGlobalMessage(event) {
-            if (event.source === global && typeof event.data === "string" && event.data.indexOf(messagePrefix) === 0) {
-                runIfPresent(+event.data.slice(messagePrefix.length));
-            }
-        };
-
-        if (global.addEventListener) {
-            global.addEventListener("message", onGlobalMessage, false);
-        } else {
-            global.attachEvent("onmessage", onGlobalMessage);
-        }
-
-        registerImmediate = function registerImmediate(handle) {
-            global.postMessage(messagePrefix + handle, "*");
-        };
-    }
-
-    function installMessageChannelImplementation() {
-        var channel = new MessageChannel();
-        channel.port1.onmessage = function (event) {
-            var handle = event.data;
-            runIfPresent(handle);
-        };
-
-        registerImmediate = function registerImmediate(handle) {
-            channel.port2.postMessage(handle);
-        };
-    }
-
-    function installReadyStateChangeImplementation() {
-        var html = doc.documentElement;
-        registerImmediate = function registerImmediate(handle) {
-            // Create a <script> element; its readystatechange event will be fired asynchronously once it is inserted
-            // into the document. Do so, thus queuing up the task. Remember to clean up once it's been called.
-            var script = doc.createElement("script");
-            script.onreadystatechange = function () {
-                runIfPresent(handle);
-                script.onreadystatechange = null;
-                html.removeChild(script);
-                script = null;
-            };
-            html.appendChild(script);
-        };
-    }
-
-    function installSetTimeoutImplementation() {
-        registerImmediate = function registerImmediate(handle) {
-            setTimeout(runIfPresent, 0, handle);
-        };
-    }
-
-    // If supported, we should attach to the prototype of global, since that is where setTimeout et al. live.
-    var attachTo = Object.getPrototypeOf && Object.getPrototypeOf(global);
-    attachTo = attachTo && attachTo.setTimeout ? attachTo : global;
-
-    // Don't get fooled by e.g. browserify environments.
-    if ({}.toString.call(global.process) === "[object process]") {
-        // For Node.js before 0.9
-        installNextTickImplementation();
-    } else if (canUsePostMessage()) {
-        // For non-IE10 modern browsers
-        installPostMessageImplementation();
-    } else if (global.MessageChannel) {
-        // For web workers, where supported
-        installMessageChannelImplementation();
-    } else if (doc && "onreadystatechange" in doc.createElement("script")) {
-        // For IE 6–8
-        installReadyStateChangeImplementation();
-    } else {
-        // For older browsers
-        installSetTimeoutImplementation();
-    }
-
-    attachTo.setImmediate = setImmediate;
-    attachTo.clearImmediate = clearImmediate;
-})(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self);
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9), __webpack_require__(20)))
-
-/***/ }),
-/* 81 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_store__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_utils__ = __webpack_require__(7);
-
-
-var list = ['cache.add', 'cache.addAll', 'cache.delete', 'cache.match', 'cache.put', 'cache.keys', 'caches.delete', 'caches.has', 'caches.open'];
-function genWaiter() {
-  return Promise.race([Object(__WEBPACK_IMPORTED_MODULE_1_utils__["f" /* promisifyOneTimeEventListener */])(function () {}, navigator.serviceWorker, 'controllerchange'), Object(__WEBPACK_IMPORTED_MODULE_1_utils__["h" /* sleep */])(3000)]);
-}
-/* harmony default export */ __webpack_exports__["a"] = (function () {
-  function _recursive() {
-    if (i > -1) {
-      return Promise.resolve().then(function () {
-        return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 0, list[i]);
-      }).then(function () {
-        i--;
-        return _recursive();
-      });
-    }
-  }
-
-  var i, hasSW, waiter, reg;
-  return Promise.resolve().then(function () {
-    i = list.length - 1;
-    return _recursive();
-  }).then(function () {
-    hasSW = !!navigator.serviceWorker;
-
-    if (!!hasSW) {
-      return Promise.resolve().then(function () {
-        waiter = genWaiter();
-        return navigator.serviceWorker.register('/auto/cache-sw.js', { scope: '/auto/' });
-      }).then(function (_resp) {
-        reg = _resp;
-        return waiter;
-      }).then(function () {
-        return reg.unregister();
-      }).then(function () {
-        console.log('cache test finished');
-      });
-    }
-  }).then(function () {});
-});
-
-/***/ }),
-/* 82 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_store__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_utils__ = __webpack_require__(7);
-
-
-var list = ['pushManager.subscribe', 'pushManager.getSubscription', 'pushSubscription.unsubscribe', 'pushManager.permissionState', 'pushManager.denied'];
-function genWaiter() {
-  return Promise.race([Object(__WEBPACK_IMPORTED_MODULE_1_utils__["f" /* promisifyOneTimeEventListener */])(function () {}, navigator.serviceWorker, 'controllerchange'), Object(__WEBPACK_IMPORTED_MODULE_1_utils__["h" /* sleep */])(3000)]);
-}
-
-function urlB64ToUint8Array(base64String) {
-  var padding = '='.repeat((4 - base64String.length % 4) % 4);
-  var base64 = (base64String + padding).replace(/\-/g, '+').replace(/_/g, '/');
-
-  var rawData = window.atob(base64);
-  var outputArray = new Uint8Array(rawData.length);
-
-  for (var i = 0; i < rawData.length; ++i) {
-    outputArray[i] = rawData.charCodeAt(i);
-  }
-  return outputArray;
-}
-
-/* harmony default export */ __webpack_exports__["a"] = (function () {
-  function _recursive() {
-    if (i > -1) {
-      return Promise.resolve().then(function () {
-        return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 0, list[i]);
-      }).then(function () {
-        i--;
-        return _recursive();
-      });
-    }
-  }
-
-  var i, hasSW, waiter, reg, pushManager, permissionState, subscription, sub, p256dh, auth;
-  return Promise.resolve().then(function () {
-    __webpack_require__(56);
-    i = list.length - 1;
-    return _recursive();
-  }).then(function () {
-    hasSW = !!navigator.serviceWorker;
-
-    if (!!hasSW) {
-      return Promise.resolve().then(function () {
-        waiter = genWaiter();
-        return navigator.serviceWorker.register('/auto/push-sw.js', {
-          scope: '/auto/'
-        });
-      }).then(function (_resp) {
-        reg = _resp;
-        return waiter;
-      }).then(function () {
-        pushManager = reg.pushManager;
-
-        if (!pushManager) {
-          console.log('no pushManager');
-          return reg.unregister();
-        } else {
-          return Promise.resolve().then(function () {
-            console.log('pushManager found');
-            return Promise.resolve().then(function () {
-              return pushManager.permissionState({
-                userVisibleOnly: true,
-                applicationServerKey: urlB64ToUint8Array('BDm6z7ImnFDW6GJ3bwtFdR4ifKGE0CVGXNRfGJhWGm8gwX1sXHH9uq3zo6mYd7fkjVrzfiDHhS5gYfCbxj2g-Bo')
-              });
-            }).then(function (_resp) {
-              permissionState = _resp;
-
-              console.log('permission state get', permissionState);
-              return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'pushManager.permissionState');
-            }).then(function () {
-              if (permissionState === 'denied') {
-                console.log('permission denied');
-                alert('You should grant our permission of push and notification');
-                // webpack has some problem facing this two line
-                // maybe I can update webpack and then fix this
-                // I will do this later
-                // await reg.unregister()
-                // await store.put('feature', 1, 'pushManager.denied')
-                return;
-              }
-            }).catch(function (err) {
-              console.error(err);
-            });
-          }).then(function () {
-            return pushManager.getSubscription();
-          }).then(function (_resp) {
-            subscription = _resp;
-            return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'pushManager.getSubscription');
-          }).then(function () {
-            console.log('pushManager.getSubscription work', subscription);
-            if (subscription) {
-              return Promise.resolve().then(function () {
-                return subscription.unsubscribe();
-              }).then(function () {
-                return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'pushSubscription.unsubscribe');
-              }).then(function () {
-                console.log('older subscription remove');
-              });
-            }
-          }).then(function () {
-            console.log('ready to subscribe');
-            return Object(__WEBPACK_IMPORTED_MODULE_1_utils__["h" /* sleep */])(1000);
-          }).then(function () {
-            sub = void 0;
-
-            try {
-              pushManager.subscribe({
-                userVisibleOnly: true,
-                applicationServerKey: urlB64ToUint8Array('BDm6z7ImnFDW6GJ3bwtFdR4ifKGE0CVGXNRfGJhWGm8gwX1sXHH9uq3zo6mYd7fkjVrzfiDHhS5gYfCbxj2g-Bo')
-              }).then(function (sth) {
-                sub = sth;
-              }).catch(function (error) {
-                console.error(error);
-              });
-            } catch (err) {
-              console.error(err);
-            }
-            // when i use Promise.race on firefox
-            // it do not work as i want
-            // so i give up and use sleep
-            return Object(__WEBPACK_IMPORTED_MODULE_1_utils__["h" /* sleep */])(10000);
-          }).then(function () {
-            if (sub) {
-              return Promise.resolve().then(function () {
-                console.log('pushManager.subscribe work', sub);
-                p256dh = btoa(String.fromCharCode.apply(null, new Uint8Array(sub.getKey('p256dh'))));
-                auth = btoa(String.fromCharCode.apply(null, new Uint8Array(sub.getKey('auth'))));
-                return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'pushManager.subscribe');
-              }).then(function () {
-                return Promise.resolve().then(function () {
-                  return fetch('/askforpush', {
-                    method: 'POST',
-                    headers: {
-                      'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                      endpoint: sub.endpoint,
-                      p256dh: p256dh,
-                      auth: auth
-                    })
-                  });
-                }).catch(function (err) {
-                  console.error(err);
-                });
-              }).then(function () {
-                return Object(__WEBPACK_IMPORTED_MODULE_1_utils__["h" /* sleep */])(5000);
-              }).then(function () {
-                return sub.unsubscribe();
-              }).then(function () {
-                console.log('subscription.unsubscribe work');
-                return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'pushSubscription.unsubscribe');
-              }).then(function () {
-                return reg.unregister();
-              }).then(function () {
-                console.log('unregister');
-              });
-            } else {
-              return Promise.resolve().then(function () {
-                return reg.unregister();
-              }).then(function () {
-                console.log('unregister');
-                return;
-              });
-            }
-          });
-        }
-      });
-    }
-  }).then(function () {});
-});
-
-/***/ }),
-/* 83 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(module) {var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -8097,7 +4475,6716 @@ function urlB64ToUint8Array(base64String) {
     e.exports = '<div>\n  <dl class="vc-table-row">\n    <dd class="vc-table-col">Name</dd>\n    <dd class="vc-table-col vc-table-col-2">Value</dd>\n  </dl>\n  {{for (var i = 0; i < list.length; i++)}}\n  <dl class="vc-table-row">\n    <dd class="vc-table-col">{{list[i].name}}</dd>\n    <dd class="vc-table-col vc-table-col-2">{{list[i].value}}</dd>\n  </dl>\n  {{/for}}\n</div>';
   }]);
 });
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(55)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)(module)))
+
+/***/ }),
+/* 60 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__test__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_store__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_utils__ = __webpack_require__(7);
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = (function () {
+  var hasSW, sw;
+  return Promise.resolve().then(function () {
+    return Object(__WEBPACK_IMPORTED_MODULE_0__test__["a" /* default */])(window, 0);
+  }).then(function () {
+    hasSW = !!navigator.serviceWorker;
+    // test if we suggest navigator.serviceWorker
+
+    return __WEBPACK_IMPORTED_MODULE_1_store__["a" /* default */].put('feature', Number(hasSW), 'navigator.serviceWorker');
+  }).then(function () {
+    if (!!hasSW) {
+      return Promise.resolve().then(function () {
+        return navigator.serviceWorker.register('/auto/global-sw.js', { scope: '/auto/' });
+      }).then(function (_resp) {
+        sw = _resp;
+
+        console.log('Registered!', sw);
+        return __WEBPACK_IMPORTED_MODULE_1_store__["a" /* default */].put('feature', 1, 'Registered');
+      }).then(function () {
+        return Object(__WEBPACK_IMPORTED_MODULE_2_utils__["h" /* sleep */])(3000);
+      }).then(function () {
+        return sw.unregister();
+      }).then(function () {
+        console.log('Unregistered');
+        return __WEBPACK_IMPORTED_MODULE_1_store__["a" /* default */].put('feature', 1, 'Unregistered');
+      });
+    }
+  }).then(function () {});
+});
+
+/***/ }),
+/* 61 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_utils__ = __webpack_require__(7);
+
+/* harmony default export */ __webpack_exports__["a"] = (function () {
+  var search, _search$step, step, hasSW;
+
+  return Promise.resolve().then(function () {
+    search = Object(__WEBPACK_IMPORTED_MODULE_0_utils__["g" /* search2obj */])();
+    _search$step = search.step;
+    step = _search$step === undefined ? 0 : _search$step;
+
+    step = parseInt(step);
+    step++;
+    hasSW = !!navigator.serviceWorker;
+
+    if (hasSW) {
+      return navigator.serviceWorker.register('/auto/empty-sw.js', { scope: '/auto/' });
+    }
+  }).then(function () {
+    location.search = Object(__WEBPACK_IMPORTED_MODULE_0_utils__["e" /* obj2search */])(Object.assign(search, { step: step }));
+  });
+});
+
+/***/ }),
+/* 62 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_store__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_utils__ = __webpack_require__(7);
+
+
+var messageChannel = void 0;
+function genWaiter() {
+  var tasks = [];
+  if (window.MessageChannel) {
+    messageChannel = new MessageChannel();
+    console.log(messageChannel.port1.addEventListener);
+    // tasks.push(promisifyOneTimeEventListener(async event => {
+    //   console.log('Got reply from serviceWorker via channel', event.data)
+    //   await store.put('feature', 0.8, 'main-msg-got')
+    //   await store.put('feature', 'messageChannel.port1', 'main-msg-got-by')
+    // }, messageChannel.port1, 'message'))
+    // it's better to use onmessage as some version may be addEventListener bug
+    messageChannel.port1.onmessage = function (event) {
+      return Promise.resolve().then(function () {
+        console.log('Got reply from serviceWorker via channel', event.data);
+        return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 0.8, 'main-msg-got');
+      }).then(function () {
+        return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 'messageChannel.port1', 'main-msg-got-by');
+      }).then(function () {});
+    };
+    // messageChannel.port1.addEventListener('message', async event => {
+    //   console.log('Got reply from serviceWorker via channel', event.data)
+    //   await store.put('feature', 0.8, 'main-msg-got')
+    //   await store.put('feature', 'messageChannel.port1', 'main-msg-got-by')
+    // })
+  }
+  return Promise.race(tasks.concat([Object(__WEBPACK_IMPORTED_MODULE_1_utils__["f" /* promisifyOneTimeEventListener */])(function (error) {
+    return Promise.resolve().then(function () {
+      console.error(error);
+      return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 0, 'main-msg-got');
+    }).then(function () {});
+  }, window, 'error'), Object(__WEBPACK_IMPORTED_MODULE_1_utils__["f" /* promisifyOneTimeEventListener */])(function (event) {
+    return Promise.resolve().then(function () {
+      console.warn('Got reply from serviceWorker via window', event.data);
+      return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 0.5, 'main-msg-got');
+    }).then(function () {
+      return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 'window', 'main-msg-got-by');
+    }).then(function () {});
+  }, window, 'message'), Object(__WEBPACK_IMPORTED_MODULE_1_utils__["f" /* promisifyOneTimeEventListener */])(function (event) {
+    return Promise.resolve().then(function () {
+      console.log('Got reply from serviceWorker via navigator.serviceWorker', event.data);
+      return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'main-msg-got');
+    }).then(function () {
+      return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 'navigator.serviceWorker', 'main-msg-got-by');
+    }).then(function () {});
+  }, navigator.serviceWorker, 'message')]));
+}
+/* harmony default export */ __webpack_exports__["a"] = (function () {
+  function _recursive() {
+    if (i > -1) {
+      return Promise.resolve().then(function () {
+        return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].get('feature', list[i]);
+      }).then(function (_resp) {
+        bias = _resp;
+
+        point += parseFloat(bias);
+        i--;
+        return _recursive();
+      });
+    }
+  }
+
+  var hasSW, messageWaiter, activatedWaiter, reg, list, point, i, bias;
+  return Promise.resolve().then(function () {
+    hasSW = !!navigator.serviceWorker;
+
+    if (!!hasSW) {
+      return Promise.resolve().then(function () {
+        messageWaiter = genWaiter();
+
+        console.log(navigator.serviceWorker);
+        activatedWaiter = Promise.race([Object(__WEBPACK_IMPORTED_MODULE_1_utils__["f" /* promisifyOneTimeEventListener */])(function () {
+          return console.log('controllerchange');
+        }, navigator.serviceWorker, 'controllerchange'), Object(__WEBPACK_IMPORTED_MODULE_1_utils__["h" /* sleep */])(3000)]);
+        return navigator.serviceWorker.register('/auto/postmessage-sw.js', { scope: '/auto/' });
+      }).then(function (_resp) {
+        reg = _resp;
+
+        console.log('Registered!', reg);
+        return activatedWaiter;
+      }).then(function () {
+        return Promise.resolve().then(function () {
+          console.log(reg.active.postMessage, 'ready');
+          reg.active.postMessage({
+            text: 'Hi!',
+            port: messageChannel && messageChannel.port2
+          }, [messageChannel && messageChannel.port2]);
+          return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'main-msg-send');
+        }).catch(function (err) {
+          console.error(err);
+          // getting a cloning error in Firefox
+          reg.active.postMessage({
+            text: 'Hi!'
+          });
+          return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 0.5, 'main-msg-send');
+        });
+      }).then(function () {
+        return Promise.race([messageWaiter, Object(__WEBPACK_IMPORTED_MODULE_1_utils__["h" /* sleep */])(3000)]);
+      }).then(function () {
+        list = ['sw-msg-send', 'sw-msg-got', 'main-msg-send', 'main-msg-got'];
+        point = 0;
+        i = list.length - 1;
+        return _recursive();
+      }).then(function () {
+        return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', point / list.length, 'postMessage');
+      }).then(function () {
+        return reg.unregister();
+      }).then(function () {
+        console.log('Unregistered');
+      });
+    }
+  }).then(function () {});
+});
+
+/***/ }),
+/* 63 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_store__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_utils__ = __webpack_require__(7);
+
+
+var list = ['activateEvent', 'activateEvent.waitUntil', 'clients.claim', 'fetchEvent', 'installEvent', 'installEvent.waitUntil', 'navigator.serviceWorker', 'oncontrollerchange', 'self.skipWaiting'];
+function controllerchangeCauseByNormalInstall(evt) {
+  var score, activateWaitUntilScore, _test;
+
+  return Promise.resolve().then(function () {
+    console.log('serviceWorker now has a new activated one');
+    console.log('this event will trigger after installEvent.waitUntil and before activateEvent.waitUntil');
+    _test = !evt;
+
+    if (_test) {
+      return Promise.resolve().then(function () {
+        return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].get('feature', 'oncontrollerchange');
+      }).then(function (_resp) {
+        score = _resp;
+      });
+    }
+  }).then(function () {
+    if (!(_test && parseFloat(score) === 1)) {
+      return Promise.resolve().then(function () {
+        if (_test) {
+          return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 0, 'oncontrollerchange');
+        } else {
+          return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'oncontrollerchange');
+        }
+      }).then(function () {
+        console.log('if has not activate controller, this should be trigger earlier that activated event');
+        return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].get('feature', 'activateEvent.waitUntil');
+      }).then(function (_resp) {
+        activateWaitUntilScore = _resp;
+
+        if (activateWaitUntilScore && parseFloat(activateWaitUntilScore) > 0) {
+          console.error('the activateEvent.waitUntil trigger before oncontrollerchange');
+          return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', activateWaitUntilScore, 'activateEvent.waitUntil');
+        }
+      });
+    }
+  }).then(function () {});
+}
+function genWaiter(fn) {
+  return Promise.race([Object(__WEBPACK_IMPORTED_MODULE_1_utils__["f" /* promisifyOneTimeEventListener */])(fn, navigator.serviceWorker, 'controllerchange'), Object(__WEBPACK_IMPORTED_MODULE_1_utils__["h" /* sleep */])(3000).then(fn)]);
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (function () {
+  function _recursive() {
+    if (i > -1) {
+      return Promise.resolve().then(function () {
+        return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 0, list[i]);
+      }).then(function () {
+        i--;
+        return _recursive();
+      });
+    }
+  }
+
+  function _recursive2() {
+    if (_i < list.length) {
+      return Promise.resolve().then(function () {
+        key = list[_i];
+        return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].get('feature', key);
+      }).then(function (_resp) {
+        score = _resp;
+
+        sum += parseFloat(score);
+        _i++;
+        return _recursive2();
+      });
+    }
+  }
+
+  var i, hasSW, waiter, reg, activateWaitUntilScore, response, clarify, clientsclaimScore, sum, _i, key, score, _test2;
+
+  return Promise.resolve().then(function () {
+    __webpack_require__(56);
+    // init all the feature as zero
+    i = list.length - 1;
+    return _recursive();
+  }).then(function () {
+    // generate waiter for controller change
+    hasSW = !!navigator.serviceWorker;
+
+    if (!!hasSW) {
+      return Promise.resolve().then(function () {
+        return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'navigator.serviceWorker');
+      }).then(function () {
+        navigator.serviceWorker.ready.then(function () {
+          return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'navigator.serviceWorker.ready');
+        });
+        waiter = genWaiter(controllerchangeCauseByNormalInstall);
+        // register test, including install event, controllerchange, activate event
+
+        return navigator.serviceWorker.register('/auto/lifecycle-sw.js', { scope: '/auto/' });
+      }).then(function (_resp) {
+        reg = _resp;
+
+        console.log('Registered!', reg);
+        // wait for actived event fininshed
+        return waiter;
+      }).then(function () {
+        return Object(__WEBPACK_IMPORTED_MODULE_1_utils__["h" /* sleep */])(3000);
+      }).then(function () {
+        return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].get('feature', 'activateEvent.waitUntil');
+      }).then(function (_resp) {
+        activateWaitUntilScore = _resp;
+        return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', (parseFloat(activateWaitUntilScore) || 0) + 0.5, 'activateEvent.waitUntil');
+      }).then(function () {
+        return fetch('/whoareyou.json');
+      }).then(function (_resp) {
+        response = _resp;
+        _test2 = response.ok;
+        // unregister test
+
+        if (_test2) {
+          return Promise.resolve().then(function () {
+            return response.json();
+          }).then(function (_resp) {
+            clarify = _resp;
+
+            console.log('clarify who controll the page', clarify);
+          });
+        }
+      }).then(function () {
+        if (_test2 && clarify['i am'] === 'lifecycle-sw') {
+          return Promise.resolve().then(function () {
+            return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].get('feature', 'clients.claim');
+          }).then(function (_resp) {
+            clientsclaimScore = _resp;
+            return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', (parseFloat(clientsclaimScore) || 0) + 0.5, 'clients.claim');
+          });
+        }
+      }).then(function () {
+        return reg.unregister();
+      }).then(function () {
+        console.log('Unregistered');
+        sum = 0;
+        _i = 0;
+        return _recursive2();
+      }).then(function () {
+        sum /= list.length;
+        return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', sum, 'lifecycle');
+      });
+    }
+  }).then(function () {});
+});
+
+/***/ }),
+/* 64 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_store__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_utils__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_raven_js__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_raven_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_raven_js__);
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = (function () {
+  var hasSW, reg, activatedWaiter, tags;
+  return Promise.resolve().then(function () {
+    hasSW = !!navigator.serviceWorker;
+
+    if (!!hasSW) {
+      return Promise.resolve().then(function () {
+        __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 0, 'syncEvent');
+        reg = void 0;
+        return Promise.resolve().then(function () {
+          activatedWaiter = Promise.race([Object(__WEBPACK_IMPORTED_MODULE_1_utils__["f" /* promisifyOneTimeEventListener */])(function () {
+            return console.log('controllerchange');
+          }, navigator.serviceWorker, 'controllerchange'), Object(__WEBPACK_IMPORTED_MODULE_1_utils__["h" /* sleep */])(3000)]);
+          return navigator.serviceWorker.register('/auto/sync-sw.js', { scope: '/auto/' });
+        }).then(function (_resp) {
+          reg = _resp;
+          return activatedWaiter;
+        }).catch(function (error) {
+          __WEBPACK_IMPORTED_MODULE_2_raven_js___default.a.captureException(error);
+        });
+      }).then(function () {
+        return Promise.resolve().then(function () {
+          return reg.sync.getTags();
+        }).then(function (_resp) {
+          tags = _resp;
+
+          if (tags.includes('syncTest')) {
+            console.log("There's already a background sync pending");
+          }
+        }).catch(function (error) {
+          console.error('It broke (probably sync not supported or flag not enabled)');
+          console.error(error.message);
+          return;
+        });
+      }).then(function () {
+        try {
+          reg.sync.register('syncTest');
+          console.log('Sync registered');
+        } catch (error) {
+          console.error('It broke');
+          console.error(error.message);
+        }
+        return Object(__WEBPACK_IMPORTED_MODULE_1_utils__["h" /* sleep */])(1000);
+      }).then(function () {
+        return reg.unregister();
+      });
+    }
+  }).then(function () {});
+});
+
+/***/ }),
+/* 65 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_store__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_utils__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helper__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_raven__ = __webpack_require__(55);
+
+
+
+
+function genRGB(score) {
+  score = Object(__WEBPACK_IMPORTED_MODULE_1_utils__["a" /* isNumeric */])(score) ? score : 0;
+  return [~~(141 - 141 * score), ~~(49 + 101 * score), 24];
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (function () {
+  function _recursive() {
+    if (i < __WEBPACK_IMPORTED_MODULE_2__helper__["b" /* featureKeys */].length) {
+      return Promise.resolve().then(function () {
+        key = __WEBPACK_IMPORTED_MODULE_2__helper__["b" /* featureKeys */][i];
+        return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].get('feature', key);
+      }).then(function (_resp) {
+        scoreStr = _resp;
+        isNote = scoreStr && !Object(__WEBPACK_IMPORTED_MODULE_1_utils__["a" /* isNumeric */])(scoreStr);
+        score = isNote ? scoreStr : parseFloat(scoreStr || 0);
+        _rgb = isNote ? [0, 0, 0] : genRGB(score);
+
+        fullScore = isNote ? fullScore : fullScore + 1;
+        totalScore = isNote ? totalScore : totalScore + score;
+        li = '\n    <tr style="color: rgb(' + _rgb.toString() + ')">\n      <td class="key">' + key + '</td>\n      <td class="' + (isNote ? 'note' : 'score') + '">' + (isNote ? score : score * 100) + '</td>\n    </tr>\n    ';
+
+        result[key] = score;
+        resultHTML += li;
+        i++;
+        return _recursive();
+      });
+    }
+  }
+
+  var resultHTML, fullScore, totalScore, result, i, key, scoreStr, isNote, score, _rgb, li, rank, rgb, schedule;
+
+  return Promise.resolve().then(function () {
+    __WEBPACK_IMPORTED_MODULE_2__helper__["c" /* info */].timeoutTimer && clearTimeout(__WEBPACK_IMPORTED_MODULE_2__helper__["c" /* info */].timeoutTimer);
+    document.querySelector('tbody').innerHTML = '';
+    resultHTML = '';
+    fullScore = 0;
+    totalScore = 0;
+    result = {};
+    i = 0;
+    return _recursive();
+  }).then(function () {
+    document.querySelector('.features tbody').innerHTML = resultHTML;
+    rank = totalScore / fullScore;
+    rgb = genRGB(rank);
+
+    document.querySelector('.result').style.backgroundColor = 'rgb(' + rgb.toString() + ')';
+    document.querySelector('.total-score').innerHTML = ~~(rank * 100);
+    return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].get('info', 'schedule');
+  }).then(function (_resp) {
+    schedule = _resp;
+
+    schedule = parseFloat(schedule || 0);
+    schedule = ++schedule;
+    document.querySelector('.schedule span').innerHTML = ~~(schedule / __WEBPACK_IMPORTED_MODULE_2__helper__["c" /* info */].totalSchedule * 100) + '%';
+    return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('info', schedule, 'schedule');
+  }).then(function () {
+    if (schedule !== __WEBPACK_IMPORTED_MODULE_2__helper__["c" /* info */].totalSchedule) {
+      __WEBPACK_IMPORTED_MODULE_2__helper__["c" /* info */].timeoutTimer = setTimeout(function () {
+        __WEBPACK_IMPORTED_MODULE_3_raven__["a" /* default */].setUserContext({ result: result });
+        __WEBPACK_IMPORTED_MODULE_3_raven__["a" /* default */].captureMessage('test-failed-' + Object(__WEBPACK_IMPORTED_MODULE_1_utils__["i" /* uuid */])(), {
+          level: 'warning'
+        });
+        document.querySelector('.schedule').innerHTML = __WEBPACK_IMPORTED_MODULE_2__helper__["e" /* testTips */].fail;
+      }, 20000);
+    }
+  });
+});
+
+/***/ }),
+/* 66 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_store__ = __webpack_require__(8);
+
+/* harmony default export */ __webpack_exports__["a"] = (function () {
+  var hasSW, reg;
+  return Promise.resolve().then(function () {
+    return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].clear('feature');
+  }).then(function () {
+    return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].clear('info');
+  }).then(function () {
+    return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('info', 0, 'schedule');
+  }).then(function () {
+    hasSW = !!navigator.serviceWorker;
+
+    if (!!hasSW) {
+      return Promise.resolve().then(function () {
+        return navigator.serviceWorker.getRegistration();
+      }).then(function (_resp) {
+        reg = _resp;
+
+        if (reg) {
+          return Promise.resolve().then(function () {
+            return reg.unregitster;
+          }).then(function (_resp) {
+            _resp && reg.unregitster();
+          });
+        }
+      });
+    }
+  }).then(function () {});
+});
+
+/***/ }),
+/* 67 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ua_parser_js__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ua_parser_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_ua_parser_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_store__ = __webpack_require__(8);
+
+
+var parser = new __WEBPACK_IMPORTED_MODULE_0_ua_parser_js___default.a();
+
+var _parser$getResult = parser.getResult(),
+    browser = _parser$getResult.browser,
+    os = _parser$getResult.os,
+    device = _parser$getResult.device;
+
+document.querySelector('.browser span').innerHTML = browser.name + ' ' + browser.version;
+document.querySelector('.os span').innerHTML = os.name + ' ' + os.version;
+document.querySelector('.device span').innerHTML = device.type + ' ' + device.model + ' ' + device.vendor;
+/* harmony default export */ __webpack_exports__["a"] = (function () {
+  return Promise.resolve().then(function () {
+    return __WEBPACK_IMPORTED_MODULE_1_store__["a" /* default */].put('info', JSON.stringify(browser), 'browser');
+  }).then(function () {
+    return __WEBPACK_IMPORTED_MODULE_1_store__["a" /* default */].put('info', JSON.stringify(os), 'os');
+  }).then(function () {
+    return __WEBPACK_IMPORTED_MODULE_1_store__["a" /* default */].put('info', JSON.stringify(device), 'device');
+  }).then(function () {});
+});
+
+/***/ }),
+/* 68 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(module) {var __WEBPACK_AMD_DEFINE_RESULT__;var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+/**
+ * UAParser.js v0.7.17
+ * Lightweight JavaScript-based User-Agent string parser
+ * https://github.com/faisalman/ua-parser-js
+ *
+ * Copyright © 2012-2016 Faisal Salman <fyzlman@gmail.com>
+ * Dual licensed under GPLv2 & MIT
+ */
+
+(function (window, undefined) {
+
+    'use strict';
+
+    //////////////
+    // Constants
+    /////////////
+
+
+    var LIBVERSION = '0.7.17',
+        EMPTY = '',
+        UNKNOWN = '?',
+        FUNC_TYPE = 'function',
+        UNDEF_TYPE = 'undefined',
+        OBJ_TYPE = 'object',
+        STR_TYPE = 'string',
+        MAJOR = 'major',
+        // deprecated
+    MODEL = 'model',
+        NAME = 'name',
+        TYPE = 'type',
+        VENDOR = 'vendor',
+        VERSION = 'version',
+        ARCHITECTURE = 'architecture',
+        CONSOLE = 'console',
+        MOBILE = 'mobile',
+        TABLET = 'tablet',
+        SMARTTV = 'smarttv',
+        WEARABLE = 'wearable',
+        EMBEDDED = 'embedded';
+
+    ///////////
+    // Helper
+    //////////
+
+
+    var util = {
+        extend: function extend(regexes, extensions) {
+            var margedRegexes = {};
+            for (var i in regexes) {
+                if (extensions[i] && extensions[i].length % 2 === 0) {
+                    margedRegexes[i] = extensions[i].concat(regexes[i]);
+                } else {
+                    margedRegexes[i] = regexes[i];
+                }
+            }
+            return margedRegexes;
+        },
+        has: function has(str1, str2) {
+            if (typeof str1 === "string") {
+                return str2.toLowerCase().indexOf(str1.toLowerCase()) !== -1;
+            } else {
+                return false;
+            }
+        },
+        lowerize: function lowerize(str) {
+            return str.toLowerCase();
+        },
+        major: function major(version) {
+            return (typeof version === 'undefined' ? 'undefined' : _typeof(version)) === STR_TYPE ? version.replace(/[^\d\.]/g, '').split(".")[0] : undefined;
+        },
+        trim: function trim(str) {
+            return str.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
+        }
+    };
+
+    ///////////////
+    // Map helper
+    //////////////
+
+
+    var mapper = {
+
+        rgx: function rgx(ua, arrays) {
+
+            //var result = {},
+            var i = 0,
+                j,
+                k,
+                p,
+                q,
+                matches,
+                match; //, args = arguments;
+
+            /*// construct object barebones
+            for (p = 0; p < args[1].length; p++) {
+                q = args[1][p];
+                result[typeof q === OBJ_TYPE ? q[0] : q] = undefined;
+            }*/
+
+            // loop through all regexes maps
+            while (i < arrays.length && !matches) {
+
+                var regex = arrays[i],
+                    // even sequence (0,2,4,..)
+                props = arrays[i + 1]; // odd sequence (1,3,5,..)
+                j = k = 0;
+
+                // try matching uastring with regexes
+                while (j < regex.length && !matches) {
+
+                    matches = regex[j++].exec(ua);
+
+                    if (!!matches) {
+                        for (p = 0; p < props.length; p++) {
+                            match = matches[++k];
+                            q = props[p];
+                            // check if given property is actually array
+                            if ((typeof q === 'undefined' ? 'undefined' : _typeof(q)) === OBJ_TYPE && q.length > 0) {
+                                if (q.length == 2) {
+                                    if (_typeof(q[1]) == FUNC_TYPE) {
+                                        // assign modified match
+                                        this[q[0]] = q[1].call(this, match);
+                                    } else {
+                                        // assign given value, ignore regex match
+                                        this[q[0]] = q[1];
+                                    }
+                                } else if (q.length == 3) {
+                                    // check whether function or regex
+                                    if (_typeof(q[1]) === FUNC_TYPE && !(q[1].exec && q[1].test)) {
+                                        // call function (usually string mapper)
+                                        this[q[0]] = match ? q[1].call(this, match, q[2]) : undefined;
+                                    } else {
+                                        // sanitize match using given regex
+                                        this[q[0]] = match ? match.replace(q[1], q[2]) : undefined;
+                                    }
+                                } else if (q.length == 4) {
+                                    this[q[0]] = match ? q[3].call(this, match.replace(q[1], q[2])) : undefined;
+                                }
+                            } else {
+                                this[q] = match ? match : undefined;
+                            }
+                        }
+                    }
+                }
+                i += 2;
+            }
+            // console.log(this);
+            //return this;
+        },
+
+        str: function str(_str, map) {
+
+            for (var i in map) {
+                // check if array
+                if (_typeof(map[i]) === OBJ_TYPE && map[i].length > 0) {
+                    for (var j = 0; j < map[i].length; j++) {
+                        if (util.has(map[i][j], _str)) {
+                            return i === UNKNOWN ? undefined : i;
+                        }
+                    }
+                } else if (util.has(map[i], _str)) {
+                    return i === UNKNOWN ? undefined : i;
+                }
+            }
+            return _str;
+        }
+    };
+
+    ///////////////
+    // String map
+    //////////////
+
+
+    var maps = {
+
+        browser: {
+            oldsafari: {
+                version: {
+                    '1.0': '/8',
+                    '1.2': '/1',
+                    '1.3': '/3',
+                    '2.0': '/412',
+                    '2.0.2': '/416',
+                    '2.0.3': '/417',
+                    '2.0.4': '/419',
+                    '?': '/'
+                }
+            }
+        },
+
+        device: {
+            amazon: {
+                model: {
+                    'Fire Phone': ['SD', 'KF']
+                }
+            },
+            sprint: {
+                model: {
+                    'Evo Shift 4G': '7373KT'
+                },
+                vendor: {
+                    'HTC': 'APA',
+                    'Sprint': 'Sprint'
+                }
+            }
+        },
+
+        os: {
+            windows: {
+                version: {
+                    'ME': '4.90',
+                    'NT 3.11': 'NT3.51',
+                    'NT 4.0': 'NT4.0',
+                    '2000': 'NT 5.0',
+                    'XP': ['NT 5.1', 'NT 5.2'],
+                    'Vista': 'NT 6.0',
+                    '7': 'NT 6.1',
+                    '8': 'NT 6.2',
+                    '8.1': 'NT 6.3',
+                    '10': ['NT 6.4', 'NT 10.0'],
+                    'RT': 'ARM'
+                }
+            }
+        }
+    };
+
+    //////////////
+    // Regex map
+    /////////////
+
+
+    var regexes = {
+
+        browser: [[
+
+        // Presto based
+        /(opera\smini)\/([\w\.-]+)/i, // Opera Mini
+        /(opera\s[mobiletab]+).+version\/([\w\.-]+)/i, // Opera Mobi/Tablet
+        /(opera).+version\/([\w\.]+)/i, // Opera > 9.80
+        /(opera)[\/\s]+([\w\.]+)/i // Opera < 9.80
+        ], [NAME, VERSION], [/(opios)[\/\s]+([\w\.]+)/i // Opera mini on iphone >= 8.0
+        ], [[NAME, 'Opera Mini'], VERSION], [/\s(opr)\/([\w\.]+)/i // Opera Webkit
+        ], [[NAME, 'Opera'], VERSION], [
+
+        // Mixed
+        /(kindle)\/([\w\.]+)/i, // Kindle
+        /(lunascape|maxthon|netfront|jasmine|blazer)[\/\s]?([\w\.]+)*/i,
+        // Lunascape/Maxthon/Netfront/Jasmine/Blazer
+
+        // Trident based
+        /(avant\s|iemobile|slim|baidu)(?:browser)?[\/\s]?([\w\.]*)/i,
+        // Avant/IEMobile/SlimBrowser/Baidu
+        /(?:ms|\()(ie)\s([\w\.]+)/i, // Internet Explorer
+
+        // Webkit/KHTML based
+        /(rekonq)\/([\w\.]+)*/i, // Rekonq
+        /(chromium|flock|rockmelt|midori|epiphany|silk|skyfire|ovibrowser|bolt|iron|vivaldi|iridium|phantomjs|bowser)\/([\w\.-]+)/i
+        // Chromium/Flock/RockMelt/Midori/Epiphany/Silk/Skyfire/Bolt/Iron/Iridium/PhantomJS/Bowser
+        ], [NAME, VERSION], [/(trident).+rv[:\s]([\w\.]+).+like\sgecko/i // IE11
+        ], [[NAME, 'IE'], VERSION], [/(edge)\/((\d+)?[\w\.]+)/i // Microsoft Edge
+        ], [NAME, VERSION], [/(yabrowser)\/([\w\.]+)/i // Yandex
+        ], [[NAME, 'Yandex'], VERSION], [/(puffin)\/([\w\.]+)/i // Puffin
+        ], [[NAME, 'Puffin'], VERSION], [/((?:[\s\/])uc?\s?browser|(?:juc.+)ucweb)[\/\s]?([\w\.]+)/i
+        // UCBrowser
+        ], [[NAME, 'UCBrowser'], VERSION], [/(comodo_dragon)\/([\w\.]+)/i // Comodo Dragon
+        ], [[NAME, /_/g, ' '], VERSION], [/(micromessenger)\/([\w\.]+)/i // WeChat
+        ], [[NAME, 'WeChat'], VERSION], [/(QQ)\/([\d\.]+)/i // QQ, aka ShouQ
+        ], [NAME, VERSION], [/m?(qqbrowser)[\/\s]?([\w\.]+)/i // QQBrowser
+        ], [NAME, VERSION], [/xiaomi\/miuibrowser\/([\w\.]+)/i // MIUI Browser
+        ], [VERSION, [NAME, 'MIUI Browser']], [/;fbav\/([\w\.]+);/i // Facebook App for iOS & Android
+        ], [VERSION, [NAME, 'Facebook']], [/headlesschrome(?:\/([\w\.]+)|\s)/i // Chrome Headless
+        ], [VERSION, [NAME, 'Chrome Headless']], [/\swv\).+(chrome)\/([\w\.]+)/i // Chrome WebView
+        ], [[NAME, /(.+)/, '$1 WebView'], VERSION], [/((?:oculus|samsung)browser)\/([\w\.]+)/i], [[NAME, /(.+(?:g|us))(.+)/, '$1 $2'], VERSION], [// Oculus / Samsung Browser
+
+        /android.+version\/([\w\.]+)\s+(?:mobile\s?safari|safari)*/i // Android Browser
+        ], [VERSION, [NAME, 'Android Browser']], [/(chrome|omniweb|arora|[tizenoka]{5}\s?browser)\/v?([\w\.]+)/i
+        // Chrome/OmniWeb/Arora/Tizen/Nokia
+        ], [NAME, VERSION], [/(dolfin)\/([\w\.]+)/i // Dolphin
+        ], [[NAME, 'Dolphin'], VERSION], [/((?:android.+)crmo|crios)\/([\w\.]+)/i // Chrome for Android/iOS
+        ], [[NAME, 'Chrome'], VERSION], [/(coast)\/([\w\.]+)/i // Opera Coast
+        ], [[NAME, 'Opera Coast'], VERSION], [/fxios\/([\w\.-]+)/i // Firefox for iOS
+        ], [VERSION, [NAME, 'Firefox']], [/version\/([\w\.]+).+?mobile\/\w+\s(safari)/i // Mobile Safari
+        ], [VERSION, [NAME, 'Mobile Safari']], [/version\/([\w\.]+).+?(mobile\s?safari|safari)/i // Safari & Safari Mobile
+        ], [VERSION, NAME], [/webkit.+?(gsa)\/([\w\.]+).+?(mobile\s?safari|safari)(\/[\w\.]+)/i // Google Search Appliance on iOS
+        ], [[NAME, 'GSA'], VERSION], [/webkit.+?(mobile\s?safari|safari)(\/[\w\.]+)/i // Safari < 3.0
+        ], [NAME, [VERSION, mapper.str, maps.browser.oldsafari.version]], [/(konqueror)\/([\w\.]+)/i, // Konqueror
+        /(webkit|khtml)\/([\w\.]+)/i], [NAME, VERSION], [
+
+        // Gecko based
+        /(navigator|netscape)\/([\w\.-]+)/i // Netscape
+        ], [[NAME, 'Netscape'], VERSION], [/(swiftfox)/i, // Swiftfox
+        /(icedragon|iceweasel|camino|chimera|fennec|maemo\sbrowser|minimo|conkeror)[\/\s]?([\w\.\+]+)/i,
+        // IceDragon/Iceweasel/Camino/Chimera/Fennec/Maemo/Minimo/Conkeror
+        /(firefox|seamonkey|k-meleon|icecat|iceape|firebird|phoenix)\/([\w\.-]+)/i,
+        // Firefox/SeaMonkey/K-Meleon/IceCat/IceApe/Firebird/Phoenix
+        /(mozilla)\/([\w\.]+).+rv\:.+gecko\/\d+/i, // Mozilla
+
+        // Other
+        /(polaris|lynx|dillo|icab|doris|amaya|w3m|netsurf|sleipnir)[\/\s]?([\w\.]+)/i,
+        // Polaris/Lynx/Dillo/iCab/Doris/Amaya/w3m/NetSurf/Sleipnir
+        /(links)\s\(([\w\.]+)/i, // Links
+        /(gobrowser)\/?([\w\.]+)*/i, // GoBrowser
+        /(ice\s?browser)\/v?([\w\._]+)/i, // ICE Browser
+        /(mosaic)[\/\s]([\w\.]+)/i // Mosaic
+        ], [NAME, VERSION]
+
+        /* /////////////////////
+        // Media players BEGIN
+        ////////////////////////
+         , [
+         /(apple(?:coremedia|))\/((\d+)[\w\._]+)/i,                          // Generic Apple CoreMedia
+        /(coremedia) v((\d+)[\w\._]+)/i
+        ], [NAME, VERSION], [
+         /(aqualung|lyssna|bsplayer)\/((\d+)?[\w\.-]+)/i                     // Aqualung/Lyssna/BSPlayer
+        ], [NAME, VERSION], [
+         /(ares|ossproxy)\s((\d+)[\w\.-]+)/i                                 // Ares/OSSProxy
+        ], [NAME, VERSION], [
+         /(audacious|audimusicstream|amarok|bass|core|dalvik|gnomemplayer|music on console|nsplayer|psp-internetradioplayer|videos)\/((\d+)[\w\.-]+)/i,
+                                                                            // Audacious/AudiMusicStream/Amarok/BASS/OpenCORE/Dalvik/GnomeMplayer/MoC
+                                                                            // NSPlayer/PSP-InternetRadioPlayer/Videos
+        /(clementine|music player daemon)\s((\d+)[\w\.-]+)/i,               // Clementine/MPD
+        /(lg player|nexplayer)\s((\d+)[\d\.]+)/i,
+        /player\/(nexplayer|lg player)\s((\d+)[\w\.-]+)/i                   // NexPlayer/LG Player
+        ], [NAME, VERSION], [
+        /(nexplayer)\s((\d+)[\w\.-]+)/i                                     // Nexplayer
+        ], [NAME, VERSION], [
+         /(flrp)\/((\d+)[\w\.-]+)/i                                          // Flip Player
+        ], [[NAME, 'Flip Player'], VERSION], [
+         /(fstream|nativehost|queryseekspider|ia-archiver|facebookexternalhit)/i
+                                                                            // FStream/NativeHost/QuerySeekSpider/IA Archiver/facebookexternalhit
+        ], [NAME], [
+         /(gstreamer) souphttpsrc (?:\([^\)]+\)){0,1} libsoup\/((\d+)[\w\.-]+)/i
+                                                                            // Gstreamer
+        ], [NAME, VERSION], [
+         /(htc streaming player)\s[\w_]+\s\/\s((\d+)[\d\.]+)/i,              // HTC Streaming Player
+        /(java|python-urllib|python-requests|wget|libcurl)\/((\d+)[\w\.-_]+)/i,
+                                                                            // Java/urllib/requests/wget/cURL
+        /(lavf)((\d+)[\d\.]+)/i                                             // Lavf (FFMPEG)
+        ], [NAME, VERSION], [
+         /(htc_one_s)\/((\d+)[\d\.]+)/i                                      // HTC One S
+        ], [[NAME, /_/g, ' '], VERSION], [
+         /(mplayer)(?:\s|\/)(?:(?:sherpya-){0,1}svn)(?:-|\s)(r\d+(?:-\d+[\w\.-]+){0,1})/i
+                                                                            // MPlayer SVN
+        ], [NAME, VERSION], [
+         /(mplayer)(?:\s|\/|[unkow-]+)((\d+)[\w\.-]+)/i                      // MPlayer
+        ], [NAME, VERSION], [
+         /(mplayer)/i,                                                       // MPlayer (no other info)
+        /(yourmuze)/i,                                                      // YourMuze
+        /(media player classic|nero showtime)/i                             // Media Player Classic/Nero ShowTime
+        ], [NAME], [
+         /(nero (?:home|scout))\/((\d+)[\w\.-]+)/i                           // Nero Home/Nero Scout
+        ], [NAME, VERSION], [
+         /(nokia\d+)\/((\d+)[\w\.-]+)/i                                      // Nokia
+        ], [NAME, VERSION], [
+         /\s(songbird)\/((\d+)[\w\.-]+)/i                                    // Songbird/Philips-Songbird
+        ], [NAME, VERSION], [
+         /(winamp)3 version ((\d+)[\w\.-]+)/i,                               // Winamp
+        /(winamp)\s((\d+)[\w\.-]+)/i,
+        /(winamp)mpeg\/((\d+)[\w\.-]+)/i
+        ], [NAME, VERSION], [
+         /(ocms-bot|tapinradio|tunein radio|unknown|winamp|inlight radio)/i  // OCMS-bot/tap in radio/tunein/unknown/winamp (no other info)
+                                                                            // inlight radio
+        ], [NAME], [
+         /(quicktime|rma|radioapp|radioclientapplication|soundtap|totem|stagefright|streamium)\/((\d+)[\w\.-]+)/i
+                                                                            // QuickTime/RealMedia/RadioApp/RadioClientApplication/
+                                                                            // SoundTap/Totem/Stagefright/Streamium
+        ], [NAME, VERSION], [
+         /(smp)((\d+)[\d\.]+)/i                                              // SMP
+        ], [NAME, VERSION], [
+         /(vlc) media player - version ((\d+)[\w\.]+)/i,                     // VLC Videolan
+        /(vlc)\/((\d+)[\w\.-]+)/i,
+        /(xbmc|gvfs|xine|xmms|irapp)\/((\d+)[\w\.-]+)/i,                    // XBMC/gvfs/Xine/XMMS/irapp
+        /(foobar2000)\/((\d+)[\d\.]+)/i,                                    // Foobar2000
+        /(itunes)\/((\d+)[\d\.]+)/i                                         // iTunes
+        ], [NAME, VERSION], [
+         /(wmplayer)\/((\d+)[\w\.-]+)/i,                                     // Windows Media Player
+        /(windows-media-player)\/((\d+)[\w\.-]+)/i
+        ], [[NAME, /-/g, ' '], VERSION], [
+         /windows\/((\d+)[\w\.-]+) upnp\/[\d\.]+ dlnadoc\/[\d\.]+ (home media server)/i
+                                                                            // Windows Media Server
+        ], [VERSION, [NAME, 'Windows']], [
+         /(com\.riseupradioalarm)\/((\d+)[\d\.]*)/i                          // RiseUP Radio Alarm
+        ], [NAME, VERSION], [
+         /(rad.io)\s((\d+)[\d\.]+)/i,                                        // Rad.io
+        /(radio.(?:de|at|fr))\s((\d+)[\d\.]+)/i
+        ], [[NAME, 'rad.io'], VERSION]
+         //////////////////////
+        // Media players END
+        ////////////////////*/
+
+        ],
+
+        cpu: [[/(?:(amd|x(?:(?:86|64)[_-])?|wow|win)64)[;\)]/i // AMD64
+        ], [[ARCHITECTURE, 'amd64']], [/(ia32(?=;))/i // IA32 (quicktime)
+        ], [[ARCHITECTURE, util.lowerize]], [/((?:i[346]|x)86)[;\)]/i // IA32
+        ], [[ARCHITECTURE, 'ia32']], [
+
+        // PocketPC mistakenly identified as PowerPC
+        /windows\s(ce|mobile);\sppc;/i], [[ARCHITECTURE, 'arm']], [/((?:ppc|powerpc)(?:64)?)(?:\smac|;|\))/i // PowerPC
+        ], [[ARCHITECTURE, /ower/, '', util.lowerize]], [/(sun4\w)[;\)]/i // SPARC
+        ], [[ARCHITECTURE, 'sparc']], [/((?:avr32|ia64(?=;))|68k(?=\))|arm(?:64|(?=v\d+;))|(?=atmel\s)avr|(?:irix|mips|sparc)(?:64)?(?=;)|pa-risc)/i
+        // IA64, 68K, ARM/64, AVR/32, IRIX/64, MIPS/64, SPARC/64, PA-RISC
+        ], [[ARCHITECTURE, util.lowerize]]],
+
+        device: [[/\((ipad|playbook);[\w\s\);-]+(rim|apple)/i // iPad/PlayBook
+        ], [MODEL, VENDOR, [TYPE, TABLET]], [/applecoremedia\/[\w\.]+ \((ipad)/ // iPad
+        ], [MODEL, [VENDOR, 'Apple'], [TYPE, TABLET]], [/(apple\s{0,1}tv)/i // Apple TV
+        ], [[MODEL, 'Apple TV'], [VENDOR, 'Apple']], [/(archos)\s(gamepad2?)/i, // Archos
+        /(hp).+(touchpad)/i, // HP TouchPad
+        /(hp).+(tablet)/i, // HP Tablet
+        /(kindle)\/([\w\.]+)/i, // Kindle
+        /\s(nook)[\w\s]+build\/(\w+)/i, // Nook
+        /(dell)\s(strea[kpr\s\d]*[\dko])/i // Dell Streak
+        ], [VENDOR, MODEL, [TYPE, TABLET]], [/(kf[A-z]+)\sbuild\/[\w\.]+.*silk\//i // Kindle Fire HD
+        ], [MODEL, [VENDOR, 'Amazon'], [TYPE, TABLET]], [/(sd|kf)[0349hijorstuw]+\sbuild\/[\w\.]+.*silk\//i // Fire Phone
+        ], [[MODEL, mapper.str, maps.device.amazon.model], [VENDOR, 'Amazon'], [TYPE, MOBILE]], [/\((ip[honed|\s\w*]+);.+(apple)/i // iPod/iPhone
+        ], [MODEL, VENDOR, [TYPE, MOBILE]], [/\((ip[honed|\s\w*]+);/i // iPod/iPhone
+        ], [MODEL, [VENDOR, 'Apple'], [TYPE, MOBILE]], [/(blackberry)[\s-]?(\w+)/i, // BlackBerry
+        /(blackberry|benq|palm(?=\-)|sonyericsson|acer|asus|dell|meizu|motorola|polytron)[\s_-]?([\w-]+)*/i,
+        // BenQ/Palm/Sony-Ericsson/Acer/Asus/Dell/Meizu/Motorola/Polytron
+        /(hp)\s([\w\s]+\w)/i, // HP iPAQ
+        /(asus)-?(\w+)/i // Asus
+        ], [VENDOR, MODEL, [TYPE, MOBILE]], [/\(bb10;\s(\w+)/i // BlackBerry 10
+        ], [MODEL, [VENDOR, 'BlackBerry'], [TYPE, MOBILE]], [
+        // Asus Tablets
+        /android.+(transfo[prime\s]{4,10}\s\w+|eeepc|slider\s\w+|nexus 7|padfone)/i], [MODEL, [VENDOR, 'Asus'], [TYPE, TABLET]], [/(sony)\s(tablet\s[ps])\sbuild\//i, // Sony
+        /(sony)?(?:sgp.+)\sbuild\//i], [[VENDOR, 'Sony'], [MODEL, 'Xperia Tablet'], [TYPE, TABLET]], [/android.+\s([c-g]\d{4}|so[-l]\w+)\sbuild\//i], [MODEL, [VENDOR, 'Sony'], [TYPE, MOBILE]], [/\s(ouya)\s/i, // Ouya
+        /(nintendo)\s([wids3u]+)/i // Nintendo
+        ], [VENDOR, MODEL, [TYPE, CONSOLE]], [/android.+;\s(shield)\sbuild/i // Nvidia
+        ], [MODEL, [VENDOR, 'Nvidia'], [TYPE, CONSOLE]], [/(playstation\s[34portablevi]+)/i // Playstation
+        ], [MODEL, [VENDOR, 'Sony'], [TYPE, CONSOLE]], [/(sprint\s(\w+))/i // Sprint Phones
+        ], [[VENDOR, mapper.str, maps.device.sprint.vendor], [MODEL, mapper.str, maps.device.sprint.model], [TYPE, MOBILE]], [/(lenovo)\s?(S(?:5000|6000)+(?:[-][\w+]))/i // Lenovo tablets
+        ], [VENDOR, MODEL, [TYPE, TABLET]], [/(htc)[;_\s-]+([\w\s]+(?=\))|\w+)*/i, // HTC
+        /(zte)-(\w+)*/i, // ZTE
+        /(alcatel|geeksphone|lenovo|nexian|panasonic|(?=;\s)sony)[_\s-]?([\w-]+)*/i
+        // Alcatel/GeeksPhone/Lenovo/Nexian/Panasonic/Sony
+        ], [VENDOR, [MODEL, /_/g, ' '], [TYPE, MOBILE]], [/(nexus\s9)/i // HTC Nexus 9
+        ], [MODEL, [VENDOR, 'HTC'], [TYPE, TABLET]], [/d\/huawei([\w\s-]+)[;\)]/i, /(nexus\s6p)/i // Huawei
+        ], [MODEL, [VENDOR, 'Huawei'], [TYPE, MOBILE]], [/(microsoft);\s(lumia[\s\w]+)/i // Microsoft Lumia
+        ], [VENDOR, MODEL, [TYPE, MOBILE]], [/[\s\(;](xbox(?:\sone)?)[\s\);]/i // Microsoft Xbox
+        ], [MODEL, [VENDOR, 'Microsoft'], [TYPE, CONSOLE]], [/(kin\.[onetw]{3})/i // Microsoft Kin
+        ], [[MODEL, /\./g, ' '], [VENDOR, 'Microsoft'], [TYPE, MOBILE]], [
+
+        // Motorola
+        /\s(milestone|droid(?:[2-4x]|\s(?:bionic|x2|pro|razr))?(:?\s4g)?)[\w\s]+build\//i, /mot[\s-]?(\w+)*/i, /(XT\d{3,4}) build\//i, /(nexus\s6)/i], [MODEL, [VENDOR, 'Motorola'], [TYPE, MOBILE]], [/android.+\s(mz60\d|xoom[\s2]{0,2})\sbuild\//i], [MODEL, [VENDOR, 'Motorola'], [TYPE, TABLET]], [/hbbtv\/\d+\.\d+\.\d+\s+\([\w\s]*;\s*(\w[^;]*);([^;]*)/i // HbbTV devices
+        ], [[VENDOR, util.trim], [MODEL, util.trim], [TYPE, SMARTTV]], [/hbbtv.+maple;(\d+)/i], [[MODEL, /^/, 'SmartTV'], [VENDOR, 'Samsung'], [TYPE, SMARTTV]], [/\(dtv[\);].+(aquos)/i // Sharp
+        ], [MODEL, [VENDOR, 'Sharp'], [TYPE, SMARTTV]], [/android.+((sch-i[89]0\d|shw-m380s|gt-p\d{4}|gt-n\d+|sgh-t8[56]9|nexus 10))/i, /((SM-T\w+))/i], [[VENDOR, 'Samsung'], MODEL, [TYPE, TABLET]], [// Samsung
+        /smart-tv.+(samsung)/i], [VENDOR, [TYPE, SMARTTV], MODEL], [/((s[cgp]h-\w+|gt-\w+|galaxy\snexus|sm-\w[\w\d]+))/i, /(sam[sung]*)[\s-]*(\w+-?[\w-]*)*/i, /sec-((sgh\w+))/i], [[VENDOR, 'Samsung'], MODEL, [TYPE, MOBILE]], [/sie-(\w+)*/i // Siemens
+        ], [MODEL, [VENDOR, 'Siemens'], [TYPE, MOBILE]], [/(maemo|nokia).*(n900|lumia\s\d+)/i, // Nokia
+        /(nokia)[\s_-]?([\w-]+)*/i], [[VENDOR, 'Nokia'], MODEL, [TYPE, MOBILE]], [/android\s3\.[\s\w;-]{10}(a\d{3})/i // Acer
+        ], [MODEL, [VENDOR, 'Acer'], [TYPE, TABLET]], [/android.+([vl]k\-?\d{3})\s+build/i // LG Tablet
+        ], [MODEL, [VENDOR, 'LG'], [TYPE, TABLET]], [/android\s3\.[\s\w;-]{10}(lg?)-([06cv9]{3,4})/i // LG Tablet
+        ], [[VENDOR, 'LG'], MODEL, [TYPE, TABLET]], [/(lg) netcast\.tv/i // LG SmartTV
+        ], [VENDOR, MODEL, [TYPE, SMARTTV]], [/(nexus\s[45])/i, // LG
+        /lg[e;\s\/-]+(\w+)*/i, /android.+lg(\-?[\d\w]+)\s+build/i], [MODEL, [VENDOR, 'LG'], [TYPE, MOBILE]], [/android.+(ideatab[a-z0-9\-\s]+)/i // Lenovo
+        ], [MODEL, [VENDOR, 'Lenovo'], [TYPE, TABLET]], [/linux;.+((jolla));/i // Jolla
+        ], [VENDOR, MODEL, [TYPE, MOBILE]], [/((pebble))app\/[\d\.]+\s/i // Pebble
+        ], [VENDOR, MODEL, [TYPE, WEARABLE]], [/android.+;\s(oppo)\s?([\w\s]+)\sbuild/i // OPPO
+        ], [VENDOR, MODEL, [TYPE, MOBILE]], [/crkey/i // Google Chromecast
+        ], [[MODEL, 'Chromecast'], [VENDOR, 'Google']], [/android.+;\s(glass)\s\d/i // Google Glass
+        ], [MODEL, [VENDOR, 'Google'], [TYPE, WEARABLE]], [/android.+;\s(pixel c)\s/i // Google Pixel C
+        ], [MODEL, [VENDOR, 'Google'], [TYPE, TABLET]], [/android.+;\s(pixel xl|pixel)\s/i // Google Pixel
+        ], [MODEL, [VENDOR, 'Google'], [TYPE, MOBILE]], [/android.+(\w+)\s+build\/hm\1/i, // Xiaomi Hongmi 'numeric' models
+        /android.+(hm[\s\-_]*note?[\s_]*(?:\d\w)?)\s+build/i, // Xiaomi Hongmi
+        /android.+(mi[\s\-_]*(?:one|one[\s_]plus|note lte)?[\s_]*(?:\d\w)?)\s+build/i, // Xiaomi Mi
+        /android.+(redmi[\s\-_]*(?:note)?(?:[\s_]*[\w\s]+)?)\s+build/i // Redmi Phones
+        ], [[MODEL, /_/g, ' '], [VENDOR, 'Xiaomi'], [TYPE, MOBILE]], [/android.+(mi[\s\-_]*(?:pad)?(?:[\s_]*[\w\s]+)?)\s+build/i // Mi Pad tablets
+        ], [[MODEL, /_/g, ' '], [VENDOR, 'Xiaomi'], [TYPE, TABLET]], [/android.+;\s(m[1-5]\snote)\sbuild/i // Meizu Tablet
+        ], [MODEL, [VENDOR, 'Meizu'], [TYPE, TABLET]], [/android.+a000(1)\s+build/i // OnePlus
+        ], [MODEL, [VENDOR, 'OnePlus'], [TYPE, MOBILE]], [/android.+[;\/]\s*(RCT[\d\w]+)\s+build/i // RCA Tablets
+        ], [MODEL, [VENDOR, 'RCA'], [TYPE, TABLET]], [/android.+[;\/]\s*(Venue[\d\s]*)\s+build/i // Dell Venue Tablets
+        ], [MODEL, [VENDOR, 'Dell'], [TYPE, TABLET]], [/android.+[;\/]\s*(Q[T|M][\d\w]+)\s+build/i // Verizon Tablet
+        ], [MODEL, [VENDOR, 'Verizon'], [TYPE, TABLET]], [/android.+[;\/]\s+(Barnes[&\s]+Noble\s+|BN[RT])(V?.*)\s+build/i // Barnes & Noble Tablet
+        ], [[VENDOR, 'Barnes & Noble'], MODEL, [TYPE, TABLET]], [/android.+[;\/]\s+(TM\d{3}.*\b)\s+build/i // Barnes & Noble Tablet
+        ], [MODEL, [VENDOR, 'NuVision'], [TYPE, TABLET]], [/android.+[;\/]\s*(zte)?.+(k\d{2})\s+build/i // ZTE K Series Tablet
+        ], [[VENDOR, 'ZTE'], MODEL, [TYPE, TABLET]], [/android.+[;\/]\s*(gen\d{3})\s+build.*49h/i // Swiss GEN Mobile
+        ], [MODEL, [VENDOR, 'Swiss'], [TYPE, MOBILE]], [/android.+[;\/]\s*(zur\d{3})\s+build/i // Swiss ZUR Tablet
+        ], [MODEL, [VENDOR, 'Swiss'], [TYPE, TABLET]], [/android.+[;\/]\s*((Zeki)?TB.*\b)\s+build/i // Zeki Tablets
+        ], [MODEL, [VENDOR, 'Zeki'], [TYPE, TABLET]], [/(android).+[;\/]\s+([YR]\d{2}x?.*)\s+build/i, /android.+[;\/]\s+(Dragon[\-\s]+Touch\s+|DT)(.+)\s+build/i // Dragon Touch Tablet
+        ], [[VENDOR, 'Dragon Touch'], MODEL, [TYPE, TABLET]], [/android.+[;\/]\s*(NS-?.+)\s+build/i // Insignia Tablets
+        ], [MODEL, [VENDOR, 'Insignia'], [TYPE, TABLET]], [/android.+[;\/]\s*((NX|Next)-?.+)\s+build/i // NextBook Tablets
+        ], [MODEL, [VENDOR, 'NextBook'], [TYPE, TABLET]], [/android.+[;\/]\s*(Xtreme\_?)?(V(1[045]|2[015]|30|40|60|7[05]|90))\s+build/i], [[VENDOR, 'Voice'], MODEL, [TYPE, MOBILE]], [// Voice Xtreme Phones
+
+        /android.+[;\/]\s*(LVTEL\-?)?(V1[12])\s+build/i // LvTel Phones
+        ], [[VENDOR, 'LvTel'], MODEL, [TYPE, MOBILE]], [/android.+[;\/]\s*(V(100MD|700NA|7011|917G).*\b)\s+build/i // Envizen Tablets
+        ], [MODEL, [VENDOR, 'Envizen'], [TYPE, TABLET]], [/android.+[;\/]\s*(Le[\s\-]+Pan)[\s\-]+(.*\b)\s+build/i // Le Pan Tablets
+        ], [VENDOR, MODEL, [TYPE, TABLET]], [/android.+[;\/]\s*(Trio[\s\-]*.*)\s+build/i // MachSpeed Tablets
+        ], [MODEL, [VENDOR, 'MachSpeed'], [TYPE, TABLET]], [/android.+[;\/]\s*(Trinity)[\-\s]*(T\d{3})\s+build/i // Trinity Tablets
+        ], [VENDOR, MODEL, [TYPE, TABLET]], [/android.+[;\/]\s*TU_(1491)\s+build/i // Rotor Tablets
+        ], [MODEL, [VENDOR, 'Rotor'], [TYPE, TABLET]], [/android.+(KS(.+))\s+build/i // Amazon Kindle Tablets
+        ], [MODEL, [VENDOR, 'Amazon'], [TYPE, TABLET]], [/android.+(Gigaset)[\s\-]+(Q.+)\s+build/i // Gigaset Tablets
+        ], [VENDOR, MODEL, [TYPE, TABLET]], [/\s(tablet|tab)[;\/]/i, // Unidentifiable Tablet
+        /\s(mobile)(?:[;\/]|\ssafari)/i // Unidentifiable Mobile
+        ], [[TYPE, util.lowerize], VENDOR, MODEL], [/(android.+)[;\/].+build/i // Generic Android Device
+        ], [MODEL, [VENDOR, 'Generic']]
+
+        /*//////////////////////////
+            // TODO: move to string map
+            ////////////////////////////
+             /(C6603)/i                                                          // Sony Xperia Z C6603
+            ], [[MODEL, 'Xperia Z C6603'], [VENDOR, 'Sony'], [TYPE, MOBILE]], [
+            /(C6903)/i                                                          // Sony Xperia Z 1
+            ], [[MODEL, 'Xperia Z 1'], [VENDOR, 'Sony'], [TYPE, MOBILE]], [
+             /(SM-G900[F|H])/i                                                   // Samsung Galaxy S5
+            ], [[MODEL, 'Galaxy S5'], [VENDOR, 'Samsung'], [TYPE, MOBILE]], [
+            /(SM-G7102)/i                                                       // Samsung Galaxy Grand 2
+            ], [[MODEL, 'Galaxy Grand 2'], [VENDOR, 'Samsung'], [TYPE, MOBILE]], [
+            /(SM-G530H)/i                                                       // Samsung Galaxy Grand Prime
+            ], [[MODEL, 'Galaxy Grand Prime'], [VENDOR, 'Samsung'], [TYPE, MOBILE]], [
+            /(SM-G313HZ)/i                                                      // Samsung Galaxy V
+            ], [[MODEL, 'Galaxy V'], [VENDOR, 'Samsung'], [TYPE, MOBILE]], [
+            /(SM-T805)/i                                                        // Samsung Galaxy Tab S 10.5
+            ], [[MODEL, 'Galaxy Tab S 10.5'], [VENDOR, 'Samsung'], [TYPE, TABLET]], [
+            /(SM-G800F)/i                                                       // Samsung Galaxy S5 Mini
+            ], [[MODEL, 'Galaxy S5 Mini'], [VENDOR, 'Samsung'], [TYPE, MOBILE]], [
+            /(SM-T311)/i                                                        // Samsung Galaxy Tab 3 8.0
+            ], [[MODEL, 'Galaxy Tab 3 8.0'], [VENDOR, 'Samsung'], [TYPE, TABLET]], [
+             /(T3C)/i                                                            // Advan Vandroid T3C
+            ], [MODEL, [VENDOR, 'Advan'], [TYPE, TABLET]], [
+            /(ADVAN T1J\+)/i                                                    // Advan Vandroid T1J+
+            ], [[MODEL, 'Vandroid T1J+'], [VENDOR, 'Advan'], [TYPE, TABLET]], [
+            /(ADVAN S4A)/i                                                      // Advan Vandroid S4A
+            ], [[MODEL, 'Vandroid S4A'], [VENDOR, 'Advan'], [TYPE, MOBILE]], [
+             /(V972M)/i                                                          // ZTE V972M
+            ], [MODEL, [VENDOR, 'ZTE'], [TYPE, MOBILE]], [
+             /(i-mobile)\s(IQ\s[\d\.]+)/i                                        // i-mobile IQ
+            ], [VENDOR, MODEL, [TYPE, MOBILE]], [
+            /(IQ6.3)/i                                                          // i-mobile IQ IQ 6.3
+            ], [[MODEL, 'IQ 6.3'], [VENDOR, 'i-mobile'], [TYPE, MOBILE]], [
+            /(i-mobile)\s(i-style\s[\d\.]+)/i                                   // i-mobile i-STYLE
+            ], [VENDOR, MODEL, [TYPE, MOBILE]], [
+            /(i-STYLE2.1)/i                                                     // i-mobile i-STYLE 2.1
+            ], [[MODEL, 'i-STYLE 2.1'], [VENDOR, 'i-mobile'], [TYPE, MOBILE]], [
+             /(mobiistar touch LAI 512)/i                                        // mobiistar touch LAI 512
+            ], [[MODEL, 'Touch LAI 512'], [VENDOR, 'mobiistar'], [TYPE, MOBILE]], [
+             /////////////
+            // END TODO
+            ///////////*/
+
+        ],
+
+        engine: [[/windows.+\sedge\/([\w\.]+)/i // EdgeHTML
+        ], [VERSION, [NAME, 'EdgeHTML']], [/(presto)\/([\w\.]+)/i, // Presto
+        /(webkit|trident|netfront|netsurf|amaya|lynx|w3m)\/([\w\.]+)/i, // WebKit/Trident/NetFront/NetSurf/Amaya/Lynx/w3m
+        /(khtml|tasman|links)[\/\s]\(?([\w\.]+)/i, // KHTML/Tasman/Links
+        /(icab)[\/\s]([23]\.[\d\.]+)/i // iCab
+        ], [NAME, VERSION], [/rv\:([\w\.]+).*(gecko)/i // Gecko
+        ], [VERSION, NAME]],
+
+        os: [[
+
+        // Windows based
+        /microsoft\s(windows)\s(vista|xp)/i // Windows (iTunes)
+        ], [NAME, VERSION], [/(windows)\snt\s6\.2;\s(arm)/i, // Windows RT
+        /(windows\sphone(?:\sos)*)[\s\/]?([\d\.\s]+\w)*/i, // Windows Phone
+        /(windows\smobile|windows)[\s\/]?([ntce\d\.\s]+\w)/i], [NAME, [VERSION, mapper.str, maps.os.windows.version]], [/(win(?=3|9|n)|win\s9x\s)([nt\d\.]+)/i], [[NAME, 'Windows'], [VERSION, mapper.str, maps.os.windows.version]], [
+
+        // Mobile/Embedded OS
+        /\((bb)(10);/i // BlackBerry 10
+        ], [[NAME, 'BlackBerry'], VERSION], [/(blackberry)\w*\/?([\w\.]+)*/i, // Blackberry
+        /(tizen)[\/\s]([\w\.]+)/i, // Tizen
+        /(android|webos|palm\sos|qnx|bada|rim\stablet\sos|meego|contiki)[\/\s-]?([\w\.]+)*/i,
+        // Android/WebOS/Palm/QNX/Bada/RIM/MeeGo/Contiki
+        /linux;.+(sailfish);/i // Sailfish OS
+        ], [NAME, VERSION], [/(symbian\s?os|symbos|s60(?=;))[\/\s-]?([\w\.]+)*/i // Symbian
+        ], [[NAME, 'Symbian'], VERSION], [/\((series40);/i // Series 40
+        ], [NAME], [/mozilla.+\(mobile;.+gecko.+firefox/i // Firefox OS
+        ], [[NAME, 'Firefox OS'], VERSION], [
+
+        // Console
+        /(nintendo|playstation)\s([wids34portablevu]+)/i, // Nintendo/Playstation
+
+        // GNU/Linux based
+        /(mint)[\/\s\(]?(\w+)*/i, // Mint
+        /(mageia|vectorlinux)[;\s]/i, // Mageia/VectorLinux
+        /(joli|[kxln]?ubuntu|debian|[open]*suse|gentoo|(?=\s)arch|slackware|fedora|mandriva|centos|pclinuxos|redhat|zenwalk|linpus)[\/\s-]?(?!chrom)([\w\.-]+)*/i,
+        // Joli/Ubuntu/Debian/SUSE/Gentoo/Arch/Slackware
+        // Fedora/Mandriva/CentOS/PCLinuxOS/RedHat/Zenwalk/Linpus
+        /(hurd|linux)\s?([\w\.]+)*/i, // Hurd/Linux
+        /(gnu)\s?([\w\.]+)*/i // GNU
+        ], [NAME, VERSION], [/(cros)\s[\w]+\s([\w\.]+\w)/i // Chromium OS
+        ], [[NAME, 'Chromium OS'], VERSION], [
+
+        // Solaris
+        /(sunos)\s?([\w\.]+\d)*/i // Solaris
+        ], [[NAME, 'Solaris'], VERSION], [
+
+        // BSD based
+        /\s([frentopc-]{0,4}bsd|dragonfly)\s?([\w\.]+)*/i // FreeBSD/NetBSD/OpenBSD/PC-BSD/DragonFly
+        ], [NAME, VERSION], [/(haiku)\s(\w+)/i // Haiku
+        ], [NAME, VERSION], [/cfnetwork\/.+darwin/i, /ip[honead]+(?:.*os\s([\w]+)\slike\smac|;\sopera)/i // iOS
+        ], [[VERSION, /_/g, '.'], [NAME, 'iOS']], [/(mac\sos\sx)\s?([\w\s\.]+\w)*/i, /(macintosh|mac(?=_powerpc)\s)/i // Mac OS
+        ], [[NAME, 'Mac OS'], [VERSION, /_/g, '.']], [
+
+        // Other
+        /((?:open)?solaris)[\/\s-]?([\w\.]+)*/i, // Solaris
+        /(aix)\s((\d)(?=\.|\)|\s)[\w\.]*)*/i, // AIX
+        /(plan\s9|minix|beos|os\/2|amigaos|morphos|risc\sos|openvms)/i,
+        // Plan9/Minix/BeOS/OS2/AmigaOS/MorphOS/RISCOS/OpenVMS
+        /(unix)\s?([\w\.]+)*/i // UNIX
+        ], [NAME, VERSION]]
+    };
+
+    /////////////////
+    // Constructor
+    ////////////////
+    /*
+    var Browser = function (name, version) {
+        this[NAME] = name;
+        this[VERSION] = version;
+    };
+    var CPU = function (arch) {
+        this[ARCHITECTURE] = arch;
+    };
+    var Device = function (vendor, model, type) {
+        this[VENDOR] = vendor;
+        this[MODEL] = model;
+        this[TYPE] = type;
+    };
+    var Engine = Browser;
+    var OS = Browser;
+    */
+    var UAParser = function UAParser(uastring, extensions) {
+
+        if ((typeof uastring === 'undefined' ? 'undefined' : _typeof(uastring)) === 'object') {
+            extensions = uastring;
+            uastring = undefined;
+        }
+
+        if (!(this instanceof UAParser)) {
+            return new UAParser(uastring, extensions).getResult();
+        }
+
+        var ua = uastring || (window && window.navigator && window.navigator.userAgent ? window.navigator.userAgent : EMPTY);
+        var rgxmap = extensions ? util.extend(regexes, extensions) : regexes;
+        //var browser = new Browser();
+        //var cpu = new CPU();
+        //var device = new Device();
+        //var engine = new Engine();
+        //var os = new OS();
+
+        this.getBrowser = function () {
+            var browser = { name: undefined, version: undefined };
+            mapper.rgx.call(browser, ua, rgxmap.browser);
+            browser.major = util.major(browser.version); // deprecated
+            return browser;
+        };
+        this.getCPU = function () {
+            var cpu = { architecture: undefined };
+            mapper.rgx.call(cpu, ua, rgxmap.cpu);
+            return cpu;
+        };
+        this.getDevice = function () {
+            var device = { vendor: undefined, model: undefined, type: undefined };
+            mapper.rgx.call(device, ua, rgxmap.device);
+            return device;
+        };
+        this.getEngine = function () {
+            var engine = { name: undefined, version: undefined };
+            mapper.rgx.call(engine, ua, rgxmap.engine);
+            return engine;
+        };
+        this.getOS = function () {
+            var os = { name: undefined, version: undefined };
+            mapper.rgx.call(os, ua, rgxmap.os);
+            return os;
+        };
+        this.getResult = function () {
+            return {
+                ua: this.getUA(),
+                browser: this.getBrowser(),
+                engine: this.getEngine(),
+                os: this.getOS(),
+                device: this.getDevice(),
+                cpu: this.getCPU()
+            };
+        };
+        this.getUA = function () {
+            return ua;
+        };
+        this.setUA = function (uastring) {
+            ua = uastring;
+            //browser = new Browser();
+            //cpu = new CPU();
+            //device = new Device();
+            //engine = new Engine();
+            //os = new OS();
+            return this;
+        };
+        return this;
+    };
+
+    UAParser.VERSION = LIBVERSION;
+    UAParser.BROWSER = {
+        NAME: NAME,
+        MAJOR: MAJOR, // deprecated
+        VERSION: VERSION
+    };
+    UAParser.CPU = {
+        ARCHITECTURE: ARCHITECTURE
+    };
+    UAParser.DEVICE = {
+        MODEL: MODEL,
+        VENDOR: VENDOR,
+        TYPE: TYPE,
+        CONSOLE: CONSOLE,
+        MOBILE: MOBILE,
+        SMARTTV: SMARTTV,
+        TABLET: TABLET,
+        WEARABLE: WEARABLE,
+        EMBEDDED: EMBEDDED
+    };
+    UAParser.ENGINE = {
+        NAME: NAME,
+        VERSION: VERSION
+    };
+    UAParser.OS = {
+        NAME: NAME,
+        VERSION: VERSION
+    };
+    //UAParser.Utils = util;
+
+    ///////////
+    // Export
+    //////////
+
+
+    // check js environment
+    if (( false ? 'undefined' : _typeof(exports)) !== UNDEF_TYPE) {
+        // nodejs env
+        if (( false ? 'undefined' : _typeof(module)) !== UNDEF_TYPE && module.exports) {
+            exports = module.exports = UAParser;
+        }
+        // TODO: test!!!!!!!!
+        /*
+        if (require && require.main === module && process) {
+            // cli
+            var jsonize = function (arr) {
+                var res = [];
+                for (var i in arr) {
+                    res.push(new UAParser(arr[i]).getResult());
+                }
+                process.stdout.write(JSON.stringify(res, null, 2) + '\n');
+            };
+            if (process.stdin.isTTY) {
+                // via args
+                jsonize(process.argv.slice(2));
+            } else {
+                // via pipe
+                var str = '';
+                process.stdin.on('readable', function() {
+                    var read = process.stdin.read();
+                    if (read !== null) {
+                        str += read;
+                    }
+                });
+                process.stdin.on('end', function () {
+                    jsonize(str.replace(/\n$/, '').split('\n'));
+                });
+            }
+        }
+        */
+        exports.UAParser = UAParser;
+    } else {
+        // requirejs env (optional)
+        if (( false ? 'undefined' : _typeof(__webpack_require__(69))) === FUNC_TYPE && __webpack_require__(70)) {
+            !(__WEBPACK_AMD_DEFINE_RESULT__ = (function () {
+                return UAParser;
+            }).call(exports, __webpack_require__, exports, module),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+        } else if (window) {
+            // browser env
+            window.UAParser = UAParser;
+        }
+    }
+
+    // jQuery/Zepto specific (optional)
+    // Note:
+    //   In AMD env the global scope should be kept clean, but jQuery is an exception.
+    //   jQuery always exports to global scope, unless jQuery.noConflict(true) is used,
+    //   and we should catch that.
+    var $ = window && (window.jQuery || window.Zepto);
+    if ((typeof $ === 'undefined' ? 'undefined' : _typeof($)) !== UNDEF_TYPE) {
+        var parser = new UAParser();
+        $.ua = parser.getResult();
+        $.ua.get = function () {
+            return parser.getUA();
+        };
+        $.ua.set = function (uastring) {
+            parser.setUA(uastring);
+            var result = parser.getResult();
+            for (var prop in result) {
+                $.ua[prop] = result[prop];
+            }
+        };
+    }
+})((typeof window === 'undefined' ? 'undefined' : _typeof(window)) === 'object' ? window : this);
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)(module)))
+
+/***/ }),
+/* 69 */
+/***/ (function(module, exports) {
+
+module.exports = function() {
+	throw new Error("define cannot be used indirect");
+};
+
+
+/***/ }),
+/* 70 */
+/***/ (function(module, exports) {
+
+/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {/* globals __webpack_amd_options__ */
+module.exports = __webpack_amd_options__;
+
+/* WEBPACK VAR INJECTION */}.call(exports, {}))
+
+/***/ }),
+/* 71 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helper__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_utils__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_store__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_clipboard__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_clipboard___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_clipboard__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_sweetalert__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_sweetalert___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_sweetalert__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_raven__ = __webpack_require__(55);
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = (function () {
+  function setSummary(kind, keys) {
+    function _recursive() {
+      var _test;
+
+      return Promise.resolve().then(function () {
+        _test = i < keys.length;
+
+        if (_test) {
+          return Promise.resolve().then(function () {
+            key = keys[i];
+            return __WEBPACK_IMPORTED_MODULE_2_store__["a" /* default */].get(kind, key);
+          }).then(function (_resp) {
+            score = _resp;
+          });
+        }
+      }).then(function () {
+        if (_test && Object(__WEBPACK_IMPORTED_MODULE_1_utils__["a" /* isNumeric */])(score)) {
+          summary[kind][key] = parseFloat(score);
+        } else {
+          if (_test) {
+            try {
+              summary[kind][key] = JSON.parse(score);
+            } catch (error) {
+              summary[kind][key] = score;
+            }
+          }
+        }
+
+        if (_test) {
+          i++;
+          return _recursive();
+        }
+      });
+    }
+
+    var i, key, score;
+    return Promise.resolve().then(function () {
+      i = 0;
+      return _recursive();
+    }).then(function () {});
+  }
+  var summary, json, clipboard;
+  return Promise.resolve().then(function () {
+    summary = {
+      info: {},
+      feature: {}
+    };
+    return setSummary('info', __WEBPACK_IMPORTED_MODULE_0__helper__["d" /* infoKeys */]);
+  }).then(function () {
+    return setSummary('feature', __WEBPACK_IMPORTED_MODULE_0__helper__["b" /* featureKeys */]);
+  }).then(function () {
+    json = JSON.stringify(summary, null, 2);
+
+    document.querySelector('.summary code').innerHTML = json;
+    clipboard = new __WEBPACK_IMPORTED_MODULE_3_clipboard___default.a(document.querySelector('.summary button'), {
+      text: function text() {
+        return json;
+      }
+    });
+
+    clipboard.on('success', function () {
+      return __WEBPACK_IMPORTED_MODULE_4_sweetalert___default()({
+        title: __WEBPACK_IMPORTED_MODULE_0__helper__["a" /* copyTips */].success.title,
+        type: 'success',
+        showCancelButton: true,
+        confirmButtonText: __WEBPACK_IMPORTED_MODULE_0__helper__["a" /* copyTips */].success.confirmButtonText
+      }, function (isConfirm) {
+        if (isConfirm) {
+          location.href = 'https://github.com/toxic-johann/is-pwa-ready/issues';
+        }
+      });
+    });
+    clipboard.on('error', function () {
+      return __WEBPACK_IMPORTED_MODULE_4_sweetalert___default()({
+        title: __WEBPACK_IMPORTED_MODULE_0__helper__["a" /* copyTips */].error.title,
+        text: __WEBPACK_IMPORTED_MODULE_0__helper__["a" /* copyTips */].error.text,
+        type: 'error'
+      });
+    });
+    document.querySelector('.summary').classList.add('show');
+    __WEBPACK_IMPORTED_MODULE_5_raven__["a" /* default */].setUserContext(summary);
+    __WEBPACK_IMPORTED_MODULE_5_raven__["a" /* default */].captureMessage('test-result-' + Object(__WEBPACK_IMPORTED_MODULE_1_utils__["i" /* uuid */])(), {
+      level: 'info'
+    });
+    return summary;
+  });
+});
+
+/***/ }),
+/* 72 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var _typeof2 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+(function (global, factory) {
+    if (true) {
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [module, __webpack_require__(73), __webpack_require__(75), __webpack_require__(76)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+    } else if (typeof exports !== "undefined") {
+        factory(module, require('./clipboard-action'), require('tiny-emitter'), require('good-listener'));
+    } else {
+        var mod = {
+            exports: {}
+        };
+        factory(mod, global.clipboardAction, global.tinyEmitter, global.goodListener);
+        global.clipboard = mod.exports;
+    }
+})(this, function (module, _clipboardAction, _tinyEmitter, _goodListener) {
+    'use strict';
+
+    var _clipboardAction2 = _interopRequireDefault(_clipboardAction);
+
+    var _tinyEmitter2 = _interopRequireDefault(_tinyEmitter);
+
+    var _goodListener2 = _interopRequireDefault(_goodListener);
+
+    function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : {
+            default: obj
+        };
+    }
+
+    var _typeof = typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol" ? function (obj) {
+        return typeof obj === 'undefined' ? 'undefined' : _typeof2(obj);
+    } : function (obj) {
+        return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof2(obj);
+    };
+
+    function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+            throw new TypeError("Cannot call a class as a function");
+        }
+    }
+
+    var _createClass = function () {
+        function defineProperties(target, props) {
+            for (var i = 0; i < props.length; i++) {
+                var descriptor = props[i];
+                descriptor.enumerable = descriptor.enumerable || false;
+                descriptor.configurable = true;
+                if ("value" in descriptor) descriptor.writable = true;
+                Object.defineProperty(target, descriptor.key, descriptor);
+            }
+        }
+
+        return function (Constructor, protoProps, staticProps) {
+            if (protoProps) defineProperties(Constructor.prototype, protoProps);
+            if (staticProps) defineProperties(Constructor, staticProps);
+            return Constructor;
+        };
+    }();
+
+    function _possibleConstructorReturn(self, call) {
+        if (!self) {
+            throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+        }
+
+        return call && ((typeof call === 'undefined' ? 'undefined' : _typeof2(call)) === "object" || typeof call === "function") ? call : self;
+    }
+
+    function _inherits(subClass, superClass) {
+        if (typeof superClass !== "function" && superClass !== null) {
+            throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === 'undefined' ? 'undefined' : _typeof2(superClass)));
+        }
+
+        subClass.prototype = Object.create(superClass && superClass.prototype, {
+            constructor: {
+                value: subClass,
+                enumerable: false,
+                writable: true,
+                configurable: true
+            }
+        });
+        if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+    }
+
+    var Clipboard = function (_Emitter) {
+        _inherits(Clipboard, _Emitter);
+
+        /**
+         * @param {String|HTMLElement|HTMLCollection|NodeList} trigger
+         * @param {Object} options
+         */
+        function Clipboard(trigger, options) {
+            _classCallCheck(this, Clipboard);
+
+            var _this = _possibleConstructorReturn(this, (Clipboard.__proto__ || Object.getPrototypeOf(Clipboard)).call(this));
+
+            _this.resolveOptions(options);
+            _this.listenClick(trigger);
+            return _this;
+        }
+
+        /**
+         * Defines if attributes would be resolved using internal setter functions
+         * or custom functions that were passed in the constructor.
+         * @param {Object} options
+         */
+
+        _createClass(Clipboard, [{
+            key: 'resolveOptions',
+            value: function resolveOptions() {
+                var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+                this.action = typeof options.action === 'function' ? options.action : this.defaultAction;
+                this.target = typeof options.target === 'function' ? options.target : this.defaultTarget;
+                this.text = typeof options.text === 'function' ? options.text : this.defaultText;
+                this.container = _typeof(options.container) === 'object' ? options.container : document.body;
+            }
+        }, {
+            key: 'listenClick',
+            value: function listenClick(trigger) {
+                var _this2 = this;
+
+                this.listener = (0, _goodListener2.default)(trigger, 'click', function (e) {
+                    return _this2.onClick(e);
+                });
+            }
+        }, {
+            key: 'onClick',
+            value: function onClick(e) {
+                var trigger = e.delegateTarget || e.currentTarget;
+
+                if (this.clipboardAction) {
+                    this.clipboardAction = null;
+                }
+
+                this.clipboardAction = new _clipboardAction2.default({
+                    action: this.action(trigger),
+                    target: this.target(trigger),
+                    text: this.text(trigger),
+                    container: this.container,
+                    trigger: trigger,
+                    emitter: this
+                });
+            }
+        }, {
+            key: 'defaultAction',
+            value: function defaultAction(trigger) {
+                return getAttributeValue('action', trigger);
+            }
+        }, {
+            key: 'defaultTarget',
+            value: function defaultTarget(trigger) {
+                var selector = getAttributeValue('target', trigger);
+
+                if (selector) {
+                    return document.querySelector(selector);
+                }
+            }
+        }, {
+            key: 'defaultText',
+            value: function defaultText(trigger) {
+                return getAttributeValue('text', trigger);
+            }
+        }, {
+            key: 'destroy',
+            value: function destroy() {
+                this.listener.destroy();
+
+                if (this.clipboardAction) {
+                    this.clipboardAction.destroy();
+                    this.clipboardAction = null;
+                }
+            }
+        }], [{
+            key: 'isSupported',
+            value: function isSupported() {
+                var action = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : ['copy', 'cut'];
+
+                var actions = typeof action === 'string' ? [action] : action;
+                var support = !!document.queryCommandSupported;
+
+                actions.forEach(function (action) {
+                    support = support && !!document.queryCommandSupported(action);
+                });
+
+                return support;
+            }
+        }]);
+
+        return Clipboard;
+    }(_tinyEmitter2.default);
+
+    /**
+     * Helper function to retrieve attribute value.
+     * @param {String} suffix
+     * @param {Element} element
+     */
+    function getAttributeValue(suffix, element) {
+        var attribute = 'data-clipboard-' + suffix;
+
+        if (!element.hasAttribute(attribute)) {
+            return;
+        }
+
+        return element.getAttribute(attribute);
+    }
+
+    module.exports = Clipboard;
+});
+
+/***/ }),
+/* 73 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var _typeof2 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+(function (global, factory) {
+    if (true) {
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [module, __webpack_require__(74)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+    } else if (typeof exports !== "undefined") {
+        factory(module, require('select'));
+    } else {
+        var mod = {
+            exports: {}
+        };
+        factory(mod, global.select);
+        global.clipboardAction = mod.exports;
+    }
+})(this, function (module, _select) {
+    'use strict';
+
+    var _select2 = _interopRequireDefault(_select);
+
+    function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : {
+            default: obj
+        };
+    }
+
+    var _typeof = typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol" ? function (obj) {
+        return typeof obj === 'undefined' ? 'undefined' : _typeof2(obj);
+    } : function (obj) {
+        return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof2(obj);
+    };
+
+    function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+            throw new TypeError("Cannot call a class as a function");
+        }
+    }
+
+    var _createClass = function () {
+        function defineProperties(target, props) {
+            for (var i = 0; i < props.length; i++) {
+                var descriptor = props[i];
+                descriptor.enumerable = descriptor.enumerable || false;
+                descriptor.configurable = true;
+                if ("value" in descriptor) descriptor.writable = true;
+                Object.defineProperty(target, descriptor.key, descriptor);
+            }
+        }
+
+        return function (Constructor, protoProps, staticProps) {
+            if (protoProps) defineProperties(Constructor.prototype, protoProps);
+            if (staticProps) defineProperties(Constructor, staticProps);
+            return Constructor;
+        };
+    }();
+
+    var ClipboardAction = function () {
+        /**
+         * @param {Object} options
+         */
+        function ClipboardAction(options) {
+            _classCallCheck(this, ClipboardAction);
+
+            this.resolveOptions(options);
+            this.initSelection();
+        }
+
+        /**
+         * Defines base properties passed from constructor.
+         * @param {Object} options
+         */
+
+        _createClass(ClipboardAction, [{
+            key: 'resolveOptions',
+            value: function resolveOptions() {
+                var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+                this.action = options.action;
+                this.container = options.container;
+                this.emitter = options.emitter;
+                this.target = options.target;
+                this.text = options.text;
+                this.trigger = options.trigger;
+
+                this.selectedText = '';
+            }
+        }, {
+            key: 'initSelection',
+            value: function initSelection() {
+                if (this.text) {
+                    this.selectFake();
+                } else if (this.target) {
+                    this.selectTarget();
+                }
+            }
+        }, {
+            key: 'selectFake',
+            value: function selectFake() {
+                var _this = this;
+
+                var isRTL = document.documentElement.getAttribute('dir') == 'rtl';
+
+                this.removeFake();
+
+                this.fakeHandlerCallback = function () {
+                    return _this.removeFake();
+                };
+                this.fakeHandler = this.container.addEventListener('click', this.fakeHandlerCallback) || true;
+
+                this.fakeElem = document.createElement('textarea');
+                // Prevent zooming on iOS
+                this.fakeElem.style.fontSize = '12pt';
+                // Reset box model
+                this.fakeElem.style.border = '0';
+                this.fakeElem.style.padding = '0';
+                this.fakeElem.style.margin = '0';
+                // Move element out of screen horizontally
+                this.fakeElem.style.position = 'absolute';
+                this.fakeElem.style[isRTL ? 'right' : 'left'] = '-9999px';
+                // Move element to the same position vertically
+                var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+                this.fakeElem.style.top = yPosition + 'px';
+
+                this.fakeElem.setAttribute('readonly', '');
+                this.fakeElem.value = this.text;
+
+                this.container.appendChild(this.fakeElem);
+
+                this.selectedText = (0, _select2.default)(this.fakeElem);
+                this.copyText();
+            }
+        }, {
+            key: 'removeFake',
+            value: function removeFake() {
+                if (this.fakeHandler) {
+                    this.container.removeEventListener('click', this.fakeHandlerCallback);
+                    this.fakeHandler = null;
+                    this.fakeHandlerCallback = null;
+                }
+
+                if (this.fakeElem) {
+                    this.container.removeChild(this.fakeElem);
+                    this.fakeElem = null;
+                }
+            }
+        }, {
+            key: 'selectTarget',
+            value: function selectTarget() {
+                this.selectedText = (0, _select2.default)(this.target);
+                this.copyText();
+            }
+        }, {
+            key: 'copyText',
+            value: function copyText() {
+                var succeeded = void 0;
+
+                try {
+                    succeeded = document.execCommand(this.action);
+                } catch (err) {
+                    succeeded = false;
+                }
+
+                this.handleResult(succeeded);
+            }
+        }, {
+            key: 'handleResult',
+            value: function handleResult(succeeded) {
+                this.emitter.emit(succeeded ? 'success' : 'error', {
+                    action: this.action,
+                    text: this.selectedText,
+                    trigger: this.trigger,
+                    clearSelection: this.clearSelection.bind(this)
+                });
+            }
+        }, {
+            key: 'clearSelection',
+            value: function clearSelection() {
+                if (this.trigger) {
+                    this.trigger.focus();
+                }
+
+                window.getSelection().removeAllRanges();
+            }
+        }, {
+            key: 'destroy',
+            value: function destroy() {
+                this.removeFake();
+            }
+        }, {
+            key: 'action',
+            set: function set() {
+                var action = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'copy';
+
+                this._action = action;
+
+                if (this._action !== 'copy' && this._action !== 'cut') {
+                    throw new Error('Invalid "action" value, use either "copy" or "cut"');
+                }
+            },
+            get: function get() {
+                return this._action;
+            }
+        }, {
+            key: 'target',
+            set: function set(target) {
+                if (target !== undefined) {
+                    if (target && (typeof target === 'undefined' ? 'undefined' : _typeof(target)) === 'object' && target.nodeType === 1) {
+                        if (this.action === 'copy' && target.hasAttribute('disabled')) {
+                            throw new Error('Invalid "target" attribute. Please use "readonly" instead of "disabled" attribute');
+                        }
+
+                        if (this.action === 'cut' && (target.hasAttribute('readonly') || target.hasAttribute('disabled'))) {
+                            throw new Error('Invalid "target" attribute. You can\'t cut text from elements with "readonly" or "disabled" attributes');
+                        }
+
+                        this._target = target;
+                    } else {
+                        throw new Error('Invalid "target" value, use a valid Element');
+                    }
+                }
+            },
+            get: function get() {
+                return this._target;
+            }
+        }]);
+
+        return ClipboardAction;
+    }();
+
+    module.exports = ClipboardAction;
+});
+
+/***/ }),
+/* 74 */
+/***/ (function(module, exports) {
+
+function select(element) {
+    var selectedText;
+
+    if (element.nodeName === 'SELECT') {
+        element.focus();
+
+        selectedText = element.value;
+    } else if (element.nodeName === 'INPUT' || element.nodeName === 'TEXTAREA') {
+        var isReadOnly = element.hasAttribute('readonly');
+
+        if (!isReadOnly) {
+            element.setAttribute('readonly', '');
+        }
+
+        element.select();
+        element.setSelectionRange(0, element.value.length);
+
+        if (!isReadOnly) {
+            element.removeAttribute('readonly');
+        }
+
+        selectedText = element.value;
+    } else {
+        if (element.hasAttribute('contenteditable')) {
+            element.focus();
+        }
+
+        var selection = window.getSelection();
+        var range = document.createRange();
+
+        range.selectNodeContents(element);
+        selection.removeAllRanges();
+        selection.addRange(range);
+
+        selectedText = selection.toString();
+    }
+
+    return selectedText;
+}
+
+module.exports = select;
+
+/***/ }),
+/* 75 */
+/***/ (function(module, exports) {
+
+function E() {
+  // Keep this empty so it's easier to inherit from
+  // (via https://github.com/lipsmack from https://github.com/scottcorgan/tiny-emitter/issues/3)
+}
+
+E.prototype = {
+  on: function on(name, callback, ctx) {
+    var e = this.e || (this.e = {});
+
+    (e[name] || (e[name] = [])).push({
+      fn: callback,
+      ctx: ctx
+    });
+
+    return this;
+  },
+
+  once: function once(name, callback, ctx) {
+    var self = this;
+    function listener() {
+      self.off(name, listener);
+      callback.apply(ctx, arguments);
+    };
+
+    listener._ = callback;
+    return this.on(name, listener, ctx);
+  },
+
+  emit: function emit(name) {
+    var data = [].slice.call(arguments, 1);
+    var evtArr = ((this.e || (this.e = {}))[name] || []).slice();
+    var i = 0;
+    var len = evtArr.length;
+
+    for (i; i < len; i++) {
+      evtArr[i].fn.apply(evtArr[i].ctx, data);
+    }
+
+    return this;
+  },
+
+  off: function off(name, callback) {
+    var e = this.e || (this.e = {});
+    var evts = e[name];
+    var liveEvents = [];
+
+    if (evts && callback) {
+      for (var i = 0, len = evts.length; i < len; i++) {
+        if (evts[i].fn !== callback && evts[i].fn._ !== callback) liveEvents.push(evts[i]);
+      }
+    }
+
+    // Remove event from queue to prevent memory leak
+    // Suggested by https://github.com/lazd
+    // Ref: https://github.com/scottcorgan/tiny-emitter/commit/c6ebfaa9bc973b33d110a84a307742b7cf94c953#commitcomment-5024910
+
+    liveEvents.length ? e[name] = liveEvents : delete e[name];
+
+    return this;
+  }
+};
+
+module.exports = E;
+
+/***/ }),
+/* 76 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var is = __webpack_require__(77);
+var delegate = __webpack_require__(78);
+
+/**
+ * Validates all params and calls the right
+ * listener function based on its target type.
+ *
+ * @param {String|HTMLElement|HTMLCollection|NodeList} target
+ * @param {String} type
+ * @param {Function} callback
+ * @return {Object}
+ */
+function listen(target, type, callback) {
+    if (!target && !type && !callback) {
+        throw new Error('Missing required arguments');
+    }
+
+    if (!is.string(type)) {
+        throw new TypeError('Second argument must be a String');
+    }
+
+    if (!is.fn(callback)) {
+        throw new TypeError('Third argument must be a Function');
+    }
+
+    if (is.node(target)) {
+        return listenNode(target, type, callback);
+    } else if (is.nodeList(target)) {
+        return listenNodeList(target, type, callback);
+    } else if (is.string(target)) {
+        return listenSelector(target, type, callback);
+    } else {
+        throw new TypeError('First argument must be a String, HTMLElement, HTMLCollection, or NodeList');
+    }
+}
+
+/**
+ * Adds an event listener to a HTML element
+ * and returns a remove listener function.
+ *
+ * @param {HTMLElement} node
+ * @param {String} type
+ * @param {Function} callback
+ * @return {Object}
+ */
+function listenNode(node, type, callback) {
+    node.addEventListener(type, callback);
+
+    return {
+        destroy: function destroy() {
+            node.removeEventListener(type, callback);
+        }
+    };
+}
+
+/**
+ * Add an event listener to a list of HTML elements
+ * and returns a remove listener function.
+ *
+ * @param {NodeList|HTMLCollection} nodeList
+ * @param {String} type
+ * @param {Function} callback
+ * @return {Object}
+ */
+function listenNodeList(nodeList, type, callback) {
+    Array.prototype.forEach.call(nodeList, function (node) {
+        node.addEventListener(type, callback);
+    });
+
+    return {
+        destroy: function destroy() {
+            Array.prototype.forEach.call(nodeList, function (node) {
+                node.removeEventListener(type, callback);
+            });
+        }
+    };
+}
+
+/**
+ * Add an event listener to a selector
+ * and returns a remove listener function.
+ *
+ * @param {String} selector
+ * @param {String} type
+ * @param {Function} callback
+ * @return {Object}
+ */
+function listenSelector(selector, type, callback) {
+    return delegate(document.body, selector, type, callback);
+}
+
+module.exports = listen;
+
+/***/ }),
+/* 77 */
+/***/ (function(module, exports) {
+
+/**
+ * Check if argument is a HTML element.
+ *
+ * @param {Object} value
+ * @return {Boolean}
+ */
+exports.node = function (value) {
+  return value !== undefined && value instanceof HTMLElement && value.nodeType === 1;
+};
+
+/**
+ * Check if argument is a list of HTML elements.
+ *
+ * @param {Object} value
+ * @return {Boolean}
+ */
+exports.nodeList = function (value) {
+  var type = Object.prototype.toString.call(value);
+
+  return value !== undefined && (type === '[object NodeList]' || type === '[object HTMLCollection]') && 'length' in value && (value.length === 0 || exports.node(value[0]));
+};
+
+/**
+ * Check if argument is a string.
+ *
+ * @param {Object} value
+ * @return {Boolean}
+ */
+exports.string = function (value) {
+  return typeof value === 'string' || value instanceof String;
+};
+
+/**
+ * Check if argument is a function.
+ *
+ * @param {Object} value
+ * @return {Boolean}
+ */
+exports.fn = function (value) {
+  var type = Object.prototype.toString.call(value);
+
+  return type === '[object Function]';
+};
+
+/***/ }),
+/* 78 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var closest = __webpack_require__(79);
+
+/**
+ * Delegates event to a selector.
+ *
+ * @param {Element} element
+ * @param {String} selector
+ * @param {String} type
+ * @param {Function} callback
+ * @param {Boolean} useCapture
+ * @return {Object}
+ */
+function _delegate(element, selector, type, callback, useCapture) {
+    var listenerFn = listener.apply(this, arguments);
+
+    element.addEventListener(type, listenerFn, useCapture);
+
+    return {
+        destroy: function destroy() {
+            element.removeEventListener(type, listenerFn, useCapture);
+        }
+    };
+}
+
+/**
+ * Delegates event to a selector.
+ *
+ * @param {Element|String|Array} [elements]
+ * @param {String} selector
+ * @param {String} type
+ * @param {Function} callback
+ * @param {Boolean} useCapture
+ * @return {Object}
+ */
+function delegate(elements, selector, type, callback, useCapture) {
+    // Handle the regular Element usage
+    if (typeof elements.addEventListener === 'function') {
+        return _delegate.apply(null, arguments);
+    }
+
+    // Handle Element-less usage, it defaults to global delegation
+    if (typeof type === 'function') {
+        // Use `document` as the first parameter, then apply arguments
+        // This is a short way to .unshift `arguments` without running into deoptimizations
+        return _delegate.bind(null, document).apply(null, arguments);
+    }
+
+    // Handle Selector-based usage
+    if (typeof elements === 'string') {
+        elements = document.querySelectorAll(elements);
+    }
+
+    // Handle Array-like based usage
+    return Array.prototype.map.call(elements, function (element) {
+        return _delegate(element, selector, type, callback, useCapture);
+    });
+}
+
+/**
+ * Finds closest match and invokes callback.
+ *
+ * @param {Element} element
+ * @param {String} selector
+ * @param {String} type
+ * @param {Function} callback
+ * @return {Function}
+ */
+function listener(element, selector, type, callback) {
+    return function (e) {
+        e.delegateTarget = closest(e.target, selector);
+
+        if (e.delegateTarget) {
+            callback.call(element, e);
+        }
+    };
+}
+
+module.exports = delegate;
+
+/***/ }),
+/* 79 */
+/***/ (function(module, exports) {
+
+var DOCUMENT_NODE_TYPE = 9;
+
+/**
+ * A polyfill for Element.matches()
+ */
+if (typeof Element !== 'undefined' && !Element.prototype.matches) {
+    var proto = Element.prototype;
+
+    proto.matches = proto.matchesSelector || proto.mozMatchesSelector || proto.msMatchesSelector || proto.oMatchesSelector || proto.webkitMatchesSelector;
+}
+
+/**
+ * Finds the closest parent that matches a selector.
+ *
+ * @param {Element} element
+ * @param {String} selector
+ * @return {Function}
+ */
+function closest(element, selector) {
+    while (element && element.nodeType !== DOCUMENT_NODE_TYPE) {
+        if (typeof element.matches === 'function' && element.matches(selector)) {
+            return element;
+        }
+        element = element.parentNode;
+    }
+}
+
+module.exports = closest;
+
+/***/ }),
+/* 80 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(setImmediate, clearImmediate, module) {var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+!function (t, e) {
+  "object" == ( false ? "undefined" : _typeof(exports)) && "object" == ( false ? "undefined" : _typeof(module)) ? module.exports = e() :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_FACTORY__ = (e),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : "object" == (typeof exports === "undefined" ? "undefined" : _typeof(exports)) ? exports.swal = e() : t.swal = e();
+}(this, function () {
+  return function (t) {
+    function e(o) {
+      if (n[o]) return n[o].exports;var r = n[o] = { i: o, l: !1, exports: {} };return t[o].call(r.exports, r, r.exports, e), r.l = !0, r.exports;
+    }var n = {};return e.m = t, e.c = n, e.d = function (t, n, o) {
+      e.o(t, n) || Object.defineProperty(t, n, { configurable: !1, enumerable: !0, get: o });
+    }, e.n = function (t) {
+      var n = t && t.__esModule ? function () {
+        return t.default;
+      } : function () {
+        return t;
+      };return e.d(n, "a", n), n;
+    }, e.o = function (t, e) {
+      return Object.prototype.hasOwnProperty.call(t, e);
+    }, e.p = "", e(e.s = 8);
+  }([function (t, e, n) {
+    "use strict";
+    Object.defineProperty(e, "__esModule", { value: !0 });var o = "swal-button";e.CLASS_NAMES = { MODAL: "swal-modal", OVERLAY: "swal-overlay", SHOW_MODAL: "swal-overlay--show-modal", MODAL_TITLE: "swal-title", MODAL_TEXT: "swal-text", ICON: "swal-icon", ICON_CUSTOM: "swal-icon--custom", CONTENT: "swal-content", FOOTER: "swal-footer", BUTTON_CONTAINER: "swal-button-container", BUTTON: o, CONFIRM_BUTTON: o + "--confirm", CANCEL_BUTTON: o + "--cancel", DANGER_BUTTON: o + "--danger", BUTTON_LOADING: o + "--loading", BUTTON_LOADER: o + "__loader" }, e.default = e.CLASS_NAMES;
+  }, function (t, e, n) {
+    "use strict";
+    Object.defineProperty(e, "__esModule", { value: !0 }), e.getNode = function (t) {
+      var e = "." + t;return document.querySelector(e);
+    }, e.stringToNode = function (t) {
+      var e = document.createElement("div");return e.innerHTML = t.trim(), e.firstChild;
+    }, e.insertAfter = function (t, e) {
+      var n = e.nextSibling;e.parentNode.insertBefore(t, n);
+    }, e.removeNode = function (t) {
+      t.parentElement.removeChild(t);
+    }, e.throwErr = function (t) {
+      throw t = t.replace(/ +(?= )/g, ""), "SweetAlert: " + (t = t.trim());
+    }, e.isPlainObject = function (t) {
+      if ("[object Object]" !== Object.prototype.toString.call(t)) return !1;var e = Object.getPrototypeOf(t);return null === e || e === Object.prototype;
+    }, e.ordinalSuffixOf = function (t) {
+      var e = t % 10,
+          n = t % 100;return 1 === e && 11 !== n ? t + "st" : 2 === e && 12 !== n ? t + "nd" : 3 === e && 13 !== n ? t + "rd" : t + "th";
+    };
+  }, function (t, e, n) {
+    "use strict";
+    function o(t) {
+      for (var n in t) {
+        e.hasOwnProperty(n) || (e[n] = t[n]);
+      }
+    }Object.defineProperty(e, "__esModule", { value: !0 }), o(n(25));var r = n(26);e.overlayMarkup = r.default, o(n(27)), o(n(28)), o(n(29));var i = n(0),
+        a = i.default.MODAL_TITLE,
+        s = i.default.MODAL_TEXT,
+        c = i.default.ICON,
+        l = i.default.FOOTER;e.iconMarkup = '\n  <div class="' + c + '"></div>', e.titleMarkup = '\n  <div class="' + a + '"></div>\n', e.textMarkup = '\n  <div class="' + s + '"></div>', e.footerMarkup = '\n  <div class="' + l + '"></div>\n';
+  }, function (t, e, n) {
+    "use strict";
+    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(1);e.CONFIRM_KEY = "confirm", e.CANCEL_KEY = "cancel";var r = { visible: !0, text: null, value: null, className: "", closeModal: !0 },
+        i = Object.assign({}, r, { visible: !1, text: "Cancel", value: null }),
+        a = Object.assign({}, r, { text: "OK", value: !0 });e.defaultButtonList = { cancel: i, confirm: a };var s = function s(t) {
+      switch (t) {case e.CONFIRM_KEY:
+          return a;case e.CANCEL_KEY:
+          return i;default:
+          var n = t.charAt(0).toUpperCase() + t.slice(1);return Object.assign({}, r, { text: n, value: t });}
+    },
+        c = function c(t, e) {
+      var n = s(t);return !0 === e ? Object.assign({}, n, { visible: !0 }) : "string" == typeof e ? Object.assign({}, n, { visible: !0, text: e }) : o.isPlainObject(e) ? Object.assign({ visible: !0 }, n, e) : Object.assign({}, n, { visible: !1 });
+    },
+        l = function l(t) {
+      for (var e = {}, n = 0, o = Object.keys(t); n < o.length; n++) {
+        var r = o[n],
+            a = t[r],
+            s = c(r, a);e[r] = s;
+      }return e.cancel || (e.cancel = i), e;
+    },
+        u = function u(t) {
+      var n = {};switch (t.length) {case 1:
+          n[e.CANCEL_KEY] = Object.assign({}, i, { visible: !1 });break;case 2:
+          n[e.CANCEL_KEY] = c(e.CANCEL_KEY, t[0]), n[e.CONFIRM_KEY] = c(e.CONFIRM_KEY, t[1]);break;default:
+          o.throwErr("Invalid number of 'buttons' in array (" + t.length + ").\n      If you want more than 2 buttons, you need to use an object!");}return n;
+    };e.getButtonListOpts = function (t) {
+      var n = e.defaultButtonList;return "string" == typeof t ? n[e.CONFIRM_KEY] = c(e.CONFIRM_KEY, t) : Array.isArray(t) ? n = u(t) : o.isPlainObject(t) ? n = l(t) : !0 === t ? n = u([!0, !0]) : !1 === t ? n = u([!1, !1]) : void 0 === t && (n = e.defaultButtonList), n;
+    };
+  }, function (t, e, n) {
+    "use strict";
+    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(1),
+        r = n(2),
+        i = n(0),
+        a = i.default.MODAL,
+        s = i.default.OVERLAY,
+        c = n(30),
+        l = n(31),
+        u = n(32),
+        f = n(33);e.injectElIntoModal = function (t) {
+      var e = o.getNode(a),
+          n = o.stringToNode(t);return e.appendChild(n), n;
+    };var d = function d(t) {
+      t.className = a, t.textContent = "";
+    },
+        p = function p(t, e) {
+      d(t);var n = e.className;n && t.classList.add(n);
+    };e.initModalContent = function (t) {
+      var e = o.getNode(a);p(e, t), c.default(t.icon), l.initTitle(t.title), l.initText(t.text), f.default(t.content), u.default(t.buttons, t.dangerMode);
+    };var m = function m() {
+      var t = o.getNode(s),
+          e = o.stringToNode(r.modalMarkup);t.appendChild(e);
+    };e.default = m;
+  }, function (t, e, n) {
+    "use strict";
+    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(3),
+        r = { isOpen: !1, promise: null, actions: {}, timer: null },
+        i = Object.assign({}, r);e.resetState = function () {
+      i = Object.assign({}, r);
+    }, e.setActionValue = function (t) {
+      if ("string" == typeof t) return a(o.CONFIRM_KEY, t);for (var e in t) {
+        a(e, t[e]);
+      }
+    };var a = function a(t, e) {
+      i.actions[t] || (i.actions[t] = {}), Object.assign(i.actions[t], { value: e });
+    };e.setActionOptionsFor = function (t, e) {
+      var n = (void 0 === e ? {} : e).closeModal,
+          o = void 0 === n || n;Object.assign(i.actions[t], { closeModal: o });
+    }, e.default = i;
+  }, function (t, e, n) {
+    "use strict";
+    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(1),
+        r = n(3),
+        i = n(0),
+        a = i.default.OVERLAY,
+        s = i.default.SHOW_MODAL,
+        c = i.default.BUTTON,
+        l = i.default.BUTTON_LOADING,
+        u = n(5);e.openModal = function () {
+      o.getNode(a).classList.add(s), u.default.isOpen = !0;
+    };var f = function f() {
+      o.getNode(a).classList.remove(s), u.default.isOpen = !1;
+    };e.onAction = function (t) {
+      void 0 === t && (t = r.CANCEL_KEY);var e = u.default.actions[t],
+          n = e.value;if (!1 === e.closeModal) {
+        var i = c + "--" + t;o.getNode(i).classList.add(l);
+      } else f();u.default.promise.resolve(n);
+    }, e.getState = function () {
+      var t = Object.assign({}, u.default);return delete t.promise, delete t.timer, t;
+    }, e.stopLoading = function () {
+      for (var t = document.querySelectorAll("." + c), e = 0; e < t.length; e++) {
+        t[e].classList.remove(l);
+      }
+    };
+  }, function (t, e) {
+    var n;n = this;try {
+      n = n || Function("return this")() || (0, eval)("this");
+    } catch (t) {
+      "object" == (typeof window === "undefined" ? "undefined" : _typeof(window)) && (n = window);
+    }t.exports = n;
+  }, function (t, e, n) {
+    (function (e) {
+      t.exports = e.sweetAlert = n(9);
+    }).call(e, n(7));
+  }, function (t, e, n) {
+    (function (e) {
+      t.exports = e.swal = n(10);
+    }).call(e, n(7));
+  }, function (t, e, n) {
+    "undefined" != typeof window && n(11), n(16);var o = n(23).default;t.exports = o;
+  }, function (t, e, n) {
+    var o = n(12);"string" == typeof o && (o = [[t.i, o, ""]]);var r = { insertAt: "top" };r.transform = void 0;n(14)(o, r);o.locals && (t.exports = o.locals);
+  }, function (t, e, n) {
+    e = t.exports = n(13)(void 0), e.push([t.i, '.swal-icon--error{border-color:#f27474;-webkit-animation:animateErrorIcon .5s;animation:animateErrorIcon .5s}.swal-icon--error__x-mark{position:relative;display:block;-webkit-animation:animateXMark .5s;animation:animateXMark .5s}.swal-icon--error__line{position:absolute;height:5px;width:47px;background-color:#f27474;display:block;top:37px;border-radius:2px}.swal-icon--error__line--left{-webkit-transform:rotate(45deg);transform:rotate(45deg);left:17px}.swal-icon--error__line--right{-webkit-transform:rotate(-45deg);transform:rotate(-45deg);right:16px}@-webkit-keyframes animateErrorIcon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}to{-webkit-transform:rotateX(0deg);transform:rotateX(0deg);opacity:1}}@keyframes animateErrorIcon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}to{-webkit-transform:rotateX(0deg);transform:rotateX(0deg);opacity:1}}@-webkit-keyframes animateXMark{0%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}50%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}80%{-webkit-transform:scale(1.15);transform:scale(1.15);margin-top:-6px}to{-webkit-transform:scale(1);transform:scale(1);margin-top:0;opacity:1}}@keyframes animateXMark{0%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}50%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}80%{-webkit-transform:scale(1.15);transform:scale(1.15);margin-top:-6px}to{-webkit-transform:scale(1);transform:scale(1);margin-top:0;opacity:1}}.swal-icon--warning{border-color:#f8bb86;-webkit-animation:pulseWarning .75s infinite alternate;animation:pulseWarning .75s infinite alternate}.swal-icon--warning__body{width:5px;height:47px;top:10px;border-radius:2px;margin-left:-2px}.swal-icon--warning__body,.swal-icon--warning__dot{position:absolute;left:50%;background-color:#f8bb86}.swal-icon--warning__dot{width:7px;height:7px;border-radius:50%;margin-left:-4px;bottom:-11px}@-webkit-keyframes pulseWarning{0%{border-color:#f8d486}to{border-color:#f8bb86}}@keyframes pulseWarning{0%{border-color:#f8d486}to{border-color:#f8bb86}}.swal-icon--success{border-color:#a5dc86}.swal-icon--success:after,.swal-icon--success:before{content:"";border-radius:50%;position:absolute;width:60px;height:120px;background:#fff;-webkit-transform:rotate(45deg);transform:rotate(45deg)}.swal-icon--success:before{border-radius:120px 0 0 120px;top:-7px;left:-33px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:60px 60px;transform-origin:60px 60px}.swal-icon--success:after{border-radius:0 120px 120px 0;top:-11px;left:30px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:0 60px;transform-origin:0 60px;-webkit-animation:rotatePlaceholder 4.25s ease-in;animation:rotatePlaceholder 4.25s ease-in}.swal-icon--success__ring{width:80px;height:80px;border:4px solid hsla(98,55%,69%,.2);border-radius:50%;box-sizing:content-box;position:absolute;left:-4px;top:-4px;z-index:2}.swal-icon--success__hide-corners{width:5px;height:90px;background-color:#fff;padding:1px;position:absolute;left:28px;top:8px;z-index:1;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}.swal-icon--success__line{height:5px;background-color:#a5dc86;display:block;border-radius:2px;position:absolute;z-index:2}.swal-icon--success__line--tip{width:25px;left:14px;top:46px;-webkit-transform:rotate(45deg);transform:rotate(45deg);-webkit-animation:animateSuccessTip .75s;animation:animateSuccessTip .75s}.swal-icon--success__line--long{width:47px;right:8px;top:38px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-animation:animateSuccessLong .75s;animation:animateSuccessLong .75s}@-webkit-keyframes rotatePlaceholder{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}to{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@keyframes rotatePlaceholder{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}to{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@-webkit-keyframes animateSuccessTip{0%{width:0;left:1px;top:19px}54%{width:0;left:1px;top:19px}70%{width:50px;left:-8px;top:37px}84%{width:17px;left:21px;top:48px}to{width:25px;left:14px;top:45px}}@keyframes animateSuccessTip{0%{width:0;left:1px;top:19px}54%{width:0;left:1px;top:19px}70%{width:50px;left:-8px;top:37px}84%{width:17px;left:21px;top:48px}to{width:25px;left:14px;top:45px}}@-webkit-keyframes animateSuccessLong{0%{width:0;right:46px;top:54px}65%{width:0;right:46px;top:54px}84%{width:55px;right:0;top:35px}to{width:47px;right:8px;top:38px}}@keyframes animateSuccessLong{0%{width:0;right:46px;top:54px}65%{width:0;right:46px;top:54px}84%{width:55px;right:0;top:35px}to{width:47px;right:8px;top:38px}}.swal-icon--info{border-color:#c9dae1}.swal-icon--info:before{width:5px;height:29px;bottom:17px;border-radius:2px;margin-left:-2px}.swal-icon--info:after,.swal-icon--info:before{content:"";position:absolute;left:50%;background-color:#c9dae1}.swal-icon--info:after{width:7px;height:7px;border-radius:50%;margin-left:-3px;top:19px}.swal-icon{width:80px;height:80px;border-width:4px;border-style:solid;border-radius:50%;padding:0;position:relative;box-sizing:content-box;margin:20px auto}.swal-icon:first-child{margin-top:32px}.swal-icon--custom{width:auto;height:auto;max-width:100%;border:none;border-radius:0}.swal-icon img{max-width:100%;max-height:100%}.swal-title{color:rgba(0,0,0,.65);font-weight:600;text-transform:none;position:relative;display:block;padding:13px 16px;font-size:27px;line-height:normal;text-align:center;margin-bottom:0}.swal-title:first-child{margin-top:26px}.swal-title:not(:first-child){padding-bottom:0}.swal-title:not(:last-child){margin-bottom:13px}.swal-text{font-size:16px;position:relative;float:none;line-height:normal;vertical-align:top;text-align:left;display:inline-block;margin:0;padding:0 10px;font-weight:400;color:rgba(0,0,0,.64);max-width:calc(100% - 20px);overflow-wrap:break-word;box-sizing:border-box}.swal-text:first-child{margin-top:45px}.swal-text:last-child{margin-bottom:45px}.swal-footer{text-align:right;padding-top:13px;margin-top:13px;padding:13px 16px;border-radius:inherit;border-top-left-radius:0;border-top-right-radius:0}.swal-button-container{margin:5px;display:inline-block;position:relative}.swal-button{background-color:#7cd1f9;color:#fff;border:none;box-shadow:none;border-radius:5px;font-weight:600;font-size:14px;padding:10px 24px;margin:0;cursor:pointer}.swal-button[not:disabled]:hover{background-color:#78cbf2}.swal-button:active{background-color:#70bce0}.swal-button:focus{outline:none;box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(43,114,165,.29)}.swal-button[disabled]{opacity:.5;cursor:default}.swal-button::-moz-focus-inner{border:0}.swal-button--cancel{color:#555;background-color:#efefef}.swal-button--cancel[not:disabled]:hover{background-color:#e8e8e8}.swal-button--cancel:active{background-color:#d7d7d7}.swal-button--cancel:focus{box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(116,136,150,.29)}.swal-button--danger{background-color:#e64942}.swal-button--danger[not:disabled]:hover{background-color:#df4740}.swal-button--danger:active{background-color:#cf423b}.swal-button--danger:focus{box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(165,43,43,.29)}.swal-content{padding:0 20px;margin-top:20px;font-size:medium}.swal-content:last-child{margin-bottom:20px}.swal-content__input,.swal-content__textarea{-webkit-appearance:none;background-color:#fff;border:none;font-size:14px;display:block;box-sizing:border-box;width:100%;border:1px solid rgba(0,0,0,.14);padding:10px 13px;border-radius:2px;transition:border-color .2s}.swal-content__input:focus,.swal-content__textarea:focus{outline:none;border-color:#6db8ff}.swal-content__textarea{resize:vertical}.swal-button--loading{color:transparent}.swal-button--loading~.swal-button__loader{opacity:1}.swal-button__loader{position:absolute;height:auto;width:43px;z-index:2;left:50%;top:50%;-webkit-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%);text-align:center;pointer-events:none;opacity:0}.swal-button__loader div{display:inline-block;float:none;vertical-align:baseline;width:9px;height:9px;padding:0;border:none;margin:2px;opacity:.4;border-radius:7px;background-color:hsla(0,0%,100%,.9);transition:background .2s;-webkit-animation:swal-loading-anim 1s infinite;animation:swal-loading-anim 1s infinite}.swal-button__loader div:nth-child(3n+2){-webkit-animation-delay:.15s;animation-delay:.15s}.swal-button__loader div:nth-child(3n+3){-webkit-animation-delay:.3s;animation-delay:.3s}@-webkit-keyframes swal-loading-anim{0%{opacity:.4}20%{opacity:.4}50%{opacity:1}to{opacity:.4}}@keyframes swal-loading-anim{0%{opacity:.4}20%{opacity:.4}50%{opacity:1}to{opacity:.4}}.swal-overlay{position:fixed;top:0;bottom:0;left:0;right:0;text-align:center;font-size:0;overflow-y:auto;background-color:rgba(0,0,0,.4);z-index:10000;pointer-events:none;opacity:0;transition:opacity .3s}.swal-overlay:before{content:" ";display:inline-block;vertical-align:middle;height:100%}.swal-overlay--show-modal{opacity:1;pointer-events:auto}.swal-overlay--show-modal .swal-modal{opacity:1;pointer-events:auto;box-sizing:border-box;-webkit-animation:showSweetAlert .3s;animation:showSweetAlert .3s;will-change:transform}.swal-modal{width:478px;opacity:0;pointer-events:none;background-color:#fff;text-align:center;border-radius:5px;position:static;margin:20px auto;display:inline-block;vertical-align:middle;-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:50% 50%;transform-origin:50% 50%;z-index:10001;transition:opacity .2s,-webkit-transform .3s;transition:transform .3s,opacity .2s;transition:transform .3s,opacity .2s,-webkit-transform .3s}@media (max-width:500px){.swal-modal{width:calc(100% - 20px)}}@-webkit-keyframes showSweetAlert{0%{-webkit-transform:scale(1);transform:scale(1)}1%{-webkit-transform:scale(.5);transform:scale(.5)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}to{-webkit-transform:scale(1);transform:scale(1)}}@keyframes showSweetAlert{0%{-webkit-transform:scale(1);transform:scale(1)}1%{-webkit-transform:scale(.5);transform:scale(.5)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}to{-webkit-transform:scale(1);transform:scale(1)}}', ""]);
+  }, function (t, e) {
+    function n(t, e) {
+      var n = t[1] || "",
+          r = t[3];if (!r) return n;if (e && "function" == typeof btoa) {
+        var i = o(r);return [n].concat(r.sources.map(function (t) {
+          return "/*# sourceURL=" + r.sourceRoot + t + " */";
+        })).concat([i]).join("\n");
+      }return [n].join("\n");
+    }function o(t) {
+      return "/*# sourceMappingURL=data:application/json;charset=utf-8;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(t)))) + " */";
+    }t.exports = function (t) {
+      var e = [];return e.toString = function () {
+        return this.map(function (e) {
+          var o = n(e, t);return e[2] ? "@media " + e[2] + "{" + o + "}" : o;
+        }).join("");
+      }, e.i = function (t, n) {
+        "string" == typeof t && (t = [[null, t, ""]]);for (var o = {}, r = 0; r < this.length; r++) {
+          var i = this[r][0];"number" == typeof i && (o[i] = !0);
+        }for (r = 0; r < t.length; r++) {
+          var a = t[r];"number" == typeof a[0] && o[a[0]] || (n && !a[2] ? a[2] = n : n && (a[2] = "(" + a[2] + ") and (" + n + ")"), e.push(a));
+        }
+      }, e;
+    };
+  }, function (t, e, n) {
+    function o(t, e) {
+      for (var n = 0; n < t.length; n++) {
+        var o = t[n],
+            r = m[o.id];if (r) {
+          r.refs++;for (var i = 0; i < r.parts.length; i++) {
+            r.parts[i](o.parts[i]);
+          }for (; i < o.parts.length; i++) {
+            r.parts.push(u(o.parts[i], e));
+          }
+        } else {
+          for (var a = [], i = 0; i < o.parts.length; i++) {
+            a.push(u(o.parts[i], e));
+          }m[o.id] = { id: o.id, refs: 1, parts: a };
+        }
+      }
+    }function r(t, e) {
+      for (var n = [], o = {}, r = 0; r < t.length; r++) {
+        var i = t[r],
+            a = e.base ? i[0] + e.base : i[0],
+            s = i[1],
+            c = i[2],
+            l = i[3],
+            u = { css: s, media: c, sourceMap: l };o[a] ? o[a].parts.push(u) : n.push(o[a] = { id: a, parts: [u] });
+      }return n;
+    }function i(t, e) {
+      var n = v(t.insertInto);if (!n) throw new Error("Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.");var o = w[w.length - 1];if ("top" === t.insertAt) o ? o.nextSibling ? n.insertBefore(e, o.nextSibling) : n.appendChild(e) : n.insertBefore(e, n.firstChild), w.push(e);else {
+        if ("bottom" !== t.insertAt) throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");n.appendChild(e);
+      }
+    }function a(t) {
+      if (null === t.parentNode) return !1;t.parentNode.removeChild(t);var e = w.indexOf(t);e >= 0 && w.splice(e, 1);
+    }function s(t) {
+      var e = document.createElement("style");return t.attrs.type = "text/css", l(e, t.attrs), i(t, e), e;
+    }function c(t) {
+      var e = document.createElement("link");return t.attrs.type = "text/css", t.attrs.rel = "stylesheet", l(e, t.attrs), i(t, e), e;
+    }function l(t, e) {
+      Object.keys(e).forEach(function (n) {
+        t.setAttribute(n, e[n]);
+      });
+    }function u(t, e) {
+      var n, o, r, i;if (e.transform && t.css) {
+        if (!(i = e.transform(t.css))) return function () {};t.css = i;
+      }if (e.singleton) {
+        var l = h++;n = g || (g = s(e)), o = f.bind(null, n, l, !1), r = f.bind(null, n, l, !0);
+      } else t.sourceMap && "function" == typeof URL && "function" == typeof URL.createObjectURL && "function" == typeof URL.revokeObjectURL && "function" == typeof Blob && "function" == typeof btoa ? (n = c(e), o = p.bind(null, n, e), r = function r() {
+        a(n), n.href && URL.revokeObjectURL(n.href);
+      }) : (n = s(e), o = d.bind(null, n), r = function r() {
+        a(n);
+      });return o(t), function (e) {
+        if (e) {
+          if (e.css === t.css && e.media === t.media && e.sourceMap === t.sourceMap) return;o(t = e);
+        } else r();
+      };
+    }function f(t, e, n, o) {
+      var r = n ? "" : o.css;if (t.styleSheet) t.styleSheet.cssText = x(e, r);else {
+        var i = document.createTextNode(r),
+            a = t.childNodes;a[e] && t.removeChild(a[e]), a.length ? t.insertBefore(i, a[e]) : t.appendChild(i);
+      }
+    }function d(t, e) {
+      var n = e.css,
+          o = e.media;if (o && t.setAttribute("media", o), t.styleSheet) t.styleSheet.cssText = n;else {
+        for (; t.firstChild;) {
+          t.removeChild(t.firstChild);
+        }t.appendChild(document.createTextNode(n));
+      }
+    }function p(t, e, n) {
+      var o = n.css,
+          r = n.sourceMap,
+          i = void 0 === e.convertToAbsoluteUrls && r;(e.convertToAbsoluteUrls || i) && (o = y(o)), r && (o += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(r)))) + " */");var a = new Blob([o], { type: "text/css" }),
+          s = t.href;t.href = URL.createObjectURL(a), s && URL.revokeObjectURL(s);
+    }var m = {},
+        b = function (t) {
+      var e;return function () {
+        return void 0 === e && (e = t.apply(this, arguments)), e;
+      };
+    }(function () {
+      return window && document && document.all && !window.atob;
+    }),
+        v = function (t) {
+      var e = {};return function (n) {
+        return void 0 === e[n] && (e[n] = t.call(this, n)), e[n];
+      };
+    }(function (t) {
+      return document.querySelector(t);
+    }),
+        g = null,
+        h = 0,
+        w = [],
+        y = n(15);t.exports = function (t, e) {
+      if ("undefined" != typeof DEBUG && DEBUG && "object" != (typeof document === "undefined" ? "undefined" : _typeof(document))) throw new Error("The style-loader cannot be used in a non-browser environment");e = e || {}, e.attrs = "object" == _typeof(e.attrs) ? e.attrs : {}, e.singleton || (e.singleton = b()), e.insertInto || (e.insertInto = "head"), e.insertAt || (e.insertAt = "bottom");var n = r(t, e);return o(n, e), function (t) {
+        for (var i = [], a = 0; a < n.length; a++) {
+          var s = n[a],
+              c = m[s.id];c.refs--, i.push(c);
+        }if (t) {
+          o(r(t, e), e);
+        }for (var a = 0; a < i.length; a++) {
+          var c = i[a];if (0 === c.refs) {
+            for (var l = 0; l < c.parts.length; l++) {
+              c.parts[l]();
+            }delete m[c.id];
+          }
+        }
+      };
+    };var x = function () {
+      var t = [];return function (e, n) {
+        return t[e] = n, t.filter(Boolean).join("\n");
+      };
+    }();
+  }, function (t, e) {
+    t.exports = function (t) {
+      var e = "undefined" != typeof window && window.location;if (!e) throw new Error("fixUrls requires window.location");if (!t || "string" != typeof t) return t;var n = e.protocol + "//" + e.host,
+          o = n + e.pathname.replace(/\/[^\/]*$/, "/");return t.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi, function (t, e) {
+        var r = e.trim().replace(/^"(.*)"$/, function (t, e) {
+          return e;
+        }).replace(/^'(.*)'$/, function (t, e) {
+          return e;
+        });if (/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/)/i.test(r)) return t;var i;return i = 0 === r.indexOf("//") ? r : 0 === r.indexOf("/") ? n + r : o + r.replace(/^\.\//, ""), "url(" + JSON.stringify(i) + ")";
+      });
+    };
+  }, function (t, e, n) {
+    var o = n(17);"undefined" == typeof window || window.Promise || (window.Promise = o), n(21), String.prototype.includes || (String.prototype.includes = function (t, e) {
+      "use strict";
+      return "number" != typeof e && (e = 0), !(e + t.length > this.length) && -1 !== this.indexOf(t, e);
+    }), Array.prototype.includes || Object.defineProperty(Array.prototype, "includes", { value: function value(t, e) {
+        if (null == this) throw new TypeError('"this" is null or not defined');var n = Object(this),
+            o = n.length >>> 0;if (0 === o) return !1;for (var r = 0 | e, i = Math.max(r >= 0 ? r : o - Math.abs(r), 0); i < o;) {
+          if (function (t, e) {
+            return t === e || "number" == typeof t && "number" == typeof e && isNaN(t) && isNaN(e);
+          }(n[i], t)) return !0;i++;
+        }return !1;
+      } }), "undefined" != typeof window && function (t) {
+      t.forEach(function (t) {
+        t.hasOwnProperty("remove") || Object.defineProperty(t, "remove", { configurable: !0, enumerable: !0, writable: !0, value: function value() {
+            this.parentNode.removeChild(this);
+          } });
+      });
+    }([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
+  }, function (t, e, n) {
+    (function (e) {
+      !function (n) {
+        function o() {}function r(t, e) {
+          return function () {
+            t.apply(e, arguments);
+          };
+        }function i(t) {
+          if ("object" != _typeof(this)) throw new TypeError("Promises must be constructed via new");if ("function" != typeof t) throw new TypeError("not a function");this._state = 0, this._handled = !1, this._value = void 0, this._deferreds = [], f(t, this);
+        }function a(t, e) {
+          for (; 3 === t._state;) {
+            t = t._value;
+          }if (0 === t._state) return void t._deferreds.push(e);t._handled = !0, i._immediateFn(function () {
+            var n = 1 === t._state ? e.onFulfilled : e.onRejected;if (null === n) return void (1 === t._state ? s : c)(e.promise, t._value);var o;try {
+              o = n(t._value);
+            } catch (t) {
+              return void c(e.promise, t);
+            }s(e.promise, o);
+          });
+        }function s(t, e) {
+          try {
+            if (e === t) throw new TypeError("A promise cannot be resolved with itself.");if (e && ("object" == (typeof e === "undefined" ? "undefined" : _typeof(e)) || "function" == typeof e)) {
+              var n = e.then;if (e instanceof i) return t._state = 3, t._value = e, void l(t);if ("function" == typeof n) return void f(r(n, e), t);
+            }t._state = 1, t._value = e, l(t);
+          } catch (e) {
+            c(t, e);
+          }
+        }function c(t, e) {
+          t._state = 2, t._value = e, l(t);
+        }function l(t) {
+          2 === t._state && 0 === t._deferreds.length && i._immediateFn(function () {
+            t._handled || i._unhandledRejectionFn(t._value);
+          });for (var e = 0, n = t._deferreds.length; e < n; e++) {
+            a(t, t._deferreds[e]);
+          }t._deferreds = null;
+        }function u(t, e, n) {
+          this.onFulfilled = "function" == typeof t ? t : null, this.onRejected = "function" == typeof e ? e : null, this.promise = n;
+        }function f(t, e) {
+          var n = !1;try {
+            t(function (t) {
+              n || (n = !0, s(e, t));
+            }, function (t) {
+              n || (n = !0, c(e, t));
+            });
+          } catch (t) {
+            if (n) return;n = !0, c(e, t);
+          }
+        }var d = setTimeout;i.prototype.catch = function (t) {
+          return this.then(null, t);
+        }, i.prototype.then = function (t, e) {
+          var n = new this.constructor(o);return a(this, new u(t, e, n)), n;
+        }, i.all = function (t) {
+          var e = Array.prototype.slice.call(t);return new i(function (t, n) {
+            function o(i, a) {
+              try {
+                if (a && ("object" == (typeof a === "undefined" ? "undefined" : _typeof(a)) || "function" == typeof a)) {
+                  var s = a.then;if ("function" == typeof s) return void s.call(a, function (t) {
+                    o(i, t);
+                  }, n);
+                }e[i] = a, 0 == --r && t(e);
+              } catch (t) {
+                n(t);
+              }
+            }if (0 === e.length) return t([]);for (var r = e.length, i = 0; i < e.length; i++) {
+              o(i, e[i]);
+            }
+          });
+        }, i.resolve = function (t) {
+          return t && "object" == (typeof t === "undefined" ? "undefined" : _typeof(t)) && t.constructor === i ? t : new i(function (e) {
+            e(t);
+          });
+        }, i.reject = function (t) {
+          return new i(function (e, n) {
+            n(t);
+          });
+        }, i.race = function (t) {
+          return new i(function (e, n) {
+            for (var o = 0, r = t.length; o < r; o++) {
+              t[o].then(e, n);
+            }
+          });
+        }, i._immediateFn = "function" == typeof e && function (t) {
+          e(t);
+        } || function (t) {
+          d(t, 0);
+        }, i._unhandledRejectionFn = function (t) {
+          "undefined" != typeof console && console && console.warn("Possible Unhandled Promise Rejection:", t);
+        }, i._setImmediateFn = function (t) {
+          i._immediateFn = t;
+        }, i._setUnhandledRejectionFn = function (t) {
+          i._unhandledRejectionFn = t;
+        }, void 0 !== t && t.exports ? t.exports = i : n.Promise || (n.Promise = i);
+      }(this);
+    }).call(e, n(18).setImmediate);
+  }, function (t, e, n) {
+    function o(t, e) {
+      this._id = t, this._clearFn = e;
+    }var r = Function.prototype.apply;e.setTimeout = function () {
+      return new o(r.call(setTimeout, window, arguments), clearTimeout);
+    }, e.setInterval = function () {
+      return new o(r.call(setInterval, window, arguments), clearInterval);
+    }, e.clearTimeout = e.clearInterval = function (t) {
+      t && t.close();
+    }, o.prototype.unref = o.prototype.ref = function () {}, o.prototype.close = function () {
+      this._clearFn.call(window, this._id);
+    }, e.enroll = function (t, e) {
+      clearTimeout(t._idleTimeoutId), t._idleTimeout = e;
+    }, e.unenroll = function (t) {
+      clearTimeout(t._idleTimeoutId), t._idleTimeout = -1;
+    }, e._unrefActive = e.active = function (t) {
+      clearTimeout(t._idleTimeoutId);var e = t._idleTimeout;e >= 0 && (t._idleTimeoutId = setTimeout(function () {
+        t._onTimeout && t._onTimeout();
+      }, e));
+    }, n(19), e.setImmediate = setImmediate, e.clearImmediate = clearImmediate;
+  }, function (t, e, n) {
+    (function (t, e) {
+      !function (t, n) {
+        "use strict";
+        function o(t) {
+          "function" != typeof t && (t = new Function("" + t));for (var e = new Array(arguments.length - 1), n = 0; n < e.length; n++) {
+            e[n] = arguments[n + 1];
+          }var o = { callback: t, args: e };return l[c] = o, s(c), c++;
+        }function r(t) {
+          delete l[t];
+        }function i(t) {
+          var e = t.callback,
+              o = t.args;switch (o.length) {case 0:
+              e();break;case 1:
+              e(o[0]);break;case 2:
+              e(o[0], o[1]);break;case 3:
+              e(o[0], o[1], o[2]);break;default:
+              e.apply(n, o);}
+        }function a(t) {
+          if (u) setTimeout(a, 0, t);else {
+            var e = l[t];if (e) {
+              u = !0;try {
+                i(e);
+              } finally {
+                r(t), u = !1;
+              }
+            }
+          }
+        }if (!t.setImmediate) {
+          var s,
+              c = 1,
+              l = {},
+              u = !1,
+              f = t.document,
+              d = Object.getPrototypeOf && Object.getPrototypeOf(t);d = d && d.setTimeout ? d : t, "[object process]" === {}.toString.call(t.process) ? function () {
+            s = function s(t) {
+              e.nextTick(function () {
+                a(t);
+              });
+            };
+          }() : function () {
+            if (t.postMessage && !t.importScripts) {
+              var e = !0,
+                  n = t.onmessage;return t.onmessage = function () {
+                e = !1;
+              }, t.postMessage("", "*"), t.onmessage = n, e;
+            }
+          }() ? function () {
+            var e = "setImmediate$" + Math.random() + "$",
+                n = function n(_n) {
+              _n.source === t && "string" == typeof _n.data && 0 === _n.data.indexOf(e) && a(+_n.data.slice(e.length));
+            };t.addEventListener ? t.addEventListener("message", n, !1) : t.attachEvent("onmessage", n), s = function s(n) {
+              t.postMessage(e + n, "*");
+            };
+          }() : t.MessageChannel ? function () {
+            var t = new MessageChannel();t.port1.onmessage = function (t) {
+              a(t.data);
+            }, s = function s(e) {
+              t.port2.postMessage(e);
+            };
+          }() : f && "onreadystatechange" in f.createElement("script") ? function () {
+            var t = f.documentElement;s = function s(e) {
+              var n = f.createElement("script");n.onreadystatechange = function () {
+                a(e), n.onreadystatechange = null, t.removeChild(n), n = null;
+              }, t.appendChild(n);
+            };
+          }() : function () {
+            s = function s(t) {
+              setTimeout(a, 0, t);
+            };
+          }(), d.setImmediate = o, d.clearImmediate = r;
+        }
+      }("undefined" == typeof self ? void 0 === t ? this : t : self);
+    }).call(e, n(7), n(20));
+  }, function (t, e) {
+    function n() {
+      throw new Error("setTimeout has not been defined");
+    }function o() {
+      throw new Error("clearTimeout has not been defined");
+    }function r(t) {
+      if (u === setTimeout) return setTimeout(t, 0);if ((u === n || !u) && setTimeout) return u = setTimeout, setTimeout(t, 0);try {
+        return u(t, 0);
+      } catch (e) {
+        try {
+          return u.call(null, t, 0);
+        } catch (e) {
+          return u.call(this, t, 0);
+        }
+      }
+    }function i(t) {
+      if (f === clearTimeout) return clearTimeout(t);if ((f === o || !f) && clearTimeout) return f = clearTimeout, clearTimeout(t);try {
+        return f(t);
+      } catch (e) {
+        try {
+          return f.call(null, t);
+        } catch (e) {
+          return f.call(this, t);
+        }
+      }
+    }function a() {
+      b && p && (b = !1, p.length ? m = p.concat(m) : v = -1, m.length && s());
+    }function s() {
+      if (!b) {
+        var t = r(a);b = !0;for (var e = m.length; e;) {
+          for (p = m, m = []; ++v < e;) {
+            p && p[v].run();
+          }v = -1, e = m.length;
+        }p = null, b = !1, i(t);
+      }
+    }function c(t, e) {
+      this.fun = t, this.array = e;
+    }function l() {}var u,
+        f,
+        d = t.exports = {};!function () {
+      try {
+        u = "function" == typeof setTimeout ? setTimeout : n;
+      } catch (t) {
+        u = n;
+      }try {
+        f = "function" == typeof clearTimeout ? clearTimeout : o;
+      } catch (t) {
+        f = o;
+      }
+    }();var p,
+        m = [],
+        b = !1,
+        v = -1;d.nextTick = function (t) {
+      var e = new Array(arguments.length - 1);if (arguments.length > 1) for (var n = 1; n < arguments.length; n++) {
+        e[n - 1] = arguments[n];
+      }m.push(new c(t, e)), 1 !== m.length || b || r(s);
+    }, c.prototype.run = function () {
+      this.fun.apply(null, this.array);
+    }, d.title = "browser", d.browser = !0, d.env = {}, d.argv = [], d.version = "", d.versions = {}, d.on = l, d.addListener = l, d.once = l, d.off = l, d.removeListener = l, d.removeAllListeners = l, d.emit = l, d.prependListener = l, d.prependOnceListener = l, d.listeners = function (t) {
+      return [];
+    }, d.binding = function (t) {
+      throw new Error("process.binding is not supported");
+    }, d.cwd = function () {
+      return "/";
+    }, d.chdir = function (t) {
+      throw new Error("process.chdir is not supported");
+    }, d.umask = function () {
+      return 0;
+    };
+  }, function (t, e, n) {
+    "use strict";
+    n(22).polyfill();
+  }, function (t, e, n) {
+    "use strict";
+    function o(t, e) {
+      if (void 0 === t || null === t) throw new TypeError("Cannot convert first argument to object");for (var n = Object(t), o = 1; o < arguments.length; o++) {
+        var r = arguments[o];if (void 0 !== r && null !== r) for (var i = Object.keys(Object(r)), a = 0, s = i.length; a < s; a++) {
+          var c = i[a],
+              l = Object.getOwnPropertyDescriptor(r, c);void 0 !== l && l.enumerable && (n[c] = r[c]);
+        }
+      }return n;
+    }function r() {
+      Object.assign || Object.defineProperty(Object, "assign", { enumerable: !1, configurable: !0, writable: !0, value: o });
+    }t.exports = { assign: o, polyfill: r };
+  }, function (t, e, n) {
+    "use strict";
+    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(24),
+        r = n(6),
+        i = n(5),
+        a = n(36),
+        s = function s() {
+      for (var t = [], e = 0; e < arguments.length; e++) {
+        t[e] = arguments[e];
+      }if ("undefined" != typeof window) {
+        var n = a.getOpts.apply(void 0, t);return new Promise(function (t, e) {
+          i.default.promise = { resolve: t, reject: e }, o.default(n), setTimeout(function () {
+            r.openModal();
+          });
+        });
+      }
+    };s.close = r.onAction, s.getState = r.getState, s.setActionValue = i.setActionValue, s.stopLoading = r.stopLoading, s.setDefaults = a.setDefaults, e.default = s;
+  }, function (t, e, n) {
+    "use strict";
+    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(1),
+        r = n(0),
+        i = r.default.MODAL,
+        a = n(4),
+        s = n(34),
+        c = n(35),
+        l = n(1);e.init = function (t) {
+      o.getNode(i) || (document.body || l.throwErr("You can only use SweetAlert AFTER the DOM has loaded!"), s.default(), a.default()), a.initModalContent(t), c.default(t);
+    }, e.default = e.init;
+  }, function (t, e, n) {
+    "use strict";
+    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(0),
+        r = o.default.MODAL;e.modalMarkup = '\n  <div class="' + r + '" role="dialog" aria-modal="true"></div>', e.default = e.modalMarkup;
+  }, function (t, e, n) {
+    "use strict";
+    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(0),
+        r = o.default.OVERLAY,
+        i = '<div \n    class="' + r + '"\n    tabIndex="-1">\n  </div>';e.default = i;
+  }, function (t, e, n) {
+    "use strict";
+    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(0),
+        r = o.default.ICON;e.errorIconMarkup = function () {
+      var t = r + "--error",
+          e = t + "__line";return '\n    <div class="' + t + '__x-mark">\n      <span class="' + e + " " + e + '--left"></span>\n      <span class="' + e + " " + e + '--right"></span>\n    </div>\n  ';
+    }, e.warningIconMarkup = function () {
+      var t = r + "--warning";return '\n    <span class="' + t + '__body">\n      <span class="' + t + '__dot"></span>\n    </span>\n  ';
+    }, e.successIconMarkup = function () {
+      var t = r + "--success";return '\n    <span class="' + t + "__line " + t + '__line--long"></span>\n    <span class="' + t + "__line " + t + '__line--tip"></span>\n\n    <div class="' + t + '__ring"></div>\n    <div class="' + t + '__hide-corners"></div>\n  ';
+    };
+  }, function (t, e, n) {
+    "use strict";
+    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(0),
+        r = o.default.CONTENT;e.contentMarkup = '\n  <div class="' + r + '">\n\n  </div>\n';
+  }, function (t, e, n) {
+    "use strict";
+    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(0),
+        r = o.default.BUTTON_CONTAINER,
+        i = o.default.BUTTON,
+        a = o.default.BUTTON_LOADER;e.buttonMarkup = '\n  <div class="' + r + '">\n\n    <button\n      class="' + i + '"\n    ></button>\n\n    <div class="' + a + '">\n      <div></div>\n      <div></div>\n      <div></div>\n    </div>\n\n  </div>\n';
+  }, function (t, e, n) {
+    "use strict";
+    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(4),
+        r = n(2),
+        i = n(0),
+        a = i.default.ICON,
+        s = i.default.ICON_CUSTOM,
+        c = ["error", "warning", "success", "info"],
+        l = { error: r.errorIconMarkup(), warning: r.warningIconMarkup(), success: r.successIconMarkup() },
+        u = function u(t, e) {
+      var n = a + "--" + t;e.classList.add(n);var o = l[t];o && (e.innerHTML = o);
+    },
+        f = function f(t, e) {
+      e.classList.add(s);var n = document.createElement("img");n.src = t, e.appendChild(n);
+    },
+        d = function d(t) {
+      if (t) {
+        var e = o.injectElIntoModal(r.iconMarkup);c.includes(t) ? u(t, e) : f(t, e);
+      }
+    };e.default = d;
+  }, function (t, e, n) {
+    "use strict";
+    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(2),
+        r = n(4),
+        i = function i(t) {
+      navigator.userAgent.includes("AppleWebKit") && (t.style.display = "none", t.offsetHeight, t.style.display = "");
+    };e.initTitle = function (t) {
+      if (t) {
+        var e = r.injectElIntoModal(o.titleMarkup);e.textContent = t, i(e);
+      }
+    }, e.initText = function (t) {
+      if (t) {
+        var e = document.createDocumentFragment();t.split("\n").forEach(function (t, n, o) {
+          e.appendChild(document.createTextNode(t)), n < o.length - 1 && e.appendChild(document.createElement("br"));
+        });var n = r.injectElIntoModal(o.textMarkup);n.appendChild(e), i(n);
+      }
+    };
+  }, function (t, e, n) {
+    "use strict";
+    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(1),
+        r = n(4),
+        i = n(0),
+        a = i.default.BUTTON,
+        s = i.default.DANGER_BUTTON,
+        c = n(3),
+        l = n(2),
+        u = n(6),
+        f = n(5),
+        d = function d(t, e, n) {
+      var r = e.text,
+          i = e.value,
+          d = e.className,
+          p = e.closeModal,
+          m = o.stringToNode(l.buttonMarkup),
+          b = m.querySelector("." + a),
+          v = a + "--" + t;if (b.classList.add(v), d) {
+        (Array.isArray(d) ? d : d.split(" ")).filter(function (t) {
+          return t.length > 0;
+        }).forEach(function (t) {
+          b.classList.add(t);
+        });
+      }n && t === c.CONFIRM_KEY && b.classList.add(s), b.textContent = r;var g = {};return g[t] = i, f.setActionValue(g), f.setActionOptionsFor(t, { closeModal: p }), b.addEventListener("click", function () {
+        return u.onAction(t);
+      }), m;
+    },
+        p = function p(t, e) {
+      var n = r.injectElIntoModal(l.footerMarkup);for (var o in t) {
+        var i = t[o],
+            a = d(o, i, e);i.visible && n.appendChild(a);
+      }0 === n.children.length && n.remove();
+    };e.default = p;
+  }, function (t, e, n) {
+    "use strict";
+    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(3),
+        r = n(4),
+        i = n(2),
+        a = n(5),
+        s = n(6),
+        c = n(0),
+        l = c.default.CONTENT,
+        u = function u(t) {
+      t.addEventListener("input", function (t) {
+        var e = t.target,
+            n = e.value;a.setActionValue(n);
+      }), t.addEventListener("keyup", function (t) {
+        if ("Enter" === t.key) return s.onAction(o.CONFIRM_KEY);
+      }), setTimeout(function () {
+        t.focus(), a.setActionValue("");
+      }, 0);
+    },
+        f = function f(t, e, n) {
+      var o = document.createElement(e),
+          r = l + "__" + e;o.classList.add(r);for (var i in n) {
+        var a = n[i];o[i] = a;
+      }"input" === e && u(o), t.appendChild(o);
+    },
+        d = function d(t) {
+      if (t) {
+        var e = r.injectElIntoModal(i.contentMarkup),
+            n = t.element,
+            o = t.attributes;"string" == typeof n ? f(e, n, o) : e.appendChild(n);
+      }
+    };e.default = d;
+  }, function (t, e, n) {
+    "use strict";
+    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(1),
+        r = n(2),
+        i = function i() {
+      var t = o.stringToNode(r.overlayMarkup);document.body.appendChild(t);
+    };e.default = i;
+  }, function (t, e, n) {
+    "use strict";
+    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(5),
+        r = n(6),
+        i = n(1),
+        a = n(3),
+        s = n(0),
+        c = s.default.MODAL,
+        l = s.default.BUTTON,
+        u = s.default.OVERLAY,
+        f = function f(t) {
+      t.preventDefault(), v();
+    },
+        d = function d(t) {
+      t.preventDefault(), g();
+    },
+        p = function p(t) {
+      if (o.default.isOpen) switch (t.key) {case "Escape":
+          return r.onAction(a.CANCEL_KEY);}
+    },
+        m = function m(t) {
+      if (o.default.isOpen) switch (t.key) {case "Tab":
+          return f(t);}
+    },
+        b = function b(t) {
+      if (o.default.isOpen) return "Tab" === t.key && t.shiftKey ? d(t) : void 0;
+    },
+        v = function v() {
+      var t = i.getNode(l);t && (t.tabIndex = 0, t.focus());
+    },
+        g = function g() {
+      var t = i.getNode(c),
+          e = t.querySelectorAll("." + l),
+          n = e.length - 1,
+          o = e[n];o && o.focus();
+    },
+        h = function h(t) {
+      t[t.length - 1].addEventListener("keydown", m);
+    },
+        w = function w(t) {
+      t[0].addEventListener("keydown", b);
+    },
+        y = function y() {
+      var t = i.getNode(c),
+          e = t.querySelectorAll("." + l);e.length && (h(e), w(e));
+    },
+        x = function x(t) {
+      if (i.getNode(u) === t.target) return r.onAction(a.CANCEL_KEY);
+    },
+        _ = function _(t) {
+      var e = i.getNode(u);e.removeEventListener("click", x), t && e.addEventListener("click", x);
+    },
+        k = function k(t) {
+      o.default.timer && clearTimeout(o.default.timer), t && (o.default.timer = window.setTimeout(function () {
+        return r.onAction(a.CANCEL_KEY);
+      }, t));
+    },
+        O = function O(t) {
+      t.closeOnEsc ? document.addEventListener("keyup", p) : document.removeEventListener("keyup", p), t.dangerMode ? v() : g(), y(), _(t.closeOnClickOutside), k(t.timer);
+    };e.default = O;
+  }, function (t, e, n) {
+    "use strict";
+    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(1),
+        r = n(3),
+        i = n(37),
+        a = n(38),
+        s = { title: null, text: null, icon: null, buttons: r.defaultButtonList, content: null, className: null, closeOnClickOutside: !0, closeOnEsc: !0, dangerMode: !1, timer: null },
+        c = Object.assign({}, s);e.setDefaults = function (t) {
+      c = Object.assign({}, s, t);
+    };var l = function l(t) {
+      var e = t && t.button,
+          n = t && t.buttons;return void 0 !== e && void 0 !== n && o.throwErr("Cannot set both 'button' and 'buttons' options!"), void 0 !== e ? { confirm: e } : n;
+    },
+        u = function u(t) {
+      return o.ordinalSuffixOf(t + 1);
+    },
+        f = function f(t, e) {
+      o.throwErr(u(e) + " argument ('" + t + "') is invalid");
+    },
+        d = function d(t, e) {
+      var n = t + 1,
+          r = e[n];o.isPlainObject(r) || void 0 === r || o.throwErr("Expected " + u(n) + " argument ('" + r + "') to be a plain object");
+    },
+        p = function p(t, e) {
+      var n = t + 1,
+          r = e[n];void 0 !== r && o.throwErr("Unexpected " + u(n) + " argument (" + r + ")");
+    },
+        m = function m(t, e, n, r) {
+      var i = typeof e === "undefined" ? "undefined" : _typeof(e),
+          a = "string" === i,
+          s = e instanceof Element;if (a) {
+        if (0 === n) return { text: e };if (1 === n) return { text: e, title: r[0] };if (2 === n) return d(n, r), { icon: e };f(e, n);
+      } else {
+        if (s && 0 === n) return d(n, r), { content: e };if (o.isPlainObject(e)) return p(n, r), e;f(e, n);
+      }
+    };e.getOpts = function () {
+      for (var t = [], e = 0; e < arguments.length; e++) {
+        t[e] = arguments[e];
+      }var n = {};t.forEach(function (e, o) {
+        var r = m(0, e, o, t);Object.assign(n, r);
+      });var o = l(n);n.buttons = r.getButtonListOpts(o), delete n.button, n.content = i.getContentOpts(n.content);var u = Object.assign({}, s, c, n);return Object.keys(u).forEach(function (t) {
+        a.DEPRECATED_OPTS[t] && a.logDeprecation(t);
+      }), u;
+    };
+  }, function (t, e, n) {
+    "use strict";
+    Object.defineProperty(e, "__esModule", { value: !0 });var o = n(1),
+        r = { element: "input", attributes: { placeholder: "" } };e.getContentOpts = function (t) {
+      var e = {};return o.isPlainObject(t) ? Object.assign(e, t) : t instanceof Element ? { element: t } : "input" === t ? r : null;
+    };
+  }, function (t, e, n) {
+    "use strict";
+    Object.defineProperty(e, "__esModule", { value: !0 }), e.logDeprecation = function (t) {
+      var n = e.DEPRECATED_OPTS[t],
+          o = n.onlyRename,
+          r = n.replacement,
+          i = n.subOption,
+          a = n.link,
+          s = o ? "renamed" : "deprecated",
+          c = 'SweetAlert warning: "' + t + '" option has been ' + s + ".";if (r) {
+        c += " Please use" + (i ? ' "' + i + '" in ' : " ") + '"' + r + '" instead.';
+      }var l = "https://sweetalert.js.org";c += a ? " More details: " + l + a : " More details: " + l + "/guides/#upgrading-from-1x", console.warn(c);
+    }, e.DEPRECATED_OPTS = { type: { replacement: "icon", link: "/docs/#icon" }, imageUrl: { replacement: "icon", link: "/docs/#icon" }, customClass: { replacement: "className", onlyRename: !0, link: "/docs/#classname" }, imageSize: {}, showCancelButton: { replacement: "buttons", link: "/docs/#buttons" }, showConfirmButton: { replacement: "button", link: "/docs/#button" }, confirmButtonText: { replacement: "button", link: "/docs/#button" }, confirmButtonColor: {}, cancelButtonText: { replacement: "buttons", link: "/docs/#buttons" }, closeOnConfirm: { replacement: "button", subOption: "closeModal", link: "/docs/#button" }, closeOnCancel: { replacement: "buttons", subOption: "closeModal", link: "/docs/#buttons" }, showLoaderOnConfirm: { replacement: "buttons" }, animation: {}, inputType: { replacement: "content", link: "/docs/#content" }, inputValue: { replacement: "content", link: "/docs/#content" }, inputPlaceholder: { replacement: "content", link: "/docs/#content" }, html: { replacement: "content", link: "/docs/#content" }, allowEscapeKey: { replacement: "closeOnEsc", onlyRename: !0, link: "/docs/#closeonesc" }, allowClickOutside: { replacement: "closeOnClickOutside", onlyRename: !0, link: "/docs/#closeonclickoutside" } };
+  }]);
+});
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(57).setImmediate, __webpack_require__(57).clearImmediate, __webpack_require__(52)(module)))
+
+/***/ }),
+/* 81 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
+    "use strict";
+
+    if (global.setImmediate) {
+        return;
+    }
+
+    var nextHandle = 1; // Spec says greater than zero
+    var tasksByHandle = {};
+    var currentlyRunningATask = false;
+    var doc = global.document;
+    var registerImmediate;
+
+    function setImmediate(callback) {
+        // Callback can either be a function or a string
+        if (typeof callback !== "function") {
+            callback = new Function("" + callback);
+        }
+        // Copy function arguments
+        var args = new Array(arguments.length - 1);
+        for (var i = 0; i < args.length; i++) {
+            args[i] = arguments[i + 1];
+        }
+        // Store and register the task
+        var task = { callback: callback, args: args };
+        tasksByHandle[nextHandle] = task;
+        registerImmediate(nextHandle);
+        return nextHandle++;
+    }
+
+    function clearImmediate(handle) {
+        delete tasksByHandle[handle];
+    }
+
+    function run(task) {
+        var callback = task.callback;
+        var args = task.args;
+        switch (args.length) {
+            case 0:
+                callback();
+                break;
+            case 1:
+                callback(args[0]);
+                break;
+            case 2:
+                callback(args[0], args[1]);
+                break;
+            case 3:
+                callback(args[0], args[1], args[2]);
+                break;
+            default:
+                callback.apply(undefined, args);
+                break;
+        }
+    }
+
+    function runIfPresent(handle) {
+        // From the spec: "Wait until any invocations of this algorithm started before this one have completed."
+        // So if we're currently running a task, we'll need to delay this invocation.
+        if (currentlyRunningATask) {
+            // Delay by doing a setTimeout. setImmediate was tried instead, but in Firefox 7 it generated a
+            // "too much recursion" error.
+            setTimeout(runIfPresent, 0, handle);
+        } else {
+            var task = tasksByHandle[handle];
+            if (task) {
+                currentlyRunningATask = true;
+                try {
+                    run(task);
+                } finally {
+                    clearImmediate(handle);
+                    currentlyRunningATask = false;
+                }
+            }
+        }
+    }
+
+    function installNextTickImplementation() {
+        registerImmediate = function registerImmediate(handle) {
+            process.nextTick(function () {
+                runIfPresent(handle);
+            });
+        };
+    }
+
+    function canUsePostMessage() {
+        // The test against `importScripts` prevents this implementation from being installed inside a web worker,
+        // where `global.postMessage` means something completely different and can't be used for this purpose.
+        if (global.postMessage && !global.importScripts) {
+            var postMessageIsAsynchronous = true;
+            var oldOnMessage = global.onmessage;
+            global.onmessage = function () {
+                postMessageIsAsynchronous = false;
+            };
+            global.postMessage("", "*");
+            global.onmessage = oldOnMessage;
+            return postMessageIsAsynchronous;
+        }
+    }
+
+    function installPostMessageImplementation() {
+        // Installs an event handler on `global` for the `message` event: see
+        // * https://developer.mozilla.org/en/DOM/window.postMessage
+        // * http://www.whatwg.org/specs/web-apps/current-work/multipage/comms.html#crossDocumentMessages
+
+        var messagePrefix = "setImmediate$" + Math.random() + "$";
+        var onGlobalMessage = function onGlobalMessage(event) {
+            if (event.source === global && typeof event.data === "string" && event.data.indexOf(messagePrefix) === 0) {
+                runIfPresent(+event.data.slice(messagePrefix.length));
+            }
+        };
+
+        if (global.addEventListener) {
+            global.addEventListener("message", onGlobalMessage, false);
+        } else {
+            global.attachEvent("onmessage", onGlobalMessage);
+        }
+
+        registerImmediate = function registerImmediate(handle) {
+            global.postMessage(messagePrefix + handle, "*");
+        };
+    }
+
+    function installMessageChannelImplementation() {
+        var channel = new MessageChannel();
+        channel.port1.onmessage = function (event) {
+            var handle = event.data;
+            runIfPresent(handle);
+        };
+
+        registerImmediate = function registerImmediate(handle) {
+            channel.port2.postMessage(handle);
+        };
+    }
+
+    function installReadyStateChangeImplementation() {
+        var html = doc.documentElement;
+        registerImmediate = function registerImmediate(handle) {
+            // Create a <script> element; its readystatechange event will be fired asynchronously once it is inserted
+            // into the document. Do so, thus queuing up the task. Remember to clean up once it's been called.
+            var script = doc.createElement("script");
+            script.onreadystatechange = function () {
+                runIfPresent(handle);
+                script.onreadystatechange = null;
+                html.removeChild(script);
+                script = null;
+            };
+            html.appendChild(script);
+        };
+    }
+
+    function installSetTimeoutImplementation() {
+        registerImmediate = function registerImmediate(handle) {
+            setTimeout(runIfPresent, 0, handle);
+        };
+    }
+
+    // If supported, we should attach to the prototype of global, since that is where setTimeout et al. live.
+    var attachTo = Object.getPrototypeOf && Object.getPrototypeOf(global);
+    attachTo = attachTo && attachTo.setTimeout ? attachTo : global;
+
+    // Don't get fooled by e.g. browserify environments.
+    if ({}.toString.call(global.process) === "[object process]") {
+        // For Node.js before 0.9
+        installNextTickImplementation();
+    } else if (canUsePostMessage()) {
+        // For non-IE10 modern browsers
+        installPostMessageImplementation();
+    } else if (global.MessageChannel) {
+        // For web workers, where supported
+        installMessageChannelImplementation();
+    } else if (doc && "onreadystatechange" in doc.createElement("script")) {
+        // For IE 6–8
+        installReadyStateChangeImplementation();
+    } else {
+        // For older browsers
+        installSetTimeoutImplementation();
+    }
+
+    attachTo.setImmediate = setImmediate;
+    attachTo.clearImmediate = clearImmediate;
+})(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self);
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9), __webpack_require__(20)))
+
+/***/ }),
+/* 82 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_store__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_utils__ = __webpack_require__(7);
+
+
+var list = ['cache.add', 'cache.addAll', 'cache.delete', 'cache.match', 'cache.put', 'cache.keys', 'caches.delete', 'caches.has', 'caches.open'];
+function genWaiter() {
+  return Promise.race([Object(__WEBPACK_IMPORTED_MODULE_1_utils__["f" /* promisifyOneTimeEventListener */])(function () {}, navigator.serviceWorker, 'controllerchange'), Object(__WEBPACK_IMPORTED_MODULE_1_utils__["h" /* sleep */])(3000)]);
+}
+/* harmony default export */ __webpack_exports__["a"] = (function () {
+  function _recursive() {
+    if (i > -1) {
+      return Promise.resolve().then(function () {
+        return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 0, list[i]);
+      }).then(function () {
+        i--;
+        return _recursive();
+      });
+    }
+  }
+
+  var i, hasSW, waiter, reg;
+  return Promise.resolve().then(function () {
+    i = list.length - 1;
+    return _recursive();
+  }).then(function () {
+    hasSW = !!navigator.serviceWorker;
+
+    if (!!hasSW) {
+      return Promise.resolve().then(function () {
+        waiter = genWaiter();
+        return navigator.serviceWorker.register('/auto/cache-sw.js', { scope: '/auto/' });
+      }).then(function (_resp) {
+        reg = _resp;
+        return waiter;
+      }).then(function () {
+        return reg.unregister();
+      }).then(function () {
+        console.log('cache test finished');
+      });
+    }
+  }).then(function () {});
+});
+
+/***/ }),
+/* 83 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_store__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_utils__ = __webpack_require__(7);
+
+
+var list = ['pushManager.subscribe', 'pushManager.getSubscription', 'pushSubscription.unsubscribe', 'pushManager.permissionState', 'pushManager.denied'];
+function genWaiter() {
+  return Promise.race([Object(__WEBPACK_IMPORTED_MODULE_1_utils__["f" /* promisifyOneTimeEventListener */])(function () {}, navigator.serviceWorker, 'controllerchange'), Object(__WEBPACK_IMPORTED_MODULE_1_utils__["h" /* sleep */])(3000)]);
+}
+
+function urlB64ToUint8Array(base64String) {
+  var padding = '='.repeat((4 - base64String.length % 4) % 4);
+  var base64 = (base64String + padding).replace(/\-/g, '+').replace(/_/g, '/');
+
+  var rawData = window.atob(base64);
+  var outputArray = new Uint8Array(rawData.length);
+
+  for (var i = 0; i < rawData.length; ++i) {
+    outputArray[i] = rawData.charCodeAt(i);
+  }
+  return outputArray;
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (function () {
+  function _recursive() {
+    if (i > -1) {
+      return Promise.resolve().then(function () {
+        return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 0, list[i]);
+      }).then(function () {
+        i--;
+        return _recursive();
+      });
+    }
+  }
+
+  var i, hasSW, waiter, reg, pushManager, permissionState, subscription, sub, p256dh, auth;
+  return Promise.resolve().then(function () {
+    __webpack_require__(56);
+    i = list.length - 1;
+    return _recursive();
+  }).then(function () {
+    hasSW = !!navigator.serviceWorker;
+
+    if (!!hasSW) {
+      return Promise.resolve().then(function () {
+        waiter = genWaiter();
+        return navigator.serviceWorker.register('/auto/push-sw.js', {
+          scope: '/auto/'
+        });
+      }).then(function (_resp) {
+        reg = _resp;
+        return waiter;
+      }).then(function () {
+        pushManager = reg.pushManager;
+
+        if (!pushManager) {
+          console.log('no pushManager');
+          return reg.unregister();
+        } else {
+          return Promise.resolve().then(function () {
+            console.log('pushManager found');
+            return Promise.resolve().then(function () {
+              return pushManager.permissionState({
+                userVisibleOnly: true,
+                applicationServerKey: urlB64ToUint8Array('BDm6z7ImnFDW6GJ3bwtFdR4ifKGE0CVGXNRfGJhWGm8gwX1sXHH9uq3zo6mYd7fkjVrzfiDHhS5gYfCbxj2g-Bo')
+              });
+            }).then(function (_resp) {
+              permissionState = _resp;
+
+              console.log('permission state get', permissionState);
+              return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'pushManager.permissionState');
+            }).then(function () {
+              if (permissionState === 'denied') {
+                console.log('permission denied');
+                alert('You should grant our permission of push and notification');
+                // webpack has some problem facing this two line
+                // maybe I can update webpack and then fix this
+                // I will do this later
+                // await reg.unregister()
+                // await store.put('feature', 1, 'pushManager.denied')
+                return;
+              }
+            }).catch(function (err) {
+              console.error(err);
+            });
+          }).then(function () {
+            return pushManager.getSubscription();
+          }).then(function (_resp) {
+            subscription = _resp;
+            return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'pushManager.getSubscription');
+          }).then(function () {
+            console.log('pushManager.getSubscription work', subscription);
+            if (subscription) {
+              return Promise.resolve().then(function () {
+                return subscription.unsubscribe();
+              }).then(function () {
+                return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'pushSubscription.unsubscribe');
+              }).then(function () {
+                console.log('older subscription remove');
+              });
+            }
+          }).then(function () {
+            console.log('ready to subscribe');
+            return Object(__WEBPACK_IMPORTED_MODULE_1_utils__["h" /* sleep */])(1000);
+          }).then(function () {
+            sub = void 0;
+
+            try {
+              pushManager.subscribe({
+                userVisibleOnly: true,
+                applicationServerKey: urlB64ToUint8Array('BDm6z7ImnFDW6GJ3bwtFdR4ifKGE0CVGXNRfGJhWGm8gwX1sXHH9uq3zo6mYd7fkjVrzfiDHhS5gYfCbxj2g-Bo')
+              }).then(function (sth) {
+                sub = sth;
+              }).catch(function (error) {
+                console.error(error);
+              });
+            } catch (err) {
+              console.error(err);
+            }
+            // when i use Promise.race on firefox
+            // it do not work as i want
+            // so i give up and use sleep
+            return Object(__WEBPACK_IMPORTED_MODULE_1_utils__["h" /* sleep */])(10000);
+          }).then(function () {
+            if (sub) {
+              return Promise.resolve().then(function () {
+                console.log('pushManager.subscribe work', sub);
+                p256dh = btoa(String.fromCharCode.apply(null, new Uint8Array(sub.getKey('p256dh'))));
+                auth = btoa(String.fromCharCode.apply(null, new Uint8Array(sub.getKey('auth'))));
+                return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'pushManager.subscribe');
+              }).then(function () {
+                return Promise.resolve().then(function () {
+                  return fetch('/askforpush', {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                      endpoint: sub.endpoint,
+                      p256dh: p256dh,
+                      auth: auth
+                    })
+                  });
+                }).catch(function (err) {
+                  console.error(err);
+                });
+              }).then(function () {
+                return Object(__WEBPACK_IMPORTED_MODULE_1_utils__["h" /* sleep */])(5000);
+              }).then(function () {
+                return sub.unsubscribe();
+              }).then(function () {
+                console.log('subscription.unsubscribe work');
+                return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'pushSubscription.unsubscribe');
+              }).then(function () {
+                return reg.unregister();
+              }).then(function () {
+                console.log('unregister');
+              });
+            } else {
+              return Promise.resolve().then(function () {
+                return reg.unregister();
+              }).then(function () {
+                console.log('unregister');
+                return;
+              });
+            }
+          });
+        }
+      });
+    }
+  }).then(function () {});
+});
+
+/***/ }),
+/* 84 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 85 */,
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */,
+/* 107 */,
+/* 108 */,
+/* 109 */,
+/* 110 */,
+/* 111 */,
+/* 112 */,
+/* 113 */,
+/* 114 */,
+/* 115 */,
+/* 116 */,
+/* 117 */,
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var _window = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+
+function isObject(what) {
+  return (typeof what === 'undefined' ? 'undefined' : _typeof(what)) === 'object' && what !== null;
+}
+
+// Yanked from https://git.io/vS8DV re-used under CC0
+// with some tiny modifications
+function isError(value) {
+  switch ({}.toString.call(value)) {
+    case '[object Error]':
+      return true;
+    case '[object Exception]':
+      return true;
+    case '[object DOMException]':
+      return true;
+    default:
+      return value instanceof Error;
+  }
+}
+
+function isErrorEvent(value) {
+  return supportsErrorEvent() && {}.toString.call(value) === '[object ErrorEvent]';
+}
+
+function isUndefined(what) {
+  return what === void 0;
+}
+
+function isFunction(what) {
+  return typeof what === 'function';
+}
+
+function isString(what) {
+  return Object.prototype.toString.call(what) === '[object String]';
+}
+
+function isArray(what) {
+  return Object.prototype.toString.call(what) === '[object Array]';
+}
+
+function isEmptyObject(what) {
+  for (var _ in what) {
+    if (what.hasOwnProperty(_)) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function supportsErrorEvent() {
+  try {
+    new ErrorEvent(''); // eslint-disable-line no-new
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+function supportsFetch() {
+  if (!('fetch' in _window)) return false;
+
+  try {
+    new Headers(); // eslint-disable-line no-new
+    new Request(''); // eslint-disable-line no-new
+    new Response(); // eslint-disable-line no-new
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+function wrappedCallback(callback) {
+  function dataCallback(data, original) {
+    var normalizedData = callback(data) || data;
+    if (original) {
+      return original(normalizedData) || normalizedData;
+    }
+    return normalizedData;
+  }
+
+  return dataCallback;
+}
+
+function each(obj, callback) {
+  var i, j;
+
+  if (isUndefined(obj.length)) {
+    for (i in obj) {
+      if (hasKey(obj, i)) {
+        callback.call(null, i, obj[i]);
+      }
+    }
+  } else {
+    j = obj.length;
+    if (j) {
+      for (i = 0; i < j; i++) {
+        callback.call(null, i, obj[i]);
+      }
+    }
+  }
+}
+
+function objectMerge(obj1, obj2) {
+  if (!obj2) {
+    return obj1;
+  }
+  each(obj2, function (key, value) {
+    obj1[key] = value;
+  });
+  return obj1;
+}
+
+/**
+ * This function is only used for react-native.
+ * react-native freezes object that have already been sent over the
+ * js bridge. We need this function in order to check if the object is frozen.
+ * So it's ok that objectFrozen returns false if Object.isFrozen is not
+ * supported because it's not relevant for other "platforms". See related issue:
+ * https://github.com/getsentry/react-native-sentry/issues/57
+ */
+function objectFrozen(obj) {
+  if (!Object.isFrozen) {
+    return false;
+  }
+  return Object.isFrozen(obj);
+}
+
+function truncate(str, max) {
+  return !max || str.length <= max ? str : str.substr(0, max) + '\u2026';
+}
+
+/**
+ * hasKey, a better form of hasOwnProperty
+ * Example: hasKey(MainHostObject, property) === true/false
+ *
+ * @param {Object} host object to check property
+ * @param {string} key to check
+ */
+function hasKey(object, key) {
+  return Object.prototype.hasOwnProperty.call(object, key);
+}
+
+function joinRegExp(patterns) {
+  // Combine an array of regular expressions and strings into one large regexp
+  // Be mad.
+  var sources = [],
+      i = 0,
+      len = patterns.length,
+      pattern;
+
+  for (; i < len; i++) {
+    pattern = patterns[i];
+    if (isString(pattern)) {
+      // If it's a string, we need to escape it
+      // Taken from: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
+      sources.push(pattern.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, '\\$1'));
+    } else if (pattern && pattern.source) {
+      // If it's a regexp already, we want to extract the source
+      sources.push(pattern.source);
+    }
+    // Intentionally skip other cases
+  }
+  return new RegExp(sources.join('|'), 'i');
+}
+
+function urlencode(o) {
+  var pairs = [];
+  each(o, function (key, value) {
+    pairs.push(encodeURIComponent(key) + '=' + encodeURIComponent(value));
+  });
+  return pairs.join('&');
+}
+
+// borrowed from https://tools.ietf.org/html/rfc3986#appendix-B
+// intentionally using regex and not <a/> href parsing trick because React Native and other
+// environments where DOM might not be available
+function parseUrl(url) {
+  var match = url.match(/^(([^:\/?#]+):)?(\/\/([^\/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?$/);
+  if (!match) return {};
+
+  // coerce to undefined values to empty string so we don't get 'undefined'
+  var query = match[6] || '';
+  var fragment = match[8] || '';
+  return {
+    protocol: match[2],
+    host: match[4],
+    path: match[5],
+    relative: match[5] + query + fragment // everything minus origin
+  };
+}
+function uuid4() {
+  var crypto = _window.crypto || _window.msCrypto;
+
+  if (!isUndefined(crypto) && crypto.getRandomValues) {
+    // Use window.crypto API if available
+    // eslint-disable-next-line no-undef
+    var arr = new Uint16Array(8);
+    crypto.getRandomValues(arr);
+
+    // set 4 in byte 7
+    arr[3] = arr[3] & 0xfff | 0x4000;
+    // set 2 most significant bits of byte 9 to '10'
+    arr[4] = arr[4] & 0x3fff | 0x8000;
+
+    var pad = function pad(num) {
+      var v = num.toString(16);
+      while (v.length < 4) {
+        v = '0' + v;
+      }
+      return v;
+    };
+
+    return pad(arr[0]) + pad(arr[1]) + pad(arr[2]) + pad(arr[3]) + pad(arr[4]) + pad(arr[5]) + pad(arr[6]) + pad(arr[7]);
+  } else {
+    // http://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid-in-javascript/2117523#2117523
+    return 'xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+      var r = Math.random() * 16 | 0,
+          v = c === 'x' ? r : r & 0x3 | 0x8;
+      return v.toString(16);
+    });
+  }
+}
+
+/**
+ * Given a child DOM element, returns a query-selector statement describing that
+ * and its ancestors
+ * e.g. [HTMLElement] => body > div > input#foo.btn[name=baz]
+ * @param elem
+ * @returns {string}
+ */
+function htmlTreeAsString(elem) {
+  /* eslint no-extra-parens:0*/
+  var MAX_TRAVERSE_HEIGHT = 5,
+      MAX_OUTPUT_LEN = 80,
+      out = [],
+      height = 0,
+      len = 0,
+      separator = ' > ',
+      sepLength = separator.length,
+      nextStr;
+
+  while (elem && height++ < MAX_TRAVERSE_HEIGHT) {
+    nextStr = htmlElementAsString(elem);
+    // bail out if
+    // - nextStr is the 'html' element
+    // - the length of the string that would be created exceeds MAX_OUTPUT_LEN
+    //   (ignore this limit if we are on the first iteration)
+    if (nextStr === 'html' || height > 1 && len + out.length * sepLength + nextStr.length >= MAX_OUTPUT_LEN) {
+      break;
+    }
+
+    out.push(nextStr);
+
+    len += nextStr.length;
+    elem = elem.parentNode;
+  }
+
+  return out.reverse().join(separator);
+}
+
+/**
+ * Returns a simple, query-selector representation of a DOM element
+ * e.g. [HTMLElement] => input#foo.btn[name=baz]
+ * @param HTMLElement
+ * @returns {string}
+ */
+function htmlElementAsString(elem) {
+  var out = [],
+      className,
+      classes,
+      key,
+      attr,
+      i;
+
+  if (!elem || !elem.tagName) {
+    return '';
+  }
+
+  out.push(elem.tagName.toLowerCase());
+  if (elem.id) {
+    out.push('#' + elem.id);
+  }
+
+  className = elem.className;
+  if (className && isString(className)) {
+    classes = className.split(/\s+/);
+    for (i = 0; i < classes.length; i++) {
+      out.push('.' + classes[i]);
+    }
+  }
+  var attrWhitelist = ['type', 'name', 'title', 'alt'];
+  for (i = 0; i < attrWhitelist.length; i++) {
+    key = attrWhitelist[i];
+    attr = elem.getAttribute(key);
+    if (attr) {
+      out.push('[' + key + '="' + attr + '"]');
+    }
+  }
+  return out.join('');
+}
+
+/**
+ * Returns true if either a OR b is truthy, but not both
+ */
+function isOnlyOneTruthy(a, b) {
+  return !!(!!a ^ !!b);
+}
+
+/**
+ * Returns true if both parameters are undefined
+ */
+function isBothUndefined(a, b) {
+  return isUndefined(a) && isUndefined(b);
+}
+
+/**
+ * Returns true if the two input exception interfaces have the same content
+ */
+function isSameException(ex1, ex2) {
+  if (isOnlyOneTruthy(ex1, ex2)) return false;
+
+  ex1 = ex1.values[0];
+  ex2 = ex2.values[0];
+
+  if (ex1.type !== ex2.type || ex1.value !== ex2.value) return false;
+
+  // in case both stacktraces are undefined, we can't decide so default to false
+  if (isBothUndefined(ex1.stacktrace, ex2.stacktrace)) return false;
+
+  return isSameStacktrace(ex1.stacktrace, ex2.stacktrace);
+}
+
+/**
+ * Returns true if the two input stack trace interfaces have the same content
+ */
+function isSameStacktrace(stack1, stack2) {
+  if (isOnlyOneTruthy(stack1, stack2)) return false;
+
+  var frames1 = stack1.frames;
+  var frames2 = stack2.frames;
+
+  // Exit early if frame count differs
+  if (frames1.length !== frames2.length) return false;
+
+  // Iterate through every frame; bail out if anything differs
+  var a, b;
+  for (var i = 0; i < frames1.length; i++) {
+    a = frames1[i];
+    b = frames2[i];
+    if (a.filename !== b.filename || a.lineno !== b.lineno || a.colno !== b.colno || a['function'] !== b['function']) return false;
+  }
+  return true;
+}
+
+/**
+ * Polyfill a method
+ * @param obj object e.g. `document`
+ * @param name method name present on object e.g. `addEventListener`
+ * @param replacement replacement function
+ * @param track {optional} record instrumentation to an array
+ */
+function fill(obj, name, replacement, track) {
+  var orig = obj[name];
+  obj[name] = replacement(orig);
+  obj[name].__raven__ = true;
+  obj[name].__orig__ = orig;
+  if (track) {
+    track.push([obj, name, orig]);
+  }
+}
+
+module.exports = {
+  isObject: isObject,
+  isError: isError,
+  isErrorEvent: isErrorEvent,
+  isUndefined: isUndefined,
+  isFunction: isFunction,
+  isString: isString,
+  isArray: isArray,
+  isEmptyObject: isEmptyObject,
+  supportsErrorEvent: supportsErrorEvent,
+  supportsFetch: supportsFetch,
+  wrappedCallback: wrappedCallback,
+  each: each,
+  objectMerge: objectMerge,
+  truncate: truncate,
+  objectFrozen: objectFrozen,
+  hasKey: hasKey,
+  joinRegExp: joinRegExp,
+  urlencode: urlencode,
+  uuid4: uuid4,
+  htmlTreeAsString: htmlTreeAsString,
+  htmlElementAsString: htmlElementAsString,
+  isSameException: isSameException,
+  isSameStacktrace: isSameStacktrace,
+  parseUrl: parseUrl,
+  fill: fill
+};
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9)))
+
+/***/ }),
+/* 124 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {/**
+ * Enforces a single instance of the Raven client, and the
+ * main entry point for Raven. If you are a consumer of the
+ * Raven library, you SHOULD load this file (vs raven.js).
+ **/
+
+var RavenConstructor = __webpack_require__(125);
+
+// This is to be defensive in environments where window does not exist (see https://github.com/getsentry/raven-js/pull/785)
+var _window = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+var _Raven = _window.Raven;
+
+var Raven = new RavenConstructor();
+
+/*
+ * Allow multiple versions of Raven to be installed.
+ * Strip Raven from the global context and returns the instance.
+ *
+ * @return {Raven}
+ */
+Raven.noConflict = function () {
+  _window.Raven = _Raven;
+  return Raven;
+};
+
+Raven.afterLoad();
+
+module.exports = Raven;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9)))
+
+/***/ }),
+/* 125 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+/*global XDomainRequest:false */
+
+var TraceKit = __webpack_require__(126);
+var stringify = __webpack_require__(127);
+var RavenConfigError = __webpack_require__(128);
+
+var utils = __webpack_require__(123);
+var isError = utils.isError;
+var isObject = utils.isObject;
+var isErrorEvent = utils.isErrorEvent;
+var isUndefined = utils.isUndefined;
+var isFunction = utils.isFunction;
+var isString = utils.isString;
+var isArray = utils.isArray;
+var isEmptyObject = utils.isEmptyObject;
+var each = utils.each;
+var objectMerge = utils.objectMerge;
+var truncate = utils.truncate;
+var objectFrozen = utils.objectFrozen;
+var hasKey = utils.hasKey;
+var joinRegExp = utils.joinRegExp;
+var urlencode = utils.urlencode;
+var uuid4 = utils.uuid4;
+var htmlTreeAsString = utils.htmlTreeAsString;
+var isSameException = utils.isSameException;
+var isSameStacktrace = utils.isSameStacktrace;
+var parseUrl = utils.parseUrl;
+var fill = utils.fill;
+var supportsFetch = utils.supportsFetch;
+
+var wrapConsoleMethod = __webpack_require__(129).wrapMethod;
+
+var dsnKeys = 'source protocol user pass host port path'.split(' '),
+    dsnPattern = /^(?:(\w+):)?\/\/(?:(\w+)(:\w+)?@)?([\w\.-]+)(?::(\d+))?(\/.*)/;
+
+function now() {
+  return +new Date();
+}
+
+// This is to be defensive in environments where window does not exist (see https://github.com/getsentry/raven-js/pull/785)
+var _window = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+var _document = _window.document;
+var _navigator = _window.navigator;
+
+function keepOriginalCallback(original, callback) {
+  return isFunction(callback) ? function (data) {
+    return callback(data, original);
+  } : callback;
+}
+
+// First, check for JSON support
+// If there is no JSON, we no-op the core features of Raven
+// since JSON is required to encode the payload
+function Raven() {
+  this._hasJSON = !!((typeof JSON === 'undefined' ? 'undefined' : _typeof(JSON)) === 'object' && JSON.stringify);
+  // Raven can run in contexts where there's no document (react-native)
+  this._hasDocument = !isUndefined(_document);
+  this._hasNavigator = !isUndefined(_navigator);
+  this._lastCapturedException = null;
+  this._lastData = null;
+  this._lastEventId = null;
+  this._globalServer = null;
+  this._globalKey = null;
+  this._globalProject = null;
+  this._globalContext = {};
+  this._globalOptions = {
+    logger: 'javascript',
+    ignoreErrors: [],
+    ignoreUrls: [],
+    whitelistUrls: [],
+    includePaths: [],
+    headers: null,
+    collectWindowErrors: true,
+    maxMessageLength: 0,
+
+    // By default, truncates URL values to 250 chars
+    maxUrlLength: 250,
+    stackTraceLimit: 50,
+    autoBreadcrumbs: true,
+    instrument: true,
+    sampleRate: 1
+  };
+  this._ignoreOnError = 0;
+  this._isRavenInstalled = false;
+  this._originalErrorStackTraceLimit = Error.stackTraceLimit;
+  // capture references to window.console *and* all its methods first
+  // before the console plugin has a chance to monkey patch
+  this._originalConsole = _window.console || {};
+  this._originalConsoleMethods = {};
+  this._plugins = [];
+  this._startTime = now();
+  this._wrappedBuiltIns = [];
+  this._breadcrumbs = [];
+  this._lastCapturedEvent = null;
+  this._keypressTimeout;
+  this._location = _window.location;
+  this._lastHref = this._location && this._location.href;
+  this._resetBackoff();
+
+  // eslint-disable-next-line guard-for-in
+  for (var method in this._originalConsole) {
+    this._originalConsoleMethods[method] = this._originalConsole[method];
+  }
+}
+
+/*
+ * The core Raven singleton
+ *
+ * @this {Raven}
+ */
+
+Raven.prototype = {
+  // Hardcode version string so that raven source can be loaded directly via
+  // webpack (using a build step causes webpack #1617). Grunt verifies that
+  // this value matches package.json during build.
+  //   See: https://github.com/getsentry/raven-js/issues/465
+  VERSION: '3.21.0',
+
+  debug: false,
+
+  TraceKit: TraceKit, // alias to TraceKit
+
+  /*
+     * Configure Raven with a DSN and extra options
+     *
+     * @param {string} dsn The public Sentry DSN
+     * @param {object} options Set of global options [optional]
+     * @return {Raven}
+     */
+  config: function config(dsn, options) {
+    var self = this;
+
+    if (self._globalServer) {
+      this._logDebug('error', 'Error: Raven has already been configured');
+      return self;
+    }
+    if (!dsn) return self;
+
+    var globalOptions = self._globalOptions;
+
+    // merge in options
+    if (options) {
+      each(options, function (key, value) {
+        // tags and extra are special and need to be put into context
+        if (key === 'tags' || key === 'extra' || key === 'user') {
+          self._globalContext[key] = value;
+        } else {
+          globalOptions[key] = value;
+        }
+      });
+    }
+
+    self.setDSN(dsn);
+
+    // "Script error." is hard coded into browsers for errors that it can't read.
+    // this is the result of a script being pulled in from an external domain and CORS.
+    globalOptions.ignoreErrors.push(/^Script error\.?$/);
+    globalOptions.ignoreErrors.push(/^Javascript error: Script error\.? on line 0$/);
+
+    // join regexp rules into one big rule
+    globalOptions.ignoreErrors = joinRegExp(globalOptions.ignoreErrors);
+    globalOptions.ignoreUrls = globalOptions.ignoreUrls.length ? joinRegExp(globalOptions.ignoreUrls) : false;
+    globalOptions.whitelistUrls = globalOptions.whitelistUrls.length ? joinRegExp(globalOptions.whitelistUrls) : false;
+    globalOptions.includePaths = joinRegExp(globalOptions.includePaths);
+    globalOptions.maxBreadcrumbs = Math.max(0, Math.min(globalOptions.maxBreadcrumbs || 100, 100)); // default and hard limit is 100
+
+    var autoBreadcrumbDefaults = {
+      xhr: true,
+      console: true,
+      dom: true,
+      location: true,
+      sentry: true
+    };
+
+    var autoBreadcrumbs = globalOptions.autoBreadcrumbs;
+    if ({}.toString.call(autoBreadcrumbs) === '[object Object]') {
+      autoBreadcrumbs = objectMerge(autoBreadcrumbDefaults, autoBreadcrumbs);
+    } else if (autoBreadcrumbs !== false) {
+      autoBreadcrumbs = autoBreadcrumbDefaults;
+    }
+    globalOptions.autoBreadcrumbs = autoBreadcrumbs;
+
+    var instrumentDefaults = {
+      tryCatch: true
+    };
+
+    var instrument = globalOptions.instrument;
+    if ({}.toString.call(instrument) === '[object Object]') {
+      instrument = objectMerge(instrumentDefaults, instrument);
+    } else if (instrument !== false) {
+      instrument = instrumentDefaults;
+    }
+    globalOptions.instrument = instrument;
+
+    TraceKit.collectWindowErrors = !!globalOptions.collectWindowErrors;
+
+    // return for chaining
+    return self;
+  },
+
+  /*
+     * Installs a global window.onerror error handler
+     * to capture and report uncaught exceptions.
+     * At this point, install() is required to be called due
+     * to the way TraceKit is set up.
+     *
+     * @return {Raven}
+     */
+  install: function install() {
+    var self = this;
+    if (self.isSetup() && !self._isRavenInstalled) {
+      TraceKit.report.subscribe(function () {
+        self._handleOnErrorStackInfo.apply(self, arguments);
+      });
+
+      self._patchFunctionToString();
+
+      if (self._globalOptions.instrument && self._globalOptions.instrument.tryCatch) {
+        self._instrumentTryCatch();
+      }
+
+      if (self._globalOptions.autoBreadcrumbs) self._instrumentBreadcrumbs();
+
+      // Install all of the plugins
+      self._drainPlugins();
+
+      self._isRavenInstalled = true;
+    }
+
+    Error.stackTraceLimit = self._globalOptions.stackTraceLimit;
+    return this;
+  },
+
+  /*
+     * Set the DSN (can be called multiple time unlike config)
+     *
+     * @param {string} dsn The public Sentry DSN
+     */
+  setDSN: function setDSN(dsn) {
+    var self = this,
+        uri = self._parseDSN(dsn),
+        lastSlash = uri.path.lastIndexOf('/'),
+        path = uri.path.substr(1, lastSlash);
+
+    self._dsn = dsn;
+    self._globalKey = uri.user;
+    self._globalSecret = uri.pass && uri.pass.substr(1);
+    self._globalProject = uri.path.substr(lastSlash + 1);
+
+    self._globalServer = self._getGlobalServer(uri);
+
+    self._globalEndpoint = self._globalServer + '/' + path + 'api/' + self._globalProject + '/store/';
+
+    // Reset backoff state since we may be pointing at a
+    // new project/server
+    this._resetBackoff();
+  },
+
+  /*
+     * Wrap code within a context so Raven can capture errors
+     * reliably across domains that is executed immediately.
+     *
+     * @param {object} options A specific set of options for this context [optional]
+     * @param {function} func The callback to be immediately executed within the context
+     * @param {array} args An array of arguments to be called with the callback [optional]
+     */
+  context: function context(options, func, args) {
+    if (isFunction(options)) {
+      args = func || [];
+      func = options;
+      options = undefined;
+    }
+
+    return this.wrap(options, func).apply(this, args);
+  },
+
+  /*
+     * Wrap code within a context and returns back a new function to be executed
+     *
+     * @param {object} options A specific set of options for this context [optional]
+     * @param {function} func The function to be wrapped in a new context
+     * @param {function} func A function to call before the try/catch wrapper [optional, private]
+     * @return {function} The newly wrapped functions with a context
+     */
+  wrap: function wrap(options, func, _before) {
+    var self = this;
+    // 1 argument has been passed, and it's not a function
+    // so just return it
+    if (isUndefined(func) && !isFunction(options)) {
+      return options;
+    }
+
+    // options is optional
+    if (isFunction(options)) {
+      func = options;
+      options = undefined;
+    }
+
+    // At this point, we've passed along 2 arguments, and the second one
+    // is not a function either, so we'll just return the second argument.
+    if (!isFunction(func)) {
+      return func;
+    }
+
+    // We don't wanna wrap it twice!
+    try {
+      if (func.__raven__) {
+        return func;
+      }
+
+      // If this has already been wrapped in the past, return that
+      if (func.__raven_wrapper__) {
+        return func.__raven_wrapper__;
+      }
+    } catch (e) {
+      // Just accessing custom props in some Selenium environments
+      // can cause a "Permission denied" exception (see raven-js#495).
+      // Bail on wrapping and return the function as-is (defers to window.onerror).
+      return func;
+    }
+
+    function wrapped() {
+      var args = [],
+          i = arguments.length,
+          deep = !options || options && options.deep !== false;
+
+      if (_before && isFunction(_before)) {
+        _before.apply(this, arguments);
+      }
+
+      // Recursively wrap all of a function's arguments that are
+      // functions themselves.
+      while (i--) {
+        args[i] = deep ? self.wrap(options, arguments[i]) : arguments[i];
+      }try {
+        // Attempt to invoke user-land function
+        // NOTE: If you are a Sentry user, and you are seeing this stack frame, it
+        //       means Raven caught an error invoking your application code. This is
+        //       expected behavior and NOT indicative of a bug with Raven.js.
+        return func.apply(this, args);
+      } catch (e) {
+        self._ignoreNextOnError();
+        self.captureException(e, options);
+        throw e;
+      }
+    }
+
+    // copy over properties of the old function
+    for (var property in func) {
+      if (hasKey(func, property)) {
+        wrapped[property] = func[property];
+      }
+    }
+    wrapped.prototype = func.prototype;
+
+    func.__raven_wrapper__ = wrapped;
+    // Signal that this function has been wrapped/filled already
+    // for both debugging and to prevent it to being wrapped/filled twice
+    wrapped.__raven__ = true;
+    wrapped.__orig__ = func;
+
+    return wrapped;
+  },
+
+  /*
+     * Uninstalls the global error handler.
+     *
+     * @return {Raven}
+     */
+  uninstall: function uninstall() {
+    TraceKit.report.uninstall();
+
+    this._unpatchFunctionToString();
+    this._restoreBuiltIns();
+
+    Error.stackTraceLimit = this._originalErrorStackTraceLimit;
+    this._isRavenInstalled = false;
+
+    return this;
+  },
+
+  /*
+     * Manually capture an exception and send it over to Sentry
+     *
+     * @param {error} ex An exception to be logged
+     * @param {object} options A specific set of options for this error [optional]
+     * @return {Raven}
+     */
+  captureException: function captureException(ex, options) {
+    // Cases for sending ex as a message, rather than an exception
+    var isNotError = !isError(ex);
+    var isNotErrorEvent = !isErrorEvent(ex);
+    var isErrorEventWithoutError = isErrorEvent(ex) && !ex.error;
+
+    if (isNotError && isNotErrorEvent || isErrorEventWithoutError) {
+      return this.captureMessage(ex, objectMerge({
+        trimHeadFrames: 1,
+        stacktrace: true // if we fall back to captureMessage, default to attempting a new trace
+      }, options));
+    }
+
+    // Get actual Error from ErrorEvent
+    if (isErrorEvent(ex)) ex = ex.error;
+
+    // Store the raw exception object for potential debugging and introspection
+    this._lastCapturedException = ex;
+
+    // TraceKit.report will re-raise any exception passed to it,
+    // which means you have to wrap it in try/catch. Instead, we
+    // can wrap it here and only re-raise if TraceKit.report
+    // raises an exception different from the one we asked to
+    // report on.
+    try {
+      var stack = TraceKit.computeStackTrace(ex);
+      this._handleStackInfo(stack, options);
+    } catch (ex1) {
+      if (ex !== ex1) {
+        throw ex1;
+      }
+    }
+
+    return this;
+  },
+
+  /*
+     * Manually send a message to Sentry
+     *
+     * @param {string} msg A plain message to be captured in Sentry
+     * @param {object} options A specific set of options for this message [optional]
+     * @return {Raven}
+     */
+  captureMessage: function captureMessage(msg, options) {
+    // config() automagically converts ignoreErrors from a list to a RegExp so we need to test for an
+    // early call; we'll error on the side of logging anything called before configuration since it's
+    // probably something you should see:
+    if (!!this._globalOptions.ignoreErrors.test && this._globalOptions.ignoreErrors.test(msg)) {
+      return;
+    }
+
+    options = options || {};
+
+    var data = objectMerge({
+      message: msg + '' // Make sure it's actually a string
+    }, options);
+
+    var ex;
+    // Generate a "synthetic" stack trace from this point.
+    // NOTE: If you are a Sentry user, and you are seeing this stack frame, it is NOT indicative
+    //       of a bug with Raven.js. Sentry generates synthetic traces either by configuration,
+    //       or if it catches a thrown object without a "stack" property.
+    try {
+      throw new Error(msg);
+    } catch (ex1) {
+      ex = ex1;
+    }
+
+    // null exception name so `Error` isn't prefixed to msg
+    ex.name = null;
+    var stack = TraceKit.computeStackTrace(ex);
+
+    // stack[0] is `throw new Error(msg)` call itself, we are interested in the frame that was just before that, stack[1]
+    var initialCall = isArray(stack.stack) && stack.stack[1];
+    var fileurl = initialCall && initialCall.url || '';
+
+    if (!!this._globalOptions.ignoreUrls.test && this._globalOptions.ignoreUrls.test(fileurl)) {
+      return;
+    }
+
+    if (!!this._globalOptions.whitelistUrls.test && !this._globalOptions.whitelistUrls.test(fileurl)) {
+      return;
+    }
+
+    if (this._globalOptions.stacktrace || options && options.stacktrace) {
+      options = objectMerge({
+        // fingerprint on msg, not stack trace (legacy behavior, could be
+        // revisited)
+        fingerprint: msg,
+        // since we know this is a synthetic trace, the top N-most frames
+        // MUST be from Raven.js, so mark them as in_app later by setting
+        // trimHeadFrames
+        trimHeadFrames: (options.trimHeadFrames || 0) + 1
+      }, options);
+
+      var frames = this._prepareFrames(stack, options);
+      data.stacktrace = {
+        // Sentry expects frames oldest to newest
+        frames: frames.reverse()
+      };
+    }
+
+    // Fire away!
+    this._send(data);
+
+    return this;
+  },
+
+  captureBreadcrumb: function captureBreadcrumb(obj) {
+    var crumb = objectMerge({
+      timestamp: now() / 1000
+    }, obj);
+
+    if (isFunction(this._globalOptions.breadcrumbCallback)) {
+      var result = this._globalOptions.breadcrumbCallback(crumb);
+
+      if (isObject(result) && !isEmptyObject(result)) {
+        crumb = result;
+      } else if (result === false) {
+        return this;
+      }
+    }
+
+    this._breadcrumbs.push(crumb);
+    if (this._breadcrumbs.length > this._globalOptions.maxBreadcrumbs) {
+      this._breadcrumbs.shift();
+    }
+    return this;
+  },
+
+  addPlugin: function addPlugin(plugin /*arg1, arg2, ... argN*/) {
+    var pluginArgs = [].slice.call(arguments, 1);
+
+    this._plugins.push([plugin, pluginArgs]);
+    if (this._isRavenInstalled) {
+      this._drainPlugins();
+    }
+
+    return this;
+  },
+
+  /*
+     * Set/clear a user to be sent along with the payload.
+     *
+     * @param {object} user An object representing user data [optional]
+     * @return {Raven}
+     */
+  setUserContext: function setUserContext(user) {
+    // Intentionally do not merge here since that's an unexpected behavior.
+    this._globalContext.user = user;
+
+    return this;
+  },
+
+  /*
+     * Merge extra attributes to be sent along with the payload.
+     *
+     * @param {object} extra An object representing extra data [optional]
+     * @return {Raven}
+     */
+  setExtraContext: function setExtraContext(extra) {
+    this._mergeContext('extra', extra);
+
+    return this;
+  },
+
+  /*
+     * Merge tags to be sent along with the payload.
+     *
+     * @param {object} tags An object representing tags [optional]
+     * @return {Raven}
+     */
+  setTagsContext: function setTagsContext(tags) {
+    this._mergeContext('tags', tags);
+
+    return this;
+  },
+
+  /*
+     * Clear all of the context.
+     *
+     * @return {Raven}
+     */
+  clearContext: function clearContext() {
+    this._globalContext = {};
+
+    return this;
+  },
+
+  /*
+     * Get a copy of the current context. This cannot be mutated.
+     *
+     * @return {object} copy of context
+     */
+  getContext: function getContext() {
+    // lol javascript
+    return JSON.parse(stringify(this._globalContext));
+  },
+
+  /*
+     * Set environment of application
+     *
+     * @param {string} environment Typically something like 'production'.
+     * @return {Raven}
+     */
+  setEnvironment: function setEnvironment(environment) {
+    this._globalOptions.environment = environment;
+
+    return this;
+  },
+
+  /*
+     * Set release version of application
+     *
+     * @param {string} release Typically something like a git SHA to identify version
+     * @return {Raven}
+     */
+  setRelease: function setRelease(release) {
+    this._globalOptions.release = release;
+
+    return this;
+  },
+
+  /*
+     * Set the dataCallback option
+     *
+     * @param {function} callback The callback to run which allows the
+     *                            data blob to be mutated before sending
+     * @return {Raven}
+     */
+  setDataCallback: function setDataCallback(callback) {
+    var original = this._globalOptions.dataCallback;
+    this._globalOptions.dataCallback = keepOriginalCallback(original, callback);
+    return this;
+  },
+
+  /*
+     * Set the breadcrumbCallback option
+     *
+     * @param {function} callback The callback to run which allows filtering
+     *                            or mutating breadcrumbs
+     * @return {Raven}
+     */
+  setBreadcrumbCallback: function setBreadcrumbCallback(callback) {
+    var original = this._globalOptions.breadcrumbCallback;
+    this._globalOptions.breadcrumbCallback = keepOriginalCallback(original, callback);
+    return this;
+  },
+
+  /*
+     * Set the shouldSendCallback option
+     *
+     * @param {function} callback The callback to run which allows
+     *                            introspecting the blob before sending
+     * @return {Raven}
+     */
+  setShouldSendCallback: function setShouldSendCallback(callback) {
+    var original = this._globalOptions.shouldSendCallback;
+    this._globalOptions.shouldSendCallback = keepOriginalCallback(original, callback);
+    return this;
+  },
+
+  /**
+   * Override the default HTTP transport mechanism that transmits data
+   * to the Sentry server.
+   *
+   * @param {function} transport Function invoked instead of the default
+   *                             `makeRequest` handler.
+   *
+   * @return {Raven}
+   */
+  setTransport: function setTransport(transport) {
+    this._globalOptions.transport = transport;
+
+    return this;
+  },
+
+  /*
+     * Get the latest raw exception that was captured by Raven.
+     *
+     * @return {error}
+     */
+  lastException: function lastException() {
+    return this._lastCapturedException;
+  },
+
+  /*
+     * Get the last event id
+     *
+     * @return {string}
+     */
+  lastEventId: function lastEventId() {
+    return this._lastEventId;
+  },
+
+  /*
+     * Determine if Raven is setup and ready to go.
+     *
+     * @return {boolean}
+     */
+  isSetup: function isSetup() {
+    if (!this._hasJSON) return false; // needs JSON support
+    if (!this._globalServer) {
+      if (!this.ravenNotConfiguredError) {
+        this.ravenNotConfiguredError = true;
+        this._logDebug('error', 'Error: Raven has not been configured.');
+      }
+      return false;
+    }
+    return true;
+  },
+
+  afterLoad: function afterLoad() {
+    // TODO: remove window dependence?
+
+    // Attempt to initialize Raven on load
+    var RavenConfig = _window.RavenConfig;
+    if (RavenConfig) {
+      this.config(RavenConfig.dsn, RavenConfig.config).install();
+    }
+  },
+
+  showReportDialog: function showReportDialog(options) {
+    if (!_document // doesn't work without a document (React native)
+    ) return;
+
+    options = options || {};
+
+    var lastEventId = options.eventId || this.lastEventId();
+    if (!lastEventId) {
+      throw new RavenConfigError('Missing eventId');
+    }
+
+    var dsn = options.dsn || this._dsn;
+    if (!dsn) {
+      throw new RavenConfigError('Missing DSN');
+    }
+
+    var encode = encodeURIComponent;
+    var qs = '';
+    qs += '?eventId=' + encode(lastEventId);
+    qs += '&dsn=' + encode(dsn);
+
+    var user = options.user || this._globalContext.user;
+    if (user) {
+      if (user.name) qs += '&name=' + encode(user.name);
+      if (user.email) qs += '&email=' + encode(user.email);
+    }
+
+    var globalServer = this._getGlobalServer(this._parseDSN(dsn));
+
+    var script = _document.createElement('script');
+    script.async = true;
+    script.src = globalServer + '/api/embed/error-page/' + qs;
+    (_document.head || _document.body).appendChild(script);
+  },
+
+  /**** Private functions ****/
+  _ignoreNextOnError: function _ignoreNextOnError() {
+    var self = this;
+    this._ignoreOnError += 1;
+    setTimeout(function () {
+      // onerror should trigger before setTimeout
+      self._ignoreOnError -= 1;
+    });
+  },
+
+  _triggerEvent: function _triggerEvent(eventType, options) {
+    // NOTE: `event` is a native browser thing, so let's avoid conflicting wiht it
+    var evt, key;
+
+    if (!this._hasDocument) return;
+
+    options = options || {};
+
+    eventType = 'raven' + eventType.substr(0, 1).toUpperCase() + eventType.substr(1);
+
+    if (_document.createEvent) {
+      evt = _document.createEvent('HTMLEvents');
+      evt.initEvent(eventType, true, true);
+    } else {
+      evt = _document.createEventObject();
+      evt.eventType = eventType;
+    }
+
+    for (key in options) {
+      if (hasKey(options, key)) {
+        evt[key] = options[key];
+      }
+    }if (_document.createEvent) {
+      // IE9 if standards
+      _document.dispatchEvent(evt);
+    } else {
+      // IE8 regardless of Quirks or Standards
+      // IE9 if quirks
+      try {
+        _document.fireEvent('on' + evt.eventType.toLowerCase(), evt);
+      } catch (e) {
+        // Do nothing
+      }
+    }
+  },
+
+  /**
+   * Wraps addEventListener to capture UI breadcrumbs
+   * @param evtName the event name (e.g. "click")
+   * @returns {Function}
+   * @private
+   */
+  _breadcrumbEventHandler: function _breadcrumbEventHandler(evtName) {
+    var self = this;
+    return function (evt) {
+      // reset keypress timeout; e.g. triggering a 'click' after
+      // a 'keypress' will reset the keypress debounce so that a new
+      // set of keypresses can be recorded
+      self._keypressTimeout = null;
+
+      // It's possible this handler might trigger multiple times for the same
+      // event (e.g. event propagation through node ancestors). Ignore if we've
+      // already captured the event.
+      if (self._lastCapturedEvent === evt) return;
+
+      self._lastCapturedEvent = evt;
+
+      // try/catch both:
+      // - accessing evt.target (see getsentry/raven-js#838, #768)
+      // - `htmlTreeAsString` because it's complex, and just accessing the DOM incorrectly
+      //   can throw an exception in some circumstances.
+      var target;
+      try {
+        target = htmlTreeAsString(evt.target);
+      } catch (e) {
+        target = '<unknown>';
+      }
+
+      self.captureBreadcrumb({
+        category: 'ui.' + evtName, // e.g. ui.click, ui.input
+        message: target
+      });
+    };
+  },
+
+  /**
+   * Wraps addEventListener to capture keypress UI events
+   * @returns {Function}
+   * @private
+   */
+  _keypressEventHandler: function _keypressEventHandler() {
+    var self = this,
+        debounceDuration = 1000; // milliseconds
+
+    // TODO: if somehow user switches keypress target before
+    //       debounce timeout is triggered, we will only capture
+    //       a single breadcrumb from the FIRST target (acceptable?)
+    return function (evt) {
+      var target;
+      try {
+        target = evt.target;
+      } catch (e) {
+        // just accessing event properties can throw an exception in some rare circumstances
+        // see: https://github.com/getsentry/raven-js/issues/838
+        return;
+      }
+      var tagName = target && target.tagName;
+
+      // only consider keypress events on actual input elements
+      // this will disregard keypresses targeting body (e.g. tabbing
+      // through elements, hotkeys, etc)
+      if (!tagName || tagName !== 'INPUT' && tagName !== 'TEXTAREA' && !target.isContentEditable) return;
+
+      // record first keypress in a series, but ignore subsequent
+      // keypresses until debounce clears
+      var timeout = self._keypressTimeout;
+      if (!timeout) {
+        self._breadcrumbEventHandler('input')(evt);
+      }
+      clearTimeout(timeout);
+      self._keypressTimeout = setTimeout(function () {
+        self._keypressTimeout = null;
+      }, debounceDuration);
+    };
+  },
+
+  /**
+   * Captures a breadcrumb of type "navigation", normalizing input URLs
+   * @param to the originating URL
+   * @param from the target URL
+   * @private
+   */
+  _captureUrlChange: function _captureUrlChange(from, to) {
+    var parsedLoc = parseUrl(this._location.href);
+    var parsedTo = parseUrl(to);
+    var parsedFrom = parseUrl(from);
+
+    // because onpopstate only tells you the "new" (to) value of location.href, and
+    // not the previous (from) value, we need to track the value of the current URL
+    // state ourselves
+    this._lastHref = to;
+
+    // Use only the path component of the URL if the URL matches the current
+    // document (almost all the time when using pushState)
+    if (parsedLoc.protocol === parsedTo.protocol && parsedLoc.host === parsedTo.host) to = parsedTo.relative;
+    if (parsedLoc.protocol === parsedFrom.protocol && parsedLoc.host === parsedFrom.host) from = parsedFrom.relative;
+
+    this.captureBreadcrumb({
+      category: 'navigation',
+      data: {
+        to: to,
+        from: from
+      }
+    });
+  },
+
+  _patchFunctionToString: function _patchFunctionToString() {
+    var self = this;
+    self._originalFunctionToString = Function.prototype.toString;
+    // eslint-disable-next-line no-extend-native
+    Function.prototype.toString = function () {
+      if (typeof this === 'function' && this.__raven__) {
+        return self._originalFunctionToString.apply(this.__orig__, arguments);
+      }
+      return self._originalFunctionToString.apply(this, arguments);
+    };
+  },
+
+  _unpatchFunctionToString: function _unpatchFunctionToString() {
+    if (this._originalFunctionToString) {
+      // eslint-disable-next-line no-extend-native
+      Function.prototype.toString = this._originalFunctionToString;
+    }
+  },
+
+  /**
+   * Wrap timer functions and event targets to catch errors and provide
+   * better metadata.
+   */
+  _instrumentTryCatch: function _instrumentTryCatch() {
+    var self = this;
+
+    var wrappedBuiltIns = self._wrappedBuiltIns;
+
+    function wrapTimeFn(orig) {
+      return function (fn, t) {
+        // preserve arity
+        // Make a copy of the arguments to prevent deoptimization
+        // https://github.com/petkaantonov/bluebird/wiki/Optimization-killers#32-leaking-arguments
+        var args = new Array(arguments.length);
+        for (var i = 0; i < args.length; ++i) {
+          args[i] = arguments[i];
+        }
+        var originalCallback = args[0];
+        if (isFunction(originalCallback)) {
+          args[0] = self.wrap(originalCallback);
+        }
+
+        // IE < 9 doesn't support .call/.apply on setInterval/setTimeout, but it
+        // also supports only two arguments and doesn't care what this is, so we
+        // can just call the original function directly.
+        if (orig.apply) {
+          return orig.apply(this, args);
+        } else {
+          return orig(args[0], args[1]);
+        }
+      };
+    }
+
+    var autoBreadcrumbs = this._globalOptions.autoBreadcrumbs;
+
+    function wrapEventTarget(global) {
+      var proto = _window[global] && _window[global].prototype;
+      if (proto && proto.hasOwnProperty && proto.hasOwnProperty('addEventListener')) {
+        fill(proto, 'addEventListener', function (orig) {
+          return function (evtName, fn, capture, secure) {
+            // preserve arity
+            try {
+              if (fn && fn.handleEvent) {
+                fn.handleEvent = self.wrap(fn.handleEvent);
+              }
+            } catch (err) {}
+            // can sometimes get 'Permission denied to access property "handle Event'
+
+
+            // More breadcrumb DOM capture ... done here and not in `_instrumentBreadcrumbs`
+            // so that we don't have more than one wrapper function
+            var before, clickHandler, keypressHandler;
+
+            if (autoBreadcrumbs && autoBreadcrumbs.dom && (global === 'EventTarget' || global === 'Node')) {
+              // NOTE: generating multiple handlers per addEventListener invocation, should
+              //       revisit and verify we can just use one (almost certainly)
+              clickHandler = self._breadcrumbEventHandler('click');
+              keypressHandler = self._keypressEventHandler();
+              before = function before(evt) {
+                // need to intercept every DOM event in `before` argument, in case that
+                // same wrapped method is re-used for different events (e.g. mousemove THEN click)
+                // see #724
+                if (!evt) return;
+
+                var eventType;
+                try {
+                  eventType = evt.type;
+                } catch (e) {
+                  // just accessing event properties can throw an exception in some rare circumstances
+                  // see: https://github.com/getsentry/raven-js/issues/838
+                  return;
+                }
+                if (eventType === 'click') return clickHandler(evt);else if (eventType === 'keypress') return keypressHandler(evt);
+              };
+            }
+            return orig.call(this, evtName, self.wrap(fn, undefined, before), capture, secure);
+          };
+        }, wrappedBuiltIns);
+        fill(proto, 'removeEventListener', function (orig) {
+          return function (evt, fn, capture, secure) {
+            try {
+              fn = fn && (fn.__raven_wrapper__ ? fn.__raven_wrapper__ : fn);
+            } catch (e) {
+              // ignore, accessing __raven_wrapper__ will throw in some Selenium environments
+            }
+            return orig.call(this, evt, fn, capture, secure);
+          };
+        }, wrappedBuiltIns);
+      }
+    }
+
+    fill(_window, 'setTimeout', wrapTimeFn, wrappedBuiltIns);
+    fill(_window, 'setInterval', wrapTimeFn, wrappedBuiltIns);
+    if (_window.requestAnimationFrame) {
+      fill(_window, 'requestAnimationFrame', function (orig) {
+        return function (cb) {
+          return orig(self.wrap(cb));
+        };
+      }, wrappedBuiltIns);
+    }
+
+    // event targets borrowed from bugsnag-js:
+    // https://github.com/bugsnag/bugsnag-js/blob/master/src/bugsnag.js#L666
+    var eventTargets = ['EventTarget', 'Window', 'Node', 'ApplicationCache', 'AudioTrackList', 'ChannelMergerNode', 'CryptoOperation', 'EventSource', 'FileReader', 'HTMLUnknownElement', 'IDBDatabase', 'IDBRequest', 'IDBTransaction', 'KeyOperation', 'MediaController', 'MessagePort', 'ModalWindow', 'Notification', 'SVGElementInstance', 'Screen', 'TextTrack', 'TextTrackCue', 'TextTrackList', 'WebSocket', 'WebSocketWorker', 'Worker', 'XMLHttpRequest', 'XMLHttpRequestEventTarget', 'XMLHttpRequestUpload'];
+    for (var i = 0; i < eventTargets.length; i++) {
+      wrapEventTarget(eventTargets[i]);
+    }
+  },
+
+  /**
+   * Instrument browser built-ins w/ breadcrumb capturing
+   *  - XMLHttpRequests
+   *  - DOM interactions (click/typing)
+   *  - window.location changes
+   *  - console
+   *
+   * Can be disabled or individually configured via the `autoBreadcrumbs` config option
+   */
+  _instrumentBreadcrumbs: function _instrumentBreadcrumbs() {
+    var self = this;
+    var autoBreadcrumbs = this._globalOptions.autoBreadcrumbs;
+
+    var wrappedBuiltIns = self._wrappedBuiltIns;
+
+    function wrapProp(prop, xhr) {
+      if (prop in xhr && isFunction(xhr[prop])) {
+        fill(xhr, prop, function (orig) {
+          return self.wrap(orig);
+        }); // intentionally don't track filled methods on XHR instances
+      }
+    }
+
+    if (autoBreadcrumbs.xhr && 'XMLHttpRequest' in _window) {
+      var xhrproto = XMLHttpRequest.prototype;
+      fill(xhrproto, 'open', function (origOpen) {
+        return function (method, url) {
+          // preserve arity
+
+          // if Sentry key appears in URL, don't capture
+          if (isString(url) && url.indexOf(self._globalKey) === -1) {
+            this.__raven_xhr = {
+              method: method,
+              url: url,
+              status_code: null
+            };
+          }
+
+          return origOpen.apply(this, arguments);
+        };
+      }, wrappedBuiltIns);
+
+      fill(xhrproto, 'send', function (origSend) {
+        return function () {
+          // preserve arity
+          var xhr = this;
+
+          function onreadystatechangeHandler() {
+            if (xhr.__raven_xhr && xhr.readyState === 4) {
+              try {
+                // touching statusCode in some platforms throws
+                // an exception
+                xhr.__raven_xhr.status_code = xhr.status;
+              } catch (e) {
+                /* do nothing */
+              }
+
+              self.captureBreadcrumb({
+                type: 'http',
+                category: 'xhr',
+                data: xhr.__raven_xhr
+              });
+            }
+          }
+
+          var props = ['onload', 'onerror', 'onprogress'];
+          for (var j = 0; j < props.length; j++) {
+            wrapProp(props[j], xhr);
+          }
+
+          if ('onreadystatechange' in xhr && isFunction(xhr.onreadystatechange)) {
+            fill(xhr, 'onreadystatechange', function (orig) {
+              return self.wrap(orig, undefined, onreadystatechangeHandler);
+            } /* intentionally don't track this instrumentation */
+            );
+          } else {
+            // if onreadystatechange wasn't actually set by the page on this xhr, we
+            // are free to set our own and capture the breadcrumb
+            xhr.onreadystatechange = onreadystatechangeHandler;
+          }
+
+          return origSend.apply(this, arguments);
+        };
+      }, wrappedBuiltIns);
+    }
+
+    if (autoBreadcrumbs.xhr && supportsFetch()) {
+      fill(_window, 'fetch', function (origFetch) {
+        return function () {
+          // preserve arity
+          // Make a copy of the arguments to prevent deoptimization
+          // https://github.com/petkaantonov/bluebird/wiki/Optimization-killers#32-leaking-arguments
+          var args = new Array(arguments.length);
+          for (var i = 0; i < args.length; ++i) {
+            args[i] = arguments[i];
+          }
+
+          var fetchInput = args[0];
+          var method = 'GET';
+          var url;
+
+          if (typeof fetchInput === 'string') {
+            url = fetchInput;
+          } else if ('Request' in _window && fetchInput instanceof _window.Request) {
+            url = fetchInput.url;
+            if (fetchInput.method) {
+              method = fetchInput.method;
+            }
+          } else {
+            url = '' + fetchInput;
+          }
+
+          // if Sentry key appears in URL, don't capture, as it's our own request
+          if (url.indexOf(self._globalKey) !== -1) {
+            return origFetch.apply(this, args);
+          }
+
+          if (args[1] && args[1].method) {
+            method = args[1].method;
+          }
+
+          var fetchData = {
+            method: method,
+            url: url,
+            status_code: null
+          };
+
+          self.captureBreadcrumb({
+            type: 'http',
+            category: 'fetch',
+            data: fetchData
+          });
+
+          return origFetch.apply(this, args).then(function (response) {
+            fetchData.status_code = response.status;
+
+            return response;
+          });
+        };
+      }, wrappedBuiltIns);
+    }
+
+    // Capture breadcrumbs from any click that is unhandled / bubbled up all the way
+    // to the document. Do this before we instrument addEventListener.
+    if (autoBreadcrumbs.dom && this._hasDocument) {
+      if (_document.addEventListener) {
+        _document.addEventListener('click', self._breadcrumbEventHandler('click'), false);
+        _document.addEventListener('keypress', self._keypressEventHandler(), false);
+      } else {
+        // IE8 Compatibility
+        _document.attachEvent('onclick', self._breadcrumbEventHandler('click'));
+        _document.attachEvent('onkeypress', self._keypressEventHandler());
+      }
+    }
+
+    // record navigation (URL) changes
+    // NOTE: in Chrome App environment, touching history.pushState, *even inside
+    //       a try/catch block*, will cause Chrome to output an error to console.error
+    // borrowed from: https://github.com/angular/angular.js/pull/13945/files
+    var chrome = _window.chrome;
+    var isChromePackagedApp = chrome && chrome.app && chrome.app.runtime;
+    var hasPushAndReplaceState = !isChromePackagedApp && _window.history && history.pushState && history.replaceState;
+    if (autoBreadcrumbs.location && hasPushAndReplaceState) {
+      // TODO: remove onpopstate handler on uninstall()
+      var oldOnPopState = _window.onpopstate;
+      _window.onpopstate = function () {
+        var currentHref = self._location.href;
+        self._captureUrlChange(self._lastHref, currentHref);
+
+        if (oldOnPopState) {
+          return oldOnPopState.apply(this, arguments);
+        }
+      };
+
+      var historyReplacementFunction = function historyReplacementFunction(origHistFunction) {
+        // note history.pushState.length is 0; intentionally not declaring
+        // params to preserve 0 arity
+        return function () /* state, title, url */{
+          var url = arguments.length > 2 ? arguments[2] : undefined;
+
+          // url argument is optional
+          if (url) {
+            // coerce to string (this is what pushState does)
+            self._captureUrlChange(self._lastHref, url + '');
+          }
+
+          return origHistFunction.apply(this, arguments);
+        };
+      };
+
+      fill(history, 'pushState', historyReplacementFunction, wrappedBuiltIns);
+      fill(history, 'replaceState', historyReplacementFunction, wrappedBuiltIns);
+    }
+
+    if (autoBreadcrumbs.console && 'console' in _window && console.log) {
+      // console
+      var consoleMethodCallback = function consoleMethodCallback(msg, data) {
+        self.captureBreadcrumb({
+          message: msg,
+          level: data.level,
+          category: 'console'
+        });
+      };
+
+      each(['debug', 'info', 'warn', 'error', 'log'], function (_, level) {
+        wrapConsoleMethod(console, level, consoleMethodCallback);
+      });
+    }
+  },
+
+  _restoreBuiltIns: function _restoreBuiltIns() {
+    // restore any wrapped builtins
+    var builtin;
+    while (this._wrappedBuiltIns.length) {
+      builtin = this._wrappedBuiltIns.shift();
+
+      var obj = builtin[0],
+          name = builtin[1],
+          orig = builtin[2];
+
+      obj[name] = orig;
+    }
+  },
+
+  _drainPlugins: function _drainPlugins() {
+    var self = this;
+
+    // FIX ME TODO
+    each(this._plugins, function (_, plugin) {
+      var installer = plugin[0];
+      var args = plugin[1];
+      installer.apply(self, [self].concat(args));
+    });
+  },
+
+  _parseDSN: function _parseDSN(str) {
+    var m = dsnPattern.exec(str),
+        dsn = {},
+        i = 7;
+
+    try {
+      while (i--) {
+        dsn[dsnKeys[i]] = m[i] || '';
+      }
+    } catch (e) {
+      throw new RavenConfigError('Invalid DSN: ' + str);
+    }
+
+    if (dsn.pass && !this._globalOptions.allowSecretKey) {
+      throw new RavenConfigError('Do not specify your secret key in the DSN. See: http://bit.ly/raven-secret-key');
+    }
+
+    return dsn;
+  },
+
+  _getGlobalServer: function _getGlobalServer(uri) {
+    // assemble the endpoint from the uri pieces
+    var globalServer = '//' + uri.host + (uri.port ? ':' + uri.port : '');
+
+    if (uri.protocol) {
+      globalServer = uri.protocol + ':' + globalServer;
+    }
+    return globalServer;
+  },
+
+  _handleOnErrorStackInfo: function _handleOnErrorStackInfo() {
+    // if we are intentionally ignoring errors via onerror, bail out
+    if (!this._ignoreOnError) {
+      this._handleStackInfo.apply(this, arguments);
+    }
+  },
+
+  _handleStackInfo: function _handleStackInfo(stackInfo, options) {
+    var frames = this._prepareFrames(stackInfo, options);
+
+    this._triggerEvent('handle', {
+      stackInfo: stackInfo,
+      options: options
+    });
+
+    this._processException(stackInfo.name, stackInfo.message, stackInfo.url, stackInfo.lineno, frames, options);
+  },
+
+  _prepareFrames: function _prepareFrames(stackInfo, options) {
+    var self = this;
+    var frames = [];
+    if (stackInfo.stack && stackInfo.stack.length) {
+      each(stackInfo.stack, function (i, stack) {
+        var frame = self._normalizeFrame(stack, stackInfo.url);
+        if (frame) {
+          frames.push(frame);
+        }
+      });
+
+      // e.g. frames captured via captureMessage throw
+      if (options && options.trimHeadFrames) {
+        for (var j = 0; j < options.trimHeadFrames && j < frames.length; j++) {
+          frames[j].in_app = false;
+        }
+      }
+    }
+    frames = frames.slice(0, this._globalOptions.stackTraceLimit);
+    return frames;
+  },
+
+  _normalizeFrame: function _normalizeFrame(frame, stackInfoUrl) {
+    // normalize the frames data
+    var normalized = {
+      filename: frame.url,
+      lineno: frame.line,
+      colno: frame.column,
+      function: frame.func || '?'
+    };
+
+    // Case when we don't have any information about the error
+    // E.g. throwing a string or raw object, instead of an `Error` in Firefox
+    // Generating synthetic error doesn't add any value here
+    //
+    // We should probably somehow let a user know that they should fix their code
+    if (!frame.url) {
+      normalized.filename = stackInfoUrl; // fallback to whole stacks url from onerror handler
+    }
+
+    normalized.in_app = !( // determine if an exception came from outside of our app
+    // first we check the global includePaths list.
+    !!this._globalOptions.includePaths.test && !this._globalOptions.includePaths.test(normalized.filename) ||
+    // Now we check for fun, if the function name is Raven or TraceKit
+    /(Raven|TraceKit)\./.test(normalized['function']) ||
+    // finally, we do a last ditch effort and check for raven.min.js
+    /raven\.(min\.)?js$/.test(normalized.filename));
+
+    return normalized;
+  },
+
+  _processException: function _processException(type, message, fileurl, lineno, frames, options) {
+    var prefixedMessage = (type ? type + ': ' : '') + (message || '');
+    if (!!this._globalOptions.ignoreErrors.test && (this._globalOptions.ignoreErrors.test(message) || this._globalOptions.ignoreErrors.test(prefixedMessage))) {
+      return;
+    }
+
+    var stacktrace;
+
+    if (frames && frames.length) {
+      fileurl = frames[0].filename || fileurl;
+      // Sentry expects frames oldest to newest
+      // and JS sends them as newest to oldest
+      frames.reverse();
+      stacktrace = { frames: frames };
+    } else if (fileurl) {
+      stacktrace = {
+        frames: [{
+          filename: fileurl,
+          lineno: lineno,
+          in_app: true
+        }]
+      };
+    }
+
+    if (!!this._globalOptions.ignoreUrls.test && this._globalOptions.ignoreUrls.test(fileurl)) {
+      return;
+    }
+
+    if (!!this._globalOptions.whitelistUrls.test && !this._globalOptions.whitelistUrls.test(fileurl)) {
+      return;
+    }
+
+    var data = objectMerge({
+      // sentry.interfaces.Exception
+      exception: {
+        values: [{
+          type: type,
+          value: message,
+          stacktrace: stacktrace
+        }]
+      },
+      culprit: fileurl
+    }, options);
+
+    // Fire away!
+    this._send(data);
+  },
+
+  _trimPacket: function _trimPacket(data) {
+    // For now, we only want to truncate the two different messages
+    // but this could/should be expanded to just trim everything
+    var max = this._globalOptions.maxMessageLength;
+    if (data.message) {
+      data.message = truncate(data.message, max);
+    }
+    if (data.exception) {
+      var exception = data.exception.values[0];
+      exception.value = truncate(exception.value, max);
+    }
+
+    var request = data.request;
+    if (request) {
+      if (request.url) {
+        request.url = truncate(request.url, this._globalOptions.maxUrlLength);
+      }
+      if (request.Referer) {
+        request.Referer = truncate(request.Referer, this._globalOptions.maxUrlLength);
+      }
+    }
+
+    if (data.breadcrumbs && data.breadcrumbs.values) this._trimBreadcrumbs(data.breadcrumbs);
+
+    return data;
+  },
+
+  /**
+   * Truncate breadcrumb values (right now just URLs)
+   */
+  _trimBreadcrumbs: function _trimBreadcrumbs(breadcrumbs) {
+    // known breadcrumb properties with urls
+    // TODO: also consider arbitrary prop values that start with (https?)?://
+    var urlProps = ['to', 'from', 'url'],
+        urlProp,
+        crumb,
+        data;
+
+    for (var i = 0; i < breadcrumbs.values.length; ++i) {
+      crumb = breadcrumbs.values[i];
+      if (!crumb.hasOwnProperty('data') || !isObject(crumb.data) || objectFrozen(crumb.data)) continue;
+
+      data = objectMerge({}, crumb.data);
+      for (var j = 0; j < urlProps.length; ++j) {
+        urlProp = urlProps[j];
+        if (data.hasOwnProperty(urlProp) && data[urlProp]) {
+          data[urlProp] = truncate(data[urlProp], this._globalOptions.maxUrlLength);
+        }
+      }
+      breadcrumbs.values[i].data = data;
+    }
+  },
+
+  _getHttpData: function _getHttpData() {
+    if (!this._hasNavigator && !this._hasDocument) return;
+    var httpData = {};
+
+    if (this._hasNavigator && _navigator.userAgent) {
+      httpData.headers = {
+        'User-Agent': navigator.userAgent
+      };
+    }
+
+    if (this._hasDocument) {
+      if (_document.location && _document.location.href) {
+        httpData.url = _document.location.href;
+      }
+      if (_document.referrer) {
+        if (!httpData.headers) httpData.headers = {};
+        httpData.headers.Referer = _document.referrer;
+      }
+    }
+
+    return httpData;
+  },
+
+  _resetBackoff: function _resetBackoff() {
+    this._backoffDuration = 0;
+    this._backoffStart = null;
+  },
+
+  _shouldBackoff: function _shouldBackoff() {
+    return this._backoffDuration && now() - this._backoffStart < this._backoffDuration;
+  },
+
+  /**
+   * Returns true if the in-process data payload matches the signature
+   * of the previously-sent data
+   *
+   * NOTE: This has to be done at this level because TraceKit can generate
+   *       data from window.onerror WITHOUT an exception object (IE8, IE9,
+   *       other old browsers). This can take the form of an "exception"
+   *       data object with a single frame (derived from the onerror args).
+   */
+  _isRepeatData: function _isRepeatData(current) {
+    var last = this._lastData;
+
+    if (!last || current.message !== last.message || // defined for captureMessage
+    current.culprit !== last.culprit // defined for captureException/onerror
+    ) return false;
+
+    // Stacktrace interface (i.e. from captureMessage)
+    if (current.stacktrace || last.stacktrace) {
+      return isSameStacktrace(current.stacktrace, last.stacktrace);
+    } else if (current.exception || last.exception) {
+      // Exception interface (i.e. from captureException/onerror)
+      return isSameException(current.exception, last.exception);
+    }
+
+    return true;
+  },
+
+  _setBackoffState: function _setBackoffState(request) {
+    // If we are already in a backoff state, don't change anything
+    if (this._shouldBackoff()) {
+      return;
+    }
+
+    var status = request.status;
+
+    // 400 - project_id doesn't exist or some other fatal
+    // 401 - invalid/revoked dsn
+    // 429 - too many requests
+    if (!(status === 400 || status === 401 || status === 429)) return;
+
+    var retry;
+    try {
+      // If Retry-After is not in Access-Control-Expose-Headers, most
+      // browsers will throw an exception trying to access it
+      if (supportsFetch()) {
+        retry = request.headers.get('Retry-After');
+      } else {
+        retry = request.getResponseHeader('Retry-After');
+      }
+
+      // Retry-After is returned in seconds
+      retry = parseInt(retry, 10) * 1000;
+    } catch (e) {
+      /* eslint no-empty:0 */
+    }
+
+    this._backoffDuration = retry ? // If Sentry server returned a Retry-After value, use it
+    retry : // Otherwise, double the last backoff duration (starts at 1 sec)
+    this._backoffDuration * 2 || 1000;
+
+    this._backoffStart = now();
+  },
+
+  _send: function _send(data) {
+    var globalOptions = this._globalOptions;
+
+    var baseData = {
+      project: this._globalProject,
+      logger: globalOptions.logger,
+      platform: 'javascript'
+    },
+        httpData = this._getHttpData();
+
+    if (httpData) {
+      baseData.request = httpData;
+    }
+
+    // HACK: delete `trimHeadFrames` to prevent from appearing in outbound payload
+    if (data.trimHeadFrames) delete data.trimHeadFrames;
+
+    data = objectMerge(baseData, data);
+
+    // Merge in the tags and extra separately since objectMerge doesn't handle a deep merge
+    data.tags = objectMerge(objectMerge({}, this._globalContext.tags), data.tags);
+    data.extra = objectMerge(objectMerge({}, this._globalContext.extra), data.extra);
+
+    // Send along our own collected metadata with extra
+    data.extra['session:duration'] = now() - this._startTime;
+
+    if (this._breadcrumbs && this._breadcrumbs.length > 0) {
+      // intentionally make shallow copy so that additions
+      // to breadcrumbs aren't accidentally sent in this request
+      data.breadcrumbs = {
+        values: [].slice.call(this._breadcrumbs, 0)
+      };
+    }
+
+    // If there are no tags/extra, strip the key from the payload alltogther.
+    if (isEmptyObject(data.tags)) delete data.tags;
+
+    if (this._globalContext.user) {
+      // sentry.interfaces.User
+      data.user = this._globalContext.user;
+    }
+
+    // Include the environment if it's defined in globalOptions
+    if (globalOptions.environment) data.environment = globalOptions.environment;
+
+    // Include the release if it's defined in globalOptions
+    if (globalOptions.release) data.release = globalOptions.release;
+
+    // Include server_name if it's defined in globalOptions
+    if (globalOptions.serverName) data.server_name = globalOptions.serverName;
+
+    if (isFunction(globalOptions.dataCallback)) {
+      data = globalOptions.dataCallback(data) || data;
+    }
+
+    // Why??????????
+    if (!data || isEmptyObject(data)) {
+      return;
+    }
+
+    // Check if the request should be filtered or not
+    if (isFunction(globalOptions.shouldSendCallback) && !globalOptions.shouldSendCallback(data)) {
+      return;
+    }
+
+    // Backoff state: Sentry server previously responded w/ an error (e.g. 429 - too many requests),
+    // so drop requests until "cool-off" period has elapsed.
+    if (this._shouldBackoff()) {
+      this._logDebug('warn', 'Raven dropped error due to backoff: ', data);
+      return;
+    }
+
+    if (typeof globalOptions.sampleRate === 'number') {
+      if (Math.random() < globalOptions.sampleRate) {
+        this._sendProcessedPayload(data);
+      }
+    } else {
+      this._sendProcessedPayload(data);
+    }
+  },
+
+  _getUuid: function _getUuid() {
+    return uuid4();
+  },
+
+  _sendProcessedPayload: function _sendProcessedPayload(data, callback) {
+    var self = this;
+    var globalOptions = this._globalOptions;
+
+    if (!this.isSetup()) return;
+
+    // Try and clean up the packet before sending by truncating long values
+    data = this._trimPacket(data);
+
+    // ideally duplicate error testing should occur *before* dataCallback/shouldSendCallback,
+    // but this would require copying an un-truncated copy of the data packet, which can be
+    // arbitrarily deep (extra_data) -- could be worthwhile? will revisit
+    if (!this._globalOptions.allowDuplicates && this._isRepeatData(data)) {
+      this._logDebug('warn', 'Raven dropped repeat event: ', data);
+      return;
+    }
+
+    // Send along an event_id if not explicitly passed.
+    // This event_id can be used to reference the error within Sentry itself.
+    // Set lastEventId after we know the error should actually be sent
+    this._lastEventId = data.event_id || (data.event_id = this._getUuid());
+
+    // Store outbound payload after trim
+    this._lastData = data;
+
+    this._logDebug('debug', 'Raven about to send:', data);
+
+    var auth = {
+      sentry_version: '7',
+      sentry_client: 'raven-js/' + this.VERSION,
+      sentry_key: this._globalKey
+    };
+
+    if (this._globalSecret) {
+      auth.sentry_secret = this._globalSecret;
+    }
+
+    var exception = data.exception && data.exception.values[0];
+
+    // only capture 'sentry' breadcrumb is autoBreadcrumbs is truthy
+    if (this._globalOptions.autoBreadcrumbs && this._globalOptions.autoBreadcrumbs.sentry) {
+      this.captureBreadcrumb({
+        category: 'sentry',
+        message: exception ? (exception.type ? exception.type + ': ' : '') + exception.value : data.message,
+        event_id: data.event_id,
+        level: data.level || 'error' // presume error unless specified
+      });
+    }
+
+    var url = this._globalEndpoint;
+    (globalOptions.transport || this._makeRequest).call(this, {
+      url: url,
+      auth: auth,
+      data: data,
+      options: globalOptions,
+      onSuccess: function success() {
+        self._resetBackoff();
+
+        self._triggerEvent('success', {
+          data: data,
+          src: url
+        });
+        callback && callback();
+      },
+      onError: function failure(error) {
+        self._logDebug('error', 'Raven transport failed to send: ', error);
+
+        if (error.request) {
+          self._setBackoffState(error.request);
+        }
+
+        self._triggerEvent('failure', {
+          data: data,
+          src: url
+        });
+        error = error || new Error('Raven send failed (no additional details provided)');
+        callback && callback(error);
+      }
+    });
+  },
+
+  _makeRequest: function _makeRequest(opts) {
+    // Auth is intentionally sent as part of query string (NOT as custom HTTP header) to avoid preflight CORS requests
+    var url = opts.url + '?' + urlencode(opts.auth);
+
+    var evaluatedHeaders = null;
+    if (opts.options.headers) {
+      evaluatedHeaders = this._evaluateHeaders(opts.options.headers);
+    }
+
+    if (supportsFetch()) {
+      var fetchOptions = {
+        method: 'POST',
+        body: stringify(opts.data)
+      };
+
+      if (evaluatedHeaders) {
+        fetchOptions.headers = evaluatedHeaders;
+      }
+
+      return _window.fetch(url, fetchOptions).then(function (response) {
+        if (response.ok) {
+          opts.onSuccess && opts.onSuccess();
+        } else {
+          var error = new Error('Sentry error code: ' + response.status);
+          // It's called request only to keep compatibility with XHR interface
+          // and not add more redundant checks in setBackoffState method
+          error.request = response;
+          opts.onError && opts.onError(error);
+        }
+      })['catch'](function () {
+        opts.onError && opts.onError(new Error('Sentry error code: network unavailable'));
+      });
+    }
+
+    var request = _window.XMLHttpRequest && new _window.XMLHttpRequest();
+    if (!request) return;
+
+    // if browser doesn't support CORS (e.g. IE7), we are out of luck
+    var hasCORS = 'withCredentials' in request || typeof XDomainRequest !== 'undefined';
+
+    if (!hasCORS) return;
+
+    if ('withCredentials' in request) {
+      request.onreadystatechange = function () {
+        if (request.readyState !== 4) {
+          return;
+        } else if (request.status === 200) {
+          opts.onSuccess && opts.onSuccess();
+        } else if (opts.onError) {
+          var err = new Error('Sentry error code: ' + request.status);
+          err.request = request;
+          opts.onError(err);
+        }
+      };
+    } else {
+      request = new XDomainRequest();
+      // xdomainrequest cannot go http -> https (or vice versa),
+      // so always use protocol relative
+      url = url.replace(/^https?:/, '');
+
+      // onreadystatechange not supported by XDomainRequest
+      if (opts.onSuccess) {
+        request.onload = opts.onSuccess;
+      }
+      if (opts.onError) {
+        request.onerror = function () {
+          var err = new Error('Sentry error code: XDomainRequest');
+          err.request = request;
+          opts.onError(err);
+        };
+      }
+    }
+
+    request.open('POST', url);
+
+    if (evaluatedHeaders) {
+      each(evaluatedHeaders, function (key, value) {
+        request.setRequestHeader(key, value);
+      });
+    }
+
+    request.send(stringify(opts.data));
+  },
+
+  _evaluateHeaders: function _evaluateHeaders(headers) {
+    var evaluatedHeaders = {};
+
+    for (var key in headers) {
+      if (headers.hasOwnProperty(key)) {
+        var value = headers[key];
+        evaluatedHeaders[key] = typeof value === 'function' ? value() : value;
+      }
+    }
+
+    return evaluatedHeaders;
+  },
+
+  _logDebug: function _logDebug(level) {
+    if (this._originalConsoleMethods[level] && this.debug) {
+      // In IE<10 console methods do not have their own 'apply' method
+      Function.prototype.apply.call(this._originalConsoleMethods[level], this._originalConsole, [].slice.call(arguments, 1));
+    }
+  },
+
+  _mergeContext: function _mergeContext(key, context) {
+    if (isUndefined(context)) {
+      delete this._globalContext[key];
+    } else {
+      this._globalContext[key] = objectMerge(this._globalContext[key] || {}, context);
+    }
+  }
+};
+
+// Deprecations
+Raven.prototype.setUser = Raven.prototype.setUserContext;
+Raven.prototype.setReleaseContext = Raven.prototype.setRelease;
+
+module.exports = Raven;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9)))
+
+/***/ }),
+/* 126 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {var utils = __webpack_require__(123);
+
+/*
+ TraceKit - Cross brower stack traces
+
+ This was originally forked from github.com/occ/TraceKit, but has since been
+ largely re-written and is now maintained as part of raven-js.  Tests for
+ this are in test/vendor.
+
+ MIT license
+*/
+
+var TraceKit = {
+  collectWindowErrors: true,
+  debug: false
+};
+
+// This is to be defensive in environments where window does not exist (see https://github.com/getsentry/raven-js/pull/785)
+var _window = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+
+// global reference to slice
+var _slice = [].slice;
+var UNKNOWN_FUNCTION = '?';
+
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error#Error_types
+var ERROR_TYPES_RE = /^(?:[Uu]ncaught (?:exception: )?)?(?:((?:Eval|Internal|Range|Reference|Syntax|Type|URI|)Error): )?(.*)$/;
+
+function getLocationHref() {
+  if (typeof document === 'undefined' || document.location == null) return '';
+
+  return document.location.href;
+}
+
+/**
+ * TraceKit.report: cross-browser processing of unhandled exceptions
+ *
+ * Syntax:
+ *   TraceKit.report.subscribe(function(stackInfo) { ... })
+ *   TraceKit.report.unsubscribe(function(stackInfo) { ... })
+ *   TraceKit.report(exception)
+ *   try { ...code... } catch(ex) { TraceKit.report(ex); }
+ *
+ * Supports:
+ *   - Firefox: full stack trace with line numbers, plus column number
+ *              on top frame; column number is not guaranteed
+ *   - Opera:   full stack trace with line and column numbers
+ *   - Chrome:  full stack trace with line and column numbers
+ *   - Safari:  line and column number for the top frame only; some frames
+ *              may be missing, and column number is not guaranteed
+ *   - IE:      line and column number for the top frame only; some frames
+ *              may be missing, and column number is not guaranteed
+ *
+ * In theory, TraceKit should work on all of the following versions:
+ *   - IE5.5+ (only 8.0 tested)
+ *   - Firefox 0.9+ (only 3.5+ tested)
+ *   - Opera 7+ (only 10.50 tested; versions 9 and earlier may require
+ *     Exceptions Have Stacktrace to be enabled in opera:config)
+ *   - Safari 3+ (only 4+ tested)
+ *   - Chrome 1+ (only 5+ tested)
+ *   - Konqueror 3.5+ (untested)
+ *
+ * Requires TraceKit.computeStackTrace.
+ *
+ * Tries to catch all unhandled exceptions and report them to the
+ * subscribed handlers. Please note that TraceKit.report will rethrow the
+ * exception. This is REQUIRED in order to get a useful stack trace in IE.
+ * If the exception does not reach the top of the browser, you will only
+ * get a stack trace from the point where TraceKit.report was called.
+ *
+ * Handlers receive a stackInfo object as described in the
+ * TraceKit.computeStackTrace docs.
+ */
+TraceKit.report = function reportModuleWrapper() {
+  var handlers = [],
+      lastArgs = null,
+      lastException = null,
+      lastExceptionStack = null;
+
+  /**
+     * Add a crash handler.
+     * @param {Function} handler
+     */
+  function subscribe(handler) {
+    installGlobalHandler();
+    handlers.push(handler);
+  }
+
+  /**
+     * Remove a crash handler.
+     * @param {Function} handler
+     */
+  function unsubscribe(handler) {
+    for (var i = handlers.length - 1; i >= 0; --i) {
+      if (handlers[i] === handler) {
+        handlers.splice(i, 1);
+      }
+    }
+  }
+
+  /**
+     * Remove all crash handlers.
+     */
+  function unsubscribeAll() {
+    uninstallGlobalHandler();
+    handlers = [];
+  }
+
+  /**
+     * Dispatch stack information to all handlers.
+     * @param {Object.<string, *>} stack
+     */
+  function notifyHandlers(stack, isWindowError) {
+    var exception = null;
+    if (isWindowError && !TraceKit.collectWindowErrors) {
+      return;
+    }
+    for (var i in handlers) {
+      if (handlers.hasOwnProperty(i)) {
+        try {
+          handlers[i].apply(null, [stack].concat(_slice.call(arguments, 2)));
+        } catch (inner) {
+          exception = inner;
+        }
+      }
+    }
+
+    if (exception) {
+      throw exception;
+    }
+  }
+
+  var _oldOnerrorHandler, _onErrorHandlerInstalled;
+
+  /**
+     * Ensures all global unhandled exceptions are recorded.
+     * Supported by Gecko and IE.
+     * @param {string} msg Error message.
+     * @param {string} url URL of script that generated the exception.
+     * @param {(number|string)} lineNo The line number at which the error
+     * occurred.
+     * @param {?(number|string)} colNo The column number at which the error
+     * occurred.
+     * @param {?Error} ex The actual Error object.
+     */
+  function traceKitWindowOnError(msg, url, lineNo, colNo, ex) {
+    var stack = null;
+    // If 'ex' is ErrorEvent, get real Error from inside
+    var exception = utils.isErrorEvent(ex) ? ex.error : ex;
+    // If 'msg' is ErrorEvent, get real message from inside
+    var message = utils.isErrorEvent(msg) ? msg.message : msg;
+
+    if (lastExceptionStack) {
+      TraceKit.computeStackTrace.augmentStackTraceWithInitialElement(lastExceptionStack, url, lineNo, message);
+      processLastException();
+    } else if (exception && utils.isError(exception)) {
+      // non-string `exception` arg; attempt to extract stack trace
+
+      // New chrome and blink send along a real error object
+      // Let's just report that like a normal error.
+      // See: https://mikewest.org/2013/08/debugging-runtime-errors-with-window-onerror
+      stack = TraceKit.computeStackTrace(exception);
+      notifyHandlers(stack, true);
+    } else {
+      var location = {
+        url: url,
+        line: lineNo,
+        column: colNo
+      };
+
+      var name = undefined;
+      var groups;
+
+      if ({}.toString.call(message) === '[object String]') {
+        var groups = message.match(ERROR_TYPES_RE);
+        if (groups) {
+          name = groups[1];
+          message = groups[2];
+        }
+      }
+
+      location.func = UNKNOWN_FUNCTION;
+
+      stack = {
+        name: name,
+        message: message,
+        url: getLocationHref(),
+        stack: [location]
+      };
+      notifyHandlers(stack, true);
+    }
+
+    if (_oldOnerrorHandler) {
+      return _oldOnerrorHandler.apply(this, arguments);
+    }
+
+    return false;
+  }
+
+  function installGlobalHandler() {
+    if (_onErrorHandlerInstalled) {
+      return;
+    }
+    _oldOnerrorHandler = _window.onerror;
+    _window.onerror = traceKitWindowOnError;
+    _onErrorHandlerInstalled = true;
+  }
+
+  function uninstallGlobalHandler() {
+    if (!_onErrorHandlerInstalled) {
+      return;
+    }
+    _window.onerror = _oldOnerrorHandler;
+    _onErrorHandlerInstalled = false;
+    _oldOnerrorHandler = undefined;
+  }
+
+  function processLastException() {
+    var _lastExceptionStack = lastExceptionStack,
+        _lastArgs = lastArgs;
+    lastArgs = null;
+    lastExceptionStack = null;
+    lastException = null;
+    notifyHandlers.apply(null, [_lastExceptionStack, false].concat(_lastArgs));
+  }
+
+  /**
+     * Reports an unhandled Error to TraceKit.
+     * @param {Error} ex
+     * @param {?boolean} rethrow If false, do not re-throw the exception.
+     * Only used for window.onerror to not cause an infinite loop of
+     * rethrowing.
+     */
+  function report(ex, rethrow) {
+    var args = _slice.call(arguments, 1);
+    if (lastExceptionStack) {
+      if (lastException === ex) {
+        return; // already caught by an inner catch block, ignore
+      } else {
+        processLastException();
+      }
+    }
+
+    var stack = TraceKit.computeStackTrace(ex);
+    lastExceptionStack = stack;
+    lastException = ex;
+    lastArgs = args;
+
+    // If the stack trace is incomplete, wait for 2 seconds for
+    // slow slow IE to see if onerror occurs or not before reporting
+    // this exception; otherwise, we will end up with an incomplete
+    // stack trace
+    setTimeout(function () {
+      if (lastException === ex) {
+        processLastException();
+      }
+    }, stack.incomplete ? 2000 : 0);
+
+    if (rethrow !== false) {
+      throw ex; // re-throw to propagate to the top level (and cause window.onerror)
+    }
+  }
+
+  report.subscribe = subscribe;
+  report.unsubscribe = unsubscribe;
+  report.uninstall = unsubscribeAll;
+  return report;
+}();
+
+/**
+ * TraceKit.computeStackTrace: cross-browser stack traces in JavaScript
+ *
+ * Syntax:
+ *   s = TraceKit.computeStackTrace(exception) // consider using TraceKit.report instead (see below)
+ * Returns:
+ *   s.name              - exception name
+ *   s.message           - exception message
+ *   s.stack[i].url      - JavaScript or HTML file URL
+ *   s.stack[i].func     - function name, or empty for anonymous functions (if guessing did not work)
+ *   s.stack[i].args     - arguments passed to the function, if known
+ *   s.stack[i].line     - line number, if known
+ *   s.stack[i].column   - column number, if known
+ *
+ * Supports:
+ *   - Firefox:  full stack trace with line numbers and unreliable column
+ *               number on top frame
+ *   - Opera 10: full stack trace with line and column numbers
+ *   - Opera 9-: full stack trace with line numbers
+ *   - Chrome:   full stack trace with line and column numbers
+ *   - Safari:   line and column number for the topmost stacktrace element
+ *               only
+ *   - IE:       no line numbers whatsoever
+ *
+ * Tries to guess names of anonymous functions by looking for assignments
+ * in the source code. In IE and Safari, we have to guess source file names
+ * by searching for function bodies inside all page scripts. This will not
+ * work for scripts that are loaded cross-domain.
+ * Here be dragons: some function names may be guessed incorrectly, and
+ * duplicate functions may be mismatched.
+ *
+ * TraceKit.computeStackTrace should only be used for tracing purposes.
+ * Logging of unhandled exceptions should be done with TraceKit.report,
+ * which builds on top of TraceKit.computeStackTrace and provides better
+ * IE support by utilizing the window.onerror event to retrieve information
+ * about the top of the stack.
+ *
+ * Note: In IE and Safari, no stack trace is recorded on the Error object,
+ * so computeStackTrace instead walks its *own* chain of callers.
+ * This means that:
+ *  * in Safari, some methods may be missing from the stack trace;
+ *  * in IE, the topmost function in the stack trace will always be the
+ *    caller of computeStackTrace.
+ *
+ * This is okay for tracing (because you are likely to be calling
+ * computeStackTrace from the function you want to be the topmost element
+ * of the stack trace anyway), but not okay for logging unhandled
+ * exceptions (because your catch block will likely be far away from the
+ * inner function that actually caused the exception).
+ *
+ */
+TraceKit.computeStackTrace = function computeStackTraceWrapper() {
+  // Contents of Exception in various browsers.
+  //
+  // SAFARI:
+  // ex.message = Can't find variable: qq
+  // ex.line = 59
+  // ex.sourceId = 580238192
+  // ex.sourceURL = http://...
+  // ex.expressionBeginOffset = 96
+  // ex.expressionCaretOffset = 98
+  // ex.expressionEndOffset = 98
+  // ex.name = ReferenceError
+  //
+  // FIREFOX:
+  // ex.message = qq is not defined
+  // ex.fileName = http://...
+  // ex.lineNumber = 59
+  // ex.columnNumber = 69
+  // ex.stack = ...stack trace... (see the example below)
+  // ex.name = ReferenceError
+  //
+  // CHROME:
+  // ex.message = qq is not defined
+  // ex.name = ReferenceError
+  // ex.type = not_defined
+  // ex.arguments = ['aa']
+  // ex.stack = ...stack trace...
+  //
+  // INTERNET EXPLORER:
+  // ex.message = ...
+  // ex.name = ReferenceError
+  //
+  // OPERA:
+  // ex.message = ...message... (see the example below)
+  // ex.name = ReferenceError
+  // ex.opera#sourceloc = 11  (pretty much useless, duplicates the info in ex.message)
+  // ex.stacktrace = n/a; see 'opera:config#UserPrefs|Exceptions Have Stacktrace'
+
+  /**
+     * Computes stack trace information from the stack property.
+     * Chrome and Gecko use this property.
+     * @param {Error} ex
+     * @return {?Object.<string, *>} Stack trace information.
+     */
+  function computeStackTraceFromStackProp(ex) {
+    if (typeof ex.stack === 'undefined' || !ex.stack) return;
+
+    var chrome = /^\s*at (.*?) ?\(((?:file|https?|blob|chrome-extension|native|eval|webpack|<anonymous>|[a-z]:|\/).*?)(?::(\d+))?(?::(\d+))?\)?\s*$/i,
+        gecko = /^\s*(.*?)(?:\((.*?)\))?(?:^|@)((?:file|https?|blob|chrome|webpack|resource|\[native).*?|[^@]*bundle)(?::(\d+))?(?::(\d+))?\s*$/i,
+        winjs = /^\s*at (?:((?:\[object object\])?.+) )?\(?((?:file|ms-appx|https?|webpack|blob):.*?):(\d+)(?::(\d+))?\)?\s*$/i,
+
+    // Used to additionally parse URL/line/column from eval frames
+    geckoEval = /(\S+) line (\d+)(?: > eval line \d+)* > eval/i,
+        chromeEval = /\((\S*)(?::(\d+))(?::(\d+))\)/,
+        lines = ex.stack.split('\n'),
+        stack = [],
+        submatch,
+        parts,
+        element,
+        reference = /^(.*) is undefined$/.exec(ex.message);
+
+    for (var i = 0, j = lines.length; i < j; ++i) {
+      if (parts = chrome.exec(lines[i])) {
+        var isNative = parts[2] && parts[2].indexOf('native') === 0; // start of line
+        var isEval = parts[2] && parts[2].indexOf('eval') === 0; // start of line
+        if (isEval && (submatch = chromeEval.exec(parts[2]))) {
+          // throw out eval line/column and use top-most line/column number
+          parts[2] = submatch[1]; // url
+          parts[3] = submatch[2]; // line
+          parts[4] = submatch[3]; // column
+        }
+        element = {
+          url: !isNative ? parts[2] : null,
+          func: parts[1] || UNKNOWN_FUNCTION,
+          args: isNative ? [parts[2]] : [],
+          line: parts[3] ? +parts[3] : null,
+          column: parts[4] ? +parts[4] : null
+        };
+      } else if (parts = winjs.exec(lines[i])) {
+        element = {
+          url: parts[2],
+          func: parts[1] || UNKNOWN_FUNCTION,
+          args: [],
+          line: +parts[3],
+          column: parts[4] ? +parts[4] : null
+        };
+      } else if (parts = gecko.exec(lines[i])) {
+        var isEval = parts[3] && parts[3].indexOf(' > eval') > -1;
+        if (isEval && (submatch = geckoEval.exec(parts[3]))) {
+          // throw out eval line/column and use top-most line number
+          parts[3] = submatch[1];
+          parts[4] = submatch[2];
+          parts[5] = null; // no column when eval
+        } else if (i === 0 && !parts[5] && typeof ex.columnNumber !== 'undefined') {
+          // FireFox uses this awesome columnNumber property for its top frame
+          // Also note, Firefox's column number is 0-based and everything else expects 1-based,
+          // so adding 1
+          // NOTE: this hack doesn't work if top-most frame is eval
+          stack[0].column = ex.columnNumber + 1;
+        }
+        element = {
+          url: parts[3],
+          func: parts[1] || UNKNOWN_FUNCTION,
+          args: parts[2] ? parts[2].split(',') : [],
+          line: parts[4] ? +parts[4] : null,
+          column: parts[5] ? +parts[5] : null
+        };
+      } else {
+        continue;
+      }
+
+      if (!element.func && element.line) {
+        element.func = UNKNOWN_FUNCTION;
+      }
+
+      stack.push(element);
+    }
+
+    if (!stack.length) {
+      return null;
+    }
+
+    return {
+      name: ex.name,
+      message: ex.message,
+      url: getLocationHref(),
+      stack: stack
+    };
+  }
+
+  /**
+     * Adds information about the first frame to incomplete stack traces.
+     * Safari and IE require this to get complete data on the first frame.
+     * @param {Object.<string, *>} stackInfo Stack trace information from
+     * one of the compute* methods.
+     * @param {string} url The URL of the script that caused an error.
+     * @param {(number|string)} lineNo The line number of the script that
+     * caused an error.
+     * @param {string=} message The error generated by the browser, which
+     * hopefully contains the name of the object that caused the error.
+     * @return {boolean} Whether or not the stack information was
+     * augmented.
+     */
+  function augmentStackTraceWithInitialElement(stackInfo, url, lineNo, message) {
+    var initial = {
+      url: url,
+      line: lineNo
+    };
+
+    if (initial.url && initial.line) {
+      stackInfo.incomplete = false;
+
+      if (!initial.func) {
+        initial.func = UNKNOWN_FUNCTION;
+      }
+
+      if (stackInfo.stack.length > 0) {
+        if (stackInfo.stack[0].url === initial.url) {
+          if (stackInfo.stack[0].line === initial.line) {
+            return false; // already in stack trace
+          } else if (!stackInfo.stack[0].line && stackInfo.stack[0].func === initial.func) {
+            stackInfo.stack[0].line = initial.line;
+            return false;
+          }
+        }
+      }
+
+      stackInfo.stack.unshift(initial);
+      stackInfo.partial = true;
+      return true;
+    } else {
+      stackInfo.incomplete = true;
+    }
+
+    return false;
+  }
+
+  /**
+     * Computes stack trace information by walking the arguments.caller
+     * chain at the time the exception occurred. This will cause earlier
+     * frames to be missed but is the only way to get any stack trace in
+     * Safari and IE. The top frame is restored by
+     * {@link augmentStackTraceWithInitialElement}.
+     * @param {Error} ex
+     * @return {?Object.<string, *>} Stack trace information.
+     */
+  function computeStackTraceByWalkingCallerChain(ex, depth) {
+    var functionName = /function\s+([_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*)?\s*\(/i,
+        stack = [],
+        funcs = {},
+        recursion = false,
+        parts,
+        item,
+        source;
+
+    for (var curr = computeStackTraceByWalkingCallerChain.caller; curr && !recursion; curr = curr.caller) {
+      if (curr === computeStackTrace || curr === TraceKit.report) {
+        // console.log('skipping internal function');
+        continue;
+      }
+
+      item = {
+        url: null,
+        func: UNKNOWN_FUNCTION,
+        line: null,
+        column: null
+      };
+
+      if (curr.name) {
+        item.func = curr.name;
+      } else if (parts = functionName.exec(curr.toString())) {
+        item.func = parts[1];
+      }
+
+      if (typeof item.func === 'undefined') {
+        try {
+          item.func = parts.input.substring(0, parts.input.indexOf('{'));
+        } catch (e) {}
+      }
+
+      if (funcs['' + curr]) {
+        recursion = true;
+      } else {
+        funcs['' + curr] = true;
+      }
+
+      stack.push(item);
+    }
+
+    if (depth) {
+      // console.log('depth is ' + depth);
+      // console.log('stack is ' + stack.length);
+      stack.splice(0, depth);
+    }
+
+    var result = {
+      name: ex.name,
+      message: ex.message,
+      url: getLocationHref(),
+      stack: stack
+    };
+    augmentStackTraceWithInitialElement(result, ex.sourceURL || ex.fileName, ex.line || ex.lineNumber, ex.message || ex.description);
+    return result;
+  }
+
+  /**
+     * Computes a stack trace for an exception.
+     * @param {Error} ex
+     * @param {(string|number)=} depth
+     */
+  function computeStackTrace(ex, depth) {
+    var stack = null;
+    depth = depth == null ? 0 : +depth;
+
+    try {
+      stack = computeStackTraceFromStackProp(ex);
+      if (stack) {
+        return stack;
+      }
+    } catch (e) {
+      if (TraceKit.debug) {
+        throw e;
+      }
+    }
+
+    try {
+      stack = computeStackTraceByWalkingCallerChain(ex, depth + 1);
+      if (stack) {
+        return stack;
+      }
+    } catch (e) {
+      if (TraceKit.debug) {
+        throw e;
+      }
+    }
+    return {
+      name: ex.name,
+      message: ex.message,
+      url: getLocationHref()
+    };
+  }
+
+  computeStackTrace.augmentStackTraceWithInitialElement = augmentStackTraceWithInitialElement;
+  computeStackTrace.computeStackTraceFromStackProp = computeStackTraceFromStackProp;
+
+  return computeStackTrace;
+}();
+
+module.exports = TraceKit;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9)))
+
+/***/ }),
+/* 127 */
+/***/ (function(module, exports) {
+
+/*
+ json-stringify-safe
+ Like JSON.stringify, but doesn't throw on circular references.
+
+ Originally forked from https://github.com/isaacs/json-stringify-safe
+ version 5.0.1 on 3/8/2017 and modified to handle Errors serialization
+ and IE8 compatibility. Tests for this are in test/vendor.
+
+ ISC license: https://github.com/isaacs/json-stringify-safe/blob/master/LICENSE
+*/
+
+exports = module.exports = stringify;
+exports.getSerialize = serializer;
+
+function indexOf(haystack, needle) {
+  for (var i = 0; i < haystack.length; ++i) {
+    if (haystack[i] === needle) return i;
+  }
+  return -1;
+}
+
+function stringify(obj, replacer, spaces, cycleReplacer) {
+  return JSON.stringify(obj, serializer(replacer, cycleReplacer), spaces);
+}
+
+// https://github.com/ftlabs/js-abbreviate/blob/fa709e5f139e7770a71827b1893f22418097fbda/index.js#L95-L106
+function stringifyError(value) {
+  var err = {
+    // These properties are implemented as magical getters and don't show up in for in
+    stack: value.stack,
+    message: value.message,
+    name: value.name
+  };
+
+  for (var i in value) {
+    if (Object.prototype.hasOwnProperty.call(value, i)) {
+      err[i] = value[i];
+    }
+  }
+
+  return err;
+}
+
+function serializer(replacer, cycleReplacer) {
+  var stack = [];
+  var keys = [];
+
+  if (cycleReplacer == null) {
+    cycleReplacer = function cycleReplacer(key, value) {
+      if (stack[0] === value) {
+        return '[Circular ~]';
+      }
+      return '[Circular ~.' + keys.slice(0, indexOf(stack, value)).join('.') + ']';
+    };
+  }
+
+  return function (key, value) {
+    if (stack.length > 0) {
+      var thisPos = indexOf(stack, this);
+      ~thisPos ? stack.splice(thisPos + 1) : stack.push(this);
+      ~thisPos ? keys.splice(thisPos, Infinity, key) : keys.push(key);
+
+      if (~indexOf(stack, value)) {
+        value = cycleReplacer.call(this, key, value);
+      }
+    } else {
+      stack.push(value);
+    }
+
+    return replacer == null ? value instanceof Error ? stringifyError(value) : value : replacer.call(this, key, value);
+  };
+}
+
+/***/ }),
+/* 128 */
+/***/ (function(module, exports) {
+
+function RavenConfigError(message) {
+  this.name = 'RavenConfigError';
+  this.message = message;
+}
+RavenConfigError.prototype = new Error();
+RavenConfigError.prototype.constructor = RavenConfigError;
+
+module.exports = RavenConfigError;
+
+/***/ }),
+/* 129 */
+/***/ (function(module, exports) {
+
+var wrapMethod = function wrapMethod(console, level, callback) {
+  var originalConsoleLevel = console[level];
+  var originalConsole = console;
+
+  if (!(level in console)) {
+    return;
+  }
+
+  var sentryLevel = level === 'warn' ? 'warning' : level;
+
+  console[level] = function () {
+    var args = [].slice.call(arguments);
+
+    var msg = '' + args.join(' ');
+    var data = { level: sentryLevel, logger: 'console', extra: { arguments: args } };
+
+    if (level === 'assert') {
+      if (args[0] === false) {
+        // Default browsers message
+        msg = 'Assertion failed: ' + (args.slice(1).join(' ') || 'console.assert');
+        data.extra.arguments = args.slice(1);
+        callback && callback(msg, data);
+      }
+    } else {
+      callback && callback(msg, data);
+    }
+
+    // this fails for some browsers. :(
+    if (originalConsoleLevel) {
+      // IE9 doesn't allow calling apply on console functions directly
+      // See: https://stackoverflow.com/questions/5472938/does-ie9-support-console-log-and-is-it-a-real-function#answer-5473193
+      Function.prototype.apply.call(originalConsoleLevel, originalConsole, args);
+    }
+  };
+};
+
+module.exports = {
+  wrapMethod: wrapMethod
+};
 
 /***/ })
 /******/ ]);

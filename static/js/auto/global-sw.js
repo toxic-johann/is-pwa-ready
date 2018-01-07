@@ -2334,7 +2334,8 @@ if (typeof Object.create === 'function') {
 /***/ }),
 /* 51 */,
 /* 52 */,
-/* 53 */
+/* 53 */,
+/* 54 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2383,7 +2384,6 @@ var list = ['Request', 'Response', 'fetch', 'Cache', 'caches', 'Promise', 'Notif
 });
 
 /***/ }),
-/* 54 */,
 /* 55 */,
 /* 56 */,
 /* 57 */,
@@ -2425,7 +2425,7 @@ var list = ['Request', 'Response', 'fetch', 'Cache', 'caches', 'Promise', 'Notif
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__test__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__test__ = __webpack_require__(54);
 
 Object(__WEBPACK_IMPORTED_MODULE_0__test__["a" /* default */])(self);
 
