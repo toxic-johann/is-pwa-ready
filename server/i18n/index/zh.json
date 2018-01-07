@@ -43,15 +43,15 @@
       "aka": "Chrome"
     },
     {
+      "id": "firefox",
+      "name": "Firefox",
+      "aka": "火狐"
+    },
+    {
       "id": "uc",
       "name": "UC手机浏览器",
       "aka": "UC",
       "mobile": true
-    },
-    {
-      "id": "firefox",
-      "name": "Firefox",
-      "aka": "火狐"
     },
     {
       "id": "firefoxm",
@@ -118,15 +118,15 @@
       "mobile": true
     },
     {
-      "id": "samsung-internet",
-      "name": "Samsung Internet",
-      "aka": "三星",
-      "mobile": true
-    },
-    {
       "id": "quark",
       "name": "夸克浏览器",
       "aka": "夸克",
+      "mobile": true
+    },
+    {
+      "id": "samsung-internet",
+      "name": "Samsung Internet",
+      "aka": "三星",
       "mobile": true
     },
     {
@@ -205,7 +205,7 @@
         "supported": 0.91
       },
       "quark": {
-        "supported": 0.61
+        "supported": 0.81
       },
       "cheetah": {
         "supported": 0.41000000000000003
@@ -267,10 +267,7 @@
         "supported": 1
       },
       "quark": {
-        "supported": 0.8,
-        "details": [
-          "已上船。基于安卓原生浏览器实现。已经实现了部分API，但仍有较大缺陷，不建议在生产环境上使用。"
-        ]
+        "supported": 1
       },
       "cheetah": {
         "supported": 0.8,
@@ -357,7 +354,7 @@
         "supported": 1,
         "minVersion": 11.5,
         "details": [
-          "在 12.0.0. 前，Window域中未实现。"
+          "在 12.0.0 前，Window域中未实现。"
         ]
       },
       "xiaomi": {
@@ -386,8 +383,11 @@
         "minVersion": 6.5
       },
       "quark": {
-        "supported": 0.5,
-        "minVersion": 1.7
+        "supported": 1,
+        "minVersion": 1.7,
+        "details": [
+          "在 2.4 前，Window域中未实现。"
+        ]
       },
       "cheetah": {
         "supported": 0.5,
@@ -453,7 +453,7 @@
         "supported": 1,
         "minVersion": 11.5,
         "details": [
-          "在 12.0.0. 前，Window域中未实现。"
+          "在 12.0.0 前，Window域中未实现。"
         ]
       },
       "xiaomi": {
@@ -482,8 +482,11 @@
         "minVersion": 6.5
       },
       "quark": {
-        "supported": 0.5,
-        "minVersion": 1.7
+        "supported": 1,
+        "minVersion": 1.7,
+        "details": [
+          "在 2.4 前，Window域中未实现。"
+        ]
       },
       "cheetah": {
         "supported": 0.5,
@@ -552,7 +555,7 @@
         "supported": 1,
         "minVersion": 11.5,
         "details": [
-          "在 12.0.0. 前，Window域中未实现。"
+          "在 12.0.0 前，Window域中未实现。"
         ]
       },
       "xiaomi": {
@@ -583,8 +586,11 @@
         "minVersion": 6.5
       },
       "quark": {
-        "supported": 0.5,
-        "minVersion": 1.7
+        "supported": 1,
+        "minVersion": 1.7,
+        "details": [
+          "在 2.4 前，Window域中未实现。"
+        ]
       },
       "cheetah": {
         "supported": 0.5,
@@ -746,8 +752,8 @@
         "minVersion": 7.5
       },
       "quark": {
-        "supported": 0,
-        "minVersion": 1.7
+        "supported": 0.5,
+        "minVersion": 2.4
       },
       "cheetah": {
         "supported": 0,
@@ -1640,8 +1646,8 @@
         "minVersion": 6.5
       },
       "quark": {
-        "supported": 0.5,
-        "minVersion": 1.7
+        "supported": 1,
+        "minVersion": 2.4
       },
       "cheetah": {
         "supported": 0.5,
@@ -1839,8 +1845,11 @@
         "minVersion": 0.15
       },
       "quark": {
-        "supported": 0.9444444444444444,
-        "minVersion": 2
+        "supported": 1,
+        "minVersion": 2,
+        "details": [
+          "在 2.4 前，部分功能未实现。"
+        ]
       },
       "safari-preview": {
         "supported": 0.3333333333333333,
@@ -1980,8 +1989,11 @@
         "minVersion": 6.5
       },
       "quark": {
-        "supported": 0.5,
-        "minVersion": 1.7
+        "supported": 1,
+        "minVersion": 1.7,
+        "details": [
+          "在 2.4 前，Window域中未实现。"
+        ]
       },
       "cheetah": {
         "supported": 0.5,
@@ -2331,8 +2343,11 @@
         "minVersion": 6.5
       },
       "quark": {
-        "supported": 0.5,
-        "minVersion": 1.7
+        "supported": 1,
+        "minVersion": 1.7,
+        "details": [
+          "在版本 2.4 前实现并不完整"
+        ]
       },
       "cheetah": {
         "supported": 0.5,
@@ -2499,8 +2514,8 @@
         "minVersion": 0.15
       },
       "quark": {
-        "supported": 0,
-        "minVersion": 2
+        "supported": 1,
+        "minVersion": 2.4
       },
       "safari-preview": {
         "supported": 0,
@@ -2647,8 +2662,8 @@
         "minVersion": 0.15
       },
       "quark": {
-        "supported": 0,
-        "minVersion": 2
+        "supported": 1,
+        "minVersion": 2.4
       },
       "safari-preview": {
         "supported": 0,
@@ -2721,8 +2736,8 @@
         "minVersion": 0.15
       },
       "quark": {
-        "supported": 0,
-        "minVersion": 2
+        "supported": 1,
+        "minVersion": 2.4
       },
       "safari-preview": {
         "supported": 0,
@@ -2798,8 +2813,8 @@
         "minVersion": 0.15
       },
       "quark": {
-        "supported": 0,
-        "minVersion": 2
+        "supported": 1,
+        "minVersion": 2.4
       },
       "safari-preview": {
         "supported": 0,
@@ -2875,8 +2890,8 @@
         "minVersion": 0.15
       },
       "quark": {
-        "supported": 0,
-        "minVersion": 2
+        "supported": 1,
+        "minVersion": 2.4
       },
       "safari-preview": {
         "supported": 0,
@@ -3103,8 +3118,11 @@
         "minVersion": 6.5
       },
       "quark": {
-        "supported": 0.825,
-        "minVersion": 1.7
+        "supported": 1,
+        "minVersion": 1.7,
+        "details": [
+          "在 2.4 前，部分功能未实现。"
+        ]
       },
       "cheetah": {
         "supported": 0,
@@ -3383,8 +3401,8 @@
         "minVersion": 0.15
       },
       "quark": {
-        "supported": 0,
-        "minVersion": 2
+        "supported": 1,
+        "minVersion": 2.4
       },
       "safari-preview": {
         "supported": 0,
@@ -3581,8 +3599,8 @@
         "minVersion": 0.15
       },
       "quark": {
-        "supported": 0,
-        "minVersion": 2
+        "supported": 1,
+        "minVersion": 2.4
       },
       "safari-preview": {
         "supported": 0,

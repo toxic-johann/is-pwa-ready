@@ -14,8 +14,14 @@ module.exports = async function() {
       const { id } = each;
       if (result.feature[id] === undefined) return each;
       each[result.b] = each[result.b] || {};
-      each[result.b].supported = parseFloat(result.feature[id]);
-      each[result.b].minVersion = Math.min(each[result.b].minVersion || 9999, parseFloat(result.info.browser.major));
+      const originSupported = each[result.b].supported;
+      const currentSupported = parseFloat(result.feature[id]);
+      const originMinVersion = each[result.b].minVersion || 9999;
+      const currentMinVersion = parseFloat(result.info.browser.major);
+      each[result.b].supported = currentSupported;
+      each[result.b].minVersion = originSupported <= 0 && currentSupported > 0
+        ? currentMinVersion
+        : Math.min(originMinVersion, currentMinVersion);
       return each;
     });
     fs.writeFileSync('./server/i18n/index/' + key + '.json', JSON.stringify(i18n[key], null, 2));

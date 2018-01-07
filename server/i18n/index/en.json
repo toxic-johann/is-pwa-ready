@@ -43,15 +43,15 @@
       "both": true
     },
     {
+      "id": "firefox",
+      "name": "Firefox",
+      "both": true
+    },
+    {
       "id": "uc",
       "name": "UC mobile browser",
       "aka": "UC",
       "mobile": true
-    },
-    {
-      "id": "firefox",
-      "name": "Firefox",
-      "both": true
     },
     {
       "id": "firefoxm",
@@ -113,15 +113,15 @@
       "mobile": true
     },
     {
-      "id": "samsung-internet",
-      "name": "Samsung Internet",
-      "aka": "Samsung",
-      "mobile": true
-    },
-    {
       "id": "quark",
       "name": "quark browser",
       "aka": "Quark",
+      "mobile": true
+    },
+    {
+      "id": "samsung-internet",
+      "name": "Samsung Internet",
+      "aka": "Samsung",
       "mobile": true
     },
     {
@@ -200,7 +200,7 @@
         "supported": 0.91
       },
       "quark": {
-        "supported": 0.61
+        "supported": 0.81
       },
       "cheetah": {
         "supported": 0.41000000000000003
@@ -259,10 +259,7 @@
         "supported": 1
       },
       "quark": {
-        "supported": 0.8,
-        "details": [
-          "Shipped. Based on Android browser. They have implemented some API, but still not advice to use it in production environment. "
-        ]
+        "supported": 1
       },
       "cheetah": {
         "supported": 0.8,
@@ -378,8 +375,11 @@
         "minVersion": 6.5
       },
       "quark": {
-        "supported": 0.5,
-        "minVersion": 1.7
+        "supported": 1,
+        "minVersion": 1.7,
+        "details": [
+          "Versions before 2.4 have not completed implementation on window scope."
+        ]
       },
       "cheetah": {
         "supported": 0.5,
@@ -471,8 +471,11 @@
         "minVersion": 6.5
       },
       "quark": {
-        "supported": 0.5,
-        "minVersion": 1.7
+        "supported": 1,
+        "minVersion": 1.7,
+        "details": [
+          "Versions before 2.4 have not completed implementation on window scope."
+        ]
       },
       "cheetah": {
         "supported": 0.5,
@@ -569,8 +572,11 @@
         "minVersion": 6.5
       },
       "quark": {
-        "supported": 0.5,
-        "minVersion": 1.7
+        "supported": 1,
+        "minVersion": 1.7,
+        "details": [
+          "Versions before 2.4 have not completed implementation on window scope."
+        ]
       },
       "cheetah": {
         "supported": 0.5,
@@ -736,8 +742,8 @@
         "minVersion": 7.5
       },
       "quark": {
-        "supported": 0,
-        "minVersion": 1.7
+        "supported": 0.5,
+        "minVersion": 2.4
       },
       "cheetah": {
         "supported": 0,
@@ -1634,8 +1640,11 @@
         "minVersion": 6.5
       },
       "quark": {
-        "supported": 0.5,
-        "minVersion": 1.7
+        "supported": 1,
+        "minVersion": 1.7,
+        "details": [
+          "Versions before 2.4 are only partial supported."
+        ]
       },
       "cheetah": {
         "supported": 0.5,
@@ -1833,8 +1842,11 @@
         "minVersion": 0.15
       },
       "quark": {
-        "supported": 0.9444444444444444,
-        "minVersion": 2
+        "supported": 1,
+        "minVersion": 2,
+        "details": [
+          "Versions before 2.4 lack of client.claim, which block us from immediate update"
+        ]
       },
       "safari-preview": {
         "supported": 0.3333333333333333,
@@ -1974,8 +1986,11 @@
         "minVersion": 6.5
       },
       "quark": {
-        "supported": 0.5,
-        "minVersion": 1.7
+        "supported": 1,
+        "minVersion": 1.7,
+        "details": [
+          "Versions before 2.4 are only partial supported."
+        ]
       },
       "cheetah": {
         "supported": 0.5,
@@ -2325,8 +2340,11 @@
         "minVersion": 6.5
       },
       "quark": {
-        "supported": 0.5,
-        "minVersion": 1.7
+        "supported": 1,
+        "minVersion": 1.7,
+        "details": [
+          "Versions before 2.4 are only partial supported."
+        ]
       },
       "cheetah": {
         "supported": 0.5,
@@ -2493,8 +2511,8 @@
         "minVersion": 0.15
       },
       "quark": {
-        "supported": 0,
-        "minVersion": 2
+        "supported": 1,
+        "minVersion": 2.4
       },
       "safari-preview": {
         "supported": 0,
@@ -2641,8 +2659,8 @@
         "minVersion": 0.15
       },
       "quark": {
-        "supported": 0,
-        "minVersion": 2
+        "supported": 1,
+        "minVersion": 2.4
       },
       "safari-preview": {
         "supported": 0,
@@ -2715,8 +2733,8 @@
         "minVersion": 0.15
       },
       "quark": {
-        "supported": 0,
-        "minVersion": 2
+        "supported": 1,
+        "minVersion": 2.4
       },
       "safari-preview": {
         "supported": 0,
@@ -2792,8 +2810,8 @@
         "minVersion": 0.15
       },
       "quark": {
-        "supported": 0,
-        "minVersion": 2
+        "supported": 1,
+        "minVersion": 2.4
       },
       "safari-preview": {
         "supported": 0,
@@ -2869,8 +2887,8 @@
         "minVersion": 0.15
       },
       "quark": {
-        "supported": 0,
-        "minVersion": 2
+        "supported": 1,
+        "minVersion": 2.4
       },
       "safari-preview": {
         "supported": 0,
@@ -3100,8 +3118,11 @@
         "minVersion": 6.5
       },
       "quark": {
-        "supported": 0.825,
-        "minVersion": 1.7
+        "supported": 1,
+        "minVersion": 1.7,
+        "details": [
+          "Versions before 2.4 are only partial supported."
+        ]
       },
       "cheetah": {
         "supported": 0,
@@ -3368,8 +3389,8 @@
         "minVersion": 0.15
       },
       "quark": {
-        "supported": 0,
-        "minVersion": 2
+        "supported": 1,
+        "minVersion": 2.4
       },
       "safari-preview": {
         "supported": 0,
@@ -3566,8 +3587,8 @@
         "minVersion": 0.15
       },
       "quark": {
-        "supported": 0,
-        "minVersion": 2
+        "supported": 1,
+        "minVersion": 2.4
       },
       "safari-preview": {
         "supported": 0,
