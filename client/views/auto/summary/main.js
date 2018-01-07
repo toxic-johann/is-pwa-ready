@@ -36,11 +36,13 @@ export default async function() {
     type: 'success',
     showCancelButton: true,
     confirmButtonText: copyTips.success.confirmButtonText,
-  }, isConfirm => {
-    if (isConfirm) {
-      location.href = 'https://github.com/toxic-johann/is-pwa-ready/issues';
-    }
-  }));
+  })
+    .then(isConfirm => {
+      if (isConfirm) {
+        location.href = 'https://github.com/toxic-johann/is-pwa-ready/issues';
+      }
+    })
+  );
   clipboard.on('error', () => sweetAlert({
     title: copyTips.error.title,
     text: copyTips.error.text,
