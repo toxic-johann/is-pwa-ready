@@ -43,6 +43,12 @@
       "aka": "Chrome"
     },
     {
+      "id": "uc",
+      "name": "UC手机浏览器",
+      "aka": "UC",
+      "mobile": true
+    },
+    {
       "id": "firefox",
       "name": "Firefox",
       "aka": "火狐"
@@ -77,12 +83,6 @@
       "name": "Brave"
     },
     {
-      "id": "xiaomi",
-      "name": "小米原生浏览器",
-      "aka": "小米",
-      "mobile": true
-    },
-    {
       "id": "m360",
       "name": "360手机浏览器",
       "aka": "360",
@@ -112,9 +112,9 @@
       "mobile": true
     },
     {
-      "id": "uc",
-      "name": "UC手机浏览器",
-      "aka": "UC",
+      "id": "xiaomi",
+      "name": "小米原生浏览器",
+      "aka": "小米",
       "mobile": true
     },
     {
@@ -187,7 +187,7 @@
         "supported": 0.81
       },
       "uc": {
-        "supported": 0.61
+        "supported": 1
       },
       "qqm": {
         "supported": 0.51
@@ -264,10 +264,7 @@
         ]
       },
       "uc": {
-        "supported": 0.8,
-        "details": [
-          "已上船。基于安卓原生浏览器实现。已经实现了部分API，但仍有较大缺陷，不建议在生产环境上使用。"
-        ]
+        "supported": 1
       },
       "quark": {
         "supported": 0.8,
@@ -357,10 +354,10 @@
         "supported": 1
       },
       "uc": {
-        "supported": 0.5,
+        "supported": 1,
         "minVersion": 11.5,
         "details": [
-          "Window域中暂未实现。"
+          "在 12.0.0. 前，Window域中未实现。"
         ]
       },
       "xiaomi": {
@@ -453,10 +450,10 @@
         "minVersion": 14
       },
       "uc": {
-        "supported": 0.5,
+        "supported": 1,
         "minVersion": 11.5,
         "details": [
-          "Window域中暂未实现。"
+          "在 12.0.0. 前，Window域中未实现。"
         ]
       },
       "xiaomi": {
@@ -552,10 +549,10 @@
         "minVersion": 14
       },
       "uc": {
-        "supported": 0.5,
+        "supported": 1,
         "minVersion": 11.5,
         "details": [
-          "Window域中暂未实现。"
+          "在 12.0.0. 前，Window域中未实现。"
         ]
       },
       "xiaomi": {
@@ -660,8 +657,11 @@
         "minVersion": 6.5
       },
       "uc": {
-        "supported": 0.5,
-        "minVersion": 11.5
+        "supported": 1,
+        "minVersion": 11.5,
+        "details": [
+          "在版本 12.0.0 前实现并不完整"
+        ]
       },
       "qqm": {
         "supported": 0.5,
@@ -738,8 +738,8 @@
         "minVersion": 6.5
       },
       "uc": {
-        "supported": 0,
-        "minVersion": 11.5
+        "supported": 1,
+        "minVersion": 12
       },
       "qqm": {
         "supported": 0,
@@ -1608,11 +1608,8 @@
         "supported": 0
       },
       "uc": {
-        "supported": 0.5,
-        "details": [
-          "准备实现"
-        ],
-        "minVersion": 11.5
+        "supported": 1,
+        "minVersion": 12
       },
       "xiaomi": {
         "supported": 1,
@@ -1801,10 +1798,11 @@
         "supported": 0
       },
       "uc": {
-        "supported": 0.5,
+        "supported": 1,
         "details": [
-          "client.claim不可用，导致只能关闭客户端才能更新。"
-        ]
+          "在 12.0.0 前，client.claim不可用，导致只能关闭客户端才能更新。"
+        ],
+        "minVersion": 12
       },
       "xiaomi": {
         "supported": 1
@@ -1948,10 +1946,10 @@
         "minVersion": 14
       },
       "uc": {
-        "supported": 0.5,
+        "supported": 1,
         "minVersion": 11.5,
         "details": [
-          "Window域中暂未实现。"
+          "在 12.0.0 前，Window域中未实现。"
         ]
       },
       "xiaomi": {
@@ -2299,8 +2297,11 @@
         "supported": 0
       },
       "uc": {
-        "supported": 0.5,
-        "minVersion": 11.5
+        "supported": 1,
+        "minVersion": 11.5,
+        "details": [
+          "在版本 12.0.0 前实现并不完整"
+        ]
       },
       "xiaomi": {
         "supported": 1,
@@ -2482,8 +2483,8 @@
         "minVersion": 6.5
       },
       "uc": {
-        "supported": 0,
-        "minVersion": 11.5
+        "supported": 1,
+        "minVersion": 12
       },
       "s360": {
         "supported": 0,
@@ -2630,8 +2631,8 @@
         "minVersion": 6.5
       },
       "uc": {
-        "supported": 0,
-        "minVersion": 11.5
+        "supported": 1,
+        "minVersion": 12
       },
       "s360": {
         "supported": 1,
@@ -2704,8 +2705,8 @@
         "minVersion": 6.5
       },
       "uc": {
-        "supported": 0,
-        "minVersion": 11.5
+        "supported": 1,
+        "minVersion": 12
       },
       "s360": {
         "supported": 0,
@@ -2781,8 +2782,8 @@
         "minVersion": 6.5
       },
       "uc": {
-        "supported": 0,
-        "minVersion": 11.5
+        "supported": 1,
+        "minVersion": 12
       },
       "s360": {
         "supported": 1,
@@ -2858,8 +2859,8 @@
         "minVersion": 6.5
       },
       "uc": {
-        "supported": 0,
-        "minVersion": 11.5
+        "supported": 1,
+        "minVersion": 12
       },
       "s360": {
         "supported": 1,
@@ -3064,9 +3065,9 @@
         "supported": 0
       },
       "uc": {
-        "supported": 0.825,
+        "supported": 1,
         "details": [
-          "可用，但Api实现不是最优选择。缺乏event.source，clients.matchAll，且messageChannel不能正常使用addEventListener."
+          "【在 12.0.0 已修复】 可用，但Api实现不是最优选择。缺乏event.source，clients.matchAll，且messageChannel不能正常使用addEventListener."
         ],
         "minVersion": 11.5
       },
@@ -3161,11 +3162,8 @@
         "supported": 0
       },
       "uc": {
-        "supported": 0,
-        "details": [
-          "存在Notification对象，但不可用"
-        ],
-        "minVersion": 11.5
+        "supported": 1,
+        "minVersion": 12
       },
       "xiaomi": {
         "supported": 0,
@@ -3339,8 +3337,8 @@
         ]
       },
       "uc": {
-        "supported": 0,
-        "minVersion": 11.5
+        "supported": 1,
+        "minVersion": 12
       },
       "qqm": {
         "supported": 0
@@ -3431,8 +3429,8 @@
         "minVersion": 52
       },
       "uc": {
-        "supported": 0,
-        "minVersion": 11.5
+        "supported": 1,
+        "minVersion": 12
       },
       "s360": {
         "supported": 1,
@@ -3567,8 +3565,8 @@
         "minVersion": 52
       },
       "uc": {
-        "supported": 0,
-        "minVersion": 11.5
+        "supported": 1,
+        "minVersion": 12
       },
       "s360": {
         "supported": 0,
@@ -3690,7 +3688,7 @@
         "supported": 0
       },
       "uc": {
-        "supported": 0
+        "supported": 1
       },
       "qqm": {
         "supported": 0

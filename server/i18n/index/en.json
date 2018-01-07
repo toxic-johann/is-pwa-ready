@@ -43,6 +43,12 @@
       "both": true
     },
     {
+      "id": "uc",
+      "name": "UC mobile browser",
+      "aka": "UC",
+      "mobile": true
+    },
+    {
       "id": "firefox",
       "name": "Firefox",
       "both": true
@@ -70,12 +76,6 @@
       "name": "qq browser",
       "aka": "QQ Browser",
       "icon": "qqm"
-    },
-    {
-      "id": "m360",
-      "name": "360 mobile browser",
-      "aka": "360",
-      "mobile": true
     },
     {
       "id": "xiaomi",
@@ -107,9 +107,9 @@
       "mobile": true
     },
     {
-      "id": "uc",
-      "name": "UC mobile browser",
-      "aka": "UC",
+      "id": "m360",
+      "name": "360 mobile browser",
+      "aka": "360",
       "mobile": true
     },
     {
@@ -182,7 +182,7 @@
         "supported": 0.81
       },
       "uc": {
-        "supported": 0.61
+        "supported": 1
       },
       "qqm": {
         "supported": 0.51
@@ -256,10 +256,7 @@
         ]
       },
       "uc": {
-        "supported": 0.8,
-        "details": [
-          "Shipped. Based on Android browser. They have implemented some API, but still not advice to use it in production environment. "
-        ]
+        "supported": 1
       },
       "quark": {
         "supported": 0.8,
@@ -349,10 +346,10 @@
         "supported": 1
       },
       "uc": {
-        "supported": 0.5,
+        "supported": 1,
         "minVersion": 11.5,
         "details": [
-          "Have not completed implementation on window scope."
+          "Versions before 12 have not completed implementation on window scope."
         ]
       },
       "xiaomi": {
@@ -442,10 +439,10 @@
         "minVersion": 14
       },
       "uc": {
-        "supported": 0.5,
+        "supported": 1,
         "minVersion": 11.5,
         "details": [
-          "Have not completed implementation on window scope."
+          "Versions before 12 have not completed implementation on window scope."
         ]
       },
       "xiaomi": {
@@ -538,10 +535,10 @@
         "minVersion": 14
       },
       "uc": {
-        "supported": 0.5,
+        "supported": 1,
         "minVersion": 11.5,
         "details": [
-          "Have not completed implementation on window scope."
+          "Versions before 12 have not completed implementation on window scope."
         ]
       },
       "xiaomi": {
@@ -646,8 +643,11 @@
         "minVersion": 6.5
       },
       "uc": {
-        "supported": 0.5,
-        "minVersion": 11.5
+        "supported": 1,
+        "minVersion": 11.5,
+        "details": [
+          "full support until version 12"
+        ]
       },
       "qqm": {
         "supported": 0.5,
@@ -728,8 +728,8 @@
         "minVersion": 6.5
       },
       "uc": {
-        "supported": 0,
-        "minVersion": 11.5
+        "supported": 1,
+        "minVersion": 12
       },
       "qqm": {
         "supported": 0,
@@ -1602,11 +1602,8 @@
         "supported": 0
       },
       "uc": {
-        "supported": 0.5,
-        "details": [
-          "In development"
-        ],
-        "minVersion": 11.5
+        "supported": 1,
+        "minVersion": 12
       },
       "xiaomi": {
         "supported": 1,
@@ -1795,9 +1792,9 @@
         "supported": 0
       },
       "uc": {
-        "supported": 0.5,
+        "supported": 1,
         "details": [
-          "Lack of client.claim make us could not update immediately"
+          "Versions before 12 lack of client.claim, which block us from immediate update"
         ],
         "minVersion": 11.5
       },
@@ -1943,8 +1940,11 @@
         "minVersion": 14
       },
       "uc": {
-        "supported": 0.5,
-        "minVersion": 11.5
+        "supported": 1,
+        "minVersion": 11.5,
+        "details": [
+          "full support until version 12"
+        ]
       },
       "xiaomi": {
         "supported": 1,
@@ -2291,8 +2291,11 @@
         "supported": 0
       },
       "uc": {
-        "supported": 0.5,
-        "minVersion": 11.5
+        "supported": 1,
+        "minVersion": 11.5,
+        "details": [
+          "full support until version 12"
+        ]
       },
       "xiaomi": {
         "supported": 1,
@@ -2474,8 +2477,8 @@
         "minVersion": 6.5
       },
       "uc": {
-        "supported": 0,
-        "minVersion": 11.5
+        "supported": 1,
+        "minVersion": 12
       },
       "s360": {
         "supported": 0,
@@ -2622,8 +2625,8 @@
         "minVersion": 6.5
       },
       "uc": {
-        "supported": 0,
-        "minVersion": 11.5
+        "supported": 1,
+        "minVersion": 12
       },
       "s360": {
         "supported": 1,
@@ -2696,8 +2699,8 @@
         "minVersion": 6.5
       },
       "uc": {
-        "supported": 0,
-        "minVersion": 11.5
+        "supported": 1,
+        "minVersion": 12
       },
       "s360": {
         "supported": 0,
@@ -2773,8 +2776,8 @@
         "minVersion": 6.5
       },
       "uc": {
-        "supported": 0,
-        "minVersion": 11.5
+        "supported": 1,
+        "minVersion": 12
       },
       "s360": {
         "supported": 1,
@@ -2850,8 +2853,8 @@
         "minVersion": 6.5
       },
       "uc": {
-        "supported": 0,
-        "minVersion": 11.5
+        "supported": 1,
+        "minVersion": 12
       },
       "s360": {
         "supported": 1,
@@ -3056,9 +3059,9 @@
         "supported": 0
       },
       "uc": {
-        "supported": 0.825,
+        "supported": 1,
         "details": [
-          "You can use this on UC. But you should be careful. Their implementation on <code>event.source</code>, <code>clients.matchAll</code> and <code>MessageChannel.port1.addEventListener</code> are not good. You should avoid this because they may cause bug or just be useless."
+          "[Fixed after version 12] You can use this on UC. But you should be careful. Their implementation on <code>event.source</code>, <code>clients.matchAll</code> and <code>MessageChannel.port1.addEventListener</code> are not good. You should avoid this because they may cause bug or just be useless."
         ],
         "minVersion": 11.5
       },
@@ -3156,8 +3159,8 @@
         "supported": 0
       },
       "uc": {
-        "supported": 0,
-        "minVersion": 11.5
+        "supported": 1,
+        "minVersion": 12
       },
       "xiaomi": {
         "supported": 0,
@@ -3323,8 +3326,8 @@
         "minVersion": 45
       },
       "uc": {
-        "supported": 0,
-        "minVersion": 11.5
+        "supported": 1,
+        "minVersion": 12
       },
       "qqm": {
         "supported": 1
@@ -3411,8 +3414,8 @@
         "minVersion": 52
       },
       "uc": {
-        "supported": 0,
-        "minVersion": 11.5
+        "supported": 1,
+        "minVersion": 12
       },
       "s360": {
         "supported": 1,
@@ -3547,8 +3550,8 @@
         "minVersion": 52
       },
       "uc": {
-        "supported": 0,
-        "minVersion": 11.5
+        "supported": 1,
+        "minVersion": 12
       },
       "s360": {
         "supported": 0,
@@ -3669,7 +3672,7 @@
         "supported": 0
       },
       "uc": {
-        "supported": 0
+        "supported": 1
       },
       "qqb": {
         "supported": 1
