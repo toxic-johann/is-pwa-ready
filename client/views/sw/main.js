@@ -12,7 +12,7 @@ self.addEventListener('install', event => {
   );
 });
 
-self.addEventListener('active', () => self.clients.claim());
+self.addEventListener('activate', () => self.clients.claim());
 
 function remote(request) {
   const noCors = !request.url.match(location.origin);
