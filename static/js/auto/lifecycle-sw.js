@@ -2405,7 +2405,16 @@ self.oninstall = function (event) {
     }).then(function () {
       console.log('This should appear before activate');
       installWaitUntilFlag = true;
-    }));
+      if (self.registration.navigationPreload) {
+        return Promise.resolve().then(function () {
+          // Enable navigation preloads!
+          console.log('Support navigation preload preload');
+          return self.registration.navigationPreload.enable();
+        }).then(function () {
+          __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'navigationPreload');
+        });
+      }
+    }).then(function () {}));
   }
   skipWaitingFlag = true;
   // omit waiting period so that we can activate

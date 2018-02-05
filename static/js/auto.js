@@ -2341,7 +2341,7 @@ if (typeof Object.create === 'function') {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return info; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return copyTips; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return testTips; });
-var featureKeys = ['Promise', 'Request', 'Response', 'indexedDB', 'indexedDB.getAll', 'navigator.serviceWorker', 'Registered', 'installEvent', 'installEvent.waitUntil', 'self.skipWaiting', 'oncontrollerchange', 'navigator.serviceWorker.ready', 'activateEvent', 'activateEvent.waitUntil', 'clients.claim', 'lifecycle', 'clients.matchAll', 'Unregistered', 'fetch', 'fetchEvent', 'fetchEvent.request', 'fetchEvent.respondWith', 'Cache', 'caches', 'cache.add', 'cache.addAll', 'cache.delete', 'cache.match', 'cache.put', 'cache.keys', 'caches.delete', 'caches.has', 'caches.open', 'postMessage', 'main-msg-got', 'main-msg-got-by', 'main-msg-send', 'sw-msg-got', 'sw-msg-send', 'sw-msg-send-by', 'syncEvent', 'Notification', 'pushManager.subscribe', 'pushManager.getSubscription', 'pushManager.permissionState', 'pushSubscription.unsubscribe'];
+var featureKeys = ['Promise', 'Request', 'Response', 'indexedDB', 'indexedDB.getAll', 'navigator.serviceWorker', 'Registered', 'installEvent', 'installEvent.waitUntil', 'self.skipWaiting', 'oncontrollerchange', 'navigator.serviceWorker.ready', 'activateEvent', 'activateEvent.waitUntil', 'clients.claim', 'lifecycle', 'clients.matchAll', 'Unregistered', 'fetch', 'fetchEvent', 'fetchEvent.request', 'fetchEvent.respondWith', 'Cache', 'caches', 'cache.add', 'cache.addAll', 'cache.delete', 'cache.match', 'cache.put', 'cache.keys', 'caches.delete', 'caches.has', 'caches.open', 'postMessage', 'main-msg-got', 'main-msg-got-by', 'main-msg-send', 'sw-msg-got', 'sw-msg-send', 'sw-msg-send-by', 'syncEvent', 'Notification', 'pushManager.subscribe', 'pushManager.getSubscription', 'pushManager.permissionState', 'pushSubscription.unsubscribe', 'navigationPreload', 'navigationPreload.getState'];
 var infoKeys = ['browser', 'os', 'device'];
 
 var info = {
@@ -5153,7 +5153,7 @@ function genWaiter(fn) {
     }
   }
 
-  var i, hasSW, waiter, reg, activateWaitUntilScore, response, clarify, clientsclaimScore, sum, _i, key, score, _test2;
+  var i, hasSW, waiter, reg, activateWaitUntilScore, state, response, clarify, clientsclaimScore, sum, _i, key, score, _test2, _test3;
 
   return Promise.resolve().then(function () {
     __webpack_require__(56);
@@ -5189,23 +5189,37 @@ function genWaiter(fn) {
         activateWaitUntilScore = _resp;
         return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', (parseFloat(activateWaitUntilScore) || 0) + 0.5, 'activateEvent.waitUntil');
       }).then(function () {
+        _test2 = reg.navigationPreload && reg.navigationPreload.getState;
+
+        if (_test2) {
+          return Promise.resolve().then(function () {
+            return reg.navigationPreload.getState();
+          }).then(function (_resp) {
+            state = _resp;
+
+            console.warn(state);
+          });
+        }
+      }).then(function () {
+        if (_test2 && state) {
+          return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'navigationPreload.getState');
+        }
+      }).then(function () {
         return fetch('/whoareyou.json');
       }).then(function (_resp) {
         response = _resp;
-        _test2 = response.ok;
+        _test3 = response.ok;
         // unregister test
 
-        if (_test2) {
+        if (_test3) {
           return Promise.resolve().then(function () {
             return response.json();
           }).then(function (_resp) {
             clarify = _resp;
-
-            console.log('clarify who controll the page', clarify);
           });
         }
       }).then(function () {
-        if (_test2 && clarify['i am'] === 'lifecycle-sw') {
+        if (_test3 && clarify['i am'] === 'lifecycle-sw') {
           return Promise.resolve().then(function () {
             return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].get('feature', 'clients.claim');
           }).then(function (_resp) {

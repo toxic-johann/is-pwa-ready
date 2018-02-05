@@ -45,6 +45,8 @@ export const featureKeys = [
   'pushManager.getSubscription',
   'pushManager.permissionState',
   'pushSubscription.unsubscribe',
+  'navigationPreload',
+  'navigationPreload.getState',
 ];
 export const infoKeys = [
   'browser',

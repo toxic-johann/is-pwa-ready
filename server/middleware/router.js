@@ -42,5 +42,6 @@ const paths = pages.reduce((paths, each) => {
   { path: '/auto/*', handler: require('../pages/auto.js') },
   { path: '/sw.js', handler: require('../pages/sw.js') },
   { path: '/googleb2d01223dfd5850d.html', handler: require('../pages/googleb2d01223dfd5850d.js') },
+  { path: '/whoareyou.json', handler: require('../pages/whoareyou.js') },
 ]);
 module.exports = new Router(paths);

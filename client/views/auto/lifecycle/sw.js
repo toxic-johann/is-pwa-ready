@@ -15,6 +15,12 @@ self.oninstall = function(event) {
       await sleep(1000);
       console.log('This should appear before activate');
       installWaitUntilFlag = true;
+      if (self.registration.navigationPreload) {
+        // Enable navigation preloads!
+        console.log('Support navigation preload preload');
+        await self.registration.navigationPreload.enable();
+        store.put('feature', 1, 'navigationPreload');
+      }
     })());
   }
   skipWaitingFlag = true;
@@ -56,12 +62,11 @@ self.onfetch = function(event) {
   }
   const url = new URL(event.request.url);
   if (url.pathname.endsWith('/whoareyou.json')) {
-    event.respondWith(
-      new Response('{"i am": "lifecycle-sw"}', {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
+    event.respondWith(new Response('{"i am": "lifecycle-sw"}', {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
     );
   }
 };

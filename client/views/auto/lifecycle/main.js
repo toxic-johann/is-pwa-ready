@@ -55,10 +55,14 @@ export default async function() {
   await sleep(3000);
   const activateWaitUntilScore = await store.get('feature', 'activateEvent.waitUntil');
   await store.put('feature', (parseFloat(activateWaitUntilScore) || 0) + 0.5, 'activateEvent.waitUntil');
+  if (reg.navigationPreload && reg.navigationPreload.getState) {
+    const state = await reg.navigationPreload.getState();
+    console.warn(state);
+    if (state) await store.put('feature', 1, 'navigationPreload.getState');
+  }
   const response = await fetch('/whoareyou.json');
   if (response.ok) {
     const clarify = await response.json();
-    console.log('clarify who controll the page', clarify);
     if (clarify['i am'] === 'lifecycle-sw') {
       const clientsclaimScore = await store.get('feature', 'clients.claim');
       await store.put('feature', (parseFloat(clientsclaimScore) || 0) + 0.5, 'clients.claim');
