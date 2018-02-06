@@ -1,13 +1,19 @@
 import store from 'store';
 self.addEventListener('push', function(event) {
-  // const options = event.data.json()
-  // console.log(options)
-  // event.waitUntil(self.registration.showNotification(options.title, options))
-  event.waitUntil(self.registration.showNotification('Hmmm, how lucky you are', {
-    body: 'Yay it works.',
-    icon: 'https://p5.ssl.qhimg.com/t01245986c32f09718d.png',
-  }));
-  store.put('feature', 1, 'pushEvent');
+  event.waitUntil((async function() {
+    await store.put('feature', 1, 'pushEvent');
+    if (navigator.budget) {
+      await store.put('feature', 1, 'navigator.budget');
+      // https://wicg.github.io/budget-api/#enumdef-operationtype
+      const reserved = await navigator.budget.reserve('silent-push');
+      await store.put('feature', 1, 'navigator.budget.reserve');
+      if (reserved) return;
+    }
+    self.registration.showNotification('Hmmm, how lucky you are', {
+      body: 'Yay it works.',
+      icon: 'https://p5.ssl.qhimg.com/t01245986c32f09718d.png',
+    });
+  })());
 });
 self.addEventListener('notificationclick', function(event) {
 

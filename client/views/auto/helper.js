@@ -50,6 +50,8 @@ export const featureKeys = [
   'BeforeInstallPromptEvent',
   'manifestLink',
   'web-app-manifest',
+  'navigator.budget',
+  'navigator.budget.reserve',
 ];
 export const infoKeys = [
   'browser',

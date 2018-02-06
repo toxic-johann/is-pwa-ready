@@ -2390,14 +2390,34 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_store__ = __webpack_require__(9);
 
 self.addEventListener('push', function (event) {
-  // const options = event.data.json()
-  // console.log(options)
-  // event.waitUntil(self.registration.showNotification(options.title, options))
-  event.waitUntil(self.registration.showNotification('Hmmm, how lucky you are', {
-    body: 'Yay it works.',
-    icon: 'https://p5.ssl.qhimg.com/t01245986c32f09718d.png'
-  }));
-  __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'pushEvent');
+  event.waitUntil(function () {
+    var reserved, _test;
+
+    return Promise.resolve().then(function () {
+      return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'pushEvent');
+    }).then(function () {
+      _test = navigator.budget;
+
+      if (_test) {
+        return Promise.resolve().then(function () {
+          return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'navigator.budget');
+        }).then(function () {
+          return navigator.budget.reserve('silent-push');
+        }).then(function (_resp) {
+          // https://wicg.github.io/budget-api/#enumdef-operationtype
+          reserved = _resp;
+          return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'navigator.budget.reserve');
+        });
+      }
+    }).then(function () {
+      if (!(_test && reserved)) {
+        self.registration.showNotification('Hmmm, how lucky you are', {
+          body: 'Yay it works.',
+          icon: 'https://p5.ssl.qhimg.com/t01245986c32f09718d.png'
+        });
+      }
+    });
+  }());
 });
 self.addEventListener('notificationclick', function (event) {
 

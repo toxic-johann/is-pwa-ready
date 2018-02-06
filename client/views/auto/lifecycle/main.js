@@ -57,7 +57,6 @@ export default async function() {
   await store.put('feature', (parseFloat(activateWaitUntilScore) || 0) + 0.5, 'activateEvent.waitUntil');
   if (reg.navigationPreload && reg.navigationPreload.getState) {
     const state = await reg.navigationPreload.getState();
-    console.warn(state);
     if (state) await store.put('feature', 1, 'navigationPreload.getState');
   }
   const response = await fetch('/whoareyou.json');
