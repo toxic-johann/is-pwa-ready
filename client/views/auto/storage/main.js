@@ -32,4 +32,13 @@ export default async function() {
     store.put('feature', 0, 'storage.estimate');
   }
   console.log({ usage, quota });
+  if (navigator.storage && navigator.storage.persist) {
+    try {
+      await navigator.storage.persist();
+      await store.put('feature', 1, 'storage.persist');
+    } catch (error) {
+      await store.put('feature', 0, 'storage.persist');
+      console.error(error);
+    }
+  }
 }

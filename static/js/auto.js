@@ -11276,7 +11276,20 @@ function storageEstimateWrapper() {
       __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 0, 'storage.estimate');
     }
     console.log({ usage: usage, quota: quota });
-  });
+    if (navigator.storage && navigator.storage.persist) {
+      return Promise.resolve().then(function () {
+        return navigator.storage.persist();
+      }).then(function () {
+        return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'storage.persist');
+      }).catch(function (error) {
+        return Promise.resolve().then(function () {
+          return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 0, 'storage.persist');
+        }).then(function () {
+          console.error(error);
+        });
+      });
+    }
+  }).then(function () {});
 });
 
 /***/ })

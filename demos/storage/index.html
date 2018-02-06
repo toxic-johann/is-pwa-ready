@@ -51,6 +51,16 @@
       storageEstimateWrapper()
         .then(data => {
           log('The quota is ' + data.quota + '; and we have used ' + data.usage);
+          if (navigator.storage && navigator.storage.persist) {
+            navigator.storage.persist().then(granted => {
+              if (granted)
+                log('Storage will not be cleared except by explicit user action');
+              else
+                log('Storage may be cleared by the UA under storage pressure.');
+            });
+          } else {
+            log('storage.persist is not suppor');
+          }
         });
     })();
 
