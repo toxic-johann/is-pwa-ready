@@ -12,6 +12,7 @@ import env from './env/main';
 import summary from './summary/main';
 import cache from './cache/main';
 import push from './push/main';
+import storage from './storage/main';
 import manifest from './manifest/main';
 import { search2obj } from 'utils';
 import './main.css';
@@ -20,7 +21,7 @@ import 'views/common/raven';
 window.addEventListener('unhandledrejection', function(event) {
   console.warn('WARNING: Unhandled promise rejection. Shame on you! Reason: ' + event.reason);
 });
-info.totalSchedule = 9;
+info.totalSchedule = 10;
 const { step = '0' } = search2obj();
 (async function main() {
   // await push()
@@ -30,6 +31,8 @@ const { step = '0' } = search2obj();
       await env();
       await result();
       await globalTest();
+      await result();
+      await storage();
       await result();
       await empty();
       return;

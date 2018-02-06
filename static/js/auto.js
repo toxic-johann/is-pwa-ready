@@ -2341,7 +2341,7 @@ if (typeof Object.create === 'function') {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return info; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return copyTips; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return testTips; });
-var featureKeys = ['Promise', 'Request', 'Response', 'indexedDB', 'indexedDB.getAll', 'navigator.serviceWorker', 'Registered', 'installEvent', 'installEvent.waitUntil', 'self.skipWaiting', 'oncontrollerchange', 'navigator.serviceWorker.ready', 'activateEvent', 'activateEvent.waitUntil', 'clients.claim', 'lifecycle', 'clients.matchAll', 'Unregistered', 'fetch', 'fetchEvent', 'fetchEvent.request', 'fetchEvent.respondWith', 'Cache', 'caches', 'cache.add', 'cache.addAll', 'cache.delete', 'cache.match', 'cache.put', 'cache.keys', 'caches.delete', 'caches.has', 'caches.open', 'postMessage', 'main-msg-got', 'main-msg-got-by', 'main-msg-send', 'sw-msg-got', 'sw-msg-send', 'sw-msg-send-by', 'syncEvent', 'Notification', 'pushManager.subscribe', 'pushManager.getSubscription', 'pushManager.permissionState', 'pushSubscription.unsubscribe', 'navigationPreload', 'navigationPreload.getState', 'BeforeInstallPromptEvent', 'manifestLink', 'web-app-manifest', 'navigator.budget', 'navigator.budget.reserve'];
+var featureKeys = ['Promise', 'Request', 'Response', 'indexedDB', 'indexedDB.getAll', 'navigator.serviceWorker', 'Registered', 'installEvent', 'installEvent.waitUntil', 'self.skipWaiting', 'oncontrollerchange', 'navigator.serviceWorker.ready', 'activateEvent', 'activateEvent.waitUntil', 'clients.claim', 'lifecycle', 'clients.matchAll', 'Unregistered', 'fetch', 'fetchEvent', 'fetchEvent.request', 'fetchEvent.respondWith', 'Cache', 'caches', 'cache.add', 'cache.addAll', 'cache.delete', 'cache.match', 'cache.put', 'cache.keys', 'caches.delete', 'caches.has', 'caches.open', 'postMessage', 'main-msg-got', 'main-msg-got-by', 'main-msg-send', 'sw-msg-got', 'sw-msg-send', 'sw-msg-send-by', 'syncEvent', 'Notification', 'pushManager.subscribe', 'pushManager.getSubscription', 'pushManager.permissionState', 'pushSubscription.unsubscribe', 'navigationPreload', 'navigationPreload.getState', 'BeforeInstallPromptEvent', 'manifestLink', 'web-app-manifest', 'navigator.budget', 'navigator.budget.reserve', 'storage', 'storage.estimate'];
 var infoKeys = ['browser', 'os', 'device'];
 
 var info = {
@@ -3499,14 +3499,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__summary_main__ = __webpack_require__(78);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__cache_main__ = __webpack_require__(89);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__push_main__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__manifest_main__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_utils__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__main_css__ = __webpack_require__(91);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__main_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15__main_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__helper__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_views_common_raven__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__storage_main__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__manifest_main__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_utils__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__main_css__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__main_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16__main_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__helper__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_views_common_raven__ = __webpack_require__(55);
 
 new __WEBPACK_IMPORTED_MODULE_0_vconsole___default.a();
+
 
 
 
@@ -3527,9 +3529,9 @@ new __WEBPACK_IMPORTED_MODULE_0_vconsole___default.a();
 window.addEventListener('unhandledrejection', function (event) {
   console.warn('WARNING: Unhandled promise rejection. Shame on you! Reason: ' + event.reason);
 });
-__WEBPACK_IMPORTED_MODULE_16__helper__["c" /* info */].totalSchedule = 9;
+__WEBPACK_IMPORTED_MODULE_17__helper__["c" /* info */].totalSchedule = 10;
 
-var _search2obj = Object(__WEBPACK_IMPORTED_MODULE_14_utils__["g" /* search2obj */])(),
+var _search2obj = Object(__WEBPACK_IMPORTED_MODULE_15_utils__["g" /* search2obj */])(),
     _search2obj$step = _search2obj.step,
     step = _search2obj$step === undefined ? '0' : _search2obj$step;
 
@@ -3551,6 +3553,10 @@ var _search2obj = Object(__WEBPACK_IMPORTED_MODULE_14_utils__["g" /* search2obj 
         return Object(__WEBPACK_IMPORTED_MODULE_7__result_main__["a" /* default */])();
       }).then(function () {
         return Object(__WEBPACK_IMPORTED_MODULE_2__global_main__["a" /* default */])();
+      }).then(function () {
+        return Object(__WEBPACK_IMPORTED_MODULE_7__result_main__["a" /* default */])();
+      }).then(function () {
+        return Object(__WEBPACK_IMPORTED_MODULE_13__storage_main__["a" /* default */])();
       }).then(function () {
         return Object(__WEBPACK_IMPORTED_MODULE_7__result_main__["a" /* default */])();
       }).then(function () {
@@ -3584,7 +3590,7 @@ var _search2obj = Object(__WEBPACK_IMPORTED_MODULE_14_utils__["g" /* search2obj 
       }).then(function () {
         return Object(__WEBPACK_IMPORTED_MODULE_7__result_main__["a" /* default */])();
       }).then(function () {
-        return Object(__WEBPACK_IMPORTED_MODULE_13__manifest_main__["a" /* default */])();
+        return Object(__WEBPACK_IMPORTED_MODULE_14__manifest_main__["a" /* default */])();
       }).then(function () {
         return Object(__WEBPACK_IMPORTED_MODULE_7__result_main__["a" /* default */])();
       }).then(function () {
@@ -11224,6 +11230,53 @@ function urlB64ToUint8Array(base64String) {
   }).then(function () {
     return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', Number(isManifestLinkSupport && isBeforeInstallPromptEventSupport), 'web-app-manifest');
   }).then(function () {});
+});
+
+/***/ }),
+/* 131 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_store__ = __webpack_require__(9);
+
+function storageEstimateWrapper() {
+  if ('storage' in navigator && 'estimate' in navigator.storage) {
+    __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'storage');
+    __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'storage.estimate');
+    // We've got the real thing! Return its response.
+    return navigator.storage.estimate();
+  }
+
+  if ('webkitTemporaryStorage' in navigator && 'queryUsageAndQuota' in navigator.webkitTemporaryStorage) {
+    // Return a promise-based wrapper that will follow the expected interface.
+    __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 0.5, 'storage');
+    __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 0.5, 'storage.estimate');
+    return new Promise(function (resolve, reject) {
+      navigator.webkitTemporaryStorage.queryUsageAndQuota(function (usage, quota) {
+        resolve({ usage: usage, quota: quota });
+      }, reject);
+    });
+  }
+  // If we can't estimate the values, return a Promise that resolves with NaN.
+  return Promise.resolve({ usage: NaN, quota: NaN });
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (function () {
+  var _ref, usage, quota;
+
+  return Promise.resolve().then(function () {
+    return storageEstimateWrapper();
+  }).then(function (_resp) {
+    _ref = _resp;
+    usage = _ref.usage;
+    quota = _ref.quota;
+
+    if (Number.isNaN(usage) || Number.isNaN(quota)) {
+      __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 0, 'storage');
+      __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 0, 'storage.estimate');
+    }
+    console.log({ usage: usage, quota: quota });
+  });
 });
 
 /***/ })

@@ -52,6 +52,8 @@ export const featureKeys = [
   'web-app-manifest',
   'navigator.budget',
   'navigator.budget.reserve',
+  'storage',
+  'storage.estimate',
 ];
 export const infoKeys = [
   'browser',
