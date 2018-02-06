@@ -7,4 +7,5 @@ export default async function() {
   await store.put('feature', Number(isBeforeInstallPromptEventSupport), 'BeforeInstallPromptEvent');
   await store.put('feature', Number(isManifestLinkSupport), 'manifestLink');
   await store.put('feature', Number(isManifestLinkSupport && isBeforeInstallPromptEventSupport), 'web-app-manifest');
+  await store.put('feature', Number('getInstalledRelatedApps' in navigator), 'getInstalledRelatedApps');
 }

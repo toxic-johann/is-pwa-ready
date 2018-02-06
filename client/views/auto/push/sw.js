@@ -2,6 +2,7 @@ import store from 'store';
 self.addEventListener('push', function(event) {
   event.waitUntil((async function() {
     await store.put('feature', 1, 'pushEvent');
+    console.log('navigator.budget', navigator.budget);
     if (navigator.budget) {
       await store.put('feature', 1, 'navigator.budget');
       // https://wicg.github.io/budget-api/#enumdef-operationtype

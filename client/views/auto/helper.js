@@ -41,6 +41,7 @@ export const featureKeys = [
   'sw-msg-send-by',
   'syncEvent',
   'Notification',
+  'pushEvent',
   'pushManager.subscribe',
   'pushManager.getSubscription',
   'pushManager.permissionState',
@@ -54,6 +55,7 @@ export const featureKeys = [
   'navigator.budget.reserve',
   'storage',
   'storage.estimate',
+  'getInstalledRelatedApps',
 ];
 export const infoKeys = [
   'browser',

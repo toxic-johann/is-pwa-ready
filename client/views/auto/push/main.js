@@ -101,7 +101,6 @@ export default async function() {
     const auth = btoa(String.fromCharCode.apply(null, new Uint8Array(sub.getKey('auth'))));
     await store.put('feature', 1, 'pushManager.subscribe');
     try {
-      console.log('23333');
       await fetch('/askforpush', {
         method: 'POST',
         headers: {
