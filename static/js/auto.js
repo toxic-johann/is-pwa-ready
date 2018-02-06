@@ -2341,7 +2341,7 @@ if (typeof Object.create === 'function') {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return info; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return copyTips; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return testTips; });
-var featureKeys = ['Promise', 'Request', 'Response', 'indexedDB', 'indexedDB.getAll', 'navigator.serviceWorker', 'Registered', 'installEvent', 'installEvent.waitUntil', 'self.skipWaiting', 'oncontrollerchange', 'navigator.serviceWorker.ready', 'activateEvent', 'activateEvent.waitUntil', 'clients.claim', 'lifecycle', 'clients.matchAll', 'Unregistered', 'fetch', 'fetchEvent', 'fetchEvent.request', 'fetchEvent.respondWith', 'Cache', 'caches', 'cache.add', 'cache.addAll', 'cache.delete', 'cache.match', 'cache.put', 'cache.keys', 'caches.delete', 'caches.has', 'caches.open', 'postMessage', 'main-msg-got', 'main-msg-got-by', 'main-msg-send', 'sw-msg-got', 'sw-msg-send', 'sw-msg-send-by', 'syncEvent', 'Notification', 'pushEvent', 'pushManager.subscribe', 'pushManager.getSubscription', 'pushManager.permissionState', 'pushSubscription.unsubscribe', 'navigationPreload', 'navigationPreload.getState', 'BeforeInstallPromptEvent', 'manifestLink', 'web-app-manifest', 'navigator.budget', 'navigator.budget.reserve', 'storage', 'storage.estimate', 'getInstalledRelatedApps'];
+var featureKeys = ['Promise', 'Request', 'Response', 'indexedDB', 'indexedDB.getAll', 'navigator.serviceWorker', 'Registered', 'installEvent', 'installEvent.waitUntil', 'self.skipWaiting', 'oncontrollerchange', 'navigator.serviceWorker.ready', 'activateEvent', 'activateEvent.waitUntil', 'clients.claim', 'lifecycle', 'clients.matchAll', 'Unregistered', 'fetch', 'fetchEvent', 'fetchEvent.request', 'fetchEvent.respondWith', 'Cache', 'caches', 'cache.add', 'cache.addAll', 'cache.delete', 'cache.match', 'cache.put', 'cache.keys', 'caches.delete', 'caches.has', 'caches.open', 'postMessage', 'main-msg-got', 'main-msg-got-by', 'main-msg-send', 'sw-msg-got', 'sw-msg-send', 'sw-msg-send-by', 'syncEvent', 'Notification', 'pushEvent', 'pushManager.subscribe', 'pushManager.getSubscription', 'pushManager.permissionState', 'pushSubscription.unsubscribe', 'navigationPreload', 'navigationPreload.getState', 'BeforeInstallPromptEvent', 'manifestLink', 'web-app-manifest', 'getInstalledRelatedApps', 'navigator.budget', 'navigator.budget.reserve', 'storage', 'storage.estimate', 'navigator.deviceMemory'];
 var infoKeys = ['browser', 'os', 'device'];
 
 var info = {
@@ -11196,7 +11196,7 @@ function storageEstimateWrapper() {
 }
 
 /* harmony default export */ __webpack_exports__["a"] = (function () {
-  var _ref, usage, quota;
+  var _ref, usage, quota, deviceMemory;
 
   return Promise.resolve().then(function () {
     return storageEstimateWrapper();
@@ -11223,6 +11223,11 @@ function storageEstimateWrapper() {
         });
       });
     }
+  }).then(function () {
+    deviceMemory = navigator.deviceMemory;
+
+    console.log('device memory', deviceMemory);
+    return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', Number(deviceMemory !== undefined), 'navigator.deviceMemory');
   }).then(function () {});
 });
 

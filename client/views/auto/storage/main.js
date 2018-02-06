@@ -41,4 +41,8 @@ export default async function() {
       console.error(error);
     }
   }
+
+  const deviceMemory = navigator.deviceMemory;
+  console.log('device memory', deviceMemory);
+  await store.put('feature', Number(deviceMemory !== undefined), 'navigator.deviceMemory');
 }

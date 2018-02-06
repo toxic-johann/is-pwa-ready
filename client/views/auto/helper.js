@@ -51,11 +51,12 @@ export const featureKeys = [
   'BeforeInstallPromptEvent',
   'manifestLink',
   'web-app-manifest',
+  'getInstalledRelatedApps',
   'navigator.budget',
   'navigator.budget.reserve',
   'storage',
   'storage.estimate',
-  'getInstalledRelatedApps',
+  'navigator.deviceMemory',
 ];
 export const infoKeys = [
   'browser',

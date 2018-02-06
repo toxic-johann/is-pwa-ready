@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>device memory</title>
+</head>
+<body>
+  <div class="log"></div>
+  <script>
+    var logEl = document.querySelector('.log');
+    function log(msg) {
+      var p = document.createElement('p');
+      p.textContent = msg;
+      logEl.appendChild(p);
+      console.log(msg);
+    }
+
+    window.onerror = function(msg) {
+      log(msg);
+    };
+
+    log('Your devicememory is ' + navigator.deviceMemory);
+
+  </script>
+</body>
+</html>
