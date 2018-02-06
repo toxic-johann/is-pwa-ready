@@ -2341,7 +2341,7 @@ if (typeof Object.create === 'function') {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return info; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return copyTips; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return testTips; });
-var featureKeys = ['Promise', 'Request', 'Response', 'indexedDB', 'indexedDB.getAll', 'navigator.serviceWorker', 'Registered', 'installEvent', 'installEvent.waitUntil', 'self.skipWaiting', 'oncontrollerchange', 'navigator.serviceWorker.ready', 'activateEvent', 'activateEvent.waitUntil', 'clients.claim', 'lifecycle', 'clients.matchAll', 'Unregistered', 'fetch', 'fetchEvent', 'fetchEvent.request', 'fetchEvent.respondWith', 'Cache', 'caches', 'cache.add', 'cache.addAll', 'cache.delete', 'cache.match', 'cache.put', 'cache.keys', 'caches.delete', 'caches.has', 'caches.open', 'postMessage', 'main-msg-got', 'main-msg-got-by', 'main-msg-send', 'sw-msg-got', 'sw-msg-send', 'sw-msg-send-by', 'syncEvent', 'Notification', 'pushManager.subscribe', 'pushManager.getSubscription', 'pushManager.permissionState', 'pushSubscription.unsubscribe', 'navigationPreload', 'navigationPreload.getState'];
+var featureKeys = ['Promise', 'Request', 'Response', 'indexedDB', 'indexedDB.getAll', 'navigator.serviceWorker', 'Registered', 'installEvent', 'installEvent.waitUntil', 'self.skipWaiting', 'oncontrollerchange', 'navigator.serviceWorker.ready', 'activateEvent', 'activateEvent.waitUntil', 'clients.claim', 'lifecycle', 'clients.matchAll', 'Unregistered', 'fetch', 'fetchEvent', 'fetchEvent.request', 'fetchEvent.respondWith', 'Cache', 'caches', 'cache.add', 'cache.addAll', 'cache.delete', 'cache.match', 'cache.put', 'cache.keys', 'caches.delete', 'caches.has', 'caches.open', 'postMessage', 'main-msg-got', 'main-msg-got-by', 'main-msg-send', 'sw-msg-got', 'sw-msg-send', 'sw-msg-send-by', 'syncEvent', 'Notification', 'pushManager.subscribe', 'pushManager.getSubscription', 'pushManager.permissionState', 'pushSubscription.unsubscribe', 'navigationPreload', 'navigationPreload.getState', 'BeforeInstallPromptEvent', 'manifestLink', 'web-app-manifest'];
 var infoKeys = ['browser', 'os', 'device'];
 
 var info = {
@@ -3499,13 +3499,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__summary_main__ = __webpack_require__(78);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__cache_main__ = __webpack_require__(89);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__push_main__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_utils__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__main_css__ = __webpack_require__(91);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__main_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14__main_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__helper__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_views_common_raven__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__manifest_main__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_utils__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__main_css__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__main_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15__main_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__helper__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_views_common_raven__ = __webpack_require__(55);
 
 new __WEBPACK_IMPORTED_MODULE_0_vconsole___default.a();
+
 
 
 
@@ -3525,9 +3527,9 @@ new __WEBPACK_IMPORTED_MODULE_0_vconsole___default.a();
 window.addEventListener('unhandledrejection', function (event) {
   console.warn('WARNING: Unhandled promise rejection. Shame on you! Reason: ' + event.reason);
 });
-__WEBPACK_IMPORTED_MODULE_15__helper__["c" /* info */].totalSchedule = 8;
+__WEBPACK_IMPORTED_MODULE_16__helper__["c" /* info */].totalSchedule = 9;
 
-var _search2obj = Object(__WEBPACK_IMPORTED_MODULE_13_utils__["g" /* search2obj */])(),
+var _search2obj = Object(__WEBPACK_IMPORTED_MODULE_14_utils__["g" /* search2obj */])(),
     _search2obj$step = _search2obj.step,
     step = _search2obj$step === undefined ? '0' : _search2obj$step;
 
@@ -3579,6 +3581,10 @@ var _search2obj = Object(__WEBPACK_IMPORTED_MODULE_13_utils__["g" /* search2obj 
         return Object(__WEBPACK_IMPORTED_MODULE_7__result_main__["a" /* default */])();
       }).then(function () {
         return Object(__WEBPACK_IMPORTED_MODULE_12__push_main__["a" /* default */])();
+      }).then(function () {
+        return Object(__WEBPACK_IMPORTED_MODULE_7__result_main__["a" /* default */])();
+      }).then(function () {
+        return Object(__WEBPACK_IMPORTED_MODULE_13__manifest_main__["a" /* default */])();
       }).then(function () {
         return Object(__WEBPACK_IMPORTED_MODULE_7__result_main__["a" /* default */])();
       }).then(function () {
@@ -11161,6 +11167,65 @@ function urlB64ToUint8Array(base64String) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */,
+/* 107 */,
+/* 108 */,
+/* 109 */,
+/* 110 */,
+/* 111 */,
+/* 112 */,
+/* 113 */,
+/* 114 */,
+/* 115 */,
+/* 116 */,
+/* 117 */,
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */,
+/* 128 */,
+/* 129 */,
+/* 130 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_store__ = __webpack_require__(9);
+
+
+/* harmony default export */ __webpack_exports__["a"] = (function () {
+  var isManifestLinkSupport, isBeforeInstallPromptEventSupport;
+  return Promise.resolve().then(function () {
+    isManifestLinkSupport = document.createElement('link').relList.supports('manifest');
+    isBeforeInstallPromptEventSupport = 'BeforeInstallPromptEvent' in window;
+    return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', Number(isBeforeInstallPromptEventSupport), 'BeforeInstallPromptEvent');
+  }).then(function () {
+    return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', Number(isManifestLinkSupport), 'manifestLink');
+  }).then(function () {
+    return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', Number(isManifestLinkSupport && isBeforeInstallPromptEventSupport), 'web-app-manifest');
+  }).then(function () {});
+});
 
 /***/ })
 /******/ ]);

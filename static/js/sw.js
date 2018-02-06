@@ -78,7 +78,7 @@ self.addEventListener('install', function (event) {
   }));
 });
 
-self.addEventListener('active', function () {
+self.addEventListener('activate', function () {
   return self.clients.claim();
 });
 

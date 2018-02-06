@@ -25,6 +25,9 @@
     navigator.serviceWorker.register('./sw.js', {
       scope: './'
     }).then(function(sw) {
+      if (registration.navigationPreload) {
+        registration.navigationPreload.setHeaderValue('woowow');
+      }
       log("Registered!", sw);
       log("You should get a different response when you refresh");
     }).catch(function(err) {

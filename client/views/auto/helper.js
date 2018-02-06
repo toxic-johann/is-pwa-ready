@@ -47,6 +47,9 @@ export const featureKeys = [
   'pushSubscription.unsubscribe',
   'navigationPreload',
   'navigationPreload.getState',
+  'BeforeInstallPromptEvent',
+  'manifestLink',
+  'web-app-manifest',
 ];
 export const infoKeys = [
   'browser',
