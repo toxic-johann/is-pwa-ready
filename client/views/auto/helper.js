@@ -57,6 +57,11 @@ export const featureKeys = [
   'storage',
   'storage.estimate',
   'navigator.deviceMemory',
+  'navigator.credentials',
+  'navigator.credentials.create',
+  'navigator.credentials.store',
+  'navigator.credentials.get',
+  'navigator.credentials.preventSilentAccess',
 ];
 export const infoKeys = [
   'browser',

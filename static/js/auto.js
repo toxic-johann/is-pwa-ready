@@ -2341,7 +2341,7 @@ if (typeof Object.create === 'function') {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return info; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return copyTips; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return testTips; });
-var featureKeys = ['Promise', 'Request', 'Response', 'indexedDB', 'indexedDB.getAll', 'navigator.serviceWorker', 'Registered', 'installEvent', 'installEvent.waitUntil', 'self.skipWaiting', 'oncontrollerchange', 'navigator.serviceWorker.ready', 'activateEvent', 'activateEvent.waitUntil', 'clients.claim', 'lifecycle', 'clients.matchAll', 'Unregistered', 'fetch', 'fetchEvent', 'fetchEvent.request', 'fetchEvent.respondWith', 'Cache', 'caches', 'cache.add', 'cache.addAll', 'cache.delete', 'cache.match', 'cache.put', 'cache.keys', 'caches.delete', 'caches.has', 'caches.open', 'postMessage', 'main-msg-got', 'main-msg-got-by', 'main-msg-send', 'sw-msg-got', 'sw-msg-send', 'sw-msg-send-by', 'syncEvent', 'Notification', 'pushEvent', 'pushManager.subscribe', 'pushManager.getSubscription', 'pushManager.permissionState', 'pushSubscription.unsubscribe', 'navigationPreload', 'navigationPreload.getState', 'BeforeInstallPromptEvent', 'manifestLink', 'web-app-manifest', 'getInstalledRelatedApps', 'navigator.budget', 'navigator.budget.reserve', 'storage', 'storage.estimate', 'navigator.deviceMemory'];
+var featureKeys = ['Promise', 'Request', 'Response', 'indexedDB', 'indexedDB.getAll', 'navigator.serviceWorker', 'Registered', 'installEvent', 'installEvent.waitUntil', 'self.skipWaiting', 'oncontrollerchange', 'navigator.serviceWorker.ready', 'activateEvent', 'activateEvent.waitUntil', 'clients.claim', 'lifecycle', 'clients.matchAll', 'Unregistered', 'fetch', 'fetchEvent', 'fetchEvent.request', 'fetchEvent.respondWith', 'Cache', 'caches', 'cache.add', 'cache.addAll', 'cache.delete', 'cache.match', 'cache.put', 'cache.keys', 'caches.delete', 'caches.has', 'caches.open', 'postMessage', 'main-msg-got', 'main-msg-got-by', 'main-msg-send', 'sw-msg-got', 'sw-msg-send', 'sw-msg-send-by', 'syncEvent', 'Notification', 'pushEvent', 'pushManager.subscribe', 'pushManager.getSubscription', 'pushManager.permissionState', 'pushSubscription.unsubscribe', 'navigationPreload', 'navigationPreload.getState', 'BeforeInstallPromptEvent', 'manifestLink', 'web-app-manifest', 'getInstalledRelatedApps', 'navigator.budget', 'navigator.budget.reserve', 'storage', 'storage.estimate', 'navigator.deviceMemory', 'navigator.credentials', 'navigator.credentials.create', 'navigator.credentials.store', 'navigator.credentials.get', 'navigator.credentials.preventSilentAccess'];
 var infoKeys = ['browser', 'os', 'device'];
 
 var info = {
@@ -3501,13 +3501,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__push_main__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__storage_main__ = __webpack_require__(131);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__manifest_main__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_utils__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__main_css__ = __webpack_require__(91);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__main_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16__main_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__helper__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_views_common_raven__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__credentials_main__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_utils__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__main_css__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__main_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17__main_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__helper__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_views_common_raven__ = __webpack_require__(55);
 
 new __WEBPACK_IMPORTED_MODULE_0_vconsole___default.a();
+
 
 
 
@@ -3529,9 +3531,9 @@ new __WEBPACK_IMPORTED_MODULE_0_vconsole___default.a();
 window.addEventListener('unhandledrejection', function (event) {
   console.warn('WARNING: Unhandled promise rejection. Shame on you! Reason: ' + event.reason);
 });
-__WEBPACK_IMPORTED_MODULE_17__helper__["c" /* info */].totalSchedule = 10;
+__WEBPACK_IMPORTED_MODULE_18__helper__["c" /* info */].totalSchedule = 11;
 
-var _search2obj = Object(__WEBPACK_IMPORTED_MODULE_15_utils__["g" /* search2obj */])(),
+var _search2obj = Object(__WEBPACK_IMPORTED_MODULE_16_utils__["g" /* search2obj */])(),
     _search2obj$step = _search2obj.step,
     step = _search2obj$step === undefined ? '0' : _search2obj$step;
 
@@ -3557,6 +3559,10 @@ var _search2obj = Object(__WEBPACK_IMPORTED_MODULE_15_utils__["g" /* search2obj 
         return Object(__WEBPACK_IMPORTED_MODULE_7__result_main__["a" /* default */])();
       }).then(function () {
         return Object(__WEBPACK_IMPORTED_MODULE_13__storage_main__["a" /* default */])();
+      }).then(function () {
+        return Object(__WEBPACK_IMPORTED_MODULE_7__result_main__["a" /* default */])();
+      }).then(function () {
+        return Object(__WEBPACK_IMPORTED_MODULE_15__credentials_main__["a" /* default */])();
       }).then(function () {
         return Object(__WEBPACK_IMPORTED_MODULE_7__result_main__["a" /* default */])();
       }).then(function () {
@@ -11296,6 +11302,25 @@ function storageEstimateWrapper() {
     console.log('device memory', deviceMemory);
     return __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', Number(deviceMemory !== undefined), 'navigator.deviceMemory');
   }).then(function () {});
+});
+
+/***/ }),
+/* 132 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_store__ = __webpack_require__(9);
+
+/* harmony default export */ __webpack_exports__["a"] = (function () {
+  return Promise.resolve().then(function () {
+    if (!!navigator.credentials) {
+      __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', 1, 'navigator.credentials');
+      __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', Number('create' in navigator.credentials), 'navigator.credentials.create');
+      __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', Number('store' in navigator.credentials), 'navigator.credentials.store');
+      __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', Number('get' in navigator.credentials), 'navigator.credentials.get');
+      __WEBPACK_IMPORTED_MODULE_0_store__["a" /* default */].put('feature', Number('preventSilentAccess' in navigator.credentials), 'navigator.credentials.preventSilentAccess');
+    }
+  });
 });
 
 /***/ })
