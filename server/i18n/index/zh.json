@@ -95,10 +95,8 @@
       "icon": "m360"
     },
     {
-      "id": "baidum",
-      "name": "百度手机浏览器",
-      "aka": "百度",
-      "mobile": true
+      "id": "edge",
+      "name": "Edge"
     },
     {
       "id": "wechat",
@@ -121,6 +119,12 @@
       "id": "quark",
       "name": "夸克浏览器",
       "aka": "夸克",
+      "mobile": true
+    },
+    {
+      "id": "baidum",
+      "name": "百度手机浏览器",
+      "aka": "百度",
       "mobile": true
     },
     {
@@ -148,10 +152,6 @@
     {
       "id": "safari",
       "name": "Safari"
-    },
-    {
-      "id": "edge",
-      "name": "Edge"
     }
   ],
   "features": [
@@ -193,7 +193,7 @@
         "supported": 0.51
       },
       "edge": {
-        "supported": 0.11
+        "supported": 0.81
       },
       "safari": {
         "supported": 0.11
@@ -252,16 +252,10 @@
         ]
       },
       "safari": {
-        "supported": 0.8,
-        "details": [
-          "<a href=\"https://webkit.org/status/#specification-service-workers\">开发中</a>。"
-        ]
+        "supported": 1
       },
       "edge": {
-        "supported": 0.8,
-        "details": [
-          "<a href=\"https://developer.microsoft.com/microsoft-edge/platform/status/serviceworker\">开发中</a>。edge 15可手动打开。"
-        ]
+        "supported": 1
       },
       "uc": {
         "supported": 1
@@ -704,6 +698,10 @@
       "safari-preview": {
         "supported": 0.5,
         "minVersion": 11
+      },
+      "edge": {
+        "supported": 1,
+        "minVersion": 17
       }
     },
     {
@@ -786,6 +784,10 @@
       "safari": {
         "supported": 0.5,
         "minVersion": 11
+      },
+      "edge": {
+        "supported": 0,
+        "minVersion": 17
       }
     },
     {
@@ -813,7 +815,8 @@
         "minVersion": 11
       },
       "edge": {
-        "supported": 0
+        "supported": 1,
+        "minVersion": 17
       },
       "uc": {
         "supported": 1,
@@ -901,7 +904,8 @@
         "supported": 0
       },
       "edge": {
-        "supported": 0
+        "supported": 1,
+        "minVersion": 17
       },
       "uc": {
         "supported": 1,
@@ -993,7 +997,8 @@
         "minVersion": 11
       },
       "edge": {
-        "supported": 0
+        "supported": 1,
+        "minVersion": 17
       },
       "uc": {
         "supported": 1,
@@ -1082,7 +1087,8 @@
         "minVersion": 11
       },
       "edge": {
-        "supported": 0
+        "supported": 1,
+        "minVersion": 17
       },
       "uc": {
         "supported": 1,
@@ -1171,7 +1177,8 @@
         "minVersion": 11
       },
       "edge": {
-        "supported": 0
+        "supported": 1,
+        "minVersion": 17
       },
       "uc": {
         "supported": 1,
@@ -1318,6 +1325,10 @@
       "safari": {
         "supported": 0,
         "minVersion": 11
+      },
+      "edge": {
+        "supported": 1,
+        "minVersion": 17
       }
     },
     {
@@ -1344,7 +1355,8 @@
         "supported": 0
       },
       "edge": {
-        "supported": 0
+        "supported": 1,
+        "minVersion": 17
       },
       "uc": {
         "supported": 1,
@@ -1433,7 +1445,8 @@
         "minVersion": 11
       },
       "edge": {
-        "supported": 0
+        "supported": 1,
+        "minVersion": 17
       },
       "uc": {
         "supported": 1,
@@ -1522,7 +1535,8 @@
         "minVersion": 11
       },
       "edge": {
-        "supported": 0
+        "supported": 1,
+        "minVersion": 17
       },
       "uc": {
         "supported": 1,
@@ -1611,7 +1625,8 @@
         "minVersion": 11
       },
       "edge": {
-        "supported": 0
+        "supported": 0.5,
+        "minVersion": 17
       },
       "uc": {
         "supported": 1,
@@ -1702,7 +1717,8 @@
         "supported": 0
       },
       "edge": {
-        "supported": 0
+        "supported": 1,
+        "minVersion": 17
       },
       "uc": {
         "supported": 1,
@@ -1801,7 +1817,8 @@
         "supported": 0
       },
       "edge": {
-        "supported": 0
+        "supported": 0.7222222222222222,
+        "minVersion": 17
       },
       "uc": {
         "supported": 1,
@@ -2049,7 +2066,8 @@
         "minVersion": 11
       },
       "edge": {
-        "supported": 0
+        "supported": 0,
+        "minVersion": 17
       },
       "uc": {
         "supported": 1,
@@ -2306,7 +2324,8 @@
         "minVersion": 11
       },
       "edge": {
-        "supported": 0
+        "supported": 1,
+        "minVersion": 17
       },
       "uc": {
         "supported": 1,
@@ -2450,6 +2469,10 @@
       "safari": {
         "supported": 0,
         "minVersion": 11
+      },
+      "edge": {
+        "supported": 1,
+        "minVersion": 17
       }
     },
     {
@@ -2524,6 +2547,10 @@
       "safari": {
         "supported": 0,
         "minVersion": 11
+      },
+      "edge": {
+        "supported": 1,
+        "minVersion": 17
       }
     },
     {
@@ -2598,6 +2625,10 @@
       "safari": {
         "supported": 0,
         "minVersion": 11
+      },
+      "edge": {
+        "supported": 1,
+        "minVersion": 17
       }
     },
     {
@@ -2672,6 +2703,10 @@
       "safari": {
         "supported": 0,
         "minVersion": 11
+      },
+      "edge": {
+        "supported": 1,
+        "minVersion": 17
       }
     },
     {
@@ -2746,6 +2781,10 @@
       "safari": {
         "supported": 0,
         "minVersion": 11
+      },
+      "edge": {
+        "supported": 1,
+        "minVersion": 17
       }
     },
     {
@@ -2823,6 +2862,10 @@
       "safari": {
         "supported": 0,
         "minVersion": 11
+      },
+      "edge": {
+        "supported": 1,
+        "minVersion": 17
       }
     },
     {
@@ -2900,6 +2943,10 @@
       "safari": {
         "supported": 0,
         "minVersion": 11
+      },
+      "edge": {
+        "supported": 1,
+        "minVersion": 17
       }
     },
     {
@@ -2977,6 +3024,10 @@
       "safari": {
         "supported": 0,
         "minVersion": 11
+      },
+      "edge": {
+        "supported": 1,
+        "minVersion": 17
       }
     },
     {
@@ -3051,6 +3102,10 @@
       "safari": {
         "supported": 0,
         "minVersion": 11
+      },
+      "edge": {
+        "supported": 1,
+        "minVersion": 17
       }
     },
     {
@@ -3077,7 +3132,8 @@
         "supported": 0
       },
       "edge": {
-        "supported": 0
+        "supported": 1,
+        "minVersion": 17
       },
       "uc": {
         "supported": 1,
@@ -3177,7 +3233,8 @@
         "minVersion": 11
       },
       "edge": {
-        "supported": 0
+        "supported": 1,
+        "minVersion": 17
       },
       "uc": {
         "supported": 1,
@@ -3411,6 +3468,10 @@
       "safari": {
         "supported": 0,
         "minVersion": 11
+      },
+      "edge": {
+        "supported": 1,
+        "minVersion": 17
       }
     },
     {
@@ -3473,6 +3534,10 @@
       "safari": {
         "supported": 0,
         "minVersion": 11
+      },
+      "edge": {
+        "supported": 1,
+        "minVersion": 17
       }
     },
     {
@@ -3547,6 +3612,10 @@
       "safari": {
         "supported": 0,
         "minVersion": 11
+      },
+      "edge": {
+        "supported": 1,
+        "minVersion": 17
       }
     },
     {
@@ -3609,6 +3678,10 @@
       "safari": {
         "supported": 0,
         "minVersion": 11
+      },
+      "edge": {
+        "supported": 1,
+        "minVersion": 17
       }
     },
     {
