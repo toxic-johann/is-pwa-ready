@@ -6,7 +6,7 @@ import webpack from 'webpack';
 import WebpackMd5Hash from 'webpack-md5-hash';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 export default function({ mode = 'development' } = {}) {
-  const qiniuPlugin = mode === 'development' ? {} : require('./qiniu.js');
+  // const qiniuPlugin = mode === 'development' ? {} : require('./qiniu.js');
   const viewRoot = './client/views/';
   const staticRoot = './static';
   const jsFiles = glob.sync(viewRoot + '*/main.js');
@@ -49,7 +49,7 @@ export default function({ mode = 'development' } = {}) {
       filename: mode === 'development' ? 'js/[name].js' : 'js/[name]-[chunkhash].js',
       // chunkFilename: mode === 'development' ? 'js/[name].js' : 'js/[name]-[chunkhash].js',
       path: path.resolve(staticRoot),
-      publicPath: mode === 'development' ? '/static/' : 'https://resource.toxicjohann.com/ispwaready/',
+      publicPath: '/static/',
     },
     module: {
       rules: [
@@ -126,7 +126,7 @@ export default function({ mode = 'development' } = {}) {
             drop_console: true,
           },
         }),
-        qiniuPlugin,
+        // qiniuPlugin,
       ]
       : [
       ]
