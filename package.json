@@ -57,7 +57,6 @@
     "html-webpack-plugin": "^2.28.0",
     "husky": "^0.14.3",
     "jsonlint": "^1.6.2",
-    "node-inspector": "^1.1.1",
     "nodemon": "^1.11.0",
     "postcss-cssnext": "^3.0.2",
     "postcss-import": "^11.0.0",
